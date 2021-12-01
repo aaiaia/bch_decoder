@@ -629,6 +629,7 @@ unsigned int global_flag_case_pass_hd_1 = FLAG_CASE_PASS_MAG0_HD_1_DISABLE;
 enum FLAG_CASE_SAME_LLR_HANDLING 
 {
     FLAG_CASE_SAME_LLR_HANDLING_NONE,
+    FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,
     FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,
     FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,
     FLAG_CASE_SAME_LLR_HANDLING_END,
@@ -636,10 +637,24 @@ enum FLAG_CASE_SAME_LLR_HANDLING
 const char NAME_FLAG_CASE_SAME_LLR_HANDLING[FLAG_CASE_SAME_LLR_HANDLING_END][31] =
 {
     "same llr mag is none",
+    "same llr mag is not selected",
     "same llr mag is prior 0",
     "same llr mag is prior 1",
 };
 unsigned int global_flag_case_same_llr_handling = FLAG_CASE_SAME_LLR_HANDLING_NONE;
+//////////////////////////////////////////
+enum FLAG_CASE_INIT_LLR_MAG_METHOD
+{
+    FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,
+    FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,
+    FLAG_CASE_INIT_LLR_MAG_METHOD_END,
+};
+const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END][51] = 
+{
+    "first loc is selected, has no condition",
+    "if no minimum llr val than max llr, not select",
+};
+unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHOD_NONE;
 //////////////////////////////////////////
 
 /*Log LikeHood Ratio debug option start*/
@@ -11473,7 +11488,7 @@ char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locato
 	memset(p->locatorValidity, 0, sizeof(unsigned char)*locatorLength);
 	
 	p->locator=(unsigned int*)malloc(sizeof(unsigned int)*locatorLength);
-	memset(p->locator, 0, sizeof(unsigned int)*locatorLength);
+	memset(p->locator, -1, sizeof(unsigned int)*locatorLength);
 		
 	p->locatorLength=locatorLength;
 	return 0;
@@ -11569,13 +11584,15 @@ char findMinimumMagnitudeFindLocPushAway
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials* hd_codeword,
     unsigned int zero_magnitude_sel_policy,
-    unsigned int same_magnitude_sel_policy
+    unsigned int same_magnitude_sel_policy,
+    unsigned int init_magnitude_policy
 )
 {
 	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_comapared_mag = 0;
 
 	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_criteria_mag = -1;
-	unsigned int    tmp_criteria_loc=-1;
+	unsigned int    tmp_criteria_loc = -1;
+
     char            tmp_criteria_HD;
 
     /* Array */
@@ -11644,7 +11661,7 @@ char findMinimumMagnitudeFindLocPushAway
     {
     	memset(p->hardDecisionShort, '0', sizeof(char)*(p->locatorLength));
     }
-	memset(p->locator, 0, sizeof(unsigned int)*(p->locatorLength));
+	memset(p->locator, -1, sizeof(unsigned int)*(p->locatorLength));
 
 	for(i=0; i<(p->usedLength); i++)
 	{
@@ -11660,7 +11677,7 @@ char findMinimumMagnitudeFindLocPushAway
         tmp_comapared_mag = *(p->magnitude + i);
 
         /* in no symmetry adc step, 0->1 error not have mag 0 */
-        if(tmp_criteria_mag>=(tmp_comapared_mag))
+        if(tmp_criteria_mag >= (tmp_comapared_mag))
         {
             if(zero_magnitude_sel_policy == FLAG_CASE_PASS_MAG0_HD_1_ENABLE)
             {
@@ -11674,6 +11691,12 @@ char findMinimumMagnitudeFindLocPushAway
             }
             switch(same_magnitude_sel_policy)
             {
+                case FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL:
+                {
+                    if(tmp_criteria_mag==(tmp_comapared_mag)) continue;
+                }
+                break;
+
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0:
                 {
                     if(tmp_criteria_mag==(tmp_comapared_mag))
@@ -11720,6 +11743,7 @@ char findMinimumMagnitudeFindLocPushAway
                 break;
 
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1:
+                {
                     if(tmp_criteria_mag==(tmp_comapared_mag))
                     {
                         //tmp_criteria_HD is not '0' that is tmp_criteria_HD has '1'.
@@ -11760,6 +11784,7 @@ char findMinimumMagnitudeFindLocPushAway
                             }
                         }
                     }
+                }
                 break;
 
                 default:
@@ -11809,15 +11834,17 @@ char findMinimumMagnitudeGroupingPushAway
     struct_powerFormPolynomials* hd_codeword,
     unsigned int zero_magnitude_sel_policy,
     unsigned int same_magnitude_sel_policy,
+    unsigned int init_magnitude_policy,
+    
     unsigned int group_nums,
     unsigned int group_bit_nums,
     unsigned int last_group_bit_nums
 )
 {
-	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_comapared_mag = 0;
+	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_comapared_mag;
 
-	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_criteria_mag = -1;
-	unsigned int    tmp_criteria_loc=-1;
+	u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_criteria_mag;
+	unsigned int    tmp_criteria_loc;
     char            tmp_criteria_HD;
 
     /* Prior HD */
@@ -11889,7 +11916,22 @@ char findMinimumMagnitudeGroupingPushAway
 	if(!(hd_codeword->usedLength)) return -1;
 	if(!(hd_codeword->equation)) return -1;	
 	#endif
-	
+    
+    switch(init_magnitude_policy)
+    {
+        case FLAG_CASE_INIT_LLR_MAG_METHOD_NONE:
+        default:
+            tmp_criteria_mag = -1;
+            tmp_criteria_loc = 0;
+        break;
+
+        case FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR:
+            tmp_criteria_mag = -1;
+            tmp_criteria_loc = -1;
+        break;
+    }
+
+
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0)
     {
         tmp_criteria_HD = '1';
@@ -11920,7 +11962,8 @@ char findMinimumMagnitudeGroupingPushAway
     {
     	memset(p->hardDecisionShort, 'x', sizeof(char)*(p->locatorLength));
     }
-	memset(p->locator, 0, sizeof(unsigned int)*(p->locatorLength));
+
+	memset(p->locator, -1, sizeof(unsigned int)*(p->locatorLength));
 
     /* Grouping variable setting start */
     tmp_group_has_err = p->usedLength / group_nums;
@@ -11940,6 +11983,7 @@ char findMinimumMagnitudeGroupingPushAway
         if(!(i % group_bit_nums))
         {
             tmp_criteria_mag = -1;
+            tmp_criteria_loc = -1;
         }
 
         j = tmp_proc_group;
@@ -11970,6 +12014,12 @@ char findMinimumMagnitudeGroupingPushAway
         {
             switch(same_magnitude_sel_policy)
             {
+                case FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL:
+                {
+                    continue;
+                }
+                break;
+
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0:
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1:
                 {
@@ -12857,6 +12907,10 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 {
                     switch(same_magnitude_sel_policy)
                     {
+                        case FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL:
+                        {}
+                        break;
+
                         case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0:
                         {
                             /* a priority has left one. */
@@ -13011,6 +13065,12 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                     {
                         switch(same_magnitude_sel_policy)
                         {
+                            /* This function is working on full-parallel so not to do */
+                            case FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL:
+                            {
+                            }
+                            break;
+
                             case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0:
                             {
                                 if(**(*(p->treeStruct->tree_hd + depth - 1) \
@@ -13166,11 +13226,17 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
 	
 	for(i=0; i<p->locatorLength; i++)
 	{
+        /* locator is always smaller than codeword Length */
 		if(((*(p->locator+i)) < (operandA->usedLength)) && ((*(p->locator+i)) < (operandB->usedLength)))
 		{
 			if((*(operandA->equation+(*(p->locator+i)))) != (*(operandB->equation+(*(p->locator+i)))))	*(p->locatorValidity+i) = 1;
 			else																						*(p->locatorValidity+i) = 0;
 		}
+        /* not indication any location */
+        else if((*(p->locator+i)) == -1)
+        {
+            *(p->locatorValidity+i) = 1;
+        }
 		else
 		{
 			errorMes;
@@ -15533,10 +15599,20 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
 static struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
 {
 	{"none",    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NONE,	    VALUE_TYPE_UNSIGNED_INT,	NULL},		
+	{"not_sel", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
 	{"prior_0",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
 	{"prior_1",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
 
-	{"(not applied tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{"(not sel option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
+};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+static struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
+{
+	{"none",            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,	            VALUE_TYPE_UNSIGNED_INT,	NULL},		
+	{"not_sel_max_llr", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,  VALUE_TYPE_UNSIGNED_INT,	NULL},		
+
+	{"(not sel max option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15562,6 +15638,7 @@ static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 	{"pass_hd_1_en",	    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_pass_hd_1,	    FLAG_CASE_PASS_MAG0_HD_1_ENABLE,                 VALUE_TYPE_UNSIGNED_INT,    NULL},		
 
 	{"pri_same_LLR_mag",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_same_llr_mag_handling},		
+	{"init_LLR_loc_val",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_init_llr_mag_method},		
 
 	{"minimum",	            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,	VALUE_TYPE_UNSIGNED_INT,    NULL},		
 	{"group_min_push_away",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},	
@@ -21747,7 +21824,9 @@ switch(global_flag_case_sim_testOpt)
                                 main_com_bpskComponents->bpskReceivedLLR,
                                 main_com_errComponents->erroredCodeWord,
                                 global_flag_case_pass_hd_1,
-                                global_flag_case_same_llr_handling);
+                                global_flag_case_same_llr_handling,
+                                global_flag_case_init_llr_mag_method
+                            );
 
                             /*
                             testPrintLLRWithSpaceAndEnter(
@@ -21771,6 +21850,8 @@ switch(global_flag_case_sim_testOpt)
                                 main_com_errComponents->erroredCodeWord,
                                 global_flag_case_pass_hd_1,
                                 global_flag_case_same_llr_handling,
+                                global_flag_case_init_llr_mag_method,
+
                                 global_grouping_stream_nums,
                                 global_group_bit_num,
                                 global_group_last_bit_num
