@@ -15641,7 +15641,7 @@ static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 	{"init_LLR_loc_val",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_init_llr_mag_method},		
 
 	{"minimum",	            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,	VALUE_TYPE_UNSIGNED_INT,    NULL},		
-	{"group_min_push_away",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},	
+	{"group_min_push_away",	0,	OPT_COMPONENT,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,	VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},	
 	{"tree",	            0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,                                          VALUE_TYPE_NONE,	        comm_ch_awgn_llr_mag_find_meth_tree},
 
 	{"notice)pass_hd_1_is_not_tested_in_tree_structure",0,OPT_NOTHING,0,0,NULL,0,VALUE_TYPE_NONE,NULL},		
@@ -17217,6 +17217,7 @@ int main(unsigned int argc, char **argv)
     FILE*    fileio_SD_received_LLR_mag_log;
     FILE*    fileio_SD_received_LLR_mag_verilog;
 
+    FILE*    fileio_ErrCnt_log;
 
     /* hve to concern test patterns */
     FILE*    fileio_corrected_mes[KIND_OF_BCH_DECODING_END];
@@ -17242,6 +17243,7 @@ int main(unsigned int argc, char **argv)
     char fileio_Name_SD_received_LLR_mag_log[513] = {0};
     char fileio_Name_SD_received_LLR_mag_verilog[513] = {0};
 
+    char fileio_Name_ErrCnt_log[513] = {0};
 
     /* have to concern test patterns */
     char fileio_Name_corrected_mes[KIND_OF_BCH_DECODING_END][513] = {0};
@@ -19747,6 +19749,30 @@ int main(unsigned int argc, char **argv)
     {
         infoMes; printf("received LLR bit stream logging is disabled.\r\n");
     }
+    /* Error Cnt */
+    if(global_flag_file_io_sd_pattern_output_log&FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+    {
+    	sprintf(fileio_Name_ErrCnt_log, "%s/ERROR_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d.log", 
+    		fileio_Name_PatternLog_Path,
+    		global_GaloisFieldExponential,
+    	
+    		main_com_codeLength, 
+    		main_com_infoBitLength, 
+    		main_tmp_degErrLocPoly, 
+    		main_com_hd_correctability
+        );
+    	if(!(fileio_ErrCnt_log=fopen(fileio_Name_ErrCnt_log, "w")))
+    	{
+    		errorMes;
+    		printf("Can not open \"%s\"\r\n", fileio_Name_ErrCnt_log);
+    		return -1;
+    	}
+    	infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_ErrCnt_log);
+    }
+    else
+    {
+        infoMes; printf("received LLR bit stream logging is disabled.\r\n");
+    }
     /* PATTERN LOG received LLR magnitude bit stream(quantized bit) */
     if(global_flag_file_io_sd_pattern_output_log&FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
     {
@@ -20969,7 +20995,7 @@ switch(global_flag_case_sim_testOpt)
                     if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_MES)
                     {
                         fprintVerilogPowerFormUsingAddress\
-                            (fileio_HD_mes_verilog, main_encodingComponentInGF->codeWord, "\r\n");
+                            (fileio_HD_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
                     }
                     if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_MES)
                     {
@@ -21024,7 +21050,7 @@ switch(global_flag_case_sim_testOpt)
                     if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
                     {
                         fprintVerilogPowerFormUsingAddress\
-                            (fileio_HD_encoding_mes_verilog, main_encodingComponentInGF->codeWord, "\r\n");
+                            (fileio_HD_encoding_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
                     }
                     if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
                     {
@@ -21500,6 +21526,44 @@ switch(global_flag_case_sim_testOpt)
 								printf("\t[%s] errorCorrection [end]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
 							}
 							#endif
+                            /* File Out Corrected Vector start */
+                            /* File Out Patterns */
+                            if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                            {
+                                fprintPowerFormUsingAddress\
+                                    (\
+                                        fileio_corrected_mes[
+                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        ], 
+                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                        "\r\n"
+                                    );
+                            }
+                            /* File Out Verilog Vectors start */
+                            if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                            {
+                                fprintVerilogPowerFormUsingAddress\
+                                    (
+                                        fileio_corrected_mes_verilog[
+                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        ], 
+                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                        NULL
+                                    );
+                            }
+                            /* File Out Pattern log */
+                            if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                            {
+                                fprintPowerFormFullDescriptionUsingAddresss\
+                                    (
+                                        fileio_corrected_mes_log[
+                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        ], 
+                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                        "\r\n"
+                                    );
+                            }
+                            /* File Out Corrected Vector end */
 				}
 				printf("[errorCorrection end]\r\n");
 
@@ -21770,6 +21834,26 @@ switch(global_flag_case_sim_testOpt)
 						main_com_errComponents->erroredCodeWord->equation, 
 						main_com_errComponents->erroredCodeWord->usedLength
 					);
+                    /* Received Vector == erroredCodeWord*/
+                    /* File Out Patterns */
+                    if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                    {
+                        fprintPowerFormUsingAddress\
+                            (fileio_HD_received_mes, main_com_errComponents->erroredCodeWord, "\r\n");
+                    }
+                    /* File Out Verilog Vectors start */
+                    if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                    {
+                        fprintVerilogPowerFormUsingAddress\
+                            (fileio_HD_received_mes_verilog, main_com_errComponents->erroredCodeWord, NULL);
+                    }
+                    /* File Out Pattern log */
+                    if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                    {
+                        fprintPowerFormFullDescriptionUsingAddresss\
+                            (fileio_HD_received_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
+                    }
+                    /* File Out Verilog Vectors end */
 							#ifndef RELEASE
                             /* quantized LLR test print */
 							if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
@@ -22056,6 +22140,14 @@ switch(global_flag_case_sim_testOpt)
 							main_com_list_TP_pwrFormPoly[main_tmp_soft_i]
 						);
 				}
+                            if(global_flag_file_io_sd_pattern_output_log & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+                            {
+                                for(main_tmp_soft_i = 0; main_tmp_soft_i < main_com_numsTP; main_tmp_soft_i++)
+                                {
+                                    fprintf(fileio_ErrCnt_log, "%d,\t", main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i]);
+                                }
+                                fprintf(fileio_ErrCnt_log, "\r\n");
+                            }
 
 				for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 				{
@@ -22391,8 +22483,6 @@ switch(global_flag_case_sim_testOpt)
 										&((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck),
 										(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
 									);
-
-
 											#ifndef RELEASE
 											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
 											{
@@ -22422,7 +22512,44 @@ switch(global_flag_case_sim_testOpt)
 											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->codeWord, 
 											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector
 										);
-
+                                                /* File Out Corrected Vector start */
+                                                /* File Out Patterns */
+                                                if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                {
+                                                    fprintPowerFormUsingAddress\
+                                                        (\
+                                                            fileio_corrected_mes[
+                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                            ], 
+                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                            "\r\n"
+                                                        );
+                                                }
+                                                /* File Out Verilog Vectors start */
+                                                if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                {
+                                                    fprintVerilogPowerFormUsingAddress\
+                                                        (
+                                                            fileio_corrected_mes_verilog[
+                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                            ], 
+                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                            NULL
+                                                        );
+                                                }
+                                                /* File Out Pattern log */
+                                                if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                {
+                                                    fprintPowerFormFullDescriptionUsingAddresss\
+                                                        (
+                                                            fileio_corrected_mes_log[
+                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                            ], 
+                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                            "\r\n"
+                                                        );
+                                                }
+                                                /* File Out Corrected Vector end */
 									}
 											
 											#ifndef RELEASE
@@ -24039,6 +24166,7 @@ switch(global_flag_case_sim_testOpt)
     if(global_flag_file_io_sd_pattern_output_log&FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
     {
         fclose(fileio_SD_received_LLR_log);
+        fclose(fileio_ErrCnt_log);
     }
 
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
