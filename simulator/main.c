@@ -254,7 +254,7 @@ unsigned int global_flag_deBugOption=0;
 
 	unsigned int global_flag_debug_display=0;
 	/*
-	#define FLAG_MASK_DISPLAY_RESULT			(1<<0)
+	#define FLAG_MASK_DISPLAY_RESULT		(1<<0)
 	#define FLAG_MASK_DISPLAY_PROGRESS		(1<<1)
 	#define FLAG_MASK_DISPLAY_FUNCNAME		(1<<2)
 	*/
@@ -313,9 +313,9 @@ unsigned int global_flag_berOptions=0;
     };
 
 	unsigned int global_flag_case_selTP_before_dec = 0;
-	
+
 	#define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT		FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
-	
+
 
 		/****************************************************/
 		/********** global flag associate wieh ber **********/
@@ -333,18 +333,18 @@ unsigned int global_flag_berOptions=0;
 			
 			FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
 		}typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
-		
-		
+
+
 			unsigned int global_flag_case_getBER_method_Display=0;
 			//if( (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS) )
 			/*
-			#define FLAG_MASK_DISPLAY_RESULT			(1<<0)
+			#define FLAG_MASK_DISPLAY_RESULT		(1<<0)
 			#define FLAG_MASK_DISPLAY_PROGRESS		(1<<1)
 			#define FLAG_MASK_DISPLAY_FUNCNAME		(1<<2)
 			*/
 
 	unsigned int global_flag_case_dec_fail_handling = 0;
-	
+
 	/* Method that re transfer is not supported yet */
 	enum FLAG_CASE_DEC_FAIL_HANDLING
 	{
@@ -352,8 +352,8 @@ unsigned int global_flag_berOptions=0;
 		FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE,
 		FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION,//not support yet
 	}typedef enum_FLAG_CASE_DEC_FAIL_HANDLING;
-	
-	
+
+
 
 
 
@@ -383,16 +383,16 @@ unsigned int global_flag_simulationCode=0;
 	};
 	
 	const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
-	{					
-		"BM",			
-		// "mSBS",			
-		"iBM",			
-		"RiBM",			
-		"SiBM",			
-		"mSBS",			
-		// "BM",			
-		"PETERSON",		
-		"EUCLIDIAN",	
+	{
+		"BM",
+		// "mSBS",
+		"iBM",
+		"RiBM",
+		"SiBM",
+		"mSBS",
+		// "BM",
+		"PETERSON",
+		"EUCLIDIAN",
 	};
 	//////////////////////////////////////////////////////////////////////////////////
 	///////////////////////* Common BCH Codes Calculations end *//////////////////////
@@ -440,7 +440,7 @@ unsigned int global_flag_simulationCode=0;
 		
             FLAG_MASK_LRB_LLR_TEST = (1<<3),        
 
-			FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),			
+			FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
 		};
 		// unsigned int global_flag_bchBM_simulationMode=0;
 		// enum BCH_BM_SIMULATION_MODE
@@ -451,10 +451,10 @@ unsigned int global_flag_simulationCode=0;
 			
 			// FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
 		// };
-		
+
 		/*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
 		/*
-		#define FLAG_MASK_DISPLAY_RESULT			(1<<0)
+		#define FLAG_MASK_DISPLAY_RESULT		(1<<0)
 		#define FLAG_MASK_DISPLAY_PROGRESS		(1<<1)
 		#define FLAG_MASK_DISPLAY_FUNCNAME		(1<<2)
 		*/
@@ -478,12 +478,12 @@ unsigned int global_flag_simulationCode=0;
 			
 			// FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
 		// };
-		
+
 		/*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
 		/*
-		#define FLAG_MASK_DISPLAY_RESULT			(1<<0)
+		#define FLAG_MASK_DISPLAY_RESULT		(1<<0)
 		#define FLAG_MASK_DISPLAY_PROGRESS		(1<<1)
-		#define DISPLAY_FUNCNAME_WORD	"funcname"
+		#define DISPLAY_FUNCNAME_WORD			"funcname"
 		#define FLAG_MASK_DISPLAY_FUNCNAME		(1<<2)
 		*/
 		#define test_mSBS_HardMes		printf("test BCH mSBS HARD ) ");
@@ -492,8 +492,8 @@ unsigned int global_flag_simulationCode=0;
 		#define test_mSBS_SoftMes		printf("test BCH mSBS SOFT ) ");
 			unsigned int global_flag_bch_mSBS_SimSD_display=0;
 			#define test_mSBS_SoftDisplayMes	printf("test BCH mSBS  SOFT DISPLAY ) ");
-			
-			
+
+
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 #define FLAG_MASK_FILE_IO	(1<<0)
@@ -532,10 +532,10 @@ unsigned int global_flag_fileInputOutput = 0;
 
 				unsigned int enviromentsOption=0;
 
-				
-/*****************************************/				
+
+/*****************************************/
 /********** Associate with AWGN **********/
-/*****************************************/				
+/*****************************************/
 #define VALUE_EBN0_WORD	"ebn0"//SET_VALUE
 /*	double main_com_EbN0 = 1.0;*/
 #define DEFAULT_VALUE_EBN0	1.0f
@@ -547,16 +547,16 @@ double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
 
 #define VALUE_EBN0_STEP_WORD	"ebn0-step"//SET_VALUE
 #define DEFAULT_VALUE_EBN0_STEP	0.25f
-double global_EbN0_Step	= DEFAULT_VALUE_EBN0_STEP;
+double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
 
 
 unsigned int global_flag_debug_awgn=0;
 #define FLAG_MASK_DEBUG_AWGN_SEQUENCE	(1<<0)
-#define debugAwgnSequenceMes	printf("SEQUENCE AWGN ) ");
-					
-					
+#define debugAwgnSequenceMes			printf("SEQUENCE AWGN ) ");
 
-/********************************************************/				
+
+
+/********************************************************/
 /********** Associate with Log Like Hood Ratio **********/
 /********************************************************/
 unsigned int global_flag_llr_display=0;
@@ -730,7 +730,7 @@ unsigned long global_minimum_loop = 0;
 unsigned long global_base_of_loop = 0;
 unsigned int global_rate_of_loop = 0;
 
-				
+
 #define VALUE_ERROR_NUM_WORD	"error-number"//SET_VALUE
 unsigned int global_ErrorNum = 0;
 
@@ -1017,7 +1017,7 @@ unsigned int global_flag_Modulation_Mode = 0;
         return 0;
     }
 
-	
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -1039,7 +1039,7 @@ double convertStringToDouble(char *string)
 
 
 	strLengh=strlen(string);
-	
+
 	if(*(string+0) == '-')
 	{
 		minusFlag = 1;
@@ -1048,8 +1048,8 @@ double convertStringToDouble(char *string)
 	{
 		minusFlag = 0;
 	}
-	
-	
+
+
 	for(i=minusFlag; i<strLengh; i++)
 	{
 		if(('0'<=*(string+i))&&((*(string+i))<='9'))
@@ -1077,7 +1077,7 @@ double convertStringToDouble(char *string)
 		}
 	}
 	if(minusFlag) tmp*=(-1.0);
-	
+
 	return tmp;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1091,7 +1091,7 @@ unsigned char convertStringToUnsignedChar(char *string)
 	{
 		return 0;
 	}
-	
+
 	strLengh=strlen(string);
 	for(i=0; i<strLengh; i++)
 	{
@@ -1205,7 +1205,7 @@ char *temporaryFunc_generateTestPatternToString(char *string, unsigned int strin
 		return NULL;
 	}
 	#endif
-	
+
 	if(!stringLength)
 	{
 		stringLength=tmpStringLength;
@@ -1274,10 +1274,10 @@ char *temporaryFunc_generateTestPatternToString(char *string, unsigned int strin
 				}
 				#endif
 			}
-		}		
+		}
 	}
-	
-	
+
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1296,7 +1296,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 
 	unsigned int i=0, j=0;
 	//unsigned char usingBitNumber=sizeof(i)*8;
-	
+
 	// unsigned char usingBitNumber = (unsigned char)(log((double)locatorArrayLength)/log(2.0));
 	unsigned char usingBitNumber = locatorArrayLength;
 	// for(i=0; i<sizeof(usingBitNumber)*8; i++)
@@ -1305,7 +1305,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 	// }
 	// usingBitNumber=i;
 	unsigned char bitLocator=0;
-	
+
 	#ifndef RELEASE
 	if(!testPattern)
 	{
@@ -1320,15 +1320,15 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 		// return -1;
 	// }
 	#endif
-	
+
 	if(!refferStringLength)
 	{
 		tmpStringLength=strlen(refferString);
 		refferStringLength=tmpStringLength;
-	}	
-	
+	}
+
 	testPattern[0]=refferString;//printf("\n");
-	
+
 	// #ifdef USING_OPEN_MP
 		// #pragma omp parallel for schedule(guided) private(i,j) shared(numsOfTestPattern, usingBitNumber, testPattern, locatorArray, refferString, refferStringLength)
 	// #endif
@@ -1342,7 +1342,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 				warningMes;	printf("free(*(testPattern+%d));\n", i);
 				#endif
 			}
-			
+
 		*(testPattern+i)=(char*)malloc(sizeof(char)*refferStringLength+1);
 										// printf("*(testPattern+i)=(char*)malloc(sizeof(char)*refferStringLength+1);\n");
 		#ifndef USING_OPEN_MP
@@ -1357,7 +1357,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 										// printf("memcpy(*(testPattern+i), refferString, sizeof(char)*refferStringLength);\n");
 		*((*(testPattern+i))+refferStringLength)=0;
 										// printf("*((*(testPattern+i))+refferStringLength)=0;\n");
-		
+
 		//use non-binary code calculate combination of bit position, j is mean that offset locator pointer
 										// printf("for(j=0; j<usingBitNumber; j++)//j is mask\n");
 		// #ifdef USING_OPEN_MP
@@ -1491,10 +1491,10 @@ char *convertPrimeNumberToString(char *string, unsigned int exponential, const u
 
 // const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX		="111";
 // const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX		="1101";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX	="11001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX	="101001";
+// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX		="11001";
+// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX		="101001";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX	="1100001";
+// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX		="1100001";
 // const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX	="11000001";
 // const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX	="101110001";
 // const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX	="1100000001";
@@ -1507,14 +1507,14 @@ char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX		="11";
 
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX		="111";
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX		="1011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX	="10011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX	="100101";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX		="10011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX		="100101";
 
 //const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX	="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX	="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX	="10001001";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX	="100011101";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX	="1000010001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX		="1000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX		="10001001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX		="100011101";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX		="1000010001";
 
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX	="10000001001";
 
@@ -1527,7 +1527,7 @@ char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8192_INVERSE_INDEX	="10000000011011";
 //char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX	="100000000100001";
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX	="100010001000011";
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX	="1000000000000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX ="10001000000001011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX	="10001000000001011";
 //////////////////////////////////////////////////////////////////////////////////
 char *global_addedRootToLCM_string=NULL;
 unsigned int global_degAddedRootToLCM=0;
@@ -1559,7 +1559,7 @@ void initPrimitivePolynomial(struct_primitivePolynomialSet *p)
 	p->PRIMITIVE_POLYNOMIAL[7]=PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX;
 	p->PRIMITIVE_POLYNOMIAL[8]=PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX;
 	p->PRIMITIVE_POLYNOMIAL[9]=PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX;
-	
+
 	p->PRIMITIVE_POLYNOMIAL[10]=PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX;
 	p->PRIMITIVE_POLYNOMIAL[11]=PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX;
 
@@ -1568,8 +1568,8 @@ void initPrimitivePolynomial(struct_primitivePolynomialSet *p)
 	p->PRIMITIVE_POLYNOMIAL[14]=PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX;
 	p->PRIMITIVE_POLYNOMIAL[15]=PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX;
 	p->PRIMITIVE_POLYNOMIAL[16]=PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX;
-	
-	
+
+
 }
 void initPrimitivePolynomial_inversed(struct_primitivePolynomialSet *inversed, struct_primitivePolynomialSet *non_inversed)
 {
@@ -1593,9 +1593,9 @@ void initPrimitivePolynomial_inversed(struct_primitivePolynomialSet *inversed, s
 			else{ errorMes; printf("detected!!! ilegal word, 0x%02x, %c", *(non_inversed->PRIMITIVE_POLYNOMIAL[i]+j), *(non_inversed->PRIMITIVE_POLYNOMIAL[i]+j)); return; }
 			bitLoc++;
 		}
-		
+
 	}
-	
+
 	inversed->PRIMITIVE_POLYNOMIAL_NUMBER=non_inversed->PRIMITIVE_POLYNOMIAL_NUMBER;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1616,9 +1616,9 @@ void printPowerFormWithEnter(char_POWER_FORM *p)
 {
 	unsigned int length = strlen(p);
 	unsigned int i;
-	
+
 	printf("power form polynomial length is %d\n", length);
-	
+
 	printf("\"");
 	for(i=0; i<length; i++)
 	{
@@ -1638,7 +1638,7 @@ void printPowerFormWithEnter(char_POWER_FORM *p)
 		}
 	}
 	printf("\"\n");
-	
+
 	for(i=0; i<length; i++)
 	{
 		if(*(p+i)=='0')
@@ -1682,7 +1682,7 @@ struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
 		return NULL;
 	}
 	#endif
-	
+
 	p=(struct_powerFormPolynomials*)malloc(sizeof(struct_powerFormPolynomials));
 	memset(p, 0, sizeof(struct_powerFormPolynomials));
 
@@ -1690,15 +1690,15 @@ struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
 	p->length=length;
 
 	p->usedLength=length;
-	
+
 	p->equation=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(length+1));//+1 is to null
 	memset(p->equation, '0', sizeof(char_POWER_FORM)*(length));
 	*(p->equation+length)=0;
-	
+
 	/*quantization setting. default setting is zero.*/
 	// p->llrMask=0;
 	// p->llr=NULL;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1716,14 +1716,14 @@ struct_powerFormPolynomials *createPowerFormPolynomialUsingString(char *string, 
 		return NULL;
 	}
 	#endif
-	
+
 	if(!strLength)
 	{
 		strLength=strlen(string);
 	}
-	
+
 	p = createPowerFormPolynomial(strLength);
-	
+
 /* 	memcpy(p->equation, string, strLength); */
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(strLength, string, p)
@@ -1762,7 +1762,7 @@ struct_powerFormPolynomials *createPowerFormPolynomialUsingString(char *string, 
 		}
 	}
 	*(p->equation+strLength)=0;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1784,7 +1784,7 @@ char closePowerFormPolynomial(struct_powerFormPolynomials **p)
 		return -1;
 	}
 	#endif
-	
+
 	if((*p)->equation)
 	{
 		free((*p)->equation);
@@ -1793,7 +1793,7 @@ char closePowerFormPolynomial(struct_powerFormPolynomials **p)
 	// {
 		// free((*p)->llr);
 	// }
-	
+
 	free((*p));
 	*p=NULL;
 	return 0;
@@ -1810,7 +1810,7 @@ struct_powerFormPolynomials *recreatePowerFormPolynomial(struct_powerFormPolynom
 			printf("*p will be closePowerFormPolynomial(p).\n");
 		}
 		#endif
-		
+
 		closePowerFormPolynomial(p);
 	}
 	*p=createPowerFormPolynomial(length);
@@ -1821,11 +1821,11 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 {
 	unsigned int i;
 	unsigned int strLength;
-	
+
 	unsigned int tmp_length=0;
 	unsigned int tmp_usedLength=0;
 	char_POWER_FORM *tmp_char_powerForm=NULL;
-	
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -1833,7 +1833,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 		printf("in setPowerFormPolynomialUsingStringAddr, struct_powerFormPolynomials p is NULL\n");
 		return -1;
 	}
-	
+
 	if(!string)
 	{
 		errorMes;
@@ -1841,7 +1841,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 		return -1;
 	}
 	#endif
-	
+
 	#ifndef RELEASE
 	if(!usedLength)
 	{
@@ -1862,7 +1862,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 		}
 	}
 	#endif
-	
+
 	#ifndef RELEASE
 	if(length<usedLength)
 	{
@@ -1871,7 +1871,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 		return -1;
 	}
 	#endif
-	
+
 	#ifndef RELEASE
 	if(!(p->length))
 	{
@@ -1908,12 +1908,12 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 	}
 	#endif
 
-	
+
 	/* backuped */
 	tmp_length=p->length;
 	tmp_usedLength=p->usedLength;
 	tmp_char_powerForm=p->equation;
-	
+
 	p->length=length;
 	p->usedLength=usedLength;
 	p->equation=((char_POWER_FORM*)string);
@@ -1935,7 +1935,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 	{
 		free(tmp_char_powerForm);
 	}
-	
+
 	return 0;
 }
 
@@ -1952,7 +1952,7 @@ char setPowerFormPolynomialUsingStringAddr_clearStringPointer(struct_powerFormPo
 		return -1;
 	}
 	*string = NULL;
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -1969,7 +1969,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 		return -1;
 	}
 	#endif
-	
+
 	strLength=strlen(string);
 	if(strLength>p->length)
 	{
@@ -1985,7 +1985,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 		return -1;
 	}
 	#endif
-	
+
 	backupP = (char*)malloc(sizeof(char)*(p->length+1));
 	#ifndef USING_OPEN_MP
 	memcpy(backupP, p->equation, sizeof(sizeof(char)*(p->usedLength+1)));
@@ -1997,7 +1997,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 	}
 	#endif
 	*(backupP+p->usedLength)=0;
-	
+
 	#ifndef USING_OPEN_MP
 	memcpy(p->equation, string, sizeof(char)*(strLength+1));
 	#else
@@ -2008,7 +2008,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 	}
 	#endif
 	*(p->equation+strLength)=0;
-	
+
 			#ifndef RELEASE
 			for(i=0; i<strLength; i++)
 			{
@@ -2039,7 +2039,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 				printPowerFormWithEnter(p->equation);
 			}
 			#endif
-	
+
 	free(backupP);
 	return 0;
 }
@@ -2075,10 +2075,10 @@ struct_powerFormPolynomials *recreatePowerFormPolynomialUsingString(struct_power
 		closePowerFormPolynomial(p);
 	}
 	#endif
-	
-	
+
+
 	if(!strLength) strLength = strlen(string);
-	
+
 	*p=createPowerFormPolynomialUsingString(string, strLength);
 	return *p;
 }
@@ -2127,13 +2127,13 @@ void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned i
 		printf("non-shifted codeWord is\n\"%s\".\n", p->equation);
 	}
 	#endif
-	
+
 	buffer=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(p->usedLength-length));
 	memcpy(buffer, p->equation, sizeof(char_POWER_FORM)*(p->usedLength-length));
 	memset(p->equation, '0', sizeof(char_POWER_FORM)*length);
 	memcpy(p->equation+length, buffer, sizeof(char_POWER_FORM)*(p->usedLength-length));
 	*(p->equation+p->usedLength)=0;//insert NULL
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -2173,7 +2173,7 @@ unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFo
 {
 	unsigned int i;
 	unsigned int result=0;
-	
+
 	#ifndef RELEASE
 	if(!p1)
 	{
@@ -2194,7 +2194,7 @@ unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFo
 		return -1;
 	}
 	#endif
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(p1, p2) reduction(+:result)
 	#endif
@@ -2222,7 +2222,7 @@ void printPowerFormWithEnterPolynomialAndInfoUsingAddress(struct_powerFormPolyno
 		printf("in printPowerFormWithEnterPolynomialAndInfoUsingAddress, struct_powerFormPolynomials *p\n");
 		return;
 	}
-	
+
 	printf("Stored length is \'%d\' and used length of struct_powerFormPolynomials is \'%d\'\n", p->length, p->usedLength);
 	printf("value : \"");
 	printf("%s", p->equation);
@@ -2232,7 +2232,7 @@ void printPowerFormWithEnterPolynomialAndInfoUsingAddress(struct_powerFormPolyno
 void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPolynomials *p)
 {
 	unsigned int i;
-	
+
 	unsigned int even_bit;
 	unsigned int odd_bit;
 	unsigned int all_bit;
@@ -2242,7 +2242,7 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
 		printf("in printPowerFormWithEnterPolynomialWithEnterUsingAddress, struct_powerFormPolynomials *p\n");
 		return;
 	}
-	
+
 	//printf("%s", p->equation);
 	even_bit = 0;
 	odd_bit = 0;
@@ -2259,7 +2259,7 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
 			}
 			else if(*(p->equation+i) == '1')
 			{
-				odd_bit ^= 1;				
+				odd_bit ^= 1;
 				all_bit ^= 1;
 			}
 			else
@@ -2277,7 +2277,7 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
 			}
 			else if(*(p->equation+i) == '1')
 			{
-				even_bit ^= 1;				
+				even_bit ^= 1;
 				all_bit ^= 1;
 			}
 			else
@@ -2286,12 +2286,12 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
 				printf("character is not '0' and '1'\n");
 			}
 		}
-		
+
 	}
 	printf("[even]:%d",even_bit);
 	printf("[odd]:%d",odd_bit);
 	printf("[all]:%d",all_bit);
-	printf("[used]:%d", p->usedLength);	
+	printf("[used]:%d", p->usedLength);
 	printf("[strLen]:%d", strlen(p->equation));
 	printf("[full]:%d\n", p->length);
 }
@@ -2304,14 +2304,14 @@ void printPowerFormWithEnterPolynomialWithTapUsingAddress(struct_powerFormPolyno
 		printf("in printPowerFormWithEnterPolynomialWithTapUsingAddress, struct_powerFormPolynomials *p\n");
 		return;
 	}
-	
+
 	printf("%s\t", p->equation);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2)
 {
 	unsigned int i;
-	
+
 	if(!p1)
 	{
 		errorMes;
@@ -2330,7 +2330,7 @@ void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struc
 		printf("in printPowerFormExclusivedUsingAddress, p1->usedLength!=p2->usedLength\n");
 		return;
 	}
-	
+
 
 	for(i=0; i<p1->usedLength; i++)
 	{
@@ -2368,7 +2368,7 @@ void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struc
 		{
 			printf("X");
 		}
-	
+
 	}
 	printf("[used]:%d", p1->usedLength);
 	printf("[full]:%d,%d\n", p1->length, p2->length);
@@ -2424,7 +2424,7 @@ void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p
 void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolynomials *p, char *str_tail)
 {
 	unsigned int i;
-	
+
 	unsigned int even_bit;
 	unsigned int odd_bit;
 	unsigned int all_bit;
@@ -2445,7 +2445,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
 	    return;
 	}
     #endif
-	
+
 	//printf("%s", p->equation);
 	even_bit = 0;
 	odd_bit = 0;
@@ -2463,7 +2463,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
 			}
 			else if(*(p->equation+i) == '1')
 			{
-				odd_bit ^= 1;				
+				odd_bit ^= 1;
 				all_bit ^= 1;
 			}
 			else
@@ -2480,7 +2480,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
 			}
 			else if(*(p->equation+i) == '1')
 			{
-				even_bit ^= 1;				
+				even_bit ^= 1;
 				all_bit ^= 1;
 			}
 			else
@@ -2488,7 +2488,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
                 illegal_bit++;
 			}
 		}
-		
+
 	}
 	fprintf(fp, "[even]:%d",even_bit);
 	fprintf(fp, "[odd]:%d",odd_bit);
@@ -2543,9 +2543,9 @@ char setVariableSetConvertBitStreamToPowerForm(struct_variableSetConvertBitStrea
 		return -1;
 	}
 	#endif
-	
+
 	p->data=data;
-	
+
 	p->dataBitLength=dataBytes*8;
 	p->codeWordPerDataNumber=infoBitLength/(p->dataBitLength);
 	if(p->codeWordPerDataNumber)//infoBitLength>(p->dataBitLength)
@@ -2561,11 +2561,11 @@ char setVariableSetConvertBitStreamToPowerForm(struct_variableSetConvertBitStrea
 		p->totalCodeWordNumber=0;
 	}
 	p->totalDataNumber=arrayIndex;
-	
+
 	p->countedCodeWordNumber=0;
-	
+
 	p->countedDataNumber=0;
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -2712,7 +2712,7 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 		variables->countedCodeWordNumber++;
 	}
 	/*load 1 codeword end*/
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -2746,21 +2746,21 @@ struct_galoisFieldPolyForm *createPolyForm(unsigned int length)
 		return NULL;
 	}
 	#endif
-	
+
 	p = (struct_galoisFieldPolyForm*)malloc(sizeof(struct_galoisFieldPolyForm));
 	memset(p, 0, sizeof(struct_galoisFieldPolyForm));
-	
+
 	//p->bits=&(p->length);
-	
+
 	p->length=length;
-	
+
 	p->value = (char_GALOIS_FIELD_VALUE*)malloc((sizeof(char_GALOIS_FIELD_VALUE)*length)+1);//+1 is to null.
 	memset(p->value, '0', sizeof(char_GALOIS_FIELD_VALUE)*length);
 	*(p->value+length)=0;//insert null.
-	
+
 	p->intValue=0;
 	p->index=0;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -2779,7 +2779,7 @@ void closePolyForm(struct_galoisFieldPolyForm **p)
 		return;
 	}
 	#endif
-	
+
 	free((*p)->value);
 	free((*p));
 	*p=NULL;
@@ -2796,7 +2796,7 @@ struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, uns
 			printf("*p will be closePolyForm(p).\n");
 		}
 		#endif
-		
+
 		closePolyForm(p);
 	}
 	*p=createPolyForm(length);
@@ -2807,7 +2807,7 @@ unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p
 {
 	unsigned int i;
 	unsigned int result=0;
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(p) reduction(|:result)
 	#endif
@@ -2923,7 +2923,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
 		printf("in inputValueToPolyForm, %s(%d) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
 	}
 	#endif
-	
+
 	#ifndef RELEASE
 	for(i=0; i<p->length; i++)
 	{
@@ -3037,7 +3037,7 @@ char checkAllValueUsingCharacterFromPolyForm(struct_galoisFieldPolyForm *p, char
 		return 0;
 	}
 	#endif
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		if((*(p->value+i))!=c)
@@ -3066,7 +3066,7 @@ char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *stri
 		return 0;
 	}
 	#endif
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		if((*(string+i)!='0')&&(*(string+i)!='1'))
@@ -3115,10 +3115,10 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 		return NULL;
 	}
 	#endif
-	
+
 	p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
 	memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3130,7 +3130,7 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList)
 {
 	unsigned int i;
-	
+
 	struct_galoisFieldPolyForm **newGaloisFieldPolyForm=NULL;
 	#ifndef RELEASE
 	if(!(*p))
@@ -3146,8 +3146,8 @@ char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**
 		return -1;
 	}
 	#endif
-	
-	
+
+
 	#ifndef RELEASE
 	if(!addedLengthOfList)
 	{
@@ -3156,9 +3156,9 @@ char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**
 		return 0;
 	}
 	#endif
-	
-	
-	
+
+
+
 	/* Sometime realloc has memory leakage. So to increase memory size, using this func is invalid. */
 	//p=(struct_galoisFieldPolyForm**)realloc(p, sizeof(struct_galoisFieldPolyForm*)*addedLengthOfList);
 	newGaloisFieldPolyForm=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*(lengthOfList+addedLengthOfList));
@@ -3191,15 +3191,15 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 		printf("closeListOfGaloisField **p is NULL\n");
 		return -1;
 	}
-	
+
 	if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
 	{
 		printf("in closeListOfGaloisField, struct_galoisFieldPolyForm p = \'0x%x\'\n", p);
 		printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%x\'\n", *p);
 	}
 	#endif
-	
-	
+
+
 	free (*p);
 	*p=NULL;
 	return 0;
@@ -3273,7 +3273,7 @@ char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPo
 	{
 		*(to+i)=*(from+i);
 	}
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3301,7 +3301,7 @@ char createGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned in
 		return -1;
 	}
 	#endif
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(lengthOfList, p, lengthOfPolyForm)
 	#endif
@@ -3336,7 +3336,7 @@ char closeGaloisFieldElementsAtList(struct_galoisFieldPolyForm ***p, unsigned in
 		return -1;
 	}
 	#endif
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(lengthOfList, p)
 	#endif
@@ -3382,7 +3382,7 @@ struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int l
 				#endif
 		return NULL;
 	}
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3426,7 +3426,7 @@ struct struct_galoisFieldElements
 {
 	unsigned int length;
 	struct_galoisFieldPolyForm **element;
-	
+
 	struct_summationMatrix *summationReferMatrix;
 }typedef struct_galoisFieldElements;
 //////////////////////////////////////////////////////////////////////////////////
@@ -3447,7 +3447,7 @@ struct_galoisFieldElements *createGaloisFieldExceptElements(unsigned int numberO
 	}
 	p=(struct_galoisFieldElements*)malloc(sizeof(struct_galoisFieldElements));
 	memset(p, 0, sizeof(struct_galoisFieldElements));
-	
+
 	p->length=numberOfElement;
 	p->element=createListOfGaloisField(numberOfElement);
 	return p;
@@ -3460,7 +3460,7 @@ struct_galoisFieldElements *createGaloisFieldExceptElements_VariableLength()
 
 	p=(struct_galoisFieldElements*)malloc(sizeof(struct_galoisFieldElements));
 	memset(p, 0, sizeof(struct_galoisFieldElements));
-	
+
 //	p->length=numberOfElement;
 //	p->element=createListOfGaloisField(numberOfElement);
 	return p;
@@ -3482,8 +3482,8 @@ char addLengthOfGaloisFieldExceptElements_VariableLength(struct_galoisFieldEleme
 		return -1;
 	}
 	#endif
-	
-	
+
+
 	if(!(p->length))
 	{
 		if(!(p->element))
@@ -3529,7 +3529,7 @@ char closeGaloisFieldExceptElements(struct_galoisFieldElements **p)
 		return -1;
 	}
 	#endif
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
 			{
@@ -3580,7 +3580,7 @@ struct_galoisFieldElements *recreateGaloisFieldExceptElements(struct_galoisField
 struct_galoisFieldElements *createGaloisFieldAndElements(unsigned int numberOfElement, unsigned int polyLength)
 {
 	unsigned int i;
-	
+
 	struct_galoisFieldElements *p;
 
 	#ifndef RELEASE
@@ -3594,9 +3594,9 @@ struct_galoisFieldElements *createGaloisFieldAndElements(unsigned int numberOfEl
 
 	p = (struct_galoisFieldElements*)malloc(sizeof(struct_galoisFieldElements));
 	memset(p, 0, sizeof(struct_galoisFieldElements));
-	
+
 	p->length=numberOfElement;
-	
+
 	p->element = createListOfGaloisFieldAndComponents(numberOfElement, polyLength);
 
 			#ifndef RELEASE
@@ -3625,9 +3625,9 @@ char closeGaloisFielsAndElements(struct_galoisFieldElements **p)
 		return -1;
 	}
 	#endif
-	
+
 	closeListOfGaloisFieldAndElements(&((*p)->element), (*p)->length);
-	
+
 	free((*p));
 	*p=NULL;
 	return 0;
@@ -3656,7 +3656,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 	unsigned int i,j;
 
 	char_GALOIS_FIELD_VALUE shiftBuffer;
-	
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -3668,7 +3668,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 		return -3;
 	}
 	#endif
-	
+
 
 	*((*(p->element+1))->value+0)='1';
 	// printf("((*(p->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->element+1))->length), (sizeof(uint32_t)*8));
@@ -3677,7 +3677,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 		(*(p->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->element+1));
 	}
 	(*(p->element+1))->index=1;
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -3686,8 +3686,8 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 				printf("(*(p->element+0))->length = %d\n", (*(p->element+0))->length);
 			}
 			#endif
-	
-	
+
+
 	// printf("[%05d]%s\n", 0,(*(p->element+0))->value);
 	// printf("[%05d]%s\n", 1,(*(p->element+1))->value);
 	infoMes; printf("[START][Generating GaloisField Elements]\n");
@@ -3701,7 +3701,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 		(*((*(p->element+i))->value+j))='0';
 		(*((*(p->element+i))->value+(*(p->element+i))->length))=0;
 		// (*((*(p->element+i-1))->value+((*(p->element+i))->length-1)))=0;
-		
+
 		if(shiftBuffer=='1')
 		{
 			for(j=0; j<(*(p->element+i))->length; j++)
@@ -3717,14 +3717,14 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 			}
 			shiftBuffer='0';
 		}
-		
+
 		
 		if(((*(p->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
 		{
 			(*(p->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->element+i));
 		}
 		(*(p->element+i))->index=i;
-		
+
 		// printf("[%05d]%s\n", i,(*(p->element+i))->value);
 	}
 	infoMes; printf("[END][Generating GaloisField Elements]\n");
@@ -3745,14 +3745,14 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 		/* create conjugacy Class (static) */
 		// p->conjugacies=createConjugacyClasses(p);
 		// calculateConjugacyClasses(p, p->conjugacies);
-		
+
 		/* create conjugacy Class (variable) */
 		// p->conjugacies=createConjugacyClasses_VariableLength();
 		/* 
 		infoMes; printf("[START][Generating conjugacy set]\n");
 		calculateConjugacyClasses_VariableLength(p, p->conjugacies);
 		infoMes; printf("[END][Generating conjugacy set]\n");
-		
+
 		#ifndef RELEASE
 		if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
 		{
@@ -3773,7 +3773,7 @@ struct_galoisFieldElements *createGaloisField(struct_powerFormPolynomials *primi
 		errorMes; printf("in createGaloisField, createGaloisFieldAndElements return NULL.\r\n");
 		return p;
 	}
-	
+
 	if(calculateGaloisField(primitivePolynomial, p))
 	{
 		errorMes; printf("in createGaloisField, calculateGaloisField return not 0.\r\n");
@@ -3789,7 +3789,7 @@ char closeGaloisField(struct_galoisFieldElements **p)
 	if(!p) return -1;
 	if(!(*p)) return -2;
 	#endif
-	
+
 	if(closeGaloisFielsAndElements(p))
 	{
 		return -3;
@@ -3820,13 +3820,13 @@ struct struct_galoisFieldElements
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p)
 {
 	unsigned int tmp_i=0;
-	
+
 	#ifndef RELEASE
 	if(!p) return;
 	#endif
-	
+
 	printf(">> Galois Field File I/O Form <<\n");
-	
+
 	printf("pow(index), string, int value\r\n");
 	printf("%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
 	for(tmp_i=1; tmp_i<p->length; tmp_i++)
@@ -3842,9 +3842,9 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	fileio = fopen(path, "w");
-	
+
 	fprintf(fileio, "primitive polynomials, %s\r\n", primitivePoly);
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START);
@@ -3854,7 +3854,7 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	fprintf(fileio, "Kind Of Data, %d\r\n", FILE_IO_KIND_OF_DATA_GALOIS_FIELDS);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END);
 
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_START);
 	fprintf(fileio, "Saved Data Type, %d\r\n", FILD_IO_DATA_ARRAY_TYPE_LINEAR);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_END);
@@ -3862,7 +3862,7 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_START);
 	fprintf(fileio, "Bit Width, %d\r\n", (*(p->element+0))->length);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START);
 	fprintf(fileio, "galois field row length, %d\r\n", p->length);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END);
@@ -3870,7 +3870,7 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START);
 	fprintf(fileio, "galois field column length, %d\r\n", 1);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
-	
+
 	fprintf(fileio, "pow(index),string,intValue\r\n");
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
 	fprintf(fileio, "%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
@@ -3880,11 +3880,11 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	}
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END);
 
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END);
-	
+
 	fclose(fileio);
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3895,7 +3895,7 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	
 	unsigned int primitivePoly_length=0;
 	char load_primitivePoly[1025];
-	
+
 	int load_kindOfData=0;
 	int load_saveOfData=0;
 
@@ -3908,22 +3908,22 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	// char load_exp_str[256]={0};
 	char load_exp_char=0;
 	unsigned int load_exp_integer=0;
-	
-	
+
+
 	unsigned int load_integer=0;
 
 	char charBuf=0;
 	char load_stringBuf[1025]={0};
 
-	
+
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	load_fileio_GF = fopen(path, "r");
-	
+
 			printf("[load_struct_galoisFieldElements START]\r\n");
-	
+
 	fscanf(load_fileio_GF, "primitive polynomials, %s\r\n", load_primitivePoly);
 			// printf("primitive polynomials, %s\r\n", load_primitivePoly);
 
@@ -3937,7 +3937,7 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 
-	
+
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 	fscanf(load_fileio_GF, "Saved Data Type, %d\r\n", &load_saveOfData);
@@ -3950,7 +3950,7 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 		//(*(p->element+0))->length
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
-	
+
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 	fscanf(load_fileio_GF, "galois field row length, %d\r\n", &load_row);
@@ -3964,10 +3964,10 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 		//1
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
-	
+
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			//printf("%s\r\n", load_stringBuf);
-	
+
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 /* 	fscanf(load_fileio_GF, "%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
@@ -4000,14 +4000,14 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 
-	
+
 	fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
 				// printf("%s\r\n", load_stringBuf);
 
 	fclose(load_fileio_GF);
-	
+
 				printf("[load_struct_galoisFieldElements END]\r\n");
-	
+
 			#ifndef RELEASE
 				if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
 				{
@@ -4015,7 +4015,7 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 					printGaloisFieldSavedForm(p);
 				}
 			#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -4044,7 +4044,7 @@ char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galo
 	}
 	#endif
 
-	#ifndef RELEASE	
+	#ifndef RELEASE
 	if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 	{
 		logMes;
@@ -4057,7 +4057,7 @@ char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galo
 		printf("exceed order is cleared to all zero.");
 	}
 	#endif
-	
+
 	if(copyListOfGaloisField(to->element, from->element, from->length))
 	{
 		return -1;
@@ -4076,7 +4076,7 @@ char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galo
 char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldElements *field, struct_galoisFieldElements *convertedPolynomial)
 {
 	unsigned int i;
-	
+
 	char *p;
 
 	#ifndef RELEASE
@@ -4093,10 +4093,10 @@ char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldEleme
 		return NULL;
 	}
 	#endif
-	
+
 	p=(char*)malloc(sizeof(char)*(convertedPolynomial->length+1));
 	*(p+convertedPolynomial->length)=0;
-	
+
 	for(i=0; i<convertedPolynomial->length; i++)
 	{
 		if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_((*(convertedPolynomial->element+i)), (*(field->element+0))))
@@ -4156,7 +4156,7 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoi
 		printf("string : \"%s\"\n", string);
 	}
 	#endif
-	
+
 	for(i=0; i<field->length; i++)
 	{
 		if(checkValueUsingStringFromPolyForm(*(field->element+i), string)) return (*(field->element+i));
@@ -4186,9 +4186,9 @@ struct_galoisFieldPolyForm *invertValueElementOfGaloisField(struct_galoisFieldEl
 		return NULL;
 	}
 	#endif
-	
+
 	buffer = (char_GALOIS_FIELD_VALUE*)malloc(sizeof(char_GALOIS_FIELD_VALUE)*(p->length+1));
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		if(*(p->value+i)=='0')
@@ -4203,7 +4203,7 @@ struct_galoisFieldPolyForm *invertValueElementOfGaloisField(struct_galoisFieldEl
 			break;
 		}
 	}
-	
+
 	for(; i<p->length; i++)
 	{
 		if(*(p->value+i)=='0')
@@ -4224,7 +4224,7 @@ struct_galoisFieldPolyForm *invertValueElementOfGaloisField(struct_galoisFieldEl
 		}
 	}
 	*(buffer+i)=0;
-		
+
 	elementBuffer=findSameElementOfGaloisFieldUsingString(field, buffer);
 	free(buffer);
 	return elementBuffer;
@@ -4242,8 +4242,8 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisField_finding(struct_galo
 		return -1;
 	}
 	#endif
-	
-	
+
+
 	for(i=0; i<field->length; i++)
 	{
 		if(checkValueFromPolyFormUsingGaloisFieldValue (*(field->element+i), p)) return i;
@@ -4264,7 +4264,7 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_ga
 		printf("in abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex, field poly length: %d, target field poly length: %d.\n", (*(field->element))->length, p->length);
 		return -1;
 	}
-	
+
 	return p->index;
 	// for(i=0; i<field->length; i++)
 	// {
@@ -4284,7 +4284,7 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIntValue(struct
 		return -1;
 	}
 	#endif
-	
+
 	for(i=0; i<field->length; i++)
 	{
 		if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(field->element+i), p)) return i;
@@ -4311,8 +4311,8 @@ struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisF
 		printf("in *invertExponentialElementInGaloisField, struct_galoisFieldPolyForm *operand is NULL.\n");
 	}
 	#endif
-	
-	
+
+
 	exponential = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(field, operand);
 	if(!exponential)
 	{
@@ -4320,7 +4320,7 @@ struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisF
 	}
 	exponential-=1;
 	exponential=((field->length-1)-exponential)%(field->length-1);
-	
+
 	return *(field->element+exponential+1);
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -4386,7 +4386,7 @@ struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(
 			return (*(field->element+i));
 		}
 	}
-	
+
 			#ifndef RELEASE
 			errorMes; printf("in *summationElementsInGaloisFieldUsingGaloisFieldValue, checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(field->element+i), temp) is not working...\n");
 			errorMes; printf("operandA->length = \'%d\', ADDR : 0x%x, operandB->length = \'%d\', ADDR : 0x%x\n", operandA->length, operandA, operandB->length, operandB);
@@ -4446,7 +4446,7 @@ struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldInt_fi
 			return (*(field->element+i));
 		}
 	}
-	
+
 			#ifndef RELEASE
 			errorMes; printf("in summationElementsInGaloisFieldUsingGaloisFieldInt_finding, can't find same integer value(%d ^ %d = %d).\n", (operandA->intValue), (operandB->intValue), temp);
 			#endif
@@ -4459,7 +4459,7 @@ struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsig
 {
 	unsigned int i;
 	struct_summationMatrix *p;
-	
+
 	#ifndef RELEASE
 	if(!row)
 	{
@@ -4474,10 +4474,10 @@ struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsig
 		return NULL;
 	}
 	#endif
-	
-	
+
+
 	p=(struct_summationMatrix*)malloc(sizeof(struct_summationMatrix));
-	
+
 	p->element=(struct_galoisFieldPolyForm ***)malloc(sizeof(struct_galoisFieldPolyForm **)*row);
 	for(i=0; i<row; i++)
 	{
@@ -4508,9 +4508,9 @@ char closeSummationMatrix(struct_summationMatrix **p)
 		free(*((*p)->element+i));
 	}
 	free((*p)->element);
-	
+
 	free(*p);
-	
+
 	*p=NULL;
 	return 0;
 }
@@ -4518,21 +4518,21 @@ char closeSummationMatrix(struct_summationMatrix **p)
 char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_summationMatrix *p)
 {
 	unsigned int i,j;
-	
+
 	unsigned int tmp_row;
 	unsigned int tmp_column;
-	
+
 	#ifndef RELEASE
 	if(!galoisFields)
 	{
 		return -1;
 	}
-	
+
 	if(!p)
 	{
 		return -2;
 	}
-	
+
 	if(!(p->row))
 	{
 		return -3;
@@ -4542,10 +4542,10 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
 		return -4;
 	}
 	#endif
-	
+
 	tmp_row = p->row;
 	tmp_column = p->column;
-	
+
 			#ifndef RELEASE
 			infoMes;  printf("calculating a struct_summationMatrix ");
 			#endif
@@ -4649,9 +4649,9 @@ void printSummationMatrixSavedForm(struct_summationMatrix *p)
 		return;
 	}
 	#endif
-	
+
 	printf(">> Summation Matrix File I/O Form <<\n");
-	
+
 	for(tmp_i=0; tmp_i<p->row; tmp_i++)
 	{
 		for(tmp_j=0; tmp_j<p->column; tmp_j++)
@@ -4670,10 +4670,10 @@ void printSummationMatrixSavedForm(struct_summationMatrix *p)
 					'-', 
 					(*((*(p->element+tmp_i))+tmp_j))->index, 
 					((tmp_j<(p->column-1))?", ":"")
-				);	
+				);
 
 			}
-			
+
 		}
 		printf("\r\n");
 	}
@@ -4695,19 +4695,19 @@ char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summati
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	fileio = fopen(path, "w");
-	
+
 	fprintf(fileio, "primitive polynomials, %s\r\n", primitivePoly);
 
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_START);
 	fprintf(fileio, "Kind Of Data, %d\r\n", FILE_IO_KIND_OF_DATA_SUMATION_MATRIX);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END);
 
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_START);
 	fprintf(fileio, "Saved Data Type, %d\r\n", FILD_IO_DATA_ARRAY_TYPE_LINEAR);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_END);
@@ -4715,17 +4715,17 @@ char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summati
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_START);
 	fprintf(fileio, "Bit Width, %d\r\n", (*((*(p->element+0))+0))->length);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END);
-	
+
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START);
 	fprintf(fileio, "Matrix row length, %d\r\n", p->row);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END);
 
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START);
 	fprintf(fileio, "Matrix column length, %d\r\n", p->column);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
-	
+
 	fprintf(fileio, "pow(index)\r\n");
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
@@ -4747,19 +4747,19 @@ char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summati
 					'-', 
 					(*((*(p->element+tmp_i))+tmp_j))->index, 
 					((tmp_j<(p->column-1))?", ":"")
-				);	
+				);
 
 			}
-			
+
 		}
 		fprintf(fileio, "\r\n");
 	}
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END);
-	
+
 	fclose(fileio);
-		
+
 	return 0;
 }
 char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_summationMatrix *p)
@@ -4767,49 +4767,49 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 	unsigned int tmp_i=0;
 	unsigned int tmp_j=0;
 	FILE *fileio_load_sumMatrix;
-	
+
 	unsigned int primitivePoly_length=0;
 	char load_primitivePoly[1025];
-	
+
 	int load_kindOfData=0;
 	int load_saveOfData=0;
-	
+
 	unsigned int load_bitWidth;
 	unsigned int load_row;
 	unsigned int load_column;
-	
+
 	unsigned int load_index;
 	// char load_exp_str[256]={0};
 	char load_exp_char=0;
 	unsigned int load_exp_integer=0;
-	
-	
+
+
 	unsigned int load_integer=0;
 
 	char charBuf=0;
 	char load_stringBuf[1025]={0};
-	
+
 	unsigned int chk_incorrectFormCnt=0;
 	unsigned int chk_incorrectDataCnt=0;
-	
+
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	/* condition chk */
 	if(!(primitivePoly_length=strlen(primitivePoly)))
 	{
 		return -4;
 	}
-	
-	
+
+
 	/* buffer set up to varify */
-	
-	
+
+
 	fileio_load_sumMatrix = fopen(path, "r");
-	
+
 				printf("[load_struct_summationMatrix START]\r\n");
-	
+
 	if(fscanf(fileio_load_sumMatrix, "primitive polynomials, %s\r\n", load_primitivePoly)<0)			chk_incorrectFormCnt++;
 			// printf("primitive polynomials, %s\r\n", load_primitivePoly);
 		// if(strcmp(load_primitivePoly, primitivePoly))
@@ -4819,7 +4819,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START
-	
+
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)	chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_START
 	if(fscanf(fileio_load_sumMatrix, "Kind Of Data, %d\r\n", &load_kindOfData)<0)	chk_incorrectFormCnt++;
@@ -4827,7 +4827,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END
 
-	
+
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_START
 	if(fscanf(fileio_load_sumMatrix, "Saved Data Type, %d\r\n", &load_saveOfData)<0)		chk_incorrectFormCnt++;
@@ -4845,7 +4845,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 		// }
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END
-	
+
 
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START
@@ -4853,13 +4853,13 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 			// printf("Matrix row length, %d\r\n", load_row);
 		// if(p->row != load_row)
 		// {
-			// chk_incorrectDataCnt++;	
+			// chk_incorrectDataCnt++;
 		// }
-	
+
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)			chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END
 
-	
+
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START
 	if(fscanf(fileio_load_sumMatrix, "Matrix column length, %d\r\n", &load_column)<0)					chk_incorrectFormCnt++;
@@ -4926,11 +4926,11 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END
 	if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)		chk_incorrectFormCnt++;
 		// printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END
-	
+
 	fclose(fileio_load_sumMatrix);
-	
+
 				printf("[load_struct_summationMatrix END]\r\n");
-	
+
 			#ifndef RELEASE
 			if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)	
 			{
@@ -4940,7 +4940,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 			#endif
 
 
-	
+
 	if(chk_incorrectFormCnt || chk_incorrectDataCnt)	return 1;
 	else												return 0;
 }
@@ -5058,7 +5058,7 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
 	{
 		return *(field->element+exponentialOfOperandA);
 	}
-	
+
 	exponentialSummation=((exponentialOfOperandA-1)+(exponentialOfOperandB-1))%(field->length-1);
 
 			#ifndef RELEASE
@@ -5140,7 +5140,7 @@ char initEquation(struct_galoisFieldElements *galoisFields, struct_galoisFieldEl
 	}
 	#endif
 
-	
+
 	(*(p->element+0)) = (*(galoisFields->element+1));
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(p, galoisFields)
@@ -5177,7 +5177,7 @@ char initEquationFillAllZero(struct_galoisFieldElements *galoisFields, struct_ga
 	}
 	#endif
 
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(p, galoisFields)
 	#endif
@@ -5226,7 +5226,7 @@ char initBinEquationUsingStr(struct_galoisFieldElements *galoisFields, struct_ga
 	}
 	#endif
 
-	
+
 	tmp_cnt=0;
 	// #ifdef USING_OPEN_MP
 	// #pragma omp parallel for schedule(guided) private(i) shared(p, galoisFields)
@@ -5247,13 +5247,13 @@ char initBinEquationUsingStr(struct_galoisFieldElements *galoisFields, struct_ga
 			(*(p->element+i)) = (*(galoisFields->element+1));
 		}
 	}
-	
+
 	if(tmp_cnt)
 	{
 		warningMesShort; printf("in initBinEquationUsingStr, %d characters are not 1 or 0 among %d characters.\n", tmp_cnt, i);
 		warningMesShort; printf("in initBinEquationUsingStr, %d characters are alternated to 1.\n", tmp_cnt);
 	}
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -5266,7 +5266,7 @@ struct_galoisFieldElements* multipleTwoEqReturnAddr(
 {
 	unsigned int tmp_order=0;
 	struct_galoisFieldPolyForm *tmp_calBuf=NULL;
-	
+
 	unsigned int i;
 	unsigned int j;
 	#ifndef RELEASE
@@ -5307,7 +5307,7 @@ struct_galoisFieldElements* multipleTwoEqReturnAddr(
 		return NULL;
 	}
 	#endif
-	
+
 	tmp_order=((operandEqA->length)+(operandEqB->length)-2);
 	recreateGaloisFieldExceptElements(result, tmp_order+1);
 	initEquationFillAllZero(galoisFields, *result);
@@ -5389,8 +5389,8 @@ struct struct_galoisFieldElements
 		printf("in createConjugacyClass, unsigned int numberOfElementOfgaloisField is zero.\n");
 		return NULL;
 	}
-	
-	
+
+
 	struct_galoisFieldElements *p;
 	if(!(p = (struct_galoisFieldElements*)createGaloisFieldExceptElements(numberOfElementOfgaloisField)))
 	{
@@ -5398,7 +5398,7 @@ struct struct_galoisFieldElements
 		printf("in createConjugacyClass, (p = createGaloisFieldExceptElements(numberOfElementOfgaloisField)) return NULL.\n");
 		return p;
 	}
-	
+
 	return p;
 } */
 //////////////////////////////////////////////////////////////////////////////////
@@ -5411,7 +5411,7 @@ struct struct_galoisFieldElements
 		printf("in closeConjugacyClass, struct_galoisFieldElements *p is NULL.\n");
 		return -1;
 	}
-	
+
 	if(closeGaloisFieldExceptElements(struct_galoisFieldElements *p))
 	{
 		errorMes;
@@ -5500,8 +5500,8 @@ struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElemen
 			}
 			#endif
 
-	
-	
+
+
 	////making conjugacy set
 	p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*p->length);
 	memset(p->conjugateSet, 0, sizeof(struct_galoisFieldElements*)*p->length);
@@ -5515,7 +5515,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElemen
 		*(p->conjugateSet+i)=createGaloisFieldExceptElements(((*(galoisFields->element+0))->length));
 		*(p->limitedConjugateSet+i)=createGaloisFieldExceptElements(((*(galoisFields->element+0))->length));
 	}
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -5524,12 +5524,12 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned i
 	struct_setOfGaloisFieldElements *p;
 
 	unsigned int i;
-	
+
 	p=(struct_setOfGaloisFieldElements*)malloc(sizeof(struct_setOfGaloisFieldElements));
 	memset(p, 0, sizeof(struct_setOfGaloisFieldElements));
-	
+
 	p->length=setLength;
-	
+
 	////making conjugacy set
 	p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*setLength);
 	memset(p->conjugateSet, 0, sizeof(struct_galoisFieldElements*)*setLength);
@@ -5543,21 +5543,21 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned i
 		*(p->conjugateSet+i)=createGaloisFieldExceptElements(setElementLength[i]);
 		*(p->limitedConjugateSet+i)=createGaloisFieldExceptElements(setElementLength[i]);
 	}
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 {
 	struct_setOfGaloisFieldElements *p;
-	
+
 	p=(struct_setOfGaloisFieldElements*)malloc(sizeof(struct_setOfGaloisFieldElements));
 	memset(p, 0, sizeof(struct_setOfGaloisFieldElements));
 	//p->length=0;//it is already reset.
 
 	////making conjugacy set
 	//p->conjugateSet=NULL;//it is already reset.
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -5565,7 +5565,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 // {
 	// unsigned int i;
 	// struct_galoisFieldElements **newConjugateSet=NULL;
-	
+
 	// #ifndef RELEASE
 	// if(!p)
 	// {
@@ -5604,7 +5604,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 		// memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
 		// free(p->conjugateSet);
 		// p->conjugateSet=newConjugateSet;
-		
+
 		/*clear added conjugacy set*/
 		// #ifdef USING_OPEN_MP
 		// #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
@@ -5615,7 +5615,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 		// }
 		// p->length+=addedLength;
 	// }
-	
+
 	// return 0;
 // }
 char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
@@ -5623,8 +5623,8 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
 	unsigned int i;
 	struct_galoisFieldElements **newConjugateSet=NULL;
 	struct_galoisFieldElements **newLimitedConjugateSet=NULL;
-	
-	
+
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -5644,10 +5644,10 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
 	if(!(p->length))
 	{
 		p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
-		
+
 		p->limitedConjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
 		//memset(p->conjugateSet, 0, sizeof(struct_galoisFieldElements*)addedLength);
-		
+
 		#ifdef USING_OPEN_MP
 		#pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
 		#endif
@@ -5671,13 +5671,13 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
 
 		memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
 		memcpy(newLimitedConjugateSet, p->limitedConjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
-		
+
 		free(p->conjugateSet);
 		free(p->limitedConjugateSet);
-		
+
 		p->conjugateSet=newConjugateSet;
 		p->limitedConjugateSet=newLimitedConjugateSet;
-		
+
 		//clear added conjugacy set
 		#ifdef USING_OPEN_MP
 		#pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
@@ -5685,12 +5685,12 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
 		for(i=p->length; i<((p->length)+addedLength); i++)
 		{
 			*(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-			
+
 			*(p->limitedConjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
 		}
 		p->length+=addedLength;
 	}
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -5721,22 +5721,22 @@ char closeConjugacyClasses(struct_setOfGaloisFieldElements **p)
 		#ifdef RELEASE
 		closeGaloisFieldExceptElements(((*p)->conjugateSet+i));
 		closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i));
-		
+
 		#else
 		if(closeGaloisFieldExceptElements(((*p)->conjugateSet+i)))//if(closeGaloisFieldExceptElements(&(*((*p)->conjugateSet+i))))
 		{
 			errorMes;
 			printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(*(p->conjugateSet+%d)) return any value.\n", i);
-		}		
+		}
 		if(closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)))//if(closeGaloisFieldExceptElements(&(*((*p)->conjugateSet+i))))
 		{
 			errorMes;
 			printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)) return any value.\n", i);
-		}		
+		}
 		#endif
 
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -5744,10 +5744,10 @@ char closeConjugacyClasses(struct_setOfGaloisFieldElements **p)
 				printf("in closeConjugacyClasses, before process free(p->conjugateSet);\n");
 			}
 			#endif
-			
+
 	free((*p)->conjugateSet);
 	free((*p)->limitedConjugateSet);
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -5790,9 +5790,9 @@ void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
 		return;
 	}
 	#endif
-	
+
 	printf(">> Set Of Galois Field File I/O Form <<\n");
-	
+
 	for(tmp_i=0; tmp_i<(p->length); tmp_i++)
 	{
 		for(tmp_j=0; tmp_j<(*(p->conjugateSet+tmp_i))->length; tmp_j++)
@@ -5803,7 +5803,7 @@ void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
 					((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index - 1), 
 					(*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index, 
 					(tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-				);	
+				);
 			}
 			else
 			{
@@ -5811,7 +5811,7 @@ void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
 					'-', 
 					(*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index, 
 					(tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-				);	
+				);
 
 			}
 		}
@@ -5840,13 +5840,13 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	fileio = fopen(path, "w");
-	
+
 	fprintf(fileio, "primitive polynomials, %s\r\n", primitivePoly);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_START);
 	fprintf(fileio, "Kind Of Data, %d\r\n", FILE_IO_KIND_OF_DATA_CONJUGATE_SET);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END);
@@ -5858,20 +5858,20 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_START);
 	fprintf(fileio, "Bit Width, %d\r\n", (*((*(p->conjugateSet+0))->element+0))->length);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END);
-	
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START);
 	fprintf(fileio, "conjugate set nums, %d\r\n", p->length);
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END);
-	
-	
-	
+
+
+
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START);
 	for(tmp_i=0; tmp_i<(p->length); tmp_i++)
 	{
 		fprintf(fileio, "%d-th set conjugate elements nums, %d\r\n", tmp_i, (*(p->conjugateSet+tmp_i))->length);
 	}
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
-	
+
 	fprintf(fileio, "pow(index)\r\n", p->length);
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
@@ -5886,7 +5886,7 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 					((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index - 1), 
 					(*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index, 
 					(tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-				);	
+				);
 			}
 			else
 			{
@@ -5894,7 +5894,7 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 					'-', 
 					(*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index, 
 					(tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-				);	
+				);
 
 			}
 		}
@@ -5903,9 +5903,9 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END);
 
 	fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END);
-	
+
 	fclose(fileio);
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -5917,10 +5917,10 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	unsigned int tmp_i, tmp_j;
 
 	FILE *fileio_load_setOfGaloisField;
-	
+
 	unsigned int primitivePoly_length=0;
 	char load_primitivePoly[1025];
-	
+
 	int load_kindOfData=0;
 	int load_saveOfData=0;
 
@@ -5928,35 +5928,35 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	unsigned int load_setOfGF_length=0;
 	unsigned int load_row=0;
 	unsigned int *load_column=NULL;
-	
+
 	unsigned int load_index;
 	// char load_exp_str[256]={0};
 	char load_exp_char=0;
 	unsigned int load_exp_integer=0;
 
-	
+
 	unsigned int load_integer=0;
-	
+
 	char charBuf=0;
 	char load_stringBuf[1025]={0};
-	
+
 	unsigned int chk_incorrectFormCnt=0;
 	unsigned int chk_incorrectDataCnt=0;
-	
+
 	if(!path)			return -1;
 	if(!primitivePoly)	return -2;
 	if(!p)				return -3;
-	
+
 	fileio_load_setOfGaloisField = fopen(path, "r");
-	
+
 			printf("[load_struct_setOfGaloisFieldElements START]\r\n");
-	
+
 	fscanf(fileio_load_setOfGaloisField, "primitive polynomials, %s\r\n", load_primitivePoly);
 			// printf("primitive polynomials, %s\r\n", load_primitivePoly);
-	
+
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
-	
+
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 	fscanf(fileio_load_setOfGaloisField, "Kind Of Data, %d\r\n", &load_kindOfData);
@@ -5977,7 +5977,7 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 			// printf("Bit Width, %d\r\n", load_bitWidth);
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
-	
+
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 	fscanf(fileio_load_setOfGaloisField, "conjugate set nums, %d\r\n", &load_setOfGF_length);
@@ -5986,7 +5986,7 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 			// printf("%s\r\n", load_stringBuf);
 	load_column=(unsigned int*)malloc(sizeof(unsigned int)*load_setOfGF_length);
 	memset(load_column, 0, sizeof(unsigned int)*load_setOfGF_length);
-	
+
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 	for(tmp_i=0; tmp_i<load_setOfGF_length; tmp_i++)
@@ -6002,7 +6002,7 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 	*p = createConjugacyClasses_staticSetNums(load_setOfGF_length, load_column);
 			// printf("[createConjugacyClasses_staticSetNums END]\r\n");
 
-	
+
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
 
@@ -6027,7 +6027,7 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 				fscanf(fileio_load_setOfGaloisField, "%d(%d)", 
 					&load_exp_integer, 
 					&load_index
-				);	
+				);
 						// printf("%d(%d)", 
 							// load_exp_integer, 
 							// load_index
@@ -6043,22 +6043,22 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 			// printf("%s\r\n", load_stringBuf);
 	fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
 			// printf("%s\r\n", load_stringBuf);
-	
+
 	fclose(fileio_load_setOfGaloisField);
-	
+
 	free(load_column);
-	
+
 			#ifndef RELEASE
-			if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)	
+			if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
 			{
 				printf(">> Set of Condjugacies <<\r\n");
 				print_setOfGaloisFieldElementsSavedForm(*p);
 			}
 			#endif
 
-	
+
 			printf("[load_struct_setOfGaloisFieldElements END]\r\n");
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -6092,14 +6092,14 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
 	elementFlagger=(char*)malloc(sizeof(char)*((galoisFields->length)-2+1));//index 0 is mean that a^1, and latest index(except NULL) is total number of element in GF -(minus) 2.
 	memset(elementFlagger, '0', sizeof(char)*((galoisFields->length)-2));
 	*(elementFlagger+((galoisFields->length)-2))=0;//last string have to set NULL.
-	
+
 	elementFlaggerSecelcted=1;//elementFlaggerSecelcted is indicate elementsFlagger location.
-		
+
 	for(i=0; i<p->length; i++)
 	{
 		*((*(p->conjugateSet+i))->element+0)=*(galoisFields->element+2+(elementFlaggerSecelcted-1));
 		elementFlagger[(elementFlaggerSecelcted-1)]='1';
-		
+
 		for(j=1; j<(*(p->conjugateSet+i))->length; j++)
 		{
 			calculationBuffer=multiElementsInGF_returnAddr(galoisFields, *((*(p->conjugateSet+i))->element-1+j), *((*(p->conjugateSet+i))->element-1+j));
@@ -6128,7 +6128,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
 			else
 			{
 				exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer);
-				
+
 				if((exponential==-1)||(exponential==0)||(exponential==1))
 				{
 							#ifndef RELEASE
@@ -6141,7 +6141,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
 				*((*(p->conjugateSet+i))->element+j)=calculationBuffer;
 			}
 		}
-		
+
 		//find non selected elements using elementFlagger.
 		for(elementFlaggerSecelcted=1; elementFlaggerSecelcted<((galoisFields->length)-2+1); elementFlaggerSecelcted++)
 		{
@@ -6167,8 +6167,8 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 	unsigned int selectedConjugacySet;
 	unsigned int selectedElementOfConjugacy;
 
-	
-	
+
+
 	struct_galoisFieldPolyForm *firstElementOfConjugacySet;
 	struct_galoisFieldPolyForm *calculationBuffer;
 
@@ -6190,13 +6190,13 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 	/* flagger start a^0, but a^0 one of conjugacy any conjugacy set. */
 	elementFlagger=(char*)malloc(sizeof(char)*((galoisFields->length)+1));
 	memset(elementFlagger, '0', sizeof(char)*((galoisFields->length)-1));
-	
+
 	elementFlagger[(galoisFields->length)]=0;//last string have to set NULL.
 	elementFlagger[0]='1';//a^- already select, because it is not change when doubled itself.
 	elementFlagger[1]='1';//a^0 already select, because it is not change when doubled itself.
-	
+
 	selectedConjugacySet=0;//start 0-th conjugacy set
-	
+
 	for(i=0; i<galoisFields->length; i++)
 	{
 		/* pass selected location of element*/
@@ -6204,7 +6204,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 		{
 			continue;
 		}
-		
+
 		/* if not enough space of conjugacy set to charge conjugacy, added space */
 		if(!((selectedConjugacySet)<(p->length)))
 		{
@@ -6217,22 +6217,22 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 				closeConjugacyClasses(&p);
 				return -1;
 			}
-			
+
 		}
-		
+
 		/* To fill up conjugacy set, initialize conditions */
 		firstElementOfConjugacySet=galoisFields->element[i];
 		calculationBuffer=firstElementOfConjugacySet;
-		
+
 		if(!(p->conjugateSet[selectedConjugacySet]->length))
 		{
 			if(p->conjugateSet[selectedConjugacySet]->element)
 			{
 				p->conjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->conjugateSet[selectedConjugacySet]), 1);
 			}
-			
+
 		}
-/* 		
+/* 
 		if(!(p->limitedConjugateSet[selectedConjugacySet]->length))
 		{
 			if(p->limitedConjugateSet[selectedConjugacySet]->element)
@@ -6240,9 +6240,9 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 				p->limitedConjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->limitedConjugateSet[selectedConjugacySet]), 1);
 			}
 		}
- */		
-		
-		selectedElementOfConjugacy=0;		
+ */
+
+		selectedElementOfConjugacy=0;
 		do
 		{
 			if(!((selectedElementOfConjugacy)<(p->conjugateSet[selectedConjugacySet]->length)))
@@ -6254,7 +6254,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 			/*
 			//This code is wrong.... 1
 			if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
-			{			
+			{
 				addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
 				if( !( (abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)-1) > p->limitedExponential ) )
 				{
@@ -6269,7 +6269,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 			/*
 			//This code is wrong.... 2
 			if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
-			{			
+			{
 				addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
 				if( !(selectedElementOfConjugacy%2) )
 				{
@@ -6281,7 +6281,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 				}
 			}
 			*/
-			
+
 			elementFlagger[abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)]='1';//set selected location
 			selectedElementOfConjugacy++;
 			calculationBuffer=multiElementsInGF_returnAddr(galoisFields, calculationBuffer, calculationBuffer);
@@ -6290,7 +6290,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 		/* increase 1, selectedConjugacySet */
 		selectedConjugacySet++;
 	}
-	
+
 	free(elementFlagger);
 	return 0;
 }
@@ -6313,8 +6313,8 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
 		printf("in printConjugacyClasses, struct_setOfGaloisFieldElements *p is NULL.\n");
 		return;
 	}
-	
-	
+
+
 	infoMes;
 	printf(">> Conjugacy Class in GF(%d)<<\n", galoisFields->length);
 	for(i=0; i<p->length; i++)
@@ -6332,14 +6332,14 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
 			{
 				printf("a^%d\t", exponential-1);
 			}
-			
+
 			printPolyForm(*((*(p->conjugateSet+i))->element+j));
 			printf("\t");
 			printf("=%d\t", (*((*(p->conjugateSet+i))->element+j))->intValue);
 		}
 		printf("}\n");
 	}
-	
+
 	infoMes;
 	printf(">> Limited Conjugacy Class in GF(%d)<<\n", galoisFields->length);
 	for(i=0; i<p->length; i++)
@@ -6386,7 +6386,7 @@ char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
 	/* create conjugacy Class (static) */
 	// p->conjugacies=createConjugacyClasses(p->nonSorted);
 	// calculateConjugacyClasses(p->nonSorted, p->conjugacies);
-	
+
 	/* create conjugacy Class (variable) */
 	*p=createConjugacyClasses_VariableLength();
 	setLengthOfLimittedLengthOfConjugacyClasse(*p, limitedExponential);
@@ -6394,11 +6394,11 @@ char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
 	infoMes; printf("[START][Generating conjugacy set]\n");
 	calculateConjugacyClasses_VariableLength(galoisFields, *p);
 	infoMes; printf("[END][Generating conjugacy set]\n");
-	
+
 
 			// initMes; printConjugacyClasses(galoisFields, *p);
 
-	
+
 	#ifndef RELEASE
 	if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
 	{
@@ -6406,7 +6406,7 @@ char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
 		printConjugacyClasses(galoisFields, *p);
 	}
 	#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -6431,7 +6431,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 
 	struct_galoisFieldElements *beforeEquation;
 
-	
+
 	#ifndef RELEASE
 	if(!equation)
 	{
@@ -6446,7 +6446,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 		return NULL;
 	}
 	#endif
-	
+
 
 	if((multipledRootSet->length)<numberOfSelectedSet)
 	{
@@ -6460,28 +6460,28 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 				warningMes; printf("number of conjugacy set that %d, which it is maximum length in this condition.\n", numberOfSelectedSet);
 				#endif
 	}
-	
+
 	for(i=0; i<numberOfSelectedSet; i++)
 	{
 		totalLcmOrder+=(*(multipledRootSet->conjugateSet+i))->length;
 	}
-	
+
 	/*if order is 0, length is 1, if order is n-th, length is n+1.*/
 	multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 	multipledRootSet->length;
-	
+
 			#ifndef RELEASE
 			if(equation->length<multipledOrder+1)
 			{
 				errorMes; printf("in calculateLeastCommonMultipleUsingElementsOfGaloisField, ");
 				printf("not enough space to multiply polynomials(equation order is ");
 				printf("\'%d\', totalLcmOrder order is \'%d\').\n", abstractOrderOfEquation(equation), totalLcmOrder);
-						
+
 				return NULL;
 			}
 			#endif
 
-	
+
 	beforeEquation = createGaloisFieldExceptElements(equation->length);
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -6504,7 +6504,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 				warningMes; printf("in expandRootOfLCM_usingEleOfGF, copyListOfGaloisField(beforeEquation->element, equation->element, equation->length) is not complete.\n");
 				#endif
 			}
-					
+
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
 					{
@@ -6517,7 +6517,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 						}
 					}
 					#endif
-			
+
 			for(k=0; k<equation->length; k++)
 			{
 				//calculate 0-th order, just multiple 0-th order and equation.
@@ -6535,7 +6535,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 						#endif
 				*(equation->element+k)=multiElementsInGF_returnAddr(galoisFields, *((*(multipledRootSet->conjugateSet+i))->element+j), *(beforeEquation->element+k));
 			}
-			
+
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
 					{
@@ -6568,15 +6568,14 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 					#endif
 		}
 	}
-	
+
 	closeGaloisFieldExceptElements(&beforeEquation);
-	
+
 	return equation;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot
 (
-
 	struct_galoisFieldElements *galoisFields, 
 	struct_galoisFieldElements *equation, 
 	struct_setOfGaloisFieldElements *multipledRootSet, 
@@ -6590,7 +6589,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 
 	struct_galoisFieldElements *beforeEquation;
 
-	
+
 	#ifndef RELEASE
 	if(!equation)
 	{
@@ -6605,7 +6604,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 		return NULL;
 	}
 	#endif
-	
+
 
 	if((multipledRootSet->length)<numberOfSelectedSet)
 	{
@@ -6619,16 +6618,16 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 				warningMes; printf("number of conjugacy set that %d, which it is maximum length in this condition.\n", numberOfSelectedSet);
 				#endif
 	}
-	
+
 	for(i=0; i<numberOfSelectedSet; i++)
 	{
 		totalLcmOrder+=(*(multipledRootSet->limitedConjugateSet+i))->length;
 	}
-	
+
 	/*if order is 0, length is 1, if order is n-th, length is n+1.*/
 	multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 	multipledRootSet->length;
-	
+
 			#ifndef RELEASE
 			if(equation->length<multipledOrder+1)
 			{
@@ -6640,7 +6639,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 			}
 			#endif
 
-	
+
 	beforeEquation = createGaloisFieldExceptElements(equation->length);
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -6663,7 +6662,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 				warningMes; printf("in test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot, copyListOfGaloisField(beforeEquation->element, equation->element, equation->length) is not complete.\n");
 				#endif
 			}
-					
+
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
 					{
@@ -6676,7 +6675,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 						}
 					}
 					#endif
-			
+
 			for(k=0; k<equation->length; k++)
 			{
 				//calculate 0-th order, just multiple 0-th order and equation.
@@ -6694,7 +6693,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 						#endif
 				*(equation->element+k)=multiElementsInGF_returnAddr(galoisFields, *((*(multipledRootSet->limitedConjugateSet+i))->element+j), *(beforeEquation->element+k));
 			}
-			
+
 					#ifndef RELEASE
 					if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
 					{
@@ -6707,7 +6706,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 						}
 					}
 					#endif
-			
+
 			for(k=0; k<equation->length-1; k++)
 			{
 				//shifted orders
@@ -6727,9 +6726,9 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 					#endif
 		}
 	}
-	
+
 	closeGaloisFieldExceptElements(&beforeEquation);
-	
+
 	return equation;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -6740,13 +6739,13 @@ struct struct_galoisField_info
 {
 	// unsigned int *gfBits;
 	// unsigned int length;
-	
-	
+
+
 	struct_powerFormPolynomials *primitivePolynomial;
-	
+
 	struct_galoisFieldElements *nonSorted;
 	struct_galoisFieldElements *sorted;
-	
+
 	struct_setOfGaloisFieldElements *conjugacies;
 }typedef struct_galoisField_info;
 //////////////////////////////////////////////////////////////////////////////////
@@ -6761,7 +6760,7 @@ void printGaloisField(struct_galoisFieldElements *p)
 	printf("\n\n------------------ Galois Field ------------------\n");
 	infoMes;
 	printf("number of element is \'%d\', GF(%d)\n", p->length, p->length);
-	
+
 	printf("pow\t");
 	for(i=0; i<(*(p->element))->length; i++)
 	{
@@ -6769,7 +6768,7 @@ void printGaloisField(struct_galoisFieldElements *p)
 	}
 	printf("decimal\tindex");
 	printf("\n");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(p, *(p->element+i));
@@ -6802,7 +6801,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 	unsigned int decimal=0;
 
 	unsigned int exponential;
-	
+
 	printf("------------------ Galois Field ------------------\n");
 	infoMes;
 	printf("number of element is \'%d\' GF(%d)\n", p->length, p->length);
@@ -6814,7 +6813,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 	}
 	printf("dec(abs)");
 	printf("\n");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(p, *(p->element+i));
@@ -6829,7 +6828,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 		printf("/");
 		printPolyFormPure(*(p->element+i));
 		printf(", ");
-		
+
 		printf("%d\n", convertGaloisFieldPolyFormUnsignedInt(*(p->element+i)));
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
 			{
@@ -6866,7 +6865,7 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 		printf("in printGaloisField2, struct_galoisFieldElements *printedField is NULL.\n");
 		return;
 	}
-	
+
 	printf("\n------------------ ");
 	if(title==PRINT_FIELD_GALOIS_FIELD_TITLE)
 	{
@@ -6885,7 +6884,7 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 		printf("Undefined kind");
 	}
 	printf(" ------------------\n\n");
-		
+
 	printf(">> numberOfElement = %d\n", printedField->length);
 	if((options&PRINT_FIELD_PRINT_OPTION_NUMBERING)==PRINT_FIELD_PRINT_OPTION_NUMBERING)
 	{
@@ -6898,7 +6897,7 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 	}
 	printf("decimal\tdec[abstract]");
 	printf("\n");
-	
+
 	for(i=0; i<printedField->length; i++)
 	{
 		if((options&PRINT_FIELD_PRINT_OPTION_NUMBERING)==PRINT_FIELD_PRINT_OPTION_NUMBERING)
@@ -6936,7 +6935,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 	struct_galoisField_info *p;
 
 	char_GALOIS_FIELD_VALUE shiftBuffer;
-	
+
 	#ifndef RELEASE
 	if(!primitivePolynomial->length)
 	{
@@ -6951,21 +6950,21 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 		return NULL;
 	}
 	#endif
-	
-	
+
+
 	p=(struct_galoisField_info*)malloc(sizeof(struct_galoisField_info));
 	memset(p, 0, sizeof(struct_galoisField_info));
-	
+
 	// p->gfBits=&(p->length);
-	
+
 	p->primitivePolynomial=primitivePolynomial;
-	
-	
+
+
 	if(!(p->nonSorted=createGaloisFieldAndElements(intPower(2, (p->primitivePolynomial->usedLength)-1), p->primitivePolynomial->usedLength-1)))
 	{
 		errorMes; printf("in createGaloisField_info_emptySpace, createGaloisFieldAndElements has error.\r\n");
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -7000,7 +6999,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 	// struct_galoisField_info *p;
 
 	// char_GALOIS_FIELD_VALUE shiftBuffer;
-	
+
 	// #ifndef RELEASE
 	// if(!primitivePolynomial->length)
 	// {
@@ -7015,18 +7014,18 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 		// return NULL;
 	// }
 	// #endif
-	
-	
+
+
 	// p=(struct_galoisField_info*)malloc(sizeof(struct_galoisField_info));
 	// memset(p, 0, sizeof(struct_galoisField_info));
-	
+
 	// // p->gfBits=&(p->length);
-	
+
 	// p->primitivePolynomial=primitivePolynomial;
-	
-	
+
+
 	// p->nonSorted=createGaloisFieldAndElements(intPower(2, (p->primitivePolynomial->usedLength)-1), p->primitivePolynomial->usedLength-1);
-	
+
 			// #ifndef RELEASE
 			// if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			// {
@@ -7043,7 +7042,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 		// (*(p->nonSorted->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+1));
 	// }
 	// (*(p->nonSorted->element+1))->index=1;
-	
+
 			// #ifndef RELEASE
 			// if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			// {
@@ -7052,8 +7051,8 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 				// printf("(*(p->nonSorted->element+0))->length = %d\n", (*(p->nonSorted->element+0))->length);
 			// }
 			// #endif
-	
-	
+
+
 	// // printf("[%05d]%s\n", 0,(*(p->nonSorted->element+0))->value);
 	// // printf("[%05d]%s\n", 1,(*(p->nonSorted->element+1))->value);
 	// infoMes; printf("[START][Generating GaloisField Elements]\n");
@@ -7067,7 +7066,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 		// (*((*(p->nonSorted->element+i))->value+j))='0';
 		// (*((*(p->nonSorted->element+i))->value+(*(p->nonSorted->element+i))->length))=0;
 		// // (*((*(p->nonSorted->element+i-1))->value+((*(p->nonSorted->element+i))->length-1)))=0;
-		
+
 		// if(shiftBuffer=='1')
 		// {
 			// for(j=0; j<(*(p->nonSorted->element+i))->length; j++)
@@ -7083,8 +7082,8 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 			// }
 			// shiftBuffer='0';
 		// }
-		
-		
+
+
 		// if(((*(p->nonSorted->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
 		// {
 			// (*(p->nonSorted->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+i));
@@ -7097,7 +7096,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 
 
 
-		
+
 	// /*create struct_summationMatrix*/
 	// infoMes; printf("[START][Generating summation matrix]\n");
 	// p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);
@@ -7108,7 +7107,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomials *primitivePolynomial)
 {
 	struct_galoisField_info *p;
-	
+
 	#ifndef RELEASE
 	if(!primitivePolynomial->length)
 	{
@@ -7123,7 +7122,7 @@ struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomia
 		return NULL;
 	}
 	#endif
-	
+
 	if(!(p=createGaloisField_info_emptySpace(primitivePolynomial)))
 	{
 		errorMes; printf("in createGaloisFieldAndSumMatrix, createGaloisField_info_emptySpace has error.\r\n");
@@ -7134,7 +7133,7 @@ struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomia
 		{
 			errorMes; printf("in createGaloisFieldAndSumMatrix, calculateGaloisField has error.\r\n");
 		}
-		
+
 		/*create struct_summationMatrix*/
 		// p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);\
 		// printSummationMatrixSavedForm(p->nonSorted->summationReferMatrix);
@@ -7158,11 +7157,11 @@ void printSummationMatrixGFabstraction(struct_galoisFieldElements *p)
 		errorMes;
 		printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
 	}
-	
+
 	printf(">> Summation Matrix\n");
-	
+
 	printf("+\t|\t");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, *(p->element+i));
@@ -7175,13 +7174,13 @@ void printSummationMatrixGFabstraction(struct_galoisFieldElements *p)
 		printf("-");
 	}
 	printf("\t|\n\t|\n");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, *(p->element+i));
 		if(exponentialTemp)	printf("a^%d\t|\t", exponentialTemp-1);
 		else				printf("a^%c\t|\t", '-');
-		
+
 		for(j=0; j<p->length; j++)
 		{
 			exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, summationElementsInGaloisFieldUsingGaloisFieldInt_finding(p, *(p->element+i), *(p->element+j)));
@@ -7203,11 +7202,11 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 		errorMes;
 		printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
 	}
-	
+
 	printf(">> Multiplication Matrix\n");
-	
+
 	printf("*\t|\t");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, *(p->element+i));
@@ -7220,13 +7219,13 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 		printf("-");
 	}
 	printf("\t|\n\t|\n");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, *(p->element+i));
 		if(exponentialTemp)	printf("a^%d\t|\t", exponentialTemp-1);
 		else				printf("a^%c\t|\t", '-');
-		
+
 		for(j=0; j<p->length; j++)
 		{
 			exponentialTemp=abstractIndexOfPowerFormInElementsOfGaloisField_finding(p, multiElementsInGF_returnAddr(p, *(p->element+i), *(p->element+j)));
@@ -7260,7 +7259,7 @@ unsigned int checkDegreePolynomials(struct_galoisFieldElements *galoisFields, st
 		if(*(targetPolynomial->element+(j)) != *(galoisFields->element+(0)))	return i-1;
 		else i--;
 	}
-	
+
 	return 0;
 }
 
@@ -7293,19 +7292,19 @@ struct struct_generalForm_algorithmComponent{
 	struct_powerFormPolynomials *errorLocationVector;
 
 	struct_galoisFieldElements *syndrome;
-	
+
 	struct_galoisFieldElements *errLocPoly;//it is same with struct_galoisFieldElements *alpha;
-	
+
 	// struct_powerFormPolynomials *errorCorectableCodeWord;
 	// struct_powerFormPolynomials *correctedCodeWord;
-	
-	
+
+
 	unsigned int numberOfCorrection;//correction number t;
-	
+
 	unsigned int vMAX;
 
 	int degreeOfErrLocPoly;
-	
+
 	unsigned int metricCheck;
 }typedef struct_generalForm_algorithmComponent;
 //////////////////////////////////////////////////////////////////////////////////
@@ -7320,8 +7319,8 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
 	struct_galoisFieldPolyForm **calculationBuffer;
 
 	unsigned int strLength = strlen(string);
-	
-	
+
+
 			#ifndef RELEASE
 			if((strLength+1)>galoisFields->length)
 			{
@@ -7331,7 +7330,7 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
 				return -1;
 			}
 			#endif
-	
+
 	calculationBuffer = createListOfGaloisField(lengthOfSyndromeArray);
 
 	#ifdef USING_OPEN_MP
@@ -7343,8 +7342,8 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
 		(*(syndrome->element+i))=(*(galoisFields->element+0));
 		(*(calculationBuffer+i))=(*(galoisFields->element+0));
 	}
-	
-	
+
+
 	for(i=0; i<strLength; i++)
 	{
 		if(*(string+i)=='1')
@@ -7355,7 +7354,7 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
 			
 			*(calculationBuffer+1)=multiElementsInGF_returnAddr(galoisFields, *(calculationBuffer+0), *(calculationBuffer+0));
 			(*(syndrome->element+1))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(syndrome->element+1)), *(calculationBuffer+1));
-		
+
 			for(j=2; j<lengthOfSyndromeArray; j++)
 			{
 				*(calculationBuffer+j)=multiElementsInGF_returnAddr(galoisFields, *(calculationBuffer+j-1), *(calculationBuffer+0));
@@ -7363,9 +7362,9 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
 			}
 		}
 	}
-	
+
 	closeListOfGaloisField(&calculationBuffer);
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -7386,29 +7385,29 @@ char summationSyndromeArray
 	)
 {
 	unsigned int i;
-	
+
 	if(!galoisFields) return -1;
 	if(!resultSyndrome) return -1;
 	if(!operandA) return -1;
 	if(!operandB) return -1;
-	
+
 	if(!resultSyndrome->length) return -2;
 	if(resultSyndrome->length!=operandA->length) return -3;
 	if(operandA->length!=operandB->length) return -3;
-	
-	
+
+
 	for(i=0; i<resultSyndrome->length; i++)
 	{
 		(*(resultSyndrome->element+i))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(operandA->element+i)), (*(operandB->element+i)));
 	}
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *targetSyndrome)
 {
 	unsigned int i;
-	
+
 	#ifndef RELEASE
 	if(!galoisFields)
 	{
@@ -7419,7 +7418,7 @@ char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFi
 	{
 		printf("in allSyndromeIsZero, if(!targetSyndrome) is NULL\r\n");
 		return -1;
-	}	
+	}
 	if(!targetSyndrome->length)
 	{
 		printf("in allSyndromeIsZero, if(!targetSyndrome->length) is zero\r\n");
@@ -7451,18 +7450,18 @@ void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElement
 		return;
 	}
 
-	
+
 	printf("------------------ Syndrome Array ------------------\n");
-	
+
 	printf("syndrome length is \'%d\'\n", p->length);
-	
+
 	printf("index\tSn\tpow\t");
 	for(i=0; i<(*(p->element))->length; i++)
 	{
 		printf("a^%d\t", i);
 	}
 	printf("\n");
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		printf("%d :\tS_%d : ", i, i+1);
@@ -7487,7 +7486,7 @@ void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFiel
 	unsigned int decimal=0;
 
 	unsigned int exponential;
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		printf("S_%d : ", i);
@@ -7511,7 +7510,7 @@ void printSyndromeSeriesWithTapAndEnter(struct_galoisFieldElements *p, struct_ga
 	unsigned int decimal=0;
 
 	unsigned int exponential;
-	
+
 	for(i=0; i<p->length; i++)
 	{
 		printf("S_%d : ", i);
@@ -7581,7 +7580,6 @@ char calculateChienSearch_direction
 		struct_powerFormPolynomials *errorCorectableCodeWord,
 		unsigned int *metricCheck,
 		enum CHIEN_SEARCH_DIRECTION direction
-		
 	)
 {
 	unsigned int i, j;
@@ -7591,7 +7589,7 @@ char calculateChienSearch_direction
 	struct_galoisFieldPolyForm *summationResult;
 
 	struct_galoisFieldPolyForm *tmp_location;
-	
+
 	#ifndef RELEASE
 	if(!galoisFields)
 	{
@@ -7612,7 +7610,7 @@ char calculateChienSearch_direction
 		return -1;
 	}
 	#endif
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -7622,12 +7620,12 @@ char calculateChienSearch_direction
 				
 				logMes;
 				printf("Start from 1 to length of GF is \'%d\', errorCorectableCodeWord length is [full]\'%d\', [used]\'%d\'", galoisFields->length, errorCorectableCodeWord->length, errorCorectableCodeWord->usedLength);
-				
+
 			}
 			#endif
 	variableSet=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*(errLocPolynomial->length-1));
 	memset(variableSet, 0, sizeof(struct_galoisFieldPolyForm*)*(errLocPolynomial->length-1));
-	
+
 	for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
 	{
 		/*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
@@ -7643,7 +7641,7 @@ char calculateChienSearch_direction
 		#else
 		calculateChienSearchVariableSet(galoisFields, variableSet, tmp_location, (errLocPolynomial->length-1));
 		#endif
-	
+
 
 				#ifndef RELEASE
 				/*to confirm code start*/
@@ -7664,7 +7662,7 @@ char calculateChienSearch_direction
 				}
 				/*to confirm code end*/
 				#endif
-				
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -7685,7 +7683,7 @@ char calculateChienSearch_direction
 					printf("\n");
 				}
 				#endif
-		
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -7693,7 +7691,7 @@ char calculateChienSearch_direction
 					printf("i=%d, A( a^-%d ) = \t", i, abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+i))-1);
 				}
 				#endif
-		
+
 		summationResult=*(errLocPolynomial->element+0);
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -7702,7 +7700,7 @@ char calculateChienSearch_direction
 					printf("a^-%d + \t", abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, summationResult)-1);
 				}
 				#endif
-		
+
 		/*
 			ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...
 		*/
@@ -7719,7 +7717,7 @@ char calculateChienSearch_direction
 						abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(variableSet+j-1))-1, 
 						abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+i))-1,
 						j);
-						
+
 						if(j!=(errLocPolynomial->length)-1)
 						{
 							printf("+\t");
@@ -7731,7 +7729,7 @@ char calculateChienSearch_direction
 					}
 					#endif
 		}
-		
+
 		if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(galoisFields->element+0), summationResult))
 		{
 					#ifndef RELEASE
@@ -7754,7 +7752,7 @@ char calculateChienSearch_direction
 			*(errorCorectableCodeWord->equation+(i-1))='0';
 		}
 
-		
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -7763,7 +7761,7 @@ char calculateChienSearch_direction
 				}
 				#endif
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -7783,7 +7781,6 @@ char chienSearch_offset_direction
 		struct_powerFormPolynomials *errorLocationPolynomial,
 		unsigned int *metricCheck,
 		enum CHIEN_SEARCH_DIRECTION direction
-		
 	)
 {
 	#ifndef RELEASE
@@ -7820,7 +7817,7 @@ char chienSearch_offset_direction
 				printPowerFormWithEnterPolynomialAndInfoUsingAddress(errorLocationPolynomial);
 			}
 			#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -7858,22 +7855,22 @@ char calculateChienSearch_static_backWard
 		return -1;
 	}
 	#endif
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
 				logMes;
 				printf("in calculateChienSearch_static_backWard, formula errLocPolynomial is below...\n");
 				printGaloisField2(galoisFields, errLocPolynomial, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
-				
+
 				logMes;
 				printf("Start from 1 to length of GF is \'%d\', errorCorectableCodeWord length is [full]\'%d\', [used]\'%d\'", galoisFields->length, errorCorectableCodeWord->length, errorCorectableCodeWord->usedLength);
-				
+
 			}
 			#endif
 	variableSet=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*(errLocPolynomial->length-1));
 	memset(variableSet, 0, sizeof(struct_galoisFieldPolyForm*)*(errLocPolynomial->length-1));
-	
+
 	for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
 	{
 		/*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
@@ -7887,7 +7884,7 @@ char calculateChienSearch_static_backWard
 		#else
 		calculateChienSearchVariableSet(galoisFields, variableSet, invertExponentialElementInGaloisField(galoisFields, *(galoisFields->element+i)), (errLocPolynomial->length-1));
 		#endif
-	
+
 
 				#ifndef RELEASE
 				/*to confirm code start*/
@@ -7908,7 +7905,7 @@ char calculateChienSearch_static_backWard
 				}
 				/*to confirm code end*/
 				#endif
-				
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -7929,7 +7926,7 @@ char calculateChienSearch_static_backWard
 					printf("\n");
 				}
 				#endif
-		
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -7937,7 +7934,7 @@ char calculateChienSearch_static_backWard
 					printf("i=%d, A( a^-%d ) = \t", i, abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+i))-1);
 				}
 				#endif
-		
+
 		summationResult=*(errLocPolynomial->element+0);
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -7946,7 +7943,7 @@ char calculateChienSearch_static_backWard
 					printf("a^-%d + \t", abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, summationResult)-1);
 				}
 				#endif
-		
+
 		/*
 			ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...
 		*/
@@ -7963,7 +7960,7 @@ char calculateChienSearch_static_backWard
 						abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(variableSet+j-1))-1, 
 						abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+i))-1,
 						j);
-						
+
 						if(j!=(errLocPolynomial->length)-1)
 						{
 							printf("+\t");
@@ -7975,7 +7972,7 @@ char calculateChienSearch_static_backWard
 					}
 					#endif
 		}
-		
+
 		if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(galoisFields->element+0), summationResult))
 		{
 					#ifndef RELEASE
@@ -7998,7 +7995,7 @@ char calculateChienSearch_static_backWard
 			*(errorCorectableCodeWord->equation+(i-1))='0';
 		}
 
-		
+
 				#ifndef RELEASE
 				if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 				{
@@ -8007,7 +8004,7 @@ char calculateChienSearch_static_backWard
 				}
 				#endif
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -8042,7 +8039,7 @@ char chienSearch_static
 		return -1;
 	}
 	#endif
-	
+
 	#ifndef RELEASE
 	if(calculateChienSearch_static_backWard(galoisFields, errLocPolynomial, errorLocationPolynomial, metricCheck))
 	{
@@ -8062,7 +8059,7 @@ char chienSearch_static
 				printPowerFormWithEnterPolynomialAndInfoUsingAddress(errorLocationPolynomial);
 			}
 			#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -8105,7 +8102,7 @@ char chienSearch
 char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial)
 {
 	unsigned int i;
-	
+
 	#ifndef RELEASE
 	if(!targetCodeWord)
 	{
@@ -8134,7 +8131,7 @@ char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFo
 	}
 	#endif
 
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(targetCodeWord, errorLocationPowerFormPolynomial)
 	#endif
@@ -8161,7 +8158,7 @@ char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFo
 				printPowerFormWithEnterPolynomialAndInfoUsingAddress(targetCodeWord);
 			}
 			#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -8178,34 +8175,34 @@ struct struct_HD_BM_algorithmComponent{
 	struct_powerFormPolynomials *errorLocationVector;
 
 	struct_galoisFieldElements *syndrome;
-	
+
 	struct_galoisFieldElements *errLocPoly;//it is same with struct_galoisFieldElements *alpha;
-	
+
 	// struct_powerFormPolynomials *errorCorectableCodeWord;
 	// struct_powerFormPolynomials *correctedCodeWord;
-	
-	
+
+
 	unsigned int numberOfCorrection;//correction number t;
-	
+
 	unsigned int vMAX;
 
 	int degreeOfErrLocPoly;
-	
+
 	unsigned int metricCheck;
-	
+
 	unsigned int value_r;
-	
+
 	unsigned char calculationSelector;
-		
+
 	struct_galoisFieldPolyForm *delta;//just pointer, not create a anything.
-	
+
 	struct_galoisFieldElements *alpha;
 	struct_galoisFieldElements *beforeAlpha;
 	struct_galoisFieldElements *beta;
 	struct_galoisFieldElements *beforeBeta;
-	
+
 	unsigned int lengthOfStage;
-	
+
 	/*to test ,soft decision*/
 	struct_galoisFieldElements *errLocSyndrome;
 	struct_galoisFieldElements *sumReceiveAndErrLocSyndrome;
@@ -8238,7 +8235,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 		stringLength=strlen(string);
 	}
 	#endif
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -8248,7 +8245,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 	p = (struct_HD_BM_algorithmComponent*)malloc(sizeof(struct_HD_BM_algorithmComponent));
 	memset(p, 0, sizeof(struct_HD_BM_algorithmComponent));
 
-	
+
 	p->numberOfCorrection = t;
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -8256,7 +8253,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 				logMes; printf("number of correctable error is \'%d\', ", p->numberOfCorrection);
 			}
 			#endif
-	
+
 	p->vMAX = cal_numsOfDegreeOfSynd(t);/*use for, when variable is 6, it is break.*/
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
@@ -8264,7 +8261,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 				logMes; printf("vMAX is \'%d\'\n", p->vMAX);
 			}
 			#endif
-	
+
 	p->codeWord = createPowerFormPolynomialUsingString(string, stringLength);
 	p->errorLocationVector = createPowerFormPolynomial(stringLength);
 
@@ -8275,7 +8272,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 				printPowerFormWithEnterPolynomialAndInfoUsingAddress(p->codeWord);
 			}
 			#endif
-	
+
 		// galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
 		// galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
@@ -8285,28 +8282,28 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 			// galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
 			// galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 		// }
-	
+
 	/* create syndrome of received vector */
 	p->syndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
 	/* calculate syndrome */
 	syndromeArrayCalculatorUsingString(galoisFields, p->syndrome, p->vMAX+global_bch_Soft_OverSyndLen, string);
-	
+
 	/* create syndrome of error location */
 	p->errLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
 	/* create syndrome about sum syndromes of received and error location vector */
 	p->sumReceiveAndErrLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
-	
-	
-	
+
+
+
 	/* BM algorithm initial condition setting. */
 	/*//p->value_r = 0;*/
-	
+
 	/* Initializing degree of Error Location Poly */
 	p->degreeOfErrLocPoly=-1;
-	
+
 	/* clear metricCheck */
 	p->metricCheck=0;
-	
+
 	/* create alpha and beta formula and set initial condition when value_r is -1. */
 	p->alpha = createGaloisFieldExceptElements(t+1);
 	p->beta = createGaloisFieldExceptElements(t+1);
@@ -8325,7 +8322,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 				printGaloisField2(galoisFields, p->beta, PRINT_FIELD_EQUATION_TITLE, 0);
 			}
 			#endif
-	
+
 	/* create output of register */
 	p->beforeAlpha = createGaloisFieldExceptElements(t+1);
 	p->beforeBeta = createGaloisFieldExceptElements(t+1);
@@ -8333,13 +8330,13 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 	copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
 	copyListOfGaloisField(p->beforeBeta->element, p->beta->element, p->alpha->length);
 
-	
+
 	/* initial condition of length of Stage is 0. */
 	p->lengthOfStage=0;
-	
+
 	/* indexing kind of bch decoding algorithm */
 	p->KIND_OF_BCH_ALGORITHM = KIND_OF_BCH_DECODING_BM;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -8374,7 +8371,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
 	#else
 		closePowerFormPolynomial(&((*p)->codeWord));
 	#endif
-		
+
 	#ifndef RELEASE
 		if(closePowerFormPolynomial(&((*p)->errorLocationVector)))
 		{
@@ -8478,7 +8475,7 @@ struct_HD_BM_algorithmComponent *recreateBmAlgorithmComponent(struct_HD_BM_algor
 		return NULL;
 	}
 	#endif
-	
+
 	if(*p)
 	{
 			#ifndef RELEASE
@@ -8493,7 +8490,7 @@ struct_HD_BM_algorithmComponent *recreateBmAlgorithmComponent(struct_HD_BM_algor
 				warningMesShort; printf("it will be closed.\n");
 			}
 			#endif
-			
+
 		closeBmAlgorithmComponent(p);
 	}
 
@@ -8505,9 +8502,9 @@ struct_HD_BM_algorithmComponent *recreateBmAlgorithmComponent(struct_HD_BM_algor
 				printf("it will be closed.\n");
 			}
 			#endif
-	
+
 	if(!stringLength) stringLength=strlen(string);
-		
+
 	*p=createBmAlgorithmComponent(galoisFields,t, string, stringLength);
 	return *p;
 }
@@ -8524,12 +8521,12 @@ unsigned char calculateCalculationSelector(struct_galoisFieldPolyForm *delta, un
 		return -1;
 	}
 	#endif
-		
+
 	if(value_r<(2*beforeLengthOfStage))
 	{
 		return 0;
 	}
-	
+
 	for(i=0; i<(delta->length); i++)
 	{
 		if(*(delta->value+i)!='0')
@@ -8541,7 +8538,7 @@ unsigned char calculateCalculationSelector(struct_galoisFieldPolyForm *delta, un
 	{
 		return 0;
 	}
-	
+
 	return 1;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -8555,8 +8552,8 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 	unsigned int i;
 	struct_galoisFieldPolyForm *buffer=*(galoisFields->element+0);
 	struct_galoisFieldPolyForm *buffer2;
-	
-	
+
+
 	unsigned int debugingTemp;
 	struct_galoisFieldPolyForm *debuggingTemp2;
 
@@ -8590,11 +8587,11 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 				printPolyFormWithTapAndEnter(buffer);
 
 				printf("start from : %d, end to : %d\n", 0, lengthOfStage);
-				
+
 				printf("delta(%d) = ", value_r);
 			}
 			#endif
-	
+
 			#ifndef RELEASE
 			if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA)
 			{
@@ -8602,8 +8599,8 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 				printf("for(i=0; i<=lengthOfStage; i++) start, lengthOfStage='%d'\n", lengthOfStage);
 			}
 			#endif
-			
-			
+
+
 			#ifndef RELEASE
 			if(beforeStageAlpha->length-1 < lengthOfStage)
 			{
@@ -8657,7 +8654,7 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 					}
 				}
 				#endif
-			
+
 				#ifndef RELEASE
 				if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA)
 				{
@@ -8720,7 +8717,7 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 					}
 				}
 				#endif
-				
+
 		buffer=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, buffer, buffer2);
 											if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA)
 											{
@@ -8742,7 +8739,7 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
 				printf("for(i=0; i<=lengthOfStage; i++) end\n");
 			}
 			#endif
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -8803,7 +8800,7 @@ char calculateAlphaInBmAlgorithm
 		return -1;
 	}
 	#endif
-	
+
 	for(i=1; i<alpha->length; i++)
 	{
 		*(alpha->element+i)=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, *(beforeAlpha->element+i), multiElementsInGF_returnAddr(galoisFields, delta, *(beforeBeta->element+i-1)));
@@ -8867,8 +8864,8 @@ char calculateBetaInBmAlgorithm
 		for(i=1; i<beta->length; i++)
 		{
 			*(beta->element+i)=*(beforeBeta->element+i-1);
-			
-		*(beta->element+0)=*(galoisFields->element+0);
+
+			*(beta->element+0)=*(galoisFields->element+0);
 		}
 	}
 
@@ -8916,7 +8913,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 		return -1;
 	}
 	#endif
-	
+
 			#ifndef RELEASE
 			if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 			{
@@ -8930,7 +8927,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 				printGaloisField2(galoisFields, p->beta, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 			}
 			#endif
-			
+
 			#ifndef RELEASE
 			if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
 			{
@@ -8963,7 +8960,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 					logMes;
 					printf("delta is...\n");
 					bebuggingTemp=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, p->delta);
-					
+
 					if(bebuggingTemp)
 					{
 						printf("a^%d\t=\t", bebuggingTemp-1);
@@ -9011,18 +9008,18 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 
 					logMes;	printf("check >> beforeAlpha");
 					printGaloisField2(galoisFields, p->beforeAlpha, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
-					
-					
+
+
 					logMes;	printf("check >> beta");
 					printGaloisField2(galoisFields, p->beta, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
-					
+
 
 					logMes;	printf("check >> beforeBeta");
 					printGaloisField2(galoisFields, p->beforeBeta, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 				}
 				#endif
 
-				
+
 									#ifndef RELEASE
 									if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
 									{
@@ -9039,7 +9036,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 					printf("L(%d) is %d.\n", p->value_r, p->lengthOfStage);
 				}
 				#endif
-		
+
 				#ifndef RELEASE
 				/* synchronize register and wire, pulse input liked */
 				if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
@@ -9047,7 +9044,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 					logMes; printf("before alpha, beta are synchronized.\n");
 				}
 				#endif
-				
+
 									#ifndef RELEASE
 									if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
 									{
@@ -9056,7 +9053,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 									}
 									#endif
 		copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
-		
+
 									#ifndef RELEASE
 									if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
 									{
@@ -9076,7 +9073,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
 										scanf("%s", global_buf_KeyBoardInput);
 									}
 									#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -9093,15 +9090,15 @@ struct struct_HD_mSBS_t3_algorithmComponent{
 	struct_galoisFieldElements *syndrome;
 
 	struct_galoisFieldElements *errLocPoly;
-	
+
 	unsigned int numberOfCorrection;//In mSBS, maximum numberOfCorrection is 3. so this value is always fixed to 3.
 
 	unsigned int vMAX;
 
 	int degreeOfErrLocPoly;
-	
+
 	unsigned int metricCheck;
-	
+
 	/* A * alpha^1 + B * alpha^2 + C * alpha^3 + R = 0 */
 	/* this polynomial is same with struct_galoisFieldElements *errLocPoly; */
 	/*
@@ -9116,7 +9113,7 @@ struct struct_HD_mSBS_t3_algorithmComponent{
 	struct_galoisFieldPolyForm *coefficient_of_alpha_two;//(that is B)
 	struct_galoisFieldPolyForm *coefficient_of_alpha_one;//(that is A)
 	struct_galoisFieldPolyForm *coefficient_of_alpha_zero;//(that is R)
-	
+
 }typedef struct_HD_mSBS_t3_algorithmComponent;
 //////////////////////////////////////////////////////////////////////////////////
 /*
@@ -9131,13 +9128,13 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 		// unsigned int galoisFieldElementLength;
 
 	#ifndef RELEASE
-	
+
 		// if(!t)
 		// {
 			// errorMes;
 			// printf("correctable number(t) is %d\n", t);
 		// }
-	 
+ 
 	if(!string)
 	{
 		errorMes;
@@ -9163,7 +9160,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 			#endif
 	p = (struct_HD_mSBS_t3_algorithmComponent*)malloc(sizeof(struct_HD_mSBS_t3_algorithmComponent));
 	memset(p, 0, sizeof(struct_HD_mSBS_t3_algorithmComponent));
-	
+
 
 	p->numberOfCorrection = t;
 			#ifndef RELEASE
@@ -9180,7 +9177,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 					// logMes; printf("vMAX is \'%d\'\n", p->vMAX);
 				// }
 				// #endif
-	
+
 	p->codeWord = createPowerFormPolynomialUsingString(string, stringLength);
 	p->errorLocationVector = createPowerFormPolynomial(stringLength);
 
@@ -9191,7 +9188,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 				printPowerFormWithEnterPolynomialAndInfoUsingAddress(p->codeWord);
 			}
 			#endif
-	
+
 		// galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
 		// galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
@@ -9201,28 +9198,28 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 			// galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
 			// galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 		// }
-	
+
 	/* create syndrome of received vector */
 	p->syndrome = createGaloisFieldExceptElements(p->vMAX);
 	/* calculate syndrome */
 	syndromeArrayCalculatorUsingString(galoisFields, p->syndrome, p->vMAX, string);
-	
+
 		// /* create syndrome of error location */
 		// p->errLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
 		// /* create syndrome about sum syndromes of received and error location vector */
 		// p->sumReceiveAndErrLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
-	
-	
-	
+
+
+
 		/* BM algorithm initial condition setting. */
 		/*//p->value_r = 0;*/
-	
+
 	/* Initializing degree of Error Location Poly */
 	p->degreeOfErrLocPoly=-1;
-	
+
 	/* clear metricCheck */
 	p->metricCheck=0;
-	
+
 		/* create alpha and beta formula and set initial condition when value_r is -1. */
 		// p->alpha = createGaloisFieldExceptElements(t+1);
 		// p->beta = createGaloisFieldExceptElements(t+1);
@@ -9246,7 +9243,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 					printGaloisField2(galoisFields, p->errLocPoly, PRINT_FIELD_EQUATION_TITLE, 0);
 			}
 			#endif
-	
+
 		// /* create output of register */
 		// p->beforeAlpha = createGaloisFieldExceptElements(t+1);
 		// p->beforeBeta = createGaloisFieldExceptElements(t+1);
@@ -9254,13 +9251,13 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 		// copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
 		// copyListOfGaloisField(p->beforeBeta->element, p->beta->element, p->alpha->length);
 
-	
+
 		// /* initial condition of length of Stage is 0. */
 		// p->lengthOfStage=0;
-	
+
 	/* indexing kind of bch decoding algorithm */
 	p->KIND_OF_BCH_ALGORITHM = KIND_OF_BCH_DECODING_mSBS;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -9295,7 +9292,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
 	#else
 		closePowerFormPolynomial(&((*p)->codeWord));
 	#endif
-		
+
 	#ifndef RELEASE
 		if(closePowerFormPolynomial(&((*p)->errorLocationVector)))
 		{
@@ -9315,7 +9312,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
 		closeGaloisFieldExceptElements(&((*p)->syndrome));
 	#endif
 
-	
+
 	#ifndef RELEASE
 	if(closeGaloisFieldExceptElements(&((*p)->errLocPoly)))
 	{
@@ -9356,7 +9353,7 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 		return NULL;
 	}
 	#endif
-	
+
 	if(*p)
 	{
 			#ifndef RELEASE
@@ -9371,7 +9368,7 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 				warningMesShort; printf("it will be closed.\n");
 			}
 			#endif
-			
+
 		close_mSBS_algorithmComponent(p);
 	}
 
@@ -9383,9 +9380,9 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 				printf("it will be closed.\n");
 			}
 			#endif
-	
+
 	if(!stringLength) stringLength=strlen(string);
-		
+
 	return create_mSBS_algorithmComponent(galoisFields,t, string, stringLength);;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -9398,16 +9395,16 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 	struct_galoisFieldPolyForm *tmp_S_1_pow_3;
 	struct_galoisFieldPolyForm *tmp_S_1_pow_4;
 	struct_galoisFieldPolyForm *tmp_S_1_pow_6;
-	
+
 	struct_galoisFieldPolyForm *tmp_S_3_pow_2;
-	
+
 	struct_galoisFieldPolyForm *tmp_ref_coefficient;//it is same with S_1^3 + S_3 is tmp_C_t3.
-	
+
 	struct_galoisFieldPolyForm *tmp_C_t3;
 	struct_galoisFieldPolyForm *tmp_B_t3;
 	struct_galoisFieldPolyForm *tmp_A_t3;
 	struct_galoisFieldPolyForm *tmp_R_t3;
-	
+
 
 			#ifndef RELEASE
 			if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
@@ -9450,7 +9447,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 
 		// return -2;
 	// }
-	
+
 			#ifndef RELEASE
 			if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 			{
@@ -9461,7 +9458,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 				printGaloisField2(galoisFields, p->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 			}
 			#endif
-	
+
 	//struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 	//struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 	/*
@@ -9470,13 +9467,13 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 		B_t3 = S_1^4 + ( S_1 * S_3 )
 		A_t3 = S_5 + ( S_1^2 * S_3 )
 		R_t3 = S_1^6 + S_3^2 + ( S_1^3 * S_3 ) + ( S_1 * S_5 )
-		
+
 		case t <= 2
 		C_t2 = 0
 		B_t2 = S_1
 		A_t2 = S_1^2
 		R_t2 = S_1^3 + S_3
-		
+
 		S_1 is *(syndrome->element+0)
 		S_3 is *(syndrome->element+2)
 		S_5 is *(syndrome->element+4)
@@ -9493,32 +9490,32 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 			{
 				logMes;	printf("[tmp_S_1_pow_2 is done]\r\n");
 			}
-			#endif	
-	
+			#endif
+
 	tmp_S_1_pow_3 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_2, *(p->syndrome->element+0));
 			#ifndef RELEASE
 			if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 			{
 				logMes;	printf("[tmp_S_1_pow_3 is done]\r\n");
 			}
-			#endif	
-	
+			#endif
+
 	tmp_S_1_pow_4 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_2, tmp_S_1_pow_2);
 			#ifndef RELEASE
 			if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 			{
 				logMes;	printf("[tmp_S_1_pow_4 is done]\r\n");
 			}
-			#endif	
-	
+			#endif
+
 	tmp_S_1_pow_6 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_3, tmp_S_1_pow_3);
 			#ifndef RELEASE
 			if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 			{
 				logMes;	printf("[tmp_S_1_pow_6 is done]\r\n");
 			}
-			#endif	
-	
+			#endif
+
 	if(p->numberOfCorrection > 1)
 	{
 		tmp_S_3_pow_2 = multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+2), *(p->syndrome->element+2));
@@ -9539,7 +9536,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 				{
 					logMes;	printf("[tmp_C_t3 is done]\r\n");
 				}
-				#endif	
+				#endif
 
 		tmp_B_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_4, multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+2)));
 				#ifndef RELEASE
@@ -9549,7 +9546,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 				}
 				#endif
 	}
-		
+
 
 	if(p->numberOfCorrection > 2)
 	{
@@ -9568,7 +9565,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 */
 		tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields, 
 					multiElementsInGF_returnAddr(galoisFields, tmp_C_t3, tmp_C_t3),
-                    multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), tmp_A_t3)
+					multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), tmp_A_t3)
 					);
 
 				#ifndef RELEASE
@@ -9576,14 +9573,14 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 				{
 					logMes;	printf("[tmp_R_t3 is done]\r\n");
 				}
-				#endif	
+				#endif
 	}
 
-	
-	
-	
-	
-	
+
+
+
+
+
 	if(p->numberOfCorrection > 2)
 	{
 		tmp_ref_coefficient = tmp_C_t3;
@@ -9593,13 +9590,13 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 					logMes;	printf("[calculate syndrome factors end]\r\n");
 				}
 				#endif
-				
+
 				#ifndef RELEASE
 				if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
 				{
 					logMes;	printf("[saving errLocPoly start]\r\n");
 				}
-				#endif			
+				#endif
 		if( tmp_ref_coefficient != (*(galoisFields->element+0)) )//check refference coefficient is zero?
 		//NO -> degree of errLoc poly is 3.
 		{
@@ -9608,12 +9605,12 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 					{
 						logMes;	printf("degree of errLoc poly is 3\r\n");
 					}
-					#endif	
+					#endif
 			*(p->errLocPoly->element+3) = tmp_C_t3;
 			*(p->errLocPoly->element+2) = tmp_B_t3;
 			*(p->errLocPoly->element+1) = tmp_A_t3;
 			*(p->errLocPoly->element+0) = tmp_R_t3;
-			
+
 			// p->degreeOfErrLocPoly=3;
 
 		}
@@ -9625,14 +9622,14 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 					{
 						logMes;	printf("degree of errLoc poly is 2\r\n");
 					}
-					#endif	
+					#endif
 			*(p->errLocPoly->element+3) = (*(galoisFields->element+0));
 			*(p->errLocPoly->element+2) = *(p->syndrome->element+0);
 			*(p->errLocPoly->element+1) = tmp_S_1_pow_2;
 			*(p->errLocPoly->element+0) = tmp_C_t3;
-			
+
 			// p->degreeOfErrLocPoly=2;
-			
+
 		}
 
 				#ifndef RELEASE
@@ -9645,7 +9642,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 		p->coefficient_of_alpha_two = *(p->errLocPoly->element+2);
 		p->coefficient_of_alpha_one = *(p->errLocPoly->element+1);
 		p->coefficient_of_alpha_zero = *(p->errLocPoly->element+0);
-		
+
 	}
 	else if(p->numberOfCorrection > 1)
 	{
@@ -9655,11 +9652,11 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 					{
 						logMes;	printf("degree of errLoc poly is 3\r\n");
 					}
-					#endif	
+					#endif
 			*(p->errLocPoly->element+2) = *(p->syndrome->element+0);
 			*(p->errLocPoly->element+1) = tmp_S_1_pow_2;
 			*(p->errLocPoly->element+0) = tmp_C_t3;
-			
+
 			// if( tmp_C_t3 != (*(galoisFields->element+0)) )
 			// {
 				// p->degreeOfErrLocPoly=2;
@@ -9668,11 +9665,11 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 			// {
 				// p->degreeOfErrLocPoly=1;
 			// }
-			
+
 		}
 	}
-	
-	
+
+
 	p->degreeOfErrLocPoly = checkDegreePolynomials(galoisFields, p->errLocPoly);
 
 	return 0;
@@ -9808,10 +9805,10 @@ struct struct_encodingComponentInGF
 	// struct_powerFormPolynomials *receivedCodeWord;
 	// struct_powerFormPolynomials *errorCodeWord;
 	//struct_powerFormPolynomials *erroredCodeWord;
-	
+
 	unsigned int minimumDistance;
 	unsigned int parityBitsLength;//shifted....
-	
+
 	char_POWER_FORM *generationPolynomial;
 }typedef struct_encodingComponentInGF;
 //////////////////////////////////////////////////////////////////////////////////
@@ -9842,13 +9839,13 @@ struct_encodingComponentInGF *createEncodingComponent(unsigned int length, unsig
 
 	p=(struct_encodingComponentInGF*)malloc(sizeof(struct_encodingComponentInGF));
 	memset(p, 0, sizeof(struct_encodingComponentInGF));
-	
+
 	p->minimumDistance=2*numberOfCorrectableBit+1;
-	
+
 	p->parityBitsLength=strlen(generationPolynomial)-1;
-	
+
 	p->codeWord=createPowerFormPolynomial(length);
-	
+
 	p->generationPolynomial=generationPolynomial;
 	return p;
 }
@@ -9869,9 +9866,9 @@ char closeEncodingComponent(struct_encodingComponentInGF **p)
 		return -1;
 	}
 	#endif
-	
+
 	closePowerFormPolynomial(&((*p)->codeWord));
-	
+
 	free(*p);
 	*p=NULL;
 }
@@ -9932,7 +9929,7 @@ struct_encodingComponentInGF *recreateEncodingComponentAndInputValue(struct_enco
 					printf("it will be deleted.\n");
 				}
 				#endif
-				
+
 		closeEncodingComponent(p);
 	}
 	*p=createEncodingComponentAndInputValue(length, numberOfCorrectableBit, generationPolynomial, value);
@@ -9953,7 +9950,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 				infoMes; printf("[start] calculateParityInGaloisFieldAttachLowSide\n");
 			}
 			#endif
-	
+
 	#ifndef RELEASE
 	if(!encodedCodeWord)
 	{
@@ -9968,7 +9965,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 		return -1;
 	}
 	#endif
-		
+
 	// char_POWER_FORM *remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
 	// memcpy(remainder, encodedCodeWord->equation, sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
 	remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->usedLength+1));
@@ -9984,7 +9981,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 	}
 	#endif
 	*(remainder+encodedCodeWord->usedLength)=0;
-	
+
 
 			#ifndef RELEASE
 			if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
@@ -9992,7 +9989,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 				logMes; printf("in calculateParityInGaloisFieldAttachLowSide, memcpy result is below...\n\"%s\"\n", remainder);
 			}
 			#endif
-	
+
 
 	for(i=0; i<encodedCodeWord->usedLength; i++)
 	{
@@ -10018,7 +10015,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 			}
 		}
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -10035,7 +10032,7 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
 		*(encodedCodeWord->equation+i)=*(remainder+i);
 	}
 	#endif
-	
+
 	free(remainder);
 
 			#ifndef RELEASE
@@ -10053,7 +10050,7 @@ char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *enc
 	unsigned int i;
 	unsigned int j;
 	unsigned int genPolyLength=strlen(generationPolynomial);
-	
+
 	char_POWER_FORM *remainder;
 
 	#ifndef RELEASE
@@ -10070,7 +10067,7 @@ char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *enc
 		return -1;
 	}
 	#endif
-	
+
 	remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->usedLength+1));
 	memcpy(remainder, encodedCodeWord->equation, sizeof(char_POWER_FORM)*(encodedCodeWord->usedLength+1));
 
@@ -10081,7 +10078,7 @@ char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *enc
 				printf("in calculateParityInGaloisFieldAttachHighSide, memcpy result : \"%s\"\n", remainder);
 			}
 			#endif
-	
+
 	for(i=0; i<encodedCodeWord->usedLength; i++)
 	{
 		if((encodedCodeWord->usedLength-genPolyLength)<i)
@@ -10103,9 +10100,9 @@ char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *enc
 			}
 		}
 	}
-		
+
 	memcpy(encodedCodeWord->equation+encodedCodeWord->usedLength-numberOfParityBits-1, remainder, sizeof(char_POWER_FORM)*numberOfParityBits);
-	
+
 	free(remainder);
 	return 0;
 }
@@ -10133,10 +10130,10 @@ struct_errorComponent *createErrorComponent(unsigned int length)
 		return NULL;
 	}
 	#endif
-	
+
 	p=(struct_errorComponent*)malloc(sizeof(struct_errorComponent));
 	memset(p, 0, sizeof(struct_errorComponent));
-	
+
 	p->erroredCodeWord=createPowerFormPolynomial(length);
 	p->errorLocationVector=createPowerFormPolynomial(length);
 	return p;
@@ -10158,12 +10155,12 @@ char closeErrorComponent(struct_errorComponent **p)
 		return -1;
 	}
 	#endif
-	
+
 	closePowerFormPolynomial(&((*p)->erroredCodeWord));
 	closePowerFormPolynomial(&((*p)->errorLocationVector));
 	free(*p);
 	(*p)=NULL;
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -10217,7 +10214,7 @@ struct_errorComponent *ifNotExistCreateErrorComponent(struct_errorComponent **p,
 	}
 	else
 	{
-		*p=createErrorComponent(length);		
+		*p=createErrorComponent(length);
 	}
 	return *p;
 }
@@ -10225,7 +10222,7 @@ struct_errorComponent *ifNotExistCreateErrorComponent(struct_errorComponent **p,
 void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsigned int numberOfError)
 {
 	unsigned int i;
-	
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -10249,8 +10246,8 @@ void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsig
 void summationError(struct_powerFormPolynomials *codeWord, struct_powerFormPolynomials *error)
 {
 	unsigned int i;
-	
-	
+
+
 	#ifndef RELEASE
 	if(!codeWord)
 	{
@@ -10269,7 +10266,7 @@ void summationError(struct_powerFormPolynomials *codeWord, struct_powerFormPolyn
 		printf("in summationError, codeWord->length!=error->length.\n");
 	}
 	#endif
-	
+
 	for(i=0; i<codeWord->usedLength; i++)
 	{
 		if(*(error->equation+i)=='1')
@@ -10318,7 +10315,7 @@ void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, stru
 		printf("in summationError, codeWord->usedLength!=error->usedLength.\n");
 	}
 	#endif
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(codeWord, error, result)
 	#endif
@@ -10341,7 +10338,7 @@ void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, stru
 			*(result->equation+i)=*(codeWord->equation+i);
 		}
 	}
-	
+
 	*(result->equation+i)=0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -10355,7 +10352,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 	unsigned int i, j;
 	double numberOfSameBits;
 	double probability;
-		
+
 	if(!p)
 	{
 		p=(char*)malloc(sizeof(char)*(infoBitsLength+parityBitsLength+1));
@@ -10364,7 +10361,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 		printf("in randdomInfoBitStreamChanger, memory allocation. size is '%d'+1='%d'\n", infoBitsLength+parityBitsLength,infoBitsLength+parityBitsLength+1);
 	}
 	*(p+infoBitsLength+parityBitsLength)=0;
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -10377,7 +10374,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 				printf("in randdomInfoBitStreamChanger, Generated info Bits is...\n");
 			}
 			#endif
-		
+
 	j=0;
 	for(i=0; i<holeLength; i++)
 	{
@@ -10389,7 +10386,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 				numberOfSameBits=((double)rand() / ((double)RAND_MAX + 1) * 5)+1;
 				// probability=(double)((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1));
 				// numberOfSameBits=((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1) * 5)+1;
-				
+
 				j=(unsigned int)numberOfSameBits;
 			}
 			if(probability>0.5)
@@ -10420,7 +10417,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 				}
 				#endif
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)==FLAG_MASK_PRINTF_CALCULATE_PROCESS)
 			{
@@ -10439,16 +10436,16 @@ char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBits
 {
 	unsigned int holeLength=infoBitsLength+parityBitsLength;
 	unsigned int i;
-		
+
 	if(!p)
 	{
 		p=(char*)malloc(sizeof(char)*(infoBitsLength+parityBitsLength+1));
-		
+
 		warningMes;
 		printf("in randdomInfoBitChanger, memory allocation. size is '%d'+1='%d'\n", infoBitsLength+parityBitsLength,infoBitsLength+parityBitsLength+1);
 	}
 	*(p+infoBitsLength+parityBitsLength)=0;
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
 			{
@@ -10461,7 +10458,7 @@ char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBits
 				printf("in randdomInfoBitChanger, Generated info Bits is...\n");
 			}
 			#endif
-		
+
 	for(i=0; i<holeLength; i++)
 	{
 		if(rand()%2)
@@ -10473,7 +10470,7 @@ char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBits
 			*(p+i) = '0';
 		}
 	}
-	
+
 			#ifndef RELEASE
 			if((global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)==FLAG_MASK_PRINTF_CALCULATE_PROCESS)
 			{
@@ -10700,7 +10697,7 @@ void initGlobalQuantizInfo
     infoMes; printf("Quantiz number of bit is %d\r\n", global_QuantizationInfo.numsOfBits);
 
 	infoMes; printf("Quantiz Number of Steps is %d\r\n", global_QuantizationInfo.numberOfSteps);
-	
+
 	infoMes; printf("Detectable Maximum range %f\r\n", \
             global_QuantizationInfo.rangeMax + global_QuantizationInfo.offset);
 	infoMes; printf("Detectable Minumum range %f\r\n", \
@@ -10708,10 +10705,10 @@ void initGlobalQuantizInfo
 	
 	infoMes; printf("Quantized Maximum range %d\r\n", global_QuantizationInfo.quantizedIntMax);
 	infoMes; printf("Quantized Minumum range %d\r\n", global_QuantizationInfo.quantizedIntMin);
-	
-	
-	infoMes; printf("Quantiz Bit MasK 0x%x\r\n", global_QuantizationInfo.quatizing_bitMask);		
-	infoMes; printf("Quan mag Bit MasK 0x%x\r\n", global_QuantizationInfo.mag_bitMask);		
+
+
+	infoMes; printf("Quantiz Bit MasK 0x%x\r\n", global_QuantizationInfo.quatizing_bitMask);
+	infoMes; printf("Quan mag Bit MasK 0x%x\r\n", global_QuantizationInfo.mag_bitMask);
 
     infoMes; printf("numberic system %s\r\n", \
         NAME_QUANTIZ_NUMBERIC_SYSTEM[global_QuantizationInfo.numberic_system]);
@@ -10795,9 +10792,9 @@ void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], c
 {
 	SIGNED_INT k;
 	unsigned int i;
-	
-	
-	
+
+
+
 	for(i=0; i<length; i++)
 	{
 		if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
@@ -10932,7 +10929,7 @@ struct struct_treeStructure
     char*** tree_hd;
 	unsigned char** direction;
 	unsigned int** treeIndex;
-	
+
 	unsigned int* treeLength;
 	unsigned int treeDepth;
 
@@ -10943,11 +10940,11 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
 	double tmp_log;
 	unsigned int tmp_treeDepth;
 	unsigned int tmp_treeLength;
-	
+
 	unsigned int i;
 
 	struct_treeStructure *p;
-	
+
 	if(!zeroStageLength)
 	{
 		warningMes;
@@ -10962,25 +10959,25 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
 		printf("can't create structure of tree.\n");
 		return NULL;
 	}
-	
+
 	p=(struct_treeStructure*)malloc(sizeof(struct_treeStructure));
 	memset(p, 0, sizeof(struct_treeStructure));
-	
+
 	switch(treeType)
 	{
 		case TREE_CHASE:
 			/* calculate depth of tree */
 			tmp_log = (log10(zeroStageLength)/log10(2));
 			tmp_treeDepth = (unsigned int)tmp_log;
-			
+
 			if((tmp_log-((double)tmp_treeDepth))==0.0)	tmp_treeDepth--;
-			
+
 			tmp_treeDepth++;//To store smallest loc and llr magnitudeShort
 			p->treeDepth = tmp_treeDepth;
-			
+
 			p->treeLength = (unsigned int*)malloc(sizeof(unsigned int)*tmp_treeDepth);
 			memset(p->treeLength, 0, sizeof(unsigned int)*tmp_treeDepth);
-			
+
 			p->tree_mag = (u_int_QUANTIZ_MAGNITUDE_DIGIT***)malloc(sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT**)*tmp_treeDepth);
 			memset(p->tree_mag, 0, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT**)*tmp_treeDepth);
 			p->tree_hd= (char***)malloc(sizeof(char**)*tmp_treeDepth);
@@ -10990,11 +10987,11 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
 			memset(p->direction, 0, sizeof(char*)*tmp_treeDepth);
 			p->treeIndex = (unsigned int**)malloc(sizeof(unsigned int*)*tmp_treeDepth);
 			memset(p->treeIndex, 0, sizeof(unsigned int*)*tmp_treeDepth);
-			
-			
+
+
 
 			tmp_treeLength = zeroStageLength;
-	
+
 			for(i=0; i<tmp_treeDepth; i++)
 			{
 				if((tmp_treeLength%2)!=0)//having redundant
@@ -11003,7 +11000,7 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
 				}
 				else
 				{
-					tmp_treeLength/=2;					
+					tmp_treeLength/=2;
 				}
 				*(p->tree_mag+i) = (u_int_QUANTIZ_MAGNITUDE_DIGIT**)malloc(sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT*)*tmp_treeLength);
 				memset(*(p->tree_mag+i), 0, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT*)*tmp_treeLength);
@@ -11024,14 +11021,14 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
 			return NULL;
 	}
 	p->treeType=treeType;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
 char closeTreeStruct(struct_treeStructure **p)
 {
 	unsigned int i;
-	
+
 	if(!(*p))
 	{
 		warningMes;
@@ -11058,7 +11055,7 @@ char closeTreeStruct(struct_treeStructure **p)
 		printf("in closeTreeStruct, struct_treeStructure (*p)->treeDepth is NULL.\n");
 		return -1;
 	}
-	
+
 	switch((*p)->treeType)
 	{
 		case TREE_CHASE:
@@ -11070,14 +11067,13 @@ char closeTreeStruct(struct_treeStructure **p)
 				free(*(((*p)->tree_hd)+i));
 				free(*(((*p)->direction)+i));
 				free(*(((*p)->treeIndex)+i));
-				
 			}
 			free((*p)->tree_mag);
 			free((*p)->tree_hd);
 			free((*p)->direction);
 			free((*p)->treeIndex);
 			break;
-		
+
 		case TREE_NONE:
 		default:
 			break;
@@ -11092,7 +11088,7 @@ void testTreeStruct(struct_treeStructure *p)
 {
 	debugMes;
 	printf("p->treeType = %d\n", p->treeType);
-	
+
 	if(!p)
 	{
 		warningMes;
@@ -11103,7 +11099,7 @@ void testTreeStruct(struct_treeStructure *p)
 	}
 	debugMes;
 	printf("p = 0x%08x\n", p);
-	
+
 	if(!(p->tree_mag))
 	{
 		warningMes;
@@ -11127,7 +11123,7 @@ void testTreeStruct(struct_treeStructure *p)
 	}
 	debugMes;
 	printf("p->treeIndex = 0x%08x\n", p->treeIndex);
-	
+
 	if(!(p->treeLength))
 	{
 		warningMes;
@@ -11136,7 +11132,7 @@ void testTreeStruct(struct_treeStructure *p)
 	}
 	debugMes;
 	printf("p->treeLength = 0x%08x\n", p->treeLength);
-	
+
 	if(!(p->treeDepth))
 	{
 		warningMes;
@@ -11145,8 +11141,6 @@ void testTreeStruct(struct_treeStructure *p)
 	}
 	debugMes;
 	printf("p->treeDepth = %d\n", p->treeDepth);
-	
-	
 }
 void testPrintTreeStructIndicateAddr(struct_treeStructure *p)
 {
@@ -11187,7 +11181,7 @@ void testPrintTreeStructIndicateAddr(struct_treeStructure *p)
 		printf("in testPrintTreeStructIndicateAddr, p->treeDepth is ZERO.\n");
 		return;
 	}
-	
+
 	printf("/********** struct_treeStructure->tree printf address test **********/\n");
 	debugMes; printf("treeStruct pointer : 0x%08x\n", p);
 	debugMes; printf("root pointer : p->tree_mag = 0x%08x, p->tree_hd = 0x%08x\n", 
@@ -11247,7 +11241,7 @@ void testPrintTreeStructValue(struct_treeStructure *p)
 		printf("in testPrintTreeStructIndicateAddr, p->treeDepth is ZERO.\n");
 		return;
 	}
-	
+
 	printf("/********** struct_treeStructure->tree_mag, tree_hd, index and direction printf value test **********/\n");
 	for(i=0; i<p->treeDepth; i++)
 	{
@@ -11326,7 +11320,7 @@ struct struct_logLikeHoodRatio
 	double_RATIONAL_NUMBER squreRootAvrLLR;
 
 	s_int_QUANTIZ_DIGIT *quantizedLLR;
-		s_int_QUANTIZ_DIGIT quantizedLLRMask;	
+		s_int_QUANTIZ_DIGIT quantizedLLRMask;
 	// s_int_QUANTIZ_DIGIT magnitudeMask;
 	s_int_QUANTIZ_DIGIT *magnitude;
 	unsigned int length;
@@ -11337,7 +11331,7 @@ struct struct_logLikeHoodRatio
 	unsigned char *locatorValidity;
 	unsigned int *locator;//locator has length that is locatorLength.
 	unsigned int locatorLength;
-	
+
 	struct struct_treeStructure *treeStruct;
 }typedef struct_logLikeHoodRatio;
 //////////////////////////////////////////////////////////////////////////////////
@@ -11355,31 +11349,31 @@ struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 	}
 	p=(struct_logLikeHoodRatio*)malloc(sizeof(struct_logLikeHoodRatio));
 	memset(p, 0, sizeof(struct_logLikeHoodRatio));
-	
+
 	p->llr=(double_RATIONAL_NUMBER*)malloc(sizeof(double_RATIONAL_NUMBER)*length);
 	memset(p->llr, 0, sizeof(sizeof(double_RATIONAL_NUMBER)*length));
-	
+
 	p->squreRootAvrLLR=0.0;
-	
+
 	p->quantizedLLR=(s_int_QUANTIZ_DIGIT*)malloc(sizeof(s_int_QUANTIZ_DIGIT)*length);
 	memset(p->quantizedLLR, 0, sizeof(sizeof(s_int_QUANTIZ_DIGIT)*length));
 	p->quantizedLLRMask = 0;
-	
+
 	p->magnitude=(s_int_QUANTIZ_DIGIT*)malloc(sizeof(s_int_QUANTIZ_DIGIT)*length);
 	memset(p->magnitude, -1, sizeof(sizeof(s_int_QUANTIZ_DIGIT)*length));
-	
+
 	p->length=length;
 	p->usedLength=0;
-	
+
 	// p->magnitudeShort=(s_int_QUANTIZ_DIGIT*)malloc(sizeof(s_int_QUANTIZ_DIGIT)*length);
 	// memset(p->magnitudeShort, 0, sizeof(sizeof(s_int_QUANTIZ_DIGIT)*length));
 	p->magnitudeShort=NULL;
     p->hardDecisionShort=NULL;
 	p->locator=NULL;
 	p->locatorLength=0;
-	
+
 	p->treeStruct=NULL;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -11387,8 +11381,8 @@ struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
 {
 	unsigned int i;
-	
-	
+
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -11403,7 +11397,7 @@ char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
 		return -1;
 	}
 	#endif
-	
+
 	if(((*p)->llr))
 	{
 		free((*p)->llr);
@@ -11432,9 +11426,9 @@ char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
 	{
 		free((*p)->locator);
 	}
-	
+
 	closeTreeStruct(&((*p)->treeStruct));
-	
+
 	free(*p);
 	*p=NULL;
 	return 0;
@@ -11480,16 +11474,16 @@ char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locato
 
 	p->magnitudeShort=(u_int_QUANTIZ_MAGNITUDE_DIGIT*)malloc(sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*locatorLength);
 	memset(p->magnitudeShort, -1, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*locatorLength);
-	
+
 	p->hardDecisionShort=(char*)malloc(sizeof(char)*locatorLength);
 	memset(p->hardDecisionShort, -1, sizeof(char)*locatorLength);
-	
+
 	p->locatorValidity=(unsigned char*)malloc(sizeof(unsigned int)*locatorLength);
 	memset(p->locatorValidity, 0, sizeof(unsigned char)*locatorLength);
-	
+
 	p->locator=(unsigned int*)malloc(sizeof(unsigned int)*locatorLength);
 	memset(p->locator, -1, sizeof(unsigned int)*locatorLength);
-		
+
 	p->locatorLength=locatorLength;
 	return 0;
 }
@@ -11515,7 +11509,7 @@ char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int us
 		return -1;
 	}
 	#endif
-	
+
 	p->usedLength=usedLength;
 	return 0;
 }
@@ -11523,7 +11517,7 @@ double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p)
 {
 	unsigned int i;
 	double_RATIONAL_NUMBER tmpAvr=0.0;
-	
+
 	for(i=0; i<p->usedLength; i++)
 	{
 		tmpAvr+=((*(p->llr+i))*(*(p->llr+i)));
@@ -11536,7 +11530,7 @@ double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p)
 char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int numberOfMask)
 {
 	unsigned int i;
-	
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -11551,8 +11545,8 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
 		return -1;
 	}
 	#endif
-	
-	
+
+
 	p->quantizedLLRMask=0;
 	for(i=0; ((i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&(i<numberOfMask)); i++)
 	{
@@ -11647,11 +11641,11 @@ char findMinimumMagnitudeFindLocPushAway
 	if(!(hd_codeword->usedLength)) return -1;
 	if(!(hd_codeword->equation)) return -1;	
 	#endif
-	
+
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0) tmp_criteria_HD = '1';
     else if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1) tmp_criteria_HD = '0';
 
-	
+
 	memset(p->magnitudeShort, -1, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*(p->locatorLength));
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0)
     {
@@ -11824,7 +11818,7 @@ char findMinimumMagnitudeFindLocPushAway
             }
         }
 	}
-	
+
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -11860,7 +11854,7 @@ char findMinimumMagnitudeGroupingPushAway
     unsigned int j;//find same val
     unsigned int k;//push away
 
-	
+
 	#ifndef RELEASE
 	if(!p)
 	{
@@ -11948,7 +11942,7 @@ char findMinimumMagnitudeGroupingPushAway
         tmp_priorHD = 'x';
     }
 
-	
+
 	memset(p->magnitudeShort, -1, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*(p->locatorLength));
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0)
     {
@@ -12227,7 +12221,7 @@ char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p)
 	#endif
 
     tmp_llr_mag_mask = (p->quantizedLLRMask >> 1);
-	
+
 	memset(p->magnitude, tmp_llr_mag_mask, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*(p->usedLength));
 
     switch(global_flag_case_llr_numberic_system)
@@ -12278,7 +12272,7 @@ char printMagnitudeOfLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 		printf("in printMagnitudeOfLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
 		return -1;
 	}
-	
+
 	printf("[Magnitude of LLR]\r\n");
 	for(i=0; i<p->usedLength; i++)
 	{
@@ -12623,14 +12617,14 @@ char initializingVariablesAssociateWithTree(struct_logLikeHoodRatio *p, enum tre
 		return -1;
 	}
 	#endif
-	
+
 	if((p->treeStruct))
 	{
 				#ifndef RELEASE
 				warningMes;	printf("in initializingVariablesAssociateWithTree, p->treeStruct is not NULL.\n");
 				warningMesShort;	printf("p->treeStruct will be removed.\n");
 				#endif
-		
+
 		closeTreeStruct(&(p->treeStruct));
 	}
 	
@@ -12643,7 +12637,7 @@ char initializingVariablesAssociateWithTree(struct_logLikeHoodRatio *p, enum tre
 				return -1;
 			}
 			#endif
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -12717,7 +12711,7 @@ char findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(
 		return -1;
 	}
 	#endif
-	
+
 	tmp_depth=p->treeStruct->treeDepth;
 	tmp_row_loc=0;
 	tmp_direction=0;
@@ -12753,7 +12747,7 @@ char findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(
 		}
 		else//left
 		{
-			tmp_row_loc+=tmp_row_loc+DIRECTION_LEFT;			
+			tmp_row_loc+=tmp_row_loc+DIRECTION_LEFT;
 		}
 		tmp_depth--;
 		// if(!tmp_depth) printf("if(!tmp_depth) i[%d]\n", i);
@@ -13020,10 +13014,10 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
 			*(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
 			*(*(p->treeStruct->treeIndex + 0) + i / 2) = i - 1;
 					// printf("EXTRA)) depth(0),length(%d), %d(%d) --->>> ", i, *(p->magnitude+i-1), i-1);
-					// printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));			
+					// printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));
 		}
 	}
-	
+
 	/* 1st and 2nd, 3rd .... stage(depth) tree */
 	for(depth = 1; depth < p->treeStruct->treeDepth; depth++)
 	{
@@ -13212,18 +13206,18 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
 	if(!p)	return -1;
 	if(!(p->locatorLength)) return -1;
 	if(!(p->locatorValidity)) return -1;
-	
+
 	if(!operandA) return -1;
 	if(!(operandA->length)) return -1;
 	if(!(operandA->usedLength)) return -1;
 	if(!(operandA->equation)) return -1;
-	
+
 	if(!operandB) return -1;
 	if(!(operandB->length)) return -1;
 	if(!(operandB->usedLength)) return -1;
 	if(!(operandB->equation)) return -1;
 	#endif
-	
+
 	for(i=0; i<p->locatorLength; i++)
 	{
         /* locator is always smaller than codeword Length */
@@ -13243,7 +13237,7 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
 			printf("in checkMinimumMagnitudeLogLikeHoodRatio, (*(p->locator+%d)='%d' exceed (operandA->usedLength)='%d' or (operandB->usedLength)='%d'\n",
 				i, (*(p->locator+i)), (operandA->usedLength), (operandB->usedLength) );
 			return -2;
-		}		
+		}
 	}
 	return 0;
 }
@@ -13758,8 +13752,8 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
 				#endif
 		return NULL;
 	}
-	
-	
+
+
 	// if(!(p->llr))
 	// {
 		// if(!(p->length))
@@ -13795,7 +13789,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
 		printf("in createLogLikeHoodRatioUsingLlrMask, quantizedLLRMask is '%d'.\n", quantizedLLRMask);
 		return NULL;
 	}
-	
+
 	if(!(p=createLogLikeHoodRatio(length)))
 	{
 		warningMes;
@@ -13839,7 +13833,7 @@ struct struct_bpskComponents
 	double_BPSK_DATA *bpskTransData;
 	double_BPSK_DATA *bpskReceivedDataAddedAwgn;
 	double_BPSK_DATA squreRootBpskReceivedDataAddedAwgn;
-	
+
 	// double_BPSK_DATA *bpskReceivedDataLLR;
 	struct_logLikeHoodRatio *bpskReceivedLLR;
 	unsigned char statusFlag;
@@ -13849,18 +13843,18 @@ struct_bpskComponents *createBpskComponents(unsigned int length)
 {
 	struct_bpskComponents *p=(struct_bpskComponents*)malloc(sizeof(struct_bpskComponents));
 	memset(p, 0, sizeof(struct_bpskComponents));
-	
+
 	p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));
 	memset(p->bpskTransData, 0, sizeof(double_BPSK_DATA)*length);
 			debugMes; printf("in createBpskComponents, p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));\n");
 			debugMes; printf("in createBpskComponents, p->bpskTransData=0x%016x\n", p->bpskTransData);
-	
+
 	p->bpskReceivedDataAddedAwgn=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
 	memset(p->bpskReceivedDataAddedAwgn, 0, sizeof(double_BPSK_DATA)*length);
-	
+
 	// p->bpskReceivedDataLLR=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
 	// memset(p->bpskReceivedDataLLR, 0, sizeof(double_BPSK_DATA)*length);
-	
+
 	p->bpskReceivedLLR=createLogLikeHoodRatio(length);
 			#ifndef RELEASE
 			if(!(p->bpskReceivedLLR))
@@ -13869,12 +13863,12 @@ struct_bpskComponents *createBpskComponents(unsigned int length)
 				printf("in createBpskComponents, !(p->bpskReceivedLLR=createLogLikeHoodRatio(unsigned int length))\n");
 			}
 			#endif
-	
+
 	p->length=length;
 	p->usedLength=length;
-	
+
 	p->statusFlag=BPSK_TRANCEIVE_FLAG_DATA_INIT;
-	
+
 	return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -13894,9 +13888,9 @@ char closeBpskComponents(struct_bpskComponents **p)
 		return -1;
 	}
 	#endif
-	
+
 	closeLogLikeHoodRatio(&((*p)->bpskReceivedLLR));
-	
+
 	free((*p)->bpskTransData);
 	free((*p)->bpskReceivedDataAddedAwgn);
 	free(*p);
@@ -13958,7 +13952,7 @@ void BPSK_Mod(double_BPSK_DATA *Transmitted_MSG, char *Codeword_MSG, unsigned in
 			debugFuncNameMes; printf("in BPSK_Mod, if(!WordLength)\n");
 		}
 		#endif
-	
+
 	// for(i=0; i<WordLength; i++)
 	// {
 		// printf("%c ", Codeword_MSG[i]);
@@ -13967,7 +13961,7 @@ void BPSK_Mod(double_BPSK_DATA *Transmitted_MSG, char *Codeword_MSG, unsigned in
 	// {
 		// printf("%f ", Transmitted_MSG[i]);
 	// }
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(WordLength, Codeword_MSG, Transmitted_MSG)
 	#endif
@@ -13988,7 +13982,7 @@ void BPSK_Mod(double_BPSK_DATA *Transmitted_MSG, char *Codeword_MSG, unsigned in
 void BPSK_Demod(char *Codeword_MSG, double_BPSK_DATA *Received_MSG, unsigned WordLength)
 {
 	unsigned int i;
-	
+
 	#ifdef USING_OPEN_MP
 	#pragma omp parallel for schedule(guided) private(i) shared(WordLength, Received_MSG, Codeword_MSG)
 	#endif
@@ -14032,7 +14026,7 @@ double gaussian(double mean, double var)
 {
 		const double PI = 3.14159265358979323846;
 		double temp1, temp2, x1, x2;
-		
+
 		x1 = (rand() + 1);				//x1에 0이 발생하지 않도록
 		x2 = rand();					//0이 발생해도 관계 없습니다.
 		// x1 = (rand_r(&tmp_seed) + 1);				//x1에 0이 발생하지 않도록
@@ -14071,7 +14065,7 @@ void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg,
 	memset(channel_noise, 0, sizeof(double)*number_of_loop);
 
 
-	
+
 	for(i=0;i<number_of_loop;i++)
 	{
 		channel_noise[i] = gaussian(0, 1);
@@ -14080,7 +14074,7 @@ void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg,
 	{
 		Sum_Pow += pow(transmitted_msg[i], 2);
 	}
-	
+
 	spow = Sum_Pow / number_of_loop;
 	npow = spow / bitrate / pow(10, (main_com_EbN0/10));
 	attn = sqrt((0.5 * npow));
@@ -14106,7 +14100,7 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
 	memset(channel_noise, 0, sizeof(double)*number_of_loop);
 
 
-	
+
 	for(i=0;i<number_of_loop;i++)
 	{
 		channel_noise[i] = gaussian(0, 1);
@@ -14118,7 +14112,7 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
 	{
 		Sum_Pow += pow(transmitted_msg[i], 2);
 	}
-	
+
 	spow = Sum_Pow / number_of_loop;
 	npow = spow / bitrate / pow(10, (main_com_EbN0/10));
 	attn = sqrt((0.5 * npow));
@@ -14145,7 +14139,7 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
 void printBpskModulation(unsigned int printLength, double_BPSK_DATA *p)
 {
 	unsigned int i;
-	
+
 	if(!printLength)
 	{
 		warningMes;
@@ -14158,7 +14152,7 @@ void printBpskModulation(unsigned int printLength, double_BPSK_DATA *p)
 		printf("in printBpskModulation, double_BPSK_DATA p is NULL.\n");
 		return;
 	}
-	
+
 	for(i=0; i<printLength; i++)
 	{
 		printf("%.2f ", *(p+i));
@@ -14188,7 +14182,7 @@ void printBpskAWGN(unsigned int printLength, double_BPSK_DATA *operandA, double_
 		printf("in printBpskAWGN, double_BPSK_DATA operandA is NULL.\n");
 		return;
 	}
-	
+
 	for(i=0; i<printLength; i++)
 	{
 		printf("%.2f ", *(operandA+i)-*(operandB+i));
@@ -14199,7 +14193,7 @@ void printBpskAWGN(unsigned int printLength, double_BPSK_DATA *operandA, double_
 void printLLR(unsigned int printLength, double_BPSK_DATA *p)
 {
 	unsigned int i;
-	
+
 	if(!printLength)
 	{
 		warningMes;
@@ -14212,7 +14206,7 @@ void printLLR(unsigned int printLength, double_BPSK_DATA *p)
 		printf("in printLLR, double_BPSK_DATA p is NULL.\n");
 		return;
 	}
-	
+
 	for(i=0; i<printLength; i++)
 	{
 		printf("%.2f ", *(p+i));
@@ -14229,11 +14223,11 @@ char set_unSelTp_bofore_decoding
 	unsigned int *W_selTP_errCnt,
 
 	unsigned int *W_list_errCntOfTP_afterDec_theo,
-	
+
 	struct_powerFormPolynomials **W_sel_TP_CW_pwrFormPoly,
 
 	unsigned int INFO_testPatternNum,
-	
+
 	struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly,
 
 	unsigned int *INFO_list_errCntOfTP_beforeDec_theo,
@@ -14248,19 +14242,19 @@ char set_unSelTp_bofore_decoding
 		errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_sel_TP is NULL.\r\n");
 		return -1;
 	}
-	
+
 	if(!W_selTP_errCnt)
 	{
 		errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_selTP_errCnt is NULL.\r\n");
 		return -2;
 	}
-	
+
 	if(!W_list_errCntOfTP_afterDec_theo)
 	{
 		errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *W_list_errCntOfTP_afterDec_theo is NULL.\r\n");
 		return -2;
 	}
-	
+
 	if(!W_sel_TP_CW_pwrFormPoly)
 	{
 		errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *W_sel_TP_CW_pwrFormPoly is NULL.\r\n");
@@ -14272,25 +14266,25 @@ char set_unSelTp_bofore_decoding
 		errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly is NULL.\r\n");
 		return -6;
 	}
-	
+
 	if(!INFO_list_TP_CW_pwrFormPoly[0])
 	{
 		errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", tmp_i);
 		return -7;
 	}
-	
+
 	if(!INFO_list_errCntOfTP_beforeDec_theo)
 	{
 		errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *INFO_list_errCntOfTP_beforeDec_theoy is NULL.\r\n");
 		return -6;
 	}
 	#endif
-	
+
 	for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
 	{
 		W_list_errCntOfTP_afterDec_theo[tmp_i]=0;
 	}
-	
+
 	*W_selectedTP = INFO_testPatternNum;
 	*W_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
 	*W_sel_TP_CW_pwrFormPoly = INFO_list_TP_CW_pwrFormPoly[0];
@@ -14306,13 +14300,13 @@ char set_selTP_before_decording_skipDecOnly
 	unsigned int *W_selTP_errCnt,
 
 	unsigned int *W_list_errCntOfTP_afterDec_theo,
-	
+
 	struct_powerFormPolynomials **W_sel_TP_CW_pwrFormPoly,
-	
+
 	unsigned int INFO_hd_correctability,
 
 	unsigned int INFO_testPatternNum,
-	
+
 	unsigned int INFO_CH_errCnt,
 
 	struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly,
@@ -14321,11 +14315,11 @@ char set_selTP_before_decording_skipDecOnly
 )
 {
 	unsigned int tmp_i;
-	
+
 	unsigned int tmp_sel_TP;
 	unsigned int tmp_selTP_errCnt;
-	
-	
+
+
 	#ifndef RELEASE
 	if(!W_selectedTP)
 	{
@@ -14344,13 +14338,13 @@ char set_selTP_before_decording_skipDecOnly
 		errorMes; printf("in set_selTP_before_decording_skipDecOnly, unsigned int *W_list_errCntOfTP_afterDec_theo is NULL.\r\n");
 		return -2;
 	}
-	
+
 	if(!W_sel_TP_CW_pwrFormPoly)
 	{
 		errorMes; printf("in set_selTP_before_decording_skipDecOnly, struct_powerFormPolynomials *W_sel_TP_CW_pwrFormPoly is NULL.\r\n");
 		return -3;
 	}
-	
+
 	if(!INFO_hd_correctability)
 	{
 		errorMes; printf("in set_selTP_before_decording_skipDecOnly, unsigned int INFO_hd_correctability is zero.\r\n");
@@ -14361,7 +14355,7 @@ char set_selTP_before_decording_skipDecOnly
 	{
 		errorMes; printf("in set_selTP_before_decording_skipDecOnly, unsigned int INFO_testPatternNum is zero.\r\n");
 		return -5;
-	}	
+	}
 	if(!INFO_list_TP_CW_pwrFormPoly)
 	{
 		errorMes; printf("in set_selTP_before_decording_skipDecOnly, struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly is NULL.\r\n");
@@ -14383,9 +14377,9 @@ char set_selTP_before_decording_skipDecOnly
 		return -8;
 	}
 	#endif
-	
+
 	tmp_selTP_errCnt = INFO_CH_errCnt;
-	
+
 	switch(global_flag_case_selTP_before_dec)
 	{
 		/********************************************************************/
@@ -14440,8 +14434,6 @@ char set_selTP_before_decording_skipDecOnly
 						{
 							W_list_errCntOfTP_afterDec_theo[tmp_i] = INFO_list_errCntOfTP_beforeDec_theo[tmp_i];
 						}
-						
-						
 					}
 					/*
 						note. if no error bit count, error count to fix hard-decision. 
@@ -14452,7 +14444,7 @@ char set_selTP_before_decording_skipDecOnly
 						tmp_sel_TP = 0;
 					}
 				break;
-					
+
 				/*
 					note. selecting error bits belong to correctable test pattern's error number.
 					if can't correct, select hard-decision error number.
@@ -14473,7 +14465,7 @@ char set_selTP_before_decording_skipDecOnly
 							W_list_errCntOfTP_afterDec_theo[tmp_i] = INFO_list_errCntOfTP_beforeDec_theo[tmp_i];
 						}
 					}
-					
+
 					if(tmp_sel_TP == INFO_testPatternNum)
 					{
 						tmp_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
@@ -14521,7 +14513,7 @@ char set_selTP_before_decording_skipDecOnly
 					// for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 					// {
 						// tmp_sel_TP = 0;//debug mode, to accur core dump
-					// }							
+					// }
 					// printf("[W]");
 					/* note. to fine maximum error count, tmp_selTP_errCnt is clrear to zero. */
 					for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
@@ -14541,7 +14533,7 @@ char set_selTP_before_decording_skipDecOnly
 							tmp_sel_TP = tmp_i;
 						}
 					}
-					
+
 					if(tmp_sel_TP == INFO_testPatternNum)
 					{
 						tmp_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
@@ -14557,7 +14549,7 @@ char set_selTP_before_decording_skipDecOnly
 					In soft-dedision case, it has same function.
 			*/
 			*W_sel_TP_CW_pwrFormPoly = INFO_list_TP_CW_pwrFormPoly[tmp_sel_TP];
-			
+
 					#ifndef RELEASE
 					/********** display parts **********/
 					if(
@@ -14576,12 +14568,10 @@ char set_selTP_before_decording_skipDecOnly
 								infoMes; printf("not selecting->apply basic(default).\n");
 							break;
 
-
 							/* not-support */
 							case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:
 								infoMes; printf("basic.\n");
 							break;
-
 							
 							case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL:
 								infoMes; printf("normal.\n");
@@ -14621,8 +14611,8 @@ char set_selTP_before_decording_skipDecOnly
 		/************ get BER mode is theoretical mode, that is *************/
 		/**************** BER is theoretically best case end ****************/
 		/********************************************************************/
-		
-		
+
+
 		/********************************************************************/
 		/************** get BER mode is actual mode, that is  ***************/
 		/************** BER can be different with theoretical ***************/
@@ -14646,10 +14636,10 @@ char set_selTP_before_decording_skipDecOnly
 		/************** get BER mode is actual mode, that is  ***************/
 		/************** BER can be different with theoretical ***************/
 		/************** case end                            ***************/
-		/********************************************************************/						
-		
-		
-		
+		/********************************************************************/
+
+
+
 		default:
 			errorMes;
 			printf("Get BER mode is not selected so, can't procedure program.\r\n");
@@ -14675,7 +14665,7 @@ char set_flag_theo_suc_list_TP(unsigned char *correctableFlag, unsigned int TP_l
 		errorMes; printf("in set_flag_theo_suc_list_TP, unsigned char *correctableFlag is null.\r\n");
 		return -1;
 	}
-	
+
 	if(!TP_length)
 	{
 		errorMes; printf("in set_flag_theo_suc_list_TP, unsigned int TP_length is zero.\r\n");
@@ -14683,7 +14673,7 @@ char set_flag_theo_suc_list_TP(unsigned char *correctableFlag, unsigned int TP_l
 	}
 	#endif
 	unsigned int tmp_i;
-	
+
 	for(tmp_i=0; tmp_i<TP_length; tmp_i++)
 	{
 		if( (codeWordErrCnt[tmp_i] <= hardDecisionCorrectability) )
@@ -14704,11 +14694,11 @@ char set_flag_act_fail_list_TP
 	unsigned int *W_setlectedTP,//write
 	unsigned char *W_list_flag_decodingFail,
 	unsigned char *W_flag_allDecFail,
-	
+
 	unsigned char *R_list_flag_beforeDec_synd_zero,
 	unsigned char *R_list_flag_degErrPolyNotMax,
 	unsigned char *R_list_flag_metricChkAndDegErrPolySame,
-	
+
 	unsigned int INFO_TP_Nums,
 	const char *INFO_ALGORITHM_NAME
 )
@@ -14722,7 +14712,7 @@ char set_flag_act_fail_list_TP
 		errorMes; printf("in setFlagDecodingFailm, unsigned int *W_setlectedTP, is null\r\n");
 		return -1;
 	}
-	
+
 	if(!W_list_flag_decodingFail)
 	{
 		errorMes; printf("in setFlagDecodingFailm, unsigned char *W_list_flag_decodingFail is null\r\n");
@@ -14753,7 +14743,7 @@ char set_flag_act_fail_list_TP
 	}
 	#endif
 
-	
+
 	(*W_setlectedTP) = INFO_TP_Nums;
 	for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
 	{
@@ -14761,8 +14751,8 @@ char set_flag_act_fail_list_TP
 		{
 			if(*W_setlectedTP == INFO_TP_Nums) *W_setlectedTP = tmp_i;
 			W_list_flag_decodingFail[tmp_i] = 0;
-			
-			
+
+
 			#ifndef RELEASE
 			if(
 				(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -14785,7 +14775,7 @@ char set_flag_act_fail_list_TP
 			W_list_flag_decodingFail[tmp_i] = 1;
 		}
 	}
-	
+
 	for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
 	{
 		if(
@@ -14797,7 +14787,7 @@ char set_flag_act_fail_list_TP
 				*W_setlectedTP = tmp_i;
 			}
 			W_list_flag_decodingFail[tmp_i] = 0;
-			
+
 			#ifndef RELEASE
 			if(
 				(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -14822,7 +14812,7 @@ char set_flag_act_fail_list_TP
 				*W_setlectedTP = tmp_i;
 			}
 			W_list_flag_decodingFail[tmp_i] = 0;
-			
+
 			#ifndef RELEASE
 			if(
 				(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -14844,7 +14834,7 @@ char set_flag_act_fail_list_TP
 		else
 		{
 			W_list_flag_decodingFail[tmp_i] = 1;
-			
+
 			#ifndef RELEASE
 			if(
 				(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -14864,8 +14854,8 @@ char set_flag_act_fail_list_TP
 			#endif
 		}
 	}
-	
-	
+
+
 	// for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
 	// {
 		// printf("test)) W_list_flag_decodingFail[%d] = %s, R_list_flag_beforeDec_synd_zero[%d] = %s, selected TP = '%d', ADDR : 0x%x\r\n",
@@ -14877,18 +14867,18 @@ char set_flag_act_fail_list_TP
 			// W_setlectedTP
 		// );
 	// }
-	
+
 	for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
 	{
 		// printf("W_list_flag_decodingFail[%d] = %s\r\n", tmp_i, W_list_flag_decodingFail[tmp_i]?"[ON]":"[OFF]");
 		if(!(W_list_flag_decodingFail[tmp_i])) break;
-	}	
-	
+	}
+
 	if(tmp_i == INFO_TP_Nums)
 	{
 		*W_setlectedTP = 0;
 		*W_flag_allDecFail = 1;
-		
+
 		#ifndef RELEASE
 		if(
 			(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -14949,15 +14939,11 @@ char passingThroughAwgnData
 	struct_errorComponent *filePass_errorComponents=NULL;
 	struct_bpskComponents *filePass_bpskComponents=NULL;
 	struct_HD_BM_algorithmComponent *filePass_decordingComponents=NULL;
-	
+
 	unsigned int errorCount=0;
 
 	unsigned int i;
-	
-	
-	
-	
-	
+
 	printf(">> data passing AWGN channel\n");
 	infoMes;
 	printf("EbN0 is '%f'.\r\n", filePass_EbN0);
@@ -14971,16 +14957,12 @@ char passingThroughAwgnData
 	printf("Code length is '%d'.\r\n", filePass_codeLength);
 	infoMes;
 	printf("Field length is '%d'.\r\n", filePass_galoisField->nonSorted->length);
-	
+
 	if(filePass_EbN0 < 4.0)
 	{
 		warningMes;
 		printf("EbN0 is low.\n");
 	}
-	
-	
-	
-	
 
 	filePass_encodingComponentInGaloisField = recreateEncodingComponent(&filePass_encodingComponentInGaloisField, filePass_codeLength, filePass_selectedNumberOfSetOfConjugacy, (char_POWER_FORM*)filePass_generationPolynomial);
 	filePass_bpskComponents=createBpskComponents(filePass_codeLength);
@@ -15012,22 +14994,22 @@ char passingThroughAwgnData
 		}
 		while(errorCount>filePass_selectedNumberOfSetOfConjugacy);
 
-		
+
 		filePass_decordingComponents=createBmAlgorithmComponent(filePass_galoisField->nonSorted, filePass_selectedNumberOfSetOfConjugacy, (char*)filePass_errorComponents->erroredCodeWord->equation, filePass_errorComponents->erroredCodeWord->usedLength);
 		calculateBmAlgorithm(filePass_galoisField->nonSorted, filePass_decordingComponents);
 		chienSearch_static(filePass_galoisField->nonSorted, filePass_decordingComponents->alpha, filePass_decordingComponents->errorLocationVector, &(filePass_decordingComponents->metricCheck) );
 		errorCorrection(filePass_decordingComponents->codeWord, filePass_decordingComponents->errorLocationVector);
 		unloadFromCodeWordStartAtHighSide(unloadStream, filePass_decordingComponents->codeWord);
 		unloadFromCodeWordStartAtHighSide(noisedStream, filePass_errorComponents->erroredCodeWord);
-		
+
 		closeBmAlgorithmComponent(&filePass_decordingComponents);
 	}
-	
+
 	closeEncodingComponent(&filePass_encodingComponentInGaloisField);
 	closeBpskComponents(&filePass_bpskComponents);
 	closeBmAlgorithmComponent(&filePass_decordingComponents);
 	closeErrorComponent(&filePass_errorComponents);
-	
+
 	return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -15103,12 +15085,12 @@ enum cmdLineOptionInstructionType
 	OPT_NOTHING,
 	OPT_FLAG,
 	OPT_FLAG_CASE,
-	
+
 
 	OPT_DEBUG,
 
 	OPT_SET_VALUE,
-	
+
 	OPT_SET_VALUES,
 	OPT_SET_VALUES_SERIES,//example) {-settingCategory=[value0],[value1],[value2],[value3]}
 
@@ -15137,7 +15119,7 @@ enum enum_list_valueType
 
 	VALUE_TYPE_LONG,
 	VALUE_TYPE_UNSIGNED_LONG,
-	
+
 	VALUE_TYPE_FLOAT,
 	VALUE_TYPE_FLOAT_RATIO,
 	VALUE_TYPE_FLOAT_RATIO_LIMIT,
@@ -15145,7 +15127,7 @@ enum enum_list_valueType
 	VALUE_TYPE_DOUBLE,
 	VALUE_TYPE_DOUBLE_RATIO,
 	VALUE_TYPE_DOUBLE_RATIO_LIMIT,
-	
+
 	VALUE_TYPE_STRING,
 }typedef enum_list_valueType;
 
@@ -15157,13 +15139,13 @@ struct struct_cmdLineOption
 	enum cmdLineOptionInstructionType instType;
 	unsigned char argument;
 	unsigned char argumentNumber;
-	
+
 	void *value;
 	unsigned int valueMask;
 
 	enum enum_list_valueType valueType;
 
-		struct struct_cmdLineOption *cmdAddedOption;
+	struct struct_cmdLineOption *cmdAddedOption;
 };
 
 struct struct_scheduling_FIFO
@@ -15193,11 +15175,11 @@ switch(temp->instType)
 	case OPT_FLAG:
 		printf("instType: OPT_FLAG[%d]\n", temp->instType);
 		break;
-	
+
 	case OPT_DEBUG:
 		printf("instType: OPT_DEBUG[%d]\n", temp->instType);
 		break;
-	
+
 	case OPT_DISPLAY:
 		printf("instType: OPT_DISPLAY[%d]\n", temp->instType);
 		break;
@@ -15214,7 +15196,7 @@ switch(temp->instType)
 	case OPT_SET_VALUE:
 		printf("instType: OPT_SET_VALUE[%d]\n", temp->instType);
 		break;
-	
+
 	case OPT_SET_VALUES:
 		printf("instType: OPT_SET_VALUES[%d]\n", temp->instType);
 		break;
@@ -15235,11 +15217,11 @@ switch(temp->instType)
 	case OPT_COMPONENT: //move to sub category
 		printf("instType: OPT_COMPONENT[%d]\n", temp->instType);
 		break;
-	
+
 	case STRUCT_END:
 		printf("instType: STRUCT_END[%d]\n", temp->instType);
 		break;
-		
+
 	default:
 		printf("instType: UNKNOWN[?]\n");
 }
@@ -15328,17 +15310,17 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 	{"display_HD",			0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_BM_algorithm_HD_display_option},
 	{"display_SD",			0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_BM_algorithm_SD_display_option},
 	#endif
-		
+
 	{"hard_decision",	0,	OPT_FLAG,		0,	0,	&global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],		FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,		VALUE_TYPE_UNSIGNED_INT,	NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 	{"soft_decision",	0,	OPT_FLAG,		0,	0,	&global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],		FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,		VALUE_TYPE_UNSIGNED_INT,	NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 
-		
+
 	{"decoding",		0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_BM_algorithm_decoding_option},
 
 	#ifndef RELEASE
 	{"debug",			0,	OPT_DEBUG,		0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_BM_algorithm_debug_option},
 	#endif
-	
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 /***** static struct struct_cmdLineOption bch_algorithm[] end *****/
@@ -15421,16 +15403,16 @@ static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 	{"display_HD",		0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_mSBS_algorithm_HD_display_option},
 	{"display_SD",		0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_mSBS_algorithm_SD_display_option},
 	#endif
-		
+
 	{"hard_decision",	0,	OPT_FLAG,	0,	0,	&global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],	FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,		VALUE_TYPE_UNSIGNED_INT,	NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 	{"soft_decision",	0,	OPT_FLAG,	0,	0,	&global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],	FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,		VALUE_TYPE_UNSIGNED_INT,	NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
-	
+
 	{"decoding",	0,	OPT_COMPONENT,	0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_mSBS_algorithm_decoding_option},
 
 	#ifndef RELEASE
 	{"debug",		0,	OPT_DEBUG,		0,	0,	NULL,																0,												VALUE_TYPE_NONE,			bch_mSBS_algorithm_debug_option},
 	#endif
-	
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15443,9 +15425,6 @@ static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 /******************************* bch_mSBS_algorithm_option *******************************/
 /******************************* bch_mSBS_algorithm_option *******************************/
 /******************************* bch_mSBS_algorithm_option *******************************/
-
-
-
 
 
 
@@ -15458,8 +15437,6 @@ static struct struct_cmdLineOption bch_common[] =
 {
 	{"oversynd",		0,	OPT_SET_VALUE,	0,	0,	&global_bch_Soft_OverSyndLen,	0,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 	{"addlcm",			0,	OPT_SET_VALUE,	0,	0,	&global_addedRootToLCM_string,			0,	VALUE_TYPE_STRING,			NULL},
-	
-	
 
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15468,7 +15445,7 @@ static struct struct_cmdLineOption bch_algorithm[] =
 {
 	{"used",		0,	OPT_FLAG,				0,	0,	&global_flag_simulationCode,	FLAG_MASK_CODE_BCH,		VALUE_TYPE_UNSIGNED_INT,	NULL},
 	{"common",	0,		OPT_COMPONENT,			0,	0,	NULL,							0,						VALUE_TYPE_NONE,			bch_common},
-	
+
 	{"bm",			0,	OPT_COMPONENT,			0,	0,	NULL,							0,						VALUE_TYPE_NONE,			bch_BM_algorithm_option},
 	{"msbs_t3",			0,	OPT_COMPONENT,		0,	0,	NULL,							0,						VALUE_TYPE_NONE,			bch_mSBS_algorithm_option},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
@@ -15479,13 +15456,13 @@ static struct struct_cmdLineOption bch_algorithm[] =
 	#ifndef RELEASE
 	static struct struct_cmdLineOption	usable_code_GaloisField_display_option[] =
 	{
-		{"primepoly",		0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY,		VALUE_TYPE_UNSIGNED_INT,	NULL},	
+		{"primepoly",		0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY,		VALUE_TYPE_UNSIGNED_INT,	NULL},
 		{"field",			0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_FIELD,			VALUE_TYPE_UNSIGNED_INT,	NULL},
 		{"conjugacies",		0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES,	VALUE_TYPE_UNSIGNED_INT,	NULL},
-		{"genpoly",			0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY,		VALUE_TYPE_UNSIGNED_INT,	NULL},	
-		{"sum_matrix",		0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX,		VALUE_TYPE_UNSIGNED_INT,	NULL},	
+		{"genpoly",			0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY,		VALUE_TYPE_UNSIGNED_INT,	NULL},
+		{"sum_matrix",		0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX,		VALUE_TYPE_UNSIGNED_INT,	NULL},
 		
-		{"fileio",			0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO,		VALUE_TYPE_UNSIGNED_INT,	NULL},	
+		{"fileio",			0,	OPT_FLAG,	0,	0,	&global_flag_gfCommon_display,	FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO,		VALUE_TYPE_UNSIGNED_INT,	NULL},
 		{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 	};
 	#endif
@@ -15495,8 +15472,7 @@ static struct struct_cmdLineOption usable_code_GaloisField[] =
 	{"exp",				0,	OPT_SET_VALUE,	0,	0,	&global_GaloisFieldExponential,		0,								VALUE_TYPE_UNSIGNED_INT,	NULL},
 	{"codelength",		0,	OPT_SET_VALUE,	0,	0,	&global_CodeLength,					0,								VALUE_TYPE_UNSIGNED_INT,	NULL},
 	{"limitcodelength",	0,	OPT_SET_VALUE,	0,	0,	&global_LimitCodeLength,			0,								VALUE_TYPE_UNSIGNED_INT,	NULL},
-	
-	
+
 	{"makeall",		0,	OPT_FLAG,		0,	0,	&global_flag_gfCommon,						FLAG_MASK_GF_COMMON_MAKE_GF_ALL,		VALUE_TYPE_UNSIGNED_INT,	NULL},
 		#ifndef RELEASE
 	{"display",		0,	OPT_COMPONENT,	0,	0,	NULL,								0,								VALUE_TYPE_NONE,			usable_code_GaloisField_display_option},
@@ -15534,7 +15510,7 @@ static struct struct_cmdLineOption	usaable_code_com_SD_option[] =
 {
 	{"correctable",		0,	OPT_SET_VALUE,	0,	0,	&global_bch_SoftCorrectable,	0,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 	{"correctables",	0,	OPT_SET_VALUES,	0,	0,	NULL,							0,	VALUE_TYPE_NONE,			usaable_code_com_HD_SD_option},
-	
+
 		#ifndef RELEASE
 		{"display",			0,	OPT_COMPONENT,	0,	0,	NULL,						0,	VALUE_TYPE_NONE,			bch_BM_algorithm_SD_display_option},
 		#endif
@@ -15544,10 +15520,10 @@ static struct struct_cmdLineOption	usaable_code_com_SD_option[] =
 static struct struct_cmdLineOption usable_code_common[] =
 {
 	{"gf",		0,	OPT_COMPONENT,		0,	0,	NULL,							0,						    					VALUE_TYPE_NONE,			usable_code_GaloisField},
-	
+
 	//added correctables
 	{"algorithm",	0,	OPT_COMPONENT,	0,	0,	&global_flag_sim_decodingMode,	FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,	VALUE_TYPE_UNSIGNED_INT,	usaable_code_com_algorithm_option},
-	
+
 	{"hard",		0,	OPT_COMPONENT,	0,	0,	&global_flag_sim_decodingMode,	FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,		VALUE_TYPE_UNSIGNED_INT,	usaable_code_com_HD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 	{"soft",		0,	OPT_COMPONENT,	0,	0,	&global_flag_sim_decodingMode,	FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,		VALUE_TYPE_UNSIGNED_INT,	usaable_code_com_SD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 
@@ -15571,7 +15547,7 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
 	{"start",	0,	OPT_SET_LANGE_SERIES,	0,	0,	&global_EbN0_Start_Value,	0,	VALUE_TYPE_DOUBLE,	NULL},
 	{"end",		0,	OPT_SET_LANGE_SERIES,	0,	0,	&global_EbN0_End_Value,		0,	VALUE_TYPE_DOUBLE,	NULL},
 	{"step",	0,	OPT_SET_LANGE_SERIES,	0,	0,	&global_EbN0_Step,			0,	VALUE_TYPE_DOUBLE,	NULL},
-	{"(not complete analysys argument of range, in partial processing)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{"(not complete analysys argument of range, in partial processing)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15598,21 +15574,21 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
 {
-	{"none",    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NONE,	    VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"not_sel", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"prior_0",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
-	{"prior_1",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
+	{"none",    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NONE,	    VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"not_sel", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,	VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"prior_0",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,	VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"prior_1",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_same_llr_handling,	FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 
-	{"(not sel option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{"(not sel option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
 {
-	{"none",            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,	            VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"not_sel_max_llr", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,  VALUE_TYPE_UNSIGNED_INT,	NULL},		
+	{"none",            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,	            VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"not_sel_max_llr", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_init_llr_mag_method,	FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,  VALUE_TYPE_UNSIGNED_INT,	NULL},
 
-	{"(not sel max option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{"(not sel max option is not work on tree)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15625,26 +15601,26 @@ static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_grouping[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_tree[] =
 {
-	{"follow_min_path",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"probabilistic_choosen",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
-	//{"prior_HD_zero",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO,	    VALUE_TYPE_UNSIGNED_INT,	NULL},	
-	{"(not complete a option of probabilistic_choosen)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},	
+	{"follow_min_path",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH,	VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"probabilistic_choosen",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN,	VALUE_TYPE_UNSIGNED_INT,	NULL},
+	//{"prior_HD_zero",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO,	    VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"(not complete a option of probabilistic_choosen)",	0,	OPT_NOTHING,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	NULL},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 {
-	{"pass_hd_1_dis",	    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_pass_hd_1,	    FLAG_CASE_PASS_MAG0_HD_1_DISABLE,	            VALUE_TYPE_UNSIGNED_INT,    NULL},		
-	{"pass_hd_1_en",	    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_pass_hd_1,	    FLAG_CASE_PASS_MAG0_HD_1_ENABLE,                 VALUE_TYPE_UNSIGNED_INT,    NULL},		
+	{"pass_hd_1_dis",	    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_pass_hd_1,	    FLAG_CASE_PASS_MAG0_HD_1_DISABLE,	            VALUE_TYPE_UNSIGNED_INT,    NULL},
+	{"pass_hd_1_en",	    0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_pass_hd_1,	    FLAG_CASE_PASS_MAG0_HD_1_ENABLE,                 VALUE_TYPE_UNSIGNED_INT,    NULL},
 
-	{"pri_same_LLR_mag",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_same_llr_mag_handling},		
-	{"init_LLR_loc_val",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_init_llr_mag_method},		
+	{"pri_same_LLR_mag",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_same_llr_mag_handling},
+	{"init_LLR_loc_val",	0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,	                                        VALUE_TYPE_NONE,            comm_ch_awgn_init_llr_mag_method},
 
-	{"minimum",	            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,	VALUE_TYPE_UNSIGNED_INT,    NULL},		
-	{"group_min_push_away",	0,	OPT_COMPONENT,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,	VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},	
+	{"minimum",	            0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,	VALUE_TYPE_UNSIGNED_INT,    NULL},
+	{"group_min_push_away",	0,	OPT_COMPONENT,	0,	0,	&global_flag_case_find_LLR_method,	FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,	VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},
 	{"tree",	            0,	OPT_COMPONENT,	0,	0,	NULL,	                            0,                                          VALUE_TYPE_NONE,	        comm_ch_awgn_llr_mag_find_meth_tree},
 
-	{"notice)pass_hd_1_is_not_tested_in_tree_structure",0,OPT_NOTHING,0,0,NULL,0,VALUE_TYPE_NONE,NULL},		
+	{"notice)pass_hd_1_is_not_tested_in_tree_structure",0,OPT_NOTHING,0,0,NULL,0,VALUE_TYPE_NONE,NULL},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15663,24 +15639,24 @@ static struct struct_cmdLineOption comm_channel_llr_quantiz_filter_set[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_numberic_system[] =
 {
-	{"twos_complement",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_numberic_system,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"ones_complement",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_numberic_system,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
+	{"twos_complement",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_numberic_system,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT,	VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"ones_complement",	        0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_numberic_system,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_symmetry[] =
 {
-//	{"disable", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, 	    VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"enbale",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
+//	{"disable", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, 	    VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"enbale",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_duplicated[] =
 {
-//	{"disable", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, 	    VALUE_TYPE_UNSIGNED_INT,	NULL},		
-	{"enbale",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED,	VALUE_TYPE_UNSIGNED_INT,	NULL},		
+//	{"disable", 0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, 	    VALUE_TYPE_UNSIGNED_INT,	NULL},
+	{"enbale",	0,	OPT_FLAG_CASE,	0,	0,	&global_flag_case_llr_mag_ones_complement_zero_handling,	ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15689,18 +15665,18 @@ static struct struct_cmdLineOption comm_channel_llr_quantization[] =
 {
 	{"filter_set",	            0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_filter_set},
 
-	{"numberic_system",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_numberic_system},	
-	{"zero_symmetry",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_zero_symmetry},	
-	{"zero_duplicated",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_zero_duplicated},	
-	
+	{"numberic_system",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_numberic_system},
+	{"zero_symmetry",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_zero_symmetry},
+	{"zero_duplicated",	        0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantiz_zero_duplicated},
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_llr[] =
 {
-	{"quantization",            0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantization},	
+	{"quantization",            0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_llr_quantization},
 
-	{"min_val_finding_meth",	0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_awgn_llr_mag_finding_meth},	
+	{"min_val_finding_meth",	0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,	comm_channel_awgn_llr_mag_finding_meth},
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15722,7 +15698,7 @@ static struct struct_cmdLineOption comm_channel_awgn[] =
 	
 	{"ebn0",				0,	OPT_COMPONENT,	0,	0,	NULL,							0,													VALUE_TYPE_NONE,			comm_channel_awgn_ebn0},
 	{"llr",					0,	OPT_COMPONENT,	0,	0,	NULL,							0,													VALUE_TYPE_NONE,			comm_channel_awgn_llr},
-	
+
 		#ifndef RELEASE
 		{"debug",	        0,	OPT_COMPONENT,	0,	0,	NULL,					        0,					                                0,					        comm_channel_awgn_debug},
 		#endif
@@ -15774,7 +15750,7 @@ static struct struct_cmdLineOption cmdOpt_sim_loop[] =
 	{"min",		0,	OPT_SET_VALUE,	0,	0,	&global_minimum_loop,	0,	VALUE_TYPE_UNSIGNED_LONG,	NULL},
 	{"base",	0,	OPT_SET_VALUE,	0,	0,	&global_base_of_loop,	0,	VALUE_TYPE_UNSIGNED_LONG,	NULL},
 	{"rate",	0,	OPT_SET_VALUE,	0,	0,	&global_rate_of_loop,	0,	VALUE_TYPE_UNSIGNED_INT,	NULL},
-	
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
@@ -15784,7 +15760,7 @@ static struct struct_cmdLineOption cmdOpt_simulation[] =
 	// {"start",	0,	OPT_SET_VALUE,	0,	0,	&global_EbN0_Start_Value,	0,	VALUE_TYPE_DOUBLE,	NULL},
 
 	{"loop",	0,	OPT_COMPONENT,	0,	0,	NULL,	0,	VALUE_TYPE_NONE,    cmdOpt_sim_loop},
-	
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15820,18 +15796,18 @@ static struct struct_cmdLineOption ber_dec_decision_handing[] =
 
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
-	
+
 static struct struct_cmdLineOption ber_dec_decision[] =
 {
 	// {"(not-support)",	0,	OPT_NOTHING,	0,	0,	NULL,						0,						VALUE_TYPE_NONE,			NULL},
-	{"used",				0,	OPT_FLAG_CASE,		0,	0,	&global_flag_case_selTP_before_dec,	FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
+	{"used",				0,	OPT_FLAG_CASE,		0,	0,	&global_flag_case_selTP_before_dec,	FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 
-	{"handling",			0,	OPT_COMPONENT,		0,	0,	&global_flag_case_selTP_before_dec,	FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,	VALUE_TYPE_UNSIGNED_INT,	ber_dec_decision_handing},	
+	{"handling",			0,	OPT_COMPONENT,		0,	0,	&global_flag_case_selTP_before_dec,	FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,	VALUE_TYPE_UNSIGNED_INT,	ber_dec_decision_handing},
 
 		#ifndef RELEASE
 		{"display",	0,	OPT_COMPONENT,	0,	0,	NULL,							0,							VALUE_TYPE_NONE,			ber_actual_display},
 		#endif
-	
+
 	{NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
@@ -15970,7 +15946,7 @@ static struct struct_cmdLineOption struct_cmdLineOption[] =
 		#ifndef RELEASE
 		{"log",			'l',	OPT_FLAG,	0,	0,	&global_flag_cmdOption,			FLAG_MASK_PRINTF_LOG,					VALUE_TYPE_UNSIGNED_INT,	NULL},
 		{"calc",		'c',	OPT_FLAG,	0,	0,	&global_flag_cmdOption,			FLAG_MASK_PRINTF_CALCULATE_PROCESS,		VALUE_TYPE_UNSIGNED_INT,	NULL},
-		{"memchk",		'm',	OPT_FLAG,	0,	0,	&global_flag_cmdOption,			FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS,	VALUE_TYPE_UNSIGNED_INT,	NULL},	
+		{"memchk",		'm',	OPT_FLAG,	0,	0,	&global_flag_cmdOption,			FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS,	VALUE_TYPE_UNSIGNED_INT,	NULL},
 		{"warning",		'w',	OPT_FLAG,	0,	0,	&global_flag_cmdOption,			FLAG_MASK_PRINTF_WARNING_MES,			VALUE_TYPE_UNSIGNED_INT,	NULL},
 		#endif
 
@@ -16006,9 +15982,9 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
 {
 	unsigned int i, j;
 	struct struct_cmdLineOption *temp;
-	
+
 	char *passingString = NULL;
-	
+
 	if(((p+0)->instType==OPT_SET_VALUES_SERIES)||((p+0)->instType==OPT_SET_LANGE_SERIES))
 	{
 		printf("=");
@@ -16042,15 +16018,15 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
 					printf("--%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?:((temp->instType==OPT_SET_VALUE)?'=':'\t')));
 				}
 			}
-			
+
 			if(temp->shortName)		printf("-%c\t", temp->shortName);
 			//printf("cmd typd : %d", temp->instType);
-			
+
 			if(temp->argument) printf("arg : %d\t", temp->argument);
 			if(temp->argumentNumber) printf("argNums : %d\t", temp->argumentNumber);
 
 			if((temp->instType==OPT_SET_VALUE))	printf("[value]");
-			
+
 			if((temp->instType!=OPT_SET_VALUES)&&(temp->instType!=OPT_SET_LANGE))	printf("\n");
 
 			if(temp->cmdAddedOption)
@@ -16070,7 +16046,7 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
 				}
 				printInstList(temp->cmdAddedOption, recursive + 1, passingString);
 			}
-			
+
 			if(passingString)
 			{
 				free(passingString);
@@ -16115,7 +16091,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
 					{
 						if((*((unsigned char*)p->value))) processingFlag = OVER_WRITED;
 						(*((unsigned int*)p->value))=(p->valueMask);
-					}	
+					}
 					else (*((unsigned char*)p->value))|=(p->valueMask);
 					break;
 
@@ -16143,7 +16119,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
 			{
 				infoMes; printf("flag : \"%s(%c)\" is flagged.\n", (p->longName?p->longName:"[unknown]"), (p->shortName?p->shortName:'?'));
 			}
-			
+
 			return 0;
 		}
 		else
@@ -16153,7 +16129,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
 		}
 	}
 	else if(p->instType == OPT_COMPONENT) return 0;
-	
+
 	errorMes;
 	if(p->longName)
 	{
@@ -16189,7 +16165,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
 			// return malloc(sizeof(long));
 		// case VALUE_TYPE_UNSIGNED_LONG:
 			// return malloc(sizeof(unsigned long));
-			
+
 		// case VALUE_TYPE_FLOAT:
 			// return malloc(sizeof(float));
 		// case VALUE_TYPE_DOUBLE:
@@ -16303,7 +16279,6 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
                 }
 				break;
 
-				
 			case VALUE_TYPE_DOUBLE:
 				(*((double*)p->value))=convertStringToDouble(valueString);
 				break;
@@ -16339,14 +16314,14 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
                     (*((double*)p->value)) = 1.0f;
                 }
 				break;
-				
+
 			case VALUE_TYPE_STRING:
 				tmp=strlen(valueString);
 				(*((char**)p->value))=(char*)malloc(sizeof(char)*(tmp+1));
 				memset((*((char**)p->value)), 0, (tmp+1));
 				strcpy((*((char**)p->value)), valueString);
 				break;
-				
+
 			default:
 				errorMes;
 				printf("flagger is not signed number or float, double, void, none value type.\n");
@@ -16368,7 +16343,7 @@ char *instSetValues(struct struct_cmdLineOption *p, char *str)
 	char *arg = str;
 	unsigned int argBufLength;
 	struct struct_cmdLineOption *temp;
-	
+
 	for(temp = p; temp->instType != STRUCT_END; temp++)
 	{
 		if(temp->instType == OPT_SET_VALUES_SERIES)
@@ -16376,9 +16351,9 @@ char *instSetValues(struct struct_cmdLineOption *p, char *str)
 			/* abstract number from str */
 			strncpy(argBuf, arg, (argBufLength=strcspn(arg, cmdOtionKeyWords)));
 			arg+=argBufLength;
-			
+
 			(*(argBuf+argBufLength)) = 0;
-			
+
 			/* set value */
 									// printf("\t\t\tinstSetValues) long name is \"%s\" argBuf = %s\n", (temp->longName?temp->longName:"[unknown long name]"), argBuf);
 			if(instSetValue(temp, argBuf))
@@ -16423,7 +16398,7 @@ char *instSetValues(struct struct_cmdLineOption *p, char *str)
 			break;
 		}
 	}
-	
+
 	return arg;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16446,7 +16421,7 @@ struct struct_cmdLineOption *temp = p;
 			}
 												// printf("instType: OPT_FLAG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
-		
+
 		case OPT_DEBUG:
 												// printf("instType: OPT_DEBUG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
@@ -16454,7 +16429,7 @@ struct struct_cmdLineOption *temp = p;
 		case OPT_SET_VALUE:
 												// printf("instType: OPT_SET_VALUE[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
-		
+
 		case OPT_SET_VALUES:
 												// printf("instType: OPT_SET_VALUES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
@@ -16481,11 +16456,11 @@ struct struct_cmdLineOption *temp = p;
 			}
 												// printf("instType: OPT_COMPONENT[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
-		
+
 		case STRUCT_END:
 												// printf("instType: STRUCT_END[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
 			break;
-			
+
 		default:
 			errorMes;
 			printf("instruction type is UNKNOWN.\n");
@@ -16509,7 +16484,7 @@ struct struct_cmdLineOption *instFindSameLongNameInInstSet(struct struct_cmdLine
 			}
 		}
 	}
-	
+
 	return NULL;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16526,9 +16501,9 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
 	unsigned int argBufLength = 0;
 	char argBuf[51] = {0};
-	
+
 	void *value = NULL;
-	
+
 /* 	
 	if(*(arg)=='{')
 	{
@@ -16536,7 +16511,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 		arg++;
 	}
 	 */
-	
+
 	while(*arg)
 	{
 		switch(*arg)
@@ -16545,12 +16520,12 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 			{
 				arg++;
 															// debugMes;	printf("\t\tbefore arg : \"%s\".",arg);
-			
+
 				strncpy(argBuf, arg, (argBufLength=strcspn(arg, cmdOtionKeyWords)));
 				arg+=argBufLength;
-				
+
 				(*(argBuf+argBufLength)) = 0;
-				
+
 															// printf("\t\targBuf : \"%s\"", argBuf);
 															// printf("\t\tafter arg : \"%s\".\n",arg);
 														
@@ -16558,7 +16533,6 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 				/* Find same long name, do something start*/
 				if(instrocessInstElementWhenDetected(temp)) return str;
 				/* Find same long name, do something end*/
-			
 
 				switch(*arg)//enter sub struct_cmdLineOption Set
 				{
@@ -16572,7 +16546,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 							arg = argReturn;
 							argReturn = NULL;
 						}
-					
+
 					default:
 					break;
 				}
@@ -16620,13 +16594,13 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 						{
 							if(*arg == '-')
 							{
-								strncpy(argBuf, arg, (argBufLength=(strcspn(arg+1, cmdOtionKeyWords)+1)));								
+								strncpy(argBuf, arg, (argBufLength=(strcspn(arg+1, cmdOtionKeyWords)+1)));
 							}
 							else
 							{
 								strncpy(argBuf, arg, (argBufLength=strcspn(arg, cmdOtionKeyWords)));
 							}
-								
+
 							arg+=argBufLength;
 							
 							(*(argBuf+argBufLength)) = 0;
@@ -16643,7 +16617,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 						}
 					}
 					break;
-					
+
 					case OPT_SET_VALUES:
 					{
 						if(arg == (argReturn = instSetValues(temp->cmdAddedOption, arg))) return str;
@@ -16652,20 +16626,20 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 						/* call a set values function using sub set pointer */
 					}
 					break;
-					
+
 					case OPT_SET_LANGE:
 					{
 						/* call a set lange value function using sub set pointer */
 					}
 					break;
-					
+
 					case OPT_STRING:
 					{
 						if(temp->value)//if instruct set have any pointer to store value
 						{
 							strncpy(argBuf, arg, (argBufLength=strcspn(arg, cmdOtionKeyWords)));
 							arg+=argBufLength;
-							
+
 							(*(argBuf+argBufLength)) = 0;
 																	// printf("\t\t\targBuf : '%s'\n", argBuf);
 							/* set value */
@@ -16678,15 +16652,14 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 						}
 					}
 					break;
-					
-					
+
 					default:
 						return str;
 				}
 								// printf("set value parts.\n");
 				break;
 			}
-			
+
 			default:
 			{
 				errorMes;
@@ -16695,7 +16668,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 			}
 		}
 	}
-	
+
 	return arg;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16707,7 +16680,6 @@ int instMainProcessing(struct struct_cmdLineOption *p, char *str)
 	char *arg=str;
 	char *argBuffer=NULL;
 
-	
 	if(*(arg+0)!='-')
 	{
 		return -1;
@@ -16754,10 +16726,10 @@ void GLOBAL_flag_proc()
 {
 	unsigned int G_FP_tmp_i;
 	unsigned int G_FP_tmp_cnt;
-	
+
 	if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM))
 	{
-		infoMes; printf("Global algorithm verification mode is not enabled.\r\n");		
+		infoMes; printf("Global algorithm verification mode is not enabled.\r\n");
 		infoMes; printf("Start checking some decoding algorithm verification mode enabled.\r\n");
 
 		G_FP_tmp_cnt=0;
@@ -16772,16 +16744,16 @@ void GLOBAL_flag_proc()
 				global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] &= ~FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
 				infoMes; printf("%s algorithm verification mode enabled.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 				infoMes; printf("Even if [%s] algorithm do simulation using soft and hard decision mode are enabled, they are ignored.\r\n",
-					KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
+				KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 			}
 		}
-		
+
 		if(G_FP_tmp_cnt)
 		{
 			global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM;
 			global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
 			global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
-			infoMes; printf("Global algorithm verification mode is enabled.\r\n");		
+			infoMes; printf("Global algorithm verification mode is enabled.\r\n");
 
 		}
 		else
@@ -16816,14 +16788,14 @@ void GLOBAL_flag_proc()
 		infoMes; printf("Global Soft and Hard Decision mode modes are disabled..\r\n");
 	}
 	printf("\r\n");
-	
-	
-	
+
+
+
 	if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM))
 	{
 		if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
 		{
-			infoMes; printf("Global Soft Decision mode is not enabled.\r\n");		
+			infoMes; printf("Global Soft Decision mode is not enabled.\r\n");
 			infoMes; printf("Start checking some decoding algorithm Soft Decision mode enabled.\r\n");
 
 			G_FP_tmp_cnt=0;
@@ -16836,17 +16808,17 @@ void GLOBAL_flag_proc()
 					global_flag_bchDecAlgo_Enable |= uint32_bitMask[G_FP_tmp_i];
 					global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
 					global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] |= FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
-					
+
 					infoMes; printf("%s algorithm Soft Decision mode enabled.", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 				}
 			}
-			
+
 			if(G_FP_tmp_cnt)
 			{
 				global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
 				global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
-	
-				infoMes; printf("Global Soft Decision mode is enabled.\r\n");		
+
+				infoMes; printf("Global Soft Decision mode is enabled.\r\n");
 			}
 			else
 			{
@@ -16871,7 +16843,7 @@ void GLOBAL_flag_proc()
 					global_flag_bchDecAlgo_Enable |= uint32_bitMask[G_FP_tmp_i];
 					global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
 					global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] |= FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
-	
+
 					infoMes; printf("%s algorithm Soft Decision mode enabled.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 
 				}
@@ -16885,12 +16857,12 @@ void GLOBAL_flag_proc()
 	}
 	printf("\r\n");
 
-	
+
 	if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
 	{
 		if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION))
 		{
-			infoMes; printf("Global Hard Decision mode is not enabled.\r\n");		
+			infoMes; printf("Global Hard Decision mode is not enabled.\r\n");
 			infoMes; printf("Start checking some decoding algorithm Hard Decision mode enabled.\r\n");
 
 			G_FP_tmp_cnt=0;
@@ -16901,19 +16873,19 @@ void GLOBAL_flag_proc()
 					G_FP_tmp_cnt++;
 					global_flag_bchDecAlgo_Enable |= uint32_bitMask[G_FP_tmp_i];
 					global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
-					
+
 					infoMes; printf("%s algorithm Hard Decision mode enabled.", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 					infoMes; printf("[%s] algorithm do simulation using hard decision mode are enabled.",
 						KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 
 				}
 			}
-			
+
 			if(G_FP_tmp_cnt)
 			{
 				global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
-				
-				infoMes; printf("Global Hard Decision mode is enabled.\r\n");		
+
+				infoMes; printf("Global Hard Decision mode is enabled.\r\n");
 			}
 			else
 			{
@@ -16941,12 +16913,12 @@ void GLOBAL_flag_proc()
 			}
 
 			global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
-			
+
 			infoMes; printf("Global Hard Decision mode modes are enabled.\r\n");
 		}
 	}
 	printf("\r\n");
-	
+
 	/*
 			global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM;
 			global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
@@ -16959,27 +16931,27 @@ void GLOBAL_flag_proc()
 	global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION?"Soft Decision Mode":
 	global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION?"hard Decision Mode":"Unknown"	
 	);
-	
+
 	for(G_FP_tmp_i=0; G_FP_tmp_i<KIND_OF_BCH_DECODING_END; G_FP_tmp_i++)
 	{
 		if(global_flag_bchDecAlgo_Enable & uint32_bitMask[G_FP_tmp_i])
 		{
 			infoMes; printf("%s decoding algorithm [Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 		}
-		
+
 		if(global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] & FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 		{
 			infoMes; printf("%s decoding algorithm [Test Algorithm Mode Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 		}
-		
+
 		if(global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] & FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 		{
-			infoMes; printf("%s decoding algorithm [Soft Decision Mode Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);			
+			infoMes; printf("%s decoding algorithm [Soft Decision Mode Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 		}
-		
+
 		if(global_list_flag_bch_sim_decodingMode[G_FP_tmp_i] & FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 		{
-			infoMes; printf("%s decoding algorithm [Hard Decision Mode Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);						
+			infoMes; printf("%s decoding algorithm [Hard Decision Mode Enabled]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[G_FP_tmp_i]);
 		}
 	}
 	printf("/*****************************************************************/\r\n");
@@ -16990,7 +16962,6 @@ void GLOBAL_flag_proc()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(unsigned int argc, char **argv)
 {
-	
 	/*Test variables*/
 	unsigned int test_fileIO_errorCorrectingCount=0;
 	/*Tempolary variables*/
@@ -17002,43 +16973,37 @@ int main(unsigned int argc, char **argv)
 	unsigned int cmd_length=0;
 	unsigned int cmd_tmp_i=0;
 	unsigned int cmd_tmp_cnt=0;
-	
 
-	
 	struct_galoisField_info **main_com_listOf_GF=NULL;
 	struct_galoisField_info *main_com_used_GF=NULL;
 
-	
-	
 	char *main_com_genPoly=NULL;
-		char *main_com_limitedGenerationPolynomial=NULL;
+	char *main_com_limitedGenerationPolynomial=NULL;
 	unsigned int main_com_hd_correctability=0;
 	unsigned int *main_indi_hd_correctability=NULL;
-	
+
 	unsigned int main_com_totalOrderOfLCM=0;
 	struct_galoisFieldElements *main_com_expandEqOfLcmFromRoot=NULL;
-		struct_galoisFieldElements *main_com_limitExpandEqOfLCM_fromRoot=NULL;
+	struct_galoisFieldElements *main_com_limitExpandEqOfLCM_fromRoot=NULL;
 	struct_galoisFieldElements *main_com_addedLCM=NULL;
-	
+
 	struct_galoisFieldElements *main_com_finalEqOfrootOfLCM_andAddedLCM=NULL;
-	
+
 	unsigned int main_com_codeLength=0;//codeLength can be shorter than number of element in GF
 	unsigned int main_com_infoBitLength=0;
 	unsigned int main_com_parityBitsLength=0;
 	double main_com_codeRate=0.0;
-	
 
 	struct_scheduling_FIFO *processingUseThisAlgorithm;
-	
+
 	unsigned int main_tmp_degErrLocPoly=0;
 	unsigned int main_com_numsTP=0;
 	unsigned int main_tmp_soft_i=0;
-	
+
 	uint32_t main_tmp_sel_decAlgo_cnt=0;
 	uint32_t main_tmp_sel_decAlgo_i=0;
 	unsigned int *main_indi_sel_TP_i=NULL;
 
-	
 	char **main_com_strBuf_TP_saved=NULL;
 	struct_powerFormPolynomials **main_com_list_TP_pwrFormPoly=NULL;
 	struct_powerFormPolynomials **main_indi_sel_decoding_CW_pwrFormPoly=NULL;
@@ -17051,34 +17016,33 @@ int main(unsigned int argc, char **argv)
 	unsigned int **main_indi_list_errCntOf_TP_afterDec=NULL;
 	// unsigned int main_list_err_cnt_after_dec_whole_TP_best=0;
 
-	
 	/* soft Decision correctable test pattern list */
 	unsigned char **main_indi_list_flag_theo_ly_can_be_correctable = NULL;
-	
+
 	/* In actual decoding mode, to recognize which test-pattern can try correction, some flag needs */
 	unsigned char **main_indi_list_flag_beforeDec_syndZero = NULL;
 	unsigned char **main_indi_list_flag_after_dec_synd_zero = NULL;
 	unsigned char **main_indi_list_flag_degOfErrLocPolyNotMax = NULL;
 	unsigned char **main_indi_list_flag_metricChk_degErrLocPolySame = NULL;
-	
+
 	unsigned char **main_indi_list_flag_deccFail = NULL;
 	unsigned char *main_indi_list_flag_fail_allDec = 0;
-	
-	
+
+
 	/* algorithm loop count count */
 	//9223372036854775807
 	//100000000
 	unsigned long main_com_limit_algorithm_loop_cnt = 100000000;
 	unsigned long main_com_algorithm_loop_cnt = 0;
-	
+
 	/* error bits are over correctables */
 	unsigned long *main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt = NULL;
 	unsigned long *main_indi_err_corection_fail_cnt = NULL;
 	unsigned long *main_indi_errExceed_but_synd_zero_cnt = NULL;
 	unsigned long *main_indi_errExceed_but_syndSum_zero_cnt = NULL;
 	unsigned long *main_indi_err_detect_and_correct_fail_cnt = NULL;
-	
-	
+
+
 	unsigned long *main_indi_total_err_cnt_HD = NULL;
 	unsigned long *main_indi_total_err_cnt_CW = NULL;
 	unsigned long main_com_total_err_cnt_CH = 0;
@@ -17104,20 +17068,13 @@ int main(unsigned int argc, char **argv)
 	struct_errorComponent *main_com_errComponents=NULL;
 	struct_bpskComponents *main_com_bpskComponents=NULL;
 
-	
-	
-		
 	char *main_com_randInfoBitsStream=NULL;
-	
+
 	// unsigned int main_count=0;
 	unsigned int main_com_errNums_inDecodingAlgorithmTest=0;
 	unsigned long main_com_loopCount=0;
 	unsigned long main_com_totalSamlingLoop=0;
 	// unsigned int main_shiftedError=0;
-	
-	
-	
-	
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////// Temporary file input output variables ///////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -17129,24 +17086,22 @@ int main(unsigned int argc, char **argv)
 
 	FILE*   fileio_channelBER;
 	FILE*   fileio_codingBER;
-	
+
 	FILE*   fileio_total_bit_cnt;
 	FILE*   fileio_channel_err_bit_cnt;
-	
-	
+
 	FILE**  fileio_indi_algorithm_coding_HD_BER;
 	FILE**  fileio_indi_algorithm_codingBER;
-	
+
 	FILE**  fileio_indi_algorithm_coding_HD_err_bit_cnt;
 	FILE**  fileio_indi_algorithm_coding_err_bit_cnt;
-	
-	
+
 	FILE*   fileio_channelFER;
 	FILE*   fileio_codingFER;
-	
+
 	FILE*   fildio_EbN0;
 	FILE*   fildio_loop_Cnt;
-	
+
 	FILE*   fileio_simEnv;
 
     char *dirio_Name_home_path = NULL;
@@ -17167,36 +17122,33 @@ int main(unsigned int argc, char **argv)
     char fileio_Path_Target[768]={0};
 	struct dirent  *tmp_dir_entry;
 	struct dirent  *tmp_dir_entry2;
-	
+
 	unsigned int tmp_dirCnt;
 
 	char fileio_Name_Output_RootPath[26]={0};
     char fileio_Name_Report_Path[128]={0};
     char fileio_Name_Pattern_Path[128]={0};
     char fileio_Name_PatternLog_Path[128]={0};
-	
+
 	char fileio_Name_channel_BER[513]={0};
 	char fileio_Name_coding_BER[513]={0};
-	
+
 	char fileio_Name_total_bit_cnt[513]={0};
 	char fileio_Name_channel_err_bit_cnt[513]={0};
 
-	
 	char fileio_Name_indi_algorithm_coding_HD_BER[KIND_OF_BCH_DECODING_END][513]={0};
 	char fileio_Name_indi_algorithm_coding_BER[KIND_OF_BCH_DECODING_END][513]={0};
 
 	char fileio_Name_indi_algorithm_coding_HD_err_bit_cnt[KIND_OF_BCH_DECODING_END][513]={0};
 	char fileio_Name_indi_algorithm_coding_err_bit_cnt[KIND_OF_BCH_DECODING_END][513]={0};
-	
-	
+
 	char fileio_Name_channel_FER[513]={0};
 	char fileio_Name_coding_FER[513]={0};
-	
+
 	char fileio_Name_EbN0[513]={0};
 	char fileio_Name_loop_Cnt[513]={0};
-	
-	char fileio_Name_simEnv[513]={0};
 
+	char fileio_Name_simEnv[513]={0};
 
     /* pattern file io */
     FILE*    fileio_HD_mes;
@@ -17223,7 +17175,6 @@ int main(unsigned int argc, char **argv)
     FILE*    fileio_corrected_mes[KIND_OF_BCH_DECODING_END];
     FILE*    fileio_corrected_mes_log[KIND_OF_BCH_DECODING_END];
     FILE*    fileio_corrected_mes_verilog[KIND_OF_BCH_DECODING_END];
-
 
     char fileio_Name_HD_mes[513] = {0};
     char fileio_Name_HD_mes_log[513] = {0};
@@ -17263,7 +17214,7 @@ int main(unsigned int argc, char **argv)
 
 	fileio_indi_algorithm_codingBER = (FILE**)malloc(sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
 	memset(fileio_indi_algorithm_codingBER, 0, sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
-	
+
 	fileio_indi_algorithm_coding_HD_err_bit_cnt = (FILE**)malloc(sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
 	memset(fileio_indi_algorithm_coding_HD_err_bit_cnt, 0, sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
 
@@ -17324,7 +17275,7 @@ int main(unsigned int argc, char **argv)
 		date_simulation_date->tm_min,
 		date_simulation_date->tm_sec
 	);
-	
+
 /* make directory(sim result info save only) start */
     tmp_dirio_var = opendir(fileio_Name_Output_RootPath);
 	if(!tmp_dirio_var)
@@ -17365,7 +17316,7 @@ int main(unsigned int argc, char **argv)
 
 
 /* make PATTERN directory end */
-	
+
 /* make directory common used start */
     /* get home directory */
     dirio_Name_home_path = getenv("HOME");
@@ -17440,7 +17391,6 @@ int main(unsigned int argc, char **argv)
 /********************************************************************/
 /********** setting variables about global variables start **********/
 /********************************************************************/
-	
 	/*Exception process*/
 	/*code length is can't exceed GF length.*/
 	if(!( ( global_MaximumCodeLength = ((unsigned int)pow(2.0,(double)global_GaloisFieldExponential)) ) > global_CodeLength))
@@ -17454,13 +17404,13 @@ int main(unsigned int argc, char **argv)
 		if(global_MaximumCodeLength < global_LimitCodeLength)
 		{
 			global_LimitCodeLength = global_CodeLength;
-			
+
 			warningMesShort;
 			printf("Code limit length is not exceed number of galois fields elements.\n");
 		}
 	}
 	printf("\r\n");
-	
+
 	/*get BER process*/
 	if(!global_EbN0_Step)
 	{
@@ -17476,7 +17426,7 @@ int main(unsigned int argc, char **argv)
 		errorMes; printf("Simulator is Closed.\r\n");
 		return -1;
 	}
-	
+
 	/* setting decoding enable flag end */
 	/*BCH ALGORITHM TEST*/
 	/*
@@ -17484,7 +17434,6 @@ int main(unsigned int argc, char **argv)
 		if any flag is set, simulation will process decoding algorithm test sequence.
 	*/
 
-	
 	/*******************************************************/
 	/*************** modulation mode setting ***************/
 	/*******************************************************/
@@ -17537,7 +17486,7 @@ int main(unsigned int argc, char **argv)
 			warningMesShort; printf("Selecting CodeWord Method is not vailid.\r\n");
 		}
 	}
-	
+
 	if(!global_addedRootToLCM_string)
 	{
 		global_addedRootToLCM_string=(char*)malloc(sizeof(char)*2);
@@ -17547,8 +17496,7 @@ int main(unsigned int argc, char **argv)
 /********************************************************************/
 /*********** setting variables about global variables end ***********/
 /********************************************************************/
-	
-	
+
 /********************************************************************/
 /**** printf setted global variables about global variables start ****/
 /********************************************************************/
@@ -17557,7 +17505,6 @@ int main(unsigned int argc, char **argv)
 	printf("/*****************************************************************/\n");
 	for(i=0; i<sizeof(global_flag_simulationCode)*8; i++)
 	{
-		
 		if(global_flag_simulationCode)
 		{
 			switch(global_flag_simulationCode&(1<<i))
@@ -17574,7 +17521,6 @@ int main(unsigned int argc, char **argv)
 			errorMes; printf("Disabled all codes.\n");
 			break;
 		}
-
 	}
 
 	printf("/*****************************************************************/\n");
@@ -17582,29 +17528,28 @@ int main(unsigned int argc, char **argv)
 	printf("/*****************************************************************/\n");
 	infoMes; printf("[Global Variables]\n");
 	infoMes; printf("AWGN Coderate is %s\n", ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"disabled":"enabled"));
-	
+
 	infoMes; printf("EbN0 start : %g\n",global_EbN0_Start_Value);
 	infoMes; printf("EbN0 end : %g\n",global_EbN0_End_Value);
 	infoMes; printf("EbN0 step : %g\n",global_EbN0_Step);
-	
+
 	infoMes; printf("Error number : %d\n",global_ErrorNum);
 	infoMes; printf("Galois Field exponential : %d\n",global_GaloisFieldExponential);
 	infoMes; printf("Code length : %d\n",global_CodeLength);
 	infoMes; printf("Maximum Code length : %d\n",global_MaximumCodeLength);
 	infoMes; printf("Limit Code length : %d%s\n",global_LimitCodeLength, global_LimitCodeLength?"(Limited)":"(Unlimited)");
-	
+
 	infoMes; printf("Hard Decision correctable(t) : %d\n",global_bch_hardCorrectable);
 	infoMes; printf("Soft Decision correctable(p) : %d\n",global_bch_SoftCorrectable);
 	infoMes; printf("Over Syndrome number : %d\n", global_bch_Soft_OverSyndLen);
 	infoMes; printf("Added Root to Least Common Multiple : %s\n", global_addedRootToLCM_string);
 	printf("\n");
-	
+
 	printf("/*****************************************************************/\n");
 	printf("/*********** (Global Flag)Applied Modulation Mode List ***********/\n");
 	printf("/*****************************************************************/\n");
 	for(i=0; i<sizeof(global_flag_Modulation_Mode)*8; i++)
 	{
-		
 		if(global_flag_Modulation_Mode)
 		{
 			switch(global_flag_Modulation_Mode&(1<<i))
@@ -17621,9 +17566,8 @@ int main(unsigned int argc, char **argv)
 			warningMes; printf("Unknown Modulation.\n");
 			break;
 		}
-
 	}
-	
+
 	printf("/*****************************************************************/\n");
 	printf("/********* (Global Flag)Applied getting BER method Modes **********/\n");
 	printf("/*****************************************************************/\n");
@@ -17633,7 +17577,7 @@ int main(unsigned int argc, char **argv)
 		if(global_flag_bchDecAlgo_Enable&uint32_bitMask[cmd_tmp_i])
 		{
 			if(!(global_list_flag_bch_sim_decodingMode[cmd_tmp_i]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))//hard-decision
-			{			
+			{
 				if(global_flag_case_choosingCodeWordMethod_inTheo!=FLAG_CASE_SEL_TP_BEFORE_DEC_THEO)
 				{
 					infoMes; printf("[%s] #%d getting BER method is only meanful in soft-decision.\n", 
@@ -17659,7 +17603,7 @@ int main(unsigned int argc, char **argv)
 						infoMes; printf("[%s] #%d Applied Getting BER method to \"basic.\"\n", 
 						KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i], global_flag_case_choosingCodeWordMethod_inTheo);
 					break;
-						
+
 					case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL:
 						infoMes; printf("[%s] #%d Applied Getting BER method to \"normal.\"\n", 
 						KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i], global_flag_case_choosingCodeWordMethod_inTheo);
@@ -17682,17 +17626,13 @@ int main(unsigned int argc, char **argv)
 	{
 		warningMes; printf("#%d Method of gettig BER is not selected, So set to default.\n", global_flag_case_choosingCodeWordMethod_inTheo);
 		global_flag_case_choosingCodeWordMethod_inTheo = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT;
-		
 	}
 
 
 /********************************************************************/
 /***** printf setted global variables about global variables end *****/
 /********************************************************************/
-	
-	
-	
-	
+
 /********************************************************************/
 /************** initializing domestic variables start ***************/
 /********************************************************************/
@@ -17718,14 +17658,11 @@ int main(unsigned int argc, char **argv)
 		{
 			main_tmp_degErrLocPoly = global_bch_SoftCorrectable;
 		}
-	}	
+	}
 	main_com_numsTP = (unsigned int)pow(2.0,(double)main_tmp_degErrLocPoly);
-
-	
-
 	/*soft Decision variable end*/
-		
-		
+
+
 	//*soft Decision Channel Counting variable start*/
 	main_indi_list_errCntOf_TP_beforeDec = (unsigned int*)malloc(sizeof(unsigned int)*main_com_numsTP);
 	memset(main_indi_list_errCntOf_TP_beforeDec, 0, sizeof(unsigned int)*main_com_numsTP);
@@ -17736,7 +17673,6 @@ int main(unsigned int argc, char **argv)
 		main_indi_list_errCntOf_TP_afterDec[main_tmp_sel_decAlgo_i] = (unsigned int*)malloc(sizeof(unsigned int)*main_com_numsTP);
 		memset(main_indi_list_errCntOf_TP_afterDec[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned int)*main_com_numsTP);
 	}
-	
 
 	/* setting up scheduler start*/
 	processingUseThisAlgorithm = (struct_scheduling_FIFO*)malloc(sizeof(struct_scheduling_FIFO));
@@ -17745,7 +17681,7 @@ int main(unsigned int argc, char **argv)
 
 	main_indi_hd_correctability=(unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_hd_correctability, 0, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
-	
+
 	// main_list_err_cnt_after_dec_whole_TP_best=-1;
 
 	// main_indi_sel_TP_errCnt=-1;
@@ -17753,7 +17689,7 @@ int main(unsigned int argc, char **argv)
 	main_indi_sel_TP_i = (unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_sel_TP_i, 0, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 	//*soft Decision Channel Counting variable end*/
-	
+
 	/* soft Decision correctable test pattern list start */
 	main_indi_list_flag_theo_ly_can_be_correctable = (unsigned char**)malloc(sizeof(unsigned char*)*KIND_OF_BCH_DECODING_END);
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
@@ -17772,14 +17708,14 @@ int main(unsigned int argc, char **argv)
 		main_indi_list_flag_beforeDec_syndZero[main_tmp_sel_decAlgo_i] = (unsigned char*)malloc(sizeof(unsigned char)*main_com_numsTP);
 		memset(main_indi_list_flag_beforeDec_syndZero[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
 	}
-	
+
 	main_indi_list_flag_after_dec_synd_zero = (unsigned char**)malloc(sizeof(unsigned char*)*KIND_OF_BCH_DECODING_END);
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
 	{
 		main_indi_list_flag_after_dec_synd_zero[main_tmp_sel_decAlgo_i] = (unsigned char*)malloc(sizeof(unsigned char)*main_com_numsTP);
 		memset(main_indi_list_flag_after_dec_synd_zero[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
 	}
-	
+
 
 	main_indi_list_flag_degOfErrLocPolyNotMax = (unsigned char**)malloc(sizeof(unsigned char*)*KIND_OF_BCH_DECODING_END);
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
@@ -17787,7 +17723,7 @@ int main(unsigned int argc, char **argv)
 		main_indi_list_flag_degOfErrLocPolyNotMax[main_tmp_sel_decAlgo_i] = (unsigned char*)malloc(sizeof(unsigned char)*main_com_numsTP);
 		memset(main_indi_list_flag_degOfErrLocPolyNotMax[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
 	}
-	
+
 	main_indi_list_flag_metricChk_degErrLocPolySame = (unsigned char**)malloc(sizeof(unsigned char*)*KIND_OF_BCH_DECODING_END);
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
 	{
@@ -17795,7 +17731,7 @@ int main(unsigned int argc, char **argv)
 		memset(main_indi_list_flag_metricChk_degErrLocPolySame[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
 	}
 	/* soft Decision in actual mode, after dec synd zero flag end */
-	
+
 	/* soft Decision in actual mode, fail flag start */
 	main_indi_list_flag_deccFail = (unsigned char**)malloc(sizeof(unsigned char*)*KIND_OF_BCH_DECODING_END);
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
@@ -17807,19 +17743,17 @@ int main(unsigned int argc, char **argv)
 	main_indi_list_flag_fail_allDec = (unsigned char*)malloc(sizeof(unsigned char)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_list_flag_fail_allDec, 0, sizeof(unsigned char)*KIND_OF_BCH_DECODING_END);
 	/* soft Decision in actual mode, fail flag end */
-	
-	
-	
+
+
 	/* belong to algorithm, variables of BER initializing start */
 	main_indi_HD_BER = (double*)malloc(sizeof(double)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_HD_BER, 0, sizeof(double)*KIND_OF_BCH_DECODING_END);
-	
+
 	main_indi_BER = (double*)malloc(sizeof(double)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_BER, 0, sizeof(double)*KIND_OF_BCH_DECODING_END);
 	/* belong to algorithm, variables of BER initializing end */
-	
-	
-	
+
+
 	/* variables associated with error bits are over correctables set start */
 	main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt = (unsigned long*)malloc(sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt, 0, sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
@@ -17838,7 +17772,7 @@ int main(unsigned int argc, char **argv)
 
 	/* variables associated with error bits are over correctables set end */
 
-	
+
 	/* to calculate ber, variables setting start */
 	main_indi_total_err_cnt_HD = (unsigned long*)malloc(sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_total_err_cnt_HD, 0, sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
@@ -17847,16 +17781,16 @@ int main(unsigned int argc, char **argv)
 	memset(main_indi_total_err_cnt_CW, 0, sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
 	/* to calculate ber, variables setting end */
 
-	
+
 	/* decoding components list creating1 start */
 	main_indi_HD_decordComponents = (struct_generalForm_algorithmComponent**)malloc(sizeof(struct_generalForm_algorithmComponent*)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_HD_decordComponents, 0, sizeof(struct_generalForm_algorithmComponent*)*KIND_OF_BCH_DECODING_END);
-	
+
 	//	struct_generalForm_algorithmComponent ****main_indi_SD_list_of_decordingComponents=NULL;
 	main_indi_SD_list_of_decordingComponents = (struct_generalForm_algorithmComponent****)malloc(sizeof(struct_generalForm_algorithmComponent***)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_SD_list_of_decordingComponents, 0, sizeof(struct_generalForm_algorithmComponent***)*KIND_OF_BCH_DECODING_END);
 	/* decoding components list creating1 end */
-	
+
 	//EBN0 start value
 	if(global_EbN0_Start_Value)
 	{
@@ -17886,15 +17820,13 @@ int main(unsigned int argc, char **argv)
 	{
 		global_EbN0_End_Value=DEFAULT_VALUE_EBN0_END;
 		main_com_EbN0=DEFAULT_VALUE_EBN0_END;
-		
+
 		infoMes;
 		printf("setted default end value of main_com_EbN0 is '%f'.\n", global_EbN0_End_Value);
 	}
 	/*Channel variable end*/
-	
-	
-	
-	
+
+
 	/*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
 	// unsigned int main_com_numsTP=main_com_numsTP;
 									#ifndef RELEASE
@@ -17908,14 +17840,14 @@ int main(unsigned int argc, char **argv)
 									#endif
 	main_com_strBuf_TP_saved=(char**)malloc(sizeof(char*)*main_com_numsTP);
 	memset(main_com_strBuf_TP_saved, 0, sizeof(char*)*main_com_numsTP);
-	
+
 	main_com_list_TP_pwrFormPoly=(struct_powerFormPolynomials**)malloc(sizeof(struct_powerFormPolynomials*)*main_com_numsTP);
 	memset(main_com_list_TP_pwrFormPoly, 0, sizeof(struct_powerFormPolynomials*)*main_com_numsTP);
 
 	main_indi_sel_decoding_CW_pwrFormPoly=(struct_powerFormPolynomials**)malloc(sizeof(struct_powerFormPolynomials*)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_sel_decoding_CW_pwrFormPoly, 0, sizeof(struct_powerFormPolynomials*)*KIND_OF_BCH_DECODING_END);
 
-	
+
 									#ifndef RELEASE
 									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
 									{
@@ -17923,21 +17855,17 @@ int main(unsigned int argc, char **argv)
 										printf("memset(main_com_strBuf_TP_saved, 0, sizeof(char*)*main_com_numsTP);\n");
 										debugFuncNameMes;
 										printf("memset(main_com_list_TP_pwrFormPoly, 0, sizeof(struct_powerFormPolynomials*)*main_com_numsTP);\n");
-										
 									}
-									#endif	
-	
-	
-	
+									#endif
+
+
 	main_indi_HD_errCnt=(unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_HD_errCnt, -1, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
-	
+
 	main_indi_sel_TP_errCnt=(unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 	memset(main_indi_sel_TP_errCnt, -1, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
-	
-	
-	
-	
+
+
 	/* decoding components list creating2 start */
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<KIND_OF_BCH_DECODING_END; main_tmp_sel_decAlgo_i++)
 	{
@@ -17975,13 +17903,9 @@ int main(unsigned int argc, char **argv)
 	}
 	/* decoding components list creating2 end */
 
-	
 	/*Soft Decision Test Pattern Decording Coponents. end*/
-	
-	
-	
-	
-	
+
+
 	/******************************************************************/
 	/******************** memory initializing start *******************/
 	/******************************************************************/
@@ -17996,10 +17920,6 @@ int main(unsigned int argc, char **argv)
 /**************************************************************************/
 
 
-	
-	
-	
-	
 /********************************************************************/
 /********* setting variables about domestic variables start *********/
 /********************************************************************/
@@ -18012,10 +17932,8 @@ int main(unsigned int argc, char **argv)
 	initPrimitivePolynomial(&PRIMITIVE_POLYNOMIAL_SET);
 	initPrimitivePolynomial_inversed(&PRIMITIVE_POLYNOMIAL_SET_INVERSED, &PRIMITIVE_POLYNOMIAL_SET);
 	initMes; printf("initialized primitive polynomials is done.\r\n");
-	
 
-	
-	
+
 	/* printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX); */
 	if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
 	{
@@ -18047,11 +17965,10 @@ int main(unsigned int argc, char **argv)
 	/* To generate galois fields, initializing primitive polynomials end */
 
 	/* Initializing essential conditions end */
-		
-	
+
+
 	/* create galois field using primitive polynomial start */
 		/* check file that is saved galois fields infomations start */
-		
 		/* check file that is saved galois fields infomations end */
 		main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
 		main_com_listOf_GF[0]=NULL;
@@ -18066,7 +17983,7 @@ int main(unsigned int argc, char **argv)
 			tmp_i_start=global_GaloisFieldExponential;
 			tmp_i_end=global_GaloisFieldExponential+1;
 		}
-	
+
         infoMes;
         sprintf(fileio_Path_Target, "%s/%s", fileio_Path_common, dirio_Name_GF_info);
         printf("GF info path -> %s\r\n", fileio_Path_Target);
@@ -18080,7 +17997,7 @@ int main(unsigned int argc, char **argv)
                 errorMes; printf("Simulator is closed.\r\n");
                 return -1;
 			}
-			
+
 
 			sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt", 
 				fileio_Name_GF_infoCommon, 
@@ -18095,7 +18012,7 @@ int main(unsigned int argc, char **argv)
 				if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
 			}
 			/* check file that is saved galois fields infomations end */
-		
+
 			initMes; printf("Selected primitive poly is %s\r\n", (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i]);
 			main_com_listOf_GF[i]=
 				// createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
@@ -18140,7 +18057,7 @@ int main(unsigned int argc, char **argv)
 				if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
 			}
 			/* check file that is saved galois fields infomations end */
-			
+
 			sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
 						gettimeofday(&time_proc_start, NULL);
 			if(!tmp_dir_entry)
@@ -18165,7 +18082,6 @@ int main(unsigned int argc, char **argv)
 			}
 
 
-			
 			/* check file that is saved galois fields infomations start */
 			sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt", 
 				fileio_Name_GF_infoCommon, 
@@ -18182,7 +18098,7 @@ int main(unsigned int argc, char **argv)
 			/* check file that is saved galois fields infomations end */
 			sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
 				// printf("%s\r\n", fileio_Path_common);
-				
+
 					gettimeofday(&time_proc_start, NULL);
 			if(!tmp_dir_entry)
 			{
@@ -18204,18 +18120,18 @@ int main(unsigned int argc, char **argv)
 				infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
 						printf("[loading conjugacies time]");	printExcutingTime(&time_proc_start);
 			}
-			
+
 			closedir(tmp_dirio_var);
 
 
 			initMes; printf("Initializing galois field(2^%d) is done.\r\n", i);
 		}
 
-		
+
 		main_com_used_GF=main_com_listOf_GF[global_GaloisFieldExponential];
 		main_com_codeLength = main_com_used_GF->nonSorted->length-1;//codeLength can be shorter than number of element in GF
 		initMes; printf("Mainly used value, galois field is set to gf(2^%d).\r\n", global_GaloisFieldExponential);
-		
+
 		if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
 		{
 			infoMes; printf("/********** Used galois Field elements **********/\n");
@@ -18228,7 +18144,7 @@ int main(unsigned int argc, char **argv)
 		}
 
 		// main_com_used_GF=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET.PRIMITIVE_POLYNOMIAL[global_GaloisFieldExponential],0));
-		
+
 		/*
 		struct_galoisField_info *galoisField8=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX,0));
 		struct_galoisField_info *galoisField16=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX,0));
@@ -18246,10 +18162,8 @@ int main(unsigned int argc, char **argv)
 		printGaloisFieldToCsv(galoisField1024->nonSorted);
 		 */
 	/* create galois field using primitive polynomial end */
-	
-	
-	
-	
+
+
 	/*Using conjugacy in galois Field, make generation polynomial start*/
 	printf("\n\n");
 
@@ -18257,7 +18171,7 @@ int main(unsigned int argc, char **argv)
 	printf("/************ Setting value associated with BCH codes ************/\r\n");
 	printf("/*****************************************************************/\r\n");
 
-	
+
 	if(global_CodeLength!=DEFAULT_VALUE_CODE_LENGTH)
 	{
 		main_com_codeLength = global_CodeLength;//codeLength can be shorter than number of element in GF
@@ -18274,11 +18188,11 @@ int main(unsigned int argc, char **argv)
 	}
 	infoMes; printf("Mainly used value, code length = '%d'.\r\n", main_com_codeLength);
 
-	
+
 	printf("/*****************************************************************/\r\n");
 	printf("/********** Setting value associated with Hard Decision **********/\r\n");
 	printf("/*****************************************************************/\r\n");
-	
+
 	/* set hard-decision correctable value(t) start*/
 	main_com_genPoly=NULL;
 	if(global_bch_hardCorrectable!=DEFAULT_VALUE_BCH_HARD_CORRECTABLE)
@@ -18291,8 +18205,8 @@ int main(unsigned int argc, char **argv)
 	}
 	infoMes; printf("Mainly used value, hard decision correctable number = '%d'\r\n", main_com_hd_correctability);
 	/* set hard-decision correctable value(t) end*/
-	
-	
+
+
 	/*To test BCH Algorithm, setting number of errors start*/
 	if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 	{
@@ -18312,7 +18226,7 @@ int main(unsigned int argc, char **argv)
 		infoMes; printf("Mainly used value, to check algorithm, error number = '%d'\r\n", main_com_errNums_inDecodingAlgorithmTest);
 	}
 		/*To test BCH Algorithm, setting number of errors end*/
-		
+
 	//calculate total order of LCM.
 	if((main_com_used_GF->conjugacies->length<main_com_hd_correctability))
 	{
@@ -18333,7 +18247,7 @@ int main(unsigned int argc, char **argv)
 	////create////
 	recreateGaloisFieldExceptElements(&main_com_expandEqOfLcmFromRoot, main_com_totalOrderOfLCM+1);
 	initEquation(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot);
-	
+
 	////abstract////
 	main_com_expandEqOfLcmFromRoot=expandRootOfLCM_usingEleOfGF(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, main_com_used_GF->conjugacies, main_com_hd_correctability);
 
@@ -18341,7 +18255,7 @@ int main(unsigned int argc, char **argv)
 	global_degAddedRootToLCM=(strlen(global_addedRootToLCM_string)-1);
 	recreateGaloisFieldExceptElements(&main_com_addedLCM, global_degAddedRootToLCM+1);
 	initBinEquationUsingStr(main_com_used_GF->nonSorted, main_com_addedLCM, global_addedRootToLCM_string, global_degAddedRootToLCM+1);
-	
+
 	main_com_finalEqOfrootOfLCM_andAddedLCM=multipleTwoEqReturnAddr(
 		main_com_used_GF->nonSorted, 
 		&main_com_finalEqOfrootOfLCM_andAddedLCM, 
@@ -18355,7 +18269,7 @@ int main(unsigned int argc, char **argv)
 		printGaloisField2(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 		printGaloisField2(main_com_used_GF->nonSorted, main_com_addedLCM, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 	}
-	
+
 	main_com_genPoly=convertGaloisFielsAndElementsToStringOnlyZeroOrOne(main_com_used_GF->nonSorted, main_com_finalEqOfrootOfLCM_andAddedLCM);
 	initMes; printf("Converting galois field element to string is done.\r\n");
 	infoMes; printf("Expanded Least Common Multiple(generation polynomial) is \"%s\"\n", main_com_genPoly);
@@ -18364,7 +18278,7 @@ int main(unsigned int argc, char **argv)
 		recreateGaloisFieldExceptElements(&main_com_limitExpandEqOfLCM_fromRoot, main_com_totalOrderOfLCM+1);
 		initEquation(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot);
 
-		////abstract////	
+		////abstract////
 		main_com_limitExpandEqOfLCM_fromRoot=test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, main_com_used_GF->conjugacies, main_com_hd_correctability);
 		initMes; printf("Initializing expand LCM is done.\r\n");
 				// printGaloisField2(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
@@ -18372,12 +18286,12 @@ int main(unsigned int argc, char **argv)
 		{
 			printGaloisField2(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 		}
-	
+
 		main_com_limitedGenerationPolynomial=convertGaloisFielsAndElementsToStringOnlyZeroOrOne(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot);
 		initMes; printf("Converting galois field element to string is done.\r\n");
 		infoMes; printf(" Limited Least Common Multiple(generation polynomial) is \"%s\"\n", main_com_limitedGenerationPolynomial);
-	
-	
+
+
 	main_com_infoBitLength=main_com_codeLength-(strlen(main_com_genPoly)-1);
 	main_com_parityBitsLength=main_com_codeLength-main_com_infoBitLength;
 	infoMes; printf("Code length : \'%d\', Infomation bits length : \'%d\', Parity bits length : \'%d\'\n", main_com_codeLength, main_com_infoBitLength, main_com_parityBitsLength);
@@ -18385,15 +18299,14 @@ int main(unsigned int argc, char **argv)
 	infoMes; printf("Code rate : '%f' \n", main_com_codeRate);
 	/*Using conjugacy in galois Field, make generation polynomial end*/
 
-	
+
 	/*Create encoding component using converted g(x) to power form(string) start*/
- 	infoMes; printf("Test generation of LCM, GF(%d), set t=%d, select \'%d\' number of set of conjugacy\n", main_com_used_GF->nonSorted->length, main_com_hd_correctability, main_com_hd_correctability);
+	infoMes; printf("Test generation of LCM, GF(%d), set t=%d, select \'%d\' number of set of conjugacy\n", main_com_used_GF->nonSorted->length, main_com_hd_correctability, main_com_hd_correctability);
 	//struct_encodingComponentInGF *main_encodingComponentInGF=createEncodingComponent(main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
 	recreateEncodingComponent(&main_encodingComponentInGF, main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
 	initMes; printf("Creating encoding componenet is done.\r\n");
 	/*Create encoding component using converted g(x) to power form(string) end*/
 
-	
 
 	/*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
 	/*Soft Decision Test Pattern Decording Coponents. end*/
@@ -18409,8 +18322,8 @@ int main(unsigned int argc, char **argv)
 		*(main_com_list_TP_pwrFormPoly+main_tmp_soft_i) = createPowerFormPolynomial(main_com_codeLength);
 		initMes; printf("#%d : create dummy test partern component.\n", main_tmp_soft_i);
 	}
-	
-	
+
+
 	printf("/*****************************************************************/\r\n");
 	printf("/************* Initialzing a component of Modulation *************/\r\n");
 	printf("/*****************************************************************/\r\n");
@@ -18438,7 +18351,7 @@ int main(unsigned int argc, char **argv)
 	infoMes; printf("llr quantization numberic system : %s\r\n", NAME_QUANTIZ_NUMBERIC_SYSTEM[global_QuantizationInfo.numberic_system]);    
 	infoMes; printf("llr quantization zero range handling: %s\r\n", NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING[global_QuantizationInfo.ones_zero_handling]);
 	printf("/***********************************************************/\r\n");
-	
+
 
 	/* modulation components */
 	if(!global_flag_Modulation_Mode)
@@ -18460,12 +18373,12 @@ int main(unsigned int argc, char **argv)
 			/*initial LLR magnitudeShort locator start*/
 			initLogLikeHoodRatioLocator(main_com_bpskComponents->bpskReceivedLLR, main_tmp_degErrLocPoly);
 			initMes; printf("Initializing log like hood ratio components in bpsk componenets.\r\n");
-			
-			
+
+
 			setQuantizedLLRMaskOfLogLikeHoodRatio(main_com_bpskComponents->bpskReceivedLLR, global_QuantizationInfo.numsOfBits);
 			initMes; printf("Initializing log like hood ratio mask in bpsk componenets.\r\n");
 			/*** if selecting tree structure is posible, treeType have to change other variable like global variable. ***/
-			
+
             infoMes; printf("Finding Minimum LLR magnitude method is %s.\r\n", 
                 NAME_FLAG_CASE_FINDING_MIN_MTEHOD[global_flag_case_find_LLR_method]);
 			switch(global_flag_case_find_LLR_method)
@@ -18536,7 +18449,7 @@ int main(unsigned int argc, char **argv)
 		}
 	}
 
-	
+
 	printf("/*****************************************************************/\r\n");
 	printf("/************* Initialzing a simulation enviroments **************/\r\n");
 	printf("/*****************************************************************/\r\n");
@@ -18549,7 +18462,6 @@ int main(unsigned int argc, char **argv)
 	infoMes; printf("Base of loop is %ld\r\n", global_base_of_loop);
 	infoMes; printf("Rate of loop is %d\r\n", global_rate_of_loop);
 
-	
 
 	printf("/*****************************************************************/\r\n");
 	printf("/******************** Simulation Enviroments *********************/\r\n");
@@ -18557,8 +18469,8 @@ int main(unsigned int argc, char **argv)
 	infoMes; printf("EbN0 start value is '%f'.\n", global_EbN0_Start_Value);
 	infoMes; printf("EbN0 step value is '%f'.\n", global_EbN0_Step);
 	infoMes; printf("EbN0 end value is '%f'.\n", global_EbN0_End_Value);
-	
-	
+
+
 	//if(!(global_flag_bchDecAlgo_Enable&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
 	cmd_tmp_cnt=0;
 	for(cmd_tmp_i=0; cmd_tmp_i<KIND_OF_BCH_DECODING_END; cmd_tmp_i++)
@@ -18619,7 +18531,7 @@ int main(unsigned int argc, char **argv)
 			global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS]=0;
 		}
 	}
-	
+
 	if(cmd_tmp_cnt)
 	{
 		infoMes; printf(">> Making and Updating scheduler. <<\r\n");
@@ -18643,15 +18555,14 @@ int main(unsigned int argc, char **argv)
 		{
 			infoMes; printf("chk Enable algorithm is \"%s\".\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
 		}
-		
 	}
 	else
 	{
-		warningMes; printf("*** Any simulation modes are not selected!!!! ***\r\n");				
+		warningMes; printf("*** Any simulation modes are not selected!!!! ***\r\n");
 		warningMesShort; printf("*** Now, program is closed ***\r\n");
 		return -1;
 	}
-	
+
 	//main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
 	//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
@@ -18665,7 +18576,7 @@ int main(unsigned int argc, char **argv)
 			else
 			{
 				main_indi_hd_correctability[(*((uint8_t*)(processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 3;
-			}	
+			}
 		}
 		else
 		{
@@ -18677,10 +18588,10 @@ int main(unsigned int argc, char **argv)
 		);
 	}
 	printf("\r\n");
-	
-	
+
+
 	infoMes; printf(">> Setted Common Paramters are... <<\r\n");
-	
+
 	infoMes; printf("Hard decision, Correctable code length is \'%d\'\r\n", main_com_hd_correctability);
 	//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
@@ -18698,7 +18609,7 @@ int main(unsigned int argc, char **argv)
 	infoMes; printf("Information word length is \'%d\'\r\n", main_com_infoBitLength);
 	infoMes; printf("Parity bits length is \'%d\'\r\n", main_com_parityBitsLength);
 	infoMes; printf("Code rate is '%f' %s\r\n", main_com_codeRate,((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"[disabled]":"[enabled]"));
-	
+
 	printf("/*****************************************************************/\r\n");
 	printf("/******************** Notice Simulation Mode *********************/\r\n");
 	printf("/*****************************************************************/\r\n");
@@ -18732,7 +18643,7 @@ int main(unsigned int argc, char **argv)
 		else if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 		{
 			infoMes; printf("Simulation will be entered to Hard Decision mode.\r\n");
-	
+
 			for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 			{
 				if(global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
@@ -18740,7 +18651,6 @@ int main(unsigned int argc, char **argv)
 					infoMes; printf("[%s] algorithm Hard Decision mode.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
 				}
 			}
-
 		}
 		else
 		{
@@ -18749,7 +18659,7 @@ int main(unsigned int argc, char **argv)
 			return -1;
 		}
 	}
-	
+
 	/*******************************************************************/
 	/*******************************************************************/
 	/********** Associate with file input output source start **********/
@@ -18820,10 +18730,7 @@ int main(unsigned int argc, char **argv)
 		// saveBmpFile2(0);
 		// saveBmpFile3(0);
 		// saveBmpFile4(0);
-		
-		
-		
-		
+
 		// setVariableSetConvertBitStreamToPowerForm(&loadStream, getBmpData(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
 		// setVariableSetConvertBitStreamToPowerForm(&unloadStream, getBmpData2(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
 		// setVariableSetConvertBitStreamToPowerForm(&noisedStream, getBmpData3(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
@@ -18879,16 +18786,16 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_channel_BER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER_CH.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-	
+
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"non-BRa":"bitRate")
@@ -18907,12 +18814,12 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_coding_BER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER_ALGO.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -18928,19 +18835,19 @@ int main(unsigned int argc, char **argv)
 		return -1;
 	}
 	infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_coding_BER);
-	
-    /* REPORT all passed bit count */	
+
+    /* REPORT all passed bit count */
 	// FILE	*fileio_total_bit_cnt;
 	// char fileio_Name_total_bit_cnt[256]={0};
 	sprintf(fileio_Name_total_bit_cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -18963,12 +18870,12 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_channel_err_bit_cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_CH_err.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -18984,7 +18891,7 @@ int main(unsigned int argc, char **argv)
 		return -1;
 	}
 	infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_channel_err_bit_cnt);
-	
+
     /* REPORT individually recored BER and error bit, they are belong to algorithm */
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 	{
@@ -18994,12 +18901,12 @@ int main(unsigned int argc, char **argv)
 			"%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER(Static-HD)(%s).txt", 
 			fileio_Name_Report_Path,
 			global_GaloisFieldExponential,
-		
+
 			main_com_codeLength, 
 			main_com_infoBitLength, 
 			main_tmp_degErrLocPoly, 
 			main_com_hd_correctability, 
-			
+
 				((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19022,12 +18929,12 @@ int main(unsigned int argc, char **argv)
 			"%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER(%s).txt", 
 			fileio_Name_Report_Path,
 			global_GaloisFieldExponential,
-		
+
 			main_com_codeLength, 
 			main_com_infoBitLength, 
 			main_tmp_degErrLocPoly, 
 			main_com_hd_correctability, 
-			
+
 				((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19052,12 +18959,12 @@ int main(unsigned int argc, char **argv)
 			"%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_(Static-HD)%s.txt", 
 			fileio_Name_Report_Path,
 			global_GaloisFieldExponential,
-		
+
 			main_com_codeLength, 
 			main_com_infoBitLength, 
 			main_tmp_degErrLocPoly, 
 			main_com_hd_correctability, 
-			
+
 				((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19082,12 +18989,12 @@ int main(unsigned int argc, char **argv)
 			"%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_%s_err.txt", 
 			fileio_Name_Report_Path,
 			global_GaloisFieldExponential,
-		
+
 			main_com_codeLength, 
 			main_com_infoBitLength, 
 			main_tmp_degErrLocPoly, 
 			main_com_hd_correctability, 
-			
+
 				((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 				(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19113,16 +19020,16 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_channel_FER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_CH_FER.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-		
+
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19134,24 +19041,23 @@ int main(unsigned int argc, char **argv)
 		return -1;
 	}
 	infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_channel_FER);
-	
+
     /* REPORT frame error rate, recorded all algorithm(not support yet) */
 	// FILE *fileio_codingFER;
 	// char fileio_Name_coding_FER[256]={0};
 	sprintf(fileio_Name_coding_FER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_FER.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
 
-		
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19161,7 +19067,7 @@ int main(unsigned int argc, char **argv)
 		errorMes;
 		printf("Can not open \"%s\"\r\n", fileio_Name_coding_FER);
 		return -1;
-	}	
+	}
 	infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_coding_FER);
 
     /* REPORT channel EbN0 */
@@ -19170,16 +19076,16 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_EbN0, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_EbN0.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-		
+
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19198,16 +19104,16 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_loop_Cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_LoopCnt.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-		
+
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19223,19 +19129,19 @@ int main(unsigned int argc, char **argv)
     /* REPORT simulation environment(setted values record) */    
 	// FILE *fileio_simEnv;
 	// char fileio_Name_simEnv[256]={0};
- 	sprintf(fileio_Name_simEnv, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_SimEnv.txt", 
+	sprintf(fileio_Name_simEnv, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_SimEnv.txt", 
 		fileio_Name_Report_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-		
+
         NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
         NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
 		((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19261,12 +19167,12 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt", 
 		fileio_Name_Pattern_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19290,7 +19196,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_mes, "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_mes.bin", 
 		    fileio_Name_Pattern_Path,
 		    global_GaloisFieldExponential,
-	
+
 		    main_com_codeLength, 
 	    	main_com_infoBitLength, 
 	    	main_tmp_degErrLocPoly, 
@@ -19314,7 +19220,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_encoding_mes, "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_encoding.bin", 
 	    	fileio_Name_Pattern_Path,
 	    	global_GaloisFieldExponential,
-	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19338,7 +19244,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_HD_received_mes, "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_receive(HD).bin", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19362,7 +19268,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR, "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_quantized_LLR.hex", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19386,7 +19292,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR_mag, "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_quantized_LLR_mag.hex", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19415,12 +19321,12 @@ int main(unsigned int argc, char **argv)
                     "%s/PATTERN_GF_2p%d_bch_%d,%d_p%d_t%d_%s_%s_%s_%s_corrected.bin",\
     		    fileio_Name_Pattern_Path,
     		    global_GaloisFieldExponential,
-    	
+
     		    main_com_codeLength, 
     		    main_com_infoBitLength, 
     		    main_tmp_degErrLocPoly, 
     		    main_com_hd_correctability,
-    
+
     		    ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19459,12 +19365,12 @@ int main(unsigned int argc, char **argv)
 	sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt", 
 		fileio_Name_Pattern_Path,
 		global_GaloisFieldExponential,
-	
+
 		main_com_codeLength, 
 		main_com_infoBitLength, 
 		main_tmp_degErrLocPoly, 
 		main_com_hd_correctability, 
-		
+
 			((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
 			(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
@@ -19488,7 +19394,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_mes_verilog, "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_mes.bin", 
 		    fileio_Name_Pattern_Path,
 		    global_GaloisFieldExponential,
-	
+
 		    main_com_codeLength, 
 	    	main_com_infoBitLength, 
 	    	main_tmp_degErrLocPoly, 
@@ -19512,7 +19418,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_encoding_mes_verilog, "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_encoding.bin", 
 	    	fileio_Name_Pattern_Path,
 	    	global_GaloisFieldExponential,
-	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19536,7 +19442,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_HD_received_mes_verilog, "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_receive(HD).bin", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19560,7 +19466,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR_verilog, "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_quantized_LLR.hex", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19584,7 +19490,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR_mag_verilog, "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_quantized_LLR_mag.hex", 
     		fileio_Name_Pattern_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19613,16 +19519,16 @@ int main(unsigned int argc, char **argv)
                     "%s/VERILOG_GF_2p%d_bch_%d,%d_p%d_t%d_%s_%s_%s_%s_corrected.bin",\
     		    fileio_Name_Pattern_Path,
     		    global_GaloisFieldExponential,
-    	
+
     		    main_com_codeLength, 
     		    main_com_infoBitLength, 
     		    main_tmp_degErrLocPoly, 
     		    main_com_hd_correctability,
-    
+
     		    ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-    
+
                 NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
                 NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
     		    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19659,7 +19565,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_mes_log, "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_mes.log", 
 		    fileio_Name_PatternLog_Path,
 		    global_GaloisFieldExponential,
-	
+
 		    main_com_codeLength, 
 	    	main_com_infoBitLength, 
 	    	main_tmp_degErrLocPoly, 
@@ -19683,7 +19589,7 @@ int main(unsigned int argc, char **argv)
 	    sprintf(fileio_Name_HD_encoding_mes_log, "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_encoding.log", 
 	    	fileio_Name_PatternLog_Path,
 	    	global_GaloisFieldExponential,
-	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19707,7 +19613,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_HD_received_mes_log, "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_receive(HD).log", 
     		fileio_Name_PatternLog_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19731,7 +19637,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR_log, "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_quantized_LLR.log", 
     		fileio_Name_PatternLog_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19755,7 +19661,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_ErrCnt_log, "%s/ERROR_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d.log", 
     		fileio_Name_PatternLog_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19779,7 +19685,7 @@ int main(unsigned int argc, char **argv)
     	sprintf(fileio_Name_SD_received_LLR_mag_log, "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_quantized_LLR_mag.log", 
     		fileio_Name_PatternLog_Path,
     		global_GaloisFieldExponential,
-    	
+
     		main_com_codeLength, 
     		main_com_infoBitLength, 
     		main_tmp_degErrLocPoly, 
@@ -19808,16 +19714,16 @@ int main(unsigned int argc, char **argv)
                     "%s/PATTERN_LOG_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_corrected.log",\
     		    fileio_Name_PatternLog_Path,
     		    global_GaloisFieldExponential,
-    	
+
     		    main_com_codeLength, 
     		    main_com_infoBitLength, 
     		    main_tmp_degErrLocPoly, 
     		    main_com_hd_correctability,
-    
+
     		    ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
     			    (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
-    
+
                 NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
     			NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
     		    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
@@ -19858,7 +19764,7 @@ int main(unsigned int argc, char **argv)
             tmp_dirio_var = opendir(tmp_fileio_target_dir_path);
         }
         closedir(tmp_dirio_var);
-        
+
         sprintf(tmp_fileio_target_file_path, "%s/%s", tmp_fileio_target_dir_path, "testLog.log");
         infoMes; printf("Enable file I/O \"%s\"\r\n", tmp_fileio_target_file_path);
         fp_testMode_log = fopen(tmp_fileio_target_file_path, "w");
@@ -19867,7 +19773,6 @@ int main(unsigned int argc, char **argv)
         sprintf(tmp_fileio_target_file_path, "%s/%s", tmp_fileio_target_dir_path, "test_sum_bit_cnt_arranged_by_bitRatio.csv");
         infoMes; printf("Enable file I/O \"%s\"\r\n", tmp_fileio_target_file_path);
         fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv = fopen(tmp_fileio_target_file_path, "w");
-
 
         sprintf(tmp_fileio_target_file_path, "%s/%s", tmp_fileio_target_dir_path, "test_sum_bit_cnt_classified_arranged_by_bitRatio.csv");
         infoMes; printf("Enable file I/O \"%s\"\r\n", tmp_fileio_target_file_path);
@@ -19902,25 +19807,24 @@ int main(unsigned int argc, char **argv)
         fp_testMode_all_arranged_by_errorNums_csv = fopen(tmp_fileio_target_file_path, "w");
 
     }
-		
  
-		
+
 	fprintf(fileio_simEnv,"/*****************************************************************/\r\n");
 	fprintf(fileio_simEnv,"/**************** Applied global variables values ****************/\r\n");
 	fprintf(fileio_simEnv,"/*****************************************************************/\r\n");
 	fprintf(fileio_simEnv,"[Global Variables]\r\n");
 	fprintf(fileio_simEnv,"AWGN Coderate is %s\r\n", ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"disabled":"enabled"));
-	
+
 	fprintf(fileio_simEnv,"EbN0 start : %g\r\n",global_EbN0_Start_Value);
 	fprintf(fileio_simEnv,"EbN0 end : %g\r\n",global_EbN0_End_Value);
 	fprintf(fileio_simEnv,"EbN0 step : %g\r\n",global_EbN0_Step);
-	
+
 	fprintf(fileio_simEnv,"Error number : %d\r\n",global_ErrorNum);
 	fprintf(fileio_simEnv,"Galois Field exponential : %d\r\n",global_GaloisFieldExponential);
 	fprintf(fileio_simEnv,"Code length : %d\r\n",global_CodeLength);
 	fprintf(fileio_simEnv,"Maximum Code length : %d\r\n",global_MaximumCodeLength);
 	fprintf(fileio_simEnv,"Limit Code length : %d%s\r\n",global_LimitCodeLength, global_LimitCodeLength?"(Limited)":"(Unlimited)");
-	
+
 	fprintf(fileio_simEnv,"Hard Decision correctable(t) : %d\r\n",global_bch_hardCorrectable);
 	fprintf(fileio_simEnv,"Soft Decision correctable(p) : %d\r\n",global_bch_SoftCorrectable);
 	fprintf(fileio_simEnv,"Over Syndrome number : %d\r\n", global_bch_Soft_OverSyndLen);
@@ -19930,16 +19834,14 @@ int main(unsigned int argc, char **argv)
 	fprintf(fileio_simEnv,"LLR quantization step : %f\r\n", global_LLR_quantizFilter_step);
 	fprintf(fileio_simEnv,"LLR quantization bit : %d\r\n", global_LLR_quantizFilter_bitWidth);	
 
-	
 	fprintf(fileio_simEnv,"\r\n");
-	
-	
+
 
 	fprintf(fileio_simEnv,"/*****************************************************************/\r\n");
 	fprintf(fileio_simEnv,"/******************** Simulation Enviroments *********************/\r\n");
 	fprintf(fileio_simEnv,"/*****************************************************************/\r\n");
 	fprintf(fileio_simEnv,">> Setted Paramters are... <<\r\n");
-	
+
 	fprintf(fileio_simEnv,"Hard decision, Correctable code length is \'%d\'\r\n", main_com_hd_correctability);
 	//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
@@ -19952,20 +19854,20 @@ int main(unsigned int argc, char **argv)
 
 	fprintf(fileio_simEnv,"Soft decision, Correctable code length is \'%d\'\r\n", main_tmp_degErrLocPoly);
 	fprintf(fileio_simEnv,"Number of test pattern number is \'%d\'\r\n", main_com_numsTP);
-	
+
 	fprintf(fileio_simEnv,"Using Galois Field is \'%d\'\r\n", main_com_used_GF->nonSorted->length);
 	fprintf(fileio_simEnv,"Code word length is \'%d\'\r\n", main_com_codeLength);
 	fprintf(fileio_simEnv,"Information word length is \'%d\'\r\n", main_com_infoBitLength);
 	fprintf(fileio_simEnv,"Parity bits length is \'%d\'\r\n", main_com_parityBitsLength);
 	fprintf(fileio_simEnv,"Code rate is \'%f\' %s\r\n", main_com_codeRate,((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"[disabled]":"[enabled]"));
 	fprintf(fileio_simEnv,"\n");
-	
+
 	switch(global_flag_case_selTP_before_dec)
 	{
 		case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_ACT		1
 			fprintf(fileio_simEnv, "Get BER Mode is Practical.\r\n");
 		break;
-		
+
 		case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_THEO	2
 			fprintf(fileio_simEnv, "Get BER Mode is Theoretical.\r\n");
 
@@ -19986,7 +19888,7 @@ int main(unsigned int argc, char **argv)
 				case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR:
 					fprintf(fileio_simEnv, "(Option, Worst)\r\n");
 				break;
-				
+
 				default:
 				break;
 			}
@@ -19996,8 +19898,8 @@ int main(unsigned int argc, char **argv)
 			fprintf(fileio_simEnv, "Get BER Mode is Unknown.\r\n");
 		break;
 	}
-	
-	
+
+
 	switch(global_flag_case_find_LLR_method)
 	{
 		case FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE:
@@ -20009,7 +19911,7 @@ int main(unsigned int argc, char **argv)
 		case FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM:
 		{
 			fprintf(fileio_simEnv, "Finding method a minimum llr is Minumum.\r\n");
-		}		
+		}
 		break;
 
         case FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING:
@@ -20026,15 +19928,15 @@ int main(unsigned int argc, char **argv)
 
 		default:
 		{
-			fprintf(fileio_simEnv, "Finding method a minimum llr is Unknwon.\r\n");			
+			fprintf(fileio_simEnv, "Finding method a minimum llr is Unknwon.\r\n");
 		}
 		break;
 	}
 	fprintf(fileio_simEnv,"LLR filter configure offset : %f\r\n", global_QuantizationInfo.offset);
 	fprintf(fileio_simEnv,"LLR filter configure step : %f\r\n", global_QuantizationInfo.step);
 	fprintf(fileio_simEnv,"LLR filter configure bit : %d\r\n", global_QuantizationInfo.numsOfBits);	
-	fprintf(fileio_simEnv,"LLR filter configure numberic system : %s\r\n", NAME_QUANTIZ_NUMBERIC_SYSTEM[global_QuantizationInfo.numberic_system]);	
-	fprintf(fileio_simEnv,"LLR filter configure zero handling : %s\r\n", NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING[global_QuantizationInfo.ones_zero_handling]);	
+	fprintf(fileio_simEnv,"LLR filter configure numberic system : %s\r\n", NAME_QUANTIZ_NUMBERIC_SYSTEM[global_QuantizationInfo.numberic_system]);
+	fprintf(fileio_simEnv,"LLR filter configure zero handling : %s\r\n", NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING[global_QuantizationInfo.ones_zero_handling]);
 
     fprintf(fileio_simEnv, "/*****************************************************************/\r\n");
 	fprintf(fileio_simEnv, "/******************** Notice Simulation Mode *********************/\r\n");
@@ -20069,7 +19971,7 @@ int main(unsigned int argc, char **argv)
 		else if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
 		{
 			infoMes; fprintf(fileio_simEnv, "Simulation will be entered to Hard Decision mode.\r\n");
-	
+
 			for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 			{
 				if(global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
@@ -20077,15 +19979,13 @@ int main(unsigned int argc, char **argv)
 					infoMes; fprintf(fileio_simEnv, "[%s] algorithm Hard Decision mode.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
 				}
 			}
-
 		}
 		else
 		{
 			return -1;
 		}
 	}
-	
-	
+
 	fclose(fileio_simEnv);
     fileio_simEnv = NULL;
 	/*******************************************************************/
@@ -20098,765 +19998,818 @@ int main(unsigned int argc, char **argv)
 /********* setting variables about domestic variables end *********/
 /********************************************************************/
 
-	
-	
-/*******************************************************************/
-/*******************************************************************/
-/******************* simulation EbN0 loop start ********************/
-/*******************************************************************/
-/*******************************************************************/
-switch(global_flag_case_sim_testOpt)
-{
-    case FLAG_CASE_SIM_TEST_MODE_GET_LLR_MAG_AVR_BELONG_EBN0:
-    /* Test Mode calculation */
-    printf("\r\n");
-
-    tmp_testMode_loops_bit_inversion_val = (unsigned long)(tmp_testMode_loops_zero_bit_ratio * (double)tmp_testMode_loops);
-
-    printf("zero stream ratio: %f\r\n", tmp_testMode_loops_zero_bit_ratio);
-    printf("total loops : %ld\r\n", tmp_testMode_loops);
-    printf("zero stream loops : %ld\r\n", tmp_testMode_loops_bit_inversion_val);
-    printf("zero bit cnt : %ld\r\n", 
-            (((unsigned long)global_CodeLength)*tmp_testMode_loops_bit_inversion_val)
-    );
-
-    printf("one stream loops : %ld\r\n", tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val);
-    printf("one bit cnt: %ld\r\n", 
-            (((unsigned long)global_CodeLength)*(tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val))
-    );
-
-
-    fprintf(fp_testMode_log, "zero stream ratio: %e\r\n", tmp_testMode_loops_zero_bit_ratio);
-    fprintf(fp_testMode_log, "total loops : %ld\r\n", tmp_testMode_loops);
-    fprintf(fp_testMode_log, "zero stream loops : %ld\r\n", tmp_testMode_loops_bit_inversion_val);
-    fprintf(fp_testMode_log, "zero bit cnt : %ld\r\n", 
-            (((unsigned long)global_CodeLength)*tmp_testMode_loops_bit_inversion_val)
-    );
-
-    fprintf(fp_testMode_log, "one stream loops : %ld\r\n", tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val);
-    fprintf(fp_testMode_log, "one bit cnt: %ld\r\n", 
-            (((unsigned long)global_CodeLength)*(tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val))
-    );
-
-	for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
+    /*******************************************************************/
+    /*******************************************************************/
+    /******************* simulation EbN0 loop start ********************/
+    /*******************************************************************/
+    /*******************************************************************/
+    switch(global_flag_case_sim_testOpt)
     {
-        printf("EbN0:%f start\r\n", main_com_EbN0);
-
-        tmp_bit_num_inC_ref_zero_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-
-        tmp_bit_num_inR_ref_zero_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-        tmp_bit_num_inR_ref_one_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-
-        tmp_llr_mag_sum_inR_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-        tmp_bit_chg_cnt_inR_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-        tmp_llr_mag_inR = (double**)malloc(sizeof(double*)*main_com_codeLength+1);
-
-
-        /* arrange by err cnt */
-        tmp_sum_err_codeword_cnt_arranged_by_err_nums = (unsigned long*)malloc(sizeof(unsigned long)*(main_com_codeLength+1));
-        memset(tmp_sum_err_codeword_cnt_arranged_by_err_nums, 0, sizeof(unsigned long)*(main_com_codeLength+1)); 
-        tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-        tmp_err_llr_mag_distribution_in_one_codeword = (unsigned int*)malloc(sizeof(unsigned int)*(main_com_codeLength+1));
-        memset(tmp_err_llr_mag_distribution_in_one_codeword, 0, sizeof(unsigned int)*(main_com_codeLength+1)); 
-
-        tmp_sum_cor_codeword_cnt_arranged_by_err_nums = (unsigned long*)malloc(sizeof(unsigned long)*(main_com_codeLength+1));
-        memset(tmp_sum_cor_codeword_cnt_arranged_by_err_nums, 0, sizeof(unsigned long)*(main_com_codeLength+1)); 
-        tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-        tmp_cor_llr_mag_distribution_in_one_codeword  = (unsigned int*)malloc(sizeof(unsigned int)*(main_com_codeLength+1));
-        memset(tmp_cor_llr_mag_distribution_in_one_codeword, 0, sizeof(unsigned int)*(main_com_codeLength+1)); 
-
-        tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
-
-
-        for(i=0; i<main_com_codeLength+1; i++)
-        {
-            tmp_bit_num_inC_ref_zero_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*2);
-            memset(tmp_bit_num_inC_ref_zero_OZ_ratio[i], 0, sizeof(unsigned long)*2);
-
-
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
-            memset(tmp_bit_num_inR_ref_zero_OZ_ratio[i], 0, sizeof(unsigned long)*3);
-            tmp_bit_num_inR_ref_one_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
-            memset(tmp_bit_num_inR_ref_one_OZ_ratio[i], 0, sizeof(unsigned long)*3);
-            tmp_llr_mag_sum_inR_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
-            memset(tmp_llr_mag_sum_inR_OZ_ratio[i], 0, sizeof(unsigned long)*3);
-            tmp_bit_chg_cnt_inR_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
-            memset(tmp_bit_chg_cnt_inR_OZ_ratio[i], 0, sizeof(unsigned long)*3);
-            tmp_llr_mag_inR[i] = (double*)malloc(sizeof(double)*3);
-            memset(tmp_llr_mag_inR[i], 0, sizeof(double)*3);
-
-            /* arrange by err cnt */
-            tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*((unsigned int)(global_QuantizationInfo.mag_bitMask + 1)));
-            memset(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i], 0, sizeof(unsigned long)*(global_QuantizationInfo.mag_bitMask + 1));
-            tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*((unsigned int)(global_QuantizationInfo.mag_bitMask + 1)));
-            memset(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i], 0, sizeof(unsigned long)*(global_QuantizationInfo.mag_bitMask + 1));
-            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*(4));
-            memset(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i], 0, sizeof(unsigned long)*4);
-        }
-
-        for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
-        {
-
-            /*
-            switch(global_flag_case_testMode_msg_gen_method)
-            {
-                case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
-
-                break;
-
-                case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
-
-                break;
-            }
-
-            */
-
-            switch(global_flag_case_testMode_msg_gen_method)
-            {
-                case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
-                    main_com_randInfoBitsStream = 
-                        randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
-
-                    copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
-
-                    shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
-
-                    calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
-                break;
-
-                case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
-                    if(tmp_testMode_loops_cnt<tmp_testMode_loops_bit_inversion_val)
-                    {
-                    main_com_randInfoBitsStream = 
-                        allSameInfoBitGenerator('0', main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
-                    }
-                    else
-                    {
-                        main_com_randInfoBitsStream = 
-                            allSameInfoBitGenerator('1', main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
-                    }
-
-                    copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
-
-                break;
-            }
-
-            main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-
-            BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
-
-            ADD_AWGN_CAL_LLR(
-                main_com_bpskComponents->bpskTransData, 
-                main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
-                main_com_bpskComponents->bpskReceivedLLR->llr, 
-                ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
-                main_com_codeLength, 
-                main_com_EbN0
-            ); //need to add bitrate
-
-            switch(global_flag_case_testMode_decoding_method)
-            {
-                case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_HD:
-                {
-					BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
-                }
-                break;
-
-                default:
-                case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
-                {
-                    quantizationWithGlobalAdaptive(
-                        main_com_bpskComponents->bpskReceivedLLR->llr, 
-                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
-                        main_com_errComponents->erroredCodeWord->equation, 
-                        main_com_errComponents->erroredCodeWord->usedLength
-                    );
-
-                    convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-                }
-                break;
-            }
-
-
-            /* In codeword, zero and one bit count */
-            for(i=0; i<main_com_codeLength; i++)
-            {
-                if(main_encodingComponentInGF->codeWord->equation[i] == '0')
-                {
-                    tmp_testMode_zero_bit_nums_inC++;
-                }
-                else
-                {
-                    tmp_testMode_one_bit_nums_inC++;
-                }                        
-            }
-            for(i=0; i<main_com_codeLength; i++)
-            {
-                        /* ones complement verify code start */
-                        /*
-                        if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
-                        {
-                            printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
-                                    main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
-                            );
-                        }
-                        else
-                        {
-                            printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
-
-                                    main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                    main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
-                            );
-                        }
-                        */
-                        /* ones complement verify code end */
-                /* if received bit is error */
-                if(main_encodingComponentInGF->codeWord->equation[i] != main_com_errComponents->erroredCodeWord->equation[i])
-                {
-                    //tmp_testMode_llr_mag_sum_w+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                    //==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
-                    tmp_testMode_llr_mag_w[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
-                    tmp_testMode_count_bit_w++;
-                    if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_w) tmp_testMode_llr_mag_max_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                    if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] < tmp_testMode_llr_mag_min_w) tmp_testMode_llr_mag_min_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-
-                    /* llr sum in received codeword wrong case */
-                    tmp_testMode_llr_mag_sum_inR_w += (unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-            
-                    /* received bits cnt, which are zero or one and is error */
-                    if(main_com_errComponents->erroredCodeWord->equation[i] == '0')
-                    {
-                        tmp_testMode_zero_is_inR_w++;
-                    }
-                    else
-                    {
-                        tmp_testMode_one_is_inR_w++;
-                    }
-
-                    /* received bit change detect */
-                    if(main_encodingComponentInGF->codeWord->equation[i] == '0')
-                    {
-                        tmp_testMode_zeroToOne_bit_nums_inR++;
-                    }
-                    else
-                    {
-                        tmp_testMode_oneToZero_bit_nums_inR++;
-                    }
-
-                    /* err llr mag distribution in codeword */
-                    tmp_err_llr_mag_distribution_in_one_codeword[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
-                }
-                else
-                {
-                    //tmp_testMode_llr_mag_sum_c+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                    //==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
-                    tmp_testMode_llr_mag_c[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
-                    tmp_testMode_count_bit_c++;
-                    if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_c) tmp_testMode_llr_mag_max_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                    if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] < tmp_testMode_llr_mag_min_c) tmp_testMode_llr_mag_min_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                    
-
-                    /* llr sum in received codeword good case */
-                    tmp_testMode_llr_mag_sum_inR_c += (unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-            
-                    /* received bits cnt, which are zero or one and is correct */
-                    if(main_com_errComponents->erroredCodeWord->equation[i] == '0')
-                    {
-                        tmp_testMode_zero_is_inR_c++;
-                    }
-                    else
-                    {
-                        tmp_testMode_one_is_inR_c++;
-                    }
-
-                    /* cor llr mag distribution in codeword */
-                    tmp_cor_llr_mag_distribution_in_one_codeword[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
-                }
-            }
-            if(main_com_randInfoBitsStream)
-            {
-                free(main_com_randInfoBitsStream);
-                main_com_randInfoBitsStream = NULL;
-            }
-
-
-            tmp_bit_num_inC_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
-                += (unsigned long)tmp_testMode_zero_bit_nums_inC;
-            tmp_bit_num_inC_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
-                += (unsigned long)tmp_testMode_one_bit_nums_inC;
-
-            //index reference sended Codeword
-            //tmp_testMode_zero_bit_nums_inC
-            //index reference Received Codeword
-            //tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c
-            tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
-                += (tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c);
-            tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
-                += tmp_testMode_zero_is_inR_c;
-            tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
-                += tmp_testMode_zero_is_inR_w;
-
-            
-            tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
-                += tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c;
-            tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
-                += tmp_testMode_one_is_inR_c;
-            tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
-                += tmp_testMode_one_is_inR_w;
-           
-            tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
-                += tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR;
-            tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
-                += tmp_testMode_zeroToOne_bit_nums_inR;
-            tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
-                += tmp_testMode_oneToZero_bit_nums_inR;
-
-            tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
-                += tmp_testMode_llr_mag_sum_inR_w + tmp_testMode_llr_mag_sum_inR_c;
-            tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
-                += tmp_testMode_llr_mag_sum_inR_c;
-            tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
-                += tmp_testMode_llr_mag_sum_inR_w;
-
-            //tmp_llr_mag_inR[tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c][0]
-            //    = ((double)(1tmp_testMode_llr_mag_sum_inR_w + tmp_testMode_llr_mag_sum_inR_c))/((double)main_com_codeLength);
-
-            tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
-            tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
-
-            tmp_testMode_totalBit+=(unsigned long)main_com_codeLength;
-
-            /* arranging by number of error */
-            /* count up correct or err codeword */
-            /* have any error */
-            tmp_sum_err_codeword_cnt_arranged_by_err_nums[tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR]++;
-            
-            for(i = 0; i < (unsigned int)(global_QuantizationInfo.mag_bitMask + 1); i++)
-            {
-                tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums \
-                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR] \
-                    [i] += tmp_err_llr_mag_distribution_in_one_codeword[i];
-                tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums \
-                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR] \
-                    [i] += tmp_cor_llr_mag_distribution_in_one_codeword[i];
-            }
-
-            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
-                [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][0] += \
-                ( tmp_testMode_zero_bit_nums_inC );
-            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
-                [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][1] += \
-                ( tmp_testMode_one_bit_nums_inC );
-            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
-                [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][2] += \
-                ( tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c );
-            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
-                [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][3] += \
-                ( tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c );
-
-            
-
-            
-            /*encoding parts*/
-            tmp_testMode_zero_bit_nums_inC = 0;
-            tmp_testMode_one_bit_nums_inC = 0;
-
-            /* decoding parts */
-            tmp_testMode_zeroToOne_bit_nums_inR = 0;//received bit change detect
-            tmp_testMode_oneToZero_bit_nums_inR = 0;//received bit change detect
-
-            tmp_testMode_zero_is_inR_w = 0;//received bits cnt, which are zero or one and is error
-            tmp_testMode_one_is_inR_w = 0;//received bits cnt, which are zero or one and is error
-
-            tmp_testMode_zero_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
-            tmp_testMode_one_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
-
-            tmp_testMode_llr_mag_sum_inR_w =0UL;//llr sum in received codeword wrong case
-            tmp_testMode_llr_mag_sum_inR_c =0UL;//llr sum in received codeword good case
-
-            /* clear arranging by err nums */
-            for(i = 0; i < (global_QuantizationInfo.mag_bitMask + 1); i++)
-            {
-                tmp_err_llr_mag_distribution_in_one_codeword[i] = 0;
-                tmp_cor_llr_mag_distribution_in_one_codeword[i] = 0;
-            }
-            //exit(0);
-            //printf("%ld\r", tmp_testMode_loops_cnt);
-        }
-        /* exit all loop */
-
-        /* Labeling */
-        fprintf(fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv, 
-                "0-bit cnt, 1-bit cnt\r\n");
-
-        fprintf(fp_testMode_sum_bit_cnt_classified_arranged_by_bitRatio_csv, 
-                "sum 0bit ,0 Cor,0 Err,sum 1bit,1 Cor,1 Err\r\n");
-
-        fprintf(fp_testMode_sum_err_bit_cnt_chg_classified_arranged_by_bitRatio_csv, 
-                "sum Err,Tran 0->1,Tran 1->0\r\n");
-
-        fprintf(fp_testMode_sum_llr_mag_arranged_by_bitRatio_csv, 
-                "sum llr mag,sum llr mag Cor,sum llr mag Err\n");
-
-        fprintf(fp_testMode_all_arranged_by_bitRatio_csv, 
-                "codeword 0-bit,codeword 1-bit,sum 0bit,0 Cor,0 Err,sum 1bit,1 Cor,1 Err,sum Err,Tran 0->1,Tran 1->0,sum llr mag,sum llr mag Cor,sum llr mag Err\r\n");
-
-        /* arranging by err nums labeling */
-        fprintf(fp_testMode_sum_codeword_cnt_arranged_by_errorNums_csv,
-                "err Nums,codeword cnt\r\n"
-                );
-        fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                "err Nums,codeword cnt"
-                );
-
-
-        fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                "err Nums, "
-               );
-                
-        fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                "e llr_mag 0,e llr_mag 1,e llr_mag 2,e llr_mag 3,e llr_mag 4,e llr_mag 5,e llr_mag 6,e llr_mag 7,"
-                );
-        fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                ",e llr_mag 0,e llr_mag 1,e llr_mag 2,e llr_mag 3,e llr_mag 4,e llr_mag 5,e llr_mag 6,e llr_mag 7"
-                );
-        fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                "c llr_mag 0,c llr_mag 1,c llr_mag 2,c llr_mag 3,c llr_mag 4,c llr_mag 5,c llr_mag 6,c llr_mag 7\r\n"
-                );
-        fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                ",c llr_mag 0,c llr_mag 1,c llr_mag 2,c llr_mag 3,c llr_mag 4,c llr_mag 5,c llr_mag 6,c llr_mag 7"
-                );
-
-        fprintf(fp_testMode_sum_bit_ratio_cnt_arranged_by_errorNums_csv,
-                "err Nums,0bit cnt in C,1bit cnt in C,0bit cnt in R,1bit cnt inR\r\n"
-               );
-        fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                ",0bit cnt in C,1bit cnt in C,0bit cnt in R,1bit cnt inR\r\n"
-               );
-        for(i=0; i<main_com_codeLength+1; i++)
-        {
-            fprintf(fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv, "%ld, %ld\r\n", 
-            tmp_bit_num_inC_ref_zero_OZ_ratio[i][0],
-            tmp_bit_num_inC_ref_zero_OZ_ratio[i][1]
-            );
-
-            fprintf(fp_testMode_sum_bit_cnt_classified_arranged_by_bitRatio_csv, "%ld,%ld,%ld,%ld,%ld,%ld\r\n",
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][0],
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][1],
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][2],
-
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][0],
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][1],
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][2]
-            );
-
-            fprintf(fp_testMode_sum_err_bit_cnt_chg_classified_arranged_by_bitRatio_csv, "%ld,%ld,%ld\r\n",
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][0],
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][1],
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][2]
-            );
-
-            fprintf(fp_testMode_sum_llr_mag_arranged_by_bitRatio_csv, "%ld,%ld,%ld\r\n",
-            tmp_llr_mag_sum_inR_OZ_ratio[i][0],
-            tmp_llr_mag_sum_inR_OZ_ratio[i][1],
-            tmp_llr_mag_sum_inR_OZ_ratio[i][2]
-            );
-
-            fprintf(fp_testMode_all_arranged_by_bitRatio_csv, "%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld\r\n",
-            tmp_bit_num_inC_ref_zero_OZ_ratio[i][0],
-            tmp_bit_num_inC_ref_zero_OZ_ratio[i][1],
-
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][0],
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][1],
-            tmp_bit_num_inR_ref_zero_OZ_ratio[i][2],
-
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][0],
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][1],
-            tmp_bit_num_inR_ref_one_OZ_ratio[i][2],
-
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][0],
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][1],
-            tmp_bit_chg_cnt_inR_OZ_ratio[i][2],
-
-            tmp_llr_mag_sum_inR_OZ_ratio[i][0],
-            tmp_llr_mag_sum_inR_OZ_ratio[i][1],
-            tmp_llr_mag_sum_inR_OZ_ratio[i][2]
-            );
-
-            /* arranging by err nums record */
-            fprintf(fp_testMode_sum_codeword_cnt_arranged_by_errorNums_csv,
-                "%d, %ld\r\n", 
-                i, 
-                tmp_sum_err_codeword_cnt_arranged_by_err_nums[i]
-            );
-            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                "%d, %ld", 
-                i, 
-                tmp_sum_err_codeword_cnt_arranged_by_err_nums[i]
-            );
-
-
-            fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                "%d", i
-            );
-            for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
-            {
-                fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                    ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
-                );
-                fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                    ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
-                );
-            }
-            for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
-            {
-                fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                    ",%ld", tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
-                );
-                fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                    ",%ld", tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
-                );
-            }
-            fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,"\r\n");
-
-            fprintf(fp_testMode_sum_bit_ratio_cnt_arranged_by_errorNums_csv ,
-                "%d, %ld, %ld, %ld, %ld\r\n",
-                i,
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][0],//cnt 0 bit cnt in C
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][1],//cnt 1 bit cnt in C
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][2],//cnt 0 bit cnt in R
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][3]//cnt 1 vit cnt in R
-                    );
-            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                ",%ld, %ld, %ld, %ld\r\n",
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][0],//cnt 0 bit cnt in C
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][1],//cnt 1 bit cnt in C
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][2],//cnt 0 bit cnt in R
-                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][3]//cnt 1 vit cnt in R
-                    );
-
-            free(tmp_bit_num_inC_ref_zero_OZ_ratio[i]);
-
-            free(tmp_bit_num_inR_ref_zero_OZ_ratio[i]);
-            free(tmp_bit_num_inR_ref_one_OZ_ratio[i]);
-            free(tmp_llr_mag_sum_inR_OZ_ratio[i]);
-            free(tmp_bit_chg_cnt_inR_OZ_ratio[i]); 
-            free(tmp_llr_mag_inR[i]);
-
-            /* arranging by err nums release 2nd degree */
-            free(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i]);
-            free(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i]);
-        
-            free(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i]);
-        }
-        free(tmp_bit_num_inC_ref_zero_OZ_ratio);
-        free(tmp_bit_num_inR_ref_zero_OZ_ratio);
-        free(tmp_bit_num_inR_ref_one_OZ_ratio);
-        free(tmp_llr_mag_sum_inR_OZ_ratio);
-        free(tmp_bit_chg_cnt_inR_OZ_ratio);
-        free(tmp_llr_mag_inR);
-
-        /* arranging by err nums 1st degree */
-        free(tmp_sum_err_codeword_cnt_arranged_by_err_nums);
-        free(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums);
-        free(tmp_err_llr_mag_distribution_in_one_codeword);
-
-        free(tmp_sum_cor_codeword_cnt_arranged_by_err_nums);
-        free(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums);
-        free(tmp_cor_llr_mag_distribution_in_one_codeword);
-
-        free(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums);
-
-
-
-
-        printf("\n");
-        tmp_testMode_llr_mag_avr_w = ((double)tmp_testMode_llr_mag_sum_w / (double)tmp_testMode_count_bit_w);
-        tmp_testMode_llr_mag_avr_c = ((double)tmp_testMode_llr_mag_sum_c / (double)tmp_testMode_count_bit_c);
-
-
-        printf("[e] Ebn0:%.2f, loops:%ld, total bit:%ld, err bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
-                main_com_EbN0,
-                tmp_testMode_loops_cnt,
-                tmp_testMode_totalBit,
-                tmp_testMode_count_bit_w,
-                tmp_testMode_llr_mag_sum_w,
-                tmp_testMode_llr_mag_avr_w,
-                (unsigned int)tmp_testMode_llr_mag_avr_w
+        case FLAG_CASE_SIM_TEST_MODE_GET_LLR_MAG_AVR_BELONG_EBN0:
+        /* Test Mode calculation */
+        printf("\r\n");
+
+        tmp_testMode_loops_bit_inversion_val = (unsigned long)(tmp_testMode_loops_zero_bit_ratio * (double)tmp_testMode_loops);
+
+        printf("zero stream ratio: %f\r\n", tmp_testMode_loops_zero_bit_ratio);
+        printf("total loops : %ld\r\n", tmp_testMode_loops);
+        printf("zero stream loops : %ld\r\n", tmp_testMode_loops_bit_inversion_val);
+        printf("zero bit cnt : %ld\r\n", 
+                (((unsigned long)global_CodeLength)*tmp_testMode_loops_bit_inversion_val)
         );
-        for(i=0; i<LLR_CASE_NUM; i++)
-        {
-            printf("[e] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
-        }
-        printf("[e] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
-        printf("[c] Ebn0:%.2f, loops:%ld, total bit:%ld, cor bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
-                main_com_EbN0,
-                tmp_testMode_loops_cnt,
-                tmp_testMode_totalBit,
-                tmp_testMode_count_bit_c,
-                tmp_testMode_llr_mag_sum_c,
-                tmp_testMode_llr_mag_avr_c,
-                (unsigned int)tmp_testMode_llr_mag_avr_c
+        printf("one stream loops : %ld\r\n", tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val);
+        printf("one bit cnt: %ld\r\n", 
+                (((unsigned long)global_CodeLength)*(tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val))
         );
-        for(i=0; i<LLR_CASE_NUM; i++)
-        {
-            printf("[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
-        }
-        printf("[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
 
-
-        fprintf(fp_testMode_log, "[e] EbN0:%.2f, loops:%ld, total bit:%ld, err bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
-                main_com_EbN0,
-                tmp_testMode_loops_cnt,
-                tmp_testMode_totalBit,
-                tmp_testMode_count_bit_w,
-                tmp_testMode_llr_mag_sum_w,
-                tmp_testMode_llr_mag_avr_w,
-                (unsigned int)tmp_testMode_llr_mag_avr_w
+        fprintf(fp_testMode_log, "zero stream ratio: %e\r\n", tmp_testMode_loops_zero_bit_ratio);
+        fprintf(fp_testMode_log, "total loops : %ld\r\n", tmp_testMode_loops);
+        fprintf(fp_testMode_log, "zero stream loops : %ld\r\n", tmp_testMode_loops_bit_inversion_val);
+        fprintf(fp_testMode_log, "zero bit cnt : %ld\r\n", 
+                (((unsigned long)global_CodeLength)*tmp_testMode_loops_bit_inversion_val)
         );
-        for(i=0; i<LLR_CASE_NUM; i++)
-        {
-            fprintf(fp_testMode_log, "[e]%d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
-        }
-        fprintf(fp_testMode_log, "[e]max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
-        fprintf(fp_testMode_log, "[c] Ebn0:%.2f, loops:%ld, total bit:%ld, cor bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
-                main_com_EbN0,
-                tmp_testMode_loops_cnt,
-                tmp_testMode_totalBit,
-                tmp_testMode_count_bit_c,
-                tmp_testMode_llr_mag_sum_c,
-                tmp_testMode_llr_mag_avr_c,
-                (unsigned int)tmp_testMode_llr_mag_avr_c
+        fprintf(fp_testMode_log, "one stream loops : %ld\r\n", tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val);
+        fprintf(fp_testMode_log, "one bit cnt: %ld\r\n", 
+                (((unsigned long)global_CodeLength)*(tmp_testMode_loops - tmp_testMode_loops_bit_inversion_val))
         );
-        for(i=0; i<LLR_CASE_NUM; i++)
-        {
-            fprintf(fp_testMode_log, "[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
-        }
-        fprintf(fp_testMode_log, "[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
-
-
-
-
-        tmp_testMode_totalBit= 0UL;
-
-        tmp_testMode_count_bit_w = 0UL;
-
-        for(i=0; i<LLR_CASE_NUM; i++) tmp_testMode_llr_mag_w[i] = 0UL;
-
-        tmp_testMode_llr_mag_sum_w = 0UL;
-
-        tmp_testMode_llr_mag_max_w = 0;
-        tmp_testMode_llr_mag_min_w = 7;
-
-        tmp_testMode_llr_mag_avr_w = 0.0f;
-
-
-        tmp_testMode_count_bit_c = 0UL;
-
-        for(i=0; i<LLR_CASE_NUM; i++) tmp_testMode_llr_mag_c [i] = 0UL;
-
-        tmp_testMode_llr_mag_sum_c  = 0UL;
-
-        tmp_testMode_llr_mag_max_c  = 0;
-        tmp_testMode_llr_mag_min_c  = 7;
-
-        tmp_testMode_llr_mag_avr_c = 0.0f;
-
-        printf("EbN0:%f end\r\n", main_com_EbN0);
-    }
-    break;
-
-    case FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL:
-
-    initTestMode_prob_min_counting(&tmp_testMode_prob_min_counting, &tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
-    printf("tmp_testMode_prob_min_counting = 0x%04x\r\n", &tmp_testMode_prob_min_counting);
-    printf("tmp_testMode_prob_min_counting_length = %d\r\n", &tmp_testMode_prob_min_counting_length);
-
-	for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
-    {
-        for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
-        {
-        //case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
-            /*Stream Generation*/
-            main_com_randInfoBitsStream = 
-                randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
-
-            /*Copy stream to codeword components*/
-            copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
-
-            /*To calculate parity, shifting stream parity length*/
-            shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
-
-            /*Calculating Parity*/
-            calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
-        //break;
-
-            /*Create error components*/
-            main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-
-            BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
-
-            ADD_AWGN_CAL_LLR(
-                main_com_bpskComponents->bpskTransData, 
-                main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
-                main_com_bpskComponents->bpskReceivedLLR->llr, 
-                ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
-                main_com_codeLength, 
-                main_com_EbN0
-            ); //need to add bitrate
-
-            /*Decoding*/
-        //case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
-        //{
-            quantizationWithGlobalAdaptive(
-                main_com_bpskComponents->bpskReceivedLLR->llr, 
-                main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
-                main_com_errComponents->erroredCodeWord->equation, 
-                main_com_errComponents->erroredCodeWord->usedLength
-            );
-
-            convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-        //}
-        //break;
-        
-            for(i=0; i<main_com_codeLength; i++)
-            {
-            }
-
-
-
-        }
-        clearTestMode_prob_min_counting(tmp_testMode_prob_min_counting, tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
-        
-    }
-    break;
-
-    case FLAG_CASE_SIM_TEST_MODE_SHOW_LOOP_CNT:
-    {
-        printf("/*****************************************************************/\r\n");
-        printf("/********************** Simulation Showing ***********************/\r\n");
-        printf("/*****************************************************************/\r\n");
 
         for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
         {
+            printf("EbN0:%f start\r\n", main_com_EbN0);
+
+            tmp_bit_num_inC_ref_zero_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+
+            tmp_bit_num_inR_ref_zero_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+            tmp_bit_num_inR_ref_one_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+
+            tmp_llr_mag_sum_inR_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+            tmp_bit_chg_cnt_inR_OZ_ratio = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+            tmp_llr_mag_inR = (double**)malloc(sizeof(double*)*main_com_codeLength+1);
+
+
+            /* arrange by err cnt */
+            tmp_sum_err_codeword_cnt_arranged_by_err_nums = (unsigned long*)malloc(sizeof(unsigned long)*(main_com_codeLength+1));
+            memset(tmp_sum_err_codeword_cnt_arranged_by_err_nums, 0, sizeof(unsigned long)*(main_com_codeLength+1)); 
+            tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+            tmp_err_llr_mag_distribution_in_one_codeword = (unsigned int*)malloc(sizeof(unsigned int)*(main_com_codeLength+1));
+            memset(tmp_err_llr_mag_distribution_in_one_codeword, 0, sizeof(unsigned int)*(main_com_codeLength+1)); 
+
+            tmp_sum_cor_codeword_cnt_arranged_by_err_nums = (unsigned long*)malloc(sizeof(unsigned long)*(main_com_codeLength+1));
+            memset(tmp_sum_cor_codeword_cnt_arranged_by_err_nums, 0, sizeof(unsigned long)*(main_com_codeLength+1)); 
+            tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+            tmp_cor_llr_mag_distribution_in_one_codeword  = (unsigned int*)malloc(sizeof(unsigned int)*(main_com_codeLength+1));
+            memset(tmp_cor_llr_mag_distribution_in_one_codeword, 0, sizeof(unsigned int)*(main_com_codeLength+1)); 
+
+            tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums = (unsigned long**)malloc(sizeof(unsigned long*)*(main_com_codeLength+1));
+
+
+            for(i=0; i<main_com_codeLength+1; i++)
+            {
+                tmp_bit_num_inC_ref_zero_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*2);
+                memset(tmp_bit_num_inC_ref_zero_OZ_ratio[i], 0, sizeof(unsigned long)*2);
+
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
+                memset(tmp_bit_num_inR_ref_zero_OZ_ratio[i], 0, sizeof(unsigned long)*3);
+                tmp_bit_num_inR_ref_one_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
+                memset(tmp_bit_num_inR_ref_one_OZ_ratio[i], 0, sizeof(unsigned long)*3);
+                tmp_llr_mag_sum_inR_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
+                memset(tmp_llr_mag_sum_inR_OZ_ratio[i], 0, sizeof(unsigned long)*3);
+                tmp_bit_chg_cnt_inR_OZ_ratio[i] = (unsigned long*)malloc(sizeof(unsigned long)*3);
+                memset(tmp_bit_chg_cnt_inR_OZ_ratio[i], 0, sizeof(unsigned long)*3);
+                tmp_llr_mag_inR[i] = (double*)malloc(sizeof(double)*3);
+                memset(tmp_llr_mag_inR[i], 0, sizeof(double)*3);
+
+                /* arrange by err cnt */
+                tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*((unsigned int)(global_QuantizationInfo.mag_bitMask + 1)));
+                memset(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i], 0, sizeof(unsigned long)*(global_QuantizationInfo.mag_bitMask + 1));
+                tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*((unsigned int)(global_QuantizationInfo.mag_bitMask + 1)));
+                memset(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i], 0, sizeof(unsigned long)*(global_QuantizationInfo.mag_bitMask + 1));
+                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i] = (unsigned long*)malloc(sizeof(unsigned long)*(4));
+                memset(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i], 0, sizeof(unsigned long)*4);
+            }
+
+            for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
+            {
+
+                /*
+                switch(global_flag_case_testMode_msg_gen_method)
+                {
+                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
+
+                    break;
+
+                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
+
+                    break;
+                }
+
+                */
+
+                switch(global_flag_case_testMode_msg_gen_method)
+                {
+                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
+                        main_com_randInfoBitsStream = 
+                            randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
+
+                        copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
+
+                        shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
+
+                        calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
+                    break;
+
+                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
+                        if(tmp_testMode_loops_cnt<tmp_testMode_loops_bit_inversion_val)
+                        {
+                        main_com_randInfoBitsStream = 
+                            allSameInfoBitGenerator('0', main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
+                        }
+                        else
+                        {
+                            main_com_randInfoBitsStream = 
+                                allSameInfoBitGenerator('1', main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
+                        }
+
+                        copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
+
+                    break;
+                }
+
+                main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+
+                BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
+
+                ADD_AWGN_CAL_LLR(
+                    main_com_bpskComponents->bpskTransData, 
+                    main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
+                    main_com_bpskComponents->bpskReceivedLLR->llr, 
+                    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
+                    main_com_codeLength, 
+                    main_com_EbN0
+                ); //need to add bitrate
+
+                switch(global_flag_case_testMode_decoding_method)
+                {
+                    case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_HD:
+                    {
+                        BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
+                    }
+                    break;
+
+                    default:
+                    case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
+                    {
+                        quantizationWithGlobalAdaptive(
+                            main_com_bpskComponents->bpskReceivedLLR->llr, 
+                            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
+                            main_com_errComponents->erroredCodeWord->equation, 
+                            main_com_errComponents->erroredCodeWord->usedLength
+                        );
+
+                        convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                    }
+                    break;
+                }
+
+
+                /* In codeword, zero and one bit count */
+                for(i=0; i<main_com_codeLength; i++)
+                {
+                    if(main_encodingComponentInGF->codeWord->equation[i] == '0')
+                    {
+                        tmp_testMode_zero_bit_nums_inC++;
+                    }
+                    else
+                    {
+                        tmp_testMode_one_bit_nums_inC++;
+                    }                        
+                }
+                for(i=0; i<main_com_codeLength; i++)
+                {
+                            /* ones complement verify code start */
+                            /*
+                            if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
+                            {
+                                printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
+                                        main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
+                                );
+                            }
+                            else
+                            {
+                                printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
+
+                                        main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
+                                );
+                            }
+                            */
+                            /* ones complement verify code end */
+                    /* if received bit is error */
+                    if(main_encodingComponentInGF->codeWord->equation[i] != main_com_errComponents->erroredCodeWord->equation[i])
+                    {
+                        //tmp_testMode_llr_mag_sum_w+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                        //==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
+                        tmp_testMode_llr_mag_w[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
+                        tmp_testMode_count_bit_w++;
+                        if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_w) tmp_testMode_llr_mag_max_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                        if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] < tmp_testMode_llr_mag_min_w) tmp_testMode_llr_mag_min_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+
+                        /* llr sum in received codeword wrong case */
+                        tmp_testMode_llr_mag_sum_inR_w += (unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                
+                        /* received bits cnt, which are zero or one and is error */
+                        if(main_com_errComponents->erroredCodeWord->equation[i] == '0')
+                        {
+                            tmp_testMode_zero_is_inR_w++;
+                        }
+                        else
+                        {
+                            tmp_testMode_one_is_inR_w++;
+                        }
+
+                        /* received bit change detect */
+                        if(main_encodingComponentInGF->codeWord->equation[i] == '0')
+                        {
+                            tmp_testMode_zeroToOne_bit_nums_inR++;
+                        }
+                        else
+                        {
+                            tmp_testMode_oneToZero_bit_nums_inR++;
+                        }
+
+                        /* err llr mag distribution in codeword */
+                        tmp_err_llr_mag_distribution_in_one_codeword[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
+                    }
+                    else
+                    {
+                        //tmp_testMode_llr_mag_sum_c+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                        //==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
+                        tmp_testMode_llr_mag_c[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
+                        tmp_testMode_count_bit_c++;
+                        if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_c) tmp_testMode_llr_mag_max_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                        if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] < tmp_testMode_llr_mag_min_c) tmp_testMode_llr_mag_min_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                        
+
+                        /* llr sum in received codeword good case */
+                        tmp_testMode_llr_mag_sum_inR_c += (unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
+                
+                        /* received bits cnt, which are zero or one and is correct */
+                        if(main_com_errComponents->erroredCodeWord->equation[i] == '0')
+                        {
+                            tmp_testMode_zero_is_inR_c++;
+                        }
+                        else
+                        {
+                            tmp_testMode_one_is_inR_c++;
+                        }
+
+                        /* cor llr mag distribution in codeword */
+                        tmp_cor_llr_mag_distribution_in_one_codeword[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
+                    }
+                }
+                if(main_com_randInfoBitsStream)
+                {
+                    free(main_com_randInfoBitsStream);
+                    main_com_randInfoBitsStream = NULL;
+                }
+
+
+                tmp_bit_num_inC_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
+                    += (unsigned long)tmp_testMode_zero_bit_nums_inC;
+                tmp_bit_num_inC_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
+                    += (unsigned long)tmp_testMode_one_bit_nums_inC;
+
+                //index reference sended Codeword
+                //tmp_testMode_zero_bit_nums_inC
+                //index reference Received Codeword
+                //tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c
+                tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
+                    += (tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c);
+                tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
+                    += tmp_testMode_zero_is_inR_c;
+                tmp_bit_num_inR_ref_zero_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
+                    += tmp_testMode_zero_is_inR_w;
+
+                
+                tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
+                    += tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c;
+                tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
+                    += tmp_testMode_one_is_inR_c;
+                tmp_bit_num_inR_ref_one_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
+                    += tmp_testMode_one_is_inR_w;
+               
+                tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
+                    += tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR;
+                tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
+                    += tmp_testMode_zeroToOne_bit_nums_inR;
+                tmp_bit_chg_cnt_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
+                    += tmp_testMode_oneToZero_bit_nums_inR;
+
+                tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][0]
+                    += tmp_testMode_llr_mag_sum_inR_w + tmp_testMode_llr_mag_sum_inR_c;
+                tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][1]
+                    += tmp_testMode_llr_mag_sum_inR_c;
+                tmp_llr_mag_sum_inR_OZ_ratio[tmp_testMode_zero_bit_nums_inC][2]
+                    += tmp_testMode_llr_mag_sum_inR_w;
+
+                //tmp_llr_mag_inR[tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c][0]
+                //    = ((double)(1tmp_testMode_llr_mag_sum_inR_w + tmp_testMode_llr_mag_sum_inR_c))/((double)main_com_codeLength);
+
+                tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
+                tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
+
+                tmp_testMode_totalBit+=(unsigned long)main_com_codeLength;
+
+                /* arranging by number of error */
+                /* count up correct or err codeword */
+                /* have any error */
+                tmp_sum_err_codeword_cnt_arranged_by_err_nums[tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR]++;
+                
+                for(i = 0; i < (unsigned int)(global_QuantizationInfo.mag_bitMask + 1); i++)
+                {
+                    tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums \
+                        [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR] \
+                        [i] += tmp_err_llr_mag_distribution_in_one_codeword[i];
+                    tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums \
+                        [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR] \
+                        [i] += tmp_cor_llr_mag_distribution_in_one_codeword[i];
+                }
+
+                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
+                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][0] += \
+                    ( tmp_testMode_zero_bit_nums_inC );
+                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
+                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][1] += \
+                    ( tmp_testMode_one_bit_nums_inC );
+                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
+                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][2] += \
+                    ( tmp_testMode_zero_is_inR_w + tmp_testMode_zero_is_inR_c );
+                tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums \
+                    [tmp_testMode_zeroToOne_bit_nums_inR + tmp_testMode_oneToZero_bit_nums_inR][3] += \
+                    ( tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c );
+
+                
+
+                
+                /*encoding parts*/
+                tmp_testMode_zero_bit_nums_inC = 0;
+                tmp_testMode_one_bit_nums_inC = 0;
+
+                /* decoding parts */
+                tmp_testMode_zeroToOne_bit_nums_inR = 0;//received bit change detect
+                tmp_testMode_oneToZero_bit_nums_inR = 0;//received bit change detect
+
+                tmp_testMode_zero_is_inR_w = 0;//received bits cnt, which are zero or one and is error
+                tmp_testMode_one_is_inR_w = 0;//received bits cnt, which are zero or one and is error
+
+                tmp_testMode_zero_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
+                tmp_testMode_one_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
+
+                tmp_testMode_llr_mag_sum_inR_w =0UL;//llr sum in received codeword wrong case
+                tmp_testMode_llr_mag_sum_inR_c =0UL;//llr sum in received codeword good case
+
+                /* clear arranging by err nums */
+                for(i = 0; i < (global_QuantizationInfo.mag_bitMask + 1); i++)
+                {
+                    tmp_err_llr_mag_distribution_in_one_codeword[i] = 0;
+                    tmp_cor_llr_mag_distribution_in_one_codeword[i] = 0;
+                }
+                //exit(0);
+                //printf("%ld\r", tmp_testMode_loops_cnt);
+            }
+            /* exit all loop */
+
+            /* Labeling */
+            fprintf(fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv, 
+                    "0-bit cnt, 1-bit cnt\r\n");
+
+            fprintf(fp_testMode_sum_bit_cnt_classified_arranged_by_bitRatio_csv, 
+                    "sum 0bit ,0 Cor,0 Err,sum 1bit,1 Cor,1 Err\r\n");
+
+            fprintf(fp_testMode_sum_err_bit_cnt_chg_classified_arranged_by_bitRatio_csv, 
+                    "sum Err,Tran 0->1,Tran 1->0\r\n");
+
+            fprintf(fp_testMode_sum_llr_mag_arranged_by_bitRatio_csv, 
+                    "sum llr mag,sum llr mag Cor,sum llr mag Err\n");
+
+            fprintf(fp_testMode_all_arranged_by_bitRatio_csv, 
+                    "codeword 0-bit,codeword 1-bit,sum 0bit,0 Cor,0 Err,sum 1bit,1 Cor,1 Err,sum Err,Tran 0->1,Tran 1->0,sum llr mag,sum llr mag Cor,sum llr mag Err\r\n");
+
+            /* arranging by err nums labeling */
+            fprintf(fp_testMode_sum_codeword_cnt_arranged_by_errorNums_csv,
+                    "err Nums,codeword cnt\r\n"
+                    );
+            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    "err Nums,codeword cnt"
+                    );
+
+
+            fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                    "err Nums, "
+                   );
+                    
+            fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                    "e llr_mag 0,e llr_mag 1,e llr_mag 2,e llr_mag 3,e llr_mag 4,e llr_mag 5,e llr_mag 6,e llr_mag 7,"
+                    );
+            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    ",e llr_mag 0,e llr_mag 1,e llr_mag 2,e llr_mag 3,e llr_mag 4,e llr_mag 5,e llr_mag 6,e llr_mag 7"
+                    );
+            fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                    "c llr_mag 0,c llr_mag 1,c llr_mag 2,c llr_mag 3,c llr_mag 4,c llr_mag 5,c llr_mag 6,c llr_mag 7\r\n"
+                    );
+            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    ",c llr_mag 0,c llr_mag 1,c llr_mag 2,c llr_mag 3,c llr_mag 4,c llr_mag 5,c llr_mag 6,c llr_mag 7"
+                    );
+
+            fprintf(fp_testMode_sum_bit_ratio_cnt_arranged_by_errorNums_csv,
+                    "err Nums,0bit cnt in C,1bit cnt in C,0bit cnt in R,1bit cnt inR\r\n"
+                   );
+            fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    ",0bit cnt in C,1bit cnt in C,0bit cnt in R,1bit cnt inR\r\n"
+                   );
+            for(i=0; i<main_com_codeLength+1; i++)
+            {
+                fprintf(fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv, "%ld, %ld\r\n", 
+                tmp_bit_num_inC_ref_zero_OZ_ratio[i][0],
+                tmp_bit_num_inC_ref_zero_OZ_ratio[i][1]
+                );
+
+                fprintf(fp_testMode_sum_bit_cnt_classified_arranged_by_bitRatio_csv, "%ld,%ld,%ld,%ld,%ld,%ld\r\n",
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][0],
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][1],
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][2],
+
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][0],
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][1],
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][2]
+                );
+
+                fprintf(fp_testMode_sum_err_bit_cnt_chg_classified_arranged_by_bitRatio_csv, "%ld,%ld,%ld\r\n",
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][0],
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][1],
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][2]
+                );
+
+                fprintf(fp_testMode_sum_llr_mag_arranged_by_bitRatio_csv, "%ld,%ld,%ld\r\n",
+                tmp_llr_mag_sum_inR_OZ_ratio[i][0],
+                tmp_llr_mag_sum_inR_OZ_ratio[i][1],
+                tmp_llr_mag_sum_inR_OZ_ratio[i][2]
+                );
+
+                fprintf(fp_testMode_all_arranged_by_bitRatio_csv, "%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld\r\n",
+                tmp_bit_num_inC_ref_zero_OZ_ratio[i][0],
+                tmp_bit_num_inC_ref_zero_OZ_ratio[i][1],
+
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][0],
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][1],
+                tmp_bit_num_inR_ref_zero_OZ_ratio[i][2],
+
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][0],
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][1],
+                tmp_bit_num_inR_ref_one_OZ_ratio[i][2],
+
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][0],
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][1],
+                tmp_bit_chg_cnt_inR_OZ_ratio[i][2],
+
+                tmp_llr_mag_sum_inR_OZ_ratio[i][0],
+                tmp_llr_mag_sum_inR_OZ_ratio[i][1],
+                tmp_llr_mag_sum_inR_OZ_ratio[i][2]
+                );
+
+                /* arranging by err nums record */
+                fprintf(fp_testMode_sum_codeword_cnt_arranged_by_errorNums_csv,
+                    "%d, %ld\r\n", 
+                    i, 
+                    tmp_sum_err_codeword_cnt_arranged_by_err_nums[i]
+                );
+                fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    "%d, %ld", 
+                    i, 
+                    tmp_sum_err_codeword_cnt_arranged_by_err_nums[i]
+                );
+
+
+                fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                    "%d", i
+                );
+                for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
+                {
+                    fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
+                    );
+                    fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
+                    );
+                }
+                for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
+                {
+                    fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
+                        ",%ld", tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
+                    );
+                    fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                        ",%ld", tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]  
+                    );
+                }
+                fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,"\r\n");
+
+                fprintf(fp_testMode_sum_bit_ratio_cnt_arranged_by_errorNums_csv ,
+                    "%d, %ld, %ld, %ld, %ld\r\n",
+                    i,
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][0],//cnt 0 bit cnt in C
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][1],//cnt 1 bit cnt in C
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][2],//cnt 0 bit cnt in R
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][3]//cnt 1 vit cnt in R
+                        );
+                fprintf(fp_testMode_all_arranged_by_errorNums_csv,
+                    ",%ld, %ld, %ld, %ld\r\n",
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][0],//cnt 0 bit cnt in C
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][1],//cnt 1 bit cnt in C
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][2],//cnt 0 bit cnt in R
+                    tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i][3]//cnt 1 vit cnt in R
+                        );
+
+                free(tmp_bit_num_inC_ref_zero_OZ_ratio[i]);
+
+                free(tmp_bit_num_inR_ref_zero_OZ_ratio[i]);
+                free(tmp_bit_num_inR_ref_one_OZ_ratio[i]);
+                free(tmp_llr_mag_sum_inR_OZ_ratio[i]);
+                free(tmp_bit_chg_cnt_inR_OZ_ratio[i]); 
+                free(tmp_llr_mag_inR[i]);
+
+                /* arranging by err nums release 2nd degree */
+                free(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i]);
+                free(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i]);
+            
+                free(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums[i]);
+            }
+            free(tmp_bit_num_inC_ref_zero_OZ_ratio);
+            free(tmp_bit_num_inR_ref_zero_OZ_ratio);
+            free(tmp_bit_num_inR_ref_one_OZ_ratio);
+            free(tmp_llr_mag_sum_inR_OZ_ratio);
+            free(tmp_bit_chg_cnt_inR_OZ_ratio);
+            free(tmp_llr_mag_inR);
+
+            /* arranging by err nums 1st degree */
+            free(tmp_sum_err_codeword_cnt_arranged_by_err_nums);
+            free(tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums);
+            free(tmp_err_llr_mag_distribution_in_one_codeword);
+
+            free(tmp_sum_cor_codeword_cnt_arranged_by_err_nums);
+            free(tmp_cor_llr_mag_distribution_in_all_loop_arranged_by_err_nums);
+            free(tmp_cor_llr_mag_distribution_in_one_codeword);
+
+            free(tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums);
+
+
+
+
+            printf("\n");
+            tmp_testMode_llr_mag_avr_w = ((double)tmp_testMode_llr_mag_sum_w / (double)tmp_testMode_count_bit_w);
+            tmp_testMode_llr_mag_avr_c = ((double)tmp_testMode_llr_mag_sum_c / (double)tmp_testMode_count_bit_c);
+
+
+            printf("[e] Ebn0:%.2f, loops:%ld, total bit:%ld, err bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
+                    main_com_EbN0,
+                    tmp_testMode_loops_cnt,
+                    tmp_testMode_totalBit,
+                    tmp_testMode_count_bit_w,
+                    tmp_testMode_llr_mag_sum_w,
+                    tmp_testMode_llr_mag_avr_w,
+                    (unsigned int)tmp_testMode_llr_mag_avr_w
+            );
+            for(i=0; i<LLR_CASE_NUM; i++)
+            {
+                printf("[e] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+            }
+            printf("[e] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
+
+            printf("[c] Ebn0:%.2f, loops:%ld, total bit:%ld, cor bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
+                    main_com_EbN0,
+                    tmp_testMode_loops_cnt,
+                    tmp_testMode_totalBit,
+                    tmp_testMode_count_bit_c,
+                    tmp_testMode_llr_mag_sum_c,
+                    tmp_testMode_llr_mag_avr_c,
+                    (unsigned int)tmp_testMode_llr_mag_avr_c
+            );
+            for(i=0; i<LLR_CASE_NUM; i++)
+            {
+                printf("[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
+            }
+            printf("[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
+
+
+
+            fprintf(fp_testMode_log, "[e] EbN0:%.2f, loops:%ld, total bit:%ld, err bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
+                    main_com_EbN0,
+                    tmp_testMode_loops_cnt,
+                    tmp_testMode_totalBit,
+                    tmp_testMode_count_bit_w,
+                    tmp_testMode_llr_mag_sum_w,
+                    tmp_testMode_llr_mag_avr_w,
+                    (unsigned int)tmp_testMode_llr_mag_avr_w
+            );
+            for(i=0; i<LLR_CASE_NUM; i++)
+            {
+                fprintf(fp_testMode_log, "[e]%d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+            }
+            fprintf(fp_testMode_log, "[e]max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
+
+            fprintf(fp_testMode_log, "[c] Ebn0:%.2f, loops:%ld, total bit:%ld, cor bit:%ld, mag_sum :%ld, mag_avr:%e, mag_avr_int:%d\r\n",
+                    main_com_EbN0,
+                    tmp_testMode_loops_cnt,
+                    tmp_testMode_totalBit,
+                    tmp_testMode_count_bit_c,
+                    tmp_testMode_llr_mag_sum_c,
+                    tmp_testMode_llr_mag_avr_c,
+                    (unsigned int)tmp_testMode_llr_mag_avr_c
+            );
+            for(i=0; i<LLR_CASE_NUM; i++)
+            {
+                fprintf(fp_testMode_log, "[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
+            }
+            fprintf(fp_testMode_log, "[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
+
+
+
+
+            tmp_testMode_totalBit= 0UL;
+
+            tmp_testMode_count_bit_w = 0UL;
+
+            for(i=0; i<LLR_CASE_NUM; i++) tmp_testMode_llr_mag_w[i] = 0UL;
+
+            tmp_testMode_llr_mag_sum_w = 0UL;
+
+            tmp_testMode_llr_mag_max_w = 0;
+            tmp_testMode_llr_mag_min_w = 7;
+
+            tmp_testMode_llr_mag_avr_w = 0.0f;
+
+
+            tmp_testMode_count_bit_c = 0UL;
+
+            for(i=0; i<LLR_CASE_NUM; i++) tmp_testMode_llr_mag_c [i] = 0UL;
+
+            tmp_testMode_llr_mag_sum_c  = 0UL;
+
+            tmp_testMode_llr_mag_max_c  = 0;
+            tmp_testMode_llr_mag_min_c  = 7;
+
+            tmp_testMode_llr_mag_avr_c = 0.0f;
+
+            printf("EbN0:%f end\r\n", main_com_EbN0);
+        }
+        break;
+
+        case FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL:
+
+        initTestMode_prob_min_counting(&tmp_testMode_prob_min_counting, &tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
+        printf("tmp_testMode_prob_min_counting = 0x%04x\r\n", &tmp_testMode_prob_min_counting);
+        printf("tmp_testMode_prob_min_counting_length = %d\r\n", &tmp_testMode_prob_min_counting_length);
+
+        for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
+        {
+            for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
+            {
+            //case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
+                /*Stream Generation*/
+                main_com_randInfoBitsStream = 
+                    randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
+
+                /*Copy stream to codeword components*/
+                copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
+
+                /*To calculate parity, shifting stream parity length*/
+                shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
+
+                /*Calculating Parity*/
+                calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
+            //break;
+
+                /*Create error components*/
+                main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+
+                BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
+
+                ADD_AWGN_CAL_LLR(
+                    main_com_bpskComponents->bpskTransData, 
+                    main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
+                    main_com_bpskComponents->bpskReceivedLLR->llr, 
+                    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
+                    main_com_codeLength, 
+                    main_com_EbN0
+                ); //need to add bitrate
+
+                /*Decoding*/
+            //case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
+            //{
+                quantizationWithGlobalAdaptive(
+                    main_com_bpskComponents->bpskReceivedLLR->llr, 
+                    main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
+                    main_com_errComponents->erroredCodeWord->equation, 
+                    main_com_errComponents->erroredCodeWord->usedLength
+                );
+
+                convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+            //}
+            //break;
+            
+                for(i=0; i<main_com_codeLength; i++)
+                {
+                }
+
+
+
+            }
+            clearTestMode_prob_min_counting(tmp_testMode_prob_min_counting, tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
+            
+        }
+        break;
+
+        case FLAG_CASE_SIM_TEST_MODE_SHOW_LOOP_CNT:
+        {
+            printf("/*****************************************************************/\r\n");
+            printf("/********************** Simulation Showing ***********************/\r\n");
+            printf("/*****************************************************************/\r\n");
+
+            for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
+            {
+                /********************************************/
+                /***** loop count decision codes start ******/
+                /********************************************/
+                if(global_base_of_loop)
+                {
+                    main_com_totalSamlingLoop = global_base_of_loop;
+                }
+                else
+                {
+                    main_com_totalSamlingLoop = (unsigned long)main_com_codeLength;
+                }
+                
+                if(global_rate_of_loop)
+                {
+                    main_com_totalSamlingLoop *= ((unsigned long)pow(global_rate_of_loop, main_com_EbN0));
+                }
+                else
+                {
+                    main_com_totalSamlingLoop *= ((unsigned long)pow(10, main_com_EbN0));
+                }
+                
+                if(main_com_totalSamlingLoop < global_minimum_loop) main_com_totalSamlingLoop = global_minimum_loop;
+                // if(main_com_totalSamlingLoop<global_minimum_loop) main_com_totalSamlingLoop=global_minimum_loop;
+                /********************************************/
+                /****** loop count decision codes end *******/
+                /********************************************/
+
+                infoMes; printf("main EbN0 is '%g'.\r\n", main_com_EbN0);
+                infoMes; printf("main_com_EbN0 : 10^(-%g),\tTotal loops : %ld\r\n", main_com_EbN0, main_com_totalSamlingLoop);
+            }
+        }
+        break;
+
+        case FLAG_CASE_SIM_TEST_MODE_NONE:
+        default:
+        printExcutingTime(&time_program_init);
+        for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
+        {
+            gettimeofday(&time_EbN0_start, NULL);
+            /*******************************************************************/
+            /********** Associated with BER variables are clear start **********/
+            /*******************************************************************/
+            
+            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+            {
+                main_indi_total_err_cnt_HD[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 0;
+                main_indi_total_err_cnt_CW[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 0;
+            }
+            main_com_total_err_cnt_CH = 0;
+            main_com_total_bit = 0;
+            
+            test_fileIO_errorCorrectingCount=0;
+            /*******************************************************************/
+            /*********** Associated with BER variables are clear end ***********/
+            /*******************************************************************/
+
             /********************************************/
             /***** loop count decision codes start ******/
             /********************************************/
             if(global_base_of_loop)
             {
-                main_com_totalSamlingLoop = global_base_of_loop;	
+                main_com_totalSamlingLoop = global_base_of_loop;
             }
             else
             {
@@ -20878,3157 +20831,3100 @@ switch(global_flag_case_sim_testOpt)
             /****** loop count decision codes end *******/
             /********************************************/
 
+            printf("/*****************************************************************/\r\n");
+            printf("/*********************** Simulation Start ************************/\r\n");
+            printf("/*****************************************************************/\r\n");
             infoMes; printf("main EbN0 is '%g'.\r\n", main_com_EbN0);
             infoMes; printf("main_com_EbN0 : 10^(-%g),\tTotal loops : %ld\r\n", main_com_EbN0, main_com_totalSamlingLoop);
-        }
-    }
-    break;
+            
+        /*****************************************************************************/
+        /*****************************************************************************/
+        /******************* simulation main_com_loopCount loop start ********************/
+        /*****************************************************************************/
+        /*****************************************************************************/
+            for(main_com_loopCount=0; main_com_loopCount<main_com_totalSamlingLoop; main_com_loopCount++)
+            {
+                /*
+                    Making a random infomation bits and encoding codeword is 
+                    common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode 
+                    start
+                */
+                gettimeofday(&time_encoding_start, NULL);
+                                        #ifndef RELEASE
+                                        if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        {
+                                            debugFuncNameMes;
+                                            printf("\r\nfor(main_com_loopCount=0; main_com_loopCount<main_com_totalSamlingLoop; main_com_loopCount++) start\r\n");
+                                        }
+                                        if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        {
+                                            debugFuncNameMes;
+                                            printf("randdomInfoBitGenerator\r\n");
+                                        }
+                                        #endif
+                main_com_randInfoBitsStream=randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
+                                        #ifndef RELEASE
+                                        if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        {
+                                            debugFuncNameMes;
+                                            printf("copyPowerFormPolynomialFromString\r\n");
+                                        }
+                                        #endif
+                copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
+                
+                        main_tmp_sel_decAlgo_cnt = 0;
+                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                        {
+                            if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
+                        }
+                        if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
+                        {
+                            debugSequenceMes;
+                            printf("origin Vector is below...\r\n");
+                            printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                        
+                        }
+                        if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
+                        {
+                            fprintPowerFormUsingAddress\
+                                (fileio_HD_mes, main_encodingComponentInGF->codeWord, "\r\n");
+                        }
+                        if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_MES)
+                        {
+                            fprintVerilogPowerFormUsingAddress\
+                                (fileio_HD_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
+                        }
+                        if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_MES)
+                        {
+                            fprintPowerFormFullDescriptionUsingAddresss\
+                                (fileio_HD_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
+                        }
 
-    case FLAG_CASE_SIM_TEST_MODE_NONE:
-    default:
-	printExcutingTime(&time_program_init);
-	for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
-	{
-		gettimeofday(&time_EbN0_start, NULL);
-		/*******************************************************************/
-		/********** Associated with BER variables are clear start **********/
-		/*******************************************************************/
-		
-		for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-		{
-			main_indi_total_err_cnt_HD[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 0;
-			main_indi_total_err_cnt_CW[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 0;
-		}
-		main_com_total_err_cnt_CH = 0;
-		main_com_total_bit = 0;
-		
-		test_fileIO_errorCorrectingCount=0;
-		/*******************************************************************/
-		/*********** Associated with BER variables are clear end ***********/
-		/*******************************************************************/
+                                        #ifndef RELEASE
+                                        if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        {
+                                            debugFuncNameMes;
+                                            printf("shiftHighSidePowerFormPolynomial\r\n");
+                                        }
+                                        #endif
+                shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
+                        main_tmp_sel_decAlgo_cnt = 0;
+                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                        {
+                            if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
+                        }
+                        if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
+                        {
+                            debugSequenceMes;
+                            printf("shifted Value is below...\r\n");
+                            printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                        }
+                                        #ifndef RELEASE
+                                        if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        {
+                                            debugFuncNameMes;
+                                            printf("calculateParityInGaloisFieldAttachLowSide\r\n");
+                                        }
+                                        #endif
+                calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
+                        main_tmp_sel_decAlgo_cnt = 0;
+                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                        {
+                            if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
+                        }
+                        if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
+                        {
+                                debugSequenceMes;
+                                printf("Encoded Vector is below...\r\n");
+                                // printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                                printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                        }
+                        if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
+                        {
+                            fprintPowerFormUsingAddress\
+                                (fileio_HD_encoding_mes, main_encodingComponentInGF->codeWord, "\r\n");
+                        }
+                        if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
+                        {
+                            fprintVerilogPowerFormUsingAddress\
+                                (fileio_HD_encoding_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
+                        }
+                        if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
+                        {
+                            fprintPowerFormFullDescriptionUsingAddresss\
+                                (fileio_HD_encoding_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
+                        }
 
-		/********************************************/
-		/***** loop count decision codes start ******/
-		/********************************************/
-		if(global_base_of_loop)
-		{
-			main_com_totalSamlingLoop = global_base_of_loop;	
-		}
-		else
-		{
-			main_com_totalSamlingLoop = (unsigned long)main_com_codeLength;
-		}
-		
-		if(global_rate_of_loop)
-		{
-			main_com_totalSamlingLoop *= ((unsigned long)pow(global_rate_of_loop, main_com_EbN0));
-		}
-		else
-		{
-			main_com_totalSamlingLoop *= ((unsigned long)pow(10, main_com_EbN0));
-		}
-		
-		if(main_com_totalSamlingLoop < global_minimum_loop) main_com_totalSamlingLoop = global_minimum_loop;
-		// if(main_com_totalSamlingLoop<global_minimum_loop) main_com_totalSamlingLoop=global_minimum_loop;
-		/********************************************/
-		/****** loop count decision codes end *******/
-		/********************************************/
+                /*
+                    Making a random infomation bits and encoding codeword is 
+                    common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode 
+                    end
+                */
 
-		printf("/*****************************************************************/\r\n");
-		printf("/*********************** Simulation Start ************************/\r\n");
-		printf("/*****************************************************************/\r\n");
-		infoMes; printf("main EbN0 is '%g'.\r\n", main_com_EbN0);
-		infoMes; printf("main_com_EbN0 : 10^(-%g),\tTotal loops : %ld\r\n", main_com_EbN0, main_com_totalSamlingLoop);
-		
-	/*****************************************************************************/
-	/*****************************************************************************/
-	/******************* simulation main_com_loopCount loop start ********************/
-	/*****************************************************************************/
-	/*****************************************************************************/
-		for(main_com_loopCount=0; main_com_loopCount<main_com_totalSamlingLoop; main_com_loopCount++)
-		{
-			/*
-				Making a random infomation bits and encoding codeword is 
-				common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode 
-				start
-			*/
-			gettimeofday(&time_encoding_start, NULL);
-									#ifndef RELEASE
-									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									{
-										debugFuncNameMes;
-										printf("\r\nfor(main_com_loopCount=0; main_com_loopCount<main_com_totalSamlingLoop; main_com_loopCount++) start\r\n");
-									}
-									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									{
-										debugFuncNameMes;
-										printf("randdomInfoBitGenerator\r\n");
-									}
-									#endif
-			main_com_randInfoBitsStream=randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
-									#ifndef RELEASE
-									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									{
-										debugFuncNameMes;
-										printf("copyPowerFormPolynomialFromString\r\n");
-									}
-									#endif
-			copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
-			
-					main_tmp_sel_decAlgo_cnt = 0;
-					for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-					{
-						if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
-					}
-					if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
-					{
-						debugSequenceMes;
-						printf("origin Vector is below...\r\n");
-						printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-					
-					}
-                    if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
+                        
+                /********************************************************/
+                /********** (Global Flag) Algorithm simulation **********/
+                /********************************************************/
+                if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
+                {
+                    printf("[Encoding time]"); printExcutingTime(&time_encoding_start);
+                    gettimeofday(&time_decoding_start, NULL);
+                    printf("/*****************************************************************/\r\n");
+                    printf("/********************* Algorithm Test Start **********************/\r\n");
+                    printf("/*****************************************************************/\r\n");
+
+                    /*
+                        #define FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION	(1<<3)
+                        #define infoMes	printf("test SOFT ) ");
+                    */
+                    if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
                     {
-                        fprintPowerFormUsingAddress\
-                            (fileio_HD_mes, main_encodingComponentInGF->codeWord, "\r\n");
+                        warningMes;
+                        printf("BCH algorithm option is enabled. So it will pass Soft Decision simulation. [Option] [--...soft]\r\n");
                     }
-                    if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_MES)
-                    {
-                        fprintVerilogPowerFormUsingAddress\
-                            (fileio_HD_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
-                    }
-                    if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_MES)
-                    {
-                        fprintPowerFormFullDescriptionUsingAddresss\
-                            (fileio_HD_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
-                    }
-
-									#ifndef RELEASE
-									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									{
-										debugFuncNameMes;
-										printf("shiftHighSidePowerFormPolynomial\r\n");
-									}
-									#endif
-			shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
-					main_tmp_sel_decAlgo_cnt = 0;
-					for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-					{
-						if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
-					}
-					if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
-					{
-						debugSequenceMes;
-						printf("shifted Value is below...\r\n");
-						printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-					}
-									#ifndef RELEASE
-									if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									{
-										debugFuncNameMes;
-										printf("calculateParityInGaloisFieldAttachLowSide\r\n");
-									}
-									#endif
-			calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
-					main_tmp_sel_decAlgo_cnt = 0;
-					for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-					{
-						if((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)) main_tmp_sel_decAlgo_cnt++;
-					}
-					if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(main_tmp_sel_decAlgo_cnt))
-					{
-							debugSequenceMes;
-							printf("Encoded Vector is below...\r\n");
-							// printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-							printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-					}
-                    if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
-                    {
-                        fprintPowerFormUsingAddress\
-                            (fileio_HD_encoding_mes, main_encodingComponentInGF->codeWord, "\r\n");
-                    }
-                    if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
-                    {
-                        fprintVerilogPowerFormUsingAddress\
-                            (fileio_HD_encoding_mes_verilog, main_encodingComponentInGF->codeWord, NULL);
-                    }
-                    if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
-                    {
-                        fprintPowerFormFullDescriptionUsingAddresss\
-                            (fileio_HD_encoding_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
-                    }
-
-			/*
-				Making a random infomation bits and encoding codeword is 
-				common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode 
-				end
-			*/
-
-					
-			/********************************************************/
-			/********** (Global Flag) Algorithm simulation **********/
-			/********************************************************/
-			if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
-			{
-				printf("[Encoding time]"); printExcutingTime(&time_encoding_start);
-				gettimeofday(&time_decoding_start, NULL);
-				printf("/*****************************************************************/\r\n");
-				printf("/********************* Algorithm Test Start **********************/\r\n");
-				printf("/*****************************************************************/\r\n");
-
-				/*
-					#define FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION	(1<<3)
-					#define infoMes	printf("test SOFT ) ");
-				*/
-				if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
-				{
-					warningMes;
-					printf("BCH algorithm option is enabled. So it will pass Soft Decision simulation. [Option] [--...soft]\r\n");
-				}
-				infoMes; printf(">> BCH Algorithm Test <<\r\n");
-				//recreate error codeword
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("recreateErrorComponent\r\n");
-						}
-						#endif
-				main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-				// main_com_errComponents=ifNotExistCreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("errorOccurationWhichAreRandomPosition\r\n");
-						}
-						#endif
-				errorOccurationWhichAreRandomPosition(main_com_errComponents->errorLocationVector, main_com_errNums_inDecodingAlgorithmTest);
-				infoMes; printf("Generated Error Vector is below...\r\n");
-				printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->errorLocationVector);
-
-	
-				//summation encoded codeword and error codeword
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("addErrorCodeWordToUnErrorCodeWord\r\n");
-						}
-						#endif
-				addErrorCodeWordToUnErrorCodeWord(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord, main_com_errComponents->errorLocationVector);
-				infoMes; printf("Added error Vector is...\r\n");
-				printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
-				printf("[Addictive Error Peoc time]"); printExcutingTime(&time_decoding_start);
-				
-
-				gettimeofday(&time_bm_algorithm_start,NULL);
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[recreateAlgoriehmComponent start]\r\n");
-						}
-						#endif
-				#ifndef EXCEED_T
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent start]\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-									// KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM], 
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-							}
-							#endif
-			
-			
-					main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
-						recreateAlgoriehmComponent(
-							(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
-							main_com_used_GF->nonSorted, 
-							main_com_hd_correctability, 
-							(char*)main_com_errComponents->erroredCodeWord->equation, 
-							main_com_codeLength,
-							(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-						);
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent end]\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-									// KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM], 
-									(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM,
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-							}
-							#endif
-				}
-				#else
-				if(main_com_errNums_inDecodingAlgorithmTest>main_com_hd_correctability)
-				{
-					infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest>main_com_hd_correctability, main_com_errNums_inDecodingAlgorithmTest = %d\r\n",main_com_errNums_inDecodingAlgorithmTest);
-					for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-					{
-						main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
-							recreateAlgoriehmComponent(
-								(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
-									main_com_used_GF->nonSorted, 
-									main_com_errNums_inDecodingAlgorithmTest, 
-									(char*)main_com_errComponents->erroredCodeWord->equation,
-									main_com_codeLength,
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-							);
-					}
-				}	
-				else
-				{
-					infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest<=main_com_hd_correctability, main_com_hd_correctability = %d\r\n",main_com_hd_correctability);
-					for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-					{
-						main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
-							recreateAlgoriehmComponent(
-								(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
-								main_com_used_GF->nonSorted, 
-								main_com_hd_correctability, 
-								(char*)main_com_errComponents->erroredCodeWord->equation, 
-								main_com_codeLength,
-								(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-							);
-					}
-				}
-				#endif
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[recreateAlgoriehmComponent end]\r\n");
-						}
-						#endif
-				infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest<=main_com_hd_correctability, main_com_hd_correctability = %d\r\n",main_com_hd_correctability);
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					if
-					(0 < allSyndromeIsZero
-							(
-								main_com_used_GF->nonSorted, 
-								main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome
-							)
-					)
-					{
-						main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][0]=1;
-					}
-					else
-					{
-						main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][0]=0;
-					}
-				}
-				/*cop*/
-				infoMes;
-				printf("in main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))] encoded Vector is below...\r\n");
-				printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->codeWord);
-
-				//printSyndromeSeriesWithTapAndEnter(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome, main_com_used_GF->nonSorted);
-				//printSyndromeSeriesWithTap(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome, main_com_used_GF->nonSorted);
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[calculateBCH_decodingAlgorithm start]\r\n");
-						}
-						#endif
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("[%s : #d calculateBCH_decodingAlgorithm start]\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-							}
-							#endif
-					//calculateBmAlgorithm(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]));
-					calculateBCH_decodingAlgorithm(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("[%s : #d calculateBCH_decodingAlgorithm end]\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-							}
-							#endif
-				}
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[calculateBCH_decodingAlgorithm end]\r\n");
-						}
-						#endif
-
-				infoMes; printf(">>> Error location polynomial <<<\r\n");				
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					infoMes; printf("degree of error location polynomial : %d, metric Chk : %d and degree Chk : %d\r\n",
-						main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly,
-						main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck,
-						checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)
-						
-					);
-					// printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
-					printf(">> [ %s ]<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-					printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
-
-				}
-
-
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
-					{
-						// if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly)))
-						// {
-							// main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[KIND_OF_BCH_DECODING_BM]++;
-							
-							// warningMes; printf("Error number ('%d') larget than hard-decision correctability ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-							// warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
-							// if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-							// {
-								// systemHoldMes;	printf("input any charactor : ");
-								// scanf("%s", global_buf_KeyBoardInput);
-							// }
-						// }
-						if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)))
-						{
-							main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]++;
-							
-							warningMes; printf("[%s] Error number ('%d') larget than hard-decision correctability ('%d')\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-											main_com_errNums_inDecodingAlgorithmTest, 
-											main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
-							warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
-							if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-							{
-								systemHoldMes;	printf("input any charactor : ");
-								scanf("%s", global_buf_KeyBoardInput);
-							}
-						}
-					}
-				}
-
-
-				printf("[ALGORITHM CALCULATION TIME]"); printExcutingTime(&time_bm_algorithm_start);
-				gettimeofday(&time_chien_search_start, NULL);
-
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[chienSearch_static start]\r\n");
-						}
-						#endif
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					// chienSearch_static(
-						// main_com_used_GF->nonSorted, 
-						// main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly, 
-						// main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector, 
-						// &(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck) 
-					// );
-					chienSearch(
-						main_com_used_GF->nonSorted, 
-						main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly, 
-						main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector, 
-						&(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck), 
-						(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))
-					);
-				}
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("[chienSearch_static end]\r\n");
-						}
-						#endif
-
-				/* verification of metric chk and deg of err loc poly start */
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					if(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly != main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck)
-					{
-						warningMes;
-						printf("degree of error location polynomial : %d, metric Chk : %d are not same.\r\n",
-							main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly,
-							main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck
-						);
-						// if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-						// {
-							systemHoldMes;	printf("input any charactor : ");
-							scanf("%s", global_buf_KeyBoardInput);
-						// }
-					}
-				}
-				/* verification of metric chk and deg of err loc poly end */
-				
-				/* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
-				// if(global_flag_bchDecAlgo_Enable&uint32_bitMask[KIND_OF_BCH_DECODING_BM])
-				// {
-					// if(global_bch_Soft_OverSyndLen)
-					// {
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[syndromeArrayCalculatorUsingString start]\r\n");
-								// }
-								// #endif	
-						// syndromeArrayCalculatorUsingString
-						// (
-							// main_com_used_GF->nonSorted, 
-							// ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome, 
-							// main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->vMAX+global_bch_Soft_OverSyndLen, 
-							// (char*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errorLocationVector->equation
-						// );
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[syndromeArrayCalculatorUsingString end]\r\n");
-								// }
-								// #endif	
-
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[allSyndromeIsZero start]\r\n");
-								// }
-								// #endif	
-						// if
-						// (0 < allSyndromeIsZero
-								// (
-									// main_com_used_GF->nonSorted, 
-									// ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
-								// )
-						// )
-						// {
-							// main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=1;
-						// }
-						// else
-						// {
-							// main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=0;
-						// }
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[allSyndromeIsZero end]\r\n");
-								// }
-								// #endif	
-						// /*
-						// if(main_com_errNums_inDecodingAlgorithmTest>main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)))
-						// {
-							// if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->syndrome))
-							// {
-								// main_indi_errExceed_but_synd_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
-								
-								// warningMes;
-								// printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-								// warningMesShort; printf("Syndrome value is zero is detected.\r\n");
-								// warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
-								// if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-								// {
-									// systemHoldMes;	printf("input any charactor : ");
-									// scanf("%s", global_buf_KeyBoardInput);
-								// }
-								// systemHoldMes;	printf("input : ");
-								// scanf("%s", global_buf_KeyBoardInput);
-							// }
-						// }
-						// */
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[summationSyndromeArray start]\r\n");
-								// }
-								// #endif	
-						// summationSyndromeArray
-						// (
-							// main_com_used_GF->nonSorted, 
-							// ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome, 
-							// main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->syndrome, 
-							// ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
-						// );
-								// #ifndef RELEASE
-								// if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								// {
-									// debugFuncNameMes;
-									// printf("[summationSyndromeArray end]\r\n");
-								// }
-								// #endif	
-					// }
-
-				// }
-
-				
-				
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					infoMes; printf(">>> [ %s ] Syndrome of Received vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
-					printSyndromeArray(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->syndrome, main_com_used_GF->nonSorted);
-
-					/* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
-					// if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-					// {
-						// infoMes; printf(">>> [ %s : %d ] Syndrome of ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
-						// printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->errLocSyndrome, main_com_used_GF->nonSorted);
-
-						// infoMes; printf(">>> [ %s : %d ]sum Syndromes of Received and ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
-						// printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
-					// }
-
-					infoMes; printf("[ %s ] Generated Error Vector is below...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
-					printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->errorLocationVector);
-					infoMes; printf("[ %s ] Error Location Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-					printPowerFormWithEnterPolynomialWithEnterUsingAddress((main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])->errorLocationVector);
-				}
-				
-				printf("[errorCorrection start]\r\n");
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("\t[%s] errorCorrection [start]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							}
-							#endif
-					errorCorrection(
-						main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-						main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errorLocationVector
-					);
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("\t[%s] errorCorrection [end]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							}
-							#endif
-                            /* File Out Corrected Vector start */
-                            /* File Out Patterns */
-                            if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                    infoMes; printf(">> BCH Algorithm Test <<\r\n");
+                    //recreate error codeword
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                             {
-                                fprintPowerFormUsingAddress\
-                                    (\
-                                        fileio_corrected_mes[
-                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                        ], 
-                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                        "\r\n"
-                                    );
+                                debugFuncNameMes;
+                                printf("recreateErrorComponent\r\n");
                             }
-                            /* File Out Verilog Vectors start */
-                            if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                            #endif
+                    main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+                    // main_com_errComponents=ifNotExistCreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                             {
-                                fprintVerilogPowerFormUsingAddress\
-                                    (
-                                        fileio_corrected_mes_verilog[
-                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                        ], 
-                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                        NULL
-                                    );
+                                debugFuncNameMes;
+                                printf("errorOccurationWhichAreRandomPosition\r\n");
                             }
-                            /* File Out Pattern log */
-                            if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                            #endif
+                    errorOccurationWhichAreRandomPosition(main_com_errComponents->errorLocationVector, main_com_errNums_inDecodingAlgorithmTest);
+                    infoMes; printf("Generated Error Vector is below...\r\n");
+                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->errorLocationVector);
+
+        
+                    //summation encoded codeword and error codeword
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                             {
-                                fprintPowerFormFullDescriptionUsingAddresss\
-                                    (
-                                        fileio_corrected_mes_log[
-                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                        ], 
-                                        main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                        "\r\n"
-                                    );
+                                debugFuncNameMes;
+                                printf("addErrorCodeWordToUnErrorCodeWord\r\n");
                             }
-                            /* File Out Corrected Vector end */
-				}
-				printf("[errorCorrection end]\r\n");
+                            #endif
+                    addErrorCodeWordToUnErrorCodeWord(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord, main_com_errComponents->errorLocationVector);
+                    infoMes; printf("Added error Vector is...\r\n");
+                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
+                    printf("[Addictive Error Peoc time]"); printExcutingTime(&time_decoding_start);
+                    
 
-				
-				
-				infoMes; printf("Encoded Vector is below...\r\n");
-				printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-				infoMes; printf("Recived Vector is...\r\n");
-				printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					infoMes; printf("[%s] Corrected Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-					printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord);
-					
-					if(!strcmp((char*)main_encodingComponentInGF->codeWord->equation, (char*)main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord->equation))
-					{
-						infoMes; printf("[%s=#%d] : success\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-					}
-					else
-					{
-						infoMes; printf("[%s=#%d] : fail\r\n", 
-									KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-						main_indi_err_corection_fail_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]++;
-						
-						if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]++;
-
-						if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-						{
-							systemHoldMes; printf("error correction is fail...\r\n");
-							systemHoldMes; printf("check why decording is failure, if you want.\r\n");
-
-							systemHoldMes; printf("and to be continue simulation, please insert any charactors...\r\n");
-							systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
-
-							systemHoldMes;	printf("input : ");
-							scanf("%s", global_buf_KeyBoardInput);
-						}
-						else
-						{
-							systemUnholdMes; printf("-f(\"--force\") command option is enabled, ignore hold conditions.\r\n");
-						}
-
-							
-						/* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
-						if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-						{
-							if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
-							{
-								if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome))
-								{
-									main_indi_errExceed_but_syndSum_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
-									
-									warningMes;
-									printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > HD correctability[%d] = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)), main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-									warningMesShort; printf("sum syndrome and error syndrome is zero is detected.\r\n");
-									warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
-									if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-									{
-										systemHoldMes;	printf("input any charactor : ");
-										scanf("%s", global_buf_KeyBoardInput);
-									}
-									// systemHoldMes;	printf("input : ");
-									// scanf("%s", global_buf_KeyBoardInput);
-								}
-							}
-						}
-					}
-				}
-		
-
-
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("closeBmAlgorithmComponent\r\n");
-						}
-						#endif
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("\t[%s] errorCorrection [start]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							}
-							#endif
-					// closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
-					closeAlgoriehmComponent((main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("\t[%s] errorCorrection [end]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							}
-							#endif
-				}
-				
-				printf("[Chien Search Time]"); printExcutingTime(&time_chien_search_start);
-				printf("[Decoding Time]"); printExcutingTime(&time_decoding_start);
-				
-							main_com_algorithm_loop_cnt++;
-							if(!(main_com_algorithm_loop_cnt<main_com_limit_algorithm_loop_cnt))
-							{
-								for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-								{
-									printf("/***** algorithm test simulation result *****/\r\n");
-									infoMes;	printf("[%s] Error occur nums = %d\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_com_errNums_inDecodingAlgorithmTest
-												);
-									infoMes;	printf("[%s] Error correctability = %d\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-
-									infoMes;	printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %ul\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-									infoMes;	printf("[%s] FAIL cnt) fail to correction = %ul\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
-												);
-									infoMes;	printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %ul\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
-												);
-									infoMes;	printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %ul\r\n", 
-													main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
-												);
-									infoMes;	printf("[%s] FAIL cnt) fail to correction and all synds are zero = %ul\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
-												);
-									infoMes;	printf("[%s] FAIL cnt) Codeword loop %ul\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													main_com_algorithm_loop_cnt
-												);
-									
-									infoMes;	printf("[%s] FAIL percent) err exceed correctale and less errLoc poly degree = %g\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													(((double)main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
-												);
-									infoMes;	printf("[%s] FAIL percent) fail to correction = %g\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													(((double)main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
-												);
-									infoMes;	printf("[%s] FAIL percent) Error num is exceed and synds is zero = = %g\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													(((double)main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
-												);
-									infoMes;	printf("[%s] FAIL percent) Error num is exceed and sum synds and errLoc synd is zero = %g\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													(((double)main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
-												);
-									infoMes;	printf("[%s] FAIL percent) fail to correction and all synds are zero = %g\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
-													(((double)main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
-												);
-									return 0;
-								}
-							}
-			}
-			/**************************************************************/
-			/************ (Global Flag) AWGN simulation start *************/
-			/**************************************************************/
-			else
-			{
-				/*
-					Hard and Soft Decision is commonly use modulation of bpsk, 
-					passing through AWGN and demodulation of bpsk.
-					If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
-					And if simulation is Soft decision mode, demodulating use quantization of bpsk.
-					[start]
-				*/
-				gettimeofday(&time_decoding_start, NULL);
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("recreateErrorComponent\r\n");
-						}
-						#endif
-				main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-						#ifndef RELEASE
-						if((global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
-						{
-							debugFuncNameMes;
-							printf("BPSK_Mod\r\n");
-						}
-						#endif
-				BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
-	
-				/*HARD DECISION*/
-				/* ADD_AWGN(main_com_bpskComponents->bpskTransData, main_com_bpskComponents->bpskReceivedDataAddedAwgn, 1, main_com_codeLength, main_com_EbN0); */ //need to add bitrate
-				/*SOFT DECISION*/
-						#ifndef RELEASE
-						if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-						{
-							debugFuncNameMes;
-							printf("ADD_AWGN_CAL_LLR\r\n");
-						}
-						#endif
-				/***** ADD_AWGN_CAL_LLR is don't care, hard-decision and soft-decision *****/
-				ADD_AWGN_CAL_LLR(
-					main_com_bpskComponents->bpskTransData, 
-					main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
-					main_com_bpskComponents->bpskReceivedLLR->llr, 
-					((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
-					main_com_codeLength, 
-					main_com_EbN0
-				); //need to add bitrate
-				// getSqureRootAvrBpskReceivedDataAddedAwgn(main_com_bpskComponents);
-				// getSqureRootAvrLLR(main_com_bpskComponents->bpskReceivedLLR);
-				        #ifndef RELEASE
-						if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
-						{
-							debugAwgnSequenceMes;
-							printf("SIGNAL + ADDITIVE WHITE GAUSIAN NOISE\r\n");
-							printBpskModulation(main_com_bpskComponents->usedLength, main_com_bpskComponents->bpskReceivedDataAddedAwgn);
-						}
-						if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
-						{
-							debugAwgnSequenceMes;
-							printf("ADDITIVE WHITE GAUSIAN NOISE\r\n");
-							printBpskAWGN(main_com_bpskComponents->usedLength, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_bpskComponents->bpskTransData);
-						}
-						if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
-						{
-							debugAwgnLlrSequenceMes;
-							printLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-						}
-						#endif
-				
-				gettimeofday(&time_decoding_start, NULL);
-				/*HARD DECISION*/
-				if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("BPSK_Demod\r\n");
-							}
-							#endif
-					BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
-				}
-				/*SOFT DECISION*/
-				else
-				{
-							#ifndef RELEASE
-							if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-							{
-								debugFuncNameMes;
-								printf("quantizationWithGlobalAdaptive\r\n");
-							}
-							#endif
-
-					quantizationWithGlobalAdaptive(
-						main_com_bpskComponents->bpskReceivedLLR->llr, 
-						main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
-						main_com_errComponents->erroredCodeWord->equation, 
-						main_com_errComponents->erroredCodeWord->usedLength
-					);
-                    /* Received Vector == erroredCodeWord*/
-                    /* File Out Patterns */
-                    if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                    gettimeofday(&time_bm_algorithm_start,NULL);
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[recreateAlgoriehmComponent start]\r\n");
+                            }
+                            #endif
+                    #ifndef EXCEED_T
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                     {
-                        fprintPowerFormUsingAddress\
-                            (fileio_HD_received_mes, main_com_errComponents->erroredCodeWord, "\r\n");
-                    }
-                    /* File Out Verilog Vectors start */
-                    if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
-                    {
-                        fprintVerilogPowerFormUsingAddress\
-                            (fileio_HD_received_mes_verilog, main_com_errComponents->erroredCodeWord, NULL);
-                    }
-                    /* File Out Pattern log */
-                    if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
-                    {
-                        fprintPowerFormFullDescriptionUsingAddresss\
-                            (fileio_HD_received_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
-                    }
-                    /* File Out Verilog Vectors end */
-							#ifndef RELEASE
-                            /* quantized LLR test print */
-							if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
-							{
-								debugAwgnLlrSequenceMes;
-								testPrintLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-
-								debugAwgnLlrSequenceMes;
-								printQuatizLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-								
-								debugAwgnLlrSequenceMes;
-								printTestMagitudeQuatizLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-							}
-							#endif
-                            if(global_flag_file_io_sd_pattern_output & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
-                            {
-                                fprintQuatizLLR_toHEX(fileio_SD_received_LLR, \
-                                        main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                            }
-                            if(global_flag_file_io_sd_pattern_output_verilog & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
-                            {
-                                fprintVerilogQuatizLLR_toHEX(fileio_SD_received_LLR_verilog, \
-                                        main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                            }
-                            if(global_flag_file_io_sd_pattern_output_log & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
-                            {
-                                fprintQuatizLLR_fullDescriptionToHEX(fileio_SD_received_LLR_log, \
-                                        main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                            }
-
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("findMinimumMagnitudeFindLocPushAway\r\n");
-										}
-										#endif
-								/* convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-										printMagnitudeOfLLR_andLocationWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-								
-								sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(main_com_bpskComponents->bpskReceivedLLR);
-										testPrintValueOfTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct); */
-								
-					/*********************************************************************/
-					/* finding log likehood ratio based low reliable bits position start */
-					/*********************************************************************/
-					switch(global_flag_case_find_LLR_method)
-					{
-                        case FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM:
-							convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-							findMinimumMagnitudeFindLocPushAway(
-                                main_com_bpskComponents->bpskReceivedLLR,
-                                main_com_errComponents->erroredCodeWord,
-                                global_flag_case_pass_hd_1,
-                                global_flag_case_same_llr_handling,
-                                global_flag_case_init_llr_mag_method
-                            );
-
-                            /*
-                            testPrintLLRWithSpaceAndEnter(
-                                main_com_bpskComponents->bpskReceivedLLR);
-							testPrintShortMinimumQuantizedLLRAndLocator(
-                                main_com_bpskComponents->bpskReceivedLLR);
-                            */
-
-							checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
-								main_com_bpskComponents->bpskReceivedLLR, 
-								main_encodingComponentInGF->codeWord, 
-								main_com_errComponents->erroredCodeWord
-							);
-						break;
-
-                        case FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING:
-							convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-                            findMinimumMagnitudeGroupingPushAway
-                            (
-                                main_com_bpskComponents->bpskReceivedLLR,
-                                main_com_errComponents->erroredCodeWord,
-                                global_flag_case_pass_hd_1,
-                                global_flag_case_same_llr_handling,
-                                global_flag_case_init_llr_mag_method,
-
-                                global_grouping_stream_nums,
-                                global_group_bit_num,
-                                global_group_last_bit_num
-                            );
-							checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
-								main_com_bpskComponents->bpskReceivedLLR, 
-								main_encodingComponentInGF->codeWord, 
-								main_com_errComponents->erroredCodeWord
-							);
-                        break;
-
-						case FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH:
-							convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-                                    if(global_flag_file_io_sd_pattern_output & \
-                                            FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
-                                    {
-                                        fprintMagnitudeOfQuantizedLLR_toHex\
-                                            (fileio_SD_received_LLR_mag, \
-                                             main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                                    }
-                                    if(global_flag_file_io_sd_pattern_output_verilog & \
-                                            FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
-                                    {
-                                        fprintVerilogMagnitudeOfQuantizedLLR_toHex\
-                                            (fileio_SD_received_LLR_mag_verilog, \
-                                             main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                                    }
-                                    if(global_flag_file_io_sd_pattern_output_log & \
-                                            FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
-                                    {
-                                        fprintMagnitudeOfQuantizedLLR_fullDescription_toHex\
-                                            (fileio_SD_received_LLR_mag_log, \
-                                             main_com_bpskComponents->bpskReceivedLLR, "\r\n");
-                                    }
-
-							sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm\
-                                (main_com_bpskComponents->bpskReceivedLLR,
-                                main_com_errComponents->erroredCodeWord,
-                                global_flag_case_pass_hd_1, 
-                                global_flag_case_same_llr_handling);
-							findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(
-                                main_com_bpskComponents->bpskReceivedLLR);
-							checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio
-                                (
-								    main_com_bpskComponents->bpskReceivedLLR, 
-								    main_encodingComponentInGF->codeWord, 
-								    main_com_errComponents->erroredCodeWord
-							    );
-							// findMinimumMagnitudeFindLocPushAway(main_com_bpskComponents->bpskReceivedLLR);
-						break;
-					}
-					/*******************************************************************/
-					/* finding log likehood ratio based low reliable bits position end */
-					/*******************************************************************/
-
-							#ifndef RELEASE
-							if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
-							{
-								debugAwgnLlrSequenceMes;
-								testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
-								printf("[main_com_EbN0]\t%g\r\n", main_com_EbN0);
-							}
-							#endif
-
-							#ifndef RELEASE
-							if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS))
-							{
-								infoMes;
-								printf("AWGN Hard decision error vector.\r\n");
-								printPowerFormExclusivedUsingAddress(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord);
-							}
-							#endif
-				}
-				/*
-					Hard and Soft Decision is commonly use modulation of bpsk, 
-					passing through AWGN and demodulation of bpsk.
-					If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
-					And if simulation is Soft decision mode, demodulating use quantization of bpsk.
-					[start]
-				*/
-				
-				
-				/************************************************************/
-				/** Hard Decision also use main_com_list_TP_pwrFormPoly **/
-				/************************************************************/
-				main_com_list_TP_pwrFormPoly[0] = main_com_errComponents->erroredCodeWord;
-				/************************************************************/
-				/***** Soft Decision Only, Test Vector Generation start *****/
-				/************************************************************/
-				if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
-				{
-					/* Test Pattern Sting Open start*/
-								#ifndef RELEASE
-								if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-								{
-									debugFuncNameMes;
-									printf("temporaryFunc_generateTestPatterns_using_LLR_Locator\r\n");
-								}
-								#endif
-					if(temporaryFunc_generateTestPatterns_using_LLR_Locator
-						(
-							(char*)main_com_errComponents->erroredCodeWord->equation, 
-							main_com_errComponents->erroredCodeWord->usedLength, 
-							main_com_bpskComponents->bpskReceivedLLR->locator, 
-							main_com_bpskComponents->bpskReceivedLLR->locatorLength, 
-							main_com_strBuf_TP_saved,
-							main_com_numsTP
-						)
-					)
-					{
-						errorMes;
-						printf("temporaryFunc_generateTestPatterns_using_LLR_Locator, return -1.\r\n");
-					}
-					
-					for(main_tmp_soft_i=1; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-					{
-						setPowerFormPolynomialUsingStringAddr_clearStringPointer(
-							main_com_list_TP_pwrFormPoly[main_tmp_soft_i], 
-							main_com_strBuf_TP_saved+main_tmp_soft_i, 
-							main_com_codeLength, 
-							main_com_codeLength
-						);
-					}
-					/* All main_com_strBuf_TP_saved[n] is NULL */
-					
-							#ifndef RELEASE
-							if(
-								(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-								(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-								(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-								(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-							)
-							{
-								printf("[Hard-Decision]\r\n", main_tmp_soft_i);
-								// printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
-								printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[0]);
-								
-								
-								/*main_tmp_soft_i is index of main_com_strBuf_TP_saved.*/
-								for(main_tmp_soft_i=1; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-								{
-									printf("[TestPattern %d]\r\n", main_tmp_soft_i);
-									// printf("%s\r\n", *(main_com_strBuf_TP_saved+main_tmp_soft_i));
-									printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[main_tmp_soft_i]);
-
-									printf("[LLR Locator %d]\r\n", main_tmp_soft_i);
-									
-									//Just printf string use only value of locator.
-									//Using i to printf string just related with locators, until i is less then codeword length 
-									for(i=0; i<main_com_errComponents->erroredCodeWord->usedLength; i++)
-									{		
-										//use non-binary code calculate combination of bit position
-										for(k=0; k<main_tmp_degErrLocPoly; k++)//k is index of locator
-										{
-											
-											if(main_tmp_soft_i&(1<<k))//k is index of locatorArray.
-											{
-												if(i==(*(main_com_bpskComponents->bpskReceivedLLR->locator+k)))
-												{
-													printf("1");
-													break;
-												}
-											}
-										}
-										if(k==main_tmp_degErrLocPoly) printf("0");
-									}
-									
-									printf("\r\n");
-
-									printf("[Comparing testPattern and Hard Decision %d]\r\n", main_tmp_soft_i);
-									printPowerFormExclusivedUsingAddress(main_com_list_TP_pwrFormPoly[0], main_com_list_TP_pwrFormPoly[main_tmp_soft_i]);
-
-								
-								}
-							}
-							#endif
-					/* Test Pattern Sting Open End*/
-				}
-				/************************************************************/
-				/****** Soft Decision Only, Test Vector Generation end ******/
-				/************************************************************/
-
-				
-				
-				
-
-
-				/************************************************************/
-				/****** calculate error vector hamming weight start ******/
-				/************************************************************/
-				main_com_channel_errCnt = calculateHammingWeightFromDiffentPowerFormPolynomial(
-															main_encodingComponentInGF->codeWord, 
-															main_com_list_TP_pwrFormPoly[0]
-														);
-				main_indi_list_errCntOf_TP_beforeDec[0] = main_com_channel_errCnt;
-		
-				for(main_tmp_soft_i = 1; main_tmp_soft_i < main_com_numsTP; main_tmp_soft_i++)
-				{
-					main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i] = 
-						calculateHammingWeightFromDiffentPowerFormPolynomial(
-							main_encodingComponentInGF->codeWord, 
-							main_com_list_TP_pwrFormPoly[main_tmp_soft_i]
-						);
-				}
-                            if(global_flag_file_io_sd_pattern_output_log & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
-                            {
-                                for(main_tmp_soft_i = 0; main_tmp_soft_i < main_com_numsTP; main_tmp_soft_i++)
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                 {
-                                    fprintf(fileio_ErrCnt_log, "%d,\t", main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i]);
+                                    debugFuncNameMes;
+                                    printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent start]\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM], 
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
                                 }
-                                fprintf(fileio_ErrCnt_log, "\r\n");
+                                #endif
+                
+                
+                        main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
+                            recreateAlgoriehmComponent(
+                                (main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
+                                main_com_used_GF->nonSorted, 
+                                main_com_hd_correctability, 
+                                (char*)main_com_errComponents->erroredCodeWord->equation, 
+                                main_com_codeLength,
+                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                            );
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent end]\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM], 
+                                        (*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM,
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                                }
+                                #endif
+                    }
+                    #else
+                    if(main_com_errNums_inDecodingAlgorithmTest>main_com_hd_correctability)
+                    {
+                        infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest>main_com_hd_correctability, main_com_errNums_inDecodingAlgorithmTest = %d\r\n",main_com_errNums_inDecodingAlgorithmTest);
+                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                        {
+                            main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
+                                recreateAlgoriehmComponent(
+                                    (main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
+                                        main_com_used_GF->nonSorted, 
+                                        main_com_errNums_inDecodingAlgorithmTest, 
+                                        (char*)main_com_errComponents->erroredCodeWord->equation,
+                                        main_com_codeLength,
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                );
+                        }
+                    }
+                    else
+                    {
+                        infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest<=main_com_hd_correctability, main_com_hd_correctability = %d\r\n",main_com_hd_correctability);
+                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                        {
+                            main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))] = 
+                                recreateAlgoriehmComponent(
+                                    (main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
+                                    main_com_used_GF->nonSorted, 
+                                    main_com_hd_correctability, 
+                                    (char*)main_com_errComponents->erroredCodeWord->equation, 
+                                    main_com_codeLength,
+                                    (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                );
+                        }
+                    }
+                    #endif
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[recreateAlgoriehmComponent end]\r\n");
+                            }
+                            #endif
+                    infoMes; printf("condition main_com_errNums_inDecodingAlgorithmTest<=main_com_hd_correctability, main_com_hd_correctability = %d\r\n",main_com_hd_correctability);
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        if
+                        (0 < allSyndromeIsZero
+                                (
+                                    main_com_used_GF->nonSorted, 
+                                    main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome
+                                )
+                        )
+                        {
+                            main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][0]=1;
+                        }
+                        else
+                        {
+                            main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][0]=0;
+                        }
+                    }
+                    /*cop*/
+                    infoMes;
+                    printf("in main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))] encoded Vector is below...\r\n");
+                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->codeWord);
+
+                    //printSyndromeSeriesWithTapAndEnter(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome, main_com_used_GF->nonSorted);
+                    //printSyndromeSeriesWithTap(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+0))]->syndrome, main_com_used_GF->nonSorted);
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[calculateBCH_decodingAlgorithm start]\r\n");
+                            }
+                            #endif
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("[%s : #d calculateBCH_decodingAlgorithm start]\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                                }
+                                #endif
+                        //calculateBmAlgorithm(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]));
+                        calculateBCH_decodingAlgorithm(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("[%s : #d calculateBCH_decodingAlgorithm end]\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                                }
+                                #endif
+                    }
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[calculateBCH_decodingAlgorithm end]\r\n");
+                            }
+                            #endif
+
+                    infoMes; printf(">>> Error location polynomial <<<\r\n");
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        infoMes; printf("degree of error location polynomial : %d, metric Chk : %d and degree Chk : %d\r\n",
+                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly,
+                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck,
+                            checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)
+                            
+                        );
+                        // printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+                        printf(">> [ %s ]<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                        printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+
+                    }
+
+
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
+                        {
+                            // if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly)))
+                            // {
+                                // main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[KIND_OF_BCH_DECODING_BM]++;
+                                
+                                // warningMes; printf("Error number ('%d') larget than hard-decision correctability ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                                // warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
+                                // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                // {
+                                    // systemHoldMes;	printf("input any charactor : ");
+                                    // scanf("%s", global_buf_KeyBoardInput);
+                                // }
+                            // }
+                            if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)))
+                            {
+                                main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]++;
+                                
+                                warningMes; printf("[%s] Error number ('%d') larget than hard-decision correctability ('%d')\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                main_com_errNums_inDecodingAlgorithmTest, 
+                                                main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
+                                warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
+                                if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                {
+                                    systemHoldMes;	printf("input any charactor : ");
+                                    scanf("%s", global_buf_KeyBoardInput);
+                                }
+                            }
+                        }
+                    }
+
+
+                    printf("[ALGORITHM CALCULATION TIME]"); printExcutingTime(&time_bm_algorithm_start);
+                    gettimeofday(&time_chien_search_start, NULL);
+
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[chienSearch_static start]\r\n");
+                            }
+                            #endif
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        // chienSearch_static(
+                            // main_com_used_GF->nonSorted, 
+                            // main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly, 
+                            // main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector, 
+                            // &(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck) 
+                        // );
+                        chienSearch(
+                            main_com_used_GF->nonSorted, 
+                            main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly, 
+                            main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector, 
+                            &(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck), 
+                            (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))
+                        );
+                    }
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("[chienSearch_static end]\r\n");
+                            }
+                            #endif
+
+                    /* verification of metric chk and deg of err loc poly start */
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        if(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly != main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck)
+                        {
+                            warningMes;
+                            printf("degree of error location polynomial : %d, metric Chk : %d are not same.\r\n",
+                                main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly,
+                                main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck
+                            );
+                            // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                            // {
+                                systemHoldMes;	printf("input any charactor : ");
+                                scanf("%s", global_buf_KeyBoardInput);
+                            // }
+                        }
+                    }
+                    /* verification of metric chk and deg of err loc poly end */
+                    
+                    /* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
+                    // if(global_flag_bchDecAlgo_Enable&uint32_bitMask[KIND_OF_BCH_DECODING_BM])
+                    // {
+                        // if(global_bch_Soft_OverSyndLen)
+                        // {
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[syndromeArrayCalculatorUsingString start]\r\n");
+                                    // }
+                                    // #endif
+                            // syndromeArrayCalculatorUsingString
+                            // (
+                                // main_com_used_GF->nonSorted, 
+                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome, 
+                                // main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->vMAX+global_bch_Soft_OverSyndLen, 
+                                // (char*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errorLocationVector->equation
+                            // );
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[syndromeArrayCalculatorUsingString end]\r\n");
+                                    // }
+                                    // #endif
+
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[allSyndromeIsZero start]\r\n");
+                                    // }
+                                    // #endif
+                            // if
+                            // (0 < allSyndromeIsZero
+                                    // (
+                                        // main_com_used_GF->nonSorted, 
+                                        // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
+                                    // )
+                            // )
+                            // {
+                                // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=1;
+                            // }
+                            // else
+                            // {
+                                // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=0;
+                            // }
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[allSyndromeIsZero end]\r\n");
+                                    // }
+                                    // #endif
+                            // /*
+                            // if(main_com_errNums_inDecodingAlgorithmTest>main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)))
+                            // {
+                                // if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->syndrome))
+                                // {
+                                    // main_indi_errExceed_but_synd_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
+                                    
+                                    // warningMes;
+                                    // printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                                    // warningMesShort; printf("Syndrome value is zero is detected.\r\n");
+                                    // warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
+                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                    // {
+                                        // systemHoldMes;	printf("input any charactor : ");
+                                        // scanf("%s", global_buf_KeyBoardInput);
+                                    // }
+                                    // systemHoldMes;	printf("input : ");
+                                    // scanf("%s", global_buf_KeyBoardInput);
+                                // }
+                            // }
+                            // */
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[summationSyndromeArray start]\r\n");
+                                    // }
+                                    // #endif
+                            // summationSyndromeArray
+                            // (
+                                // main_com_used_GF->nonSorted, 
+                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome, 
+                                // main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->syndrome, 
+                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
+                            // );
+                                    // #ifndef RELEASE
+                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    // {
+                                        // debugFuncNameMes;
+                                        // printf("[summationSyndromeArray end]\r\n");
+                                    // }
+                                    // #endif
+                        // }
+
+                    // }
+
+                    
+                    
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        infoMes; printf(">>> [ %s ] Syndrome of Received vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
+                        printSyndromeArray(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->syndrome, main_com_used_GF->nonSorted);
+
+                        /* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
+                        // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                        // {
+                            // infoMes; printf(">>> [ %s : %d ] Syndrome of ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
+                            // printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->errLocSyndrome, main_com_used_GF->nonSorted);
+
+                            // infoMes; printf(">>> [ %s : %d ]sum Syndromes of Received and ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
+                            // printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                        // }
+
+                        infoMes; printf("[ %s ] Generated Error Vector is below...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
+                        printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->errorLocationVector);
+                        infoMes; printf("[ %s ] Error Location Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                        printPowerFormWithEnterPolynomialWithEnterUsingAddress((main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])->errorLocationVector);
+                    }
+                    
+                    printf("[errorCorrection start]\r\n");
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("\t[%s] errorCorrection [start]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                }
+                                #endif
+                        errorCorrection(
+                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errorLocationVector
+                        );
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("\t[%s] errorCorrection [end]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                }
+                                #endif
+                                /* File Out Corrected Vector start */
+                                /* File Out Patterns */
+                                if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                {
+                                    fprintPowerFormUsingAddress\
+                                        (\
+                                            fileio_corrected_mes[
+                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                            ], 
+                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                            "\r\n"
+                                        );
+                                }
+                                /* File Out Verilog Vectors start */
+                                if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                {
+                                    fprintVerilogPowerFormUsingAddress\
+                                        (
+                                            fileio_corrected_mes_verilog[
+                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                            ], 
+                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                            NULL
+                                        );
+                                }
+                                /* File Out Pattern log */
+                                if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                {
+                                    fprintPowerFormFullDescriptionUsingAddresss\
+                                        (
+                                            fileio_corrected_mes_log[
+                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                            ], 
+                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                            "\r\n"
+                                        );
+                                }
+                                /* File Out Corrected Vector end */
+                    }
+                    printf("[errorCorrection end]\r\n");
+
+
+                    infoMes; printf("Encoded Vector is below...\r\n");
+                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                    infoMes; printf("Recived Vector is...\r\n");
+                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        infoMes; printf("[%s] Corrected Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                        printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord);
+                        
+                        if(!strcmp((char*)main_encodingComponentInGF->codeWord->equation, (char*)main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord->equation))
+                        {
+                            infoMes; printf("[%s=#%d] : success\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                        }
+                        else
+                        {
+                            infoMes; printf("[%s=#%d] : fail\r\n", 
+                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                            main_indi_err_corection_fail_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]++;
+                            
+                            if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]++;
+
+                            if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                            {
+                                systemHoldMes; printf("error correction is fail...\r\n");
+                                systemHoldMes; printf("check why decording is failure, if you want.\r\n");
+
+                                systemHoldMes; printf("and to be continue simulation, please insert any charactors...\r\n");
+                                systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
+
+                                systemHoldMes;	printf("input : ");
+                                scanf("%s", global_buf_KeyBoardInput);
+                            }
+                            else
+                            {
+                                systemUnholdMes; printf("-f(\"--force\") command option is enabled, ignore hold conditions.\r\n");
                             }
 
-				for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					/******************************************************/
-					/* flagging can beging correctable test-pattern start */
-					/******************************************************/
-					set_flag_theo_suc_list_TP(
-						main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-						main_com_numsTP, 
-						main_indi_list_errCntOf_TP_beforeDec, 
-						main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-					);
-					/******************************************************/
-					/** flagging can beging correctable test-pattern end **/
-					/******************************************************/
-				}
-			
-			
-			
-				/********************************************************************/
-				/************** Error counting, to calculate BER and ****************/
-				/************** selecting Codeword to decoding start ****************/
-				/********************************************************************/
-				/*
-					note. counting different number encoded and passing through soft-decision codeword, all test pattern.
-						Result of calculateHammingWeightFromDiffentPowerFormPolynomial is considered hard and soft decision correctability.
-				*/
-				
-				
-				switch(global_flag_case_selTP_before_dec)
-				{
-					case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
-					{
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{
-							/*
-								sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
-							*/
-							set_selTP_before_decording_skipDecOnly
-							(
-								
-								(main_indi_HD_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								
-								(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								(main_indi_sel_TP_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								
-								main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								
-								(main_indi_sel_decoding_CW_pwrFormPoly+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								
-								main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-
-								main_com_numsTP,
-								
-								main_com_channel_errCnt,
-
-								main_com_list_TP_pwrFormPoly,
-								main_indi_list_errCntOf_TP_beforeDec,
-
-								KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-							);
-							
-							/* theoretical HD err cnt start */
-							if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0])
-							{
-								main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-							}
-							else
-							{
-								main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_com_channel_errCnt;
-							}
-							/* theoretical HD err cnt end */
-						}
-					}
-					break;
-					
-					case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
-					{
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{
-							set_unSelTp_bofore_decoding
-							(
-								(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								(main_indi_sel_TP_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								
-								main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-
-								(main_indi_sel_decoding_CW_pwrFormPoly+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-
-								main_com_numsTP,
-								
-								main_com_list_TP_pwrFormPoly,
-								main_indi_list_errCntOf_TP_beforeDec,
-
-								KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-							);
-						}
-						// errorMes; printf("Decoding processing skip mode in decoder error fail detection mode is not support yet.\r\n");
-						// errorMes; printf("simulation is closed.\r\n");
-						// return -1;
-					}
-					break;
-					
-				
-					default:
-					{
-						errorMes;
-						printf("Ib decoding processing skip mode, selecting test pattern method is not defined.\r\n");
-						printf("Program is closed.\r\n");
-						return -1;
-					}
-					break;
-				}
-				
-				
-				
-		
-		
-				
-				
-				switch(global_flag_case_selTP_before_dec)
-				{
-					case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
-					{
-						/********************************************************************/
-						/***** Decide decording, and if can, compute decoding algorithm *****/
-						/********************************************************************/
-						/*
-							note. belong to main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM], decoding result(BER) can be changed.
-								If main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] is exceed to correctable(hard decision) bits, 
-								error bits are increased, reduced or no changed.
-								Decording result is not predictable.
-								
-								Decoding target codeword is save at main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM], variable type is struct_powerFormPolynomials*.
-
-								Look decoding result, carefully.
-								
-								main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]
-						*/
-						
-						//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{
-							/*************************************************/
-							/***** Correctable code decoding block start *****/
-							/*************************************************/
-							if(
-								main_indi_list_flag_theo_ly_can_be_correctable
-									[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-									[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-							)
-							// if(main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] <= main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])//try correcting
-							{		
-								/* decrease to main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] */
-							
-								/*******************************************************/
-								/********* no decoding option added loc start **********/
-								/*******************************************************/
-								if(!(global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SKIP))
-								{
-											#ifndef RELEASE
-											/* printing can decoding */
-											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-											{
-												infoMes;
-												printf("[Theo] %s TP #%dCan decording!!!\r\n", ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-
-												infoMes;
-												if(main_indi_list_flag_theo_ly_can_be_correctable
-													[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-												) printf("flag, '%d' test pattern has, indicate 'can' decoding(selected test-pattern is correctable), value = '%d'.\r\n", 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_list_flag_theo_ly_can_be_correctable
-														[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-														[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-													);
-												else printf("[Theo] flag, '%d' test pattern has, indicate 'can not' decoding(selected test-pattern is correctable), value = '%d'.\r\n!!!WARNING!!! check setting code that main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[main_tmp_sel_decAlgo_i]]\r\n", main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
-											}
-											/* printing selected error vectors */
-											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
-											{
-												debugBmAlgorithmCalDeltaMes;
-												printf("[Theo] [Error Vector]\r\n");
-												printPowerFormExclusivedUsingAddress(main_encodingComponentInGF->codeWord, main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-												printf("\r\n");
-											}
-											#endif
-
-									/*************************************************/
-									/***** create BCH decording components start *****/
-									/*************************************************/
-									/*
-										notes. create new BCH decoding components are not needs.
-											Removing this block needs to verify.
-									*/
-									/*
-										note. To varifing unsigned int t, which is argument of recreateBmAlgorithmComponent,
-										can change length of stage of BM algorithm.
-										
-										Error count(hamming weight of error vector) exceed it's correctability,
-										simulator can be broken, because accessing invalid or wrong memory adress.
-									*/
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes; printf("[Theo][%s] recreateAlgoriehmComponent, %s, TP[%d] [start]\r\n",
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-													(((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))?"Soft-Decision":"Hard-Decision"), 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-											}
-											#endif
-											
-									/*
-										notes. main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] is a aaray, length is main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))].
-										To decoding all test pattern, coded like below.
-										
-										for([var_cnt]=0; [var_cnt]<[max_TP_length]; [var_cnt]++)
-										{
-											*main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][[var_cnt]] = recreateBmAlgorithmComponent
-																	(
-																		*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]), 
-																		main_com_used_GF->nonSorted, main_com_hd_correctability, 
-																		(char*)main_com_list_TP_pwrFormPoly[[var_cnt]]->equation,
-																		main_com_codeLength
-																	);
-										}
-									*/
-									// **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) = recreateBmAlgorithmComponent
-									//((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))
-									*main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 
-										recreateAlgoriehmComponent(
-											(*((main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), 
-											main_com_used_GF->nonSorted, 
-											main_com_hd_correctability, 
-											(char*)main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->equation,
-											main_com_codeLength,
-											(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-										);
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes; printf("[Theo][%s] recreateAlgoriehmComponent, %s, TP[%d] [end]\r\n",
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-													(((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))?"Soft-Decision":"Hard-Decision"), 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-											}
-											#endif
-									if(0 < allSyndromeIsZero
-											(
-												main_com_used_GF->nonSorted, 
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->syndrome
-											)
-									)
-									{
-										main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]=1;
-									}
-									else
-									{
-										main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]=0;
-									}
-									/*************************************************/
-									/****** create BCH decording components end ******/
-									/*************************************************/
+                                
+                            /* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
+                            if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                            {
+                                if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
+                                {
+                                    if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome))
+                                    {
+                                        main_indi_errExceed_but_syndSum_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
+                                        
+                                        warningMes;
+                                        printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > HD correctability[%d] = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)), main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                        warningMesShort; printf("sum syndrome and error syndrome is zero is detected.\r\n");
+                                        warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
+                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                        {
+                                            systemHoldMes;	printf("input any charactor : ");
+                                            scanf("%s", global_buf_KeyBoardInput);
+                                        }
+                                        // systemHoldMes;	printf("input : ");
+                                        // scanf("%s", global_buf_KeyBoardInput);
+                                    }
+                                }
+                            }
+                        }
+                    }
+            
 
 
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("closeBmAlgorithmComponent\r\n");
+                            }
+                            #endif
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("\t[%s] errorCorrection [start]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                }
+                                #endif
+                        // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
+                        closeAlgoriehmComponent((main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("\t[%s] errorCorrection [end]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                }
+                                #endif
+                    }
+                    
+                    printf("[Chien Search Time]"); printExcutingTime(&time_chien_search_start);
+                    printf("[Decoding Time]"); printExcutingTime(&time_decoding_start);
+                    
+                                main_com_algorithm_loop_cnt++;
+                                if(!(main_com_algorithm_loop_cnt<main_com_limit_algorithm_loop_cnt))
+                                {
+                                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                    {
+                                        printf("/***** algorithm test simulation result *****/\r\n");
+                                        infoMes;	printf("[%s] Error occur nums = %d\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_com_errNums_inDecodingAlgorithmTest
+                                                    );
+                                        infoMes;	printf("[%s] Error correctability = %d\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
 
-									
-									/*****************************************************************************/
-									/************ Decoding Block start, continously fallowing       **************/
-									/************ verification corrected codeword has any error     **************/
-									/************ If not needs verification process, remove         **************/
-									/************ this parts, but recommand that doing verification **************/
-									/*****************************************************************************/
+                                        infoMes;	printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %ul\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                        infoMes;	printf("[%s] FAIL cnt) fail to correction = %ul\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                        infoMes;	printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %ul\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                        infoMes;	printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %ul\r\n", 
+                                                        main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                        infoMes;	printf("[%s] FAIL cnt) fail to correction and all synds are zero = %ul\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                        infoMes;	printf("[%s] FAIL cnt) Codeword loop %ul\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        main_com_algorithm_loop_cnt
+                                                    );
+                                        
+                                        infoMes;	printf("[%s] FAIL percent) err exceed correctale and less errLoc poly degree = %g\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        (((double)main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
+                                                    );
+                                        infoMes;	printf("[%s] FAIL percent) fail to correction = %g\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        (((double)main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
+                                                    );
+                                        infoMes;	printf("[%s] FAIL percent) Error num is exceed and synds is zero = = %g\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        (((double)main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
+                                                    );
+                                        infoMes;	printf("[%s] FAIL percent) Error num is exceed and sum synds and errLoc synd is zero = %g\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        (((double)main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
+                                                    );
+                                        infoMes;	printf("[%s] FAIL percent) fail to correction and all synds are zero = %g\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], 
+                                                        (((double)main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])/((double)main_com_algorithm_loop_cnt))
+                                                    );
+                                        return 0;
+                                    }
+                                }
+                }
+                /**************************************************************/
+                /************ (Global Flag) AWGN simulation start *************/
+                /**************************************************************/
+                else
+                {
+                    /*
+                        Hard and Soft Decision is commonly use modulation of bpsk, 
+                        passing through AWGN and demodulation of bpsk.
+                        If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
+                        And if simulation is Soft decision mode, demodulating use quantization of bpsk.
+                        [start]
+                    */
+                    gettimeofday(&time_decoding_start, NULL);
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("recreateErrorComponent\r\n");
+                            }
+                            #endif
+                    main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+                            #ifndef RELEASE
+                            if((global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
+                            {
+                                debugFuncNameMes;
+                                printf("BPSK_Mod\r\n");
+                            }
+                            #endif
+                    BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
+        
+                    /*HARD DECISION*/
+                    /* ADD_AWGN(main_com_bpskComponents->bpskTransData, main_com_bpskComponents->bpskReceivedDataAddedAwgn, 1, main_com_codeLength, main_com_EbN0); */ //need to add bitrate
+                    /*SOFT DECISION*/
+                            #ifndef RELEASE
+                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                            {
+                                debugFuncNameMes;
+                                printf("ADD_AWGN_CAL_LLR\r\n");
+                            }
+                            #endif
+                    /***** ADD_AWGN_CAL_LLR is don't care, hard-decision and soft-decision *****/
+                    ADD_AWGN_CAL_LLR(
+                        main_com_bpskComponents->bpskTransData, 
+                        main_com_bpskComponents->bpskReceivedDataAddedAwgn, 
+                        main_com_bpskComponents->bpskReceivedLLR->llr, 
+                        ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate), 
+                        main_com_codeLength, 
+                        main_com_EbN0
+                    ); //need to add bitrate
+                    // getSqureRootAvrBpskReceivedDataAddedAwgn(main_com_bpskComponents);
+                    // getSqureRootAvrLLR(main_com_bpskComponents->bpskReceivedLLR);
+                            #ifndef RELEASE
+                            if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
+                            {
+                                debugAwgnSequenceMes;
+                                printf("SIGNAL + ADDITIVE WHITE GAUSIAN NOISE\r\n");
+                                printBpskModulation(main_com_bpskComponents->usedLength, main_com_bpskComponents->bpskReceivedDataAddedAwgn);
+                            }
+                            if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
+                            {
+                                debugAwgnSequenceMes;
+                                printf("ADDITIVE WHITE GAUSIAN NOISE\r\n");
+                                printBpskAWGN(main_com_bpskComponents->usedLength, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_bpskComponents->bpskTransData);
+                            }
+                            if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
+                            {
+                                debugAwgnLlrSequenceMes;
+                                printLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
+                            }
+                            #endif
+                    
+                    gettimeofday(&time_decoding_start, NULL);
+                    /*HARD DECISION*/
+                    if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
+                    {
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("BPSK_Demod\r\n");
+                                }
+                                #endif
+                        BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
+                    }
+                    /*SOFT DECISION*/
+                    else
+                    {
+                                #ifndef RELEASE
+                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                {
+                                    debugFuncNameMes;
+                                    printf("quantizationWithGlobalAdaptive\r\n");
+                                }
+                                #endif
 
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes;
-												printf("calculateBmAlgorithm(main_com_used_GF->nonSorted, **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]));\r\n");
-											}
-											#endif
-									// calculateBmAlgorithm(
-										// main_com_used_GF->nonSorted, 
-										// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))
-									// );
-									calculateBCH_decodingAlgorithm(
-										main_com_used_GF->nonSorted, 
-										(**(main_indi_SD_list_of_decordingComponents
-											[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+
-												main_indi_sel_TP_i
-												[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												))
-									);
+                        quantizationWithGlobalAdaptive(
+                            main_com_bpskComponents->bpskReceivedLLR->llr, 
+                            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR, 
+                            main_com_errComponents->erroredCodeWord->equation, 
+                            main_com_errComponents->erroredCodeWord->usedLength
+                        );
+                        /* Received Vector == erroredCodeWord*/
+                        /* File Out Patterns */
+                        if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                        {
+                            fprintPowerFormUsingAddress\
+                                (fileio_HD_received_mes, main_com_errComponents->erroredCodeWord, "\r\n");
+                        }
+                        /* File Out Verilog Vectors start */
+                        if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                        {
+                            fprintVerilogPowerFormUsingAddress\
+                                (fileio_HD_received_mes_verilog, main_com_errComponents->erroredCodeWord, NULL);
+                        }
+                        /* File Out Pattern log */
+                        if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_RECEIVED_MES)
+                        {
+                            fprintPowerFormFullDescriptionUsingAddresss\
+                                (fileio_HD_received_mes_log, main_encodingComponentInGF->codeWord, "\r\n");
+                        }
+                        /* File Out Verilog Vectors end */
+                                #ifndef RELEASE
+                                /* quantized LLR test print */
+                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
+                                {
+                                    debugAwgnLlrSequenceMes;
+                                    testPrintLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
 
-									if(
-										((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												))->degreeOfErrLocPoly)
-										< 
-										main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-									)
-									{
-										main_indi_list_flag_degOfErrLocPolyNotMax
-											[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-											[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 1;
-									}
-									else
-									{
-										main_indi_list_flag_degOfErrLocPolyNotMax
-											[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-											[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 0;
-									}
-									
-									gettimeofday(&time_chien_search_start, NULL);
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes;
-												printf("chienSearch_static(main_com_used_GF->nonSorted, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck) );\r\n");
-											}
-											#endif
-									// chienSearch_static(
-										// main_com_used_GF->nonSorted, 
-										// (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
-										// (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, 
-										// &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck)
-									// );
-									chienSearch(
-										main_com_used_GF->nonSorted, 
-										(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
-										(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, 
-										&((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck),
-										(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									);
-											#ifndef RELEASE
-											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-											{
-												debugSequenceMes;
-												printf("[Theo][%s], TP[%d] Error Location Vector is...\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-												printPowerFormWithEnterPolynomialWithEnterUsingAddress((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector);
-											}
-											#endif
+                                    debugAwgnLlrSequenceMes;
+                                    printQuatizLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
+                                    
+                                    debugAwgnLlrSequenceMes;
+                                    printTestMagitudeQuatizLLRWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
+                                }
+                                #endif
+                                if(global_flag_file_io_sd_pattern_output & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+                                {
+                                    fprintQuatizLLR_toHEX(fileio_SD_received_LLR, \
+                                            main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                }
+                                if(global_flag_file_io_sd_pattern_output_verilog & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+                                {
+                                    fprintVerilogQuatizLLR_toHEX(fileio_SD_received_LLR_verilog, \
+                                            main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                }
+                                if(global_flag_file_io_sd_pattern_output_log & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+                                {
+                                    fprintQuatizLLR_fullDescriptionToHEX(fileio_SD_received_LLR_log, \
+                                            main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                }
 
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes;
-												printf("[Theo][%s], TP[%d] errorCorrection [start]\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-											}
-											#endif
-											
-									if(!main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
-									{
-										errorCorrection(
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->codeWord, 
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector
-										);
-                                                /* File Out Corrected Vector start */
-                                                /* File Out Patterns */
-                                                if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("findMinimumMagnitudeFindLocPushAway\r\n");
+                                            }
+                                            #endif
+                                    /* convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                                            printMagnitudeOfLLR_andLocationWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
+                                    
+                                    sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(main_com_bpskComponents->bpskReceivedLLR);
+                                            testPrintValueOfTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct); */
+                                    
+                        /*********************************************************************/
+                        /* finding log likehood ratio based low reliable bits position start */
+                        /*********************************************************************/
+                        switch(global_flag_case_find_LLR_method)
+                        {
+                            case FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM:
+                                convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                                findMinimumMagnitudeFindLocPushAway(
+                                    main_com_bpskComponents->bpskReceivedLLR,
+                                    main_com_errComponents->erroredCodeWord,
+                                    global_flag_case_pass_hd_1,
+                                    global_flag_case_same_llr_handling,
+                                    global_flag_case_init_llr_mag_method
+                                );
+
+                                /*
+                                testPrintLLRWithSpaceAndEnter(
+                                    main_com_bpskComponents->bpskReceivedLLR);
+                                testPrintShortMinimumQuantizedLLRAndLocator(
+                                    main_com_bpskComponents->bpskReceivedLLR);
+                                */
+
+                                checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
+                                    main_com_bpskComponents->bpskReceivedLLR, 
+                                    main_encodingComponentInGF->codeWord, 
+                                    main_com_errComponents->erroredCodeWord
+                                );
+                            break;
+
+                            case FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING:
+                                convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                                findMinimumMagnitudeGroupingPushAway
+                                (
+                                    main_com_bpskComponents->bpskReceivedLLR,
+                                    main_com_errComponents->erroredCodeWord,
+                                    global_flag_case_pass_hd_1,
+                                    global_flag_case_same_llr_handling,
+                                    global_flag_case_init_llr_mag_method,
+
+                                    global_grouping_stream_nums,
+                                    global_group_bit_num,
+                                    global_group_last_bit_num
+                                );
+                                checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
+                                    main_com_bpskComponents->bpskReceivedLLR, 
+                                    main_encodingComponentInGF->codeWord, 
+                                    main_com_errComponents->erroredCodeWord
+                                );
+                            break;
+
+                            case FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH:
+                                convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                                        if(global_flag_file_io_sd_pattern_output & \
+                                                FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
+                                        {
+                                            fprintMagnitudeOfQuantizedLLR_toHex\
+                                                (fileio_SD_received_LLR_mag, \
+                                                 main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                        }
+                                        if(global_flag_file_io_sd_pattern_output_verilog & \
+                                                FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
+                                        {
+                                            fprintVerilogMagnitudeOfQuantizedLLR_toHex\
+                                                (fileio_SD_received_LLR_mag_verilog, \
+                                                 main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                        }
+                                        if(global_flag_file_io_sd_pattern_output_log & \
+                                                FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag)
+                                        {
+                                            fprintMagnitudeOfQuantizedLLR_fullDescription_toHex\
+                                                (fileio_SD_received_LLR_mag_log, \
+                                                 main_com_bpskComponents->bpskReceivedLLR, "\r\n");
+                                        }
+
+                                sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm\
+                                    (main_com_bpskComponents->bpskReceivedLLR,
+                                    main_com_errComponents->erroredCodeWord,
+                                    global_flag_case_pass_hd_1, 
+                                    global_flag_case_same_llr_handling);
+                                findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(
+                                    main_com_bpskComponents->bpskReceivedLLR);
+                                checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio
+                                    (
+                                        main_com_bpskComponents->bpskReceivedLLR, 
+                                        main_encodingComponentInGF->codeWord, 
+                                        main_com_errComponents->erroredCodeWord
+                                    );
+                                // findMinimumMagnitudeFindLocPushAway(main_com_bpskComponents->bpskReceivedLLR);
+                            break;
+                        }
+                        /*******************************************************************/
+                        /* finding log likehood ratio based low reliable bits position end */
+                        /*******************************************************************/
+
+                                #ifndef RELEASE
+                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE))
+                                {
+                                    debugAwgnLlrSequenceMes;
+                                    testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
+                                    printf("[main_com_EbN0]\t%g\r\n", main_com_EbN0);
+                                }
+                                #endif
+
+                                #ifndef RELEASE
+                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS))
+                                {
+                                    infoMes;
+                                    printf("AWGN Hard decision error vector.\r\n");
+                                    printPowerFormExclusivedUsingAddress(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord);
+                                }
+                                #endif
+                    }
+                    /*
+                        Hard and Soft Decision is commonly use modulation of bpsk, 
+                        passing through AWGN and demodulation of bpsk.
+                        If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
+                        And if simulation is Soft decision mode, demodulating use quantization of bpsk.
+                        [start]
+                    */
+                    
+                    
+                    /************************************************************/
+                    /** Hard Decision also use main_com_list_TP_pwrFormPoly **/
+                    /************************************************************/
+                    main_com_list_TP_pwrFormPoly[0] = main_com_errComponents->erroredCodeWord;
+                    /************************************************************/
+                    /***** Soft Decision Only, Test Vector Generation start *****/
+                    /************************************************************/
+                    if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
+                    {
+                        /* Test Pattern Sting Open start*/
+                                    #ifndef RELEASE
+                                    if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    {
+                                        debugFuncNameMes;
+                                        printf("temporaryFunc_generateTestPatterns_using_LLR_Locator\r\n");
+                                    }
+                                    #endif
+                        if(temporaryFunc_generateTestPatterns_using_LLR_Locator
+                            (
+                                (char*)main_com_errComponents->erroredCodeWord->equation, 
+                                main_com_errComponents->erroredCodeWord->usedLength, 
+                                main_com_bpskComponents->bpskReceivedLLR->locator, 
+                                main_com_bpskComponents->bpskReceivedLLR->locatorLength, 
+                                main_com_strBuf_TP_saved,
+                                main_com_numsTP
+                            )
+                        )
+                        {
+                            errorMes;
+                            printf("temporaryFunc_generateTestPatterns_using_LLR_Locator, return -1.\r\n");
+                        }
+                        
+                        for(main_tmp_soft_i=1; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                        {
+                            setPowerFormPolynomialUsingStringAddr_clearStringPointer(
+                                main_com_list_TP_pwrFormPoly[main_tmp_soft_i], 
+                                main_com_strBuf_TP_saved+main_tmp_soft_i, 
+                                main_com_codeLength, 
+                                main_com_codeLength
+                            );
+                        }
+                        /* All main_com_strBuf_TP_saved[n] is NULL */
+                        
+                                #ifndef RELEASE
+                                if(
+                                    (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                )
+                                {
+                                    printf("[Hard-Decision]\r\n", main_tmp_soft_i);
+                                    // printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
+                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[0]);
+                                    
+                                    
+                                    /*main_tmp_soft_i is index of main_com_strBuf_TP_saved.*/
+                                    for(main_tmp_soft_i=1; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                    {
+                                        printf("[TestPattern %d]\r\n", main_tmp_soft_i);
+                                        // printf("%s\r\n", *(main_com_strBuf_TP_saved+main_tmp_soft_i));
+                                        printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[main_tmp_soft_i]);
+
+                                        printf("[LLR Locator %d]\r\n", main_tmp_soft_i);
+                                        
+                                        //Just printf string use only value of locator.
+                                        //Using i to printf string just related with locators, until i is less then codeword length 
+                                        for(i=0; i<main_com_errComponents->erroredCodeWord->usedLength; i++)
+                                        {
+                                            //use non-binary code calculate combination of bit position
+                                            for(k=0; k<main_tmp_degErrLocPoly; k++)//k is index of locator
+                                            {
+                                                
+                                                if(main_tmp_soft_i&(1<<k))//k is index of locatorArray.
                                                 {
-                                                    fprintPowerFormUsingAddress\
-                                                        (\
-                                                            fileio_corrected_mes[
-                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                                            ], 
-                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                                            "\r\n"
-                                                        );
+                                                    if(i==(*(main_com_bpskComponents->bpskReceivedLLR->locator+k)))
+                                                    {
+                                                        printf("1");
+                                                        break;
+                                                    }
                                                 }
-                                                /* File Out Verilog Vectors start */
-                                                if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                            }
+                                            if(k==main_tmp_degErrLocPoly) printf("0");
+                                        }
+                                        
+                                        printf("\r\n");
+
+                                        printf("[Comparing testPattern and Hard Decision %d]\r\n", main_tmp_soft_i);
+                                        printPowerFormExclusivedUsingAddress(main_com_list_TP_pwrFormPoly[0], main_com_list_TP_pwrFormPoly[main_tmp_soft_i]);
+
+                                    
+                                    }
+                                }
+                                #endif
+                        /* Test Pattern Sting Open End*/
+                    }
+                    /************************************************************/
+                    /****** Soft Decision Only, Test Vector Generation end ******/
+                    /************************************************************/
+
+                    
+                    
+                    
+
+
+                    /************************************************************/
+                    /****** calculate error vector hamming weight start ******/
+                    /************************************************************/
+                    main_com_channel_errCnt = calculateHammingWeightFromDiffentPowerFormPolynomial(
+                                                                main_encodingComponentInGF->codeWord, 
+                                                                main_com_list_TP_pwrFormPoly[0]
+                                                            );
+                    main_indi_list_errCntOf_TP_beforeDec[0] = main_com_channel_errCnt;
+            
+                    for(main_tmp_soft_i = 1; main_tmp_soft_i < main_com_numsTP; main_tmp_soft_i++)
+                    {
+                        main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i] = 
+                            calculateHammingWeightFromDiffentPowerFormPolynomial(
+                                main_encodingComponentInGF->codeWord, 
+                                main_com_list_TP_pwrFormPoly[main_tmp_soft_i]
+                            );
+                    }
+                                if(global_flag_file_io_sd_pattern_output_log & FLAG_MASK_FILE_IO_SD_RECEIVED_LLR)
+                                {
+                                    for(main_tmp_soft_i = 0; main_tmp_soft_i < main_com_numsTP; main_tmp_soft_i++)
+                                    {
+                                        fprintf(fileio_ErrCnt_log, "%d,\t", main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i]);
+                                    }
+                                    fprintf(fileio_ErrCnt_log, "\r\n");
+                                }
+
+                    for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        /******************************************************/
+                        /* flagging can beging correctable test-pattern start */
+                        /******************************************************/
+                        set_flag_theo_suc_list_TP(
+                            main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                            main_com_numsTP, 
+                            main_indi_list_errCntOf_TP_beforeDec, 
+                            main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                        );
+                        /******************************************************/
+                        /** flagging can beging correctable test-pattern end **/
+                        /******************************************************/
+                    }
+                
+                
+                
+                    /********************************************************************/
+                    /************** Error counting, to calculate BER and ****************/
+                    /************** selecting Codeword to decoding start ****************/
+                    /********************************************************************/
+                    /*
+                        note. counting different number encoded and passing through soft-decision codeword, all test pattern.
+                            Result of calculateHammingWeightFromDiffentPowerFormPolynomial is considered hard and soft decision correctability.
+                    */
+                    
+                    
+                    switch(global_flag_case_selTP_before_dec)
+                    {
+                        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
+                        {
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                /*
+                                    sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
+                                */
+                                set_selTP_before_decording_skipDecOnly
+                                (
+                                    
+                                    (main_indi_HD_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    
+                                    (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    (main_indi_sel_TP_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    
+                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    
+                                    (main_indi_sel_decoding_CW_pwrFormPoly+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    
+                                    main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+
+                                    main_com_numsTP,
+                                    
+                                    main_com_channel_errCnt,
+
+                                    main_com_list_TP_pwrFormPoly,
+                                    main_indi_list_errCntOf_TP_beforeDec,
+
+                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                );
+                                
+                                /* theoretical HD err cnt start */
+                                if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0])
+                                {
+                                    main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                }
+                                else
+                                {
+                                    main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_com_channel_errCnt;
+                                }
+                                /* theoretical HD err cnt end */
+                            }
+                        }
+                        break;
+                        
+                        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
+                        {
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                set_unSelTp_bofore_decoding
+                                (
+                                    (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    (main_indi_sel_TP_errCnt+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    
+                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+
+                                    (main_indi_sel_decoding_CW_pwrFormPoly+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+
+                                    main_com_numsTP,
+                                    
+                                    main_com_list_TP_pwrFormPoly,
+                                    main_indi_list_errCntOf_TP_beforeDec,
+
+                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                );
+                            }
+                            // errorMes; printf("Decoding processing skip mode in decoder error fail detection mode is not support yet.\r\n");
+                            // errorMes; printf("simulation is closed.\r\n");
+                            // return -1;
+                        }
+                        break;
+                        
+                    
+                        default:
+                        {
+                            errorMes;
+                            printf("Ib decoding processing skip mode, selecting test pattern method is not defined.\r\n");
+                            printf("Program is closed.\r\n");
+                            return -1;
+                        }
+                        break;
+                    }
+                    
+                    
+                    
+            
+            
+                    
+                    
+                    switch(global_flag_case_selTP_before_dec)
+                    {
+                        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
+                        {
+                            /********************************************************************/
+                            /***** Decide decording, and if can, compute decoding algorithm *****/
+                            /********************************************************************/
+                            /*
+                                note. belong to main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM], decoding result(BER) can be changed.
+                                    If main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] is exceed to correctable(hard decision) bits, 
+                                    error bits are increased, reduced or no changed.
+                                    Decording result is not predictable.
+                                    
+                                    Decoding target codeword is save at main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM], variable type is struct_powerFormPolynomials*.
+
+                                    Look decoding result, carefully.
+                                    
+                                    main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]
+                            */
+                            
+                            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                /*************************************************/
+                                /***** Correctable code decoding block start *****/
+                                /*************************************************/
+                                if(
+                                    main_indi_list_flag_theo_ly_can_be_correctable
+                                        [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                        [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                )
+                                // if(main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] <= main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])//try correcting
+                                {
+                                    /* decrease to main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] */
+                                
+                                    /*******************************************************/
+                                    /********* no decoding option added loc start **********/
+                                    /*******************************************************/
+                                    if(!(global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SKIP))
+                                    {
+                                                #ifndef RELEASE
+                                                /* printing can decoding */
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
                                                 {
-                                                    fprintVerilogPowerFormUsingAddress\
-                                                        (
-                                                            fileio_corrected_mes_verilog[
-                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                                            ], 
-                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                                            NULL
+                                                    infoMes;
+                                                    printf("[Theo] %s TP #%dCan decording!!!\r\n", ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+
+                                                    infoMes;
+                                                    if(main_indi_list_flag_theo_ly_can_be_correctable
+                                                        [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                        [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                                    ) printf("flag, '%d' test pattern has, indicate 'can' decoding(selected test-pattern is correctable), value = '%d'.\r\n", 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_list_flag_theo_ly_can_be_correctable
+                                                            [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                            [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                                         );
+                                                    else printf("[Theo] flag, '%d' test pattern has, indicate 'can not' decoding(selected test-pattern is correctable), value = '%d'.\r\n!!!WARNING!!! check setting code that main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[main_tmp_sel_decAlgo_i]]\r\n", main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
                                                 }
-                                                /* File Out Pattern log */
-                                                if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                /* printing selected error vectors */
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
                                                 {
-                                                    fprintPowerFormFullDescriptionUsingAddresss\
-                                                        (
-                                                            fileio_corrected_mes_log[
-                                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-                                                            ], 
-                                                            main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
-                                                            "\r\n"
-                                                        );
+                                                    debugBmAlgorithmCalDeltaMes;
+                                                    printf("[Theo] [Error Vector]\r\n");
+                                                    printPowerFormExclusivedUsingAddress(main_encodingComponentInGF->codeWord, main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                    printf("\r\n");
                                                 }
-                                                /* File Out Corrected Vector end */
-									}
-											
-											#ifndef RELEASE
-											if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-											{
-												debugFuncNameMes;
-												printf("[Theo][%s], TP[%d] errorCorrection [end]\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-											}
-											#endif
-											
-											#ifndef RELEASE
-											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-											{
-												debugSequenceMes;
-												printf("[Theo][%s], TP[%d] Corrected Vector is...\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-												printPowerFormWithEnterPolynomialWithEnterUsingAddress(
-													(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->codeWord
-												);
-											}
-											#endif
-									/*****************************************************************************/
-									/************ Decoding Block end, continously fallowing         **************/
-									/************ verification corrected codeword has any error     **************/
-									/************ If not needs verification process, remove         **************/
-									/************ this parts, but recommand that doing verification **************/
-									/*****************************************************************************/
-									/****************** verification corrected codeword start ********************/
-									/*****************************************************************************/
-									/* If use multiDecording Mode, needs to initial this start */
-									// for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-									// {
-										// main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
-									// }
-									/* If use multiDecording Mode, needs to initial this end */
-									/*
-										 note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
-									*/
-									main_indi_list_errCntOf_TP_afterDec
-									[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-									[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 
-									calculateHammingWeightFromDiffentPowerFormPolynomial(
-										main_encodingComponentInGF->codeWord, 
-										main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-									);
-											#ifndef RELEASE
-											if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(testOption&FLAG_MASK_TEST_RESULT)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
-											{
-												infoMes; printf("[Theo][%s] sel TP = [%d], TP[%d] has '%d'(e = %d) errs\t", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]], 
-													main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-												);
-												infoMes; printf("[Theo]%s TP #%d Decording ", ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-												if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])	printf("Success\r\n");
-												else													printf("Fail\r\n");
-											}
-											#endif
-									/*****************************************************************************/
-									/****************** verification corrected codeword start ********************/
-									/*****************************************************************************/
+                                                #endif
+
+                                        /*************************************************/
+                                        /***** create BCH decording components start *****/
+                                        /*************************************************/
+                                        /*
+                                            notes. create new BCH decoding components are not needs.
+                                                Removing this block needs to verify.
+                                        */
+                                        /*
+                                            note. To varifing unsigned int t, which is argument of recreateBmAlgorithmComponent,
+                                            can change length of stage of BM algorithm.
+                                            
+                                            Error count(hamming weight of error vector) exceed it's correctability,
+                                            simulator can be broken, because accessing invalid or wrong memory adress.
+                                        */
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes; printf("[Theo][%s] recreateAlgoriehmComponent, %s, TP[%d] [start]\r\n",
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                        (((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))?"Soft-Decision":"Hard-Decision"), 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                }
+                                                #endif
+                                                
+                                        /*
+                                            notes. main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] is a aaray, length is main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))].
+                                            To decoding all test pattern, coded like below.
+                                            
+                                            for([var_cnt]=0; [var_cnt]<[max_TP_length]; [var_cnt]++)
+                                            {
+                                                *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][[var_cnt]] = recreateBmAlgorithmComponent
+                                                                        (
+                                                                            *(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]), 
+                                                                            main_com_used_GF->nonSorted, main_com_hd_correctability, 
+                                                                            (char*)main_com_list_TP_pwrFormPoly[[var_cnt]]->equation,
+                                                                            main_com_codeLength
+                                                                        );
+                                            }
+                                        */
+                                        // **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) = recreateBmAlgorithmComponent
+                                        //((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))
+                                        *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 
+                                            recreateAlgoriehmComponent(
+                                                (*((main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), 
+                                                main_com_used_GF->nonSorted, 
+                                                main_com_hd_correctability, 
+                                                (char*)main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->equation,
+                                                main_com_codeLength,
+                                                (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                            );
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes; printf("[Theo][%s] recreateAlgoriehmComponent, %s, TP[%d] [end]\r\n",
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                        (((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))?"Soft-Decision":"Hard-Decision"), 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                }
+                                                #endif
+                                        if(0 < allSyndromeIsZero
+                                                (
+                                                    main_com_used_GF->nonSorted, 
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->syndrome
+                                                )
+                                        )
+                                        {
+                                            main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]=1;
+                                        }
+                                        else
+                                        {
+                                            main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]=0;
+                                        }
+                                        /*************************************************/
+                                        /****** create BCH decording components end ******/
+                                        /*************************************************/
 
 
 
-									
-									/**************************************************/
-									/****** close BCH decording components start ******/
-									/**************************************************/
-									/*
-										notes. Not onlly create block, close new BCH decoding components are not needs.
-											Removing this block needs to verify.
-									*/
-									// if(!(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
-									// closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
-									closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                                        
+                                        /*****************************************************************************/
+                                        /************ Decoding Block start, continously fallowing       **************/
+                                        /************ verification corrected codeword has any error     **************/
+                                        /************ If not needs verification process, remove         **************/
+                                        /************ this parts, but recommand that doing verification **************/
+                                        /*****************************************************************************/
 
-									/**************************************************/
-									/******* close BCH decording components end *******/
-									/**************************************************/
-								}
-									
-								/*******************************************************/
-								/********** no decoding option added loc end ***********/
-								/*******************************************************/
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes;
+                                                    printf("calculateBmAlgorithm(main_com_used_GF->nonSorted, **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]));\r\n");
+                                                }
+                                                #endif
+                                        // calculateBmAlgorithm(
+                                            // main_com_used_GF->nonSorted, 
+                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))
+                                        // );
+                                        calculateBCH_decodingAlgorithm(
+                                            main_com_used_GF->nonSorted, 
+                                            (**(main_indi_SD_list_of_decordingComponents
+                                                [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+
+                                                    main_indi_sel_TP_i
+                                                    [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    ))
+                                        );
 
-							}
-							/*************************************************/
-							/****** Correctable code decoding block end ******/
-							/*************************************************/
-						}
-					}
-					break;
-					
-					
-					/********************************************************************/
-					/************** get BER mode is actual mode, that is  ***************/
-					/************** BER can be different with theoretical ***************/
-					/************** case start                            ***************/
-					/********************************************************************/
-					/*
-					note. Actual error count.
-					Actual is mean, simulator does not known that channel enviroments,
-					that is mean simulator can not recognize error number corrrectly.
-					So in below code and actual BER mode, 
-					simulator can not choose best test pattern has minimum error number.
-					
-					Simulator have to identify best test pattern using decoding infomation.
-					And choose best case.
-					*/
-					case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
-					{
-							#ifndef RELEASE
-							if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-							{
-								printf("[ACT] >>>>> ******************************************************************** <<<<<\r\n");
-								printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-								printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-								infoMes; printf("[ACT] Encoded Vector is below...\r\n");
-								printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-								infoMes; printf("[ACT] Error Vector is below...\r\n");
-								printPowerFormExclusivedUsingAddress(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord);
-								infoMes; printf("[ACT] Received Vector is below...\r\n");
-								printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
-								printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-							}
-							#endif
-				
+                                        if(
+                                            ((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    ))->degreeOfErrLocPoly)
+                                            < 
+                                            main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                        )
+                                        {
+                                            main_indi_list_flag_degOfErrLocPolyNotMax
+                                                [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 1;
+                                        }
+                                        else
+                                        {
+                                            main_indi_list_flag_degOfErrLocPolyNotMax
+                                                [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 0;
+                                        }
+                                        
+                                        gettimeofday(&time_chien_search_start, NULL);
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes;
+                                                    printf("chienSearch_static(main_com_used_GF->nonSorted, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck) );\r\n");
+                                                }
+                                                #endif
+                                        // chienSearch_static(
+                                            // main_com_used_GF->nonSorted, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, 
+                                            // &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck)
+                                        // );
+                                        chienSearch(
+                                            main_com_used_GF->nonSorted, 
+                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
+                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, 
+                                            &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck),
+                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        );
+                                                #ifndef RELEASE
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+                                                {
+                                                    debugSequenceMes;
+                                                    printf("[Theo][%s], TP[%d] Error Location Vector is...\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector);
+                                                }
+                                                #endif
 
-						//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{				
-							/* calculate all case of test pattern */
-							//main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;//above switch satement, already do this.
-							
-							for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-							{
-										#ifndef RELEASE
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-										)
-										{
-											printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-											infoMes; printf("[ACT] >>> [%s] Decoding of test pattern '%d', t='%d', numsOfErr='%d', %s <<<\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_tmp_soft_i, 
-														main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i], 
-														(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] < main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i])?"[ FAIL ]":"[ TRY ]"
-													);
-											printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-
-										}
-										#endif										
-								main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 
-									main_com_list_TP_pwrFormPoly[main_tmp_soft_i];
-									
-									
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] recreateAlgoriehmComponent [start]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-										}
-										#endif
-								*main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 
-									recreateAlgoriehmComponent(
-										(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)), 
-										main_com_used_GF->nonSorted, main_com_hd_correctability,
-										(char*)main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->equation,
-										main_com_codeLength,
-										(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									);
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] recreateAlgoriehmComponent [end]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-										}
-										#endif
-
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] allSyndromeIsZero [start]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-										}
-										#endif
-								if
-								(0 < allSyndromeIsZero
-										(
-											main_com_used_GF->nonSorted, 
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->syndrome
-										)
-								)
-								{
-									main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]=1;
-								}
-								else
-								{
-									main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]=0;
-								}
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] allSyndromeIsZero [end]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-										}
-										#endif
-										
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] calculateBCH_decodingAlgorithm [start]\n",
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-											);
-										}
-										#endif
-								// calculateBmAlgorithm(
-									// main_com_used_GF->nonSorted, 
-									// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))
-								// );
-								calculateBCH_decodingAlgorithm(
-									main_com_used_GF->nonSorted, 
-									(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
-								);
-										#ifndef RELEASE
-										if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-										{
-											debugFuncNameMes;
-											printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%x\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												main_tmp_soft_i,
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
-
-											);
-										}
-										#endif
-										#ifndef RELEASE
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(
-											global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-										)
-										{
-											infoMes; printf("[ACT] >>> TP(%d), Syndrome of Received vector <<<\r\n", main_tmp_soft_i);
-											printSyndromeArray(
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->syndrome, 
-												main_com_used_GF->nonSorted
-											);
-					
-											infoMes; 	printf("[ACT] >>> TP(%d), Error location polynomial <<<\r\n", main_tmp_soft_i);
-														printGaloisField2(
-															main_com_used_GF->nonSorted, 
-															(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
-															PRINT_FIELD_EQUATION_TITLE, 
-															PRINT_FIELD_PRINT_OPTION_NUMBERING
-														);
-											infoMes;	printf("[ACT] degree of TP(%d) err loc poly is '%d'\r\n", 
-															main_tmp_soft_i, 
-															(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly
-														);
-										}
-										#endif
-								if(
-									((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly)
-									< 
-									main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-								)
-								{
-									main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 1;
-								}
-								else
-								{
-									main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
-								}
-										
-					
-
-								// chienSearch_static
-									// (
-										// main_com_used_GF->nonSorted, 
-										// (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
-										// (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector, 
-										// &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck) 
-									// );
-								chienSearch(
-									main_com_used_GF->nonSorted, 
-									(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
-									(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector, 
-									&((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck),
-									(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-								);
-								if(
-									((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly) == 
-									((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck)
-								)
-								{
-									main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 1;
-								}
-								else
-								{
-									main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
-								}
-										#ifndef RELEASE
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-										)
-										{
-											infoMes; printf("[ACT] Encoded Vector is below...\r\n");
-											printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-											infoMes; printf("[ACT] TP(%d), Vector is...\r\n", main_tmp_soft_i);
-											printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-											debugSequenceMes;
-											printf("[ACT] [%s] TP(%d), Error Location Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_tmp_soft_i);
-											printPowerFormWithEnterPolynomialWithEnterUsingAddress(
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector
-											);
-											infoMes; 	printf("[ACT] [%s] Metric Check value of TP(%d) is '%d'\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-															main_tmp_soft_i, 
-															(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck
-														);
-											infoMes;	printf("[ACT] [%s]Hamming weight of error loc of TP(%d) is '%d'\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-															main_tmp_soft_i, 
-															calculateHammingWeightPowerFormPolynomial((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector)
-														);
-										}
-										#endif
-										
-								/* calculate syndrome of error location (BM algorithme only) start */
-								// if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-								// {
-									// syndromeArrayCalculatorUsingString
-									// (
-										// main_com_used_GF->nonSorted, 
-										// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, 
-										// (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->vMAX+global_bch_Soft_OverSyndLen, 
-										// (char*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->errorLocationVector->equation
-									// );
-									// summationSyndromeArray
-									// (
-										// main_com_used_GF->nonSorted, 
-										// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, 
-										// (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, 
-										// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome
-									// );
-									// if
-									// (0 < allSyndromeIsZero
-											// (
-												// main_com_used_GF->nonSorted, 
-												// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome
-											// )
-									// )
-									// {
-										// main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=1;
-									// }
-									// else
-									// {
-										// main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=0;
-									// }
-											// #ifndef RELEASE
-											// if
-											// (
-												// (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-												// (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												// (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												// (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-											// )
-											// {
-												// infoMes; printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n", 
-													// KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													// (main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]?" ON":"OFF"), 
-													// main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i] 
-												// );
-												// infoMes; printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
-												// printSyndromeArray((**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, main_com_used_GF->nonSorted);
-												// infoMes; printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
-												// printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, main_com_used_GF->nonSorted);
-												// infoMes; printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
-												// printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
-											// }
-											// #endif
-								// }
-								/* calculate syndrome of error location (BM algorithm only) end */
-
-								if(!main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
-								{
-									errorCorrection(
-										(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord, 
-										(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector
-									);
-								}
-										#ifndef RELEASE
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-										)
-										{
-												debugSequenceMes;
-												printf("[ACT] [%s] TP(%d), Corrected Vector is...\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_tmp_soft_i
-												);
-												printPowerFormWithEnterPolynomialWithEnterUsingAddress(
-													(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord
-												);
-										}
-										#endif
-											
-								main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 
-									calculateHammingWeightFromDiffentPowerFormPolynomial(
-										main_encodingComponentInGF->codeWord, 
-										(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord
-									);
-										#ifndef RELEASE
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-										)
-										{
-											infoMes; printf("[ACT] TP[%d] has error number is [%d] = %d\r\n", main_tmp_soft_i, main_tmp_soft_i, main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i]);
-											infoMes; printf("[ACT] [%s] TP[%d] is %s, value = %d\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												main_tmp_soft_i, 
-												(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?"CORRECTABLE":"NOT CORRECTABLE"), 
-												main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-											);
-											infoMes; printf("[ACT] [%s] %s TP[%d] Decording Result : ", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), 
-														main_tmp_soft_i
-													);
-											if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
-											{
-												printf("[ SUCCESS (e='%d') ]\r\n", 
-													main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-												);
-											}
-											else
-											{
-												printf("[ FAIL (e='%d') ]\r\n", 
-													main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-												);
-											}
-										}
-										#endif
-								
-
-							}
-							/*
-								Correctable CodeWord Selection
-								1. main_indi_list_flag_beforeDec_syndZero is true?
-									-> received codeword has no err.
-								2. main_indi_list_flag_deccFail is false?
-									-> that is mean, metric chk is same with degree of errPoly.
-							*/
-							
-						}
-						
-
-						
-						
-						
-						
-						/************************************************************/
-						/****** check get BER actual mode fail condition start ******/
-						/************************************************************/
-						/*
-						main_indi_list_flag_beforeDec_syndZero
-						
-						main_indi_list_flag_degOfErrLocPolyNotMax
-						
-						main_indi_list_flag_metricChk_degErrLocPolySame
-						
-						
-						
-						main_indi_sel_TP_i
-						
-						main_indi_list_errCntOf_TP_afterDec
-						*/
-						// for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						// {	
-							// main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;
-						// }
-						for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{	
-							set_flag_act_fail_list_TP
-							(
-								(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),//write
-								main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								(main_indi_list_flag_fail_allDec+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-								
-								main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								
-								main_com_numsTP,
-								KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-							);
-							// printf("test )))))AL[%s]:%d, selected TestPattern : %d =? %d, ADDR : 0x%x =? 0x%x\r\n", 
-								// KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								// (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
-								// *(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
-								// main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-								
-								// (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
-								// &main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-								// );
-						}
-
-									#ifndef RELEASE
-									if(
-										(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-										(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									)
-									{
-										printf(">>>>> *************************************************************** <<<<<\r\n");
-										printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
-										printf(">>>>> *************************************************************** <<<<<\r\n");
-									}
-									#endif
-
-									#ifndef RELEASE
-									if(
-										(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-										(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-										(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-									)
-									{
-										printf(">>>>> *************************************************************** <<<<<\r\n");
-									}
-									#endif
-						/************************************************************/
-						/******* check get BER actual mode fail condition end *******/
-						/************************************************************/
-						
-						
-						
-						
-						
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes;
+                                                    printf("[Theo][%s], TP[%d] errorCorrection [start]\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                }
+                                                #endif
+                                                
+                                        if(!main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
+                                        {
+                                            errorCorrection(
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->codeWord, 
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector
+                                            );
+                                                    /* File Out Corrected Vector start */
+                                                    /* File Out Patterns */
+                                                    if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                    {
+                                                        fprintPowerFormUsingAddress\
+                                                            (\
+                                                                fileio_corrected_mes[
+                                                                    (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                                ], 
+                                                                main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                                "\r\n"
+                                                            );
+                                                    }
+                                                    /* File Out Verilog Vectors start */
+                                                    if(global_flag_file_io_hd_pattern_output_verilog&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                    {
+                                                        fprintVerilogPowerFormUsingAddress\
+                                                            (
+                                                                fileio_corrected_mes_verilog[
+                                                                    (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                                ], 
+                                                                main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                                NULL
+                                                            );
+                                                    }
+                                                    /* File Out Pattern log */
+                                                    if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_CORRECTED_MES)
+                                                    {
+                                                        fprintPowerFormFullDescriptionUsingAddresss\
+                                                            (
+                                                                fileio_corrected_mes_log[
+                                                                    (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                                ], 
+                                                                main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->codeWord, 
+                                                                "\r\n"
+                                                            );
+                                                    }
+                                                    /* File Out Corrected Vector end */
+                                        }
+                                                
+                                                #ifndef RELEASE
+                                                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                                {
+                                                    debugFuncNameMes;
+                                                    printf("[Theo][%s], TP[%d] errorCorrection [end]\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                }
+                                                #endif
+                                                
+                                                #ifndef RELEASE
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+                                                {
+                                                    debugSequenceMes;
+                                                    printf("[Theo][%s], TP[%d] Corrected Vector is...\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(
+                                                        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->codeWord
+                                                    );
+                                                }
+                                                #endif
+                                        /*****************************************************************************/
+                                        /************ Decoding Block end, continously fallowing         **************/
+                                        /************ verification corrected codeword has any error     **************/
+                                        /************ If not needs verification process, remove         **************/
+                                        /************ this parts, but recommand that doing verification **************/
+                                        /*****************************************************************************/
+                                        /****************** verification corrected codeword start ********************/
+                                        /*****************************************************************************/
+                                        /* If use multiDecording Mode, needs to initial this start */
+                                        // for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                        // {
+                                            // main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
+                                        // }
+                                        /* If use multiDecording Mode, needs to initial this end */
+                                        /*
+                                             note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
+                                        */
+                                        main_indi_list_errCntOf_TP_afterDec
+                                        [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                        [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] = 
+                                        calculateHammingWeightFromDiffentPowerFormPolynomial(
+                                            main_encodingComponentInGF->codeWord, 
+                                            main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                        );
+                                                #ifndef RELEASE
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(testOption&FLAG_MASK_TEST_RESULT)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                                                {
+                                                    infoMes; printf("[Theo][%s] sel TP = [%d], TP[%d] has '%d'(e = %d) errs\t", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]], 
+                                                        main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                                    );
+                                                    infoMes; printf("[Theo]%s TP #%d Decording ", ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                    if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])	printf("Success\r\n");
+                                                    else													printf("Fail\r\n");
+                                                }
+                                                #endif
+                                        /*****************************************************************************/
+                                        /****************** verification corrected codeword start ********************/
+                                        /*****************************************************************************/
 
 
-						
-						/************************************************************/
-						/****** check get BER actual mode fail condition start ******/
-						/************************************************************/
-								#ifndef RELEASE
-								if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-								{
-									printf(">>>>> *************************************************************** <<<<<\r\n");
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{	
-										infoMes; printf("[ACT] [%s] algorithm select #%d-th test-pattern\r\n" , 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
+                                        
+                                        /**************************************************/
+                                        /****** close BCH decording components start ******/
+                                        /**************************************************/
+                                        /*
+                                            notes. Not onlly create block, close new BCH decoding components are not needs.
+                                                Removing this block needs to verify.
+                                        */
+                                        // if(!(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
+                                        // closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
+                                        closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
 
-										for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-										{
-											infoMes;	printf("[ACT] [%s](%c)TP(%d) ",
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-															((main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]==main_tmp_soft_i)?'v':' '),
-															main_tmp_soft_i
-														);
-														printf("flag theo(%s, v='%d'), ",
-															(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
-															main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-														printf("actFail(%s, v='%d'), ",
-															(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
-															main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-															
-														printf("0-synd(Bf)%s, v='%d'), (Af)(%s, v='%d'), ", 
-															(main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
-															main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i],
-																														
-															(main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
-															main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-														printf("E.P.N max(%s, v='%d'), ", 
-															(main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
-															main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-															
-														printf("t='%d', errCnt(BF='%d', AF='%d'), ", 
-															main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-															main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i],
-															main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-														
-														printf("degE.Loc.P='%d', met.Chk='%d' = same='%d'\r\n",
-															(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly,
-															(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck,
-															main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
-														);
-										}
-										infoMes; printf("[ACT] [%s] decoding All fail flag is %s(=%d)\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-											(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"ON":"OFF"),
-											main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
-										infoMes; printf("[ACT [%s] algorithm select TP[%d] and TP[%d] distance with encoded codeword = %d\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-											main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-										);
-										
-									}
-									
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{
-										for(cmd_tmp_i=0; cmd_tmp_i<processingUseThisAlgorithm->length; cmd_tmp_i++)
-										{
-											if(
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												!=
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))]
-											)
-											{
-												warningMesShort; printf("[%s] has sel tp = '%d', [%s] has sel tp = '%d'\r\n",
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))]
-												);
-												// if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-												// {
-													systemHoldMes;	printf("input : ");
-													scanf("%s", global_buf_KeyBoardInput);
-												// }	
-											}
-										}
+                                        /**************************************************/
+                                        /******* close BCH decording components end *******/
+                                        /**************************************************/
+                                    }
+                                        
+                                    /*******************************************************/
+                                    /********** no decoding option added loc end ***********/
+                                    /*******************************************************/
 
-									}
-																	if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-																	{
-																		systemHoldMes;	printf("input : ");
-																		scanf("%s", global_buf_KeyBoardInput);
-																	}	
-								
-									infoMes; printf("[ACT] Minumum LLR location and Values\r\n");
-									testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
-									// printf("squreRootBpskReceivedDataAddedAwgn = '%g'\r\n", main_com_bpskComponents->squreRootBpskReceivedDataAddedAwgn);
-									// printf("squreRootAvrLLR = '%g'\r\n", main_com_bpskComponents->bpskReceivedLLR->squreRootAvrLLR);
+                                }
+                                /*************************************************/
+                                /****** Correctable code decoding block end ******/
+                                /*************************************************/
+                            }
+                        }
+                        break;
+                        
+                        
+                        /********************************************************************/
+                        /************** get BER mode is actual mode, that is  ***************/
+                        /************** BER can be different with theoretical ***************/
+                        /************** case start                            ***************/
+                        /********************************************************************/
+                        /*
+                        note. Actual error count.
+                        Actual is mean, simulator does not known that channel enviroments,
+                        that is mean simulator can not recognize error number corrrectly.
+                        So in below code and actual BER mode, 
+                        simulator can not choose best test pattern has minimum error number.
+                        
+                        Simulator have to identify best test pattern using decoding infomation.
+                        And choose best case.
+                        */
+                        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
+                        {
+                                #ifndef RELEASE
+                                if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+                                {
+                                    printf("[ACT] >>>>> ******************************************************************** <<<<<\r\n");
+                                    printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                    printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                    infoMes; printf("[ACT] Encoded Vector is below...\r\n");
+                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                                    infoMes; printf("[ACT] Error Vector is below...\r\n");
+                                    printPowerFormExclusivedUsingAddress(main_com_errComponents->erroredCodeWord, main_encodingComponentInGF->codeWord);
+                                    infoMes; printf("[ACT] Received Vector is below...\r\n");
+                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
+                                    printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                }
+                                #endif
+                    
 
-									printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-									infoMes; printf("[ACT] >>>>>/***** selection selected test pattern infomation. *****/<<<<<\r\n");
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{	
-										infoMes;	printf("[ACT] [%s] Selected test pattern is '#%d', TP(%d)\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													);
-									}
-									printf("\r\n");
-									
-									infoMes; printf("[ACT] Encoded Vector is below...\r\n");
-									printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
-									infoMes; printf("[ACT] Received Vector is below...\r\n");
-									printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
-									printf("\r\n");
+                            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                /* calculate all case of test pattern */
+                                //main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;//above switch satement, already do this.
+                                
+                                for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                {
+                                            #ifndef RELEASE
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                            )
+                                            {
+                                                printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                infoMes; printf("[ACT] >>> [%s] Decoding of test pattern '%d', t='%d', numsOfErr='%d', %s <<<\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_tmp_soft_i, 
+                                                            main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i], 
+                                                            (main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] < main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i])?"[ FAIL ]":"[ TRY ]"
+                                                        );
+                                                printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{	
-										infoMes; printf("[ACT] [%s] >>> TP(%d), Error location polynomial <<<\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
-														printf("ADDR : 0x%x\r\n", (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly);
-														
-										printGaloisField2(
-											main_com_used_GF->nonSorted, 
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
-											PRINT_FIELD_EQUATION_TITLE, 
-											PRINT_FIELD_PRINT_OPTION_NUMBERING
-										);
-										infoMes; printf("[ACT] [%s] degree of TP(%d) err loc poly is '%d'\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly
-										);
-									}
-									printf("\r\n");
+                                            }
+                                            #endif
+                                    main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 
+                                        main_com_list_TP_pwrFormPoly[main_tmp_soft_i];
+                                        
+                                        
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] recreateAlgoriehmComponent [start]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                            }
+                                            #endif
+                                    *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 
+                                        recreateAlgoriehmComponent(
+                                            (*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)), 
+                                            main_com_used_GF->nonSorted, main_com_hd_correctability,
+                                            (char*)main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->equation,
+                                            main_com_codeLength,
+                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        );
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] recreateAlgoriehmComponent [end]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                            }
+                                            #endif
 
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] allSyndromeIsZero [start]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                            }
+                                            #endif
+                                    if
+                                    (0 < allSyndromeIsZero
+                                            (
+                                                main_com_used_GF->nonSorted, 
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->syndrome
+                                            )
+                                    )
+                                    {
+                                        main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]=1;
+                                    }
+                                    else
+                                    {
+                                        main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]=0;
+                                    }
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] allSyndromeIsZero [end]\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                            }
+                                            #endif
+                                            
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [start]\n",
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                );
+                                            }
+                                            #endif
+                                    // calculateBmAlgorithm(
+                                        // main_com_used_GF->nonSorted, 
+                                        // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))
+                                    // );
+                                    calculateBCH_decodingAlgorithm(
+                                        main_com_used_GF->nonSorted, 
+                                        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
+                                    );
+                                            #ifndef RELEASE
+                                            if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                            {
+                                                debugFuncNameMes;
+                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%x\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    main_tmp_soft_i,
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{	
-										printf("[ACT] [%s] TP(%d), Error Location Vector is...\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
-										printPowerFormWithEnterPolynomialWithEnterUsingAddress(
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector
-										);
-										infoMes; printf("[ACT] [%s] Metric Check value of TP(%d) is '%d'\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck
-										);
-									}
-									printf("\r\n");
+                                                );
+                                            }
+                                            #endif
+                                            #ifndef RELEASE
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(
+                                                global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                            )
+                                            {
+                                                infoMes; printf("[ACT] >>> TP(%d), Syndrome of Received vector <<<\r\n", main_tmp_soft_i);
+                                                printSyndromeArray(
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->syndrome, 
+                                                    main_com_used_GF->nonSorted
+                                                );
+                        
+                                                infoMes;	printf("[ACT] >>> TP(%d), Error location polynomial <<<\r\n", main_tmp_soft_i);
+                                                            printGaloisField2(
+                                                                main_com_used_GF->nonSorted, 
+                                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
+                                                                PRINT_FIELD_EQUATION_TITLE, 
+                                                                PRINT_FIELD_PRINT_OPTION_NUMBERING
+                                                            );
+                                                infoMes;	printf("[ACT] degree of TP(%d) err loc poly is '%d'\r\n", 
+                                                                main_tmp_soft_i, 
+                                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly
+                                                            );
+                                            }
+                                            #endif
+                                    if(
+                                        ((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly)
+                                        < 
+                                        main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                    )
+                                    {
+                                        main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 1;
+                                    }
+                                    else
+                                    {
+                                        main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
+                                    }
+                                            
+                        
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{	
-										infoMes;	printf("[ACT] [%s] Selected TP '#%d', err distans before decoding of TP[%d] = %d\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-										);
-										infoMes;	printf("[ACT] [%s] %s TP #%d Decording %d", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP)"), 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										);
-									}
-									printf("\r\n");
+                                    // chienSearch_static
+                                        // (
+                                            // main_com_used_GF->nonSorted, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector, 
+                                            // &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck) 
+                                        // );
+                                    chienSearch(
+                                        main_com_used_GF->nonSorted, 
+                                        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly, 
+                                        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector, 
+                                        &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck),
+                                        (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                    );
+                                    if(
+                                        ((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly) == 
+                                        ((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck)
+                                    )
+                                    {
+                                        main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 1;
+                                    }
+                                    else
+                                    {
+                                        main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
+                                    }
+                                            #ifndef RELEASE
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                            )
+                                            {
+                                                infoMes; printf("[ACT] Encoded Vector is below...\r\n");
+                                                printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                                                infoMes; printf("[ACT] TP(%d), Vector is...\r\n", main_tmp_soft_i);
+                                                printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                debugSequenceMes;
+                                                printf("[ACT] [%s] TP(%d), Error Location Vector is...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_tmp_soft_i);
+                                                printPowerFormWithEnterPolynomialWithEnterUsingAddress(
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector
+                                                );
+                                                infoMes;	printf("[ACT] [%s] Metric Check value of TP(%d) is '%d'\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                                main_tmp_soft_i, 
+                                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck
+                                                            );
+                                                infoMes;	printf("[ACT] [%s]Hamming weight of error loc of TP(%d) is '%d'\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                                main_tmp_soft_i, 
+                                                                calculateHammingWeightPowerFormPolynomial((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector)
+                                                            );
+                                            }
+                                            #endif
+                                            
+                                    /* calculate syndrome of error location (BM algorithme only) start */
+                                    // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                                    // {
+                                        // syndromeArrayCalculatorUsingString
+                                        // (
+                                            // main_com_used_GF->nonSorted, 
+                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->vMAX+global_bch_Soft_OverSyndLen, 
+                                            // (char*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->errorLocationVector->equation
+                                        // );
+                                        // summationSyndromeArray
+                                        // (
+                                            // main_com_used_GF->nonSorted, 
+                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, 
+                                            // (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, 
+                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome
+                                        // );
+                                        // if
+                                        // (0 < allSyndromeIsZero
+                                                // (
+                                                    // main_com_used_GF->nonSorted, 
+                                                    // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome
+                                                // )
+                                        // )
+                                        // {
+                                            // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=1;
+                                        // }
+                                        // else
+                                        // {
+                                            // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=0;
+                                        // }
+                                                // #ifndef RELEASE
+                                                // if
+                                                // (
+                                                    // (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    // (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    // (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    // (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                // )
+                                                // {
+                                                    // infoMes; printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n", 
+                                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        // (main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]?" ON":"OFF"), 
+                                                        // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i] 
+                                                    // );
+                                                    // infoMes; printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
+                                                    // printSyndromeArray((**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, main_com_used_GF->nonSorted);
+                                                    // infoMes; printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
+                                                    // printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, main_com_used_GF->nonSorted);
+                                                    // infoMes; printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
+                                                    // printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                                                // }
+                                                // #endif
+                                    // }
+                                    /* calculate syndrome of error location (BM algorithm only) end */
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{
-										infoMes;	printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
-										printSyndromeArray(
-											(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->syndrome, 
-											main_com_used_GF->nonSorted
-										);
-										
-										/* errLocSyndrome is only valud in BM algorithm start */
-										// infoMes;	printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
-										// printSyndromeArray(
-											// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))->errLocSyndrome, 
-											// main_com_used_GF->nonSorted
-										// );
-										/* errLocSyndrome is only valud in BM algorithm end */
-										
-										/* sum syndromes of receive and err loc is only valid in BM algorithm start */
-										// if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-										// {
-											// infoMes;	printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
-											// printSyndromeArray(
-											// ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_indi_sel_TP_i[KIND_OF_BCH_DECODING_BM])))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                                    if(!main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
+                                    {
+                                        errorCorrection(
+                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord, 
+                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector
+                                        );
+                                    }
+                                            #ifndef RELEASE
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                            )
+                                            {
+                                                    debugSequenceMes;
+                                                    printf("[ACT] [%s] TP(%d), Corrected Vector is...\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_tmp_soft_i
+                                                    );
+                                                    printPowerFormWithEnterPolynomialWithEnterUsingAddress(
+                                                        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord
+                                                    );
+                                            }
+                                            #endif
+                                                
+                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 
+                                        calculateHammingWeightFromDiffentPowerFormPolynomial(
+                                            main_encodingComponentInGF->codeWord, 
+                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->codeWord
+                                        );
+                                            #ifndef RELEASE
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                            )
+                                            {
+                                                infoMes; printf("[ACT] TP[%d] has error number is [%d] = %d\r\n", main_tmp_soft_i, main_tmp_soft_i, main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i]);
+                                                infoMes; printf("[ACT] [%s] TP[%d] is %s, value = %d\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    main_tmp_soft_i, 
+                                                    (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?"CORRECTABLE":"NOT CORRECTABLE"), 
+                                                    main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                );
+                                                infoMes; printf("[ACT] [%s] %s TP[%d] Decording Result : ", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP #0 ==)"), 
+                                                            main_tmp_soft_i
+                                                        );
+                                                if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
+                                                {
+                                                    printf("[ SUCCESS (e='%d') ]\r\n", 
+                                                        main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                    );
+                                                }
+                                                else
+                                                {
+                                                    printf("[ FAIL (e='%d') ]\r\n", 
+                                                        main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                    );
+                                                }
+                                            }
+                                            #endif
+                                    
 
-											// infoMes;	printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n", 
-												// KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												// (main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-												// main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] 
-											// );
-										// }									
-										/* sum syndromes of receive and err loc is only valid in BM algorithm end */
-									}
-									printf("\r\n");
+                                }
+                                /*
+                                    Correctable CodeWord Selection
+                                    1. main_indi_list_flag_beforeDec_syndZero is true?
+                                        -> received codeword has no err.
+                                    2. main_indi_list_flag_deccFail is false?
+                                        -> that is mean, metric chk is same with degree of errPoly.
+                                */
+                                
+                            }
+                            
 
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{
-										if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
-										{
-											printf("[%s] [ SUCCESS (e='%d') ]\r\n",
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-												main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
-										}
-										else
-										{
-											printf("[%s] [ FAIL (e='%d') ]\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
-										}
-										infoMes; printf("[ACT] [%s] Theoretically being correctable flag of TP(%d) is %s, value = %d\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-											main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
-										infoMes; printf("[ACT] [%s] Actually being not correctable flag of TP(%d) is %s, value = %d\r\n", 
-											KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-											(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-											main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
-									}
-									printf("\r\n");
+                            
+                            
+                            
+                            
+                            /************************************************************/
+                            /****** check get BER actual mode fail condition start ******/
+                            /************************************************************/
+                            /*
+                            main_indi_list_flag_beforeDec_syndZero
+                            
+                            main_indi_list_flag_degOfErrLocPolyNotMax
+                            
+                            main_indi_list_flag_metricChk_degErrLocPolySame
+                            
+                            
+                            
+                            main_indi_sel_TP_i
+                            
+                            main_indi_list_errCntOf_TP_afterDec
+                            */
+                            // for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            // {
+                                // main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;
+                            // }
+                            for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                set_flag_act_fail_list_TP
+                                (
+                                    (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),//write
+                                    main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    (main_indi_list_flag_fail_allDec+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                    
+                                    main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    
+                                    main_com_numsTP,
+                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                );
+                                // printf("test )))))AL[%s]:%d, selected TestPattern : %d =? %d, ADDR : 0x%x =? 0x%x\r\n", 
+                                    // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    // (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
+                                    // *(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
+                                    // main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    
+                                    // (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), 
+                                    // &main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                    // );
+                            }
 
-								}
-								#endif
-						
+                                        #ifndef RELEASE
+                                        if(
+                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        )
+                                        {
+                                            printf(">>>>> *************************************************************** <<<<<\r\n");
+                                            printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
+                                            printf(">>>>> *************************************************************** <<<<<\r\n");
+                                        }
+                                        #endif
 
-						
-						//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{
-							if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])//theoretically check can try correction?
-							{//theoretically check can try correction? -> YES
-								if(!main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
-								{//actually check can try correction? -> YES
-									/*
-									Corrected bits number is maximum(t=e+-p), choosing algorithm that correctable test-pattern can have some discrepancy.
-									So check this, degreeOfErrLocPoly and main_com_hd_correctability are same.
-									*/
-									if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly == main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] ) 
-									{//check to discrepancy of select condition of correctable test pattern.
-										/*
-										chk from test pattern 0 to 2^p - 1 and start to 0.
-										Because priority is higher than low numbered test pattern.
-										*/
-										for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-										{
-											if(main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] == main_tmp_soft_i) continue;//except selected test pattern.
-											if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
-											{//check candidate testpattern is theoretically correctable? -> YES
-												/*
-												check that non selected test pattern is correctable?
-												*/
-												if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck )
-												{//check that non selected test pattern is correctable? -> YES
-													if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly )
-													{//Same condition with selected test-pattern? -> YES
-																#ifndef RELEASE
-																if(
-																	(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-																	(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-																	(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-																	(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-																)
-																{
-																	printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-																	warningMes; printf("[ACT] [%s] !!!! test pattern selecting is success, just for chk condition and right case.\r\n", 
-																		KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-																	);
-
-																	if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-																	{
-																		systemHoldMes;	printf("input : ");
-																		scanf("%s", global_buf_KeyBoardInput);
-																	}
-																}
-																#endif
-													}
-													else
-													{//Same condition with selected test-pattern? -> NO
-														//can be passing
-														//DO NOTHING...
-														//DO NOTHING...
-														//DO NOTHING...
-													}
-												}
-												else
-												{//check that non selected test pattern is correctable? -> NO
-													//DO NOTHING...
-													//DO NOTHING... 
-													//DO NOTHING...
-												}
-											}
-											else
-											{//check candidate testpattern is theoretically correctable? -> NO
-												//DO NOTHING...
-												//DO NOTHING...
-												//DO NOTHING...
-											}
-										}
-										
-										if(main_tmp_soft_i==main_com_numsTP)
-										{
-													#ifndef RELEASE
-													if(
-														(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-													)
-													{
-														printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-														infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-															(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-															(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF")
-														);
-														infoMes; printf("[ACT] [%s] Theoretically another correctable test pattern is no exist....\r\n",
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-														);
-														infoMes; printf("[ACT] [%s] In other hands crrectable test pattern is only selected test pattern.\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-														);
-														
-																// if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-																// {
-																	// systemHoldMes;	printf("input : ");
-																	// scanf("%s", global_buf_KeyBoardInput);								
-																// }
-													}
-													#endif
-										}
-										else
-										{
-													#ifndef RELEASE
-													if(
-														(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-														(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-													)
-													{
-														printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-														infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-															(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-															(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
-														warningMes; printf("[ACT] [%s] Theoretically correctable test pattern is exist. Choosen TP(%d), Co-able TP(%d)\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-															main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_tmp_soft_i
-														);
-
-														if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-														{
-															debugMes; printf("[ACT] [%s] To test, find a reason why theoretically correctable test pattern is exist.\r\n", 
-																KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] 
-															);
-															systemHoldMes;	printf("input : ");
-															scanf("%s", global_buf_KeyBoardInput);								
-														}
-													}
-													#endif
-										}
-									}
-									else
-									{
-												#ifndef RELEASE
-												if(
-													(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-												)
-												{
-													printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-													infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-														(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
-													infoMes; printf("[ACT] [%s] Choosen TP(%d) has less degee(deg is '%d') of poly than t='%d'.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-												}
-												#endif
-									}
-								}
-								else
-								{//actually check can try correction? -> NO
-											#ifndef RELEASE
-											if(
-												(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-											)
-											{
-												printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-												infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-													(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
-												warningMes; printf("[ACT] [%s] Theoretically can correction but actually can not.\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-												
-												if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-												{
-													debugMes; printf("[ACT] [%s] To test, find a reason why theoretically can correction but actually can not\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													);
-													systemHoldMes;	printf("input : ");
-													scanf("%s", global_buf_KeyBoardInput);	
-												}
-											}
-											#endif
-								}
-							}
-							else
-							{//theoretically check can try correction? -> NO
-								if(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
-								{//actually check can try correction? -> NO
-									/*
-									if exist correctable test pattern?
-									from test pattern 0 to 2^p-1.
-									*/
-									for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-									{
-									/*
-									theoretically correctable testpattern checker. if being correctable testpattern exist, break out for statements.
-									if not exist it, main_tmp_soft_i is set to main_com_numsTP.
-									*/
-										if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]) break;
-									}
-									
-									if(main_tmp_soft_i==main_com_numsTP)
-									{
-												#ifndef RELEASE
-												if(
-													(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-												)
-												{
-													printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-													infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-														(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
-													infoMes; printf("[ACT] [%s] No test pattern to try correct.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													);
-													
-													infoMes; printf("[ACT] [%s] %s test pattern can %s try correction. All TP fail to dec-able flag is %s val = '%d'\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"Any":"Some"),
-														(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"not":""),
-														(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?" ON":"OFF"),
-														main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													 );
-												}
-												#endif
-									}
-									else
-									{
-									/*
-									theoretical and actual correctable test-patterns are exist.
-									*/
-												#ifndef RELEASE
-												if(
-													(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-													(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-												)
-												{
-													printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-													infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-														(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
-													warningMes; printf("[ACT] [%s] !!!! test pattern selecting is failure. Another correctable test pattern is exist.\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-													);
-													warningMesShort; printf("[ACT] [%s] !!!! Choosen TP(%d), co-able TP(%d)\r\n", 
-														KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-														main_tmp_soft_i
-													);
-													
-													if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-													{
-														debugMes; printf("[ACT] [%s] To test, find a reason why selecting is fail.\r\n", 
-															KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-														);
-														systemHoldMes;	printf("input : ");
-														scanf("%s", global_buf_KeyBoardInput);
-													}
-												}
-												#endif
-									}	
-								}
-								else
-								{//actually check can try correction? -> YES
-											#ifndef RELEASE
-											if(
-												(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-												(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-											)
-											{
-												printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-												warningMes; printf("[ACT] [%s] Theoretically, TP(%d) is flag is %s val='%d'. fail act-decoding flag is %s, val='%d'.\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-													main_indi_sel_TP_i[main_tmp_sel_decAlgo_i], 
-													(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"),
-													main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]],
-													(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
-													main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
-													
-												warningMesShort; printf("[ACT] [%s] Theoretically can not try correction but, acutally can.\r\n", 
-													KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-												);
-														if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-														{
-															debugMes; printf("[ACT] [%s] To test, find a reason why theoretically can not try correction but, acutally can.\r\n", 
-																KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-															);
-															systemHoldMes;	printf("input : ");
-															scanf("%s", global_buf_KeyBoardInput);								
-														}
-											}
-											#endif
-								}
-								
-
-							}
-						}
-
-						
-								#ifndef RELEASE
-								if(
-									(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-									(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-									(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-									(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-								)
-								{
-									printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
-
-									//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{
-										infoMes; printf("[ACT] [%s] %s test pattern can %s try correction. All TP fail to dec-able flag is %s val = '%d'\r\n", 
-										KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-										(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"All":"Some"),
-										(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"not":""),
-										(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?" ON":"OFF"),
-										main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-										 );
-									}
-									printf("\r\n\r\n");
-									
-									printf(">>>>> ******************************************************************** <<<<<\r\n");
-									printf(">>>>> ******************************************************************** <<<<<\r\n");
-								}
-								#endif
-						/************************************************************/
-						/******* check get BER actual mode fail condition end *******/
-						/************************************************************/
-						
-						
-						
-						
-						
-						/************************************************************/
-						/****** To update total error and bit count, setting up *****/
-						/********* selected test pattern error count start **********/
-						/************************************************************/
-						//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-						for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-						{
-							/* actual HD err cnt start */
-							if(!main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0])
-							{
-								/* Test pattern #0 is not dec fail */
-								main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0];
-							}
-							else
-							{
-								/* Test pattern #0 is decoding fail */
-								/* decoding fail handler */
-								switch(global_flag_case_dec_fail_handling)
-								{
-									default:
-									case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
-										// main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
-										main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
-									break;
-									
-									case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE:
-										main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-									break;
-									
-									case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION:
-										main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-										//not support yet
-									break;
-								}
-							}
-							/* actual HD err cnt end */
-							
-							/*
-							actual selected CW err cnt.
-							one or more test pattern can try correction.
-							*/
-							if(!main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
-							{
-								/* Selected Test Pattern is not decoding fail, update sel test patterb error ent  */
-								main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 
-								main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]];
-							}
-							
-							/*
-							all test pattern can not try correction.
-							selecting index change to test pattern 0.
-							if all patterns are decoding fail, get error count error bits before error correction.
-							*/
-							else
-							{
-								/* Selected Test Pattern is decoding fail */
-								
-								/* decoding fail handler */
-								switch(global_flag_case_dec_fail_handling)
-								{
-									default:
-									case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
-										main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-										
-										// main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
-										main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
-									break;
-									
-									case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE:
-										main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-									break;
-									
-									case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION:
-										//not support yet
-										main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
-									break;
-								}
-							}
-
-											if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
-											{
-												printf("[ACT] /**************************************************************************/\r\n");
-												infoMes; printf("[ACT] Error cnt varification.\r\n");
-												infoMes; printf("[ACT] main_indi_list_errCntOf_TP_afterDec[][%d] = '%d'\r\n", main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
-												infoMes; printf("[ACT] main_indi_sel_TP_errCnt[] = '%d'\r\n", main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-												infoMes; printf("[ACT] BEFORE) main_indi_total_err_cnt_CW[] = '%ld'\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-											}
-											
-							for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-							{
-								// closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)));
-								closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-							}
-
-						}
-						/************************************************************/
-						/****** To update total error and bit count, setting up *****/
-						/********** selected test pattern error count end ***********/
-						/************************************************************/
-						
-						
-									/* verification update start */
-									cmd_tmp_cnt = -1;
-									for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-									{
-										if(
-											(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-											(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)
-										)
-										{
-											infoMes; printf("[ACT] err cnt in channel = %d, tp[0] err cnt = %d\r\n", main_com_channel_errCnt, main_indi_list_errCntOf_TP_beforeDec[0]);
-											
-											infoMes; printf("[ACT] [%s] decoding All fail flag is %s(=%d)\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-												(main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"ON":"OFF"),
-												main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-											);
-
-											infoMes; printf("[ACT] [%s] algorithm select TP[%d] and TP[%d] distance with encoded codeword = %d\r\n", 
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-												main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-												main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-											);
-
-											infoMes; printf("[ACT] [%s] algorithm sel TP[%d] distance of selTP = %d, updated errCnt = %d\r\n",
-												KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-												main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]],
-												main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-											);
-											
-											if(cmd_tmp_cnt == -1) cmd_tmp_cnt = main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]];
-											else
-											{
-												if(cmd_tmp_cnt < main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
-												{
-													debugMes; printf("[ACT] cmd_tmp_cnt = %d < main_indi_list_errCntOf_TP_afterDec of %d = %d\r\n", 
-														cmd_tmp_cnt,
-														(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
-														main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-													);
-													systemHoldMes;	printf("input : ");
-													scanf("%s", global_buf_KeyBoardInput);	
-												}
-											}
-										}
-									}
-									/* verification update start */
-
-						
-						
-					}
-					break;
-					
-					default:
-						errorMes;
-						printf("Get BER mode is not selected so, can't procedure program.\r\n");
-						printf("Program is closed forcibly.\r\n");
-						return -1;
-						break;
-				}
+                                        #ifndef RELEASE
+                                        if(
+                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                        )
+                                        {
+                                            printf(">>>>> *************************************************************** <<<<<\r\n");
+                                        }
+                                        #endif
+                            /************************************************************/
+                            /******* check get BER actual mode fail condition end *******/
+                            /************************************************************/
+                            
+                            
+                            
+                            
+                            
 
 
-				
+                            
+                            /************************************************************/
+                            /****** check get BER actual mode fail condition start ******/
+                            /************************************************************/
+                                    #ifndef RELEASE
+                                    if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+                                    {
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
 
-				/***********************************************************************************************/
-				/*************** Total channel and coding error bits, transfer bits, calculation ***************/
-				/***********************************************************************************************/
-				//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-				for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-				{
-					main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+=(unsigned long)main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]; //printf("main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] %d\n", main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
-					main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+=(unsigned long)main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]; //printf("main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] %d\n", main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
-				}
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes; printf("[ACT] [%s] algorithm select #%d-th test-pattern\r\n" , 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
 
-				main_com_total_err_cnt_CH+=(unsigned long)main_com_channel_errCnt;	//printf("main_com_channel_errCnt %d\n", main_com_channel_errCnt);
-				main_com_total_bit+=(unsigned long)main_com_codeLength;
+                                            for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                            {
+                                                infoMes;	printf("[ACT] [%s](%c)TP(%d) ",
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                                ((main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]==main_tmp_soft_i)?'v':' '),
+                                                                main_tmp_soft_i
+                                                            );
+                                                            printf("flag theo(%s, v='%d'), ",
+                                                                (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
+                                                                main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                                            printf("actFail(%s, v='%d'), ",
+                                                                (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
+                                                                main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                                                
+                                                            printf("0-synd(Bf)%s, v='%d'), (Af)(%s, v='%d'), ", 
+                                                                (main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
+                                                                main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i],
+                                                                                                                            
+                                                                (main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
+                                                                main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                                            printf("E.P.N max(%s, v='%d'), ", 
+                                                                (main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]?" ON":"OFF"), 
+                                                                main_indi_list_flag_degOfErrLocPolyNotMax[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                                                
+                                                            printf("t='%d', errCnt(BF='%d', AF='%d'), ", 
+                                                                main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                                main_indi_list_errCntOf_TP_beforeDec[main_tmp_soft_i],
+                                                                main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                                            
+                                                            printf("degE.Loc.P='%d', met.Chk='%d' = same='%d'\r\n",
+                                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly,
+                                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck,
+                                                                main_indi_list_flag_metricChk_degErrLocPolySame[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]
+                                                            );
+                                            }
+                                            infoMes; printf("[ACT] [%s] decoding All fail flag is %s(=%d)\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"ON":"OFF"),
+                                                main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
+                                            infoMes; printf("[ACT [%s] algorithm select TP[%d] and TP[%d] distance with encoded codeword = %d\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                            );
+                                            
+                                        }
+                                        
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            for(cmd_tmp_i=0; cmd_tmp_i<processingUseThisAlgorithm->length; cmd_tmp_i++)
+                                            {
+                                                if(
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    !=
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))]
+                                                )
+                                                {
+                                                    warningMesShort; printf("[%s] has sel tp = '%d', [%s] has sel tp = '%d'\r\n",
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))]
+                                                    );
+                                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                    // {
+                                                        systemHoldMes;	printf("input : ");
+                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                    // }
+                                                }
+                                            }
 
-				
-										if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
-										{
-											//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-											for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-											{
-												infoMes; printf("AFTER) main_indi_total_err_cnt_CW[] = '%ld'\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-												printf("/**************************************************************************/\r\n");												
-											}
-										}
-				
-				// printf(",M_ToT_CW_ER[%ld], ONE_CW_ER[%d]", main_indi_total_err_cnt_CW[KIND_OF_BCH_DECODING_BM], main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
-				// printf("M_ToT_CH_ER[%ld], ONE_CH_ER%d", main_com_total_err_cnt_CH, main_com_channel_errCnt);
-				// printf("M_ToT_BITs[%ld]\n", main_com_total_bit);
+                                        }
+                                                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                                        {
+                                                                            systemHoldMes;	printf("input : ");
+                                                                            scanf("%s", global_buf_KeyBoardInput);
+                                                                        }
+                                    
+                                        infoMes; printf("[ACT] Minumum LLR location and Values\r\n");
+                                        testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
+                                        // printf("squreRootBpskReceivedDataAddedAwgn = '%g'\r\n", main_com_bpskComponents->squreRootBpskReceivedDataAddedAwgn);
+                                        // printf("squreRootAvrLLR = '%g'\r\n", main_com_bpskComponents->bpskReceivedLLR->squreRootAvrLLR);
 
-				/***********************************************************************************************/
-				/*************** Total channel and coding error bits, transfer bits, calculation ***************/
-				/***********************************************************************************************/
-			}
-			/**************************************************************/
-			/************* (Global Flag) AWGN simulation end **************/
-			/**************************************************************/
-						if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
-						{
-							//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-							for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-							{
-								infoMes; printf("total coding error bits nums\t: %ld, one codeword coding error bits nums\t: %d\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-							}
-							infoMes; printf("total channel error nums\t: %ld, one codeword channel error nums\t: %d\r\n", main_com_total_err_cnt_CH, main_com_channel_errCnt);
-							infoMes; printf("total bit nums\t: %ld, one codeword bit nums\t: %d\r\n", main_com_total_bit, main_com_codeLength);								
-						}
-		}
-	/*****************************************************************************/
-	/*****************************************************************************/
-	/******************** simulation main_com_loopCount loop end *********************/
-	/*****************************************************************************/
-	/*****************************************************************************/
+                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                        infoMes; printf("[ACT] >>>>>/***** selection selected test pattern infomation. *****/<<<<<\r\n");
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes;	printf("[ACT] [%s] Selected test pattern is '#%d', TP(%d)\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                        );
+                                        }
+                                        printf("\r\n");
+                                        
+                                        infoMes; printf("[ACT] Encoded Vector is below...\r\n");
+                                        printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                                        infoMes; printf("[ACT] Received Vector is below...\r\n");
+                                        printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->erroredCodeWord);
+                                        printf("\r\n");
 
-		printf("/*********************** Simulation Report ***********************/\r\n");
-		//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-		for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-		{
-			resultMes;	printf("[%s], %s has = %ld bit errs\ttotal bit cnt = %ld\tchannel err bit cnt =%ld\r\n", 
-							global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION?"Soft-Decision":
-							global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION?"Hard-Decision":
-							"UNKN-Decision",
-							
-							KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-							main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-							main_com_total_bit, 
-							main_com_total_err_cnt_CH
-						);
-		}
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes; printf("[ACT] [%s] >>> TP(%d), Error location polynomial <<<\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
+                                                            printf("ADDR : 0x%x\r\n", (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly);
+                                                            
+                                            printGaloisField2(
+                                                main_com_used_GF->nonSorted, 
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, 
+                                                PRINT_FIELD_EQUATION_TITLE, 
+                                                PRINT_FIELD_PRINT_OPTION_NUMBERING
+                                            );
+                                            infoMes; printf("[ACT] [%s] degree of TP(%d) err loc poly is '%d'\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly
+                                            );
+                                        }
+                                        printf("\r\n");
 
 
-		//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-		main_com_channel_BER = (double)main_com_total_err_cnt_CH / (double)main_com_total_bit;
-		
-		resultMes; printf("EbN0 : %g\r\n", main_com_EbN0);
-		resultMes; printf("[Ch]BER\t: %g\r\n", main_com_channel_BER);
-		for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-		{
-			main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
-			main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            printf("[ACT] [%s] TP(%d), Error Location Vector is...\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
+                                            printPowerFormWithEnterPolynomialWithEnterUsingAddress(
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector
+                                            );
+                                            infoMes; printf("[ACT] [%s] Metric Check value of TP(%d) is '%d'\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck
+                                            );
+                                        }
+                                        printf("\r\n");
 
-			resultMes; printf("[%s] BER\t: %g(Static HD)\r\n",  KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
-			resultMes; printf("[%s] BER\t: %g(Mode : %s)\r\n", 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-				main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
-					global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION?"SD":
-					global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION?"HD":
-					"UNKN"
-				);
-		}
-		
-		// printf("LLR MAX : \'%.2f\'\tLLR MIN : \'%.2f\'\r\n", LLR_MAX, LLR_MIN);
-		
-		resultMes; printf("in loop %ld, test_fileIO_errorCorrectingCount is %d\r\n", main_com_totalSamlingLoop, test_fileIO_errorCorrectingCount);
-		printExcutingTime(&time_EbN0_start);
-		printf("/*****************************************************************/\r\n");
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes;	printf("[ACT] [%s] Selected TP '#%d', err distans before decoding of TP[%d] = %d\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                            );
+                                            infoMes;	printf("[ACT] [%s] %s TP #%d Decording %d", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP)"), 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                            );
+                                        }
+                                        printf("\r\n");
 
-		/*******************************************************/
-		/*******************************************************/
-		/******************** REPORT OUTPUT ********************/
-		/*******************************************************/
-		/*******************************************************/
-		fprintf(fileio_channelBER, "@%g, CH_BER : %g\r\n", main_com_EbN0, main_com_channel_BER);
-		
-		fprintf(fileio_total_bit_cnt, "@%g, Total Bit Cnt : %ld\r\n", main_com_EbN0, main_com_total_bit);
-		fprintf(fileio_channel_err_bit_cnt, "@%g, Channel Err Cnt : %ld\r\n", main_com_EbN0, main_com_total_err_cnt_CH);
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes;	printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
+                                            printSyndromeArray(
+                                                (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->syndrome, 
+                                                main_com_used_GF->nonSorted
+                                            );
+                                            
+                                            /* errLocSyndrome is only valud in BM algorithm start */
+                                            // infoMes;	printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
+                                            // printSyndromeArray(
+                                                // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))->errLocSyndrome, 
+                                                // main_com_used_GF->nonSorted
+                                            // );
+                                            /* errLocSyndrome is only valud in BM algorithm end */
+                                            
+                                            /* sum syndromes of receive and err loc is only valid in BM algorithm start */
+                                            // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                                            // {
+                                                // infoMes;	printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
+                                                // printSyndromeArray(
+                                                // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_indi_sel_TP_i[KIND_OF_BCH_DECODING_BM])))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
 
-		
-		//(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
-		for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-		{
-			fprintf(fileio_codingBER, "@%g, [%s] BER : %g\r\n", 
-				main_com_EbN0, 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
-				main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-			);
+                                                // infoMes;	printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n", 
+                                                    // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    // (main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                    // main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] 
+                                                // );
+                                            // }
+                                            /* sum syndromes of receive and err loc is only valid in BM algorithm end */
+                                        }
+                                        printf("\r\n");
 
-			fprintf(fileio_indi_algorithm_coding_HD_BER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "[%s(HD)] BER : %g\r\n", 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
-				main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-			);
-			
-			fprintf(fileio_indi_algorithm_codingBER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "[%s] BER : %g\r\n", 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
-				main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-			);
-			
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            if(!main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
+                                            {
+                                                printf("[%s] [ SUCCESS (e='%d') ]\r\n",
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
+                                            }
+                                            else
+                                            {
+                                                printf("[%s] [ FAIL (e='%d') ]\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
+                                            }
+                                            infoMes; printf("[ACT] [%s] Theoretically being correctable flag of TP(%d) is %s, value = %d\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
+                                            infoMes; printf("[ACT] [%s] Actually being not correctable flag of TP(%d) is %s, value = %d\r\n", 
+                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
+                                        }
+                                        printf("\r\n");
 
-			// main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
-			fprintf(fileio_indi_algorithm_coding_HD_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s(HD)] ERR Cnt : %ld\r\n",
-				main_com_EbN0, 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
-				main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-			);
-			
-			// main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
-			fprintf(fileio_indi_algorithm_coding_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s] Err Cnt : %ld\r\n", 
-				main_com_EbN0, 
-				KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
-				main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-			);
-		}
-		fprintf(fildio_EbN0, "%g\r\n", main_com_EbN0);
-		fprintf(fildio_loop_Cnt, "%ld\r\n", main_com_totalSamlingLoop);
-	}
+                                    }
+                                    #endif
+                            
 
-    break;
-}
+                            
+                            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])//theoretically check can try correction?
+                                {//theoretically check can try correction? -> YES
+                                    if(!main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
+                                    {//actually check can try correction? -> YES
+                                        /*
+                                        Corrected bits number is maximum(t=e+-p), choosing algorithm that correctable test-pattern can have some discrepancy.
+                                        So check this, degreeOfErrLocPoly and main_com_hd_correctability are same.
+                                        */
+                                        if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly == main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] ) 
+                                        {//check to discrepancy of select condition of correctable test pattern.
+                                            /*
+                                            chk from test pattern 0 to 2^p - 1 and start to 0.
+                                            Because priority is higher than low numbered test pattern.
+                                            */
+                                            for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                            {
+                                                if(main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] == main_tmp_soft_i) continue;//except selected test pattern.
+                                                if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
+                                                {//check candidate testpattern is theoretically correctable? -> YES
+                                                    /*
+                                                    check that non selected test pattern is correctable?
+                                                    */
+                                                    if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck )
+                                                    {//check that non selected test pattern is correctable? -> YES
+                                                        if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly )
+                                                        {//Same condition with selected test-pattern? -> YES
+                                                                    #ifndef RELEASE
+                                                                    if(
+                                                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                                    )
+                                                                    {
+                                                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                                        warningMes; printf("[ACT] [%s] !!!! test pattern selecting is success, just for chk condition and right case.\r\n", 
+                                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                                        );
+
+                                                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                                        {
+                                                                            systemHoldMes;	printf("input : ");
+                                                                            scanf("%s", global_buf_KeyBoardInput);
+                                                                        }
+                                                                    }
+                                                                    #endif
+                                                        }
+                                                        else
+                                                        {//Same condition with selected test-pattern? -> NO
+                                                            //can be passing
+                                                            //DO NOTHING...
+                                                            //DO NOTHING...
+                                                            //DO NOTHING...
+                                                        }
+                                                    }
+                                                    else
+                                                    {//check that non selected test pattern is correctable? -> NO
+                                                        //DO NOTHING...
+                                                        //DO NOTHING... 
+                                                        //DO NOTHING...
+                                                    }
+                                                }
+                                                else
+                                                {//check candidate testpattern is theoretically correctable? -> NO
+                                                    //DO NOTHING...
+                                                    //DO NOTHING...
+                                                    //DO NOTHING...
+                                                }
+                                            }
+                                            
+                                            if(main_tmp_soft_i==main_com_numsTP)
+                                            {
+                                                        #ifndef RELEASE
+                                                        if(
+                                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                        )
+                                                        {
+                                                            printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                            infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                                (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                                (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF")
+                                                            );
+                                                            infoMes; printf("[ACT] [%s] Theoretically another correctable test pattern is no exist....\r\n",
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                            );
+                                                            infoMes; printf("[ACT] [%s] In other hands crrectable test pattern is only selected test pattern.\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                            );
+                                                            
+                                                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                                    // {
+                                                                        // systemHoldMes;	printf("input : ");
+                                                                        // scanf("%s", global_buf_KeyBoardInput);
+                                                                    // }
+                                                        }
+                                                        #endif
+                                            }
+                                            else
+                                            {
+                                                        #ifndef RELEASE
+                                                        if(
+                                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                        )
+                                                        {
+                                                            printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                            infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                                (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                                (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
+                                                            warningMes; printf("[ACT] [%s] Theoretically correctable test pattern is exist. Choosen TP(%d), Co-able TP(%d)\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_tmp_soft_i
+                                                            );
+
+                                                            if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                            {
+                                                                debugMes; printf("[ACT] [%s] To test, find a reason why theoretically correctable test pattern is exist.\r\n", 
+                                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] 
+                                                                );
+                                                                systemHoldMes;	printf("input : ");
+                                                                scanf("%s", global_buf_KeyBoardInput);
+                                                            }
+                                                        }
+                                                        #endif
+                                            }
+                                        }
+                                        else
+                                        {
+                                                    #ifndef RELEASE
+                                                    if(
+                                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                    )
+                                                    {
+                                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                        infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                            (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
+                                                        infoMes; printf("[ACT] [%s] Choosen TP(%d) has less degee(deg is '%d') of poly than t='%d'.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                    }
+                                                    #endif
+                                        }
+                                    }
+                                    else
+                                    {//actually check can try correction? -> NO
+                                                #ifndef RELEASE
+                                                if(
+                                                    (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                )
+                                                {
+                                                    printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                    infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                        (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
+                                                    warningMes; printf("[ACT] [%s] Theoretically can correction but actually can not.\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                    
+                                                    if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                    {
+                                                        debugMes; printf("[ACT] [%s] To test, find a reason why theoretically can correction but actually can not\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                        );
+                                                        systemHoldMes;	printf("input : ");
+                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                    }
+                                                }
+                                                #endif
+                                    }
+                                }
+                                else
+                                {//theoretically check can try correction? -> NO
+                                    if(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
+                                    {//actually check can try correction? -> NO
+                                        /*
+                                        if exist correctable test pattern?
+                                        from test pattern 0 to 2^p-1.
+                                        */
+                                        for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                        {
+                                        /*
+                                        theoretically correctable testpattern checker. if being correctable testpattern exist, break out for statements.
+                                        if not exist it, main_tmp_soft_i is set to main_com_numsTP.
+                                        */
+                                            if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]) break;
+                                        }
+                                        
+                                        if(main_tmp_soft_i==main_com_numsTP)
+                                        {
+                                                    #ifndef RELEASE
+                                                    if(
+                                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                    )
+                                                    {
+                                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                        infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                            (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
+                                                        infoMes; printf("[ACT] [%s] No test pattern to try correct.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                        );
+                                                        
+                                                        infoMes; printf("[ACT] [%s] %s test pattern can %s try correction. All TP fail to dec-able flag is %s val = '%d'\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"Any":"Some"),
+                                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"not":""),
+                                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?" ON":"OFF"),
+                                                            main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                         );
+                                                    }
+                                                    #endif
+                                        }
+                                        else
+                                        {
+                                        /*
+                                        theoretical and actual correctable test-patterns are exist.
+                                        */
+                                                    #ifndef RELEASE
+                                                    if(
+                                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                    )
+                                                    {
+                                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                        infoMes; printf("[ACT] [%s] Theoretically can falg is %s, actual fail flag is %s.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                            (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF") );
+                                                        warningMes; printf("[ACT] [%s] !!!! test pattern selecting is failure. Another correctable test pattern is exist.\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                        );
+                                                        warningMesShort; printf("[ACT] [%s] !!!! Choosen TP(%d), co-able TP(%d)\r\n", 
+                                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                            main_tmp_soft_i
+                                                        );
+                                                        
+                                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                        {
+                                                            debugMes; printf("[ACT] [%s] To test, find a reason why selecting is fail.\r\n", 
+                                                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                            );
+                                                            systemHoldMes;	printf("input : ");
+                                                            scanf("%s", global_buf_KeyBoardInput);
+                                                        }
+                                                    }
+                                                    #endif
+                                        }
+                                    }
+                                    else
+                                    {//actually check can try correction? -> YES
+                                                #ifndef RELEASE
+                                                if(
+                                                    (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                    (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                                )
+                                                {
+                                                    printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+                                                    warningMes; printf("[ACT] [%s] Theoretically, TP(%d) is flag is %s val='%d'. fail act-decoding flag is %s, val='%d'.\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                                        main_indi_sel_TP_i[main_tmp_sel_decAlgo_i], 
+                                                        (main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"),
+                                                        main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]],
+                                                        (main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"), 
+                                                        main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] );
+                                                        
+                                                    warningMesShort; printf("[ACT] [%s] Theoretically can not try correction but, acutally can.\r\n", 
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                    );
+                                                            if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                            {
+                                                                debugMes; printf("[ACT] [%s] To test, find a reason why theoretically can not try correction but, acutally can.\r\n", 
+                                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                                );
+                                                                systemHoldMes;	printf("input : ");
+                                                                scanf("%s", global_buf_KeyBoardInput);
+                                                            }
+                                                }
+                                                #endif
+                                    }
+                                    
+
+                                }
+                            }
+
+                            
+                                    #ifndef RELEASE
+                                    if(
+                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                    )
+                                    {
+                                        printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
+
+                                        //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            infoMes; printf("[ACT] [%s] %s test pattern can %s try correction. All TP fail to dec-able flag is %s val = '%d'\r\n", 
+                                            KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"All":"Some"),
+                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"not":""),
+                                            (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?" ON":"OFF"),
+                                            main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                             );
+                                        }
+                                        printf("\r\n\r\n");
+                                        
+                                        printf(">>>>> ******************************************************************** <<<<<\r\n");
+                                        printf(">>>>> ******************************************************************** <<<<<\r\n");
+                                    }
+                                    #endif
+                            /************************************************************/
+                            /******* check get BER actual mode fail condition end *******/
+                            /************************************************************/
+                            
+                            
+                            
+                            
+                            
+                            /************************************************************/
+                            /****** To update total error and bit count, setting up *****/
+                            /********* selected test pattern error count start **********/
+                            /************************************************************/
+                            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            {
+                                /* actual HD err cnt start */
+                                if(!main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0])
+                                {
+                                    /* Test pattern #0 is not dec fail */
+                                    main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][0];
+                                }
+                                else
+                                {
+                                    /* Test pattern #0 is decoding fail */
+                                    /* decoding fail handler */
+                                    switch(global_flag_case_dec_fail_handling)
+                                    {
+                                        default:
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
+                                            // main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                            main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                        break;
+                                        
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE:
+                                            main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                        break;
+                                        
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION:
+                                            main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                            //not support yet
+                                        break;
+                                    }
+                                }
+                                /* actual HD err cnt end */
+                                
+                                /*
+                                actual selected CW err cnt.
+                                one or more test pattern can try correction.
+                                */
+                                if(!main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
+                                {
+                                    /* Selected Test Pattern is not decoding fail, update sel test patterb error ent  */
+                                    main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 
+                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]];
+                                }
+                                
+                                /*
+                                all test pattern can not try correction.
+                                selecting index change to test pattern 0.
+                                if all patterns are decoding fail, get error count error bits before error correction.
+                                */
+                                else
+                                {
+                                    /* Selected Test Pattern is decoding fail */
+                                    
+                                    /* decoding fail handler */
+                                    switch(global_flag_case_dec_fail_handling)
+                                    {
+                                        default:
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
+                                            main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                            
+                                            // main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                            main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                        break;
+                                        
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE:
+                                            main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                        break;
+                                        
+                                        case FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION:
+                                            //not support yet
+                                            main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
+                                        break;
+                                    }
+                                }
+
+                                                if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
+                                                {
+                                                    printf("[ACT] /**************************************************************************/\r\n");
+                                                    infoMes; printf("[ACT] Error cnt varification.\r\n");
+                                                    infoMes; printf("[ACT] main_indi_list_errCntOf_TP_afterDec[][%d] = '%d'\r\n", main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]);
+                                                    infoMes; printf("[ACT] main_indi_sel_TP_errCnt[] = '%d'\r\n", main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                    infoMes; printf("[ACT] BEFORE) main_indi_total_err_cnt_CW[] = '%ld'\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                }
+                                                
+                                for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                {
+                                    // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)));
+                                    closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                                }
+
+                            }
+                            /************************************************************/
+                            /****** To update total error and bit count, setting up *****/
+                            /********** selected test pattern error count end ***********/
+                            /************************************************************/
+                            
+                            
+                                        /* verification update start */
+                                        cmd_tmp_cnt = -1;
+                                        for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                        {
+                                            if(
+                                                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)
+                                            )
+                                            {
+                                                infoMes; printf("[ACT] err cnt in channel = %d, tp[0] err cnt = %d\r\n", main_com_channel_errCnt, main_indi_list_errCntOf_TP_beforeDec[0]);
+                                                
+                                                infoMes; printf("[ACT] [%s] decoding All fail flag is %s(=%d)\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    (main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]?"ON":"OFF"),
+                                                    main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                );
+
+                                                infoMes; printf("[ACT] [%s] algorithm select TP[%d] and TP[%d] distance with encoded codeword = %d\r\n", 
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                                );
+
+                                                infoMes; printf("[ACT] [%s] algorithm sel TP[%d] distance of selTP = %d, updated errCnt = %d\r\n",
+                                                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]],
+                                                    main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                );
+                                                
+                                                if(cmd_tmp_cnt == -1) cmd_tmp_cnt = main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]];
+                                                else
+                                                {
+                                                    if(cmd_tmp_cnt < main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
+                                                    {
+                                                        debugMes; printf("[ACT] cmd_tmp_cnt = %d < main_indi_list_errCntOf_TP_afterDec of %d = %d\r\n", 
+                                                            cmd_tmp_cnt,
+                                                            (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
+                                                            main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                                        );
+                                                        systemHoldMes;	printf("input : ");
+                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        /* verification update start */
+
+                            
+                            
+                        }
+                        break;
+                        
+                        default:
+                            errorMes;
+                            printf("Get BER mode is not selected so, can't procedure program.\r\n");
+                            printf("Program is closed forcibly.\r\n");
+                            return -1;
+                            break;
+                    }
+
+
+                    
+
+                    /***********************************************************************************************/
+                    /*************** Total channel and coding error bits, transfer bits, calculation ***************/
+                    /***********************************************************************************************/
+                    //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                    for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    {
+                        main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+=(unsigned long)main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]; //printf("main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] %d\n", main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
+                        main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+=(unsigned long)main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]; //printf("main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] %d\n", main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
+                    }
+
+                    main_com_total_err_cnt_CH+=(unsigned long)main_com_channel_errCnt;	//printf("main_com_channel_errCnt %d\n", main_com_channel_errCnt);
+                    main_com_total_bit+=(unsigned long)main_com_codeLength;
+
+                    
+                                            if((global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
+                                            {
+                                                //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                                for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                                {
+                                                    infoMes; printf("AFTER) main_indi_total_err_cnt_CW[] = '%ld'\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                                    printf("/**************************************************************************/\r\n");
+                                                }
+                                            }
+                    
+                    // printf(",M_ToT_CW_ER[%ld], ONE_CW_ER[%d]", main_indi_total_err_cnt_CW[KIND_OF_BCH_DECODING_BM], main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
+                    // printf("M_ToT_CH_ER[%ld], ONE_CH_ER%d", main_com_total_err_cnt_CH, main_com_channel_errCnt);
+                    // printf("M_ToT_BITs[%ld]\n", main_com_total_bit);
+
+                    /***********************************************************************************************/
+                    /*************** Total channel and coding error bits, transfer bits, calculation ***************/
+                    /***********************************************************************************************/
+                }
+                /**************************************************************/
+                /************* (Global Flag) AWGN simulation end **************/
+                /**************************************************************/
+                            if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS))
+                            {
+                                //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+                                for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                                {
+                                    infoMes; printf("total coding error bits nums\t: %ld, one codeword coding error bits nums\t: %d\r\n", main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                                }
+                                infoMes; printf("total channel error nums\t: %ld, one codeword channel error nums\t: %d\r\n", main_com_total_err_cnt_CH, main_com_channel_errCnt);
+                                infoMes; printf("total bit nums\t: %ld, one codeword bit nums\t: %d\r\n", main_com_total_bit, main_com_codeLength);
+                            }
+            }
+        /*****************************************************************************/
+        /*****************************************************************************/
+        /******************** simulation main_com_loopCount loop end *********************/
+        /*****************************************************************************/
+        /*****************************************************************************/
+
+            printf("/*********************** Simulation Report ***********************/\r\n");
+            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+            {
+                resultMes;	printf("[%s], %s has = %ld bit errs\ttotal bit cnt = %ld\tchannel err bit cnt =%ld\r\n", 
+                                global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION?"Soft-Decision":
+                                global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION?"Hard-Decision":
+                                "UNKN-Decision",
+                                
+                                KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                                main_com_total_bit, 
+                                main_com_total_err_cnt_CH
+                            );
+            }
+
+
+            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+            main_com_channel_BER = (double)main_com_total_err_cnt_CH / (double)main_com_total_bit;
+            
+            resultMes; printf("EbN0 : %g\r\n", main_com_EbN0);
+            resultMes; printf("[Ch]BER\t: %g\r\n", main_com_channel_BER);
+            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+            {
+                main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+
+                resultMes; printf("[%s] BER\t: %g(Static HD)\r\n",  KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
+                resultMes; printf("[%s] BER\t: %g(Mode : %s)\r\n", 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                    main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))], 
+                        global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION?"SD":
+                        global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION?"HD":
+                        "UNKN"
+                    );
+            }
+            
+            // printf("LLR MAX : \'%.2f\'\tLLR MIN : \'%.2f\'\r\n", LLR_MAX, LLR_MIN);
+            
+            resultMes; printf("in loop %ld, test_fileIO_errorCorrectingCount is %d\r\n", main_com_totalSamlingLoop, test_fileIO_errorCorrectingCount);
+            printExcutingTime(&time_EbN0_start);
+            printf("/*****************************************************************/\r\n");
+
+            /*******************************************************/
+            /*******************************************************/
+            /******************** REPORT OUTPUT ********************/
+            /*******************************************************/
+            /*******************************************************/
+            fprintf(fileio_channelBER, "@%g, CH_BER : %g\r\n", main_com_EbN0, main_com_channel_BER);
+            
+            fprintf(fileio_total_bit_cnt, "@%g, Total Bit Cnt : %ld\r\n", main_com_EbN0, main_com_total_bit);
+            fprintf(fileio_channel_err_bit_cnt, "@%g, Channel Err Cnt : %ld\r\n", main_com_EbN0, main_com_total_err_cnt_CH);
+
+            
+            //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
+            for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+            {
+                fprintf(fileio_codingBER, "@%g, [%s] BER : %g\r\n", 
+                    main_com_EbN0, 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
+                    main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                );
+
+                fprintf(fileio_indi_algorithm_coding_HD_BER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "[%s(HD)] BER : %g\r\n", 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
+                    main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                );
+                
+                fprintf(fileio_indi_algorithm_codingBER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "[%s] BER : %g\r\n", 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
+                    main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                );
+                
+
+                // main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                fprintf(fileio_indi_algorithm_coding_HD_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s(HD)] ERR Cnt : %ld\r\n",
+                    main_com_EbN0, 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
+                    main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                );
+                
+                // main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                fprintf(fileio_indi_algorithm_coding_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s] Err Cnt : %ld\r\n", 
+                    main_com_EbN0, 
+                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],  
+                    main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                );
+            }
+            fprintf(fildio_EbN0, "%g\r\n", main_com_EbN0);
+            fprintf(fildio_loop_Cnt, "%ld\r\n", main_com_totalSamlingLoop);
+        }
+
+        break;
+    }
 /*******************************************************************/
 /*******************************************************************/
 /******************** simulation EbN0 loop end *********************/
@@ -24039,11 +23935,10 @@ switch(global_flag_case_sim_testOpt)
 /*******************************************************/
 	fclose(fileio_channelBER);
 	fclose(fileio_codingBER);
-	
+
 	fclose(fileio_total_bit_cnt);
 	fclose(fileio_channel_err_bit_cnt);
-	
-	
+
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
 	{
 		fclose(fileio_indi_algorithm_coding_HD_BER\
@@ -24062,12 +23957,10 @@ switch(global_flag_case_sim_testOpt)
 	}
 	free(fileio_indi_algorithm_coding_HD_BER);
 	free(fileio_indi_algorithm_codingBER);
-	
-	
+
 	fclose(fileio_channelFER);
 	fclose(fileio_codingFER);
 
-	
 	fclose(fildio_EbN0);
 	fclose(fildio_loop_Cnt);
 /*******************************************************/
@@ -24203,12 +24096,11 @@ switch(global_flag_case_sim_testOpt)
 
 	closeErrorComponent(&main_com_errComponents);
 
-	
 	closeGaloisFieldExceptElements(&main_com_expandEqOfLcmFromRoot);
 	free(main_com_genPoly);
 	main_com_genPoly=NULL;
 	closeEncodingComponent(&main_encodingComponentInGF);
-	
+
 	closeBpskComponents(&main_com_bpskComponents);
 
 	for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
@@ -24228,15 +24120,11 @@ switch(global_flag_case_sim_testOpt)
 
 
 	closeGaloisFieldExceptElements(&main_com_expandEqOfLcmFromRoot);
-	
-	
-	
 
-	
-	
+
 	printf("[Simulation Time]"); printExcutingTime(&time_program_init);
-	
-	
+
+
 	printf("\r\n\r\n");
 	infoMes;
 	printf("number of arguments is %d\r\n",argc);
@@ -24246,7 +24134,6 @@ switch(global_flag_case_sim_testOpt)
 	}
 	printf("\r\n");
 
-	
-	
+
 	return 0;
 }
