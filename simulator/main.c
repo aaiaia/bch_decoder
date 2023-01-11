@@ -3885,7 +3885,6 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 
     unsigned int load_intVal;
     unsigned int load_index;
-    // char load_exp_str[256]={0};
     char load_exp_char=0;
     unsigned int load_exp_integer=0;
 
@@ -4600,7 +4599,6 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
 } */
 struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column)
 {
-    unsigned int i,j;
     struct_summationMatrix *p;
 
     p=createSummationMatrix_emptySpace(in_row, in_column);
@@ -4615,7 +4613,6 @@ struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galois
 void printSummationMatrixSavedForm(struct_summationMatrix *p)
 {
     unsigned int tmp_i,tmp_j;
-    unsigned int exponentialTemp;
 
     #ifndef RELEASE
     if(!p)
@@ -4755,7 +4752,6 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
     unsigned int load_column;
 
     unsigned int load_index;
-    // char load_exp_str[256]={0};
     char load_exp_char=0;
     unsigned int load_exp_integer=0;
 
@@ -4919,10 +4915,6 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
-    unsigned int i;
-
-    u_int_GALOIS_FIELD_INTEGER temp;
-
     #ifndef RELEASE
     if(!field)
     {
@@ -5889,7 +5881,6 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 
     FILE *fileio_load_setOfGaloisField;
 
-    unsigned int primitivePoly_length=0;
     char load_primitivePoly[1025];
 
     int load_kindOfData=0;
@@ -5897,20 +5888,14 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 
     unsigned int load_bitWidth=0;
     unsigned int load_setOfGF_length=0;
-    unsigned int load_row=0;
     unsigned int *load_column=NULL;
 
     unsigned int load_index;
-    // char load_exp_str[256]={0};
-    char load_exp_char=0;
     unsigned int load_exp_integer=0;
 
     unsigned int load_integer=0;
 
     char load_stringBuf[1025]={0};
-
-    unsigned int chk_incorrectFormCnt=0;
-    unsigned int chk_incorrectDataCnt=0;
 
     if(!path)            return -1;
     if(!primitivePoly)    return -2;
@@ -6132,7 +6117,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 {
     char *elementFlagger;
 
-    unsigned int i, j;
+    unsigned int i;
     unsigned int selectedConjugacySet;
     unsigned int selectedElementOfConjugacy;
 
@@ -6720,9 +6705,7 @@ struct struct_galoisField_info
 //////////////////////////////////////////////////////////////////////////////////
 void printGaloisField(struct_galoisFieldElements *p)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6765,9 +6748,7 @@ void printGaloisField(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6816,9 +6797,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 
 void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoisFieldElements *printedField, unsigned int title, unsigned int options)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6900,8 +6879,6 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)
 {
     struct_galoisField_info *p;
-
-    char_GALOIS_FIELD_VALUE shiftBuffer;
 
     #ifndef RELEASE
     if(!primitivePolynomial->length)
@@ -7405,7 +7382,7 @@ char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFi
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -17063,9 +17040,6 @@ int main(unsigned int argc, char **argv)
     char fileio_Path_common[512]={0};
     char fileio_Path_Target[768]={0};
     struct dirent  *tmp_dir_entry;
-    struct dirent  *tmp_dir_entry2;
-
-    unsigned int tmp_dirCnt;
 
     char fileio_Name_Output_RootPath[26]={0};
     char fileio_Name_Report_Path[128]={0};
