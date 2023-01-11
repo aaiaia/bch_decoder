@@ -3520,13 +3520,13 @@ char closeGaloisFieldExceptElements(struct_galoisFieldElements **p)
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
             {
                 infoMes;
-                printf("closeGaloisFieldExceptElements, struct_galoisFieldElements p = \'0x%x\', struct_galoisFieldElements *p = \'0x%x\'\n", p, *p);
+                printf("closeGaloisFieldExceptElements, struct_galoisFieldElements p = \'0x%lx\', struct_galoisFieldElements *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)*p);
             }
             if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
             {
                 infoMes;
-                printf("in closeGaloisFieldExceptElements, &((*p)->element)) = \'0x%x\'\n", &((*p)->element));
-                printf("in closeGaloisFieldExceptElements, ((*p)->element)) = \'0x%x\'\n", ((*p)->element));
+                printf("in closeGaloisFieldExceptElements, &((*p)->element)) = \'0x%lx\'\n", (unsigned long)&((*p)->element));
+                printf("in closeGaloisFieldExceptElements, ((*p)->element)) = \'0x%lx\'\n", (unsigned long)((*p)->element));
             }
             #endif
     if(closeListOfGaloisField(&((*p)->element)))
