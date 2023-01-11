@@ -6899,8 +6899,6 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)
 {
-    unsigned int i,j;
-
     struct_galoisField_info *p;
 
     char_GALOIS_FIELD_VALUE shiftBuffer;
@@ -7409,8 +7407,6 @@ void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElement
 {
     unsigned int i,j;
 
-    unsigned int decimal=0;
-
     unsigned int exponential;
 
     if(!p)
@@ -7450,9 +7446,7 @@ void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElement
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -7474,9 +7468,7 @@ void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFiel
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeSeriesWithTapAndEnter(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -8182,8 +8174,8 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 {
     struct_HD_BM_algorithmComponent *p;
 
-    double galoisFieldElementLengthBuffer;
-    unsigned int galoisFieldElementLength;
+    //double galoisFieldElementLengthBuffer;
+    //unsigned int galoisFieldElementLength;
 
     #ifndef RELEASE
     if(!t)
@@ -8242,8 +8234,8 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
             }
             #endif
 
-        // galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
-        // galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
+        //galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
+        //galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
         // while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
         // {
@@ -9357,9 +9349,6 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 //////////////////////////////////////////////////////////////////////////////////
 char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p)
 {
-    // unsigned int bebuggingTemp;
-    unsigned int tmp_i;
-
     struct_galoisFieldPolyForm *tmp_S_1_pow_2;
     struct_galoisFieldPolyForm *tmp_S_1_pow_3;
     struct_galoisFieldPolyForm *tmp_S_1_pow_4;
@@ -10535,8 +10524,6 @@ void initGlobalQuantizInfo
     double  tmp_double = 0.0f;
     unsigned int tmp_u_int = 0;
     unsigned int i;
-    SIGNED_INT k;
-    double_RATIONAL_NUMBER tmp_ratePerInteger_nums;
 
     printf("INITIALIZING QUANTIZATION FILTER\r\n");
 
@@ -11307,8 +11294,6 @@ struct struct_logLikeHoodRatio
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 {
     struct_logLikeHoodRatio *p;
-    unsigned int tmp_treeDepth;
-    double tmp_log;
 
     if(!length)
     {
@@ -11349,9 +11334,6 @@ struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 //////////////////////////////////////////////////////////////////////////////////
 char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
 {
-    unsigned int i;
-
-
     #ifndef RELEASE
     if(!p)
     {
@@ -12147,7 +12129,6 @@ void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT
 //////////////////////////////////////////////////////////////////////////////////
 char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p)
 {
-    unsigned int i;
     unsigned int tmp_llr_mag_mask;
 
     #ifndef RELEASE
@@ -12774,7 +12755,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
     unsigned int same_magnitude_sel_policy)
 {
     unsigned int depth;
-    unsigned int i,j,k;
+    unsigned int i;
 
     #ifndef RELEASE
     if(!p)
@@ -13700,7 +13681,7 @@ void testPrintShortMinimumQuantizedLLRAndLocator(struct_logLikeHoodRatio *p)
 //////////////////////////////////////////////////////////////////////////////////
 struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned int length, unsigned int numberOfMask)
 {
-    unsigned int i;
+    //unsigned int i;
     struct_logLikeHoodRatio *p=NULL;
 
     p=createLogLikeHoodRatio(length);
@@ -13748,7 +13729,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
 //////////////////////////////////////////////////////////////////////////////////
 struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length, SIGNED_INT quantizedLLRMask)
 {
-    unsigned int i;
+    //unsigned int i;
     struct_logLikeHoodRatio *p=NULL;
 
     #ifndef RELEASE
@@ -15949,7 +15930,7 @@ static struct struct_cmdLineOption struct_cmdLineOption[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng)
 {
-    unsigned int i, j;
+    unsigned int i;
     struct struct_cmdLineOption *temp;
 
     char *passingString = NULL;
@@ -15971,8 +15952,6 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
         for(i = 0; (temp = (p + i))->instType != STRUCT_END; i++)
         {
             printf("\t");
-            //for(j = recursive; j!=0; j--) printf("\t");
-
 
             if(temp->longName)
             {
@@ -16466,8 +16445,6 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
     unsigned int argBufLength = 0;
     char argBuf[51] = {0};
-
-    void *value = NULL;
 
 /*
     if(*(arg)=='{')
