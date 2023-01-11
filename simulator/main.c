@@ -4365,7 +4365,7 @@ struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(
 
             #ifndef RELEASE
             errorMes; printf("in *summationElementsInGaloisFieldUsingGaloisFieldValue, checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(field->element+i), temp) is not working...\n");
-            errorMes; printf("operandA->length = \'%d\', ADDR : 0x%x, operandB->length = \'%d\', ADDR : 0x%x\n", operandA->length, operandA, operandB->length, operandB);
+            errorMes; printf("operandA->length = \'%d\', ADDR : 0x%lx, operandB->length = \'%d\', ADDR : 0x%lx\n", operandA->length, (unsigned long)operandA, operandB->length, (unsigned long)operandB);
             #endif
     closePolyForm(&temp);
     return NULL;
@@ -6086,7 +6086,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
                     {
                         if(*((*(p->conjugateSet+i))->element+j))
                         {
-                            warningMes; printf("in calculateConjugacyClasses, *((*(p->conjugateSet+i))->element+j)(Addr = \'0x%x\') is not NULL.\n", *((*(p->conjugateSet+i))->element+j));
+                            warningMes; printf("in calculateConjugacyClasses, *((*(p->conjugateSet+i))->element+j)(Addr = \'0x%lx\') is not NULL.\n", (unsigned long)(*((*(p->conjugateSet+i))->element+j)));
                             warningMesShort; printf("this link information(it is pointer) will be lost.\n");
                         }
                     }
@@ -6482,7 +6482,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<beforeEquation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(beforeEquation->element+global_tmp_i_memoryCheck));
+                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(beforeEquation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6496,9 +6496,9 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                             logMes;
                             printf("in expandRootOfLCM_usingEleOfGF, \n");
                             printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i, j, k);
-                            printf("*((*(multipledRootSet->conjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", i, j, *((*(multipledRootSet->conjugateSet+i))->element+j));
+                            printf("*((*(multipledRootSet->conjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", i, j, (unsigned long)(*((*(multipledRootSet->conjugateSet+i))->element+j)));
                             printPolyFormWithEnter(*((*(multipledRootSet->conjugateSet+i))->element+j));
-                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", k, *(beforeEquation->element+k));
+                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", k, (unsigned long)(*(beforeEquation->element+k)));
                             printPolyFormWithEnter(*(beforeEquation->element+k));
                         }
                         #endif
@@ -6513,7 +6513,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6531,7 +6531,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6640,7 +6640,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<beforeEquation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(beforeEquation->element+global_tmp_i_memoryCheck));
+                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(beforeEquation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6654,7 +6654,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                             logMes;
                             printf("in test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot, \n");
                             printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i, j, k);
-                            printf("*((*(multipledRootSet->limitedConjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", i, j, *((*(multipledRootSet->limitedConjugateSet+i))->element+j));
+                            printf("*((*(multipledRootSet->limitedConjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", i, j, (unsigned long)(*((*(multipledRootSet->limitedConjugateSet+i))->element+j)));
                             printPolyFormWithEnter(*((*(multipledRootSet->limitedConjugateSet+i))->element+j));
                             printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", k, *(beforeEquation->element+k));
                             printPolyFormWithEnter(*(beforeEquation->element+k));
@@ -6671,7 +6671,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6689,7 +6689,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6756,7 +6756,7 @@ void printGaloisField(struct_galoisFieldElements *p)
         printf("%d", (*(p->element+i))->index);
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
             {
-                printf("ADDR : 0x%x\n", *(p->element+i));
+                printf("ADDR : 0x%lx\n", (unsigned long)(*(p->element+i)));
             }
         printf("\n");
     }
@@ -6801,7 +6801,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
         printf("%d\n", convertGaloisFieldPolyFormUnsignedInt(*(p->element+i)));
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
             {
-                printf("ADDR : 0x%x\n", *(p->element+i));
+                printf("ADDR : 0x%lx\n", (unsigned long)(*(p->element+i)));
             }
     }
     printf("---------------------- END ----------------------\n");
@@ -7124,7 +7124,7 @@ void printSummationMatrixGFabstraction(struct_galoisFieldElements *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
+        printf("struct_galoisFieldElements address is wrong(Addr:0x%lx).", (unsigned long)p);
     }
 
     printf(">> Summation Matrix\n");
@@ -7169,7 +7169,7 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
+        printf("struct_galoisFieldElements address is wrong(Addr:0x%lx).", (unsigned long)p);
     }
 
     printf(">> Multiplication Matrix\n");
@@ -7736,7 +7736,7 @@ char calculateChienSearch_direction
             {
                 logMes;
                 printf("correctable codeWord \"%s\"\n", errorCorectableCodeWord->equation);
-                printf("variableSet addr(0x%x)\n", variableSet);
+                printf("variableSet addr(0x%lx)\n", (unsigned long)variableSet);
             }
             #endif
     free(variableSet);
@@ -7979,7 +7979,7 @@ char calculateChienSearch_static_backWard
             {
                 logMes;
                 printf("correctable codeWord \"%s\"\n", errorCorectableCodeWord->equation);
-                printf("variableSet addr(0x%x)\n", variableSet);
+                printf("variableSet addr(0x%lx)\n", (unsigned long)variableSet);
             }
             #endif
     free(variableSet);
@@ -8317,7 +8317,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
         {
             errorMes;
-            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent &p = 0x%x\n", p);
+            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent &p = 0x%lx\n", (unsigned long)p);
         }
         return -1;
     }
@@ -8326,7 +8326,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
         {
             warningMes;
-            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent *p = 0x%x\n", *p);
+            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent *p = 0x%lx\n", (unsigned long)(*p));
         }
         return -1;
     }
@@ -8420,7 +8420,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
                 {
                     memoryMes;
-                    printf("free(*p), p = \'0x%x\', *p = \'0x%x\'\n", p, *p);
+                    printf("free(*p), p = \'0x%lx\', *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)(*p));
                 }
             #endif
 
@@ -9238,7 +9238,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
             if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
             {
                 errorMes;
-                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent &p = 0x%x\n", p);
+                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent &p = 0x%lx\n", (unsigned long)p);
             }
             return -1;
         }
@@ -9247,7 +9247,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
             if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
             {
                 warningMes;
-                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent *p = 0x%x\n", *p);
+                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent *p = 0x%lx\n", (unsigned long)(*p));
             }
             return -1;
     }
@@ -9298,7 +9298,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
                 {
                     memoryMes;
-                    printf("free(*p), p = \'0x%x\', *p = \'0x%x\'\n", p, *p);
+                    printf("free(*p), p = \'0x%lx\', *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)(*p));
                 }
             #endif
 
@@ -11067,7 +11067,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p = 0x%08x\n", p);
+    printf("p = 0x%lx\n", (unsigned long)p);
 
     if(!(p->tree_mag))
     {
@@ -11082,7 +11082,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->tree_mag = 0x%08x, p->tree_hd = %c\n", p->tree_mag, p->tree_hd);
+    printf("p->tree_mag = 0x%lx, p->tree_hd = 0x%lx\n", (unsigned long)(p->tree_mag), (unsigned long)(p->tree_hd));
 
     if(!(p->treeIndex))
     {
@@ -11091,7 +11091,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->treeIndex = 0x%08x\n", p->treeIndex);
+    printf("p->treeIndex = 0x%lx\n", (unsigned long)(p->treeIndex));
 
     if(!(p->treeLength))
     {
@@ -11100,7 +11100,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->treeLength = 0x%08x\n", p->treeLength);
+    printf("p->treeLength = 0x%lx\n", (unsigned long)(p->treeLength));
 
     if(!(p->treeDepth))
     {
@@ -11152,20 +11152,20 @@ void testPrintTreeStructIndicateAddr(struct_treeStructure *p)
     }
 
     printf("/********** struct_treeStructure->tree printf address test **********/\n");
-    debugMes; printf("treeStruct pointer : 0x%08x\n", p);
-    debugMes; printf("root pointer : p->tree_mag = 0x%08x, p->tree_hd = 0x%08x\n",
-        p->tree_mag, p->tree_hd);
+    debugMes; printf("treeStruct pointer : 0x%lx\n", (unsigned long)p);
+    debugMes; printf("root pointer : p->tree_mag = 0x%lx, p->tree_hd = 0x%lx\n",
+        (unsigned long)(p->tree_mag), (unsigned long)(p->tree_hd));
     for(i=0; i<p->treeDepth; i++)
     {
-        debugMes; printf("%d-stage tree_mag pointer = 0x%08x, tree_hd pointer = 0x%08x\n",
-                i, *(p->tree_mag+i), *(p->tree_hd+i));
+        debugMes; printf("%d-stage tree_mag pointer = 0x%lx, tree_hd pointer = 0x%lx\n",
+                i, (unsigned long)(*(p->tree_mag+i)), (unsigned long)(*(p->tree_hd+i)));
         debugMes; printf("%d-stage length = %d\n",i, *(p->treeLength+i));
         debugMes; printf("%d-stage tree_mag and tree_hd => ", i);
         for(j=0; j<(*(p->treeLength+i)); j++)
         {
-            printf("0x%08x, 0x%08x(%u) ",
-                *((*(p->tree_mag+i))+j),
-                *((*(p->tree_hd+i))+j),
+            printf("0x%lx, 0x%lx(%u) ",
+                (unsigned long)(*((*(p->tree_mag+i))+j)),
+                (unsigned long)(*((*(p->tree_hd+i))+j)),
                 *((*(p->treeIndex+i))+j));
         }
         printf("\n");
@@ -13816,7 +13816,7 @@ struct_bpskComponents *createBpskComponents(unsigned int length)
     p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));
     memset(p->bpskTransData, 0, sizeof(double_BPSK_DATA)*length);
             debugMes; printf("in createBpskComponents, p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));\n");
-            debugMes; printf("in createBpskComponents, p->bpskTransData=0x%016x\n", p->bpskTransData);
+            debugMes; printf("in createBpskComponents, p->bpskTransData=0x%lx\n", (unsigned long)(p->bpskTransData));
 
     p->bpskReceivedDataAddedAwgn=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
     memset(p->bpskReceivedDataAddedAwgn, 0, sizeof(double_BPSK_DATA)*length);
@@ -20643,8 +20643,8 @@ int main(unsigned int argc, char **argv)
         case FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL:
 
         initTestMode_prob_min_counting(&tmp_testMode_prob_min_counting, &tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
-        printf("tmp_testMode_prob_min_counting = 0x%04x\r\n", &tmp_testMode_prob_min_counting);
-        printf("tmp_testMode_prob_min_counting_length = %d\r\n", &tmp_testMode_prob_min_counting_length);
+        printf("tmp_testMode_prob_min_counting = 0x%lx\r\n", (unsigned long)tmp_testMode_prob_min_counting);
+        printf("tmp_testMode_prob_min_counting_length = %d\r\n", tmp_testMode_prob_min_counting_length);
 
         for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
         {
