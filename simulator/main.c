@@ -6656,7 +6656,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                             printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i, j, k);
                             printf("*((*(multipledRootSet->limitedConjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", i, j, (unsigned long)(*((*(multipledRootSet->limitedConjugateSet+i))->element+j)));
                             printPolyFormWithEnter(*((*(multipledRootSet->limitedConjugateSet+i))->element+j));
-                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", k, *(beforeEquation->element+k));
+                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", k, (unsigned long)(*(beforeEquation->element+k)));
                             printPolyFormWithEnter(*(beforeEquation->element+k));
                         }
                         #endif
@@ -22647,10 +22647,10 @@ int main(unsigned int argc, char **argv)
                                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                             {
                                                 debugFuncNameMes;
-                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%x\n",
+                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%lx\n",
                                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                     main_tmp_soft_i,
-                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
+                                                    (unsigned long)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
 
                                                 );
                                             }
@@ -23106,7 +23106,7 @@ int main(unsigned int argc, char **argv)
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                         main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                             );
-                                                            printf("ADDR : 0x%x\r\n", (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly);
+                                                            printf("ADDR : 0x%lx\r\n", (unsigned long)((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly));
 
                                             printGaloisField2(
                                                 main_com_used_GF->nonSorted,
