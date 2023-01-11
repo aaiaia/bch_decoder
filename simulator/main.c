@@ -3874,7 +3874,6 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
     unsigned int tmp_i;
     FILE *load_fileio_GF;
 
-    unsigned int primitivePoly_length=0;
     char load_primitivePoly[1025];
 
     int load_kindOfData=0;
