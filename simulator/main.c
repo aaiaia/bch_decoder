@@ -1296,7 +1296,6 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
         // if(locatorArrayLength&(1<<i)) break;
     // }
     // usingBitNumber=i;
-    unsigned char bitLocator=0;
 
     #ifndef RELEASE
     if(!testPattern)
@@ -1662,8 +1661,6 @@ struct struct_powerFormPolynomials/*power form poly is mean that bit stream like
 /* bits is mean that length of bits */
 struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
 {
-    unsigned int i;
-
     struct_powerFormPolynomials *p;
 
     #ifndef RELEASE
@@ -1771,7 +1768,7 @@ char closePowerFormPolynomial(struct_powerFormPolynomials **p)
     if(!(*p))
     {
         warningMes;
-        printf("in closePowerFormPolynomial, struct_powerFormPolynomials *p is already removed.\n",(*p));
+        printf("in closePowerFormPolynomial, struct_powerFormPolynomials *p is already removed.\n");
         printf("it is already removed.\n");
         return -1;
     }
@@ -1811,11 +1808,10 @@ struct_powerFormPolynomials *recreatePowerFormPolynomial(struct_powerFormPolynom
 //////////////////////////////////////////////////////////////////////////////////
 char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char *string, unsigned int usedLength, unsigned int length)
 {
-    unsigned int i;
     unsigned int strLength;
 
-    unsigned int tmp_length=0;
-    unsigned int tmp_usedLength=0;
+//    unsigned int tmp_length=0;
+//    unsigned int tmp_usedLength=0;
     char_POWER_FORM *tmp_char_powerForm=NULL;
 
     #ifndef RELEASE
@@ -1896,14 +1892,14 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
     if(!(p->equation))
     {
         /*dont care case*/
-        warningMes; printf("in setPowerFormPolynomialUsingStringAddr, p->equation(0x%x) is not NULL.\n", p->equation);
+        warningMes; printf("in setPowerFormPolynomialUsingStringAddr, p->equation(0x%lx) is not NULL.\n", (unsigned long)p->equation);
     }
     #endif
 
 
     /* backuped */
-    tmp_length=p->length;
-    tmp_usedLength=p->usedLength;
+//    tmp_length=p->length;
+//    tmp_usedLength=p->usedLength;
     tmp_char_powerForm=p->equation;
 
     p->length=length;
@@ -1973,7 +1969,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
     if(!(p->equation))
     {
         errorMes;
-        printf("in copyPowerFormPolynomialFromString, p->equation(0x%x) is not defined.\n", p->equation);
+        printf("in copyPowerFormPolynomialFromString, p->equation(0x%lx) is not defined.\n", (unsigned long)p->equation);
         return -1;
     }
     #endif
@@ -2106,7 +2102,7 @@ void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned i
     if(p->usedLength<length)
     {
         warningMes;
-        printf("in shiftHighSidePowerFormPolynomial, used length(%d) is shortter than shifted length.\n");
+        printf("in shiftHighSidePowerFormPolynomial, used length(%d) is shortter than shifted length.\n", p->usedLength);
         printf("Result can have incorrected value.\n");
         printf("Because shifted string will be cuf off at \'%d\'-th value\n", p->usedLength+1);
     }
@@ -2284,7 +2280,7 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
     printf("[odd]:%d",odd_bit);
     printf("[all]:%d",all_bit);
     printf("[used]:%d", p->usedLength);
-    printf("[strLen]:%d", strlen(p->equation));
+    printf("[strLen]:%ld", strlen(p->equation));
     printf("[full]:%d\n", p->length);
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -2385,7 +2381,7 @@ void fprintPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char*
     #endif
 
     fprintf(fp, "%s", p->equation);
-    if(str_tail) fprintf(fp, str_tail);
+    if(str_tail != NULL) fprintf(fp, str_tail);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail)
@@ -2410,7 +2406,7 @@ void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p
     {
         fprintf(fp, "%c\r\n", p->equation[i]);
     }
-    if(str_tail) fprintf(fp, str_tail);
+    if(str_tail != NULL) fprintf(fp, str_tail);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolynomials *p, char *str_tail)
