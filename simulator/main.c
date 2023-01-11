@@ -2816,7 +2816,7 @@ void printPolyFormWithEnter(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     printf("\"");
@@ -2835,7 +2835,7 @@ void printPolyFormPure(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2851,7 +2851,7 @@ void printPolyForm(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     printf("\"");
@@ -2869,7 +2869,7 @@ void printPolyFormWithTapAndEnter(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2886,7 +2886,7 @@ void printPolyFormWithTap(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2903,7 +2903,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
     if(!p)
     {
         errorMes;
-        printf("in inputValueToPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in inputValueToPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
     if(p->length!=strlen(string))
     {
