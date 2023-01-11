@@ -2908,7 +2908,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
     if(p->length!=strlen(string))
     {
         errorMes;
-        printf("in inputValueToPolyForm, %s(%d) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
+        printf("in inputValueToPolyForm, %s(%ld) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
     }
     #endif
 
@@ -2918,7 +2918,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
         if((*(string+i)=='0')&&(*(string+i)=='1'))
         {
             errorMes;
-            printf("%s(%d) is composed with wrong character.\n", string, strlen(string), p->length);
+            printf("%s(%ld) is composed with wrong character.\n", string, strlen(string), p->length);
             return;
         }
     }
