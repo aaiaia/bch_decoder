@@ -2981,13 +2981,13 @@ char checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(struct_galoisFiel
     if(!operandA)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandA);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandA);
         return 0;
     }
     if(!operandB)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandB);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandB);
         return 0;
     }
     if(operandA->length!=operandB->length)
