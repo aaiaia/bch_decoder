@@ -3893,7 +3893,6 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 
     unsigned int load_integer=0;
 
-    char charBuf=0;
     char load_stringBuf[1025]={0};
 
 
@@ -4767,7 +4766,6 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 
     unsigned int load_integer=0;
 
-    char charBuf=0;
     char load_stringBuf[1025]={0};
 
     unsigned int chk_incorrectFormCnt=0;
@@ -5917,7 +5915,6 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 
     unsigned int load_integer=0;
 
-    char charBuf=0;
     char load_stringBuf[1025]={0};
 
     unsigned int chk_incorrectFormCnt=0;
