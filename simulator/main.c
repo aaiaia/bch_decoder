@@ -2381,7 +2381,7 @@ void fprintPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char*
     #endif
 
     fprintf(fp, "%s", p->equation);
-    if(str_tail != NULL) fprintf(fp, str_tail);
+    if(str_tail) fprintf(fp, str_tail);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail)
@@ -2406,7 +2406,7 @@ void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p
     {
         fprintf(fp, "%c\r\n", p->equation[i]);
     }
-    if(str_tail != NULL) fprintf(fp, str_tail);
+    if(str_tail) fprintf(fp, str_tail);
 }
 //////////////////////////////////////////////////////////////////////////////////
 void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolynomials *p, char *str_tail)
