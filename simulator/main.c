@@ -2482,7 +2482,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
     fprintf(fp, "[odd]:%d",odd_bit);
     fprintf(fp, "[all]:%d",all_bit);
     fprintf(fp, "[used]:%d", p->usedLength);
-    fprintf(fp, "[strLen]:%d", strlen(p->equation));
+    fprintf(fp, "[strLen]:%ld", strlen(p->equation));
     fprintf(fp, "[full]:%d", p->length);
     fprintf(fp, "[illegal]:%d", illegal_bit);
 
