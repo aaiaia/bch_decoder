@@ -5843,7 +5843,7 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
     }
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
 
-    fprintf(fileio, "pow(%d)\r\n", p->length);
+    fprintf(fileio, "pow(index)\r\n");
 
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
     //(*(p->conjugateSet+i))->length
