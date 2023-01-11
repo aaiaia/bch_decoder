@@ -4024,7 +4024,7 @@ char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galo
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
-        printf("in copyListOfGaloisFieldIngaloisFieldElements, addr(to)=0x%x, addr(from)=0x%x\n", to, from);
+        printf("in copyListOfGaloisFieldIngaloisFieldElements, addr(to)=0x%lx, addr(from)=0x%lx\n", (unsigned long)to, (unsigned long)from);
     }
     if((to->length)!=(from->length))
     {
