@@ -3013,13 +3013,13 @@ char checkAllValueUsingCharacterFromPolyForm(struct_galoisFieldPolyForm *p, char
     if(!p)
     {
         errorMes;
-        printf("in checkAllValueUsingCharacterFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in checkAllValueUsingCharacterFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
         return 0;
     }
     if((c!='0')&&(c!='0'))
     {
         errorMes;
-        printf("in checkAllValueUsingCharacterFromPolyForm, \'%c\'(0x%x) is not \'0\' or \'1\'.\n", c, c);
+        printf("in checkAllValueUsingCharacterFromPolyForm, \'%c\'(0x%lx) is not \'0\' or \'1\'.\n", c, (unsigned long)&c);
         return 0;
     }
     #endif
