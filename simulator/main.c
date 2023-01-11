@@ -3042,13 +3042,13 @@ char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *stri
     if(!p)
     {
         errorMes;
-        printf("in checkValueUsingStringFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in checkValueUsingStringFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
         return 0;
     }
     if(p->length!=strlen(string))
     {
         errorMes;
-        printf("in checkValueUsingStringFromPolyForm, \"%s\"(%d) and struct_galoisFieldPolyForm->length(%d) is not same.\n", string, strlen(string), p->length);
+        printf("in checkValueUsingStringFromPolyForm, \"%s\"(%ld) and struct_galoisFieldPolyForm->length(%d) is not same.\n", string, strlen(string), p->length);
         return 0;
     }
     #endif
@@ -3059,7 +3059,7 @@ char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *stri
         {
             #ifndef RELEASE
                 errorMes;
-                printf("in checkValueUsingStringFromPolyForm, \"%s\"(%d) is composed with wrong character.\n", string, strlen(string));
+                printf("in checkValueUsingStringFromPolyForm, \"%s\"(%ld) is composed with wrong character.\n", string, strlen(string));
             #endif
             return 0;
         }
@@ -3180,8 +3180,8 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 
     if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
     {
-        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm p = \'0x%x\'\n", p);
-        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%x\'\n", *p);
+        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm p = \'0x%lx\'\n", (unsigned long)p);
+        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%lx\'\n", (unsigned long)*p);
     }
     #endif
 
@@ -3248,7 +3248,7 @@ char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPo
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
-        printf("in copyListOfGaloisField, addr(to)=0x%x, addr(from)=0x%x\n", to, from);
+        printf("in copyListOfGaloisField, addr(to)=0x%lx, addr(from)=0x%lx\n", (unsigned long)to, (unsigned long)from);
     }
     #endif
 
@@ -3355,7 +3355,7 @@ struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int l
     {
                 #ifndef RELEASE
                 errorMes; printf("in createListOfGaloisFieldAndComponents, fail that createListOfGaloisField(lengthOfList).\n");
-                errorMes; printf("return value struct_galoisFieldPolyForm **p = 0x%x\n",p);
+                errorMes; printf("return value struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)p);
                 #endif
         return NULL;
     }
