@@ -2918,7 +2918,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
         if((*(string+i)=='0')&&(*(string+i)=='1'))
         {
             errorMes;
-            printf("%s(%ld) is composed with wrong character.\n", string, strlen(string), p->length);
+            printf("%s(%ld) is composed with wrong character.\n", string, strlen(string));
             return;
         }
     }
