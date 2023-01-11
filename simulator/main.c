@@ -4098,7 +4098,7 @@ char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldEleme
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
 {
-    unsigned int i,j;
+    unsigned int i;
     struct_galoisFieldPolyForm *result=NULL;
     #ifndef RELEASE
     if((*(field->element))->length!=p->length)
@@ -4122,7 +4122,7 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoi
 {
     unsigned int strLength = strlen(string);
 
-    unsigned int i,j;
+    unsigned int i;
 
     #ifndef RELEASE
     if((*(field->element))->length!=strLength)
@@ -4232,7 +4232,7 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisField_finding(struct_galo
 //////////////////////////////////////////////////////////////////////////////////
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
 {
-    unsigned int i;
+    //unsigned int i;
 
     if((*(field->element))->length!=p->length)
     {
@@ -4242,10 +4242,10 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_ga
     }
 
     return p->index;
-    // for(i=0; i<field->length; i++)
-    // {
-        // if(checkValueFromPolyFormUsingGaloisFieldValue (*(field->element+i), p)) return i;
-    // }
+    //for(i=0; i<field->length; i++)
+    //{
+    //    if(checkValueFromPolyFormUsingGaloisFieldValue (*(field->element+i), p)) return i;
+    //}
 }
 //////////////////////////////////////////////////////////////////////////////////
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIntValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
