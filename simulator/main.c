@@ -2975,8 +2975,6 @@ char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *ope
 //////////////////////////////////////////////////////////////////////////////////
 char checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
-    unsigned int i;
-
     #ifndef RELEASE
     if(!operandA)
     {
