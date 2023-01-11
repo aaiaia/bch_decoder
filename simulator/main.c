@@ -3090,7 +3090,6 @@ struct struct_summationMatrix
 */
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 {
-    unsigned int i;
     struct_galoisFieldPolyForm **p;
 
     #ifndef RELEASE
@@ -3115,7 +3114,6 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 */
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList)
 {
-    unsigned int i;
 
     struct_galoisFieldPolyForm **newGaloisFieldPolyForm=NULL;
     #ifndef RELEASE
@@ -3347,7 +3345,6 @@ char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned 
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int lengthOfList, unsigned int polyLength)
 {
-    unsigned int i;
     // struct_galoisFieldPolyForm **p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
     // memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
     struct_galoisFieldPolyForm **p=NULL;
@@ -3565,8 +3562,6 @@ struct_galoisFieldElements *recreateGaloisFieldExceptElements(struct_galoisField
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldElements *createGaloisFieldAndElements(unsigned int numberOfElement, unsigned int polyLength)
 {
-    unsigned int i;
-
     struct_galoisFieldElements *p;
 
     #ifndef RELEASE
