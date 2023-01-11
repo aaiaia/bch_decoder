@@ -2758,12 +2758,12 @@ void closePolyForm(struct_galoisFieldPolyForm **p)
     if(!p)
     {
         warningMes;
-        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%x\n", p);
+        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm *p = 0x%lx\n", (unsigned long)p);
     }
     if(!*p)
     {
         warningMes;
-        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%x\n", *p);
+        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)*p);
         return;
     }
     #endif
