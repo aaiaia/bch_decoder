@@ -5702,7 +5702,7 @@ char closeConjugacyClasses(struct_setOfGaloisFieldElements **p)
         if(closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)))//if(closeGaloisFieldExceptElements(&(*((*p)->conjugateSet+i))))
         {
             errorMes;
-            printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)) return any value.\n", i);
+            printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+%d)) return any value.\n", i);
         }
         #endif
 
@@ -5843,7 +5843,7 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
     }
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
 
-    fprintf(fileio, "pow(index)\r\n", p->length);
+    fprintf(fileio, "pow(%d)\r\n", p->length);
 
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
     //(*(p->conjugateSet+i))->length
@@ -13708,7 +13708,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
             if(!(p))
             {
                 warningMes;
-                printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, p=createLogLikeHoodRatio(length) return NULL.\n", length);
+                printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
                 return NULL;
             }
             #endif
@@ -13717,7 +13717,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
     {
         closeLogLikeHoodRatio(&p);
                 #ifndef RELEASE
-                errorMes; printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask) return Non-zero.\n", length);
+                errorMes; printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask) return Non-zero.\n");
                 #endif
         return NULL;
     }
@@ -13762,7 +13762,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
     if(!(p=createLogLikeHoodRatio(length)))
     {
         warningMes;
-        printf("in createLogLikeHoodRatioUsingLlrMask, p=createLogLikeHoodRatio(length) return NULL.\n", length);
+        printf("in createLogLikeHoodRatioUsingLlrMask, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
         return NULL;
     }
     #endif
@@ -21111,7 +21111,7 @@ int main(unsigned int argc, char **argv)
                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                 {
                                     debugFuncNameMes;
-                                    printf("[%s : #d calculateBCH_decodingAlgorithm start]\r\n",
+                                    printf("[%s : #%d calculateBCH_decodingAlgorithm start]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21123,7 +21123,7 @@ int main(unsigned int argc, char **argv)
                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                 {
                                     debugFuncNameMes;
-                                    printf("[%s : #d calculateBCH_decodingAlgorithm end]\r\n",
+                                    printf("[%s : #%d calculateBCH_decodingAlgorithm end]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21928,7 +21928,7 @@ int main(unsigned int argc, char **argv)
                                     (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
                                 )
                                 {
-                                    printf("[Hard-Decision]\r\n", main_tmp_soft_i);
+                                    printf("[Hard-Decision %d]\r\n", main_tmp_soft_i);
                                     // printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
                                     printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[0]);
 
