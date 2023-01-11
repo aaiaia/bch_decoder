@@ -3596,13 +3596,13 @@ char closeGaloisFielsAndElements(struct_galoisFieldElements **p)
     if(!p)
     {
         errorMes;
-        printf("in closeGaloisFielsAndElements, **p addr = 0x%x\n", (p));
+        printf("in closeGaloisFielsAndElements, **p addr = 0x%lx\n", ((unsigned long)p));
         return -1;
     }
     if(!(*p))
     {
         warningMes;
-        printf("in closeGaloisFielsAndElements, *p addr = 0x%x\n", (*p));
+        printf("in closeGaloisFielsAndElements, *p addr = 0x%lx\n", ((unsigned long)*p));
         return -1;
     }
     #endif
