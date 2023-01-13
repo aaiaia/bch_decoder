@@ -8001,7 +8001,7 @@ char chienSearch_static
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-char chienSearch
+void chienSearch
     (
         struct_galoisFieldElements *galoisFields,
         struct_galoisFieldElements *errLocPolynomial,
@@ -9785,7 +9785,7 @@ struct_encodingComponentInGF *createEncodingComponent(unsigned int length, unsig
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-char closeEncodingComponent(struct_encodingComponentInGF **p)
+void closeEncodingComponent(struct_encodingComponentInGF **p)
 {
     #ifndef RELEASE
     if(!p)
@@ -11501,7 +11501,7 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
 */
 
 /******************************************************************/
-char findMinimumMagnitudeFindLocPushAway
+void findMinimumMagnitudeFindLocPushAway
 (
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials* hd_codeword,
@@ -11750,7 +11750,7 @@ char findMinimumMagnitudeFindLocPushAway
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char findMinimumMagnitudeGroupingPushAway
+void findMinimumMagnitudeGroupingPushAway
 (
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials* hd_codeword,
@@ -13170,7 +13170,7 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13213,7 +13213,7 @@ char printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     printf("[Used Length : %d]\n", p->usedLength);
 }
 //////////////////////////////////////////////////////////////////////////////////
-char printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13250,7 +13250,7 @@ char printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     printf("[Used Length : %d]\n", p->usedLength);
 }
 //////////////////////////////////////////////////////////////////////////////////
-char printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13574,7 +13574,7 @@ char fprintQuatizLLR_fullDescriptionToHEX(FILE* fp, struct_logLikeHoodRatio* p, 
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
