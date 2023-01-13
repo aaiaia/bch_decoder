@@ -17023,8 +17023,7 @@ int main(unsigned int argc, char **argv)
 
     FILE*   fileio_simEnv;
 
-    char *dirio_Name_home_path = NULL;
-    char dirio_Name_simEnv_root_path[] = "~/";
+    char *dirio_Name_home_path = NULL;  // Get User home path
     char dirio_Name_simEnv_dir[] = "bch-sim_env";
     char dirio_Name_common_dir[] = "common";
 
