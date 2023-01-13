@@ -16884,12 +16884,9 @@ int main(unsigned int argc, char **argv)
     /*Test variables*/
     unsigned int test_fileIO_errorCorrectingCount=0;
     /*Tempolary variables*/
-    unsigned int tmp_loop_cnt = 0, tmp_u_int = 0;
     unsigned int i=0, tmp_i_start, tmp_i_end;
-    unsigned int j=0, tmp_j_start, tmp_j_end;
-    unsigned int k=0, tmp_k_start, tmp_k_end;
-    unsigned int cmd_flag=0;
-    unsigned int cmd_length=0;
+    unsigned int j=0;
+    unsigned int k=0;
     unsigned int cmd_tmp_i=0;
     unsigned int cmd_tmp_cnt=0;
 
@@ -16999,8 +16996,6 @@ int main(unsigned int argc, char **argv)
 //////////////////////////////////////////////////////////////////////////////////
     char tmp_fileio_target_dir_path[1001] = {0};
     char tmp_fileio_target_file_path[1001] = {0};
-    unsigned int fileio_name_length = 0;
-    unsigned int fileio_name_tmp    = 0;
     DIR*    tmp_dirio_var;
 
     FILE*   fileio_channelBER;
