@@ -15998,11 +15998,11 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
                 {
                     printf("%s", passedStrng);
                     if((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE))    printf("{");
-                    printf("-%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?:((temp->instType==OPT_SET_VALUE)?'=':'\t')));
+                    printf("-%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?'\0':((temp->instType==OPT_SET_VALUE)?'=':'\t')));
                 }
                 else
                 {
-                    printf("--%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?:((temp->instType==OPT_SET_VALUE)?'=':'\t')));
+                    printf("--%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?'\0':((temp->instType==OPT_SET_VALUE)?'=':'\t')));
                 }
             }
 
