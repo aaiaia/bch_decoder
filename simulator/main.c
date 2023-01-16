@@ -10476,6 +10476,129 @@ struct struct_quantizationInfo
 //////////////////////////////////////////////////////////////////////////////////
 struct_quantizationInfo global_QuantizationInfo;
 //////////////////////////////////////////////////////////////////////////////////
+#define QUANTIZ_MODE_STATIC    0
+#define QUANTIZ_MODE_ADAPT    1
+void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
+{
+    SIGNED_INT k;
+    unsigned int i;
+
+
+
+    for(i=0; i<length; i++)
+    {
+        if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
+        {
+            // LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
+            LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1));
+            if(Codeword_MSG) Codeword_MSG[i] = '1';
+        }
+        else if(global_QuantizationInfo.rangeMax+global_QuantizationInfo.offset <= LLR[i])//LLR is positive
+        {
+            LLR_quantization[i]=((((signed int)(global_QuantizationInfo.numberOfSteps/2)))-1);
+            if(Codeword_MSG) Codeword_MSG[i] = '0';
+        }
+        else
+        {
+            if(global_QuantizationInfo.offset<LLR[i])//LLR is positive
+            {
+                for(k=0; k<(((signed int)(global_QuantizationInfo.numberOfSteps/2))); k++)
+                {
+                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    {
+                        LLR_quantization[i]=k;
+                        break;
+                    }
+                }
+                if(Codeword_MSG) Codeword_MSG[i] = '0';
+            }
+            else//LLR is negative
+            {
+                for(k=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+0); k<0; k++)
+                {
+                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    {
+                        LLR_quantization[i]=k;
+                        break;
+                    }
+                }
+                if(Codeword_MSG) Codeword_MSG[i] = '1';
+            }
+        }
+    }
+    return;
+}
+//////////////////////////////////////////////////////////////////////////////////
+void quantizationWithGlobalAdaptive(
+        double LLR[],
+        SIGNED_INT LLR_quantization[],
+        char *Codeword_MSG,
+        unsigned int length)
+{
+    unsigned int tmp_i;
+    int tmp_q;
+    double_RATIONAL_NUMBER tmp_step = global_QuantizationInfo.step;
+    double_RATIONAL_NUMBER tmp_zeroSymmetry = \
+        (double_RATIONAL_NUMBER)global_QuantizationInfo.val_ones_zero_handling;
+    double_RATIONAL_NUMBER tmp_offset = global_QuantizationInfo.offset;
+
+    for(tmp_i = 0; tmp_i < length; tmp_i++)
+    {
+        /* bigger than criterion? */
+        if(LLR[tmp_i] >= global_QuantizationInfo.criterion)
+        {
+            /*
+             * LLR is larger than criterion
+             * Quantized value is positive
+            */
+            for(tmp_q = global_QuantizationInfo.quantizedIntMax; tmp_q > 0; tmp_q--)
+            {
+                if( (( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset)) * tmp_step <= \
+                        LLR[tmp_i])
+                {
+                    LLR_quantization[tmp_i] = tmp_q;
+                    break;
+                }
+            }
+            if(tmp_q == 0)  LLR_quantization[tmp_i] = tmp_q;
+            Codeword_MSG[tmp_i] = '0';
+        }
+        else
+        {
+            /*
+             * LLR is smaller than criterion
+             * Quantized value is negative
+            */
+            for(tmp_q = global_QuantizationInfo.quantizedIntMin; tmp_q < -1; tmp_q++)
+            {
+                if( ( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset + 1.0 + tmp_zeroSymmetry ) * \
+                     tmp_step > LLR[tmp_i])
+                {
+                    LLR_quantization[tmp_i] = tmp_q;
+                    break;
+                }
+            }
+            if(tmp_q == -1)
+            {
+                switch(global_QuantizationInfo.ones_zero_handling)
+                {
+                    default:
+                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY:
+                        LLR_quantization[tmp_i] = tmp_q;
+                    break;
+
+                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED:
+                        LLR_quantization[tmp_i] = ++tmp_q;
+                    break;
+                }
+            }
+            Codeword_MSG[tmp_i] = '1';
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////
 /*
 default value
     global_QuantizationInfo.offset=-0.5;
@@ -10717,129 +10840,6 @@ void initGlobalQuantizInfo
     }
 }
 //////////////////////////////////////////////////////////////////////////////////
-#define QUANTIZ_MODE_STATIC    0
-#define QUANTIZ_MODE_ADAPT    1
-void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
-{
-    SIGNED_INT k;
-    unsigned int i;
-
-
-
-    for(i=0; i<length; i++)
-    {
-        if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
-        {
-            // LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
-            LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1));
-            if(Codeword_MSG) Codeword_MSG[i] = '1';
-        }
-        else if(global_QuantizationInfo.rangeMax+global_QuantizationInfo.offset <= LLR[i])//LLR is positive
-        {
-            LLR_quantization[i]=((((signed int)(global_QuantizationInfo.numberOfSteps/2)))-1);
-            if(Codeword_MSG) Codeword_MSG[i] = '0';
-        }
-        else
-        {
-            if(global_QuantizationInfo.offset<LLR[i])//LLR is positive
-            {
-                for(k=0; k<(((signed int)(global_QuantizationInfo.numberOfSteps/2))); k++)
-                {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    {
-                        LLR_quantization[i]=k;
-                        break;
-                    }
-                }
-                if(Codeword_MSG) Codeword_MSG[i] = '0';
-            }
-            else//LLR is negative
-            {
-                for(k=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+0); k<0; k++)
-                {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    {
-                        LLR_quantization[i]=k;
-                        break;
-                    }
-                }
-                if(Codeword_MSG) Codeword_MSG[i] = '1';
-            }
-        }
-    }
-    return;
-}
-//////////////////////////////////////////////////////////////////////////////////
-void quantizationWithGlobalAdaptive(
-        double LLR[],
-        SIGNED_INT LLR_quantization[],
-        char *Codeword_MSG,
-        unsigned int length)
-{
-    unsigned int tmp_i;
-    int tmp_q;
-    double_RATIONAL_NUMBER tmp_step = global_QuantizationInfo.step;
-    double_RATIONAL_NUMBER tmp_zeroSymmetry = \
-        (double_RATIONAL_NUMBER)global_QuantizationInfo.val_ones_zero_handling;
-    double_RATIONAL_NUMBER tmp_offset = global_QuantizationInfo.offset;
-
-    for(tmp_i = 0; tmp_i < length; tmp_i++)
-    {
-        /* bigger than criterion? */
-        if(LLR[tmp_i] >= global_QuantizationInfo.criterion)
-        {
-            /*
-             * LLR is larger than criterion
-             * Quantized value is positive
-            */
-            for(tmp_q = global_QuantizationInfo.quantizedIntMax; tmp_q > 0; tmp_q--)
-            {
-                if( (( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset)) * tmp_step <= \
-                        LLR[tmp_i])
-                {
-                    LLR_quantization[tmp_i] = tmp_q;
-                    break;
-                }
-            }
-            if(tmp_q == 0)  LLR_quantization[tmp_i] = tmp_q;
-            Codeword_MSG[tmp_i] = '0';
-        }
-        else
-        {
-            /*
-             * LLR is smaller than criterion
-             * Quantized value is negative
-            */
-            for(tmp_q = global_QuantizationInfo.quantizedIntMin; tmp_q < -1; tmp_q++)
-            {
-                if( ( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset + 1.0 + tmp_zeroSymmetry ) * \
-                     tmp_step > LLR[tmp_i])
-                {
-                    LLR_quantization[tmp_i] = tmp_q;
-                    break;
-                }
-            }
-            if(tmp_q == -1)
-            {
-                switch(global_QuantizationInfo.ones_zero_handling)
-                {
-                    default:
-                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY:
-                        LLR_quantization[tmp_i] = tmp_q;
-                    break;
-
-                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED:
-                        LLR_quantization[tmp_i] = ++tmp_q;
-                    break;
-                }
-            }
-            Codeword_MSG[tmp_i] = '1';
-        }
-    }
-}
-
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
