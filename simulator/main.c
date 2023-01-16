@@ -7999,7 +7999,7 @@ char chienSearch_static
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-void chienSearch
+char chienSearch
     (
         struct_galoisFieldElements *galoisFields,
         struct_galoisFieldElements *errLocPolynomial,
@@ -9790,13 +9790,13 @@ void closeEncodingComponent(struct_encodingComponentInGF **p)
     {
         errorMes;
         printf("in closeEncodingComponent, struct_encodingComponentInGF **p is NULL.\n");
-        return -1;
+        return;
     }
     if(!*p)
     {
         errorMes;
         printf("in closeEncodingComponent, struct_encodingComponentInGF *p is NULL.\n");
-        return -1;
+        return;
     }
     #endif
 
@@ -11499,7 +11499,7 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
 */
 
 /******************************************************************/
-void findMinimumMagnitudeFindLocPushAway
+char findMinimumMagnitudeFindLocPushAway
 (
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials* hd_codeword,
@@ -11562,10 +11562,31 @@ void findMinimumMagnitudeFindLocPushAway
         printf("in findMinimumMagnitudeFindLocPushAway, p->locatorLength is zero.\n");
         return -1;
     }
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0) tmp_criteria_HD = '1';
@@ -11744,11 +11765,11 @@ void findMinimumMagnitudeFindLocPushAway
             }
         }
     }
-
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-void findMinimumMagnitudeGroupingPushAway
+char findMinimumMagnitudeGroupingPushAway
 (
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials* hd_codeword,
@@ -11831,10 +11852,30 @@ void findMinimumMagnitudeGroupingPushAway
         group_nums = 1;
     }
 
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     switch(init_magnitude_policy)
@@ -12061,6 +12102,7 @@ void findMinimumMagnitudeGroupingPushAway
     //}
     //printf("\r\n");
     //printf("/* varify end */\r\n");
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -12781,10 +12823,31 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
         printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, p->treeStruct->tree_hd is NULL.\n");
         return -1;
     }
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     if(global_bch_SoftCorrectable>p->treeStruct->treeDepth)
@@ -13176,25 +13239,25 @@ void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLR))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLRMask))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        return -1;
+        return;
     }
     printf("[Quantiz LLR] : \t\t\t");
     for(i=0; i<p->usedLength; i++)
@@ -13219,25 +13282,25 @@ void printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLR))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLRMask))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        return -1;
+        return;
     }
     printf("[magnitudeShort Quantiz LLR] : \t");
     for(i=0; i<p->usedLength; i++)
@@ -13256,25 +13319,25 @@ void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->llr))
     {
         warningMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->llr is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     // if(!(p->quantizedLLRMask))
     // {
         // warningMes;
         // printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        // return -1;
+        // return;
     // }
     printf("[LLR] : ");
     for(i=0; i<p->usedLength; i++)
@@ -13580,19 +13643,19 @@ void testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->llr))
     {
         warningMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->llr is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
 
     printf("[LLR and Qantized LLR]\n");
