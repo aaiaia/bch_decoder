@@ -18474,7 +18474,7 @@ int main(unsigned int argc, char **argv)
             }
             else if(global_list_flag_bch_sim_decodingMode[cmd_tmp_i]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
             {
-                infoMes; printf("[%s] * %s algorithm test is primary than hard and soft decision. *\r\n");
+                infoMes; printf("[%s] algorithm test only mode is primary than hard and soft decision. *\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i]);
             }
 
             if((global_list_flag_bch_sim_decodingMode[cmd_tmp_i]&FLAG_MASK_CODE_BCH_DEC_AL_SKIP))
