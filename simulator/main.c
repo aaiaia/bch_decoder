@@ -6422,7 +6422,6 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 
     /*if order is 0, length is 1, if order is n-th, length is n+1.*/
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
-    multipledRootSet->length;
 
             #ifndef RELEASE
             if(equation->length<multipledOrder+1)
@@ -6580,7 +6579,6 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 
     /*if order is 0, length is 1, if order is n-th, length is n+1.*/
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
-    multipledRootSet->length;
 
             #ifndef RELEASE
             if(equation->length<multipledOrder+1)
