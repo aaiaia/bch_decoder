@@ -16112,7 +16112,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
         else
         {
             errorMes;
-            printf("Instruction %s not have a mask value of flag.\n");
+            printf("Instruction %s(%c) not have a mask value of flag.\n", (p->longName?p->longName:"[unknown]"), (p->shortName?p->shortName:'?'));
         }
     }
     else if(p->instType == OPT_COMPONENT) return 0;
@@ -16315,7 +16315,7 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
     else
     {
             errorMes;
-            printf("Instruction %s not have a flag pointer.\n");
+            printf("Instruction %s(%c) not have a flag pointer.\n", (p->longName?p->longName:"[unknown]"), (p->shortName?p->shortName:'?'));
     }
     return -1;
 }
