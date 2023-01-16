@@ -6086,7 +6086,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
                 if((exponential==-1)||(exponential==0)||(exponential==1))
                 {
                             #ifndef RELEASE
-                            errorMes; printf("in calculateConjugacyClasses, exponential can not be \'%s\'.\n", exponential);
+                            errorMes; printf("in calculateConjugacyClasses, exponential can not be \'%d\'.\n", exponential);
                             #endif
                     return -1;
                 }
@@ -8168,7 +8168,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 
     if(!stringLength)
     {
-        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %s\n", stringLength);
+        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %d\n", stringLength);
         warningMesShort; printf("string : %s\n", string);
         stringLength=strlen(string);
     }
@@ -9081,7 +9081,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 
     if(!stringLength)
     {
-        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %s\n", stringLength);
+        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %d\n", stringLength);
         warningMesShort; printf("string : %s\n", string);
         stringLength=strlen(string);
     }
@@ -21502,6 +21502,7 @@ int main(unsigned int argc, char **argv)
                                                         main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
                                         infoMes;    printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %ul\r\n",
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
                                         infoMes;    printf("[%s] FAIL cnt) fail to correction and all synds are zero = %ul\r\n",
