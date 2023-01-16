@@ -2752,25 +2752,27 @@ struct_galoisFieldPolyForm *createPolyForm(unsigned int length)
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-void closePolyForm(struct_galoisFieldPolyForm **p)
+char closePolyForm(struct_galoisFieldPolyForm **p)
 {
     #ifndef RELEASE
     if(!p)
     {
         warningMes;
         printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm *p = 0x%lx\n", (unsigned long)p);
+        return -1;
     }
     if(!*p)
     {
         warningMes;
         printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)*p);
-        return;
+        return -1;
     }
     #endif
 
     free((*p)->value);
     free((*p));
     *p=NULL;
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length)
@@ -3182,7 +3184,6 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
         printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%lx\'\n", (unsigned long)*p);
     }
     #endif
-
 
     free (*p);
     *p=NULL;
@@ -9783,20 +9784,20 @@ struct_encodingComponentInGF *createEncodingComponent(unsigned int length, unsig
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-void closeEncodingComponent(struct_encodingComponentInGF **p)
+char closeEncodingComponent(struct_encodingComponentInGF **p)
 {
     #ifndef RELEASE
     if(!p)
     {
         errorMes;
         printf("in closeEncodingComponent, struct_encodingComponentInGF **p is NULL.\n");
-        return;
+        return -1;
     }
     if(!*p)
     {
         errorMes;
         printf("in closeEncodingComponent, struct_encodingComponentInGF *p is NULL.\n");
-        return;
+        return -1;
     }
     #endif
 
@@ -9804,6 +9805,7 @@ void closeEncodingComponent(struct_encodingComponentInGF **p)
 
     free(*p);
     *p=NULL;
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_encodingComponentInGF *recreateEncodingComponent(struct_encodingComponentInGF **p, unsigned int length, unsigned int numberOfCorrectableBit, char_POWER_FORM *generationPolynomial)
@@ -10093,7 +10095,6 @@ char closeErrorComponent(struct_errorComponent **p)
     closePowerFormPolynomial(&((*p)->errorLocationVector));
     free(*p);
     (*p)=NULL;
-
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -10966,7 +10967,7 @@ char closeTreeStruct(struct_treeStructure **p)
         printf("in closeTreeStruct, struct_treeStructure (*p) is NULL.\n");
         warningMes;
         printf("Already struct_treeStructure is removed.");
-        return 0;
+        return -1;
     }
     if(!((*p)->tree_mag))
     {
