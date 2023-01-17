@@ -20567,7 +20567,7 @@ int main(int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                printf("[e] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+                printf("[e] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
             }
             printf("[e] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
@@ -20582,7 +20582,7 @@ int main(int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                printf("[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
+                printf("[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
             }
             printf("[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
@@ -20599,7 +20599,7 @@ int main(int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                fprintf(fp_testMode_log, "[e]%d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+                fprintf(fp_testMode_log, "[e]%d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
             }
             fprintf(fp_testMode_log, "[e]max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
@@ -20614,7 +20614,7 @@ int main(int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                fprintf(fp_testMode_log, "[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
+                fprintf(fp_testMode_log, "[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
             }
             fprintf(fp_testMode_log, "[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
