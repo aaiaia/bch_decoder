@@ -13724,7 +13724,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
     //{
     //    if(!(p->length))
     //    {
-            p->quantizedLLRMask=quantizedLLRMask;//<<--
+            p->quantizedLLRMask=quantizedLLRMask;
     //        //for(i=0; (i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&((1<<i)&quantizedLLRMask); i++);
     //        p->magnitudeMask=(p->quantizedLLRMask&(~(1<<(i-1))));
     //                printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
