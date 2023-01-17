@@ -8034,6 +8034,7 @@ char chienSearch
         default:
         break;
     }
+    return -1;
 }
 //////////////////////////////////////////////////////////////////////////////////
 char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial)
