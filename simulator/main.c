@@ -11255,7 +11255,7 @@ struct struct_logLikeHoodRatio
     s_int_QUANTIZ_DIGIT *quantizedLLR;
         s_int_QUANTIZ_DIGIT quantizedLLRMask;
     // s_int_QUANTIZ_DIGIT magnitudeMask;
-    s_int_QUANTIZ_DIGIT *magnitude;
+    s_int_QUANTIZ_DIGIT *magnitude;//intently to use -1, defined signed value
     unsigned int length;
     unsigned int usedLength;
 
@@ -12876,7 +12876,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                         if(*(p->magnitude + i + DIRECTION_LEFT) == 0)
                         {
                             *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                (p->magnitude + i + DIRECTION_RIGHT);
+                                (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                                 (hd_codeword->equation + i + DIRECTION_RIGHT);
                             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12901,7 +12901,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             if(*((hd_codeword->equation + i + DIRECTION_LEFT)) == '0')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_LEFT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12912,7 +12912,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             else if(*((hd_codeword->equation + i + DIRECTION_RIGHT)) == '0')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_RIGHT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12928,7 +12928,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             if(*((hd_codeword->equation + i + DIRECTION_LEFT)) == '1')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_LEFT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12939,7 +12939,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             else if(*((hd_codeword->equation + i + DIRECTION_RIGHT)) == '1')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_RIGHT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12956,7 +12956,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 }
 
                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                    (p->magnitude + i + DIRECTION_LEFT);
+                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                     (hd_codeword->equation + i + DIRECTION_LEFT);
                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12973,7 +12973,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                         if(*(p->magnitude + i + DIRECTION_LEFT) == 0)
                         {
                             *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                (p->magnitude + i + DIRECTION_LEFT);
+                                (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                                 (hd_codeword->equation + i + DIRECTION_LEFT);
                             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12983,7 +12983,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                     }
                 }
                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                    (p->magnitude + i + DIRECTION_RIGHT);
+                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                 *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12998,7 +12998,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
 
             /* store redundant, no comparing, directly update to 0th stage tree. */
             /* update left one, because right one is not exist */
-            *((*(p->treeStruct->tree_mag) + 0) + i / 2) = (p->magnitude + i - 1);
+            *((*(p->treeStruct->tree_mag) + 0) + i / 2) = (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i - 1);
             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                 (hd_codeword->equation + i + DIRECTION_LEFT);
             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
