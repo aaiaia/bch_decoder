@@ -21554,27 +21554,27 @@ int main(int argc, char **argv)
                                                         main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                     );
 
-                                        infoMes;    printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) fail to correction = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) fail to correction = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) fail to correction and all synds are zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) fail to correction and all synds are zero = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Codeword loop %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Codeword loop %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_com_algorithm_loop_cnt
                                                     );
