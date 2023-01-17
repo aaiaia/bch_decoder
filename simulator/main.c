@@ -240,15 +240,15 @@ unsigned int global_flag_cmdSystemUnhold=0;
 
 /*Global debug option start*/
 unsigned int global_flag_deBugOption=0;
-#define DEBUG_DEBUG_WORD     "debug"//FLAG_MASK_DISPLAY_PROGRESS
-#define FLAG_MASK_DEBUG_DEBUG    (1<<0)
-#define debugMes    printf("debug ) ");
+#define DEBUG_DEBUG_WORD        "debug"//FLAG_MASK_DISPLAY_PROGRESS
+#define FLAG_MASK_DEBUG_DEBUG   (1<<0)
+#define debugMes                printf("debug ) ");
 
     unsigned int global_flag_debug_display=0;
     /*
-    #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-    #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-    #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+    #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+    #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+    #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
     */
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
@@ -258,33 +258,35 @@ unsigned int global_flag_deBugOption=0;
 
     /*BM Algorithm debug option start*/
     unsigned int global_flag_debug_bmSim=0;
-    #define DEBUG_BCH_BM_ALGORITHM_WORD     "debug-bm"//OPT_DISPLAY_PROGRESS
+    #define DEBUG_BCH_BM_ALGORITHM_WORD         "debug-bm"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_BM_ALGORITHM    (1<<0)
-    #define debugBmAlgorithmMes    printf("debug-BM ) ");
+    #define debugBmAlgorithmMes                 printf("debug-BM ) ");
 
-    #define DEBUG_BCH_BM_CAL_DELTA_WORD     "debug-bm-cal-delta"//OPT_DISPLAY_PROGRESS
+    #define DEBUG_BCH_BM_CAL_DELTA_WORD         "debug-bm-cal-delta"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA    (1<<1)
-    #define debugBmAlgorithmCalDeltaMes    printf("debug-BM-cal-delta ) ");
+    #define debugBmAlgorithmCalDeltaMes         printf("debug-BM-cal-delta ) ");
     /*BM Algorithm debug option end*/
 
     /*mSBS Algorithm debug option start*/
     /* below variables could be unnecessary */
     unsigned int global_flag_debug_mSBS_Sim=0;
-    #define DEBUG_BCH_mSBS_ALGORITHM_WORD     "debug-mSBS"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM    (1<<0)
-    #define debug_mSBS_AlgorithmMes    printf("debug-mSBS ) ");
+    #define DEBUG_BCH_mSBS_ALGORITHM_WORD       "debug-mSBS"//OPT_DISPLAY_PROGRESS
+    #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM  (1<<0)
+    #define debug_mSBS_AlgorithmMes             printf("debug-mSBS ) ");
 
-    #define DEBUG_BCH_M_SBS_CAL_DELTA_WORD     "debug-mSBS-cal-delta"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA    (1<<1)
-    #define debug_mSBS_AlgorithmCalDeltaMes    printf("debug-mSBS-cal-delta ) ");
+    #define DEBUG_BCH_M_SBS_CAL_DELTA_WORD      "debug-mSBS-cal-delta"//OPT_DISPLAY_PROGRESS
+    #define FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA (1<<1)
+    #define debug_mSBS_AlgorithmCalDeltaMes     printf("debug-mSBS-cal-delta ) ");
     /*mSBS Algorithm debug option end*/
 
 
 
 unsigned int global_flag_berOptions=0;
-// #define TEST_GET_BER_WORD    "get-ber"//SETVALUE
-#define FLAG_MASK_TEST_GET_BER    (1<<0)
-#define testGetBerMes    printf("test GET-BER ) ");
+/*
+#define TEST_GET_BER_WORD       "get-ber"//SETVALUE
+*/
+#define FLAG_MASK_TEST_GET_BER  (1<<0)
+#define testGetBerMes           printf("test GET-BER ) ");
     /****************************************************/
     /********** global flag associate wieh ber **********/
     /****************************************************/
@@ -306,7 +308,7 @@ unsigned int global_flag_berOptions=0;
 
     unsigned int global_flag_case_selTP_before_dec = 0;
 
-    #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT        FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
+    #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
 
         /****************************************************/
@@ -330,9 +332,9 @@ unsigned int global_flag_berOptions=0;
             unsigned int global_flag_case_getBER_method_Display=0;
             //if( (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS) )
             /*
-            #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-            #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-            #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+            #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+            #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+            #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
             */
 
     unsigned int global_flag_case_dec_fail_handling = 0;
@@ -354,8 +356,8 @@ unsigned int global_flag_berOptions=0;
 
 unsigned int global_flag_simulationCode=0;
 /*Channel Setting, LLR quantization bit setting*/
-#define FLAG_MASK_CODE_BCH            (1<<0)
-#define mes_bchCode                    printf("BCH code) ");
+#define FLAG_MASK_CODE_BCH  (1<<0)
+#define mes_bchCode         printf("BCH code) ");
 
     //////////////////////////////////////////////////////////////////////////////////
     //////////////////////* Common BCH Codes Calculations start */////////////////////
@@ -363,12 +365,12 @@ unsigned int global_flag_simulationCode=0;
     enum KIND_OF_BCH_DECODING_ALGORITHM
     {
         KIND_OF_BCH_DECODING_BM,
-        // KIND_OF_BCH_DECODING_mSBS,
+        //KIND_OF_BCH_DECODING_mSBS,
         KIND_OF_BCH_DECODING_iBM,
         KIND_OF_BCH_DECODING_RiBM,
         KIND_OF_BCH_DECODING_SiBM,
         KIND_OF_BCH_DECODING_mSBS,
-        // KIND_OF_BCH_DECODING_BM,
+        //KIND_OF_BCH_DECODING_BM,
         KIND_OF_BCH_DECODING_PETERSON,
         KIND_OF_BCH_DECODING_EUCLIDIAN,
         KIND_OF_BCH_DECODING_END,
@@ -377,12 +379,12 @@ unsigned int global_flag_simulationCode=0;
     const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
     {
         "BM",
-        // "mSBS",
+        //"mSBS",
         "iBM",
         "RiBM",
         "SiBM",
         "mSBS",
-        // "BM",
+        //"BM",
         "PETERSON",
         "EUCLIDIAN",
     };
@@ -401,21 +403,21 @@ unsigned int global_flag_simulationCode=0;
     enum BCH_DECODING_ALGORITHM
     {
         FLAG_MASK_BCH_DECORDING_ALGORITHM_BM        = (1<<KIND_OF_BCH_DECODING_BM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_iBM        = (1<<KIND_OF_BCH_DECODING_iBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_RiBM        = (1<<KIND_OF_BCH_DECODING_RiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_SiBM        = (1<<KIND_OF_BCH_DECODING_SiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS        = (1<<KIND_OF_BCH_DECODING_mSBS),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_PETERSON    = (1<<KIND_OF_BCH_DECODING_PETERSON),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_EUCLIDIAN    = (1<<KIND_OF_BCH_DECODING_EUCLIDIAN),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_iBM       = (1<<KIND_OF_BCH_DECODING_iBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_RiBM      = (1<<KIND_OF_BCH_DECODING_RiBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_SiBM      = (1<<KIND_OF_BCH_DECODING_SiBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS     = (1<<KIND_OF_BCH_DECODING_mSBS),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_PETERSON  = (1<<KIND_OF_BCH_DECODING_PETERSON),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_EUCLIDIAN = (1<<KIND_OF_BCH_DECODING_EUCLIDIAN),
     };
 
     /* Simulation Working Mode */
     unsigned int global_flag_sim_workingMode = 0;
     enum SIMULATION_WORKING_MODE
     {
-        FLAG_MASK_SIM_DECOING = (1<<0),
+        FLAG_MASK_SIM_DECOING       = (1<<0),
         FLAG_MASK_SIM_ABSTRACT_DATA = (1<<1),//reserved Working mode
-        FLAG_MASK_SIM_TEST = (1<<2),
+        FLAG_MASK_SIM_TEST          = (1<<2),
     };
 
     /* global_list_flag_bch_sim_decodingMode */
@@ -426,62 +428,70 @@ unsigned int global_flag_simulationCode=0;
         /*******************************************************************/
         enum BCH_ALGORITHM_COMMON_DECODING_OPTIONS
         {
-            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
-            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
-            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
+            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
+            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
+            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
 
-            FLAG_MASK_LRB_LLR_TEST = (1<<3),
+            FLAG_MASK_LRB_LLR_TEST                          = (1<<3),
 
-            FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
+            FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
         };
-        // unsigned int global_flag_bchBM_simulationMode=0;
-        // enum BCH_BM_SIMULATION_MODE
-        // {
-            // FLAG_MASK_TEST_BM_ALGORITHM = (1<<0),
-            // FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
-            // FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
+        /*
+        unsigned int global_flag_bchBM_simulationMode=0;
+        enum BCH_BM_SIMULATION_MODE
+        {
+            FLAG_MASK_TEST_BM_ALGORITHM         = (1<<0),
+            FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
+            FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
 
-            // FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
-        // };
+            FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
+        };
+        */
 
         /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
         /*
-        #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-        #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-        #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+        #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+        #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+        #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
         */
-        // #define infoMes        printf("test BCH BM HARD ) ")
+            /*
+            #define infoMes printf("test BCH BM HARD ) ")
+            */
             unsigned int global_flag_bch_BM_SimHD_display=0;
         /*LLR Quantization value Set*/
-        // #define infoMes        printf("test BCH BM SOFT ) ")
+            /*
+            #define infoMes printf("test BCH BM SOFT ) ")
+            */
             unsigned int global_flag_bch_BM_SimSD_display=0;//make common thing.
-            #define test_BM_SoftDisplayMes    printf("test SBCH BM SOFT DISPLAY ) ");
+            #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
 
 
         /*******************************************************************/
         /********** global flag associate wieh bch - mSBS algorithm **********/
         /*******************************************************************/
-        // unsigned int global_flag_bch_mSBS_simulationMode = 0;
-        // enum BCH_M_SBS_SIMULATION_MODE
-        // {
-            // FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
-            // FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
-            // FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
+        /*
+        unsigned int global_flag_bch_mSBS_simulationMode = 0;
+        enum BCH_M_SBS_SIMULATION_MODE
+        {
+            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
+            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
+            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
 
-            // FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
-        // };
+            FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
+        };
+        */
 
         /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
         /*
-        #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-        #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-        #define DISPLAY_FUNCNAME_WORD            "funcname"
-        #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+        #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+        #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+        #define DISPLAY_FUNCNAME_WORD       "funcname"
+        #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
         */
-        #define test_mSBS_HardMes        printf("test BCH mSBS HARD ) ");
+        #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
             unsigned int global_flag_bch_mSBS_SimHD_display=0;
         /*LLR Quantization value Set*/
-        #define test_mSBS_SoftMes        printf("test BCH mSBS SOFT ) ");
+        #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
             unsigned int global_flag_bch_mSBS_SimSD_display=0;
             #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
@@ -496,10 +506,10 @@ unsigned int global_flag_fileInputOutput = 0;
     unsigned int global_flag_file_io_hd_pattern_output_verilog = 0;
     enum HD_PATTERN_OUTPUT
     {
-        FLAG_MASK_FILE_IO_HD_MES            =   (1<<0),
-        FLAG_MASK_FILE_IO_HD_ENCODING_MES   =   (1<<1),
-        FLAG_MASK_FILE_IO_HD_RECEIVED_MES   =   (1<<2),
-        FLAG_MASK_FILE_IO_HD_CORRECTED_MES  =   (1<<3),
+        FLAG_MASK_FILE_IO_HD_MES            = (1<<0),
+        FLAG_MASK_FILE_IO_HD_ENCODING_MES   = (1<<1),
+        FLAG_MASK_FILE_IO_HD_RECEIVED_MES   = (1<<2),
+        FLAG_MASK_FILE_IO_HD_CORRECTED_MES  = (1<<3),
     };
 
     unsigned int global_flag_file_io_sd_pattern_output = 0;
@@ -507,8 +517,8 @@ unsigned int global_flag_fileInputOutput = 0;
     unsigned int global_flag_file_io_sd_pattern_output_verilog = 0;
     enum SD_PATTERN_OUTPUT
     {
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       =   (1<<0),
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   =   (1<<1),
+        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       = (1<<0),
+        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   = (1<<1),
     };
 
 
@@ -520,7 +530,7 @@ unsigned int global_flag_fileInputOutput = 0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
                 unsigned int testOption=0;
-                #define FLAG_MASK_TEST_RESULT        (1<<5)
+                #define FLAG_MASK_TEST_RESULT   (1<<5)
 
                 unsigned int enviromentsOption=0;
 
@@ -528,22 +538,24 @@ unsigned int global_flag_fileInputOutput = 0;
 /*****************************************/
 /********** Associate with AWGN **********/
 /*****************************************/
-#define VALUE_EBN0_WORD    "ebn0"//SET_VALUE
-/*    double main_com_EbN0 = 1.0;*/
-#define DEFAULT_VALUE_EBN0    1.0f
+#define VALUE_EBN0_WORD         "ebn0"//SET_VALUE
+/*
+double main_com_EbN0 = 1.0;
+*/
+#define DEFAULT_VALUE_EBN0      1.0f
 double global_EbN0_Start_Value = DEFAULT_VALUE_EBN0;
 
-#define VALUE_EBN0_END_WORD    "ebn0-end"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_END    8.0f
+#define VALUE_EBN0_END_WORD     "ebn0-end"//SET_VALUE
+#define DEFAULT_VALUE_EBN0_END  8.0f
 double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
 
 #define VALUE_EBN0_STEP_WORD    "ebn0-step"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_STEP    0.25f
+#define DEFAULT_VALUE_EBN0_STEP 0.25f
 double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
 
 
 unsigned int global_flag_debug_awgn=0;
-#define FLAG_MASK_DEBUG_AWGN_SEQUENCE    (1<<0)
+#define FLAG_MASK_DEBUG_AWGN_SEQUENCE   (1<<0)
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 
 
@@ -554,15 +566,17 @@ unsigned int global_flag_debug_awgn=0;
 unsigned int global_flag_llr_display=0;
 enum FLAG_LLR_DISPLAY
 {
-    FLAG_LLR_DISPLAY_NONE                        = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
-    FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING        = (1<<0),
+    FLAG_LLR_DISPLAY_NONE                   = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
+    FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING = (1<<0),
 }typedef enum_FLAG_LLR_DISPLAY;
 
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE                       0
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM                    1
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH   2
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN  3//NOT SUPPORT YET
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO         4//NOT SUPPORT YET
+/*
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE                       0
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM                    1
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH   2
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN  3//NOT SUPPORT YET
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO         4//NOT SUPPORT YET
+*/
 enum FLAG_CASE_FINDING_MIN_METHOD
 {
     FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE,
@@ -651,11 +665,11 @@ unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHO
 
 /*Log LikeHood Ratio debug option start*/
 unsigned int global_flag_debug_awgnLLR=0;
-#define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE (1<<0)
-#define debugAwgnLlrSequenceMes    printf("SEQUENCE LLR ) ");
+#define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
+#define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
 
-#define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR (1<<1)
-#define debugAwgnLlrLocatorMes    printf("debug-LLR-Locator ) ");
+#define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR    (1<<1)
+#define debugAwgnLlrLocatorMes              printf("debug-LLR-Locator ) ");
 /*Log LikeHood Ratio debug option end*/
 
 /* LLR QUANTIZATION FILTER options start */
@@ -699,9 +713,9 @@ unsigned int global_flag_case_llr_mag_ones_complement_zero_handling = \
     ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE;
 
 /* LLR QUANTIZATION FILTER VARIABLES start */
-double global_LLR_quantizFilter_offset            = -0.5;
-double global_LLR_quantizFilter_step            = 1.0;
-unsigned char global_LLR_quantizFilter_bitWidth    = 4;
+double global_LLR_quantizFilter_offset = -0.5;
+double global_LLR_quantizFilter_step = 1.0;
+unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
 
@@ -732,45 +746,47 @@ unsigned int global_ErrorNum = 0;
 unsigned int global_flag_gfCommon_display = 0;
 enum FLAG_MASK_DISPLAY_GF_COMMON
 {
-    FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY        = (1<<0),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
-    FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES    = (1<<2),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
-    FLAG_MASK_DISPLAY_GF_COMMON_FIELD        = (1<<1),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
-    FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY    = (1<<3),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
-    FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX    = (1<<4),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX)
-    FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO        = (1<<5),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
+    FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY     = (1<<0),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
+    FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES = (1<<2),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+    FLAG_MASK_DISPLAY_GF_COMMON_FIELD       = (1<<1),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+    FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY   = (1<<3),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
+    FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX  = (1<<4),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX)
+    FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO     = (1<<5),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
 };
 
 
     unsigned int global_flag_gfCommon = 0;
-    #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL    (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
 
 
 /* Code Specification start */
-                #define VALUE_GF_EXP_WORD    "gf-exp"//SET_VALUE
-                #define DEFAULT_VALUE_GF_EXP 10
+                #define VALUE_GF_EXP_WORD       "gf-exp"//SET_VALUE
+                #define DEFAULT_VALUE_GF_EXP    10
                 unsigned int global_GaloisFieldExponential = DEFAULT_VALUE_GF_EXP;
 
-#define VALUE_CODE_LENGTH_WORD    "codelength"//SET_VALUE
-#define DEFAULT_VALUE_CODE_LENGTH    1023
+#define VALUE_CODE_LENGTH_WORD      "codelength"//SET_VALUE
+#define DEFAULT_VALUE_CODE_LENGTH   1023
 unsigned int global_MaximumCodeLength = 0;
 unsigned int global_CodeLength = DEFAULT_VALUE_CODE_LENGTH;
 unsigned int global_LimitCodeLength = 0;
 /* Code Specification end */
 
                 /* Error correction specification start */
-                // #define VALUE_INFO_LENGTH_WORD    "infolength"
-                // #define DEFAULT_VALUE_INFO_LENGTH    1024
-                // unsigned int global_InfoLength = DEFAULT_VALUE_INFO_LENGTH;
-                #define VALUE_HARD_CORRECTABLE_WORD    "hard-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE    4
+                /*
+                #define VALUE_INFO_LENGTH_WORD              "infolength"
+                #define DEFAULT_VALUE_INFO_LENGTH           1024
+                unsigned int global_InfoLength = DEFAULT_VALUE_INFO_LENGTH;
+                */
+                #define VALUE_HARD_CORRECTABLE_WORD         "hard-correctable"//SET_VALUE
+                #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE  4
                 unsigned int global_bch_hardCorrectable = DEFAULT_VALUE_BCH_HARD_CORRECTABLE;
 
-                #define VALUE_SOFT_CORRECTABLE_WORD "soft-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE    2
+                #define VALUE_SOFT_CORRECTABLE_WORD         "soft-correctable"//SET_VALUE
+                #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE  2
                 unsigned int global_bch_SoftCorrectable = DEFAULT_VALUE_BCH_SOFT_CORRECTABLE;
                 /* Error correction specification end */
 
-                #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND 0
+                #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND    0
                 unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
 
                 //unsigned int global_correctables[2] = {&global_bch_hardCorrectable, &global_bch_SoftCorrectable};
@@ -786,9 +802,9 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
 
     enum ENUM_GLO_CH_MODE_FUNC
     {
-        FLAG_MASK_CHANNEL_MODE_FUNC_NONE = 0,
-        FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
-        FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE     = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
+        FLAG_MASK_CHANNEL_MODE_FUNC_NONE                = 0,
+        FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE     = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
+        FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
     }typedef ENUM_GLO_CH_MODE_FUNC;
 
     unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
@@ -797,15 +813,15 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
 
 /***************************************************************/
 unsigned int global_flag_Modulation_Mode = 0;
-#define FLAG_MASK_MODULATION_MODE_BPSK    (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
-#define DEFAULT_MODULATION_MODE    FLAG_MASK_MODULATION_MODE_BPSK
+#define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
+#define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
     unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
     /*
-    #define FLAG_MASK_DISPLAY_RESULT            (1<<0)
-    #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-    #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
-    #define DISPLAY_DEBUG_WORD        "debug"
-    #define DISPLAY_DEBUG            (1<<3)
+    #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+    #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+    #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
+    #define DISPLAY_DEBUG_WORD          "debug"
+    #define DISPLAY_DEBUG               (1<<3)
     */
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -828,7 +844,7 @@ unsigned int global_flag_Modulation_Mode = 0;
 
     /* Test Mode Commonly using variables */
     /* Test mode iteration variables */
-    #define TMP_TEST_MODE_LOOPS 1000000UL
+    #define TMP_TEST_MODE_LOOPS             1000000UL
     #define TMP_TEST_MODE_ZERO_BIT_RATIO    0.5f
 
     unsigned long tmp_testMode_loops = TMP_TEST_MODE_LOOPS;
@@ -950,7 +966,7 @@ unsigned int global_flag_Modulation_Mode = 0;
 
     unsigned long tmp_testMode_totalBit = 0UL;
 
-    #define LLR_CASE_NUM 8
+    #define LLR_CASE_NUM    8
 
     unsigned long tmp_testMode_count_bit_w = 0UL;
 
@@ -1477,48 +1493,48 @@ char *convertPrimeNumberToString(char *string, unsigned int exponential, const u
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 #define MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER    17
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX        ="1";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX        ="11";
+/*
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX     ="1";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX     ="11";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX        ="111";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX        ="1101";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX        ="11001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX        ="101001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX     ="111";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX     ="1101";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX    ="11001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX    ="101001";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX        ="1100001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX    ="11000001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX    ="101110001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX    ="1100000001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX    ="1100001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX   ="11000001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX   ="101110001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX   ="1100000001";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX    ="10010000001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX    ="101000000001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX  ="10010000001";
+const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX  ="101000000001";
+*/
 
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX        ="1";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX        ="11";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX       ="1";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX       ="11";
 
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX        ="111";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX        ="1011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX        ="10011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX        ="100101";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX       ="111";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX       ="1011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX      ="10011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX      ="100101";
 
-//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX    ="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX        ="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX        ="10001001";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX        ="100011101";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX        ="1000010001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX      ="1000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX     ="10001001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX     ="100011101";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX     ="1000010001";
 
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX    ="10000001001";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX    ="100000000101";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4096_INVERSE_INDEX    ="1000001010011";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8192_INVERSE_INDEX    ="10000000011011";
 
-//char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX    ="100000000100001";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX    ="100010001000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX    ="1000000000000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX    ="10001000000001011";
+/*
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX   ="100000000100001";
+*/
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX   ="100010001000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX   ="1000000000000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX   ="10001000000001011";
 //////////////////////////////////////////////////////////////////////////////////
 char *global_addedRootToLCM_string=NULL;
 unsigned int global_degAddedRootToLCM=0;
