@@ -148,7 +148,7 @@ void printExcutingTime(struct timeval *start)
     struct timeval end;
     struct timeval diff;
     gettimeofday( &end, NULL );
-    
+
     diff.tv_sec = end.tv_sec - start->tv_sec;
     diff.tv_usec = end.tv_usec - start->tv_usec;
     if(diff.tv_usec<0)
@@ -223,11 +223,11 @@ unsigned int global_flag_cmdSystemUnhold=0;
 
 
     /*Algorithm Functional Test*/
-    
+
     #define ALGORITHM_FUNC            (1<<0)
 
     #define ALGORITHM_CHANNEL        (1<<1)
-    
+
     /*Display RESULT or Progress or Function name*/
     enum DEBUG_DISPLAY_MODE
     {
@@ -237,7 +237,7 @@ unsigned int global_flag_cmdSystemUnhold=0;
     };
 
 
-    
+
 /*Global debug option start*/
 unsigned int global_flag_deBugOption=0;
 #define DEBUG_DEBUG_WORD     "debug"//FLAG_MASK_DISPLAY_PROGRESS
@@ -322,7 +322,7 @@ unsigned int global_flag_berOptions=0;
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,
-            
+
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
         }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
 
@@ -373,7 +373,7 @@ unsigned int global_flag_simulationCode=0;
         KIND_OF_BCH_DECODING_EUCLIDIAN,
         KIND_OF_BCH_DECODING_END,
     };
-    
+
     const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
     {
         "BM",
@@ -429,7 +429,7 @@ unsigned int global_flag_simulationCode=0;
             FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
             FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
             FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
-        
+
             FLAG_MASK_LRB_LLR_TEST = (1<<3),
 
             FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
@@ -440,7 +440,7 @@ unsigned int global_flag_simulationCode=0;
             // FLAG_MASK_TEST_BM_ALGORITHM = (1<<0),
             // FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
             // FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
-            
+
             // FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
         // };
 
@@ -456,7 +456,7 @@ unsigned int global_flag_simulationCode=0;
         // #define infoMes        printf("test BCH BM SOFT ) ")
             unsigned int global_flag_bch_BM_SimSD_display=0;//make common thing.
             #define test_BM_SoftDisplayMes    printf("test SBCH BM SOFT DISPLAY ) ");
-            
+
 
         /*******************************************************************/
         /********** global flag associate wieh bch - mSBS algorithm **********/
@@ -467,7 +467,7 @@ unsigned int global_flag_simulationCode=0;
             // FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
             // FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
             // FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
-            
+
             // FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
         // };
 
@@ -511,7 +511,7 @@ unsigned int global_flag_fileInputOutput = 0;
         FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   =   (1<<1),
     };
 
-    
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -772,9 +772,9 @@ unsigned int global_LimitCodeLength = 0;
 
                 #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND 0
                 unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
-                
+
                 //unsigned int global_correctables[2] = {&global_bch_hardCorrectable, &global_bch_SoftCorrectable};
-                
+
 char *global_AddedRoot = NULL;
 
 
@@ -790,11 +790,11 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
         FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
         FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE     = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
     }typedef ENUM_GLO_CH_MODE_FUNC;
-    
+
     unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
-                
-                
-                
+
+
+
 /***************************************************************/
 unsigned int global_flag_Modulation_Mode = 0;
 #define FLAG_MASK_MODULATION_MODE_BPSK    (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
@@ -825,7 +825,7 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned int global_flag_case_sim_testOpt = 0;
 
 
-    
+
     /* Test Mode Commonly using variables */
     /* Test mode iteration variables */
     #define TMP_TEST_MODE_LOOPS 1000000UL
@@ -893,7 +893,7 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned long tmp_testMode_llr_mag_sum_inR_w =0UL;//llr sum in received codeword wrong case
     unsigned long tmp_testMode_llr_mag_sum_inR_c =0UL;//llr sum in received codeword good case
 
-    
+
     /*
     account of tmp_bit_num_inR_ref_zero_OZ_ratio
     index 0 -> total zero bit nums are counted.
@@ -1021,7 +1021,7 @@ double convertStringToDouble(char *string)
     unsigned int strLengh=0;
     unsigned int i=0;
     unsigned int dotFlag=0;
-    
+
     unsigned char minusFlag=0;
 
     if(!string)
@@ -1113,7 +1113,7 @@ unsigned int convertStringToUnsignedInt(char *string)
     {
         return 0;
     }
-    
+
     strLengh=strlen(string);
     for(i=0; i<strLengh; i++)
     {
@@ -1143,7 +1143,7 @@ unsigned long convertStringToUnsignedLong(char *string)
     {
         return 0;
     }
-    
+
     strLengh=strlen(string);
     for(i=0; i<strLengh; i++)
     {
@@ -1409,7 +1409,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
                                 test_BM_SoftDisplayMes; printf("[Test Pattern Generation %d]\n", i);
                                 // printf("%s\n",((*(testPattern+i))+j));
                                     printf("%s\n",((*(testPattern+i))));
-                            
+
                             }
                         }
                         #endif
@@ -1447,7 +1447,7 @@ char *convertPrimeNumberToString(char *string, unsigned int exponential, const u
         return NULL;
     }
     #endif
-    
+
     for(i=31; 0<=i; i--)
     {
         if(((*(primeNumberArray+exponential-2))>>i)&1)
@@ -1724,7 +1724,7 @@ struct_powerFormPolynomials *createPowerFormPolynomialUsingString(char *string, 
             #ifndef RELEASE
             errorMes; printf("in createPowerFormPolynomialUsingString, string have another character(can use only '0' and '1').\niuputString : %d-th '%c'\n", i, *(string+i));
             #endif
-            
+
             #ifdef USING_OPEN_MP
             if(*(p->equation+i)%2)
             {
@@ -1918,7 +1918,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
                 printf("Previous value will be deleted.\n");
             }
             #endif
-    
+
     if(tmp_char_powerForm)
     {
         free(tmp_char_powerForm);
@@ -2496,12 +2496,12 @@ struct struct_variableSetConvertBitStreamToPowerForm
     unsigned char *data;
 
     unsigned char dataBitLength;
-    
+
     unsigned int codeWordPerDataNumber;
-    
+
     unsigned long totalCodeWordNumber;
     unsigned long countedCodeWordNumber;
-    
+
     unsigned long totalDataNumber;
     unsigned long countedDataNumber;
 
@@ -2648,7 +2648,7 @@ char loadToCodeWordStartAtHighSide(struct_powerFormPolynomials *p, struct_variab
         variables->countedCodeWordNumber++;
     }
     /*load 1 codeword end*/
-    
+
     for(; equationIndex!=0; equationIndex--)
     {
         *(p->equation+equationIndex-1)='0';
@@ -3243,7 +3243,7 @@ char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPo
         printf("in copyListOfGaloisField, unsigned int size is 0.\n");
         return -1;
     }
-    
+
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
@@ -3700,7 +3700,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
             shiftBuffer='0';
         }
 
-        
+
         if(((*(p->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
         {
             (*(p->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->element+i));
@@ -3722,7 +3722,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
         /*
         Update. 2016/02/22
         seperated this parts, creating parts of conjugacy class is moved init_ConjugacyClasses
-        
+
         */
         /* create conjugacy Class (static) */
         // p->conjugacies=createConjugacyClasses(p);
@@ -3789,7 +3789,7 @@ struct struct_galoisFieldElements
 {
     unsigned int length;
     struct_galoisFieldPolyForm **element;
-    
+
     struct_summationMatrix *summationReferMatrix;
 }typedef struct_galoisFieldElements;
 */
@@ -4574,7 +4574,7 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
     p=(struct_summationMatrix*)malloc(sizeof(struct_summationMatrix));
 
     p->element=(struct_galoisFieldPolyForm ***)malloc(sizeof(struct_galoisFieldPolyForm **)*row);
-    
+
             #ifndef RELEASE
             infoMes;  printf("calculating a struct_summationMatrix ");
             #endif
@@ -4839,7 +4839,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
         // }
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)            chk_incorrectFormCnt++;
         // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END
-    
+
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)                                                chk_incorrectFormCnt++;
         // printf("%s\r\n", load_stringBuf);
 
@@ -4999,7 +4999,7 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
         return NULL;
     }
     #endif
-    
+
     exponentialOfOperandB=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(field, operandB);
     #ifndef RELEASE
     if(exponentialOfOperandB==-1)
@@ -5076,7 +5076,7 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
 
     initEquation(galoisFields, p->alpha);
     initEquation(galoisFields, p->beta);
-    
+
     copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
 */
 char initEquation(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *p)
@@ -5396,7 +5396,7 @@ struct struct_setOfGaloisFieldElements
     struct_galoisFieldElements **conjugateSet;
 
     unsigned int limitedExponential;
-    
+
     struct_galoisFieldElements **limitedConjugateSet;
 }typedef struct_setOfGaloisFieldElements;
 //////////////////////////////////////////////////////////////////////////////////
@@ -5410,7 +5410,7 @@ char setLengthOfLimittedLengthOfConjugacyClasse(struct_setOfGaloisFieldElements 
         return -1;
     }
     #endif
-    
+
     p->limitedExponential = limitedExponential;
     return 0;
 }
@@ -5549,7 +5549,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
     // if(!(p->length))
     // {
         // p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
-        
+
         // #ifdef USING_OPEN_MP
         // #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
         // #endif
@@ -5618,7 +5618,7 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
         for(i=0; i<addedLength; i++)
         {
             *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-            
+
             *(p->limitedConjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
         }
         p->length=addedLength;
@@ -5790,7 +5790,7 @@ struct struct_setOfGaloisFieldElements
     struct_galoisFieldElements **conjugateSet;
 
     unsigned int limitedExponential;
-    
+
     struct_galoisFieldElements **limitedConjugateSet;
 }typedef struct_setOfGaloisFieldElements;
 */
@@ -6255,7 +6255,7 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
     unsigned int i,j;
     unsigned int exponential;
 
-    
+
     if(!galoisFields)
     {
         errorMes;
@@ -6312,7 +6312,7 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
             {
                 printf("a^%d\t", exponential-1);
             }
-            
+
             printPolyForm(*((*(p->limitedConjugateSet+i))->element+j));
             printf("\t");
             printf("=%d\t", (*((*(p->limitedConjugateSet+i))->element+j))->intValue);
@@ -6502,7 +6502,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         }
                     }
                     #endif
-            
+
             for(k=0; k<equation->length-1; k++)
             {
                 //shifted orders
@@ -6566,7 +6566,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                 warningMes;    printf("in test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot, ");
                 warningMesShort; printf("number of selected set(=\'%d\') can not exceed to number of conjugacy set(=\'%d\').\n", numberOfSelectedSet, multipledRootSet->length);
                 #endif
-                
+
         numberOfSelectedSet=(multipledRootSet->length);
                 #ifndef RELEASE
                 warningMes; printf("number of conjugacy set that %d, which it is maximum length in this condition.\n", numberOfSelectedSet);
@@ -7032,7 +7032,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
             // (*(p->nonSorted->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+i));
         // }
         // (*(p->nonSorted->element+i))->index=i;
-        
+
         // // printf("[%05d]%s\n", i,(*(p->nonSorted->element+i))->value);
     // }
     // infoMes; printf("[END][Generating GaloisField Elements]\n");
@@ -7291,10 +7291,10 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
     {
         if(*(string+i)=='1')
         {
-            
+
             *(calculationBuffer+0)=(*(galoisFields->element+1+i));//a^0 is decimalic '1'. so it is 1st element of galoisFields(start 0th).
             (*(syndrome->element+0))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(syndrome->element+0)), *(calculationBuffer+0));
-            
+
             *(calculationBuffer+1)=multiElementsInGF_returnAddr(galoisFields, *(calculationBuffer+0), *(calculationBuffer+0));
             (*(syndrome->element+1))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(syndrome->element+1)), *(calculationBuffer+1));
 
@@ -7734,7 +7734,7 @@ char chienSearch_offset_direction
         return -1;
     }
     #endif
-    
+
     #ifndef RELEASE
     if(calculateChienSearch_direction(galoisFields, errLocPolynomial, errorLocationPolynomial, metricCheck, direction))
     {
@@ -8325,7 +8325,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
             warningMes;
             printf("in closeBmAlgorithmComponent, closeGaloisFieldExceptElements(&((*p)->syndrome)) is fail.\n");
         }
-        
+
         if(closeGaloisFieldExceptElements(&((*p)->errLocSyndrome)))
         {
             warningMes;
@@ -9041,10 +9041,10 @@ struct struct_HD_mSBS_t3_algorithmComponent{
     /* this polynomial is same with struct_galoisFieldElements *errLocPoly; */
     /*
         refference coefficient is coefficient_of_alpha_three.
-        
+
         If this value is 0, degree of err location polynomials is two.
         That is mean error locations are two.
-        
+
         Else this value is non 0,  degree of err location polynomials is three or more.
     */
     struct_galoisFieldPolyForm *coefficient_of_alpha_three;//(that is C)
@@ -10256,7 +10256,7 @@ void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, stru
     #endif
     for(i=0; i<codeWord->usedLength; i++)
     {
-        
+
         if(*(error->equation+i)=='1')
         {
             if(*(codeWord->equation+i)=='0')
@@ -10291,7 +10291,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
     if(!p)
     {
         p=(char*)malloc(sizeof(char)*(infoBitsLength+parityBitsLength+1));
-        
+
         warningMes;
         printf("in randdomInfoBitStreamChanger, memory allocation. size is '%d'+1='%d'\n", infoBitsLength+parityBitsLength,infoBitsLength+parityBitsLength+1);
     }
@@ -10461,7 +10461,7 @@ struct struct_quantizationInfo
     unsigned char numsOfBits;
 
     s_int_QUANTIZ_DIGIT numberOfSteps;
-    
+
     double_RATIONAL_NUMBER rangeMin;
     double_RATIONAL_NUMBER rangeMax;
 
@@ -10659,7 +10659,7 @@ void initGlobalQuantizInfo
             global_QuantizationInfo.offset = 0.0f;
             */
         }
-        
+
 
         /* zero symmetry */
         if(global_flag_case_llr_mag_ones_complement_zero_handling == \
@@ -10706,7 +10706,7 @@ void initGlobalQuantizInfo
         /* overaping */
         global_QuantizationInfo.numberOfSteps -= 1;
     }
-    
+
 
     global_QuantizationInfo.rangeMax = \
         ((double_RATIONAL_NUMBER)(global_QuantizationInfo.numberOfSteps/2)) * \
@@ -10943,7 +10943,7 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
                 memset(*(p->direction+i), 0, sizeof(unsigned char)*tmp_treeLength);
                 *(p->treeIndex+i) = (unsigned int*)malloc(sizeof(unsigned int)*tmp_treeLength);
                 memset(*(p->treeIndex+i), -1, sizeof(unsigned int)*tmp_treeLength);
-                
+
                 *(p->treeLength+i) = tmp_treeLength;//store treeLength
             }
             break;
