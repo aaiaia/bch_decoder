@@ -6900,7 +6900,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 //    p=(struct_galoisField_info*)malloc(sizeof(struct_galoisField_info));
 //    memset(p, 0, sizeof(struct_galoisField_info));
 //
-//    p->gfBits=&(p->length);
+//    //p->gfBits=&(p->length);
 //
 //    p->primitivePolynomial=primitivePolynomial;
 //
@@ -6917,7 +6917,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 //            #endif
 //
 //    *((*(p->nonSorted->element+1))->value+0)='1';
-//    printf("((*(p->nonSorted->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->nonSorted->element+1))->length), (sizeof(uint32_t)*8));
+//    //printf("((*(p->nonSorted->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->nonSorted->element+1))->length), (sizeof(uint32_t)*8));
 //    if(((*(p->nonSorted->element+1))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
 //    {
 //        (*(p->nonSorted->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+1));
@@ -6934,8 +6934,8 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 //            #endif
 //
 //
-//    printf("[%05d]%s\n", 0,(*(p->nonSorted->element+0))->value);
-//    printf("[%05d]%s\n", 1,(*(p->nonSorted->element+1))->value);
+//    //printf("[%05d]%s\n", 0,(*(p->nonSorted->element+0))->value);
+//    //printf("[%05d]%s\n", 1,(*(p->nonSorted->element+1))->value);
 //    infoMes; printf("[START][Generating GaloisField Elements]\n");
 //    for(i=2; i<(p->nonSorted->length); i++)
 //    {
