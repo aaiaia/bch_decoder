@@ -17095,6 +17095,7 @@ int main(int argc, char **argv)
     char fileio_Name_GF_infoBuf[256]={0};
     char fileio_Path_common[512]={0};
     char fileio_Path_Target[768]={0};
+    char fileio_Path_TargetTmp[768]={0};
     struct dirent  *tmp_dir_entry;
 
     char fileio_Name_Output_RootPath[26]={0};
@@ -17319,7 +17320,8 @@ int main(int argc, char **argv)
     closedir(tmp_dirio_var);
 
     /* dirio_Name_common_dir */
-    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_Target, dirio_Name_common_dir);
+    strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_common_dir);
     /* copy common path start */
     strcpy(fileio_Path_common, fileio_Path_Target);
     /* copy common path end */
@@ -17340,7 +17342,8 @@ int main(int argc, char **argv)
 
 /* make directory common used end */
 /* make directory(galois fields info save only) start */
-    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_Target, dirio_Name_GF_info);
+    strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_GF_info);
     tmp_dirio_var = opendir((char*)fileio_Path_Target);
     if(!tmp_dirio_var)
     {
