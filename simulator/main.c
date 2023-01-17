@@ -20483,10 +20483,10 @@ int main(int argc, char **argv)
                 for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
                 {
                     fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
+                        ",%ld", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
                     );
                     fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
+                        ",%ld", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
                     );
                 }
                 for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
