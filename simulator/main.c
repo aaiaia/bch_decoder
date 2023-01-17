@@ -23155,7 +23155,7 @@ int main(int argc, char **argv)
                                         //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                         for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                                         {
-                                            infoMes;    printf("[ACT] [%s] Selected TP '#%d', err distans before decoding of TP[%d] = %d\r\n",
+                                            infoMes;    printf("[ACT] [%s] Selected TP '#%d', err distance before decoding of TP[%d] = %d\r\n",
                                                 KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
