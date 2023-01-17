@@ -20615,7 +20615,7 @@ int main(int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                fprintf(fp_testMode_log, "[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
+                fprintf(fp_testMode_log, "[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c)*100.0f);
             }
             fprintf(fp_testMode_log, "[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
