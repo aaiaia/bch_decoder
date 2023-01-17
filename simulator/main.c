@@ -14043,16 +14043,14 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
     {
         received_msg[i] = transmitted_msg[i] + (channel_noise[i] * attn);
         received_LLR[i] = (-2 * received_msg[i]) / (attn*attn);
-                    /*
-                    printf("test : [+1.5] => %g\n", (-2 * +1.5 / (attn*attn)));
-                    printf("test : [+1.0] => %g\n", (-2 * +1.0 / (attn*attn)));
-                    printf("test : [+0.5] => %g\n", (-2 * +0.5 / (attn*attn)));
-                    printf("test : [+0.0] => %g\n", (-2 * +0.0 / (attn*attn)));
-                    printf("test : [-0.5] => %g\n", (-2 * -0.5 / (attn*attn)));
-                    printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
-                    printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
-                    printf("\n\n");
-                    */
+                    //printf("test : [+1.5] => %g\n", (-2 * +1.5 / (attn*attn)));
+                    //printf("test : [+1.0] => %g\n", (-2 * +1.0 / (attn*attn)));
+                    //printf("test : [+0.5] => %g\n", (-2 * +0.5 / (attn*attn)));
+                    //printf("test : [+0.0] => %g\n", (-2 * +0.0 / (attn*attn)));
+                    //printf("test : [-0.5] => %g\n", (-2 * -0.5 / (attn*attn)));
+                    //printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
+                    //printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
+                    //printf("\n\n");
         if(LLR_MAX<received_LLR[i]) LLR_MAX=received_LLR[i];
         if(LLR_MIN>received_LLR[i]) LLR_MIN=received_LLR[i];
     }
