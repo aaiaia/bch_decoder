@@ -1296,7 +1296,6 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
         // if(locatorArrayLength&(1<<i)) break;
     // }
     // usingBitNumber=i;
-    unsigned char bitLocator=0;
 
     #ifndef RELEASE
     if(!testPattern)
@@ -1662,8 +1661,6 @@ struct struct_powerFormPolynomials/*power form poly is mean that bit stream like
 /* bits is mean that length of bits */
 struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
 {
-    unsigned int i;
-
     struct_powerFormPolynomials *p;
 
     #ifndef RELEASE
@@ -1771,7 +1768,7 @@ char closePowerFormPolynomial(struct_powerFormPolynomials **p)
     if(!(*p))
     {
         warningMes;
-        printf("in closePowerFormPolynomial, struct_powerFormPolynomials *p is already removed.\n",(*p));
+        printf("in closePowerFormPolynomial, struct_powerFormPolynomials *p is already removed.\n");
         printf("it is already removed.\n");
         return -1;
     }
@@ -1811,11 +1808,10 @@ struct_powerFormPolynomials *recreatePowerFormPolynomial(struct_powerFormPolynom
 //////////////////////////////////////////////////////////////////////////////////
 char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char *string, unsigned int usedLength, unsigned int length)
 {
-    unsigned int i;
     unsigned int strLength;
 
-    unsigned int tmp_length=0;
-    unsigned int tmp_usedLength=0;
+//    unsigned int tmp_length=0;
+//    unsigned int tmp_usedLength=0;
     char_POWER_FORM *tmp_char_powerForm=NULL;
 
     #ifndef RELEASE
@@ -1896,14 +1892,14 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
     if(!(p->equation))
     {
         /*dont care case*/
-        warningMes; printf("in setPowerFormPolynomialUsingStringAddr, p->equation(0x%x) is not NULL.\n", p->equation);
+        warningMes; printf("in setPowerFormPolynomialUsingStringAddr, p->equation(0x%lx) is not NULL.\n", (unsigned long)p->equation);
     }
     #endif
 
 
     /* backuped */
-    tmp_length=p->length;
-    tmp_usedLength=p->usedLength;
+//    tmp_length=p->length;
+//    tmp_usedLength=p->usedLength;
     tmp_char_powerForm=p->equation;
 
     p->length=length;
@@ -1973,7 +1969,7 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
     if(!(p->equation))
     {
         errorMes;
-        printf("in copyPowerFormPolynomialFromString, p->equation(0x%x) is not defined.\n", p->equation);
+        printf("in copyPowerFormPolynomialFromString, p->equation(0x%lx) is not defined.\n", (unsigned long)p->equation);
         return -1;
     }
     #endif
@@ -2106,7 +2102,7 @@ void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned i
     if(p->usedLength<length)
     {
         warningMes;
-        printf("in shiftHighSidePowerFormPolynomial, used length(%d) is shortter than shifted length.\n");
+        printf("in shiftHighSidePowerFormPolynomial, used length(%d) is shortter than shifted length.\n", p->usedLength);
         printf("Result can have incorrected value.\n");
         printf("Because shifted string will be cuf off at \'%d\'-th value\n", p->usedLength+1);
     }
@@ -2284,7 +2280,7 @@ void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPoly
     printf("[odd]:%d",odd_bit);
     printf("[all]:%d",all_bit);
     printf("[used]:%d", p->usedLength);
-    printf("[strLen]:%d", strlen(p->equation));
+    printf("[strLen]:%ld", strlen(p->equation));
     printf("[full]:%d\n", p->length);
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -2486,7 +2482,7 @@ void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolyn
     fprintf(fp, "[odd]:%d",odd_bit);
     fprintf(fp, "[all]:%d",all_bit);
     fprintf(fp, "[used]:%d", p->usedLength);
-    fprintf(fp, "[strLen]:%d", strlen(p->equation));
+    fprintf(fp, "[strLen]:%ld", strlen(p->equation));
     fprintf(fp, "[full]:%d", p->length);
     fprintf(fp, "[illegal]:%d", illegal_bit);
 
@@ -2756,25 +2752,27 @@ struct_galoisFieldPolyForm *createPolyForm(unsigned int length)
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-void closePolyForm(struct_galoisFieldPolyForm **p)
+char closePolyForm(struct_galoisFieldPolyForm **p)
 {
     #ifndef RELEASE
     if(!p)
     {
         warningMes;
-        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%x\n", p);
+        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm *p = 0x%lx\n", (unsigned long)p);
+        return -1;
     }
     if(!*p)
     {
         warningMes;
-        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%x\n", *p);
-        return;
+        printf("in struct_galoisFieldPolyForm, struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)*p);
+        return -1;
     }
     #endif
 
     free((*p)->value);
     free((*p));
     *p=NULL;
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length)
@@ -2820,7 +2818,7 @@ void printPolyFormWithEnter(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     printf("\"");
@@ -2839,7 +2837,7 @@ void printPolyFormPure(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2855,7 +2853,7 @@ void printPolyForm(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     printf("\"");
@@ -2873,7 +2871,7 @@ void printPolyFormWithTapAndEnter(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2890,7 +2888,7 @@ void printPolyFormWithTap(struct_galoisFieldPolyForm *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
 
     for(i=0; i<p->length; i++)
@@ -2907,12 +2905,12 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
     if(!p)
     {
         errorMes;
-        printf("in inputValueToPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in inputValueToPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
     }
     if(p->length!=strlen(string))
     {
         errorMes;
-        printf("in inputValueToPolyForm, %s(%d) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
+        printf("in inputValueToPolyForm, %s(%ld) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
     }
     #endif
 
@@ -2922,7 +2920,7 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
         if((*(string+i)=='0')&&(*(string+i)=='1'))
         {
             errorMes;
-            printf("%s(%d) is composed with wrong character.\n", string, strlen(string), p->length);
+            printf("%s(%ld) is composed with wrong character.\n", string, strlen(string));
             return;
         }
     }
@@ -2945,13 +2943,13 @@ char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *ope
     if(!operandA)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandA);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandA);
         return 0;
     }
     if(!operandB)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandB);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandB);
         return 0;
     }
     if(operandA->length!=operandB->length)
@@ -2979,19 +2977,17 @@ char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *ope
 //////////////////////////////////////////////////////////////////////////////////
 char checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
-    unsigned int i;
-
     #ifndef RELEASE
     if(!operandA)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandA);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandA);
         return 0;
     }
     if(!operandB)
     {
         errorMes;
-        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", operandB);
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)operandB);
         return 0;
     }
     if(operandA->length!=operandB->length)
@@ -3019,13 +3015,13 @@ char checkAllValueUsingCharacterFromPolyForm(struct_galoisFieldPolyForm *p, char
     if(!p)
     {
         errorMes;
-        printf("in checkAllValueUsingCharacterFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in checkAllValueUsingCharacterFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
         return 0;
     }
     if((c!='0')&&(c!='0'))
     {
         errorMes;
-        printf("in checkAllValueUsingCharacterFromPolyForm, \'%c\'(0x%x) is not \'0\' or \'1\'.\n", c, c);
+        printf("in checkAllValueUsingCharacterFromPolyForm, \'%c\'(0x%lx) is not \'0\' or \'1\'.\n", c, (unsigned long)&c);
         return 0;
     }
     #endif
@@ -3048,13 +3044,13 @@ char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *stri
     if(!p)
     {
         errorMes;
-        printf("in checkValueUsingStringFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%x).\n", p);
+        printf("in checkValueUsingStringFromPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
         return 0;
     }
     if(p->length!=strlen(string))
     {
         errorMes;
-        printf("in checkValueUsingStringFromPolyForm, \"%s\"(%d) and struct_galoisFieldPolyForm->length(%d) is not same.\n", string, strlen(string), p->length);
+        printf("in checkValueUsingStringFromPolyForm, \"%s\"(%ld) and struct_galoisFieldPolyForm->length(%d) is not same.\n", string, strlen(string), p->length);
         return 0;
     }
     #endif
@@ -3065,7 +3061,7 @@ char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *stri
         {
             #ifndef RELEASE
                 errorMes;
-                printf("in checkValueUsingStringFromPolyForm, \"%s\"(%d) is composed with wrong character.\n", string, strlen(string));
+                printf("in checkValueUsingStringFromPolyForm, \"%s\"(%ld) is composed with wrong character.\n", string, strlen(string));
             #endif
             return 0;
         }
@@ -3096,7 +3092,6 @@ struct struct_summationMatrix
 */
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 {
-    unsigned int i;
     struct_galoisFieldPolyForm **p;
 
     #ifndef RELEASE
@@ -3121,7 +3116,6 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 */
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList)
 {
-    unsigned int i;
 
     struct_galoisFieldPolyForm **newGaloisFieldPolyForm=NULL;
     #ifndef RELEASE
@@ -3186,11 +3180,10 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 
     if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
     {
-        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm p = \'0x%x\'\n", p);
-        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%x\'\n", *p);
+        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm p = \'0x%lx\'\n", (unsigned long)p);
+        printf("in closeListOfGaloisField, struct_galoisFieldPolyForm *p = \'0x%lx\'\n", (unsigned long)*p);
     }
     #endif
-
 
     free (*p);
     *p=NULL;
@@ -3254,7 +3247,7 @@ char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPo
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
-        printf("in copyListOfGaloisField, addr(to)=0x%x, addr(from)=0x%x\n", to, from);
+        printf("in copyListOfGaloisField, addr(to)=0x%lx, addr(from)=0x%lx\n", (unsigned long)to, (unsigned long)from);
     }
     #endif
 
@@ -3353,7 +3346,6 @@ char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned 
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int lengthOfList, unsigned int polyLength)
 {
-    unsigned int i;
     // struct_galoisFieldPolyForm **p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
     // memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
     struct_galoisFieldPolyForm **p=NULL;
@@ -3361,7 +3353,7 @@ struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int l
     {
                 #ifndef RELEASE
                 errorMes; printf("in createListOfGaloisFieldAndComponents, fail that createListOfGaloisField(lengthOfList).\n");
-                errorMes; printf("return value struct_galoisFieldPolyForm **p = 0x%x\n",p);
+                errorMes; printf("return value struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)p);
                 #endif
         return NULL;
     }
@@ -3526,13 +3518,13 @@ char closeGaloisFieldExceptElements(struct_galoisFieldElements **p)
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
             {
                 infoMes;
-                printf("closeGaloisFieldExceptElements, struct_galoisFieldElements p = \'0x%x\', struct_galoisFieldElements *p = \'0x%x\'\n", p, *p);
+                printf("closeGaloisFieldExceptElements, struct_galoisFieldElements p = \'0x%lx\', struct_galoisFieldElements *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)*p);
             }
             if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
             {
                 infoMes;
-                printf("in closeGaloisFieldExceptElements, &((*p)->element)) = \'0x%x\'\n", &((*p)->element));
-                printf("in closeGaloisFieldExceptElements, ((*p)->element)) = \'0x%x\'\n", ((*p)->element));
+                printf("in closeGaloisFieldExceptElements, &((*p)->element)) = \'0x%lx\'\n", (unsigned long)&((*p)->element));
+                printf("in closeGaloisFieldExceptElements, ((*p)->element)) = \'0x%lx\'\n", (unsigned long)((*p)->element));
             }
             #endif
     if(closeListOfGaloisField(&((*p)->element)))
@@ -3571,8 +3563,6 @@ struct_galoisFieldElements *recreateGaloisFieldExceptElements(struct_galoisField
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldElements *createGaloisFieldAndElements(unsigned int numberOfElement, unsigned int polyLength)
 {
-    unsigned int i;
-
     struct_galoisFieldElements *p;
 
     #ifndef RELEASE
@@ -3607,13 +3597,13 @@ char closeGaloisFielsAndElements(struct_galoisFieldElements **p)
     if(!p)
     {
         errorMes;
-        printf("in closeGaloisFielsAndElements, **p addr = 0x%x\n", (p));
+        printf("in closeGaloisFielsAndElements, **p addr = 0x%lx\n", ((unsigned long)p));
         return -1;
     }
     if(!(*p))
     {
         warningMes;
-        printf("in closeGaloisFielsAndElements, *p addr = 0x%x\n", (*p));
+        printf("in closeGaloisFielsAndElements, *p addr = 0x%lx\n", ((unsigned long)*p));
         return -1;
     }
     #endif
@@ -3885,7 +3875,6 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
     unsigned int tmp_i;
     FILE *load_fileio_GF;
 
-    unsigned int primitivePoly_length=0;
     char load_primitivePoly[1025];
 
     int load_kindOfData=0;
@@ -3897,14 +3886,9 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 
     unsigned int load_intVal;
     unsigned int load_index;
-    // char load_exp_str[256]={0};
     char load_exp_char=0;
     unsigned int load_exp_integer=0;
 
-
-    unsigned int load_integer=0;
-
-    char charBuf=0;
     char load_stringBuf[1025]={0};
 
 
@@ -4040,7 +4024,7 @@ char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galo
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
-        printf("in copyListOfGaloisFieldIngaloisFieldElements, addr(to)=0x%x, addr(from)=0x%x\n", to, from);
+        printf("in copyListOfGaloisFieldIngaloisFieldElements, addr(to)=0x%lx, addr(from)=0x%lx\n", (unsigned long)to, (unsigned long)from);
     }
     if((to->length)!=(from->length))
     {
@@ -4114,7 +4098,7 @@ char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldEleme
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
 {
-    unsigned int i,j;
+    unsigned int i;
     struct_galoisFieldPolyForm *result=NULL;
     #ifndef RELEASE
     if((*(field->element))->length!=p->length)
@@ -4138,7 +4122,7 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoi
 {
     unsigned int strLength = strlen(string);
 
-    unsigned int i,j;
+    unsigned int i;
 
     #ifndef RELEASE
     if((*(field->element))->length!=strLength)
@@ -4248,7 +4232,7 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisField_finding(struct_galo
 //////////////////////////////////////////////////////////////////////////////////
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
 {
-    unsigned int i;
+    //unsigned int i;
 
     if((*(field->element))->length!=p->length)
     {
@@ -4258,10 +4242,10 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_ga
     }
 
     return p->index;
-    // for(i=0; i<field->length; i++)
-    // {
-        // if(checkValueFromPolyFormUsingGaloisFieldValue (*(field->element+i), p)) return i;
-    // }
+    //for(i=0; i<field->length; i++)
+    //{
+    //    if(checkValueFromPolyFormUsingGaloisFieldValue (*(field->element+i), p)) return i;
+    //}
 }
 //////////////////////////////////////////////////////////////////////////////////
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIntValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
@@ -4381,7 +4365,7 @@ struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(
 
             #ifndef RELEASE
             errorMes; printf("in *summationElementsInGaloisFieldUsingGaloisFieldValue, checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(field->element+i), temp) is not working...\n");
-            errorMes; printf("operandA->length = \'%d\', ADDR : 0x%x, operandB->length = \'%d\', ADDR : 0x%x\n", operandA->length, operandA, operandB->length, operandB);
+            errorMes; printf("operandA->length = \'%d\', ADDR : 0x%lx, operandB->length = \'%d\', ADDR : 0x%lx\n", operandA->length, (unsigned long)operandA, operandB->length, (unsigned long)operandB);
             #endif
     closePolyForm(&temp);
     return NULL;
@@ -4616,7 +4600,6 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
 } */
 struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column)
 {
-    unsigned int i,j;
     struct_summationMatrix *p;
 
     p=createSummationMatrix_emptySpace(in_row, in_column);
@@ -4631,7 +4614,6 @@ struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galois
 void printSummationMatrixSavedForm(struct_summationMatrix *p)
 {
     unsigned int tmp_i,tmp_j;
-    unsigned int exponentialTemp;
 
     #ifndef RELEASE
     if(!p)
@@ -4771,14 +4753,9 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
     unsigned int load_column;
 
     unsigned int load_index;
-    // char load_exp_str[256]={0};
     char load_exp_char=0;
     unsigned int load_exp_integer=0;
 
-
-    unsigned int load_integer=0;
-
-    char charBuf=0;
     char load_stringBuf[1025]={0};
 
     unsigned int chk_incorrectFormCnt=0;
@@ -4939,10 +4916,6 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
-    unsigned int i;
-
-    u_int_GALOIS_FIELD_INTEGER temp;
-
     #ifndef RELEASE
     if(!field)
     {
@@ -5722,7 +5695,7 @@ char closeConjugacyClasses(struct_setOfGaloisFieldElements **p)
         if(closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)))//if(closeGaloisFieldExceptElements(&(*((*p)->conjugateSet+i))))
         {
             errorMes;
-            printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+i)) return any value.\n", i);
+            printf("in closeConjugacyClasses, closeGaloisFieldExceptElements(((*p)->limitedConjugateSet+%d)) return any value.\n", i);
         }
         #endif
 
@@ -5863,7 +5836,7 @@ char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
     }
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END);
 
-    fprintf(fileio, "pow(index)\r\n", p->length);
+    fprintf(fileio, "pow(index)\r\n");
 
     fprintf(fileio, "%s\r\n", FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START);
     //(*(p->conjugateSet+i))->length
@@ -5909,7 +5882,6 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 
     FILE *fileio_load_setOfGaloisField;
 
-    unsigned int primitivePoly_length=0;
     char load_primitivePoly[1025];
 
     int load_kindOfData=0;
@@ -5917,22 +5889,14 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
 
     unsigned int load_bitWidth=0;
     unsigned int load_setOfGF_length=0;
-    unsigned int load_row=0;
     unsigned int *load_column=NULL;
 
     unsigned int load_index;
-    // char load_exp_str[256]={0};
-    char load_exp_char=0;
     unsigned int load_exp_integer=0;
-
 
     unsigned int load_integer=0;
 
-    char charBuf=0;
     char load_stringBuf[1025]={0};
-
-    unsigned int chk_incorrectFormCnt=0;
-    unsigned int chk_incorrectDataCnt=0;
 
     if(!path)            return -1;
     if(!primitivePoly)    return -2;
@@ -6108,7 +6072,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
                     {
                         if(*((*(p->conjugateSet+i))->element+j))
                         {
-                            warningMes; printf("in calculateConjugacyClasses, *((*(p->conjugateSet+i))->element+j)(Addr = \'0x%x\') is not NULL.\n", *((*(p->conjugateSet+i))->element+j));
+                            warningMes; printf("in calculateConjugacyClasses, *((*(p->conjugateSet+i))->element+j)(Addr = \'0x%lx\') is not NULL.\n", (unsigned long)(*((*(p->conjugateSet+i))->element+j)));
                             warningMesShort; printf("this link information(it is pointer) will be lost.\n");
                         }
                     }
@@ -6123,7 +6087,7 @@ char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_
                 if((exponential==-1)||(exponential==0)||(exponential==1))
                 {
                             #ifndef RELEASE
-                            errorMes; printf("in calculateConjugacyClasses, exponential can not be \'%s\'.\n", exponential);
+                            errorMes; printf("in calculateConjugacyClasses, exponential can not be \'%d\'.\n", exponential);
                             #endif
                     return -1;
                 }
@@ -6154,7 +6118,7 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 {
     char *elementFlagger;
 
-    unsigned int i, j;
+    unsigned int i;
     unsigned int selectedConjugacySet;
     unsigned int selectedElementOfConjugacy;
 
@@ -6459,7 +6423,6 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
 
     /*if order is 0, length is 1, if order is n-th, length is n+1.*/
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
-    multipledRootSet->length;
 
             #ifndef RELEASE
             if(equation->length<multipledOrder+1)
@@ -6504,7 +6467,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<beforeEquation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(beforeEquation->element+global_tmp_i_memoryCheck));
+                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(beforeEquation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6518,9 +6481,9 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                             logMes;
                             printf("in expandRootOfLCM_usingEleOfGF, \n");
                             printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i, j, k);
-                            printf("*((*(multipledRootSet->conjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", i, j, *((*(multipledRootSet->conjugateSet+i))->element+j));
+                            printf("*((*(multipledRootSet->conjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", i, j, (unsigned long)(*((*(multipledRootSet->conjugateSet+i))->element+j)));
                             printPolyFormWithEnter(*((*(multipledRootSet->conjugateSet+i))->element+j));
-                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", k, *(beforeEquation->element+k));
+                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", k, (unsigned long)(*(beforeEquation->element+k)));
                             printPolyFormWithEnter(*(beforeEquation->element+k));
                         }
                         #endif
@@ -6535,7 +6498,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6553,7 +6516,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6617,7 +6580,6 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 
     /*if order is 0, length is 1, if order is n-th, length is n+1.*/
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
-    multipledRootSet->length;
 
             #ifndef RELEASE
             if(equation->length<multipledOrder+1)
@@ -6662,7 +6624,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<beforeEquation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(beforeEquation->element+global_tmp_i_memoryCheck));
+                            printf("*(beforeEquation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(beforeEquation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6676,9 +6638,9 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                             logMes;
                             printf("in test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot, \n");
                             printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i, j, k);
-                            printf("*((*(multipledRootSet->limitedConjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", i, j, *((*(multipledRootSet->limitedConjugateSet+i))->element+j));
+                            printf("*((*(multipledRootSet->limitedConjugateSet+%d))->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", i, j, (unsigned long)(*((*(multipledRootSet->limitedConjugateSet+i))->element+j)));
                             printPolyFormWithEnter(*((*(multipledRootSet->limitedConjugateSet+i))->element+j));
-                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%x\') == \t", k, *(beforeEquation->element+k));
+                            printf("\t\t\t*(beforeEquation->element+%d)\t{=>>}(ADDR:\'0x%lx\') == \t", k, (unsigned long)(*(beforeEquation->element+k)));
                             printPolyFormWithEnter(*(beforeEquation->element+k));
                         }
                         #endif
@@ -6693,7 +6655,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6711,7 +6673,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                         printf("i=\'%d\', j=\'%d\', k=\'%d\'\n", i,j,k);
                         for(global_tmp_i_memoryCheck=0; global_tmp_i_memoryCheck<equation->length; global_tmp_i_memoryCheck++)
                         {
-                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%x.\n", *(equation->element+global_tmp_i_memoryCheck));
+                            printf("*(equation->element+global_tmp_i_memoryCheck) = 0x%lx.\n", (unsigned long)(*(equation->element+global_tmp_i_memoryCheck)));
                         }
                     }
                     #endif
@@ -6742,9 +6704,7 @@ struct struct_galoisField_info
 //////////////////////////////////////////////////////////////////////////////////
 void printGaloisField(struct_galoisFieldElements *p)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6778,7 +6738,7 @@ void printGaloisField(struct_galoisFieldElements *p)
         printf("%d", (*(p->element+i))->index);
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
             {
-                printf("ADDR : 0x%x\n", *(p->element+i));
+                printf("ADDR : 0x%lx\n", (unsigned long)(*(p->element+i)));
             }
         printf("\n");
     }
@@ -6787,9 +6747,7 @@ void printGaloisField(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6823,7 +6781,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
         printf("%d\n", convertGaloisFieldPolyFormUnsignedInt(*(p->element+i)));
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
             {
-                printf("ADDR : 0x%x\n", *(p->element+i));
+                printf("ADDR : 0x%lx\n", (unsigned long)(*(p->element+i)));
             }
     }
     printf("---------------------- END ----------------------\n");
@@ -6838,9 +6796,7 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
 
 void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoisFieldElements *printedField, unsigned int title, unsigned int options)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -6921,11 +6877,7 @@ void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoi
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)
 {
-    unsigned int i,j;
-
     struct_galoisField_info *p;
-
-    char_GALOIS_FIELD_VALUE shiftBuffer;
 
     #ifndef RELEASE
     if(!primitivePolynomial->length)
@@ -7146,7 +7098,7 @@ void printSummationMatrixGFabstraction(struct_galoisFieldElements *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
+        printf("struct_galoisFieldElements address is wrong(Addr:0x%lx).", (unsigned long)p);
     }
 
     printf(">> Summation Matrix\n");
@@ -7191,7 +7143,7 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
     if(!p)
     {
         errorMes;
-        printf("struct_galoisFieldElements address is wrong(Addr:0x%x).",p);
+        printf("struct_galoisFieldElements address is wrong(Addr:0x%lx).", (unsigned long)p);
     }
 
     printf(">> Multiplication Matrix\n");
@@ -7429,9 +7381,7 @@ char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFi
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -7472,9 +7422,7 @@ void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElement
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -7496,9 +7444,7 @@ void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFiel
 //////////////////////////////////////////////////////////////////////////////////
 void printSyndromeSeriesWithTapAndEnter(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
 {
-    unsigned int i,j;
-
-    unsigned int decimal=0;
+    unsigned int i;
 
     unsigned int exponential;
 
@@ -7758,7 +7704,7 @@ char calculateChienSearch_direction
             {
                 logMes;
                 printf("correctable codeWord \"%s\"\n", errorCorectableCodeWord->equation);
-                printf("variableSet addr(0x%x)\n", variableSet);
+                printf("variableSet addr(0x%lx)\n", (unsigned long)variableSet);
             }
             #endif
     free(variableSet);
@@ -8001,7 +7947,7 @@ char calculateChienSearch_static_backWard
             {
                 logMes;
                 printf("correctable codeWord \"%s\"\n", errorCorectableCodeWord->equation);
-                printf("variableSet addr(0x%x)\n", variableSet);
+                printf("variableSet addr(0x%lx)\n", (unsigned long)variableSet);
             }
             #endif
     free(variableSet);
@@ -8088,6 +8034,7 @@ char chienSearch
         default:
         break;
     }
+    return -1;
 }
 //////////////////////////////////////////////////////////////////////////////////
 char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial)
@@ -8204,8 +8151,8 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 {
     struct_HD_BM_algorithmComponent *p;
 
-    double galoisFieldElementLengthBuffer;
-    unsigned int galoisFieldElementLength;
+    //double galoisFieldElementLengthBuffer;
+    //unsigned int galoisFieldElementLength;
 
     #ifndef RELEASE
     if(!t)
@@ -8221,7 +8168,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 
     if(!stringLength)
     {
-        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %s\n", stringLength);
+        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %d\n", stringLength);
         warningMesShort; printf("string : %s\n", string);
         stringLength=strlen(string);
     }
@@ -8264,8 +8211,8 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
             }
             #endif
 
-        // galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
-        // galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
+        //galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
+        //galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
         // while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
         // {
@@ -8339,7 +8286,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
         {
             errorMes;
-            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent &p = 0x%x\n", p);
+            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent &p = 0x%lx\n", (unsigned long)p);
         }
         return -1;
     }
@@ -8348,7 +8295,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
         {
             warningMes;
-            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent *p = 0x%x\n", *p);
+            printf("in closeBmAlgorithmComponent, closeBmAlgorithmComponent *p = 0x%lx\n", (unsigned long)(*p));
         }
         return -1;
     }
@@ -8442,7 +8389,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
                 {
                     memoryMes;
-                    printf("free(*p), p = \'0x%x\', *p = \'0x%x\'\n", p, *p);
+                    printf("free(*p), p = \'0x%lx\', *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)(*p));
                 }
             #endif
 
@@ -9134,7 +9081,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 
     if(!stringLength)
     {
-        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %s\n", stringLength);
+        warningMesShort; printf("to calculate syndrome, string(cordWord) length is %d\n", stringLength);
         warningMesShort; printf("string : %s\n", string);
         stringLength=strlen(string);
     }
@@ -9260,7 +9207,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
             if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
             {
                 errorMes;
-                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent &p = 0x%x\n", p);
+                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent &p = 0x%lx\n", (unsigned long)p);
             }
             return -1;
         }
@@ -9269,7 +9216,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
             if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
             {
                 warningMes;
-                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent *p = 0x%x\n", *p);
+                printf("in close_mSBS_algorithmComponent, close_mSBS_algorithmComponent *p = 0x%lx\n", (unsigned long)(*p));
             }
             return -1;
     }
@@ -9320,7 +9267,7 @@ char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
                 {
                     memoryMes;
-                    printf("free(*p), p = \'0x%x\', *p = \'0x%x\'\n", p, *p);
+                    printf("free(*p), p = \'0x%lx\', *p = \'0x%lx\'\n", (unsigned long)p, (unsigned long)(*p));
                 }
             #endif
 
@@ -9379,9 +9326,6 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 //////////////////////////////////////////////////////////////////////////////////
 char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p)
 {
-    // unsigned int bebuggingTemp;
-    unsigned int tmp_i;
-
     struct_galoisFieldPolyForm *tmp_S_1_pow_2;
     struct_galoisFieldPolyForm *tmp_S_1_pow_3;
     struct_galoisFieldPolyForm *tmp_S_1_pow_4;
@@ -9862,6 +9806,7 @@ char closeEncodingComponent(struct_encodingComponentInGF **p)
 
     free(*p);
     *p=NULL;
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 struct_encodingComponentInGF *recreateEncodingComponent(struct_encodingComponentInGF **p, unsigned int length, unsigned int numberOfCorrectableBit, char_POWER_FORM *generationPolynomial)
@@ -10151,7 +10096,6 @@ char closeErrorComponent(struct_errorComponent **p)
     closePowerFormPolynomial(&((*p)->errorLocationVector));
     free(*p);
     (*p)=NULL;
-
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -10534,6 +10478,129 @@ struct struct_quantizationInfo
 //////////////////////////////////////////////////////////////////////////////////
 struct_quantizationInfo global_QuantizationInfo;
 //////////////////////////////////////////////////////////////////////////////////
+#define QUANTIZ_MODE_STATIC    0
+#define QUANTIZ_MODE_ADAPT    1
+void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
+{
+    SIGNED_INT k;
+    unsigned int i;
+
+
+
+    for(i=0; i<length; i++)
+    {
+        if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
+        {
+            // LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
+            LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1));
+            if(Codeword_MSG) Codeword_MSG[i] = '1';
+        }
+        else if(global_QuantizationInfo.rangeMax+global_QuantizationInfo.offset <= LLR[i])//LLR is positive
+        {
+            LLR_quantization[i]=((((signed int)(global_QuantizationInfo.numberOfSteps/2)))-1);
+            if(Codeword_MSG) Codeword_MSG[i] = '0';
+        }
+        else
+        {
+            if(global_QuantizationInfo.offset<LLR[i])//LLR is positive
+            {
+                for(k=0; k<(((signed int)(global_QuantizationInfo.numberOfSteps/2))); k++)
+                {
+                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    {
+                        LLR_quantization[i]=k;
+                        break;
+                    }
+                }
+                if(Codeword_MSG) Codeword_MSG[i] = '0';
+            }
+            else//LLR is negative
+            {
+                for(k=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+0); k<0; k++)
+                {
+                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
+                    {
+                        LLR_quantization[i]=k;
+                        break;
+                    }
+                }
+                if(Codeword_MSG) Codeword_MSG[i] = '1';
+            }
+        }
+    }
+    return;
+}
+//////////////////////////////////////////////////////////////////////////////////
+void quantizationWithGlobalAdaptive(
+        double LLR[],
+        SIGNED_INT LLR_quantization[],
+        char *Codeword_MSG,
+        unsigned int length)
+{
+    unsigned int tmp_i;
+    int tmp_q;
+    double_RATIONAL_NUMBER tmp_step = global_QuantizationInfo.step;
+    double_RATIONAL_NUMBER tmp_zeroSymmetry = \
+        (double_RATIONAL_NUMBER)global_QuantizationInfo.val_ones_zero_handling;
+    double_RATIONAL_NUMBER tmp_offset = global_QuantizationInfo.offset;
+
+    for(tmp_i = 0; tmp_i < length; tmp_i++)
+    {
+        /* bigger than criterion? */
+        if(LLR[tmp_i] >= global_QuantizationInfo.criterion)
+        {
+            /*
+             * LLR is larger than criterion
+             * Quantized value is positive
+            */
+            for(tmp_q = global_QuantizationInfo.quantizedIntMax; tmp_q > 0; tmp_q--)
+            {
+                if( (( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset)) * tmp_step <= \
+                        LLR[tmp_i])
+                {
+                    LLR_quantization[tmp_i] = tmp_q;
+                    break;
+                }
+            }
+            if(tmp_q == 0)  LLR_quantization[tmp_i] = tmp_q;
+            Codeword_MSG[tmp_i] = '0';
+        }
+        else
+        {
+            /*
+             * LLR is smaller than criterion
+             * Quantized value is negative
+            */
+            for(tmp_q = global_QuantizationInfo.quantizedIntMin; tmp_q < -1; tmp_q++)
+            {
+                if( ( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset + 1.0 + tmp_zeroSymmetry ) * \
+                     tmp_step > LLR[tmp_i])
+                {
+                    LLR_quantization[tmp_i] = tmp_q;
+                    break;
+                }
+            }
+            if(tmp_q == -1)
+            {
+                switch(global_QuantizationInfo.ones_zero_handling)
+                {
+                    default:
+                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY:
+                        LLR_quantization[tmp_i] = tmp_q;
+                    break;
+
+                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED:
+                        LLR_quantization[tmp_i] = ++tmp_q;
+                    break;
+                }
+            }
+            Codeword_MSG[tmp_i] = '1';
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////
 /*
 default value
     global_QuantizationInfo.offset=-0.5;
@@ -10557,8 +10624,6 @@ void initGlobalQuantizInfo
     double  tmp_double = 0.0f;
     unsigned int tmp_u_int = 0;
     unsigned int i;
-    SIGNED_INT k;
-    double_RATIONAL_NUMBER tmp_ratePerInteger_nums;
 
     printf("INITIALIZING QUANTIZATION FILTER\r\n");
 
@@ -10777,129 +10842,6 @@ void initGlobalQuantizInfo
     }
 }
 //////////////////////////////////////////////////////////////////////////////////
-#define QUANTIZ_MODE_STATIC    0
-#define QUANTIZ_MODE_ADAPT    1
-void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
-{
-    SIGNED_INT k;
-    unsigned int i;
-
-
-
-    for(i=0; i<length; i++)
-    {
-        if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
-        {
-            // LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
-            LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1));
-            if(Codeword_MSG) Codeword_MSG[i] = '1';
-        }
-        else if(global_QuantizationInfo.rangeMax+global_QuantizationInfo.offset <= LLR[i])//LLR is positive
-        {
-            LLR_quantization[i]=((((signed int)(global_QuantizationInfo.numberOfSteps/2)))-1);
-            if(Codeword_MSG) Codeword_MSG[i] = '0';
-        }
-        else
-        {
-            if(global_QuantizationInfo.offset<LLR[i])//LLR is positive
-            {
-                for(k=0; k<(((signed int)(global_QuantizationInfo.numberOfSteps/2))); k++)
-                {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    {
-                        LLR_quantization[i]=k;
-                        break;
-                    }
-                }
-                if(Codeword_MSG) Codeword_MSG[i] = '0';
-            }
-            else//LLR is negative
-            {
-                for(k=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+0); k<0; k++)
-                {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
-                    {
-                        LLR_quantization[i]=k;
-                        break;
-                    }
-                }
-                if(Codeword_MSG) Codeword_MSG[i] = '1';
-            }
-        }
-    }
-    return;
-}
-//////////////////////////////////////////////////////////////////////////////////
-void quantizationWithGlobalAdaptive(
-        double LLR[],
-        SIGNED_INT LLR_quantization[],
-        char *Codeword_MSG,
-        unsigned int length)
-{
-    unsigned int tmp_i;
-    int tmp_q;
-    double_RATIONAL_NUMBER tmp_step = global_QuantizationInfo.step;
-    double_RATIONAL_NUMBER tmp_zeroSymmetry = \
-        (double_RATIONAL_NUMBER)global_QuantizationInfo.val_ones_zero_handling;
-    double_RATIONAL_NUMBER tmp_offset = global_QuantizationInfo.offset;
-
-    for(tmp_i = 0; tmp_i < length; tmp_i++)
-    {
-        /* bigger than criterion? */
-        if(LLR[tmp_i] >= global_QuantizationInfo.criterion)
-        {
-            /*
-             * LLR is larger than criterion
-             * Quantized value is positive
-            */
-            for(tmp_q = global_QuantizationInfo.quantizedIntMax; tmp_q > 0; tmp_q--)
-            {
-                if( (( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset)) * tmp_step <= \
-                        LLR[tmp_i])
-                {
-                    LLR_quantization[tmp_i] = tmp_q;
-                    break;
-                }
-            }
-            if(tmp_q == 0)  LLR_quantization[tmp_i] = tmp_q;
-            Codeword_MSG[tmp_i] = '0';
-        }
-        else
-        {
-            /*
-             * LLR is smaller than criterion
-             * Quantized value is negative
-            */
-            for(tmp_q = global_QuantizationInfo.quantizedIntMin; tmp_q < -1; tmp_q++)
-            {
-                if( ( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset + 1.0 + tmp_zeroSymmetry ) * \
-                     tmp_step > LLR[tmp_i])
-                {
-                    LLR_quantization[tmp_i] = tmp_q;
-                    break;
-                }
-            }
-            if(tmp_q == -1)
-            {
-                switch(global_QuantizationInfo.ones_zero_handling)
-                {
-                    default:
-                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY:
-                        LLR_quantization[tmp_i] = tmp_q;
-                    break;
-
-                    case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED:
-                        LLR_quantization[tmp_i] = ++tmp_q;
-                    break;
-                }
-            }
-            Codeword_MSG[tmp_i] = '1';
-        }
-    }
-}
-
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -11026,7 +10968,7 @@ char closeTreeStruct(struct_treeStructure **p)
         printf("in closeTreeStruct, struct_treeStructure (*p) is NULL.\n");
         warningMes;
         printf("Already struct_treeStructure is removed.");
-        return 0;
+        return -1;
     }
     if(!((*p)->tree_mag))
     {
@@ -11089,7 +11031,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p = 0x%08x\n", p);
+    printf("p = 0x%lx\n", (unsigned long)p);
 
     if(!(p->tree_mag))
     {
@@ -11104,7 +11046,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->tree_mag = 0x%08x, p->tree_hd = %c\n", p->tree_mag, p->tree_hd);
+    printf("p->tree_mag = 0x%lx, p->tree_hd = 0x%lx\n", (unsigned long)(p->tree_mag), (unsigned long)(p->tree_hd));
 
     if(!(p->treeIndex))
     {
@@ -11113,7 +11055,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->treeIndex = 0x%08x\n", p->treeIndex);
+    printf("p->treeIndex = 0x%lx\n", (unsigned long)(p->treeIndex));
 
     if(!(p->treeLength))
     {
@@ -11122,7 +11064,7 @@ void testTreeStruct(struct_treeStructure *p)
         return;
     }
     debugMes;
-    printf("p->treeLength = 0x%08x\n", p->treeLength);
+    printf("p->treeLength = 0x%lx\n", (unsigned long)(p->treeLength));
 
     if(!(p->treeDepth))
     {
@@ -11174,20 +11116,20 @@ void testPrintTreeStructIndicateAddr(struct_treeStructure *p)
     }
 
     printf("/********** struct_treeStructure->tree printf address test **********/\n");
-    debugMes; printf("treeStruct pointer : 0x%08x\n", p);
-    debugMes; printf("root pointer : p->tree_mag = 0x%08x, p->tree_hd = 0x%08x\n",
-        p->tree_mag, p->tree_hd);
+    debugMes; printf("treeStruct pointer : 0x%lx\n", (unsigned long)p);
+    debugMes; printf("root pointer : p->tree_mag = 0x%lx, p->tree_hd = 0x%lx\n",
+        (unsigned long)(p->tree_mag), (unsigned long)(p->tree_hd));
     for(i=0; i<p->treeDepth; i++)
     {
-        debugMes; printf("%d-stage tree_mag pointer = 0x%08x, tree_hd pointer = 0x%08x\n",
-                i, *(p->tree_mag+i), *(p->tree_hd+i));
+        debugMes; printf("%d-stage tree_mag pointer = 0x%lx, tree_hd pointer = 0x%lx\n",
+                i, (unsigned long)(*(p->tree_mag+i)), (unsigned long)(*(p->tree_hd+i)));
         debugMes; printf("%d-stage length = %d\n",i, *(p->treeLength+i));
         debugMes; printf("%d-stage tree_mag and tree_hd => ", i);
         for(j=0; j<(*(p->treeLength+i)); j++)
         {
-            printf("0x%08x, 0x%08x(%u) ",
-                *((*(p->tree_mag+i))+j),
-                *((*(p->tree_hd+i))+j),
+            printf("0x%lx, 0x%lx(%u) ",
+                (unsigned long)(*((*(p->tree_mag+i))+j)),
+                (unsigned long)(*((*(p->tree_hd+i))+j)),
                 *((*(p->treeIndex+i))+j));
         }
         printf("\n");
@@ -11313,7 +11255,7 @@ struct struct_logLikeHoodRatio
     s_int_QUANTIZ_DIGIT *quantizedLLR;
         s_int_QUANTIZ_DIGIT quantizedLLRMask;
     // s_int_QUANTIZ_DIGIT magnitudeMask;
-    s_int_QUANTIZ_DIGIT *magnitude;
+    s_int_QUANTIZ_DIGIT *magnitude;//intently to use -1, defined signed value
     unsigned int length;
     unsigned int usedLength;
 
@@ -11329,8 +11271,6 @@ struct struct_logLikeHoodRatio
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 {
     struct_logLikeHoodRatio *p;
-    unsigned int tmp_treeDepth;
-    double tmp_log;
 
     if(!length)
     {
@@ -11371,9 +11311,6 @@ struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 //////////////////////////////////////////////////////////////////////////////////
 char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
 {
-    unsigned int i;
-
-
     #ifndef RELEASE
     if(!p)
     {
@@ -11627,10 +11564,31 @@ char findMinimumMagnitudeFindLocPushAway
         printf("in findMinimumMagnitudeFindLocPushAway, p->locatorLength is zero.\n");
         return -1;
     }
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeFindLocPushAway, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     if(same_magnitude_sel_policy == FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0) tmp_criteria_HD = '1';
@@ -11809,7 +11767,7 @@ char findMinimumMagnitudeFindLocPushAway
             }
         }
     }
-
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -11896,10 +11854,30 @@ char findMinimumMagnitudeGroupingPushAway
         group_nums = 1;
     }
 
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeGroupingPushAwayShortMagnitude, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     switch(init_magnitude_policy)
@@ -12126,6 +12104,7 @@ char findMinimumMagnitudeGroupingPushAway
     //}
     //printf("\r\n");
     //printf("/* varify end */\r\n");
+    return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -12169,7 +12148,6 @@ void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT
 //////////////////////////////////////////////////////////////////////////////////
 char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p)
 {
-    unsigned int i;
     unsigned int tmp_llr_mag_mask;
 
     #ifndef RELEASE
@@ -12796,7 +12774,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
     unsigned int same_magnitude_sel_policy)
 {
     unsigned int depth;
-    unsigned int i,j,k;
+    unsigned int i;
 
     #ifndef RELEASE
     if(!p)
@@ -12847,10 +12825,31 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
         printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, p->treeStruct->tree_hd is NULL.\n");
         return -1;
     }
-    if(!hd_codeword) return -1;
-    if(!(hd_codeword->length)) return -1;
-    if(!(hd_codeword->usedLength)) return -1;
-    if(!(hd_codeword->equation)) return -1;
+
+    if(!hd_codeword)
+    {
+        errorMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword is NULL.\n");
+        return -1;
+    }
+    if(!(hd_codeword->length))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->length is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->usedLength))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(hd_codeword->equation))
+    {
+        warningMes;
+        printf("in sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm, hd_codeword->equation is NULL.\n");
+        return -1;
+    }
     #endif
 
     if(global_bch_SoftCorrectable>p->treeStruct->treeDepth)
@@ -12877,7 +12876,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                         if(*(p->magnitude + i + DIRECTION_LEFT) == 0)
                         {
                             *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                (p->magnitude + i + DIRECTION_RIGHT);
+                                (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                                 (hd_codeword->equation + i + DIRECTION_RIGHT);
                             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12902,7 +12901,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             if(*((hd_codeword->equation + i + DIRECTION_LEFT)) == '0')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_LEFT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12913,7 +12912,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             else if(*((hd_codeword->equation + i + DIRECTION_RIGHT)) == '0')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_RIGHT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12929,7 +12928,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             if(*((hd_codeword->equation + i + DIRECTION_LEFT)) == '1')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_LEFT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_LEFT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12940,7 +12939,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                             else if(*((hd_codeword->equation + i + DIRECTION_RIGHT)) == '1')
                             {
                                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                    (p->magnitude + i + DIRECTION_RIGHT);
+                                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12957,7 +12956,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 }
 
                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                    (p->magnitude + i + DIRECTION_LEFT);
+                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                 *(*(p->treeStruct->tree_hd+ 0) + i / 2) = \
                     (hd_codeword->equation + i + DIRECTION_LEFT);
                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12974,7 +12973,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                         if(*(p->magnitude + i + DIRECTION_LEFT) == 0)
                         {
                             *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                                (p->magnitude + i + DIRECTION_LEFT);
+                                (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_LEFT);
                             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                                 (hd_codeword->equation + i + DIRECTION_LEFT);
                             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -12984,7 +12983,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                     }
                 }
                 *(*(p->treeStruct->tree_mag + 0) + i / 2) = \
-                    (p->magnitude + i + DIRECTION_RIGHT);
+                    (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i + DIRECTION_RIGHT);
                 *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                     (hd_codeword->equation + i + DIRECTION_RIGHT);
                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
@@ -12999,7 +12998,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
 
             /* store redundant, no comparing, directly update to 0th stage tree. */
             /* update left one, because right one is not exist */
-            *((*(p->treeStruct->tree_mag) + 0) + i / 2) = (p->magnitude + i - 1);
+            *((*(p->treeStruct->tree_mag) + 0) + i / 2) = (u_int_QUANTIZ_MAGNITUDE_DIGIT*)(p->magnitude + i - 1);
             *(*(p->treeStruct->tree_hd + 0) + i / 2) = \
                 (hd_codeword->equation + i + DIRECTION_LEFT);
             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
@@ -13234,7 +13233,7 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13242,25 +13241,25 @@ char printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLR))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLRMask))
     {
         warningMes;
         printf("in printQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        return -1;
+        return;
     }
     printf("[Quantiz LLR] : \t\t\t");
     for(i=0; i<p->usedLength; i++)
@@ -13277,7 +13276,7 @@ char printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     printf("[Used Length : %d]\n", p->usedLength);
 }
 //////////////////////////////////////////////////////////////////////////////////
-char printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13285,25 +13284,25 @@ char printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLR))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     if(!(p->quantizedLLRMask))
     {
         warningMes;
         printf("in printTestMagitudeQuatizLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        return -1;
+        return;
     }
     printf("[magnitudeShort Quantiz LLR] : \t");
     for(i=0; i<p->usedLength; i++)
@@ -13314,7 +13313,7 @@ char printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     printf("[Used Length : %d]\n", p->usedLength);
 }
 //////////////////////////////////////////////////////////////////////////////////
-char printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13322,25 +13321,25 @@ char printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->llr))
     {
         warningMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->llr is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
     // if(!(p->quantizedLLRMask))
     // {
         // warningMes;
         // printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        // return -1;
+        // return;
     // }
     printf("[LLR] : ");
     for(i=0; i<p->usedLength; i++)
@@ -13638,7 +13637,7 @@ char fprintQuatizLLR_fullDescriptionToHEX(FILE* fp, struct_logLikeHoodRatio* p, 
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
+void testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
 {
     unsigned int i;
 
@@ -13646,19 +13645,19 @@ char testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     {
         errorMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->llr))
     {
         warningMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->llr is NULL.\n");
-        return -1;
+        return;
     }
     if(!(p->usedLength))
     {
         warningMes;
         printf("in testPrintLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
-        return -1;
+        return;
     }
 
     printf("[LLR and Qantized LLR]\n");
@@ -13722,7 +13721,7 @@ void testPrintShortMinimumQuantizedLLRAndLocator(struct_logLikeHoodRatio *p)
 //////////////////////////////////////////////////////////////////////////////////
 struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned int length, unsigned int numberOfMask)
 {
-    unsigned int i;
+    //unsigned int i;
     struct_logLikeHoodRatio *p=NULL;
 
     p=createLogLikeHoodRatio(length);
@@ -13730,7 +13729,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
             if(!(p))
             {
                 warningMes;
-                printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, p=createLogLikeHoodRatio(length) return NULL.\n", length);
+                printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
                 return NULL;
             }
             #endif
@@ -13739,7 +13738,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
     {
         closeLogLikeHoodRatio(&p);
                 #ifndef RELEASE
-                errorMes; printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask) return Non-zero.\n", length);
+                errorMes; printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask) return Non-zero.\n");
                 #endif
         return NULL;
     }
@@ -13770,7 +13769,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
 //////////////////////////////////////////////////////////////////////////////////
 struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length, SIGNED_INT quantizedLLRMask)
 {
-    unsigned int i;
+    //unsigned int i;
     struct_logLikeHoodRatio *p=NULL;
 
     #ifndef RELEASE
@@ -13784,7 +13783,7 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
     if(!(p=createLogLikeHoodRatio(length)))
     {
         warningMes;
-        printf("in createLogLikeHoodRatioUsingLlrMask, p=createLogLikeHoodRatio(length) return NULL.\n", length);
+        printf("in createLogLikeHoodRatioUsingLlrMask, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
         return NULL;
     }
     #endif
@@ -13838,7 +13837,7 @@ struct_bpskComponents *createBpskComponents(unsigned int length)
     p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));
     memset(p->bpskTransData, 0, sizeof(double_BPSK_DATA)*length);
             debugMes; printf("in createBpskComponents, p->bpskTransData=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*(length));\n");
-            debugMes; printf("in createBpskComponents, p->bpskTransData=0x%016x\n", p->bpskTransData);
+            debugMes; printf("in createBpskComponents, p->bpskTransData=0x%lx\n", (unsigned long)(p->bpskTransData));
 
     p->bpskReceivedDataAddedAwgn=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
     memset(p->bpskReceivedDataAddedAwgn, 0, sizeof(double_BPSK_DATA)*length);
@@ -14260,7 +14259,7 @@ char set_unSelTp_bofore_decoding
 
     if(!INFO_list_TP_CW_pwrFormPoly[0])
     {
-        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", tmp_i);
+        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", 0);
         return -7;
     }
 
@@ -15971,7 +15970,7 @@ static struct struct_cmdLineOption struct_cmdLineOption[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng)
 {
-    unsigned int i, j;
+    unsigned int i;
     struct struct_cmdLineOption *temp;
 
     char *passingString = NULL;
@@ -15993,8 +15992,6 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
         for(i = 0; (temp = (p + i))->instType != STRUCT_END; i++)
         {
             printf("\t");
-            //for(j = recursive; j!=0; j--) printf("\t");
-
 
             if(temp->longName)
             {
@@ -16002,11 +15999,11 @@ void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char 
                 {
                     printf("%s", passedStrng);
                     if((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE))    printf("{");
-                    printf("-%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?:((temp->instType==OPT_SET_VALUE)?'=':'\t')));
+                    printf("-%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?'\0':((temp->instType==OPT_SET_VALUE)?'=':'\t')));
                 }
                 else
                 {
-                    printf("--%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?:((temp->instType==OPT_SET_VALUE)?'=':'\t')));
+                    printf("--%s%c", temp->longName,((temp->instType==OPT_SET_VALUES)||(temp->instType==OPT_SET_LANGE)?'\0':((temp->instType==OPT_SET_VALUE)?'=':'\t')));
                 }
             }
 
@@ -16116,7 +16113,7 @@ int instSetFlag(struct struct_cmdLineOption *p)
         else
         {
             errorMes;
-            printf("Instruction %s not have a mask value of flag.\n");
+            printf("Instruction %s(%c) not have a mask value of flag.\n", (p->longName?p->longName:"[unknown]"), (p->shortName?p->shortName:'?'));
         }
     }
     else if(p->instType == OPT_COMPONENT) return 0;
@@ -16319,7 +16316,7 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
     else
     {
             errorMes;
-            printf("Instruction %s not have a flag pointer.\n");
+            printf("Instruction %s(%c) not have a flag pointer.\n", (p->longName?p->longName:"[unknown]"), (p->shortName?p->shortName:'?'));
     }
     return -1;
 }
@@ -16488,8 +16485,6 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
     unsigned int argBufLength = 0;
     char argBuf[51] = {0};
-
-    void *value = NULL;
 
 /*
     if(*(arg)=='{')
@@ -16947,17 +16942,14 @@ void GLOBAL_flag_proc()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-int main(unsigned int argc, char **argv)
+int main(int argc, char **argv)
 {
     /*Test variables*/
     unsigned int test_fileIO_errorCorrectingCount=0;
     /*Tempolary variables*/
-    unsigned int tmp_loop_cnt = 0, tmp_u_int = 0;
     unsigned int i=0, tmp_i_start, tmp_i_end;
-    unsigned int j=0, tmp_j_start, tmp_j_end;
-    unsigned int k=0, tmp_k_start, tmp_k_end;
-    unsigned int cmd_flag=0;
-    unsigned int cmd_length=0;
+    unsigned int j=0;
+    unsigned int k=0;
     unsigned int cmd_tmp_i=0;
     unsigned int cmd_tmp_cnt=0;
 
@@ -17067,8 +17059,6 @@ int main(unsigned int argc, char **argv)
 //////////////////////////////////////////////////////////////////////////////////
     char tmp_fileio_target_dir_path[1001] = {0};
     char tmp_fileio_target_file_path[1001] = {0};
-    unsigned int fileio_name_length = 0;
-    unsigned int fileio_name_tmp    = 0;
     DIR*    tmp_dirio_var;
 
     FILE*   fileio_channelBER;
@@ -17091,8 +17081,7 @@ int main(unsigned int argc, char **argv)
 
     FILE*   fileio_simEnv;
 
-    char *dirio_Name_home_path = NULL;
-    char dirio_Name_simEnv_root_path[] = "~/";
+    char *dirio_Name_home_path = NULL;  // Get User home path
     char dirio_Name_simEnv_dir[] = "bch-sim_env";
     char dirio_Name_common_dir[] = "common";
 
@@ -17107,10 +17096,8 @@ int main(unsigned int argc, char **argv)
     char fileio_Name_GF_infoBuf[256]={0};
     char fileio_Path_common[512]={0};
     char fileio_Path_Target[768]={0};
+    char fileio_Path_TargetTmp[768]={0};
     struct dirent  *tmp_dir_entry;
-    struct dirent  *tmp_dir_entry2;
-
-    unsigned int tmp_dirCnt;
 
     char fileio_Name_Output_RootPath[26]={0};
     char fileio_Name_Report_Path[128]={0};
@@ -17334,7 +17321,8 @@ int main(unsigned int argc, char **argv)
     closedir(tmp_dirio_var);
 
     /* dirio_Name_common_dir */
-    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_Target, dirio_Name_common_dir);
+    strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_common_dir);
     /* copy common path start */
     strcpy(fileio_Path_common, fileio_Path_Target);
     /* copy common path end */
@@ -17355,7 +17343,8 @@ int main(unsigned int argc, char **argv)
 
 /* make directory common used end */
 /* make directory(galois fields info save only) start */
-    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_Target, dirio_Name_GF_info);
+    strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_GF_info);
     tmp_dirio_var = opendir((char*)fileio_Path_Target);
     if(!tmp_dirio_var)
     {
@@ -18489,7 +18478,7 @@ int main(unsigned int argc, char **argv)
             }
             else if(global_list_flag_bch_sim_decodingMode[cmd_tmp_i]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
             {
-                infoMes; printf("[%s] * %s algorithm test is primary than hard and soft decision. *\r\n");
+                infoMes; printf("[%s] algorithm test only mode is primary than hard and soft decision. *\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i]);
             }
 
             if((global_list_flag_bch_sim_decodingMode[cmd_tmp_i]&FLAG_MASK_CODE_BCH_DEC_AL_SKIP))
@@ -20495,10 +20484,10 @@ int main(unsigned int argc, char **argv)
                 for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
                 {
                     fprintf(fp_testMode_sum_llr_mag_distribution_cnt_arranged_by_errorNums_csv,
-                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
+                        ",%ld", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
                     );
                     fprintf(fp_testMode_all_arranged_by_errorNums_csv,
-                        ",%d", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
+                        ",%ld", tmp_err_llr_mag_distribution_in_all_loop_arranged_by_err_nums[i][j]
                     );
                 }
                 for(j = 0; j < (global_QuantizationInfo.mag_bitMask + 1); j++)
@@ -20579,7 +20568,7 @@ int main(unsigned int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                printf("[e] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+                printf("[e] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
             }
             printf("[e] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
@@ -20594,7 +20583,7 @@ int main(unsigned int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                printf("[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
+                printf("[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], (double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c);
             }
             printf("[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
@@ -20611,7 +20600,7 @@ int main(unsigned int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                fprintf(fp_testMode_log, "[e]%d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
+                fprintf(fp_testMode_log, "[e]%d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_w[i], (double)tmp_testMode_llr_mag_w[i]/(double)tmp_testMode_count_bit_w);
             }
             fprintf(fp_testMode_log, "[e]max:%d min:%d\r\n", tmp_testMode_llr_mag_max_w, tmp_testMode_llr_mag_min_w);
 
@@ -20626,7 +20615,7 @@ int main(unsigned int argc, char **argv)
             );
             for(i=0; i<LLR_CASE_NUM; i++)
             {
-                fprintf(fp_testMode_log, "[c] %d:%ld %.2f\%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c))*100.0f;
+                fprintf(fp_testMode_log, "[c] %d:%ld %.2f%%\r\n", i, tmp_testMode_llr_mag_c[i], ((double)tmp_testMode_llr_mag_c[i]/(double)tmp_testMode_count_bit_c)*100.0f);
             }
             fprintf(fp_testMode_log, "[c] max:%d min:%d\r\n", tmp_testMode_llr_mag_max_c, tmp_testMode_llr_mag_min_c);
 
@@ -20665,8 +20654,8 @@ int main(unsigned int argc, char **argv)
         case FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL:
 
         initTestMode_prob_min_counting(&tmp_testMode_prob_min_counting, &tmp_testMode_prob_min_counting_length, global_QuantizationInfo.mag_bitMask);
-        printf("tmp_testMode_prob_min_counting = 0x%04x\r\n", &tmp_testMode_prob_min_counting);
-        printf("tmp_testMode_prob_min_counting_length = %d\r\n", &tmp_testMode_prob_min_counting_length);
+        printf("tmp_testMode_prob_min_counting = 0x%lx\r\n", (unsigned long)tmp_testMode_prob_min_counting);
+        printf("tmp_testMode_prob_min_counting_length = %d\r\n", tmp_testMode_prob_min_counting_length);
 
         for(main_com_EbN0=global_EbN0_Start_Value; main_com_EbN0<=global_EbN0_End_Value; main_com_EbN0+=global_EbN0_Step)
         {
@@ -21133,7 +21122,7 @@ int main(unsigned int argc, char **argv)
                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                 {
                                     debugFuncNameMes;
-                                    printf("[%s : #d calculateBCH_decodingAlgorithm start]\r\n",
+                                    printf("[%s : #%d calculateBCH_decodingAlgorithm start]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21145,7 +21134,7 @@ int main(unsigned int argc, char **argv)
                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                 {
                                     debugFuncNameMes;
-                                    printf("[%s : #d calculateBCH_decodingAlgorithm end]\r\n",
+                                    printf("[%s : #%d calculateBCH_decodingAlgorithm end]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21566,26 +21555,27 @@ int main(unsigned int argc, char **argv)
                                                         main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                     );
 
-                                        infoMes;    printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) err exceed correctale and less errLoc poly degree = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) fail to correction = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) fail to correction = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_err_corection_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and synds is zero = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errExceed_but_synd_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Error num is exceed and sum synds and errLoc synd is zero = %lu\r\n",
+                                                        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_errExceed_but_syndSum_zero_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) fail to correction and all synds are zero = %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) fail to correction and all synds are zero = %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_indi_err_detect_and_correct_fail_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]
                                                     );
-                                        infoMes;    printf("[%s] FAIL cnt) Codeword loop %ul\r\n",
+                                        infoMes;    printf("[%s] FAIL cnt) Codeword loop %lu\r\n",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
                                                         main_com_algorithm_loop_cnt
                                                     );
@@ -21950,7 +21940,7 @@ int main(unsigned int argc, char **argv)
                                     (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
                                 )
                                 {
-                                    printf("[Hard-Decision]\r\n", main_tmp_soft_i);
+                                    printf("[Hard-Decision %d]\r\n", main_tmp_soft_i);
                                     // printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
                                     printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[0]);
 
@@ -22669,10 +22659,10 @@ int main(unsigned int argc, char **argv)
                                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                             {
                                                 debugFuncNameMes;
-                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%x\n",
+                                                printf("[ACT] [%s] calculateBCH_decodingAlgorithm [end], sel TP #%d -> ADDR : 0x%lx\n",
                                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                     main_tmp_soft_i,
-                                                    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
+                                                    (unsigned long)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
 
                                                 );
                                             }
@@ -23128,7 +23118,7 @@ int main(unsigned int argc, char **argv)
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                         main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                             );
-                                                            printf("ADDR : 0x%x\r\n", (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly);
+                                                            printf("ADDR : 0x%lx\r\n", (unsigned long)((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly));
 
                                             printGaloisField2(
                                                 main_com_used_GF->nonSorted,
@@ -23166,16 +23156,18 @@ int main(unsigned int argc, char **argv)
                                         //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                         for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                                         {
-                                            infoMes;    printf("[ACT] [%s] Selected TP '#%d', err distans before decoding of TP[%d] = %d\r\n",
+                                            infoMes;    printf("[ACT] [%s] Selected TP '#%d', err distance before decoding of TP[%d] = %d\r\n",
                                                 KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 main_indi_list_errCntOf_TP_beforeDec[main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                             );
-                                            infoMes;    printf("[ACT] [%s] %s TP #%d Decording %d",
+                                            infoMes;    printf("[ACT] [%s] %s TP #%d, err distance after decording of TP[%d] = %d\r\n",
                                                 KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                 ((global_list_flag_bch_sim_decodingMode[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"[Soft-Decision]":"[Hard-Decision](TP)"),
-                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                             );
                                         }
                                         printf("\r\n");
@@ -23720,8 +23712,9 @@ int main(unsigned int argc, char **argv)
                                                     main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                                 );
 
-                                                infoMes; printf("[ACT] [%s] algorithm sel TP[%d] distance of selTP = %d, updated errCnt = %d\r\n",
+                                                infoMes; printf("[ACT] [%s] algorithm sel TP[%d] distance of selTP = %d, updated errCnt = %ld\r\n",
                                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                                    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                                                     main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]],
                                                     main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                 );
