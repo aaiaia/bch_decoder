@@ -14259,7 +14259,7 @@ char set_unSelTp_bofore_decoding
 
     if(!INFO_list_TP_CW_pwrFormPoly[0])
     {
-        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", tmp_i);
+        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", 0);
         return -7;
     }
 
