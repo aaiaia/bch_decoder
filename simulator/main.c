@@ -183,20 +183,20 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 unsigned int global_flag_cmdOption=0;
-#define PRINTF_LOG_WORD    "l"
-#define FLAG_MASK_PRINTF_LOG    (1<<0)
-#define logMes printf("LOG ) ")
+#define PRINTF_LOG_WORD                         "l"
+#define FLAG_MASK_PRINTF_LOG                    (1<<0)
+#define logMes                                  printf("LOG ) ")
 
-#define PRINTF_CALCULATE_PROCESS_WORD    "c"
-#define FLAG_MASK_PRINTF_CALCULATE_PROCESS    (1<<1)
-#define calculateMes printf("CALCULATE ) ")
+#define PRINTF_CALCULATE_PROCESS_WORD           "c"
+#define FLAG_MASK_PRINTF_CALCULATE_PROCESS      (1<<1)
+#define calculateMes                            printf("CALCULATE ) ")
 
-#define PRINTF_MEMORY_CHECK_PROCESS_WORD    "m"
-#define FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS    (1<<2)
-#define memoryMes printf("MEMORY ) ")
+#define PRINTF_MEMORY_CHECK_PROCESS_WORD        "m"
+#define FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS   (1<<2)
+#define memoryMes                               printf("MEMORY ) ")
 
-#define IGNORE_WARNING_MES_WORD    "w"
-#define FLAG_MASK_PRINTF_WARNING_MES    (1<<3)
+#define IGNORE_WARNING_MES_WORD                 "w"
+#define FLAG_MASK_PRINTF_WARNING_MES            (1<<3)
     /* variables to check memory lineary */
     unsigned int global_tmp_i_memoryCheck=0;
 
@@ -204,36 +204,36 @@ unsigned int global_flag_cmdOption=0;
 /* Sysgem Hold command */
 unsigned int global_flag_cmdSystemHold=0;
 #define PRINTF_HELP_WORD    "h"
-#define FLAG_MASK_HOLD_HELP        (1<<0)
-#define systemHoldMes        printf("HOLD ) ")
+#define FLAG_MASK_HOLD_HELP (1<<0)
+#define systemHoldMes       printf("HOLD ) ")
 
 
 
 /* forced Sysgem unhold command */
 unsigned int global_flag_cmdSystemUnhold=0;
-#define SYSTEM_UNHOLD_FORCED_WORD    "f"
-#define FLAG_MASK_SYSTEM_UNHOLD_FORCED    (1<<0)//if(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED)
-#define systemUnholdMes        printf("UNHOLD ) ")
+#define SYSTEM_UNHOLD_FORCED_WORD       "f"
+#define FLAG_MASK_SYSTEM_UNHOLD_FORCED  (1<<0)//if(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED)
+#define systemUnholdMes                 printf("UNHOLD ) ")
 
 
 
 
-#define ADDED_OPTION_WORD    '-'
+#define ADDED_OPTION_WORD       '-'
 
 
 
     /*Algorithm Functional Test*/
 
-    #define ALGORITHM_FUNC            (1<<0)
+    #define ALGORITHM_FUNC          (1<<0)
 
-    #define ALGORITHM_CHANNEL        (1<<1)
+    #define ALGORITHM_CHANNEL       (1<<1)
 
     /*Display RESULT or Progress or Function name*/
     enum DEBUG_DISPLAY_MODE
     {
-        FLAG_MASK_DISPLAY_RESULT = (1<<0),
-        FLAG_MASK_DISPLAY_PROGRESS = (1<<1),
-        FLAG_MASK_DISPLAY_FUNCNAME = (1<<2),
+        FLAG_MASK_DISPLAY_RESULT    = (1<<0),
+        FLAG_MASK_DISPLAY_PROGRESS  = (1<<1),
+        FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
     };
 
 
