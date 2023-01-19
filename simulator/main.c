@@ -17685,199 +17685,199 @@ int main(int argc, char **argv)
     /* Initializing essential conditions end */
 
 
-        /* create galois field using primitive polynomial start */
-        /* check file that is saved galois fields infomations start */
-        /* check file that is saved galois fields infomations end */
-        main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
-        main_com_listOf_GF[0]=NULL;
+    /* create galois field using primitive polynomial start */
+    /* check file that is saved galois fields infomations start */
+    /* check file that is saved galois fields infomations end */
+    main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
+    main_com_listOf_GF[0]=NULL;
 
-        if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    {
+        tmp_i_start=1;
+        tmp_i_end=PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER;
+    }
+    else
+    {
+        tmp_i_start=global_GaloisFieldExponential;
+        tmp_i_end=global_GaloisFieldExponential+1;
+    }
+
+    infoMes;
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_common, dirio_Name_GF_info);
+    printf("GF info path -> %s\r\n", fileio_Path_Target);
+    for(i=tmp_i_start; i<tmp_i_end; i++)
+    {
+        /* Galois Fields infomation */
+        /* check file that is saved galois fields infomations start */
+        if(!(tmp_dirio_var = opendir((char*)fileio_Path_Target)))
         {
-            tmp_i_start=1;
-            tmp_i_end=PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER;
+            errorMes; printf("Can't open path -> %s\r\n", fileio_Path_Target);
+            errorMes; printf("Simulator is closed.\r\n");
+            return -1;
+        }
+
+
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_GaloisField_common
+        );
+            //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  //디렉토리 안에 있는 모든 파일과 디렉토리 출력
+        {
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
+
+        initMes; printf("Selected primitive poly is %s\r\n", (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i]);
+        main_com_listOf_GF[i]=
+            //createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
+            createGaloisField_info_emptySpace(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
+            //printf("%s\r\n", fileio_Path_common);
+
+                gettimeofday(&time_proc_start, NULL);
+        if(!tmp_dir_entry)
+        {
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            calculateGaloisField(main_com_listOf_GF[i]->primitivePolynomial, main_com_listOf_GF[i]->nonSorted);
+            save_struct_galoisFieldElements(
+                fileio_Path_Target,
+                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+                main_com_listOf_GF[i]->nonSorted
+            );
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving galois field time]");    printExcutingTime(&time_proc_start);
         }
         else
         {
-            tmp_i_start=global_GaloisFieldExponential;
-            tmp_i_end=global_GaloisFieldExponential+1;
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_galoisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted);
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading galois field time]");    printExcutingTime(&time_proc_start);
         }
 
-        infoMes;
-        sprintf(fileio_Path_Target, "%s/%s", fileio_Path_common, dirio_Name_GF_info);
-        printf("GF info path -> %s\r\n", fileio_Path_Target);
-        for(i=tmp_i_start; i<tmp_i_end; i++)
+
+        /* Sumation Matrix infomation */
+        /* check file that is saved galois fields infomations start */
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_SumMaxrix_common
+        );
+            //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
         {
-            /* Galois Fields infomation */
-            /* check file that is saved galois fields infomations start */
-            if(!(tmp_dirio_var = opendir((char*)fileio_Path_Target)))
-            {
-                errorMes; printf("Can't open path -> %s\r\n", fileio_Path_Target);
-                errorMes; printf("Simulator is closed.\r\n");
-                return -1;
-            }
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
 
-
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
+                    gettimeofday(&time_proc_start, NULL);
+        if(!tmp_dir_entry)
+        {
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            //char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
+            calculateSummationMatrix(main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
+            save_struct_summationMatrix(
+                fileio_Path_Target,
                 (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_GaloisField_common
+                main_com_listOf_GF[i]->nonSorted->summationReferMatrix
             );
-                //printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  //디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving summation matrix time]");    printExcutingTime(&time_proc_start);
+        }
+        else
+        {
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_summationMatrix(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading summation matrix time]");    printExcutingTime(&time_proc_start);
+        }
 
-            initMes; printf("Selected primitive poly is %s\r\n", (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i]);
-            main_com_listOf_GF[i]=
-                //createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
-                createGaloisField_info_emptySpace(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
+
+        /* check file that is saved galois fields infomations start */
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_Conjugate_common
+        );
+                //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
+        {
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
                 //printf("%s\r\n", fileio_Path_common);
 
-                    gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                calculateGaloisField(main_com_listOf_GF[i]->primitivePolynomial, main_com_listOf_GF[i]->nonSorted);
-                save_struct_galoisFieldElements(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->nonSorted
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving galois field time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_galoisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted);
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading galois field time]");    printExcutingTime(&time_proc_start);
-            }
-
-
-            /* Sumation Matrix infomation */
-            /* check file that is saved galois fields infomations start */
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
-                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_SumMaxrix_common
-            );
-                //printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
-
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                        gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                //char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
-                calculateSummationMatrix(main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
-                save_struct_summationMatrix(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->nonSorted->summationReferMatrix
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving summation matrix time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_summationMatrix(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading summation matrix time]");    printExcutingTime(&time_proc_start);
-            }
-
-
-            /* check file that is saved galois fields infomations start */
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
-                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_Conjugate_common
-            );
-                    //printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                    //printf("%s\r\n", fileio_Path_common);
-
-                    gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                init_ConjugacyClasses(main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies), global_LimitCodeLength);
-
-                save_struct_setOfGaloisFieldElements(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->conjugacies
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving conjugacies time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_setOfGaloisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies));
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading conjugacies time]");    printExcutingTime(&time_proc_start);
-            }
-
-            closedir(tmp_dirio_var);
-
-
-            initMes; printf("Initializing galois field(2^%d) is done.\r\n", i);
-        }
-
-
-        main_com_used_GF=main_com_listOf_GF[global_GaloisFieldExponential];
-        main_com_codeLength = main_com_used_GF->nonSorted->length-1;//codeLength can be shorter than number of element in GF
-        initMes; printf("Mainly used value, galois field is set to gf(2^%d).\r\n", global_GaloisFieldExponential);
-
-        if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+                gettimeofday(&time_proc_start, NULL);
+        if(!tmp_dir_entry)
         {
-            infoMes; printf("/********** Used galois Field elements **********/\n");
-            printGaloisField(main_com_used_GF->nonSorted);
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            init_ConjugacyClasses(main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies), global_LimitCodeLength);
+
+            save_struct_setOfGaloisFieldElements(
+                fileio_Path_Target,
+                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+                main_com_listOf_GF[i]->conjugacies
+            );
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving conjugacies time]");    printExcutingTime(&time_proc_start);
         }
-        if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+        else
         {
-            infoMes; printf("/********** Used galois Field conjugacies **********/\n");
-            printConjugacyClasses(main_com_used_GF->nonSorted, main_com_used_GF->conjugacies);
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_setOfGaloisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies));
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading conjugacies time]");    printExcutingTime(&time_proc_start);
         }
 
-        //main_com_used_GF=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET.PRIMITIVE_POLYNOMIAL[global_GaloisFieldExponential],0));
+        closedir(tmp_dirio_var);
 
-        /*
-        //struct_galoisField_info *galoisField8=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX,0));
-        //struct_galoisField_info *galoisField16=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX,0));
-        //struct_galoisField_info *galoisField32=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX,0));
-        //struct_galoisField_info *galoisField64=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX,0));
-        //struct_galoisField_info *galoisField256=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX,0));
-        //struct_galoisField_info *galoisField1024=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX,0));
-        //
-        //printGaloisFieldToCsv(galoisField8->nonSorted);
-        //printGaloisFieldToCsv(galoisField16->nonSorted);
-        //printGaloisFieldToCsv(galoisField32->nonSorted);
-        //printGaloisFieldToCsv(galoisField64->nonSorted);
-        //printGaloisFieldToCsv(galoisField256->nonSorted);
-        //printGaloisFieldToCsv(galoisField1024->nonSorted);
-         */
+
+        initMes; printf("Initializing galois field(2^%d) is done.\r\n", i);
+    }
+
+
+    main_com_used_GF=main_com_listOf_GF[global_GaloisFieldExponential];
+    main_com_codeLength = main_com_used_GF->nonSorted->length-1;//codeLength can be shorter than number of element in GF
+    initMes; printf("Mainly used value, galois field is set to gf(2^%d).\r\n", global_GaloisFieldExponential);
+
+    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+    {
+        infoMes; printf("/********** Used galois Field elements **********/\n");
+        printGaloisField(main_com_used_GF->nonSorted);
+    }
+    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+    {
+        infoMes; printf("/********** Used galois Field conjugacies **********/\n");
+        printConjugacyClasses(main_com_used_GF->nonSorted, main_com_used_GF->conjugacies);
+    }
+
+    //main_com_used_GF=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET.PRIMITIVE_POLYNOMIAL[global_GaloisFieldExponential],0));
+
+    /*
+    //struct_galoisField_info *galoisField8=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField16=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField32=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField64=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField256=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField1024=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX,0));
+    //
+    //printGaloisFieldToCsv(galoisField8->nonSorted);
+    //printGaloisFieldToCsv(galoisField16->nonSorted);
+    //printGaloisFieldToCsv(galoisField32->nonSorted);
+    //printGaloisFieldToCsv(galoisField64->nonSorted);
+    //printGaloisFieldToCsv(galoisField256->nonSorted);
+    //printGaloisFieldToCsv(galoisField1024->nonSorted);
+     */
     /* create galois field using primitive polynomial end */
 
 
