@@ -246,9 +246,9 @@ unsigned int global_flag_deBugOption=0;
 
     unsigned int global_flag_debug_display=0;
     /*
-    #define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-    #define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-    #define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
+    //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+    //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+    //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
     */
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
@@ -443,7 +443,7 @@ unsigned int global_flag_simulationCode=0;
         //    FLAG_MASK_TEST_BM_ALGORITHM         = (1<<0),
         //    FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
         //    FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
-
+        //
         //    FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
         //};
         */
@@ -476,7 +476,7 @@ unsigned int global_flag_simulationCode=0;
         //    FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
         //    FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
         //    FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
-
+        //
         //    FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
         //};
         */
@@ -890,10 +890,10 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned int tmp_testMode_one_bit_nums_inC = 0;
 
     /*
-    account of tmp_bit_num_inC_ref_zero_OZ_ratio
-    index 0 -> zero bit num in Codeword.
-    index 1 -> one bit num in Codeword.
-    */
+     * account of tmp_bit_num_inC_ref_zero_OZ_ratio
+     * index 0 -> zero bit num in Codeword.
+     * index 1 -> one bit num in Codeword.
+     */
     unsigned long** tmp_bit_num_inC_ref_zero_OZ_ratio = NULL;
 
     /* decoding parts arranged by bit ratio */
@@ -911,35 +911,35 @@ unsigned int global_flag_Modulation_Mode = 0;
 
 
     /*
-    account of tmp_bit_num_inR_ref_zero_OZ_ratio
-    index 0 -> total zero bit nums are counted.
-    index 1 -> zero bit nums in correct bit
-    index 2 -> zero bit nums in error bit
-    */
+     * account of tmp_bit_num_inR_ref_zero_OZ_ratio
+     * index 0 -> total zero bit nums are counted.
+     * index 1 -> zero bit nums in correct bit
+     * index 2 -> zero bit nums in error bit
+     */
     unsigned long** tmp_bit_num_inR_ref_zero_OZ_ratio = NULL;
 
     /*
-    account of tmp_bit_num_inR_ref_one_OZ_ratio
-    index 0 -> total one bit nums are counted.
-    index 1 -> one bit nums in correct bit
-    index 2 -> one bit nums in error bit
-    */
+     * account of tmp_bit_num_inR_ref_one_OZ_ratio
+     * index 0 -> total one bit nums are counted.
+     * index 1 -> one bit nums in correct bit
+     * index 2 -> one bit nums in error bit
+     */
     unsigned long** tmp_bit_num_inR_ref_one_OZ_ratio = NULL;
 
     /*
-    account of tmp_bit_chg_cnt_inR_OZ_ratio
-    index 0 -> total error bit transaction nums actually error bit nums.
-    index 1 -> nums of error bit transacting 0 to 1.
-    index 2 -> nums of error bit transacting 1 to 0.
-    */
+     * account of tmp_bit_chg_cnt_inR_OZ_ratio
+     * index 0 -> total error bit transaction nums actually error bit nums.
+     * index 1 -> nums of error bit transacting 0 to 1.
+     * index 2 -> nums of error bit transacting 1 to 0.
+     */
     unsigned long** tmp_bit_chg_cnt_inR_OZ_ratio = NULL;
 
     /*
-    account of tmp_llr_mag_sum_inR_OZ_ratio
-    index 0 -> summation of llr magnitude at all bit, don't care error or not.
-    index 1 -> summation of llr magnitude at corrected bit.
-    index 2 -> summation of llr magnitude at error bit.
-    */
+     * account of tmp_llr_mag_sum_inR_OZ_ratio
+     * index 0 -> summation of llr magnitude at all bit, don't care error or not.
+     * index 1 -> summation of llr magnitude at corrected bit.
+     * index 2 -> summation of llr magnitude at error bit.
+     */
     unsigned long** tmp_llr_mag_sum_inR_OZ_ratio=NULL;
 
     double** tmp_llr_mag_inR = NULL;
@@ -2710,9 +2710,9 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-Elements of galois field have finite values are represented like 0110.
-And if polynomial represented by power form have 15 bits length, length of elements of galois field is represented (15+1)/2.
-*/
+ * Elements of galois field have finite values are represented like 0110.
+ * And if polynomial represented by power form have 15 bits length, length of elements of galois field is represented (15+1)/2.
+ */
 typedef char char_GALOIS_FIELD_VALUE;
 typedef unsigned int u_int_GALOIS_FIELD_INTEGER;
 struct struct_galoisFieldPolyForm
@@ -2969,11 +2969,13 @@ char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *ope
             return 0;
         }
     }
-    /* if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-    {
-        logMes;
-        printf("find!\n");
-    } */
+    /*
+    //if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+    //{
+    //    logMes;
+    //    printf("find!\n");
+    //}
+    */
     return 1;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3088,10 +3090,10 @@ struct struct_summationMatrix
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ *  !!! WARNING !!!
+ *  Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ *  As possible, use functions of struct_galoisFieldElements.
+ */
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 {
     struct_galoisFieldPolyForm **p;
@@ -3112,10 +3114,10 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 }
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList)
 {
 
@@ -3160,10 +3162,10 @@ char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**
 
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 {
     #ifndef RELEASE
@@ -3193,10 +3195,10 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 }
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 struct_galoisFieldPolyForm **recreateListOfGaloisField(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList)
 {
     #ifndef RELEASE
@@ -3725,20 +3727,20 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
     */
 
         /*
-        Update. 2016/02/22
-        seperated this parts, creating parts of conjugacy class is moved init_ConjugacyClasses
-        */
+         * Update. 2016/02/22
+         * seperated this parts, creating parts of conjugacy class is moved init_ConjugacyClasses
+         */
         /* create conjugacy Class (static) */
         //p->conjugacies=createConjugacyClasses(p);
         //calculateConjugacyClasses(p, p->conjugacies);
 
         /* create conjugacy Class (variable) */
         //p->conjugacies=createConjugacyClasses_VariableLength();
-
+        //
         //infoMes; printf("[START][Generating conjugacy set]\n");
         //calculateConjugacyClasses_VariableLength(p, p->conjugacies);
         //infoMes; printf("[END][Generating conjugacy set]\n");
-
+        //
         //#ifndef RELEASE
         //if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
         //{
@@ -4290,7 +4292,7 @@ struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisF
     return *(field->element+exponential+1);
 }
 //////////////////////////////////////////////////////////////////////////////////
-/*Use character, but it is slow, so this function is alternated.*/
+/* Use character, but it is slow, so this function is alternated. */
 struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
     unsigned int i;
@@ -5024,7 +5026,7 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-///*Example of making equation*///
+///* Example of making equation *///
 /*
 //    struct_galoisFieldElements *alpha;
 //    struct_galoisFieldElements *beta;
@@ -5337,9 +5339,9 @@ char abstractOrderOfEquation(struct_galoisFieldElements *equation)
 */
 //////////////////////////////////////////////////////////////////////////////////
 /*
-note about struct_setOfGaloisFieldElements.
-test. 2016/02/22/14:28, limitedExponential is mean that, when getting conjugacies class, limit exponential of galois fields.
-*/
+ * note about struct_setOfGaloisFieldElements.
+ * test. 2016/02/22/14:28, limitedExponential is mean that, when getting conjugacies class, limit exponential of galois fields.
+ */
 struct struct_setOfGaloisFieldElements
 {
     unsigned int length;
@@ -5512,16 +5514,15 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 //    else
 //    {
 //        /* Sometime realloc has memory leakage. So to increase memory size, using this func is invalid. */
-//        /*
-//        p->conjugateSet=(struct_galoisFieldElements**)realloc(p->conjugateSet, sizeof(struct_galoisFieldElements*)*addedLength);//increasing conjugacy set array
-//        */
+//        //p->conjugateSet=(struct_galoisFieldElements**)realloc(p->conjugateSet, sizeof(struct_galoisFieldElements*)*addedLength);//increasing conjugacy set array
+//
 //        newConjugateSet=(struct_galoisFieldElements**)malloc((sizeof(struct_galoisFieldElements*)*((p->length)+addedLength)));
 //        memset(newConjugateSet , 0, (sizeof(struct_galoisFieldElements*)*(p->length+addedLength)));
 //        memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
 //        free(p->conjugateSet);
 //        p->conjugateSet=newConjugateSet;
 //
-//        /*clear added conjugacy set*/
+//        /* clear added conjugacy set */
 //        #ifdef USING_OPEN_MP
 //        #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
 //        #endif
@@ -6356,7 +6357,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
         totalLcmOrder+=(*(multipledRootSet->conjugateSet+i))->length;
     }
 
-    /*if order is 0, length is 1, if order is n-th, length is n+1.*/
+    /* if order is 0, length is 1, if order is n-th, length is n+1. */
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 
             #ifndef RELEASE
@@ -6513,7 +6514,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
         totalLcmOrder+=(*(multipledRootSet->limitedConjugateSet+i))->length;
     }
 
-    /*if order is 0, length is 1, if order is n-th, length is n+1.*/
+    /* if order is 0, length is 1, if order is n-th, length is n+1. */
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 
             #ifndef RELEASE
@@ -6974,7 +6975,7 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
 //
 //
 //
-//    /*create struct_summationMatrix*/
+//    /* create struct_summationMatrix */
 //    infoMes; printf("[START][Generating summation matrix]\n");
 //    p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);
 //    infoMes; printf("[END][Generating summation matrix]\n");
@@ -7487,7 +7488,7 @@ char calculateChienSearch_direction
 
     for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
     {
-        /*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
+        /* calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc... */
         if(direction)    tmp_location = (*(galoisFields->element+i));
         else             tmp_location = invertExponentialElementInGaloisField(galoisFields, *(galoisFields->element+i));
         #ifndef RELEASE
@@ -7503,7 +7504,7 @@ char calculateChienSearch_direction
 
 
                 #ifndef RELEASE
-                /*to confirm code start*/
+                /* to confirm code start */
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)
                 {
                     printf("a^%d\t", i-1);
@@ -7519,7 +7520,7 @@ char calculateChienSearch_direction
                     }
                     printf("\n");
                 }
-                /*to confirm code end*/
+                /* to confirm code end */
                 #endif
 
                 #ifndef RELEASE
@@ -7560,7 +7561,7 @@ char calculateChienSearch_direction
                 }
                 #endif
 
-        /*ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...*/
+        /* ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ... */
         for(j=1; j<(errLocPolynomial->length); j++)
         {
             summationResult=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, summationResult, multiElementsInGF_returnAddr(galoisFields, *(errLocPolynomial->element+j), *(variableSet+j-1)));
@@ -7730,7 +7731,7 @@ char calculateChienSearch_static_backWard
 
     for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
     {
-        /*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
+        /* calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc... */
         #ifndef RELEASE
         if(calculateChienSearchVariableSet(galoisFields, variableSet, invertExponentialElementInGaloisField(galoisFields, *(galoisFields->element+i)), (errLocPolynomial->length-1)))
         {
@@ -7744,7 +7745,7 @@ char calculateChienSearch_static_backWard
 
 
                 #ifndef RELEASE
-                /*to confirm code start*/
+                /* to confirm code start */
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)
                 {
                     printf("a^%d\t", i-1);
@@ -7760,7 +7761,7 @@ char calculateChienSearch_static_backWard
                     }
                     printf("\n");
                 }
-                /*to confirm code end*/
+                /* to confirm code end */
                 #endif
 
                 #ifndef RELEASE
@@ -7801,7 +7802,7 @@ char calculateChienSearch_static_backWard
                 }
                 #endif
 
-        /*ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...*/
+        /* ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ... */
         for(j=1; j<(errLocPolynomial->length); j++)
         {
             summationResult=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, summationResult, multiElementsInGF_returnAddr(galoisFields, *(errLocPolynomial->element+j), *(variableSet+j-1)));
@@ -8059,7 +8060,7 @@ struct struct_HD_BM_algorithmComponent{
 
     unsigned int lengthOfStage;
 
-    /*to test ,soft decision*/
+    /* to test ,soft decision */
     struct_galoisFieldElements *errLocSyndrome;
     struct_galoisFieldElements *sumReceiveAndErrLocSyndrome;
 
@@ -8110,7 +8111,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
             }
             #endif
 
-    p->vMAX = cal_numsOfDegreeOfSynd(t);/*use for, when variable is 6, it is break.*/
+    p->vMAX = cal_numsOfDegreeOfSynd(t);/* use for, when variable is 6, it is break. */
             #ifndef RELEASE
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
             {
@@ -8706,7 +8707,7 @@ char calculateBetaInBmAlgorithm
     }
     #endif
 
-    /*calculationSelect is '1'.*/
+    /* calculationSelect is '1'.i */
     if(calculationSelector)
     {
         for(i=0; i<beta->length; i++)
@@ -8714,7 +8715,7 @@ char calculateBetaInBmAlgorithm
             *(beta->element+i)=multiElementsInGF_returnAddr(galoisFields, *(beforeAlpha->element+i), invertExponentialElementInGaloisField(galoisFields, delta));
         }
     }
-    /*calculationSelect is '0'. Formula beta is shifted.*/
+    /* calculationSelect is '0'. Formula beta is shifted. */
     else
     {
         for(i=1; i<beta->length; i++)
@@ -8829,7 +8830,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
                 }
                 #endif
 
-        /*calculate calculationSelector*/
+        /* calculate calculationSelector */
                                     #ifndef RELEASE
                                     if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
                                     {
@@ -8959,10 +8960,10 @@ struct struct_HD_mSBS_t3_algorithmComponent{
     /* this polynomial is same with struct_galoisFieldElements *errLocPoly; */
     /*
      * refference coefficient is coefficient_of_alpha_three.
-
+     *
      * If this value is 0, degree of err location polynomials is two.
      * That is mean error locations are two.
-
+     *
      * Else this value is non 0,  degree of err location polynomials is three or more.
      */
     struct_galoisFieldPolyForm *coefficient_of_alpha_three;//(that is C)
@@ -9025,7 +9026,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
             }
             #endif
 
-        p->vMAX = cal_numsOfDegreeOfSynd(t);/*use for, when variable is 6, it is break.*/
+        p->vMAX = cal_numsOfDegreeOfSynd(t);/* use for, when variable is 6, it is break. */
                 //#ifndef RELEASE
                 //if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
                 //{
@@ -9067,7 +9068,7 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
 
 
         /* BM algorithm initial condition setting. */
-        /*//p->value_r = 0;*/
+        //p->value_r = 0;
 
     /* Initializing degree of Error Location Poly */
     p->degreeOfErrLocPoly=-1;
@@ -9099,15 +9100,15 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
             }
             #endif
 
-        ///* create output of register */
+        /* create output of register */
         //p->beforeAlpha = createGaloisFieldExceptElements(t+1);
         //p->beforeBeta = createGaloisFieldExceptElements(t+1);
-        ///* synchronize register and wire, pulse input liked */
+        /* synchronize register and wire, pulse input liked */
         //copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
         //copyListOfGaloisField(p->beforeBeta->element, p->beta->element, p->alpha->length);
 
 
-        ///* initial condition of length of Stage is 0. */
+        /* initial condition of length of Stage is 0. */
         //p->lengthOfStage=0;
 
     /* indexing kind of bch decoding algorithm */
@@ -9291,12 +9292,12 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
     //    #ifndef RELEASE
     //    warningMesShort; printf("in calculate_mSBS_algorithm, if(!(p->numberOfCorrection < p->syndrome->length)).\n");
     //    #endif
-
+    //
     //    *(p->errLocPoly->element+3) = (*(galoisFields->element+0));
     //    *(p->errLocPoly->element+2) = (*(galoisFields->element+0));
     //    *(p->errLocPoly->element+1) = (*(galoisFields->element+0));
     //    *(p->errLocPoly->element+0) = (*(galoisFields->element+1));
-
+    //
     //    return -2;
     //}
 
@@ -9319,13 +9320,13 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
      * B_t3 = S_1^4 + ( S_1 * S_3 )
      * A_t3 = S_5 + ( S_1^2 * S_3 )
      * R_t3 = S_1^6 + S_3^2 + ( S_1^3 * S_3 ) + ( S_1 * S_5 )
-
+     *
      * case t <= 2
      * C_t2 = 0
      * B_t2 = S_1
      * A_t2 = S_1^2
      * R_t2 = S_1^3 + S_3
-
+     *
      * S_1 is *(syndrome->element+0)
      * S_3 is *(syndrome->element+2)
      * S_5 is *(syndrome->element+4)
@@ -10072,7 +10073,7 @@ void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsig
         printf("in errorOccurationWhichAreRandomPosition, struct_powerFormPolynomials *p is NULL.\n");
     }
     #endif
-    /*initial all zero condition*/
+    /* initial all zero condition */
     memset(p->equation, '0', sizeof(char_POWER_FORM)*(p->usedLength));
     *(p->equation+(p->usedLength))=0;
     while(numberOfError)
@@ -11396,10 +11397,10 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
  * So LLR values are                    {1111,    0000,    0010,    0111,    0111,    1011,    0001,    0011}.
  * magnitudeShort values are            {0001,    0000,    0010,    0111,    0111,    0101,    0001,    0011}.
  * Location indexes are                 {0,       1,       2,       3,       4,       5,       6,       7   }.
-
+ *
  * Sorted minimum magnitudes are        {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
  * Sorted magnitudeShort locations are  {1,       0,       6,       2,       7,       5,       3,       4   }.
-
+ *
  * Results of this function are(caution that, result length belong to length of locator)
  * Sorted minimum magnitudeShort are    {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
  * Sorted magnitudeShort location are   {1,       0,       6,       2,       7,       5,       3,       4   }.
@@ -11563,7 +11564,7 @@ char findMinimumMagnitudeFindLocPushAway
                                         /*
                                          * if find location to insert new value,
                                          * put away previous value.
-                                         * */
+                                         */
                                         if((p->locatorLength)>1)
                                         {
                                             for(k=p->locatorLength; k!=j; k--)
@@ -11608,7 +11609,7 @@ char findMinimumMagnitudeFindLocPushAway
                                         /*
                                          * if find location to insert new value,
                                          * put away previous value.
-                                         * */
+                                         */
                                         if((p->locatorLength)>1)
                                         {
                                             for(k=p->locatorLength; k!=j; k--)
@@ -11650,7 +11651,7 @@ char findMinimumMagnitudeFindLocPushAway
                     /*
                      * if find location to insert new value,
                      * put away previous value.
-                     * */
+                     */
                     if((p->locatorLength)>1)
                     {
                         for(k=p->locatorLength; k!=j; k--)
@@ -14523,7 +14524,7 @@ char set_selTP_before_decording_skipDecOnly
         /********************************************************************/
         /************** get BER mode is actual mode, that is  ***************/
         /************** BER can be different with theoretical ***************/
-        /************** case end                            ***************/
+        /************** case end                              ***************/
         /********************************************************************/
 
 
@@ -14794,12 +14795,6 @@ char set_flag_act_fail_list_TP
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/*initializing*/
-
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
     /* Example codes in main functions
     //while((loadStream.countedDataNumber<loadStream.totalDataNumber))
     //{
@@ -14990,7 +14985,7 @@ struct struct_scheduling_FIFO
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*BCH Command Tree start*/
+/* BCH Command Tree start */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15095,15 +15090,6 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 /************************************ bch_algorithm 2 n d - E n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
@@ -15184,17 +15170,6 @@ static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 1 s t - s t a r t ************************************/
@@ -15306,7 +15281,7 @@ static struct struct_cmdLineOption cmdOpt_usable_code[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-/*BCH Command Tree end*/
+/* BCH Command Tree end */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
@@ -16967,13 +16942,13 @@ int main(int argc, char **argv)
     fileio_indi_algorithm_coding_err_bit_cnt = (FILE**)malloc(sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
     memset(fileio_indi_algorithm_coding_err_bit_cnt, 0, sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
 //////////////////////////////////////////////////////////////////////////////////
-    /*To convert dataStream to powerFormPolynomial, define variable structure start*/
-/*
-//    struct_variableSetConvertBitStreamToPowerForm loadStream;
-//    struct_variableSetConvertBitStreamToPowerForm noisedStream;
-//    struct_variableSetConvertBitStreamToPowerForm unloadStream;
-*/
-    /*To convert dataStream to powerFormPolynomial, define variable structure end*/
+    /* To convert dataStream to powerFormPolynomial, define variable structure start */
+    /*
+    //struct_variableSetConvertBitStreamToPowerForm loadStream;
+    //struct_variableSetConvertBitStreamToPowerForm noisedStream;
+    //struct_variableSetConvertBitStreamToPowerForm unloadStream;
+    */
+    /* To convert dataStream to powerFormPolynomial, define variable structure end */
 #ifndef RELEASE
     infoMes; printf("COMPILING DEBUG MODE\n");
 #else
@@ -17024,7 +16999,7 @@ int main(int argc, char **argv)
         date_simulation_date->tm_sec
     );
 
-/* make directory(sim result info save only) start */
+    /* make directory(sim result info save only) start */
     tmp_dirio_var = opendir(fileio_Name_Output_RootPath);
     if(!tmp_dirio_var)
     {
@@ -17032,8 +17007,8 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_Output_RootPath);
     }
     closedir(tmp_dirio_var);
-/* make directory(sim result info save only) end */
-/* make REPORT directory start */
+    /* make directory(sim result info save only) end */
+    /* make REPORT directory start */
     sprintf(fileio_Name_Report_Path, "%s/REPORT", fileio_Name_Output_RootPath);
     tmp_dirio_var = opendir(fileio_Name_Report_Path);
     if(!tmp_dirio_var)
@@ -17042,8 +17017,8 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_Report_Path);
     }
     closedir(tmp_dirio_var);
-/* make REPORT directory end */
-/* make PATTERN directory start */
+    /* make REPORT directory end */
+    /* make PATTERN directory start */
     sprintf(fileio_Name_Pattern_Path, "%s/PATTERN", fileio_Name_Output_RootPath);
     tmp_dirio_var = opendir(fileio_Name_Pattern_Path);
     if(!tmp_dirio_var)
@@ -17061,11 +17036,9 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_PatternLog_Path);
     }
     closedir(tmp_dirio_var);
+    /* make PATTERN directory end */
 
-
-/* make PATTERN directory end */
-
-/* make directory common used start */
+    /* make directory common used start */
     /* get home directory */
     dirio_Name_home_path = getenv("HOME");
     /* dirio_Name_simEnv_root_path and dirio_Name_simEnv_dir */
@@ -17114,9 +17087,8 @@ int main(int argc, char **argv)
     }
     closedir(tmp_dirio_var);
 
-
-/* make directory common used end */
-/* make directory(galois fields info save only) start */
+    /* make directory common used end */
+    /* make directory(galois fields info save only) start */
     strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
     sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_GF_info);
     tmp_dirio_var = opendir((char*)fileio_Path_Target);
@@ -17132,17 +17104,17 @@ int main(int argc, char **argv)
         }
     }
     closedir(tmp_dirio_var);
-/* make directory(galois fields info save only) end */
-/******************************************************************/
-/******************************************************************/
-/******************************************************************/
+    /* make directory(galois fields info save only) end */
+    /******************************************************************/
+    /******************************************************************/
+    /******************************************************************/
 
 
-/********************************************************************/
-/********** setting variables about global variables start **********/
-/********************************************************************/
-    /*Exception process*/
-    /*code length is can't exceed GF length.*/
+    /********************************************************************/
+    /********** setting variables about global variables start **********/
+    /********************************************************************/
+    /* Exception process */
+    /* code length is can't exceed GF length. */
     if(!( ( global_MaximumCodeLength = ((unsigned int)pow(2.0,(double)global_GaloisFieldExponential)) ) > global_CodeLength))
     {
         global_MaximumCodeLength -=1;
@@ -17178,7 +17150,7 @@ int main(int argc, char **argv)
     }
 
     /* setting decoding enable flag end */
-    /*BCH ALGORITHM TEST*/
+    /* BCH ALGORITHM TEST */
     /*
      * chk any flag of algorithm test.
      * if any flag is set, simulation will process decoding algorithm test sequence.
@@ -17243,13 +17215,13 @@ int main(int argc, char **argv)
         memset(global_addedRootToLCM_string, 0, sizeof(char)*2);
         global_addedRootToLCM_string[0]='1';
     }
-/********************************************************************/
-/*********** setting variables about global variables end ***********/
-/********************************************************************/
+    /********************************************************************/
+    /*********** setting variables about global variables end ***********/
+    /********************************************************************/
 
-/********************************************************************/
-/**** printf setted global variables about global variables start ****/
-/********************************************************************/
+    /********************************************************************/
+    /**** printf setted global variables about global variables start ****/
+    /********************************************************************/
     printf("/*****************************************************************/\n");
     printf("/*********************** Enabled Code List ***********************/\n");
     printf("/*****************************************************************/\n");
@@ -17377,20 +17349,18 @@ int main(int argc, char **argv)
         warningMes; printf("#%d Method of gettig BER is not selected, So set to default.\n", global_flag_case_choosingCodeWordMethod_inTheo);
         global_flag_case_choosingCodeWordMethod_inTheo = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT;
     }
+    /********************************************************************/
+    /***** printf setted global variables about global variables end *****/
+    /********************************************************************/
 
-
-/********************************************************************/
-/***** printf setted global variables about global variables end *****/
-/********************************************************************/
-
-/********************************************************************/
-/************** initializing domestic variables start ***************/
-/********************************************************************/
+    /********************************************************************/
+    /************** initializing domestic variables start ***************/
+    /********************************************************************/
     /****************************************************/
     /********** Channel variable setting start **********/
     /****************************************************/
 
-    /*soft Decision variable start*/
+    /* soft Decision variable start */
     /* Default value of main_tmp_degErrLocPoly is 2. */
     //if(!(global_flag_bchDecAlgo_Enable&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
     cmd_tmp_cnt=0;
@@ -17410,10 +17380,10 @@ int main(int argc, char **argv)
         }
     }
     main_com_numsTP = (unsigned int)pow(2.0,(double)main_tmp_degErrLocPoly);
-    /*soft Decision variable end*/
+    /* soft Decision variable end */
 
 
-    //*soft Decision Channel Counting variable start*/
+    /* soft Decision Channel Counting variable start */
     main_indi_list_errCntOf_TP_beforeDec = (unsigned int*)malloc(sizeof(unsigned int)*main_com_numsTP);
     memset(main_indi_list_errCntOf_TP_beforeDec, 0, sizeof(unsigned int)*main_com_numsTP);
 
@@ -17435,7 +17405,7 @@ int main(int argc, char **argv)
     //main_list_err_cnt_after_dec_whole_TP_best=-1;
 
     //main_indi_sel_TP_errCnt=-1;
-    /*Belong to dec algorithm HD kernel individually have main_indi_sel_TP_i */
+    /* Belong to dec algorithm HD kernel individually have main_indi_sel_TP_i */
     main_indi_sel_TP_i = (unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_sel_TP_i, 0, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
     //*soft Decision Channel Counting variable end*/
@@ -17448,7 +17418,6 @@ int main(int argc, char **argv)
         memset(main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
                 //printf("main_indi_list_flag_theo_ly_can_be_correctable[%d] 0x%x\n", main_tmp_sel_decAlgo_i, main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i]);
     }
-
     /* soft Decision correctable test pattern list end */
 
     /* soft Decision in actual mode, after dec synd zero flag start */
@@ -17519,7 +17488,6 @@ int main(int argc, char **argv)
 
     main_indi_err_detect_and_correct_fail_cnt = (unsigned long*)malloc(sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_err_detect_and_correct_fail_cnt, 0, sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
-
     /* variables associated with error bits are over correctables set end */
 
 
@@ -17573,10 +17541,10 @@ int main(int argc, char **argv)
         infoMes;
         printf("setted default end value of main_com_EbN0 is '%f'.\n", global_EbN0_End_Value);
     }
-    /*Channel variable end*/
+    /* Channel variable end */
 
 
-    /*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
+    /* Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1. */
                                     #ifndef RELEASE
                                     if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                     {
@@ -17665,14 +17633,14 @@ int main(int argc, char **argv)
     /******************************************************************/
     /********************* memory initializing end ********************/
     /******************************************************************/
-/**************************************************************************/
-/****************** initializing domestic variables end *******************/
-/**************************************************************************/
+    /**************************************************************************/
+    /****************** initializing domestic variables end *******************/
+    /**************************************************************************/
 
 
-/********************************************************************/
-/********* setting variables about domestic variables start *********/
-/********************************************************************/
+    /********************************************************************/
+    /********* setting variables about domestic variables start *********/
+    /********************************************************************/
     printf("/*****************************************************************/\r\n");
     printf("/***************** Assiciate with galois fields ******************/\r\n");
     printf("/*****************************************************************/\r\n");
@@ -17700,18 +17668,18 @@ int main(int argc, char **argv)
         }
     }
 
-        /* printf initializing result */
-        /*
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX);
-        //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX);
-        */
+            /* printf initializing result */
+            /*
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX);
+            */
     /* To generate galois fields, initializing primitive polynomials end */
 
     /* Initializing essential conditions end */
