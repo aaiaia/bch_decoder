@@ -17877,11 +17877,11 @@ int main(int argc, char **argv)
     //printGaloisFieldToCsv(galoisField64->nonSorted);
     //printGaloisFieldToCsv(galoisField256->nonSorted);
     //printGaloisFieldToCsv(galoisField1024->nonSorted);
-     */
+    */
     /* create galois field using primitive polynomial end */
 
 
-    /*Using conjugacy in galois Field, make generation polynomial start*/
+    /* Using conjugacy in galois Field, make generation polynomial start */
     printf("\n\n");
 
     printf("/*****************************************************************/\r\n");
@@ -17942,7 +17942,7 @@ int main(int argc, char **argv)
         }
         infoMes; printf("Mainly used value, to check algorithm, error number = '%d'\r\n", main_com_errNums_inDecodingAlgorithmTest);
     }
-        /*To test BCH Algorithm, setting number of errors end*/
+        /* To test BCH Algorithm, setting number of errors end */
 
     /* calculate total order of LCM. */
     if((main_com_used_GF->conjugacies->length<main_com_hd_correctability))
@@ -18014,19 +18014,19 @@ int main(int argc, char **argv)
     infoMes; printf("Code length : \'%d\', Infomation bits length : \'%d\', Parity bits length : \'%d\'\n", main_com_codeLength, main_com_infoBitLength, main_com_parityBitsLength);
     main_com_codeRate=((double)main_com_infoBitLength)/((double)main_com_codeLength);
     infoMes; printf("Code rate : '%f' \n", main_com_codeRate);
-    /*Using conjugacy in galois Field, make generation polynomial end*/
+    /* Using conjugacy in galois Field, make generation polynomial end */
 
 
-    /*Create encoding component using converted g(x) to power form(string) start*/
+    /* Create encoding component using converted g(x) to power form(string) start */
     infoMes; printf("Test generation of LCM, GF(%d), set t=%d, select \'%d\' number of set of conjugacy\n", main_com_used_GF->nonSorted->length, main_com_hd_correctability, main_com_hd_correctability);
     //struct_encodingComponentInGF *main_encodingComponentInGF=createEncodingComponent(main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
     recreateEncodingComponent(&main_encodingComponentInGF, main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
     initMes; printf("Creating encoding componenet is done.\r\n");
-    /*Create encoding component using converted g(x) to power form(string) end*/
+    /* Create encoding component using converted g(x) to power form(string) end */
 
 
-    /*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
-    /*Soft Decision Test Pattern Decording Coponents. end*/
+    /* Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1. */
+    /* Soft Decision Test Pattern Decording Coponents. end */
     printf("/*****************************************************************/\r\n");
     printf("/********** Setting value associated with Soft Decision **********/\r\n");
     printf("/*****************************************************************/\r\n");
@@ -18044,8 +18044,8 @@ int main(int argc, char **argv)
     printf("/*****************************************************************/\r\n");
     printf("/************* Initialzing a component of Modulation *************/\r\n");
     printf("/*****************************************************************/\r\n");
-    /*creation BPSK communication compoenets start*/
-    /*initial global quantization info*/
+    /* creation BPSK communication compoenets start */
+    /* initial global quantization info */
     initMes; printf("Setted global value of quantization filter.\r\n");
     infoMes; printf("(global) llr quantization offset : %f\r\n", global_LLR_quantizFilter_offset);
     infoMes; printf("(global) llr quantization step : %f\r\n", global_LLR_quantizFilter_step);
@@ -18084,10 +18084,10 @@ int main(int argc, char **argv)
             printf("/***********************************************************/\r\n");
             main_com_bpskComponents=createBpskComponents(main_com_codeLength);
             initMes; printf("Create bpsk components.\r\n");
-            /*initial LLR components start*/
+            /* initial LLR components start */
             setUsedLengthOfLogLikeHoodRatio(main_com_bpskComponents->bpskReceivedLLR, main_com_codeLength);
             initMes; printf("Setting up log like hood ratio in bpsk componenets.\r\n");
-            /*initial LLR magnitudeShort locator start*/
+            /* initial LLR magnitudeShort locator start */
             initLogLikeHoodRatioLocator(main_com_bpskComponents->bpskReceivedLLR, main_tmp_degErrLocPoly);
             initMes; printf("Initializing log like hood ratio components in bpsk componenets.\r\n");
 
@@ -18143,23 +18143,23 @@ int main(int argc, char **argv)
             infoMes; printf("Same-LLR MAG prior mode : %s.\r\n",
                 NAME_FLAG_CASE_SAME_LLR_HANDLING[global_flag_case_same_llr_handling]);
 
-                                                                        #ifndef RELEASE
-                                                                        /*************** struct_treeStructure address start ***************/
-                                                                        // debugMes; printf("TREE_NONE = %d\n", TREE_NONE);
-                                                                        // debugMes; printf("TREE_CHASE = %d\n", TREE_CHASE);
-                                                                        // testTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
-                                                                        // testPrintTreeStructIndicateAddr(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
-                                                                        /**************** struct_treeStructure address end ****************/
-                                                                        /***** struct_treeStructure create and close memory test start *****/
-                                                                        // struct_treeStructure *testStructure = NULL;
-                                                                        // for(i=0; i<10000000; i++)
-                                                                        // {
-                                                                        //    if(!(testStructure = createTreeStruct(127, TREE_CHASE)))  debugMes; printf("%d : testStructure = createTreeStruct(127, TREE_CHASE)\n", i);
-                                                                        //    if(closeTreeStruct(&testStructure)) debugMes; printf("%d : closeTreeStruct(&testStructure)\n", i);
-                                                                        // }
-                                                                        /****** struct_treeStructure create and close memory test end ******/
-            //        printf("test : mask value is '%d'\n", main_com_bpskComponents->bpskReceivedLLR->quantizedLLRMask);
-                                                                        #endif
+                    #ifndef RELEASE
+                    /*************** struct_treeStructure address start ***************/
+                    // debugMes; printf("TREE_NONE = %d\n", TREE_NONE);
+                    // debugMes; printf("TREE_CHASE = %d\n", TREE_CHASE);
+                    // testTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
+                    // testPrintTreeStructIndicateAddr(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
+                    /**************** struct_treeStructure address end ****************/
+                    /***** struct_treeStructure create and close memory test start *****/
+                    // struct_treeStructure *testStructure = NULL;
+                    // for(i=0; i<10000000; i++)
+                    // {
+                    //    if(!(testStructure = createTreeStruct(127, TREE_CHASE)))  debugMes; printf("%d : testStructure = createTreeStruct(127, TREE_CHASE)\n", i);
+                    //    if(closeTreeStruct(&testStructure)) debugMes; printf("%d : closeTreeStruct(&testStructure)\n", i);
+                    // }
+                    /****** struct_treeStructure create and close memory test end ******/
+                    //printf("test : mask value is '%d'\n", main_com_bpskComponents->bpskReceivedLLR->quantizedLLRMask);
+                    #endif
             /*initial LLR magnitudeShort locator end*/
             /*initial LLR components end*/
             /*creation BPSK communication compoenets end*/
@@ -18401,7 +18401,7 @@ int main(int argc, char **argv)
     //printf("\r\n");
     //if(global_flag_fileInputOutput)
     //{
-    //    /*file io is not completed*/
+    //    /* file io is not completed */
     //    warningMes;
     //    printf("/*************** file io function is not completed ***************/\r\n");
     //    printf("Please press ctrl + c or ctrl + z\r\n");
@@ -19581,16 +19581,17 @@ int main(int argc, char **argv)
 
     switch(global_flag_case_selTP_before_dec)
     {
-        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_ACT        1
+        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
             fprintf(fileio_simEnv, "Get BER Mode is Practical.\r\n");
         break;
 
-        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_THEO    2
+        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
             fprintf(fileio_simEnv, "Get BER Mode is Theoretical.\r\n");
 
             switch(global_flag_case_choosingCodeWordMethod_inTheo)
             {
-                case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:        /* not-support */
+                case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:
+                    /* not-support */
                     fprintf(fileio_simEnv, "(Option, all ZERO,[NOT SUPPORT])\r\n");
                 break;
 
@@ -19711,9 +19712,10 @@ int main(int argc, char **argv)
     /*******************************************************************/
     /*******************************************************************/
 
-/********************************************************************/
-/********* setting variables about domestic variables end *********/
-/********************************************************************/
+    /********************************************************************/
+    /********* setting variables about domestic variables end *********/
+    /********************************************************************/
+
 
     /*******************************************************************/
     /*******************************************************************/
@@ -19865,7 +19867,7 @@ int main(int argc, char **argv)
                     ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate),
                     main_com_codeLength,
                     main_com_EbN0
-                ); //need to add bitrate
+                );//need to add bitrate
 
                 switch(global_flag_case_testMode_decoding_method)
                 {
@@ -19905,38 +19907,38 @@ int main(int argc, char **argv)
                 }
                 for(i=0; i<main_com_codeLength; i++)
                 {
-                            /* ones complement verify code start */
-                            /*
-                            //if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
-                            //{
-                            //    printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
-                            //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
-                            //    );
-                            //}
-                            //else
-                            //{
-                            //    printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
+                        /* ones complement verify code start */
+                        /*
+                        //if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
+                        //{
+                        //    printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
+                        //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
+                        //    );
+                        //}
+                        //else
+                        //{
+                        //    printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
 
-                            //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                            //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
-                            //    );
-                            //}
-                            */
-                            /* ones complement verify code end */
+                        //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
+                        //    );
+                        //}
+                        */
+                        /* ones complement verify code end */
                     /* if received bit is error */
                     if(main_encodingComponentInGF->codeWord->equation[i] != main_com_errComponents->erroredCodeWord->equation[i])
                     {
                         //tmp_testMode_llr_mag_sum_w+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                        //==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
+                        /* note. ==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w; */
                         tmp_testMode_llr_mag_w[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
                         tmp_testMode_count_bit_w++;
                         if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_w) tmp_testMode_llr_mag_max_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
@@ -19971,7 +19973,7 @@ int main(int argc, char **argv)
                     else
                     {
                         //tmp_testMode_llr_mag_sum_c+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                        //==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
+                        /* note. ==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c; */
                         tmp_testMode_llr_mag_c[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
                         tmp_testMode_count_bit_c++;
                         if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_c) tmp_testMode_llr_mag_max_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
@@ -20077,9 +20079,7 @@ int main(int argc, char **argv)
                     ( tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c );
 
 
-
-
-                /*encoding parts*/
+                /* encoding parts */
                 tmp_testMode_zero_bit_nums_inC = 0;
                 tmp_testMode_one_bit_nums_inC = 0;
 
@@ -20402,21 +20402,21 @@ int main(int argc, char **argv)
             for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
             {
             //case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
-                /*Stream Generation*/
+                /* Stream Generation */
                 main_com_randInfoBitsStream =
                     randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
 
-                /*Copy stream to codeword components*/
+                /* Copy stream to codeword components */
                 copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
 
-                /*To calculate parity, shifting stream parity length*/
+                /* To calculate parity, shifting stream parity length */
                 shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
 
-                /*Calculating Parity*/
+                /* Calculating Parity */
                 calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
             //break;
 
-                /*Create error components*/
+                /* Create error components */
                 main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
 
                 BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
@@ -20430,7 +20430,7 @@ int main(int argc, char **argv)
                     main_com_EbN0
                 ); //need to add bitrate
 
-                /*Decoding*/
+                /* Decoding */
             //case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
             //{
                 quantizationWithGlobalAdaptive(
@@ -21370,9 +21370,9 @@ int main(int argc, char **argv)
                             #endif
                     BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
 
-                    /*HARD DECISION*/
+                    /* HARD DECISION */
                     /* ADD_AWGN(main_com_bpskComponents->bpskTransData, main_com_bpskComponents->bpskReceivedDataAddedAwgn, 1, main_com_codeLength, main_com_EbN0); */ //need to add bitrate
-                    /*SOFT DECISION*/
+                    /* SOFT DECISION */
                             #ifndef RELEASE
                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                             {
@@ -21388,7 +21388,7 @@ int main(int argc, char **argv)
                         ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate),
                         main_com_codeLength,
                         main_com_EbN0
-                    ); //need to add bitrate
+                    );//need to add bitrate
                     //getSqureRootAvrBpskReceivedDataAddedAwgn(main_com_bpskComponents);
                     //getSqureRootAvrLLR(main_com_bpskComponents->bpskReceivedLLR);
                             #ifndef RELEASE
@@ -21412,7 +21412,7 @@ int main(int argc, char **argv)
                             #endif
 
                     gettimeofday(&time_decoding_start, NULL);
-                    /*HARD DECISION*/
+                    /* HARD DECISION */
                     if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
                     {
                                 #ifndef RELEASE
@@ -21424,7 +21424,7 @@ int main(int argc, char **argv)
                                 #endif
                         BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
                     }
-                    /*SOFT DECISION*/
+                    /* SOFT DECISION */
                     else
                     {
                                 #ifndef RELEASE
@@ -21501,7 +21501,7 @@ int main(int argc, char **argv)
                                     /*
                                     //convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
                                     //        printMagnitudeOfLLR_andLocationWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-
+                                    //
                                     //sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(main_com_bpskComponents->bpskReceivedLLR);
                                     //        testPrintValueOfTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
                                     */
@@ -21792,8 +21792,8 @@ int main(int argc, char **argv)
                             for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                             {
                                 /*
-                                    sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
-                                */
+                                 * sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
+                                 */
                                 set_selTP_before_decording_skipDecOnly
                                 (
 
@@ -22198,8 +22198,8 @@ int main(int argc, char **argv)
                                         //}
                                         /* If use multiDecording Mode, needs to initial this end */
                                         /*
-                                             note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
-                                        */
+                                         * note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
+                                         */
                                         main_indi_list_errCntOf_TP_afterDec
                                         [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                         [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] =
@@ -22233,9 +22233,9 @@ int main(int argc, char **argv)
                                         /****** close BCH decording components start ******/
                                         /**************************************************/
                                         /*
-                                            notes. Not onlly create block, close new BCH decoding components are not needs.
-                                                Removing this block needs to verify.
-                                        */
+                                         * notes. Not onlly create block, close new BCH decoding components are not needs.
+                                         * Removing this block needs to verify.
+                                         */
                                         //if(!(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
                                         //closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
                                         closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
@@ -22264,15 +22264,15 @@ int main(int argc, char **argv)
                         /************** case start                            ***************/
                         /********************************************************************/
                         /*
-                        note. Actual error count.
-                        Actual is mean, simulator does not known that channel enviroments,
-                        that is mean simulator can not recognize error number corrrectly.
-                        So in below code and actual BER mode,
-                        simulator can not choose best test pattern has minimum error number.
-
-                        Simulator have to identify best test pattern using decoding infomation.
-                        And choose best case.
-                        */
+                         * note. Actual error count.
+                         * Actual is mean, simulator does not known that channel enviroments,
+                         * that is mean simulator can not recognize error number corrrectly.
+                         * So in below code and actual BER mode,
+                         * simulator can not choose best test pattern has minimum error number.
+                         *
+                         * Simulator have to identify best test pattern using decoding infomation.
+                         * And choose best case.
+                         */
                         case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
                         {
                                 #ifndef RELEASE
@@ -22638,24 +22638,9 @@ int main(int argc, char **argv)
 
 
 
-
-
                             /************************************************************/
                             /****** check get BER actual mode fail condition start ******/
                             /************************************************************/
-                            /*
-                            main_indi_list_flag_beforeDec_syndZero
-
-                            main_indi_list_flag_degOfErrLocPolyNotMax
-
-                            main_indi_list_flag_metricChk_degErrLocPolySame
-
-
-
-                            main_indi_sel_TP_i
-
-                            main_indi_list_errCntOf_TP_afterDec
-                            */
                             //for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                             //{
                             //    main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;
@@ -22686,33 +22671,33 @@ int main(int argc, char **argv)
                                 //    );
                             }
 
-                                        #ifndef RELEASE
-                                        if(
-                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                        )
-                                        {
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                            printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                        }
-                                        #endif
+                                    #ifndef RELEASE
+                                    if(
+                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    )
+                                    {
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                        printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                    }
+                                    #endif
 
-                                        #ifndef RELEASE
-                                        if(
-                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                        )
-                                        {
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                        }
-                                        #endif
+                                    #ifndef RELEASE
+                                    if(
+                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    )
+                                    {
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                    }
+                                    #endif
                             /************************************************************/
                             /******* check get BER actual mode fail condition end *******/
                             /************************************************************/
@@ -22819,11 +22804,11 @@ int main(int argc, char **argv)
                                             }
 
                                         }
-                                                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                                                        {
-                                                                            systemHoldMes;    printf("input : ");
-                                                                            scanf("%s", global_buf_KeyBoardInput);
-                                                                        }
+                                                if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                {
+                                                    systemHoldMes;    printf("input : ");
+                                                    scanf("%s", global_buf_KeyBoardInput);
+                                                }
 
                                         infoMes; printf("[ACT] Minumum LLR location and Values\r\n");
                                         testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
@@ -23030,21 +23015,15 @@ int main(int argc, char **argv)
                                                         {//Same condition with selected test-pattern? -> NO
                                                             //can be passing
                                                             //DO NOTHING...
-                                                            //DO NOTHING...
-                                                            //DO NOTHING...
                                                         }
                                                     }
                                                     else
                                                     {//check that non selected test pattern is correctable? -> NO
                                                         //DO NOTHING...
-                                                        //DO NOTHING...
-                                                        //DO NOTHING...
                                                     }
                                                 }
                                                 else
                                                 {//check candidate testpattern is theoretically correctable? -> NO
-                                                    //DO NOTHING...
-                                                    //DO NOTHING...
                                                     //DO NOTHING...
                                                 }
                                             }
@@ -23637,14 +23616,14 @@ int main(int argc, char **argv)
 
         break;
     }
-/*******************************************************************/
-/*******************************************************************/
-/******************** simulation EbN0 loop end *********************/
-/*******************************************************************/
-/*******************************************************************/
-/*******************************************************/
-/****************** REPORT FILE CLOSE ******************/
-/*******************************************************/
+    /*******************************************************************/
+    /*******************************************************************/
+    /******************** simulation EbN0 loop end *********************/
+    /*******************************************************************/
+    /*******************************************************************/
+    /*******************************************************/
+    /****************** REPORT FILE CLOSE ******************/
+    /*******************************************************/
     fclose(fileio_channelBER);
     fclose(fileio_codingBER);
 
@@ -23675,13 +23654,13 @@ int main(int argc, char **argv)
 
     fclose(fildio_EbN0);
     fclose(fildio_loop_Cnt);
-/*******************************************************/
-/****************** REPORT FILE CLOSE ******************/
-/*******************************************************/
+    /*******************************************************/
+    /****************** REPORT FILE CLOSE ******************/
+    /*******************************************************/
 
-/*******************************************************/
-/***************** PATTEWRN FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /***************** PATTEWRN FILE CLOSE *****************/
+    /*******************************************************/
     /* pattern file io */
     if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
     {
@@ -23712,13 +23691,13 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/***************** PATTEWRN FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /***************** PATTEWRN FILE CLOSE *****************/
+    /*******************************************************/
 
-/*******************************************************/
-/***************** PATTERN VERILOG FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /************* PATTERN VERILOG FILE CLOSE **************/
+    /*******************************************************/
     /* pattern file io */
     if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
     {
@@ -23749,13 +23728,13 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/***************** PATTERN VERILOG FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /************* PATTERN VERILOG FILE CLOSE **************/
+    /*******************************************************/
 
-/*******************************************************/
-/*************** PATTEWRN LOG FILE CLOSE ***************/
-/*******************************************************/
+    /*******************************************************/
+    /*************** PATTEWRN LOG FILE CLOSE ***************/
+    /*******************************************************/
     if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_MES)
     {
         fclose(fileio_HD_mes_log);
@@ -23783,9 +23762,9 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/*************** PATTEWRN LOG FILE CLOSE ***************/
-/*******************************************************/
+    /*******************************************************/
+    /*************** PATTEWRN LOG FILE CLOSE ***************/
+    /*******************************************************/
     /* Test Mode Log File IO Close */
     if(global_flag_case_sim_testOpt)
     {
