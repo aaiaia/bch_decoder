@@ -14304,7 +14304,7 @@ char set_selTP_before_decording_skipDecOnly
                  * if not, select hard-decision error number.
                  * !!! WARNING !!!
                  * not support FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR.
-                */
+                 */
                 case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:
                     //printf("[Z]");
                     for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
