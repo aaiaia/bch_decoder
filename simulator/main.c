@@ -17685,7 +17685,7 @@ int main(int argc, char **argv)
     /* Initializing essential conditions end */
 
 
-    /* create galois field using primitive polynomial start */
+        /* create galois field using primitive polynomial start */
         /* check file that is saved galois fields infomations start */
         /* check file that is saved galois fields infomations end */
         main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
@@ -17807,7 +17807,7 @@ int main(int argc, char **argv)
                 (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
                 fileio_Name_Conjugate_common
             );
-                //printf("%s\r\n", fileio_Name_GF_infoBuf);
+                    //printf("%s\r\n", fileio_Name_GF_infoBuf);
             rewinddir(tmp_dirio_var);
             while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
             {
@@ -17815,7 +17815,7 @@ int main(int argc, char **argv)
             }
             /* check file that is saved galois fields infomations end */
             sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                //printf("%s\r\n", fileio_Path_common);
+                    //printf("%s\r\n", fileio_Path_common);
 
                     gettimeofday(&time_proc_start, NULL);
             if(!tmp_dir_entry)
