@@ -148,7 +148,7 @@ void printExcutingTime(struct timeval *start)
     struct timeval end;
     struct timeval diff;
     gettimeofday( &end, NULL );
-    
+
     diff.tv_sec = end.tv_sec - start->tv_sec;
     diff.tv_usec = end.tv_usec - start->tv_usec;
     if(diff.tv_usec<0)
@@ -183,20 +183,20 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 unsigned int global_flag_cmdOption=0;
-#define PRINTF_LOG_WORD    "l"
-#define FLAG_MASK_PRINTF_LOG    (1<<0)
-#define logMes printf("LOG ) ")
+#define PRINTF_LOG_WORD                         "l"
+#define FLAG_MASK_PRINTF_LOG                    (1<<0)
+#define logMes                                  printf("LOG ) ")
 
-#define PRINTF_CALCULATE_PROCESS_WORD    "c"
-#define FLAG_MASK_PRINTF_CALCULATE_PROCESS    (1<<1)
-#define calculateMes printf("CALCULATE ) ")
+#define PRINTF_CALCULATE_PROCESS_WORD           "c"
+#define FLAG_MASK_PRINTF_CALCULATE_PROCESS      (1<<1)
+#define calculateMes                            printf("CALCULATE ) ")
 
-#define PRINTF_MEMORY_CHECK_PROCESS_WORD    "m"
-#define FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS    (1<<2)
-#define memoryMes printf("MEMORY ) ")
+#define PRINTF_MEMORY_CHECK_PROCESS_WORD        "m"
+#define FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS   (1<<2)
+#define memoryMes                               printf("MEMORY ) ")
 
-#define IGNORE_WARNING_MES_WORD    "w"
-#define FLAG_MASK_PRINTF_WARNING_MES    (1<<3)
+#define IGNORE_WARNING_MES_WORD                 "w"
+#define FLAG_MASK_PRINTF_WARNING_MES            (1<<3)
     /* variables to check memory lineary */
     unsigned int global_tmp_i_memoryCheck=0;
 
@@ -204,51 +204,51 @@ unsigned int global_flag_cmdOption=0;
 /* Sysgem Hold command */
 unsigned int global_flag_cmdSystemHold=0;
 #define PRINTF_HELP_WORD    "h"
-#define FLAG_MASK_HOLD_HELP        (1<<0)
-#define systemHoldMes        printf("HOLD ) ")
+#define FLAG_MASK_HOLD_HELP (1<<0)
+#define systemHoldMes       printf("HOLD ) ")
 
 
 
 /* forced Sysgem unhold command */
 unsigned int global_flag_cmdSystemUnhold=0;
-#define SYSTEM_UNHOLD_FORCED_WORD    "f"
-#define FLAG_MASK_SYSTEM_UNHOLD_FORCED    (1<<0)//if(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED)
-#define systemUnholdMes        printf("UNHOLD ) ")
+#define SYSTEM_UNHOLD_FORCED_WORD       "f"
+#define FLAG_MASK_SYSTEM_UNHOLD_FORCED  (1<<0)//if(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED)
+#define systemUnholdMes                 printf("UNHOLD ) ")
 
 
 
 
-#define ADDED_OPTION_WORD    '-'
+#define ADDED_OPTION_WORD       '-'
 
 
 
     /*Algorithm Functional Test*/
-    
-    #define ALGORITHM_FUNC            (1<<0)
 
-    #define ALGORITHM_CHANNEL        (1<<1)
-    
+    #define ALGORITHM_FUNC          (1<<0)
+
+    #define ALGORITHM_CHANNEL       (1<<1)
+
     /*Display RESULT or Progress or Function name*/
     enum DEBUG_DISPLAY_MODE
     {
-        FLAG_MASK_DISPLAY_RESULT = (1<<0),
-        FLAG_MASK_DISPLAY_PROGRESS = (1<<1),
-        FLAG_MASK_DISPLAY_FUNCNAME = (1<<2),
+        FLAG_MASK_DISPLAY_RESULT    = (1<<0),
+        FLAG_MASK_DISPLAY_PROGRESS  = (1<<1),
+        FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
     };
 
 
-    
+
 /*Global debug option start*/
 unsigned int global_flag_deBugOption=0;
-#define DEBUG_DEBUG_WORD     "debug"//FLAG_MASK_DISPLAY_PROGRESS
-#define FLAG_MASK_DEBUG_DEBUG    (1<<0)
-#define debugMes    printf("debug ) ");
+#define DEBUG_DEBUG_WORD        "debug"//FLAG_MASK_DISPLAY_PROGRESS
+#define FLAG_MASK_DEBUG_DEBUG   (1<<0)
+#define debugMes                printf("debug ) ");
 
     unsigned int global_flag_debug_display=0;
     /*
-    #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-    #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-    #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+    //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+    //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+    //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
     */
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
@@ -258,33 +258,35 @@ unsigned int global_flag_deBugOption=0;
 
     /*BM Algorithm debug option start*/
     unsigned int global_flag_debug_bmSim=0;
-    #define DEBUG_BCH_BM_ALGORITHM_WORD     "debug-bm"//OPT_DISPLAY_PROGRESS
+    #define DEBUG_BCH_BM_ALGORITHM_WORD         "debug-bm"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_BM_ALGORITHM    (1<<0)
-    #define debugBmAlgorithmMes    printf("debug-BM ) ");
+    #define debugBmAlgorithmMes                 printf("debug-BM ) ");
 
-    #define DEBUG_BCH_BM_CAL_DELTA_WORD     "debug-bm-cal-delta"//OPT_DISPLAY_PROGRESS
+    #define DEBUG_BCH_BM_CAL_DELTA_WORD         "debug-bm-cal-delta"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA    (1<<1)
-    #define debugBmAlgorithmCalDeltaMes    printf("debug-BM-cal-delta ) ");
+    #define debugBmAlgorithmCalDeltaMes         printf("debug-BM-cal-delta ) ");
     /*BM Algorithm debug option end*/
 
     /*mSBS Algorithm debug option start*/
     /* below variables could be unnecessary */
     unsigned int global_flag_debug_mSBS_Sim=0;
-    #define DEBUG_BCH_mSBS_ALGORITHM_WORD     "debug-mSBS"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM    (1<<0)
-    #define debug_mSBS_AlgorithmMes    printf("debug-mSBS ) ");
+    #define DEBUG_BCH_mSBS_ALGORITHM_WORD       "debug-mSBS"//OPT_DISPLAY_PROGRESS
+    #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM  (1<<0)
+    #define debug_mSBS_AlgorithmMes             printf("debug-mSBS ) ");
 
-    #define DEBUG_BCH_M_SBS_CAL_DELTA_WORD     "debug-mSBS-cal-delta"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA    (1<<1)
-    #define debug_mSBS_AlgorithmCalDeltaMes    printf("debug-mSBS-cal-delta ) ");
+    #define DEBUG_BCH_M_SBS_CAL_DELTA_WORD      "debug-mSBS-cal-delta"//OPT_DISPLAY_PROGRESS
+    #define FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA (1<<1)
+    #define debug_mSBS_AlgorithmCalDeltaMes     printf("debug-mSBS-cal-delta ) ");
     /*mSBS Algorithm debug option end*/
 
 
 
 unsigned int global_flag_berOptions=0;
-// #define TEST_GET_BER_WORD    "get-ber"//SETVALUE
-#define FLAG_MASK_TEST_GET_BER    (1<<0)
-#define testGetBerMes    printf("test GET-BER ) ");
+/*
+#define TEST_GET_BER_WORD       "get-ber"//SETVALUE
+*/
+#define FLAG_MASK_TEST_GET_BER  (1<<0)
+#define testGetBerMes           printf("test GET-BER ) ");
     /****************************************************/
     /********** global flag associate wieh ber **********/
     /****************************************************/
@@ -306,7 +308,7 @@ unsigned int global_flag_berOptions=0;
 
     unsigned int global_flag_case_selTP_before_dec = 0;
 
-    #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT        FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
+    #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
 
         /****************************************************/
@@ -322,7 +324,7 @@ unsigned int global_flag_berOptions=0;
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,
-            
+
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
         }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
 
@@ -330,9 +332,9 @@ unsigned int global_flag_berOptions=0;
             unsigned int global_flag_case_getBER_method_Display=0;
             //if( (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS) )
             /*
-            #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-            #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-            #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+            //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+            //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+            //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
             */
 
     unsigned int global_flag_case_dec_fail_handling = 0;
@@ -354,8 +356,8 @@ unsigned int global_flag_berOptions=0;
 
 unsigned int global_flag_simulationCode=0;
 /*Channel Setting, LLR quantization bit setting*/
-#define FLAG_MASK_CODE_BCH            (1<<0)
-#define mes_bchCode                    printf("BCH code) ");
+#define FLAG_MASK_CODE_BCH  (1<<0)
+#define mes_bchCode         printf("BCH code) ");
 
     //////////////////////////////////////////////////////////////////////////////////
     //////////////////////* Common BCH Codes Calculations start */////////////////////
@@ -363,26 +365,26 @@ unsigned int global_flag_simulationCode=0;
     enum KIND_OF_BCH_DECODING_ALGORITHM
     {
         KIND_OF_BCH_DECODING_BM,
-        // KIND_OF_BCH_DECODING_mSBS,
+        //KIND_OF_BCH_DECODING_mSBS,
         KIND_OF_BCH_DECODING_iBM,
         KIND_OF_BCH_DECODING_RiBM,
         KIND_OF_BCH_DECODING_SiBM,
         KIND_OF_BCH_DECODING_mSBS,
-        // KIND_OF_BCH_DECODING_BM,
+        //KIND_OF_BCH_DECODING_BM,
         KIND_OF_BCH_DECODING_PETERSON,
         KIND_OF_BCH_DECODING_EUCLIDIAN,
         KIND_OF_BCH_DECODING_END,
     };
-    
+
     const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
     {
         "BM",
-        // "mSBS",
+        //"mSBS",
         "iBM",
         "RiBM",
         "SiBM",
         "mSBS",
-        // "BM",
+        //"BM",
         "PETERSON",
         "EUCLIDIAN",
     };
@@ -401,21 +403,21 @@ unsigned int global_flag_simulationCode=0;
     enum BCH_DECODING_ALGORITHM
     {
         FLAG_MASK_BCH_DECORDING_ALGORITHM_BM        = (1<<KIND_OF_BCH_DECODING_BM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_iBM        = (1<<KIND_OF_BCH_DECODING_iBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_RiBM        = (1<<KIND_OF_BCH_DECODING_RiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_SiBM        = (1<<KIND_OF_BCH_DECODING_SiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS        = (1<<KIND_OF_BCH_DECODING_mSBS),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_PETERSON    = (1<<KIND_OF_BCH_DECODING_PETERSON),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_EUCLIDIAN    = (1<<KIND_OF_BCH_DECODING_EUCLIDIAN),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_iBM       = (1<<KIND_OF_BCH_DECODING_iBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_RiBM      = (1<<KIND_OF_BCH_DECODING_RiBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_SiBM      = (1<<KIND_OF_BCH_DECODING_SiBM),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS     = (1<<KIND_OF_BCH_DECODING_mSBS),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_PETERSON  = (1<<KIND_OF_BCH_DECODING_PETERSON),
+        FLAG_MASK_BCH_DECORDING_ALGORITHM_EUCLIDIAN = (1<<KIND_OF_BCH_DECODING_EUCLIDIAN),
     };
 
     /* Simulation Working Mode */
     unsigned int global_flag_sim_workingMode = 0;
     enum SIMULATION_WORKING_MODE
     {
-        FLAG_MASK_SIM_DECOING = (1<<0),
+        FLAG_MASK_SIM_DECOING       = (1<<0),
         FLAG_MASK_SIM_ABSTRACT_DATA = (1<<1),//reserved Working mode
-        FLAG_MASK_SIM_TEST = (1<<2),
+        FLAG_MASK_SIM_TEST          = (1<<2),
     };
 
     /* global_list_flag_bch_sim_decodingMode */
@@ -426,62 +428,70 @@ unsigned int global_flag_simulationCode=0;
         /*******************************************************************/
         enum BCH_ALGORITHM_COMMON_DECODING_OPTIONS
         {
-            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
-            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
-            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
-        
-            FLAG_MASK_LRB_LLR_TEST = (1<<3),
+            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
+            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
+            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
 
-            FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
+            FLAG_MASK_LRB_LLR_TEST                          = (1<<3),
+
+            FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
         };
-        // unsigned int global_flag_bchBM_simulationMode=0;
-        // enum BCH_BM_SIMULATION_MODE
-        // {
-            // FLAG_MASK_TEST_BM_ALGORITHM = (1<<0),
-            // FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
-            // FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
-            
-            // FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
-        // };
+        /*
+        //unsigned int global_flag_bchBM_simulationMode=0;
+        //enum BCH_BM_SIMULATION_MODE
+        //{
+        //    FLAG_MASK_TEST_BM_ALGORITHM         = (1<<0),
+        //    FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
+        //    FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
+        //
+        //    FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
+        //};
+        */
 
         /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
         /*
-        #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-        #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-        #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+        //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+        //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+        //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
         */
-        // #define infoMes        printf("test BCH BM HARD ) ")
+            /*
+            //#define infoMes printf("test BCH BM HARD ) ")
+            */
             unsigned int global_flag_bch_BM_SimHD_display=0;
         /*LLR Quantization value Set*/
-        // #define infoMes        printf("test BCH BM SOFT ) ")
+            /*
+            //#define infoMes printf("test BCH BM SOFT ) ")
+            */
             unsigned int global_flag_bch_BM_SimSD_display=0;//make common thing.
-            #define test_BM_SoftDisplayMes    printf("test SBCH BM SOFT DISPLAY ) ");
-            
+            #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
+
 
         /*******************************************************************/
         /********** global flag associate wieh bch - mSBS algorithm **********/
         /*******************************************************************/
-        // unsigned int global_flag_bch_mSBS_simulationMode = 0;
-        // enum BCH_M_SBS_SIMULATION_MODE
-        // {
-            // FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM = (1<<0),
-            // FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION = (1<<1),
-            // FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION = (1<<2),
-            
-            // FLAG_MASK_CODE_BCH_DEC_AL_SKIP = (1<<15),
-        // };
+        /*
+        //unsigned int global_flag_bch_mSBS_simulationMode = 0;
+        //enum BCH_M_SBS_SIMULATION_MODE
+        //{
+        //    FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
+        //    FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
+        //    FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
+        //
+        //    FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
+        //};
+        */
 
         /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
         /*
-        #define FLAG_MASK_DISPLAY_RESULT        (1<<0)
-        #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-        #define DISPLAY_FUNCNAME_WORD            "funcname"
-        #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
+        //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+        //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+        //#define DISPLAY_FUNCNAME_WORD       "funcname"
+        //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
         */
-        #define test_mSBS_HardMes        printf("test BCH mSBS HARD ) ");
+        #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
             unsigned int global_flag_bch_mSBS_SimHD_display=0;
         /*LLR Quantization value Set*/
-        #define test_mSBS_SoftMes        printf("test BCH mSBS SOFT ) ");
+        #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
             unsigned int global_flag_bch_mSBS_SimSD_display=0;
             #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
@@ -496,10 +506,10 @@ unsigned int global_flag_fileInputOutput = 0;
     unsigned int global_flag_file_io_hd_pattern_output_verilog = 0;
     enum HD_PATTERN_OUTPUT
     {
-        FLAG_MASK_FILE_IO_HD_MES            =   (1<<0),
-        FLAG_MASK_FILE_IO_HD_ENCODING_MES   =   (1<<1),
-        FLAG_MASK_FILE_IO_HD_RECEIVED_MES   =   (1<<2),
-        FLAG_MASK_FILE_IO_HD_CORRECTED_MES  =   (1<<3),
+        FLAG_MASK_FILE_IO_HD_MES            = (1<<0),
+        FLAG_MASK_FILE_IO_HD_ENCODING_MES   = (1<<1),
+        FLAG_MASK_FILE_IO_HD_RECEIVED_MES   = (1<<2),
+        FLAG_MASK_FILE_IO_HD_CORRECTED_MES  = (1<<3),
     };
 
     unsigned int global_flag_file_io_sd_pattern_output = 0;
@@ -507,11 +517,11 @@ unsigned int global_flag_fileInputOutput = 0;
     unsigned int global_flag_file_io_sd_pattern_output_verilog = 0;
     enum SD_PATTERN_OUTPUT
     {
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       =   (1<<0),
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   =   (1<<1),
+        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       = (1<<0),
+        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   = (1<<1),
     };
 
-    
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -520,7 +530,7 @@ unsigned int global_flag_fileInputOutput = 0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
                 unsigned int testOption=0;
-                #define FLAG_MASK_TEST_RESULT        (1<<5)
+                #define FLAG_MASK_TEST_RESULT   (1<<5)
 
                 unsigned int enviromentsOption=0;
 
@@ -528,22 +538,24 @@ unsigned int global_flag_fileInputOutput = 0;
 /*****************************************/
 /********** Associate with AWGN **********/
 /*****************************************/
-#define VALUE_EBN0_WORD    "ebn0"//SET_VALUE
-/*    double main_com_EbN0 = 1.0;*/
-#define DEFAULT_VALUE_EBN0    1.0f
+#define VALUE_EBN0_WORD         "ebn0"//SET_VALUE
+/*
+//double main_com_EbN0 = 1.0;
+*/
+#define DEFAULT_VALUE_EBN0      1.0f
 double global_EbN0_Start_Value = DEFAULT_VALUE_EBN0;
 
-#define VALUE_EBN0_END_WORD    "ebn0-end"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_END    8.0f
+#define VALUE_EBN0_END_WORD     "ebn0-end"//SET_VALUE
+#define DEFAULT_VALUE_EBN0_END  8.0f
 double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
 
 #define VALUE_EBN0_STEP_WORD    "ebn0-step"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_STEP    0.25f
+#define DEFAULT_VALUE_EBN0_STEP 0.25f
 double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
 
 
 unsigned int global_flag_debug_awgn=0;
-#define FLAG_MASK_DEBUG_AWGN_SEQUENCE    (1<<0)
+#define FLAG_MASK_DEBUG_AWGN_SEQUENCE   (1<<0)
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 
 
@@ -554,15 +566,17 @@ unsigned int global_flag_debug_awgn=0;
 unsigned int global_flag_llr_display=0;
 enum FLAG_LLR_DISPLAY
 {
-    FLAG_LLR_DISPLAY_NONE                        = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
-    FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING        = (1<<0),
+    FLAG_LLR_DISPLAY_NONE                   = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
+    FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING = (1<<0),
 }typedef enum_FLAG_LLR_DISPLAY;
 
+/*
 //#define FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE                       0
 //#define FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM                    1
 //#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH   2
 //#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN  3//NOT SUPPORT YET
 //#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO         4//NOT SUPPORT YET
+*/
 enum FLAG_CASE_FINDING_MIN_METHOD
 {
     FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE,
@@ -651,11 +665,11 @@ unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHO
 
 /*Log LikeHood Ratio debug option start*/
 unsigned int global_flag_debug_awgnLLR=0;
-#define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE (1<<0)
-#define debugAwgnLlrSequenceMes    printf("SEQUENCE LLR ) ");
+#define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
+#define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
 
-#define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR (1<<1)
-#define debugAwgnLlrLocatorMes    printf("debug-LLR-Locator ) ");
+#define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR    (1<<1)
+#define debugAwgnLlrLocatorMes              printf("debug-LLR-Locator ) ");
 /*Log LikeHood Ratio debug option end*/
 
 /* LLR QUANTIZATION FILTER options start */
@@ -699,9 +713,9 @@ unsigned int global_flag_case_llr_mag_ones_complement_zero_handling = \
     ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE;
 
 /* LLR QUANTIZATION FILTER VARIABLES start */
-double global_LLR_quantizFilter_offset            = -0.5;
-double global_LLR_quantizFilter_step            = 1.0;
-unsigned char global_LLR_quantizFilter_bitWidth    = 4;
+double global_LLR_quantizFilter_offset = -0.5;
+double global_LLR_quantizFilter_step = 1.0;
+unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
 
@@ -732,49 +746,51 @@ unsigned int global_ErrorNum = 0;
 unsigned int global_flag_gfCommon_display = 0;
 enum FLAG_MASK_DISPLAY_GF_COMMON
 {
-    FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY        = (1<<0),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
-    FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES    = (1<<2),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
-    FLAG_MASK_DISPLAY_GF_COMMON_FIELD        = (1<<1),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
-    FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY    = (1<<3),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
-    FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX    = (1<<4),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX)
-    FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO        = (1<<5),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
+    FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY     = (1<<0),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
+    FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES = (1<<2),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+    FLAG_MASK_DISPLAY_GF_COMMON_FIELD       = (1<<1),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+    FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY   = (1<<3),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
+    FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX  = (1<<4),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX)
+    FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO     = (1<<5),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
 };
 
 
     unsigned int global_flag_gfCommon = 0;
-    #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL    (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
 
 
 /* Code Specification start */
-                #define VALUE_GF_EXP_WORD    "gf-exp"//SET_VALUE
-                #define DEFAULT_VALUE_GF_EXP 10
+                #define VALUE_GF_EXP_WORD       "gf-exp"//SET_VALUE
+                #define DEFAULT_VALUE_GF_EXP    10
                 unsigned int global_GaloisFieldExponential = DEFAULT_VALUE_GF_EXP;
 
-#define VALUE_CODE_LENGTH_WORD    "codelength"//SET_VALUE
-#define DEFAULT_VALUE_CODE_LENGTH    1023
+#define VALUE_CODE_LENGTH_WORD      "codelength"//SET_VALUE
+#define DEFAULT_VALUE_CODE_LENGTH   1023
 unsigned int global_MaximumCodeLength = 0;
 unsigned int global_CodeLength = DEFAULT_VALUE_CODE_LENGTH;
 unsigned int global_LimitCodeLength = 0;
 /* Code Specification end */
 
                 /* Error correction specification start */
-                // #define VALUE_INFO_LENGTH_WORD    "infolength"
-                // #define DEFAULT_VALUE_INFO_LENGTH    1024
-                // unsigned int global_InfoLength = DEFAULT_VALUE_INFO_LENGTH;
-                #define VALUE_HARD_CORRECTABLE_WORD    "hard-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE    4
+                /*
+                //#define VALUE_INFO_LENGTH_WORD              "infolength"
+                //#define DEFAULT_VALUE_INFO_LENGTH           1024
+                //unsigned int global_InfoLength = DEFAULT_VALUE_INFO_LENGTH;
+                */
+                #define VALUE_HARD_CORRECTABLE_WORD         "hard-correctable"//SET_VALUE
+                #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE  4
                 unsigned int global_bch_hardCorrectable = DEFAULT_VALUE_BCH_HARD_CORRECTABLE;
 
-                #define VALUE_SOFT_CORRECTABLE_WORD "soft-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE    2
+                #define VALUE_SOFT_CORRECTABLE_WORD         "soft-correctable"//SET_VALUE
+                #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE  2
                 unsigned int global_bch_SoftCorrectable = DEFAULT_VALUE_BCH_SOFT_CORRECTABLE;
                 /* Error correction specification end */
 
-                #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND 0
+                #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND    0
                 unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
-                
+
                 //unsigned int global_correctables[2] = {&global_bch_hardCorrectable, &global_bch_SoftCorrectable};
-                
+
 char *global_AddedRoot = NULL;
 
 
@@ -786,26 +802,26 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
 
     enum ENUM_GLO_CH_MODE_FUNC
     {
-        FLAG_MASK_CHANNEL_MODE_FUNC_NONE = 0,
-        FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
-        FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE     = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
+        FLAG_MASK_CHANNEL_MODE_FUNC_NONE                = 0,
+        FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE     = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
+        FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
     }typedef ENUM_GLO_CH_MODE_FUNC;
-    
+
     unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
-                
-                
-                
+
+
+
 /***************************************************************/
 unsigned int global_flag_Modulation_Mode = 0;
-#define FLAG_MASK_MODULATION_MODE_BPSK    (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
-#define DEFAULT_MODULATION_MODE    FLAG_MASK_MODULATION_MODE_BPSK
+#define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
+#define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
     unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
     /*
-    #define FLAG_MASK_DISPLAY_RESULT            (1<<0)
-    #define FLAG_MASK_DISPLAY_PROGRESS        (1<<1)
-    #define FLAG_MASK_DISPLAY_FUNCNAME        (1<<2)
-    #define DISPLAY_DEBUG_WORD        "debug"
-    #define DISPLAY_DEBUG            (1<<3)
+    //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
+    //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
+    //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
+    //#define DISPLAY_DEBUG_WORD          "debug"
+    //#define DISPLAY_DEBUG               (1<<3)
     */
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -825,10 +841,10 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned int global_flag_case_sim_testOpt = 0;
 
 
-    
+
     /* Test Mode Commonly using variables */
     /* Test mode iteration variables */
-    #define TMP_TEST_MODE_LOOPS 1000000UL
+    #define TMP_TEST_MODE_LOOPS             1000000UL
     #define TMP_TEST_MODE_ZERO_BIT_RATIO    0.5f
 
     unsigned long tmp_testMode_loops = TMP_TEST_MODE_LOOPS;
@@ -874,10 +890,10 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned int tmp_testMode_one_bit_nums_inC = 0;
 
     /*
-    account of tmp_bit_num_inC_ref_zero_OZ_ratio
-    index 0 -> zero bit num in Codeword.
-    index 1 -> one bit num in Codeword.
-    */
+     * account of tmp_bit_num_inC_ref_zero_OZ_ratio
+     * index 0 -> zero bit num in Codeword.
+     * index 1 -> one bit num in Codeword.
+     */
     unsigned long** tmp_bit_num_inC_ref_zero_OZ_ratio = NULL;
 
     /* decoding parts arranged by bit ratio */
@@ -893,37 +909,37 @@ unsigned int global_flag_Modulation_Mode = 0;
     unsigned long tmp_testMode_llr_mag_sum_inR_w =0UL;//llr sum in received codeword wrong case
     unsigned long tmp_testMode_llr_mag_sum_inR_c =0UL;//llr sum in received codeword good case
 
-    
+
     /*
-    account of tmp_bit_num_inR_ref_zero_OZ_ratio
-    index 0 -> total zero bit nums are counted.
-    index 1 -> zero bit nums in correct bit
-    index 2 -> zero bit nums in error bit
-    */
+     * account of tmp_bit_num_inR_ref_zero_OZ_ratio
+     * index 0 -> total zero bit nums are counted.
+     * index 1 -> zero bit nums in correct bit
+     * index 2 -> zero bit nums in error bit
+     */
     unsigned long** tmp_bit_num_inR_ref_zero_OZ_ratio = NULL;
 
     /*
-    account of tmp_bit_num_inR_ref_one_OZ_ratio
-    index 0 -> total one bit nums are counted.
-    index 1 -> one bit nums in correct bit
-    index 2 -> one bit nums in error bit
-    */
+     * account of tmp_bit_num_inR_ref_one_OZ_ratio
+     * index 0 -> total one bit nums are counted.
+     * index 1 -> one bit nums in correct bit
+     * index 2 -> one bit nums in error bit
+     */
     unsigned long** tmp_bit_num_inR_ref_one_OZ_ratio = NULL;
 
     /*
-    account of tmp_bit_chg_cnt_inR_OZ_ratio
-    index 0 -> total error bit transaction nums actually error bit nums.
-    index 1 -> nums of error bit transacting 0 to 1.
-    index 2 -> nums of error bit transacting 1 to 0.
-    */
+     * account of tmp_bit_chg_cnt_inR_OZ_ratio
+     * index 0 -> total error bit transaction nums actually error bit nums.
+     * index 1 -> nums of error bit transacting 0 to 1.
+     * index 2 -> nums of error bit transacting 1 to 0.
+     */
     unsigned long** tmp_bit_chg_cnt_inR_OZ_ratio = NULL;
 
     /*
-    account of tmp_llr_mag_sum_inR_OZ_ratio
-    index 0 -> summation of llr magnitude at all bit, don't care error or not.
-    index 1 -> summation of llr magnitude at corrected bit.
-    index 2 -> summation of llr magnitude at error bit.
-    */
+     * account of tmp_llr_mag_sum_inR_OZ_ratio
+     * index 0 -> summation of llr magnitude at all bit, don't care error or not.
+     * index 1 -> summation of llr magnitude at corrected bit.
+     * index 2 -> summation of llr magnitude at error bit.
+     */
     unsigned long** tmp_llr_mag_sum_inR_OZ_ratio=NULL;
 
     double** tmp_llr_mag_inR = NULL;
@@ -950,7 +966,7 @@ unsigned int global_flag_Modulation_Mode = 0;
 
     unsigned long tmp_testMode_totalBit = 0UL;
 
-    #define LLR_CASE_NUM 8
+    #define LLR_CASE_NUM    8
 
     unsigned long tmp_testMode_count_bit_w = 0UL;
 
@@ -1021,7 +1037,7 @@ double convertStringToDouble(char *string)
     unsigned int strLengh=0;
     unsigned int i=0;
     unsigned int dotFlag=0;
-    
+
     unsigned char minusFlag=0;
 
     if(!string)
@@ -1113,7 +1129,7 @@ unsigned int convertStringToUnsignedInt(char *string)
     {
         return 0;
     }
-    
+
     strLengh=strlen(string);
     for(i=0; i<strLengh; i++)
     {
@@ -1143,7 +1159,7 @@ unsigned long convertStringToUnsignedLong(char *string)
     {
         return 0;
     }
-    
+
     strLengh=strlen(string);
     for(i=0; i<strLengh; i++)
     {
@@ -1205,8 +1221,8 @@ char *temporaryFunc_generateTestPatternToString(char *string, unsigned int strin
     p=(char*)malloc(sizeof(char)*stringLength+1);
     memcpy(p, string, sizeof(char)*tmpStringLength);
     *(p+tmpStringLength)=0;
-    // memset(p, '0', sizeof(char)*stringLength);
-    // *(p+stringLength)=0;
+    //memset(p, '0', sizeof(char)*stringLength);
+    //*(p+stringLength)=0;
 
                         #ifndef RELEASE
                         if(global_flag_debug_awgnLLR&FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR)
@@ -1289,13 +1305,13 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
     unsigned int i=0, j=0;
     //unsigned char usingBitNumber=sizeof(i)*8;
 
-    // unsigned char usingBitNumber = (unsigned char)(log((double)locatorArrayLength)/log(2.0));
+    //unsigned char usingBitNumber = (unsigned char)(log((double)locatorArrayLength)/log(2.0));
     unsigned char usingBitNumber = locatorArrayLength;
-    // for(i=0; i<sizeof(usingBitNumber)*8; i++)
-    // {
-        // if(locatorArrayLength&(1<<i)) break;
-    // }
-    // usingBitNumber=i;
+    //for(i=0; i<sizeof(usingBitNumber)*8; i++)
+    //{
+    //    if(locatorArrayLength&(1<<i)) break;
+    //}
+    //usingBitNumber=i;
 
     #ifndef RELEASE
     if(!testPattern)
@@ -1304,12 +1320,12 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
         printf("in temporaryFunc_generateTestPatterns_using_LLR_Locator, testPattern is NULL.\n");
         return -1;
     }
-    // if(!*testPattern)
-    // {
-        // errorMes;
-        // printf("in temporaryFunc_generateTestPatterns_using_LLR_Locator, *testPattern is NULL.\n");
-        // return -1;
-    // }
+    //if(!*testPattern)
+    //{
+    //    errorMes;
+    //    printf("in temporaryFunc_generateTestPatterns_using_LLR_Locator, *testPattern is NULL.\n");
+    //    return -1;
+    //}
     #endif
 
     if(!refferStringLength)
@@ -1320,12 +1336,12 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 
     testPattern[0]=refferString;//printf("\n");
 
-    // #ifdef USING_OPEN_MP
-        // #pragma omp parallel for schedule(guided) private(i,j) shared(numsOfTestPattern, usingBitNumber, testPattern, locatorArray, refferString, refferStringLength)
-    // #endif
+    //#ifdef USING_OPEN_MP
+    //    #pragma omp parallel for schedule(guided) private(i,j) shared(numsOfTestPattern, usingBitNumber, testPattern, locatorArray, refferString, refferStringLength)
+    //#endif
     for(i=1; i<numsOfTestPattern; i++)//To generate Test pattern(is same with combination), index i is used to Mask. if we can select 4-case(00 01 10 11).
     {
-                                        // printf("for(i=1; i<locatorArrayLength; i++)  i=%d\n", i);
+                                        //printf("for(i=1; i<locatorArrayLength; i++)  i=%d\n", i);
             if((*(testPattern+i)))
             {
                 free(*(testPattern+i));
@@ -1335,7 +1351,7 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
             }
 
         *(testPattern+i)=(char*)malloc(sizeof(char)*refferStringLength+1);
-                                        // printf("*(testPattern+i)=(char*)malloc(sizeof(char)*refferStringLength+1);\n");
+                                        //printf("*(testPattern+i)=(char*)malloc(sizeof(char)*refferStringLength+1);\n");
         #ifndef USING_OPEN_MP
         memcpy(*(testPattern+i), refferString, sizeof(char)*refferStringLength);
         #else
@@ -1345,15 +1361,15 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
             *((*(testPattern+i))+j) = *(refferString+j);
         }
         #endif
-                                        // printf("memcpy(*(testPattern+i), refferString, sizeof(char)*refferStringLength);\n");
+                                        //printf("memcpy(*(testPattern+i), refferString, sizeof(char)*refferStringLength);\n");
         *((*(testPattern+i))+refferStringLength)=0;
-                                        // printf("*((*(testPattern+i))+refferStringLength)=0;\n");
+                                        //printf("*((*(testPattern+i))+refferStringLength)=0;\n");
 
         //use non-binary code calculate combination of bit position, j is mean that offset locator pointer
-                                        // printf("for(j=0; j<usingBitNumber; j++)//j is mask\n");
-        // #ifdef USING_OPEN_MP
-        // #pragma omp parallel for schedule(guided) private(j) shared(usingBitNumber, locatorArray, testPattern)
-        // #endif
+                                        //printf("for(j=0; j<usingBitNumber; j++)//j is mask\n");
+        //#ifdef USING_OPEN_MP
+        //#pragma omp parallel for schedule(guided) private(j) shared(usingBitNumber, locatorArray, testPattern)
+        //#endif
         for(j=0; j<usingBitNumber; j++)//j is mask
         {
             if(i&(1<<j))//j is index of locatorArray.
@@ -1407,9 +1423,9 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
                             for(i=0; i<numsOfTestPattern; i++)
                             {
                                 test_BM_SoftDisplayMes; printf("[Test Pattern Generation %d]\n", i);
-                                // printf("%s\n",((*(testPattern+i))+j));
+                                //printf("%s\n",((*(testPattern+i))+j));
                                     printf("%s\n",((*(testPattern+i))));
-                            
+
                             }
                         }
                         #endif
@@ -1447,7 +1463,7 @@ char *convertPrimeNumberToString(char *string, unsigned int exponential, const u
         return NULL;
     }
     #endif
-    
+
     for(i=31; 0<=i; i--)
     {
         if(((*(primeNumberArray+exponential-2))>>i)&1)
@@ -1477,48 +1493,48 @@ char *convertPrimeNumberToString(char *string, unsigned int exponential, const u
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 #define MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER    17
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX        ="1";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX        ="11";
+/*
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX     ="1";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX     ="11";
+//
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX     ="111";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX     ="1101";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX    ="11001";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX    ="101001";
+//
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX    ="1100001";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX   ="11000001";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX   ="101110001";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX   ="1100000001";
+//
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX  ="10010000001";
+//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX  ="101000000001";
+*/
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX        ="111";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX        ="1101";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX        ="11001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX        ="101001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX       ="1";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX       ="11";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX        ="1100001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX    ="11000001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX    ="101110001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX    ="1100000001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX       ="111";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX       ="1011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX      ="10011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX      ="100101";
 
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX    ="10010000001";
-// const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX    ="101000000001";
-
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX        ="1";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2_INVERSE_INDEX        ="11";
-
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX        ="111";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX        ="1011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX        ="10011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX        ="100101";
-
-//const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX    ="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX        ="1000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX        ="10001001";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX        ="100011101";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX        ="1000010001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX      ="1000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX     ="10001001";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX     ="100011101";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX     ="1000010001";
 
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX    ="10000001001";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_2048_INVERSE_INDEX    ="100000000101";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_4096_INVERSE_INDEX    ="1000001010011";
-
 char_POWER_FORM *PRIMITIVE_POLYNOMIAL_8192_INVERSE_INDEX    ="10000000011011";
 
-//char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX    ="100000000100001";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX    ="100010001000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX    ="1000000000000011";
-char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX    ="10001000000001011";
+/*
+//char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX   ="100000000100001";
+*/
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_16384_INVERSE_INDEX   ="100010001000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_32768_INVERSE_INDEX   ="1000000000000011";
+char_POWER_FORM *PRIMITIVE_POLYNOMIAL_65536_INVERSE_INDEX   ="10001000000001011";
 //////////////////////////////////////////////////////////////////////////////////
 char *global_addedRootToLCM_string=NULL;
 unsigned int global_degAddedRootToLCM=0;
@@ -1685,8 +1701,8 @@ struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
     *(p->equation+length)=0;
 
     /*quantization setting. default setting is zero.*/
-    // p->llrMask=0;
-    // p->llr=NULL;
+    //p->llrMask=0;
+    //p->llr=NULL;
 
     return p;
 }
@@ -1724,7 +1740,7 @@ struct_powerFormPolynomials *createPowerFormPolynomialUsingString(char *string, 
             #ifndef RELEASE
             errorMes; printf("in createPowerFormPolynomialUsingString, string have another character(can use only '0' and '1').\niuputString : %d-th '%c'\n", i, *(string+i));
             #endif
-            
+
             #ifdef USING_OPEN_MP
             if(*(p->equation+i)%2)
             {
@@ -1778,10 +1794,10 @@ char closePowerFormPolynomial(struct_powerFormPolynomials **p)
     {
         free((*p)->equation);
     }
-    // if((*p)->llr!=NULL)
-    // {
-        // free((*p)->llr);
-    // }
+    //if((*p)->llr!=NULL)
+    //{
+    //    free((*p)->llr);
+    //}
 
     free((*p));
     *p=NULL;
@@ -1810,8 +1826,8 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 {
     unsigned int strLength;
 
-//    unsigned int tmp_length=0;
-//    unsigned int tmp_usedLength=0;
+    //unsigned int tmp_length=0;
+    //unsigned int tmp_usedLength=0;
     char_POWER_FORM *tmp_char_powerForm=NULL;
 
     #ifndef RELEASE
@@ -1898,8 +1914,8 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
 
 
     /* backuped */
-//    tmp_length=p->length;
-//    tmp_usedLength=p->usedLength;
+    //tmp_length=p->length;
+    //tmp_usedLength=p->usedLength;
     tmp_char_powerForm=p->equation;
 
     p->length=length;
@@ -1918,7 +1934,7 @@ char setPowerFormPolynomialUsingStringAddr(struct_powerFormPolynomials *p, char 
                 printf("Previous value will be deleted.\n");
             }
             #endif
-    
+
     if(tmp_char_powerForm)
     {
         free(tmp_char_powerForm);
@@ -2007,10 +2023,10 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
                     printf("Can't copy input string \"%s\" to struct_powerFormPolynomials *p->equation.\n", string);
                     printf("p->length is \'%d\', strLength is \'%d\', loops num is \'%d\', input character is \'%c(%d)\'.\n", p->length, strLength, i, *(string+i), *(string+i));
 
-                    // if(p->equation)
-                    // {
+                    //if(p->equation)
+                    //{
                         free(p->equation);
-                    // }
+                    //}
                     p->equation=backupP;
                     return -1;
                 }
@@ -2033,23 +2049,25 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/* struct_powerFormPolynomials *createPowerFormPolynomialAndInputValue(char *string)
-{
-    struct_powerFormPolynomials *p = createPowerFormPolynomial(strlen(string));
-    if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-    {
-        logMes;
-        printf("in createPowerFormPolynomialAndInputValue, CreationPowerFormPolynomial. input String is : \"%s\"\n", string);
-    }
-    if(copyPowerFormPolynomialFromString(p, string))
-    {
-        //closePowerFormPolynomial(p);
-        errorMes;
-        printf("in createPowerFormPolynomialAndInputValue, copyPowerFormPolynomialFromString(p, string).\n");
-        return NULL;
-    }
-    return p;
-} */
+/*
+struct_powerFormPolynomials *createPowerFormPolynomialAndInputValue(char *string)
+//{
+//    struct_powerFormPolynomials *p = createPowerFormPolynomial(strlen(string));
+//    if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+//    {
+//        logMes;
+//        printf("in createPowerFormPolynomialAndInputValue, CreationPowerFormPolynomial. input String is : \"%s\"\n", string);
+//    }
+//    if(copyPowerFormPolynomialFromString(p, string))
+//    {
+//        //closePowerFormPolynomial(p);
+//        errorMes;
+//        printf("in createPowerFormPolynomialAndInputValue, copyPowerFormPolynomialFromString(p, string).\n");
+//        return NULL;
+//    }
+//    return p;
+//}
+*/
 struct_powerFormPolynomials *recreatePowerFormPolynomialUsingString(struct_powerFormPolynomials **p, char *string, unsigned int strLength)
 {
     #ifndef RELEASE
@@ -2188,14 +2206,14 @@ unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFo
     #endif
     for(i=0; i<p1->usedLength; i++)
     {
-        // if(((*(p1->equation+i))=='0'))
-        // {
-            // if(((*(p2->equation+i))!='0')) result++;
-        // }
-        // else if(((*(p1->equation+i))=='1'))
-        // {
-            // if(((*(p2->equation+i))!='1')) result++;
-        // }
+        //if(((*(p1->equation+i))=='0'))
+        //{
+        //    if(((*(p2->equation+i))!='0')) result++;
+        //}
+        //else if(((*(p1->equation+i))=='1'))
+        //{
+        //    if(((*(p2->equation+i))!='1')) result++;
+        //}
         if((*(p1->equation+i))!=(*(p2->equation+i))) result++;
     }
     return result;
@@ -2360,7 +2378,7 @@ void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struc
     }
     printf("[used]:%d", p1->usedLength);
     printf("[full]:%d,%d\n", p1->length, p2->length);
-    // printf("\n");
+    //printf("\n");
 }
 //////////////////////////////////////////////////////////////////////////////////
 void fprintPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail)
@@ -2496,12 +2514,12 @@ struct struct_variableSetConvertBitStreamToPowerForm
     unsigned char *data;
 
     unsigned char dataBitLength;
-    
+
     unsigned int codeWordPerDataNumber;
-    
+
     unsigned long totalCodeWordNumber;
     unsigned long countedCodeWordNumber;
-    
+
     unsigned long totalDataNumber;
     unsigned long countedDataNumber;
 
@@ -2586,22 +2604,6 @@ char closeVariableSetConvertBitStreamToPowerForm(struct_variableSetConvertBitStr
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-// struct struct_variableSetConvertBitStreamToPowerForm
-// {
-    // unsigned char *data;
-
-    // unsigned char dataBitLength;
-
-    // unsigned int codeWordPerDataNumber;
-
-    // unsigned long totalCodeWordNumber;
-    // unsigned long countedCodeWordNumber;
-
-    // unsigned long totalDataNumber;
-    // unsigned long countedDataNumber;
-
-// }typedef struct_variableSetConvertBitStreamToPowerForm;
-//////////////////////////////////////////////////////////////////////////////////
 char loadToCodeWordStartAtHighSide(struct_powerFormPolynomials *p, struct_variableSetConvertBitStreamToPowerForm *variables)
 {
     unsigned int i;
@@ -2648,7 +2650,7 @@ char loadToCodeWordStartAtHighSide(struct_powerFormPolynomials *p, struct_variab
         variables->countedCodeWordNumber++;
     }
     /*load 1 codeword end*/
-    
+
     for(; equationIndex!=0; equationIndex--)
     {
         *(p->equation+equationIndex-1)='0';
@@ -2708,9 +2710,9 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-Elements of galois field have finite values are represented like 0110.
-And if polynomial represented by power form have 15 bits length, length of elements of galois field is represented (15+1)/2.
-*/
+ * Elements of galois field have finite values are represented like 0110.
+ * And if polynomial represented by power form have 15 bits length, length of elements of galois field is represented (15+1)/2.
+ */
 typedef char char_GALOIS_FIELD_VALUE;
 typedef unsigned int u_int_GALOIS_FIELD_INTEGER;
 struct struct_galoisFieldPolyForm
@@ -2967,11 +2969,13 @@ char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *ope
             return 0;
         }
     }
-    /* if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-    {
-        logMes;
-        printf("find!\n");
-    } */
+    /*
+    //if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+    //{
+    //    logMes;
+    //    printf("find!\n");
+    //}
+    */
     return 1;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3086,10 +3090,10 @@ struct struct_summationMatrix
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ *  !!! WARNING !!!
+ *  Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ *  As possible, use functions of struct_galoisFieldElements.
+ */
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 {
     struct_galoisFieldPolyForm **p;
@@ -3110,10 +3114,10 @@ struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList)
 }
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList)
 {
 
@@ -3158,10 +3162,10 @@ char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**
 
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 {
     #ifndef RELEASE
@@ -3191,10 +3195,10 @@ char closeListOfGaloisField(struct_galoisFieldPolyForm ***p)
 }
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    !!! WARNING !!!
-    Avoid to use functions are related with struct_galoisFieldPolyForm directly.
-    As possible, use functions of struct_galoisFieldElements.
-*/
+ * !!! WARNING !!!
+ * Avoid to use functions are related with struct_galoisFieldPolyForm directly.
+ * As possible, use functions of struct_galoisFieldElements.
+ */
 struct_galoisFieldPolyForm **recreateListOfGaloisField(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList)
 {
     #ifndef RELEASE
@@ -3243,7 +3247,7 @@ char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPo
         printf("in copyListOfGaloisField, unsigned int size is 0.\n");
         return -1;
     }
-    
+
     if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
     {
         logMes;
@@ -3346,8 +3350,8 @@ char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned 
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int lengthOfList, unsigned int polyLength)
 {
-    // struct_galoisFieldPolyForm **p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
-    // memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
+    //struct_galoisFieldPolyForm **p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
+    //memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
     struct_galoisFieldPolyForm **p=NULL;
     if(!(p=createListOfGaloisField(lengthOfList)))
     {
@@ -3390,21 +3394,23 @@ char closeListOfGaloisFieldAndElements(struct_galoisFieldPolyForm ***p, unsigned
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-/* struct_galoisFieldPolyForm **recreateListOfGaloisFieldAndComponents(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList, unsigned int polyLength)
-{
-    if(*p)
-    {
-        if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-        {
-            infoMes;
-            printf("in createListOfGaloisFieldAndComponents, struct_galoisFieldPolyForm *p have data already.\n");
-            printf("it will be recreated.\n");
-        }
-        closeListOfGaloisFieldAndComponents((*p)->length);
-    }
-    *p=createListOfGaloisFieldAndComponents(lengthOfList, polyLength);
-    return *p;
-} */
+/*
+//struct_galoisFieldPolyForm **recreateListOfGaloisFieldAndComponents(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList, unsigned int polyLength)
+//{
+//    if(*p)
+//    {
+//        if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+//        {
+//            infoMes;
+//            printf("in createListOfGaloisFieldAndComponents, struct_galoisFieldPolyForm *p have data already.\n");
+//            printf("it will be recreated.\n");
+//        }
+//        closeListOfGaloisFieldAndComponents((*p)->length);
+//    }
+//    *p=createListOfGaloisFieldAndComponents(lengthOfList, polyLength);
+//    return *p;
+//}
+*/
 //////////////////////////////////////////////////////////////////////////////////
 struct struct_galoisFieldElements
 {
@@ -3445,8 +3451,8 @@ struct_galoisFieldElements *createGaloisFieldExceptElements_VariableLength()
     p=(struct_galoisFieldElements*)malloc(sizeof(struct_galoisFieldElements));
     memset(p, 0, sizeof(struct_galoisFieldElements));
 
-//    p->length=numberOfElement;
-//    p->element=createListOfGaloisField(numberOfElement);
+    //p->length=numberOfElement;
+    //p->element=createListOfGaloisField(numberOfElement);
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -3653,7 +3659,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 
 
     *((*(p->element+1))->value+0)='1';
-    // printf("((*(p->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->element+1))->length), (sizeof(uint32_t)*8));
+    //printf("((*(p->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->element+1))->length), (sizeof(uint32_t)*8));
     if(((*(p->element+1))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
     {
         (*(p->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->element+1));
@@ -3670,8 +3676,8 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
             #endif
 
 
-    // printf("[%05d]%s\n", 0,(*(p->element+0))->value);
-    // printf("[%05d]%s\n", 1,(*(p->element+1))->value);
+    //printf("[%05d]%s\n", 0,(*(p->element+0))->value);
+    //printf("[%05d]%s\n", 1,(*(p->element+1))->value);
     infoMes; printf("[START][Generating GaloisField Elements]\n");
     for(i=2; i<(p->length); i++)
     {
@@ -3682,7 +3688,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
         }
         (*((*(p->element+i))->value+j))='0';
         (*((*(p->element+i))->value+(*(p->element+i))->length))=0;
-        // (*((*(p->element+i-1))->value+((*(p->element+i))->length-1)))=0;
+        //(*((*(p->element+i-1))->value+((*(p->element+i))->length-1)))=0;
 
         if(shiftBuffer=='1')
         {
@@ -3700,49 +3706,48 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
             shiftBuffer='0';
         }
 
-        
+
         if(((*(p->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
         {
             (*(p->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->element+i));
         }
         (*(p->element+i))->index=i;
 
-        // printf("[%05d]%s\n", i,(*(p->element+i))->value);
+        //printf("[%05d]%s\n", i,(*(p->element+i))->value);
     }
     infoMes; printf("[END][Generating GaloisField Elements]\n");
 
-/*
-    #ifndef RELEASE
-    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
-    {
-        initMes; printGaloisField(p);
-    }
-    #endif
-*/
+    /*
+    //#ifndef RELEASE
+    //if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+    //{
+    //    initMes; printGaloisField(p);
+    //}
+    //#endif
+    */
+
         /*
-        Update. 2016/02/22
-        seperated this parts, creating parts of conjugacy class is moved init_ConjugacyClasses
-        
-        */
+         * Update. 2016/02/22
+         * seperated this parts, creating parts of conjugacy class is moved init_ConjugacyClasses
+         */
         /* create conjugacy Class (static) */
-        // p->conjugacies=createConjugacyClasses(p);
-        // calculateConjugacyClasses(p, p->conjugacies);
+        //p->conjugacies=createConjugacyClasses(p);
+        //calculateConjugacyClasses(p, p->conjugacies);
 
         /* create conjugacy Class (variable) */
-        // p->conjugacies=createConjugacyClasses_VariableLength();
-        /*
-        infoMes; printf("[START][Generating conjugacy set]\n");
-        calculateConjugacyClasses_VariableLength(p, p->conjugacies);
-        infoMes; printf("[END][Generating conjugacy set]\n");
-
-        #ifndef RELEASE
-        if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
-        {
-            initMes;
-            printConjugacyClasses(p, p->conjugacies);
-        }
-        #endif
-        */
+        //p->conjugacies=createConjugacyClasses_VariableLength();
+        //
+        //infoMes; printf("[START][Generating conjugacy set]\n");
+        //calculateConjugacyClasses_VariableLength(p, p->conjugacies);
+        //infoMes; printf("[END][Generating conjugacy set]\n");
+        //
+        //#ifndef RELEASE
+        //if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+        //{
+        //    initMes;
+        //    printConjugacyClasses(p, p->conjugacies);
+        //}
+        //#endif
 
     return 0;
 }
@@ -3768,8 +3773,8 @@ struct_galoisFieldElements *createGaloisField(struct_powerFormPolynomials *primi
 char closeGaloisField(struct_galoisFieldElements **p)
 {
     #ifndef RELEASE
-    if(!p) return -1;
-    if(!(*p)) return -2;
+    if(!p)      return -1;
+    if(!(*p))   return -2;
     #endif
 
     if(closeGaloisFielsAndElements(p))
@@ -3779,25 +3784,10 @@ char closeGaloisField(struct_galoisFieldElements **p)
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-
-
 //////////////////////////////////////////////////////////////////////////////////
 /* handle galois field list and elements end */
 //////////////////////////////////////////////////////////////////////////////////
-/*
-struct struct_galoisFieldElements
-{
-    unsigned int length;
-    struct_galoisFieldPolyForm **element;
-    
-    struct_summationMatrix *summationReferMatrix;
-}typedef struct_galoisFieldElements;
-*/
-/*
-    char_GALOIS_FIELD_VALUE *value;
-    u_int_GALOIS_FIELD_INTEGER intValue;
-    u_int_GALOIS_FIELD_INTEGER index;
-*/
+
 //////////////////////////////////////////////////////////////////////////////////
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p)
 {
@@ -3821,9 +3811,9 @@ char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
 {
     unsigned int tmp_i;
     FILE *fileio;
-    if(!path)            return -1;
-    if(!primitivePoly)    return -2;
-    if(!p)                return -3;
+    if(!path)           return -1;
+    if(!primitivePoly)  return -2;
+    if(!p)              return -3;
 
     fileio = fopen(path, "w");
 
@@ -3901,63 +3891,65 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
             printf("[load_struct_galoisFieldElements START]\r\n");
 
     fscanf(load_fileio_GF, "primitive polynomials, %s\r\n", load_primitivePoly);
-            // printf("primitive polynomials, %s\r\n", load_primitivePoly);
+            //printf("primitive polynomials, %s\r\n", load_primitivePoly);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(load_fileio_GF, "Kind Of Data, %d\r\n", &load_kindOfData);
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(load_fileio_GF, "Saved Data Type, %d\r\n", &load_saveOfData);
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(load_fileio_GF, "Bit Width, %d\r\n", &load_bitWidth);
         //(*(p->element+0))->length
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(load_fileio_GF, "galois field row length, %d\r\n", &load_row);
         //p->length
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(load_fileio_GF, "galois field column length, %d\r\n", &load_column);
-        //1
-    fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
             //printf("%s\r\n", load_stringBuf);
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
-/*     fscanf(load_fileio_GF, "%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
-    for(tmp_i=1; tmp_i<p->length; tmp_i++)
-    {
-        fscanf(load_fileio_GF, "%d(%d), %s, %d\r\n", ((*(p->element+tmp_i))->index - 1), (*(p->element+tmp_i))->index, (*(p->element+tmp_i))->value, (*(p->element+tmp_i))->intValue);
-    } */
-    // fscanf(load_fileio_GF, "%c(%d), %s, %d\r\n", &load_exp_char, &load_index, load_stringBuf, &load_intVal);
+            //printf("%s\r\n", load_stringBuf);
+
+    fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
+    /*
+    //fscanf(load_fileio_GF, "%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
+    //for(tmp_i=1; tmp_i<p->length; tmp_i++)
+    //{
+    //    fscanf(load_fileio_GF, "%d(%d), %s, %d\r\n", ((*(p->element+tmp_i))->index - 1), (*(p->element+tmp_i))->index, (*(p->element+tmp_i))->value, (*(p->element+tmp_i))->intValue);
+    //}
+    //fscanf(load_fileio_GF, "%c(%d), %s, %d\r\n", &load_exp_char, &load_index, load_stringBuf, &load_intVal);
+    */
         fscanf(load_fileio_GF, "%c(%d), ", &load_exp_char, &load_index);
         fgets(load_stringBuf, load_bitWidth+1, load_fileio_GF);
         load_stringBuf[load_bitWidth] = 0;
         fscanf(load_fileio_GF, ", %d\r\n", &load_intVal);
 
-            // printf("%c(%d), %s, %d\r\n", load_exp_char, load_index, load_stringBuf, load_intVal);
+                //printf("%c(%d), %s, %d\r\n", load_exp_char, load_index, load_stringBuf, load_intVal);
 
     strcpy((*(p->element+0))->value, load_stringBuf);
     (*(p->element+0))->intValue = load_intVal;
@@ -3971,14 +3963,14 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
         strcpy((*(p->element+tmp_i))->value, load_stringBuf);
         (*(p->element+tmp_i))->intValue = load_intVal;
         (*(p->element+load_index))->index = load_index;
-                // printf("%d(%d), %s, %d\r\n", load_exp_integer, load_index, load_stringBuf, load_intVal);
+                //printf("%d(%d), %s, %d\r\n", load_exp_integer, load_index, load_stringBuf, load_intVal);
     }
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+                //printf("%s\r\n", load_stringBuf);
 
 
     fscanf(load_fileio_GF, "%s\r\n", load_stringBuf);
-                // printf("%s\r\n", load_stringBuf);
+                //printf("%s\r\n", load_stringBuf);
 
     fclose(load_fileio_GF);
 
@@ -4300,7 +4292,7 @@ struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisF
     return *(field->element+exponential+1);
 }
 //////////////////////////////////////////////////////////////////////////////////
-/*Use character, but it is slow, so this function is alternated.*/
+/* Use character, but it is slow, so this function is alternated. */
 struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
     unsigned int i;
@@ -4544,60 +4536,62 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
 }
 //////////////////////////////////////////////////////////////////////////////////
 /* 20160425_18:07 deleted */
-/* struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int row, unsigned int column)
-{
-    unsigned int i,j;
-    struct_summationMatrix *p;
-
-    unsigned int count;
-
-    #ifndef RELEASE
-    if(!galoisFields)
-    {
-        return NULL;
-    }
-    if(!row)
-    {
-        return NULL;
-    }
-    if(!column)
-    {
-        return NULL;
-    }
-    if(row!=column)
-    {
-        return NULL;
-    }
-    #endif
-
-
-    p=(struct_summationMatrix*)malloc(sizeof(struct_summationMatrix));
-
-    p->element=(struct_galoisFieldPolyForm ***)malloc(sizeof(struct_galoisFieldPolyForm **)*row);
-    
-            #ifndef RELEASE
-            infoMes;  printf("calculating a struct_summationMatrix ");
-            #endif
-
-    #ifdef USING_OPEN_MP
-    #pragma omp parallel for schedule(guided) private(i, j) shared(row, p, column, galoisFields)
-    #endif
-    for(i=0; i<row; i++)
-    {
-        (*(p->element+i))=(struct_galoisFieldPolyForm **)malloc(sizeof(struct_galoisFieldPolyForm *)*column);
-        for(j=0; j<column; j++)
-        {
-            (*((*(p->element+i))+j))=summationElementsInGaloisFieldUsingGaloisFieldInt_finding(galoisFields, *(galoisFields->element+i), *(galoisFields->element+j));
-        }
-    }
-            #ifndef RELEASE
-            printf("is done.\n");
-            #endif
-
-    p->row=row;
-    p->column=column;
-    return p;
-} */
+/*
+//struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int row, unsigned int column)
+//{
+//    unsigned int i,j;
+//    struct_summationMatrix *p;
+//
+//    unsigned int count;
+//
+//    #ifndef RELEASE
+//    if(!galoisFields)
+//    {
+//        return NULL;
+//    }
+//    if(!row)
+//    {
+//        return NULL;
+//    }
+//    if(!column)
+//    {
+//        return NULL;
+//    }
+//    if(row!=column)
+//    {
+//        return NULL;
+//    }
+//    #endif
+//
+//
+//    p=(struct_summationMatrix*)malloc(sizeof(struct_summationMatrix));
+//
+//    p->element=(struct_galoisFieldPolyForm ***)malloc(sizeof(struct_galoisFieldPolyForm **)*row);
+//
+//            #ifndef RELEASE
+//            infoMes;  printf("calculating a struct_summationMatrix ");
+//            #endif
+//
+//    #ifdef USING_OPEN_MP
+//    #pragma omp parallel for schedule(guided) private(i, j) shared(row, p, column, galoisFields)
+//    #endif
+//    for(i=0; i<row; i++)
+//    {
+//        (*(p->element+i))=(struct_galoisFieldPolyForm **)malloc(sizeof(struct_galoisFieldPolyForm *)*column);
+//        for(j=0; j<column; j++)
+//        {
+//            (*((*(p->element+i))+j))=summationElementsInGaloisFieldUsingGaloisFieldInt_finding(galoisFields, *(galoisFields->element+i), *(galoisFields->element+j));
+//        }
+//    }
+//            #ifndef RELEASE
+//            printf("is done.\n");
+//            #endif
+//
+//    p->row=row;
+//    p->column=column;
+//    return p;
+//}
+*/
 struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column)
 {
     struct_summationMatrix *p;
@@ -4653,14 +4647,6 @@ void printSummationMatrixSavedForm(struct_summationMatrix *p)
     }
 }
 //////////////////////////////////////////////////////////////////////////////////
-/*
-struct struct_summationMatrix
-{
-    unsigned int row;
-    unsigned int column;
-    struct_galoisFieldPolyForm ***element;
-}typedef struct_summationMatrix;
- */
 char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
 {
     unsigned int tmp_i;
@@ -4780,71 +4766,71 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
                 printf("[load_struct_summationMatrix START]\r\n");
 
     if(fscanf(fileio_load_sumMatrix, "primitive polynomials, %s\r\n", load_primitivePoly)<0)            chk_incorrectFormCnt++;
-            // printf("primitive polynomials, %s\r\n", load_primitivePoly);
-        // if(strcmp(load_primitivePoly, primitivePoly))
-        // {
-            // chk_incorrectDataCnt++;
-        // }
+            //printf("primitive polynomials, %s\r\n", load_primitivePoly);
+        //if(strcmp(load_primitivePoly, primitivePoly))
+        //{
+        //    chk_incorrectDataCnt++;
+        //}
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_START
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)    chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_START
     if(fscanf(fileio_load_sumMatrix, "Kind Of Data, %d\r\n", &load_kindOfData)<0)    chk_incorrectFormCnt++;
-        // printf("Kind Of Data, %d\r\n", load_kindOfData);// FILE_IO_KIND_OF_DATA_SUMATION_MATRIX
+            //printf("Kind Of Data, %d\r\n", load_kindOfData);//FILE_IO_KIND_OF_DATA_SUMATION_MATRIX
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_KIND_OF_DATA_END
 
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_START
     if(fscanf(fileio_load_sumMatrix, "Saved Data Type, %d\r\n", &load_saveOfData)<0)        chk_incorrectFormCnt++;
-        // printf("Saved Data Type, %d\r\n", load_saveOfData);// FILD_IO_DATA_ARRAY_TYPE_LINEAR
+            //printf("Saved Data Type, %d\r\n", load_saveOfData);//FILD_IO_DATA_ARRAY_TYPE_LINEAR
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_ARRAY_TYPE_END
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_START
     if(fscanf(fileio_load_sumMatrix, "Bit Width, %d\r\n", &load_bitWidth)<0)                                chk_incorrectFormCnt++;
-            // printf("Bit Width, %d\r\n", load_bitWidth);
-        // if((*((*(p->element+0))+0))->length != load_bitWidth)
-        // {
-            // chk_incorrectDataCnt++;
-        // }
+            //printf("Bit Width, %d\r\n", load_bitWidth);
+        //if((*((*(p->element+0))+0))->length != load_bitWidth)
+        //{
+        //    chk_incorrectDataCnt++;
+        //}
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_BIT_WIDTH_END
 
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_START
     if(fscanf(fileio_load_sumMatrix, "Matrix row length, %d\r\n", &load_row)<0)                            chk_incorrectFormCnt++;
-            // printf("Matrix row length, %d\r\n", load_row);
-        // if(p->row != load_row)
-        // {
-            // chk_incorrectDataCnt++;
-        // }
+            //printf("Matrix row length, %d\r\n", load_row);
+        //if(p->row != load_row)
+        //{
+        //    chk_incorrectDataCnt++;
+        //}
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)            chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_ROW_DATA_END
 
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_START
     if(fscanf(fileio_load_sumMatrix, "Matrix column length, %d\r\n", &load_column)<0)                    chk_incorrectFormCnt++;
-            // printf("Matrix column length, %d\r\n", load_column);
-        // if(p->column != load_column)
-        // {
-            // chk_incorrectDataCnt++;
-        // }
+            //printf("Matrix column length, %d\r\n", load_column);
+        //if(p->column != load_column)
+        //{
+        //    chk_incorrectDataCnt++;
+        //}
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)            chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END
-    
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_COL_DATA_END
+
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)                                                chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_START
     for(tmp_i=0; tmp_i<load_row; tmp_i++)
     {
         for(tmp_j=0; tmp_j<load_column; tmp_j++)
@@ -4865,7 +4851,7 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
                         &load_index
                     )<0)    chk_incorrectFormCnt++;
                 }
-                    // printf("%d(%d)%s", load_exp_integer, load_index, ((tmp_j<(load_column-1))?", ":""));
+                        //printf("%d(%d)%s", load_exp_integer, load_index, ((tmp_j<(load_column-1))?", ":""));
                 (*((*(p->element+tmp_i))+tmp_j)) = (*(galoisFields->element+load_index));
             }
             else
@@ -4884,17 +4870,17 @@ char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisF
                         &load_index
                     )<0)    chk_incorrectFormCnt++;
                 }
-                    // printf("%c(%d)%s", load_exp_char, load_index, ((tmp_j<(load_column-1))?", ":""));
+                        //printf("%c(%d)%s", load_exp_char, load_index, ((tmp_j<(load_column-1))?", ":""));
                 (*((*(p->element+tmp_i))+tmp_j)) = (*(galoisFields->element+load_index));
             }
         }
         if(fscanf(fileio_load_sumMatrix, "\r\n")<0)    chk_incorrectFormCnt++;
-            // printf("\r\n");
+                //printf("\r\n");
     }
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)            chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_RAW_DATA_END
     if(fscanf(fileio_load_sumMatrix, "%s\r\n", load_stringBuf)<0)        chk_incorrectFormCnt++;
-        // printf("%s\r\n", load_stringBuf);// FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END
+            //printf("%s\r\n", load_stringBuf);//FILE_IO_DATA_PARSING_KEY_STRING_SAVED_DATA_END
 
     fclose(fileio_load_sumMatrix);
 
@@ -4959,10 +4945,12 @@ struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoi
     //return (*((*(matrix->element+(operandA->index)))+(operandB->index)));
 }
 //////////////////////////////////////////////////////////////////////////////////
-/* unsigned int multiplicationWithExponential(struct_galoisFieldElements *field, unsigned int exponentialA, unsigned int exponentialB)
-{
-    return
-} */
+/*
+//unsigned int multiplicationWithExponential(struct_galoisFieldElements *field, unsigned int exponentialA, unsigned int exponentialB)
+//{
+//    return
+//}
+*/
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
@@ -4999,7 +4987,7 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
         return NULL;
     }
     #endif
-    
+
     exponentialOfOperandB=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(field, operandB);
     #ifndef RELEASE
     if(exponentialOfOperandB==-1)
@@ -5037,47 +5025,19 @@ struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldEleme
     return *(field->element+exponentialSummation+1);
 }
 //////////////////////////////////////////////////////////////////////////////////
-// struct struct_summationMatrix
-// {
-    // unsigned int row;
-    // unsigned int column;
-    // struct_galoisFieldPolyForm ***element;
-// }typedef struct_summationMatrix;
-// void printSummationMatrixGFabstraction(struct_summationMatrix *p)
-// {
-    // unsigned int tmp_row;
-    // unsigned int tmp_col;
-
-    // #ifndef RELEASE
-    // if(!p)
-    // {
-
-        // return;
-    // }
-    // #endif
-
-    // for(tmp_row=0; tmp_row<p->row; tmp_row++)
-    // {
-        // for(tmp_col=0; tmp_col<p->column; tmp_col++)
-        // {
-
-        // }
-    // }
-// }
 //////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-///*Example of making equation*///
+///* Example of making equation *///
 /*
-    struct_galoisFieldElements *alpha;
-    struct_galoisFieldElements *beta;
-
-    p->alpha = createGaloisFieldExceptElements(t+1);
-    p->beta = createGaloisFieldExceptElements(t+1);
-
-    initEquation(galoisFields, p->alpha);
-    initEquation(galoisFields, p->beta);
-    
-    copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
+//    struct_galoisFieldElements *alpha;
+//    struct_galoisFieldElements *beta;
+//
+//    p->alpha = createGaloisFieldExceptElements(t+1);
+//    p->beta = createGaloisFieldExceptElements(t+1);
+//
+//    initEquation(galoisFields, p->alpha);
+//    initEquation(galoisFields, p->beta);
+//
+//    copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
 */
 char initEquation(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *p)
 {
@@ -5192,9 +5152,9 @@ char initBinEquationUsingStr(struct_galoisFieldElements *galoisFields, struct_ga
 
 
     tmp_cnt=0;
-    // #ifdef USING_OPEN_MP
-    // #pragma omp parallel for schedule(guided) private(i) shared(p, galoisFields)
-    // #endif
+    //#ifdef USING_OPEN_MP
+    //#pragma omp parallel for schedule(guided) private(i) shared(p, galoisFields)
+    //#endif
     for(i=0; i<strlen; i++)
     {
         if(str[i]=='1')
@@ -5276,8 +5236,8 @@ struct_galoisFieldElements* multipleTwoEqReturnAddr(
     recreateGaloisFieldExceptElements(result, tmp_order+1);
     initEquationFillAllZero(galoisFields, *result);
 
-    // *(equation->element+k+1)=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, *(beforeEquation->element+k), *(equation->element+k+1));
-    // *(equation->element+k)=multiElementsInGF_returnAddr(galoisFields, *((*(multipledRootSet->conjugateSet+i))->element+j), *(beforeEquation->element+k));
+    //*(equation->element+k+1)=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, *(beforeEquation->element+k), *(equation->element+k+1));
+    //*(equation->element+k)=multiElementsInGF_returnAddr(galoisFields, *((*(multipledRootSet->conjugateSet+i))->element+j), *(beforeEquation->element+k));
     for(i=0; i<operandEqA->length; i++)
     {
         for(j=0; j<operandEqB->length; j++)
@@ -5336,67 +5296,59 @@ char abstractOrderOfEquation(struct_galoisFieldElements *equation)
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-struct struct_galoisFieldElements
-{
-    unsigned int length;
-    struct_galoisFieldPolyForm **element;
-}typedef struct_galoisFieldElements;
+//struct_galoisFieldElements *createConjugacyClass(unsigned int numberOfElementOfgaloisField)
+//{
+//    if(!numberOfElementOfgaloisField)
+//    {
+//        errorMes;
+//        printf("in createConjugacyClass, unsigned int numberOfElementOfgaloisField is zero.\n");
+//        return NULL;
+//    }
+//
+//
+//    struct_galoisFieldElements *p;
+//    if(!(p = (struct_galoisFieldElements*)createGaloisFieldExceptElements(numberOfElementOfgaloisField)))
+//    {
+//        errorMes;
+//        printf("in createConjugacyClass, (p = createGaloisFieldExceptElements(numberOfElementOfgaloisField)) return NULL.\n");
+//        return p;
+//    }
+//
+//    return p;
+//}
 */
-//typedef struct_galoisFieldElements struct_galoisFieldElements;
-//////////////////////////////////////////////////////////////////////////////////
-//#define createGaloisFieldExceptElements(numberOfElementOfgaloisField) createGaloisFieldExceptElements(numberOfElementOfgaloisField)
-/* struct_galoisFieldElements *createConjugacyClass(unsigned int numberOfElementOfgaloisField)
-{
-    if(!numberOfElementOfgaloisField)
-    {
-        errorMes;
-        printf("in createConjugacyClass, unsigned int numberOfElementOfgaloisField is zero.\n");
-        return NULL;
-    }
-
-
-    struct_galoisFieldElements *p;
-    if(!(p = (struct_galoisFieldElements*)createGaloisFieldExceptElements(numberOfElementOfgaloisField)))
-    {
-        errorMes;
-        printf("in createConjugacyClass, (p = createGaloisFieldExceptElements(numberOfElementOfgaloisField)) return NULL.\n");
-        return p;
-    }
-
-    return p;
-} */
-//////////////////////////////////////////////////////////////////////////////////
-//#define closeGaloisFieldExceptElements(p) closeGaloisFieldExceptElements(p)
-/* char closeConjugacyClass(struct_galoisFieldElements *p)
-{
-    if(!p)
-    {
-        errorMes;
-        printf("in closeConjugacyClass, struct_galoisFieldElements *p is NULL.\n");
-        return -1;
-    }
-
-    if(closeGaloisFieldExceptElements(struct_galoisFieldElements *p))
-    {
-        errorMes;
-        printf("in closeConjugacyClass, closeGaloisFieldExceptElements(struct_galoisFieldElements *p) return error.\n");
-        return -1;
-    }
-    return 0;
-} */
-//#define recreateGaloisFieldExceptElements(p, num) recreateGaloisFieldExceptElements(p, num)
 //////////////////////////////////////////////////////////////////////////////////
 /*
-note about struct_setOfGaloisFieldElements.
-test. 2016/02/22/14:28, limitedExponential is mean that, when getting conjugacies class, limit exponential of galois fields.
+//char closeConjugacyClass(struct_galoisFieldElements *p)
+//{
+//    if(!p)
+//    {
+//        errorMes;
+//        printf("in closeConjugacyClass, struct_galoisFieldElements *p is NULL.\n");
+//        return -1;
+//    }
+//
+//    if(closeGaloisFieldExceptElements(struct_galoisFieldElements *p))
+//    {
+//        errorMes;
+//        printf("in closeConjugacyClass, closeGaloisFieldExceptElements(struct_galoisFieldElements *p) return error.\n");
+//        return -1;
+//    }
+//    return 0;
+//}
 */
+//////////////////////////////////////////////////////////////////////////////////
+/*
+ * note about struct_setOfGaloisFieldElements.
+ * test. 2016/02/22/14:28, limitedExponential is mean that, when getting conjugacies class, limit exponential of galois fields.
+ */
 struct struct_setOfGaloisFieldElements
 {
     unsigned int length;
     struct_galoisFieldElements **conjugateSet;
 
     unsigned int limitedExponential;
-    
+
     struct_galoisFieldElements **limitedConjugateSet;
 }typedef struct_setOfGaloisFieldElements;
 //////////////////////////////////////////////////////////////////////////////////
@@ -5410,7 +5362,7 @@ char setLengthOfLimittedLengthOfConjugacyClasse(struct_setOfGaloisFieldElements 
         return -1;
     }
     #endif
-    
+
     p->limitedExponential = limitedExponential;
     return 0;
 }
@@ -5525,63 +5477,64 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-// char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
-// {
-    // unsigned int i;
-    // struct_galoisFieldElements **newConjugateSet=NULL;
-
-    // #ifndef RELEASE
-    // if(!p)
-    // {
-        // errorMes;
-        // printf("in addConjugacyClassesVariableLength, struct_setOfGaloisFieldElements *p is NULL.\n");
-        // return -1;
-    // }
-    // if(!addedLength)
-    // {
-        // warningMes;
-        // printf("in addConjugacyClassesVariableLength, unsigned int addedLength is 0.\n");
-        // return 0;
-    // }
-    // #endif
-
-    ///*making conjugacy set array and initializing*/
-    // if(!(p->length))
-    // {
-        // p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
-        
-        // #ifdef USING_OPEN_MP
-        // #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
-        // #endif
-        // for(i=0; i<addedLength; i++)
-        // {
-            // *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-        // }
-        // p->length=addedLength;
-    // }
-    // else
-    // {
-        /* Sometime realloc has memory leakage. So to increase memory size, using this func is invalid. */
-        /*p->conjugateSet=(struct_galoisFieldElements**)realloc(p->conjugateSet, sizeof(struct_galoisFieldElements*)*addedLength);*///increasing conjugacy set array
-        // newConjugateSet=(struct_galoisFieldElements**)malloc((sizeof(struct_galoisFieldElements*)*((p->length)+addedLength)));
-        // memset(newConjugateSet , 0, (sizeof(struct_galoisFieldElements*)*(p->length+addedLength)));
-        // memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
-        // free(p->conjugateSet);
-        // p->conjugateSet=newConjugateSet;
-
-        /*clear added conjugacy set*/
-        // #ifdef USING_OPEN_MP
-        // #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
-        // #endif
-        // for(i=p->length; i<((p->length)+addedLength); i++)
-        // {
-            // *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-        // }
-        // p->length+=addedLength;
-    // }
-
-    // return 0;
-// }
+//char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
+//{
+//    unsigned int i;
+//    struct_galoisFieldElements **newConjugateSet=NULL;
+//
+//    #ifndef RELEASE
+//    if(!p)
+//    {
+//        errorMes;
+//        printf("in addConjugacyClassesVariableLength, struct_setOfGaloisFieldElements *p is NULL.\n");
+//        return -1;
+//    }
+//    if(!addedLength)
+//    {
+//        warningMes;
+//        printf("in addConjugacyClassesVariableLength, unsigned int addedLength is 0.\n");
+//        return 0;
+//    }
+//    #endif
+//
+//    *making conjugacy set array and initializing*/
+//    if(!(p->length))
+//    {
+//        p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
+//
+//        #ifdef USING_OPEN_MP
+//        #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
+//        #endif
+//        for(i=0; i<addedLength; i++)
+//        {
+//            *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
+//        }
+//        p->length=addedLength;
+//    }
+//    else
+//    {
+//        /* Sometime realloc has memory leakage. So to increase memory size, using this func is invalid. */
+//        //p->conjugateSet=(struct_galoisFieldElements**)realloc(p->conjugateSet, sizeof(struct_galoisFieldElements*)*addedLength);//increasing conjugacy set array
+//
+//        newConjugateSet=(struct_galoisFieldElements**)malloc((sizeof(struct_galoisFieldElements*)*((p->length)+addedLength)));
+//        memset(newConjugateSet , 0, (sizeof(struct_galoisFieldElements*)*(p->length+addedLength)));
+//        memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
+//        free(p->conjugateSet);
+//        p->conjugateSet=newConjugateSet;
+//
+//        /* clear added conjugacy set */
+//        #ifdef USING_OPEN_MP
+//        #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
+//        #endif
+//        for(i=p->length; i<((p->length)+addedLength); i++)
+//        {
+//            *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
+//        }
+//        p->length+=addedLength;
+//    }
+//
+//    return 0;
+//}
 char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
 {
     unsigned int i;
@@ -5618,7 +5571,7 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
         for(i=0; i<addedLength; i++)
         {
             *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-            
+
             *(p->limitedConjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
         }
         p->length=addedLength;
@@ -5783,17 +5736,6 @@ void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
     }
 }
 //////////////////////////////////////////////////////////////////////////////////
-/*
-struct struct_setOfGaloisFieldElements
-{
-    unsigned int length;
-    struct_galoisFieldElements **conjugateSet;
-
-    unsigned int limitedExponential;
-    
-    struct_galoisFieldElements **limitedConjugateSet;
-}typedef struct_setOfGaloisFieldElements;
-*/
 char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_setOfGaloisFieldElements *p)
 {
     //*((*(p->conjugateSet+i))->element+j)=calculationBuffer;
@@ -5907,59 +5849,59 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
             printf("[load_struct_setOfGaloisFieldElements START]\r\n");
 
     fscanf(fileio_load_setOfGaloisField, "primitive polynomials, %s\r\n", load_primitivePoly);
-            // printf("primitive polynomials, %s\r\n", load_primitivePoly);
+            //printf("primitive polynomials, %s\r\n", load_primitivePoly);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(fileio_load_setOfGaloisField, "Kind Of Data, %d\r\n", &load_kindOfData);
-            // printf("Kind Of Data, %d\r\n", load_kindOfData);
+            //printf("Kind Of Data, %d\r\n", load_kindOfData);
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(fileio_load_setOfGaloisField, "Saved Data Type, %d\r\n", &load_saveOfData);
-            // printf("Saved Data Type, %d\r\n", load_saveOfData);
+            //printf("Saved Data Type, %d\r\n", load_saveOfData);
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(fileio_load_setOfGaloisField, "Bit Width, %d\r\n", &load_bitWidth);
-            // printf("Bit Width, %d\r\n", load_bitWidth);
+            //printf("Bit Width, %d\r\n", load_bitWidth);
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(fileio_load_setOfGaloisField, "conjugate set nums, %d\r\n", &load_setOfGF_length);
-            // printf("conjugate set nums, %d\r\n", load_setOfGF_length);
+            //printf("conjugate set nums, %d\r\n", load_setOfGF_length);
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     load_column=(unsigned int*)malloc(sizeof(unsigned int)*load_setOfGF_length);
     memset(load_column, 0, sizeof(unsigned int)*load_setOfGF_length);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     for(tmp_i=0; tmp_i<load_setOfGF_length; tmp_i++)
     {
         fscanf(fileio_load_setOfGaloisField, "%d-th set conjugate elements nums, %d\r\n", &load_integer, load_column+tmp_i);
-                // printf("%d-th set conjugate elements nums, %d\r\n", load_integer, *(load_column+tmp_i));
+                //printf("%d-th set conjugate elements nums, %d\r\n", load_integer, *(load_column+tmp_i));
     }
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
 
-            // printf("[createConjugacyClasses_staticSetNums START]\r\n");
+            //printf("[createConjugacyClasses_staticSetNums START]\r\n");
     *p = createConjugacyClasses_staticSetNums(load_setOfGF_length, load_column);
-            // printf("[createConjugacyClasses_staticSetNums END]\r\n");
+            //printf("[createConjugacyClasses_staticSetNums END]\r\n");
 
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
     for(tmp_i=0; tmp_i<load_setOfGF_length; tmp_i++)
@@ -5972,10 +5914,7 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
                     &load_exp_integer,
                     &load_index
                 );
-                        // printf("%d(%d), ",
-                            // load_exp_integer,
-                            // load_index
-                        // );
+                        //printf("%d(%d), ", load_exp_integer, load_index);
             }
             else
             {
@@ -5983,21 +5922,18 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
                     &load_exp_integer,
                     &load_index
                 );
-                        // printf("%d(%d)",
-                            // load_exp_integer,
-                            // load_index
-                        // );
+                        //printf("%d(%d)", load_exp_integer, load_index);
             }
             (*((*((*p)->conjugateSet+tmp_i))->element+tmp_j)) = (*(galoisFields->element+load_index));
             (*((*((*p)->limitedConjugateSet+tmp_i))->element+tmp_j)) = (*(galoisFields->element+load_index));
         }
         fscanf(fileio_load_setOfGaloisField, "\r\n");
-                // printf("\r\n");
+                //printf("\r\n");
     }
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
     fscanf(fileio_load_setOfGaloisField, "%s\r\n", load_stringBuf);
-            // printf("%s\r\n", load_stringBuf);
+            //printf("%s\r\n", load_stringBuf);
 
     fclose(fileio_load_setOfGaloisField);
 
@@ -6187,15 +6123,15 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
             }
 
         }
-/*
-        if(!(p->limitedConjugateSet[selectedConjugacySet]->length))
-        {
-            if(p->limitedConjugateSet[selectedConjugacySet]->element)
-            {
-                p->limitedConjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->limitedConjugateSet[selectedConjugacySet]), 1);
-            }
-        }
- */
+        /*
+        //if(!(p->limitedConjugateSet[selectedConjugacySet]->length))
+        //{
+        //    if(p->limitedConjugateSet[selectedConjugacySet]->element)
+        //    {
+        //        p->limitedConjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->limitedConjugateSet[selectedConjugacySet]), 1);
+        //    }
+        //}
+        */
 
         selectedElementOfConjugacy=0;
         do
@@ -6208,33 +6144,33 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 
             /*
             //This code is wrong.... 1
-            if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
-            {
-                addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
-                if( !( (abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)-1) > p->limitedExponential ) )
-                {
-                    ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
-                }
-                else
-                {
-                    ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
-                }
-            }
+            //if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
+            //{
+            //    addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
+            //    if( !( (abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)-1) > p->limitedExponential ) )
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
+            //    }
+            //    else
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
+            //    }
+            //}
             */
             /*
             //This code is wrong.... 2
-            if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
-            {
-                addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
-                if( !(selectedElementOfConjugacy%2) )
-                {
-                    ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
-                }
-                else
-                {
-                    ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
-                }
-            }
+            //if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
+            //{
+            //    addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
+            //    if( !(selectedElementOfConjugacy%2) )
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
+            //    }
+            //    else
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
+            //    }
+            //}
             */
 
             elementFlagger[abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)]='1';//set selected location
@@ -6255,7 +6191,7 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
     unsigned int i,j;
     unsigned int exponential;
 
-    
+
     if(!galoisFields)
     {
         errorMes;
@@ -6312,7 +6248,7 @@ void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
             {
                 printf("a^%d\t", exponential-1);
             }
-            
+
             printPolyForm(*((*(p->limitedConjugateSet+i))->element+j));
             printf("\t");
             printf("=%d\t", (*((*(p->limitedConjugateSet+i))->element+j))->intValue);
@@ -6339,8 +6275,8 @@ char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setO
     #endif
 
     /* create conjugacy Class (static) */
-    // p->conjugacies=createConjugacyClasses(p->nonSorted);
-    // calculateConjugacyClasses(p->nonSorted, p->conjugacies);
+    //p->conjugacies=createConjugacyClasses(p->nonSorted);
+    //calculateConjugacyClasses(p->nonSorted, p->conjugacies);
 
     /* create conjugacy Class (variable) */
     *p=createConjugacyClasses_VariableLength();
@@ -6421,7 +6357,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
         totalLcmOrder+=(*(multipledRootSet->conjugateSet+i))->length;
     }
 
-    /*if order is 0, length is 1, if order is n-th, length is n+1.*/
+    /* if order is 0, length is 1, if order is n-th, length is n+1. */
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 
             #ifndef RELEASE
@@ -6502,7 +6438,7 @@ struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
                         }
                     }
                     #endif
-            
+
             for(k=0; k<equation->length-1; k++)
             {
                 //shifted orders
@@ -6566,7 +6502,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
                 warningMes;    printf("in test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot, ");
                 warningMesShort; printf("number of selected set(=\'%d\') can not exceed to number of conjugacy set(=\'%d\').\n", numberOfSelectedSet, multipledRootSet->length);
                 #endif
-                
+
         numberOfSelectedSet=(multipledRootSet->length);
                 #ifndef RELEASE
                 warningMes; printf("number of conjugacy set that %d, which it is maximum length in this condition.\n", numberOfSelectedSet);
@@ -6578,7 +6514,7 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
         totalLcmOrder+=(*(multipledRootSet->limitedConjugateSet+i))->length;
     }
 
-    /*if order is 0, length is 1, if order is n-th, length is n+1.*/
+    /* if order is 0, length is 1, if order is n-th, length is n+1. */
     multipledOrder = abstractOrderOfEquation(equation)+totalLcmOrder;
 
             #ifndef RELEASE
@@ -6690,9 +6626,8 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
 //////////////////////////////////////////////////////////////////////////////////
 struct struct_galoisField_info
 {
-    // unsigned int *gfBits;
-    // unsigned int length;
-
+    //unsigned int *gfBits;
+    //unsigned int length;
 
     struct_powerFormPolynomials *primitivePolynomial;
 
@@ -6734,7 +6669,7 @@ void printGaloisField(struct_galoisFieldElements *p)
         printPolyFormWithTap(*(p->element+i));
         printf("%d\t", (*(p->element+i))->intValue);
         //intValue
-//        printf("%d", convertGaloisFieldPolyFormUnsignedInt(*(p->element+i)));
+                //printf("%d", convertGaloisFieldPolyFormUnsignedInt(*(p->element+i)));
         printf("%d", (*(p->element+i))->index);
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)==FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS)
             {
@@ -6787,11 +6722,11 @@ void printGaloisFieldToCsv(struct_galoisFieldElements *p)
     printf("---------------------- END ----------------------\n");
 }
 //////////////////////////////////////////////////////////////////////////////////
-#define PRINT_FIELD_GALOIS_FIELD_TITLE    1
-#define PRINT_FIELD_SYNDROME_TITLE        2
-#define PRINT_FIELD_EQUATION_TITLE        3
+#define PRINT_FIELD_GALOIS_FIELD_TITLE      1
+#define PRINT_FIELD_SYNDROME_TITLE          2
+#define PRINT_FIELD_EQUATION_TITLE          3
 
-#define PRINT_FIELD_PRINT_OPTION_NUMBERING    (1<<1)
+#define PRINT_FIELD_PRINT_OPTION_NUMBERING  (1<<1)
 
 
 void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoisFieldElements *printedField, unsigned int title, unsigned int options)
@@ -6925,128 +6860,128 @@ struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolyn
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-// struct_galoisField_info *createGaloisField(struct_powerFormPolynomials *primitivePolynomial)
-// {
-    // #ifndef RELEASE
-    // if(!primitivePolynomial)
-    // {
-        // in
-    // }
-    // #endif
-    // struct_galoisField_info *p;
-// }
-// struct_galoisField_info *createGaloisField_deleted_201604251820(struct_powerFormPolynomials *primitivePolynomial)
-// {
-    // unsigned int i,j;
-
-    // struct_galoisField_info *p;
-
-    // char_GALOIS_FIELD_VALUE shiftBuffer;
-
-    // #ifndef RELEASE
-    // if(!primitivePolynomial->length)
-    // {
-        // errorMes;
-        // printf("primitive polynomial length is %d\n", primitivePolynomial->length);
-        // return NULL;
-    // }
-    // if(!primitivePolynomial->usedLength)
-    // {
-        // errorMes;
-        // printf("primitive polynomial usedLength is %d\n", primitivePolynomial->usedLength);
-        // return NULL;
-    // }
-    // #endif
-
-
-    // p=(struct_galoisField_info*)malloc(sizeof(struct_galoisField_info));
-    // memset(p, 0, sizeof(struct_galoisField_info));
-
-    // // p->gfBits=&(p->length);
-
-    // p->primitivePolynomial=primitivePolynomial;
-
-
-    // p->nonSorted=createGaloisFieldAndElements(intPower(2, (p->primitivePolynomial->usedLength)-1), p->primitivePolynomial->usedLength-1);
-
-            // #ifndef RELEASE
-            // if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-            // {
-                // logMes;
-                // printf("primitive polynomial length is \'%d\'(used length) and allocated memory length is \'%d\' \n", primitivePolynomial->length, primitivePolynomial->usedLength);
-                // printf("number of elements of galois field is %d\n", p->nonSorted->length);
-            // }
-            // #endif
-
-    // *((*(p->nonSorted->element+1))->value+0)='1';
-    // // printf("((*(p->nonSorted->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->nonSorted->element+1))->length), (sizeof(uint32_t)*8));
-    // if(((*(p->nonSorted->element+1))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
-    // {
-        // (*(p->nonSorted->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+1));
-    // }
-    // (*(p->nonSorted->element+1))->index=1;
-
-            // #ifndef RELEASE
-            // if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-            // {
-                // logMes;
-                // printf("(p->nonSorted->length) = %d\n", (p->nonSorted->length));
-                // printf("(*(p->nonSorted->element+0))->length = %d\n", (*(p->nonSorted->element+0))->length);
-            // }
-            // #endif
-
-
-    // // printf("[%05d]%s\n", 0,(*(p->nonSorted->element+0))->value);
-    // // printf("[%05d]%s\n", 1,(*(p->nonSorted->element+1))->value);
-    // infoMes; printf("[START][Generating GaloisField Elements]\n");
-    // for(i=2; i<(p->nonSorted->length); i++)
-    // {
-        // shiftBuffer=(*((*(p->nonSorted->element+i-1))->value+((*(p->nonSorted->element+i))->length-1)));
-        // for(j=(*(p->nonSorted->element+i))->length-1; j!=0; j--)
-        // {
-            // (*((*(p->nonSorted->element+i))->value+j))=(*((*(p->nonSorted->element+i-1))->value+j-1));
-        // }
-        // (*((*(p->nonSorted->element+i))->value+j))='0';
-        // (*((*(p->nonSorted->element+i))->value+(*(p->nonSorted->element+i))->length))=0;
-        // // (*((*(p->nonSorted->element+i-1))->value+((*(p->nonSorted->element+i))->length-1)))=0;
-
-        // if(shiftBuffer=='1')
-        // {
-            // for(j=0; j<(*(p->nonSorted->element+i))->length; j++)
-            // {
-                // if((*(primitivePolynomial->equation+j))!=(*((*(p->nonSorted->element+i))->value+j)))
-                // {
-                    // (*((*(p->nonSorted->element+i))->value+j))='1';
-                // }
-                // else
-                // {
-                    // (*((*(p->nonSorted->element+i))->value+j))='0';
-                // }
-            // }
-            // shiftBuffer='0';
-        // }
-
-
-        // if(((*(p->nonSorted->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
-        // {
-            // (*(p->nonSorted->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+i));
-        // }
-        // (*(p->nonSorted->element+i))->index=i;
-        
-        // // printf("[%05d]%s\n", i,(*(p->nonSorted->element+i))->value);
-    // }
-    // infoMes; printf("[END][Generating GaloisField Elements]\n");
-
-
-
-
-    // /*create struct_summationMatrix*/
-    // infoMes; printf("[START][Generating summation matrix]\n");
-    // p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);
-    // infoMes; printf("[END][Generating summation matrix]\n");
-
-    // return p;
-// }
+//struct_galoisField_info *createGaloisField(struct_powerFormPolynomials *primitivePolynomial)
+//{
+//    #ifndef RELEASE
+//    if(!primitivePolynomial)
+//    {
+//        in
+//    }
+//    #endif
+//    struct_galoisField_info *p;
+//}
+//struct_galoisField_info *createGaloisField_deleted_201604251820(struct_powerFormPolynomials *primitivePolynomial)
+//{
+//    unsigned int i,j;
+//
+//    struct_galoisField_info *p;
+//
+//    char_GALOIS_FIELD_VALUE shiftBuffer;
+//
+//    #ifndef RELEASE
+//    if(!primitivePolynomial->length)
+//    {
+//        errorMes;
+//        printf("primitive polynomial length is %d\n", primitivePolynomial->length);
+//        return NULL;
+//    }
+//    if(!primitivePolynomial->usedLength)
+//    {
+//        errorMes;
+//        printf("primitive polynomial usedLength is %d\n", primitivePolynomial->usedLength);
+//        return NULL;
+//    }
+//    #endif
+//
+//
+//    p=(struct_galoisField_info*)malloc(sizeof(struct_galoisField_info));
+//    memset(p, 0, sizeof(struct_galoisField_info));
+//
+//    //p->gfBits=&(p->length);
+//
+//    p->primitivePolynomial=primitivePolynomial;
+//
+//
+//    p->nonSorted=createGaloisFieldAndElements(intPower(2, (p->primitivePolynomial->usedLength)-1), p->primitivePolynomial->usedLength-1);
+//
+//            #ifndef RELEASE
+//            if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+//            {
+//                logMes;
+//                printf("primitive polynomial length is \'%d\'(used length) and allocated memory length is \'%d\' \n", primitivePolynomial->length, primitivePolynomial->usedLength);
+//                printf("number of elements of galois field is %d\n", p->nonSorted->length);
+//            }
+//            #endif
+//
+//    *((*(p->nonSorted->element+1))->value+0)='1';
+//    //printf("((*(p->nonSorted->element+1))->length) %d <= (sizeof(u_int_GALOIS_FIELD_INTEGER)*8) %d\n", ((*(p->nonSorted->element+1))->length), (sizeof(uint32_t)*8));
+//    if(((*(p->nonSorted->element+1))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
+//    {
+//        (*(p->nonSorted->element+1))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+1));
+//    }
+//    (*(p->nonSorted->element+1))->index=1;
+//
+//            #ifndef RELEASE
+//            if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+//            {
+//                logMes;
+//                printf("(p->nonSorted->length) = %d\n", (p->nonSorted->length));
+//                printf("(*(p->nonSorted->element+0))->length = %d\n", (*(p->nonSorted->element+0))->length);
+//            }
+//            #endif
+//
+//
+//    //printf("[%05d]%s\n", 0,(*(p->nonSorted->element+0))->value);
+//    //printf("[%05d]%s\n", 1,(*(p->nonSorted->element+1))->value);
+//    infoMes; printf("[START][Generating GaloisField Elements]\n");
+//    for(i=2; i<(p->nonSorted->length); i++)
+//    {
+//        shiftBuffer=(*((*(p->nonSorted->element+i-1))->value+((*(p->nonSorted->element+i))->length-1)));
+//        for(j=(*(p->nonSorted->element+i))->length-1; j!=0; j--)
+//        {
+//            (*((*(p->nonSorted->element+i))->value+j))=(*((*(p->nonSorted->element+i-1))->value+j-1));
+//        }
+//        (*((*(p->nonSorted->element+i))->value+j))='0';
+//        (*((*(p->nonSorted->element+i))->value+(*(p->nonSorted->element+i))->length))=0;
+//        (*((*(p->nonSorted->element+i-1))->value+((*(p->nonSorted->element+i))->length-1)))=0;
+//
+//        if(shiftBuffer=='1')
+//        {
+//            for(j=0; j<(*(p->nonSorted->element+i))->length; j++)
+//            {
+//                if((*(primitivePolynomial->equation+j))!=(*((*(p->nonSorted->element+i))->value+j)))
+//                {
+//                    (*((*(p->nonSorted->element+i))->value+j))='1';
+//                }
+//                else
+//                {
+//                    (*((*(p->nonSorted->element+i))->value+j))='0';
+//                }
+//            }
+//            shiftBuffer='0';
+//        }
+//
+//
+//        if(((*(p->nonSorted->element+i))->length)<=(sizeof(u_int_GALOIS_FIELD_INTEGER)*8))
+//        {
+//            (*(p->nonSorted->element+i))->intValue=convertGaloisFieldPolyFormUnsignedInt(*(p->nonSorted->element+i));
+//        }
+//        (*(p->nonSorted->element+i))->index=i;
+//
+//        printf("[%05d]%s\n", i,(*(p->nonSorted->element+i))->value);
+//    }
+//    infoMes; printf("[END][Generating GaloisField Elements]\n");
+//
+//
+//
+//
+//    /* create struct_summationMatrix */
+//    infoMes; printf("[START][Generating summation matrix]\n");
+//    p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);
+//    infoMes; printf("[END][Generating summation matrix]\n");
+//
+//    return p;
+//}
 struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomials *primitivePolynomial)
 {
     struct_galoisField_info *p;
@@ -7078,8 +7013,8 @@ struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomia
         }
 
         /*create struct_summationMatrix*/
-        // p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);\
-        // printSummationMatrixSavedForm(p->nonSorted->summationReferMatrix);
+        //p->nonSorted->summationReferMatrix=createSummationMatrix(p->nonSorted, p->nonSorted->length, p->nonSorted->length);\
+        //printSummationMatrixSavedForm(p->nonSorted->summationReferMatrix);
         if(calculateSummationMatrix(p->nonSorted, p->nonSorted->summationReferMatrix))
         {
             errorMes; printf("in createGaloisFieldAndSumMatrix, calculateSummationMatrix has error.\r\n");
@@ -7182,18 +7117,20 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 unsigned int checkDegreePolynomials(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *targetPolynomial)
 {
     unsigned int i,j;
-    // #ifndef RELEASE
-        // unsigned int bebuggingTemp;
-        // unsigned int bebuggingTemp2;
-    // #endif
+        //#ifndef RELEASE
+        //    unsigned int bebuggingTemp;
+        //    unsigned int bebuggingTemp2;
+        //#endif
     if(!targetPolynomial) return -1;
     if(!galoisFields) return -1;
 
     for(i=targetPolynomial->length; i!=0; i--)
     {
-        // bebuggingTemp = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+(0)));
-        // bebuggingTemp2 = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(targetPolynomial->element+(i-1)));
-        // debugMes; printf("index %d == index %d ??\r\n", bebuggingTemp, bebuggingTemp2);
+        //#ifndef RELEASE
+        //    bebuggingTemp = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+(0)));
+        //    bebuggingTemp2 = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(targetPolynomial->element+(i-1)));
+        //    debugMes; printf("index %d == index %d ??\r\n", bebuggingTemp, bebuggingTemp2);
+        //#endif
 
         if(*(targetPolynomial->element+(i-1)) != *(galoisFields->element+(0))) break;
     }
@@ -7214,20 +7151,6 @@ unsigned int checkDegreePolynomials(struct_galoisFieldElements *galoisFields, st
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////* Common BCH Codes Calculations start */////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/*
-enum KIND_OF_BCH_DECODING_ALGORITHM
-{
-    KIND_OF_BCH_DECODING_BM,
-    KIND_OF_BCH_DECODING_iBM,
-    KIND_OF_BCH_DECODING_RiBM,
-    KIND_OF_BCH_DECODING_SiBM,
-    KIND_OF_BCH_DECODING_mSBS,
-    KIND_OF_BCH_DECODING_PETERSON,
-    KIND_OF_BCH_DECODING_EUCLIDIAN,
-    KIND_OF_BCH_DECODING_END,
-};
- */
-//////////////////////////////////////////////////////////////////////////////////
 struct struct_generalForm_algorithmComponent{
     enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM;
 
@@ -7238,8 +7161,8 @@ struct struct_generalForm_algorithmComponent{
 
     struct_galoisFieldElements *errLocPoly;//it is same with struct_galoisFieldElements *alpha;
 
-    // struct_powerFormPolynomials *errorCorectableCodeWord;
-    // struct_powerFormPolynomials *correctedCodeWord;
+    //struct_powerFormPolynomials *errorCorectableCodeWord;
+    //struct_powerFormPolynomials *correctedCodeWord;
 
 
     unsigned int numberOfCorrection;//correction number t;
@@ -7291,10 +7214,10 @@ char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields
     {
         if(*(string+i)=='1')
         {
-            
+
             *(calculationBuffer+0)=(*(galoisFields->element+1+i));//a^0 is decimalic '1'. so it is 1st element of galoisFields(start 0th).
             (*(syndrome->element+0))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(syndrome->element+0)), *(calculationBuffer+0));
-            
+
             *(calculationBuffer+1)=multiElementsInGF_returnAddr(galoisFields, *(calculationBuffer+0), *(calculationBuffer+0));
             (*(syndrome->element+1))=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, (*(syndrome->element+1)), *(calculationBuffer+1));
 
@@ -7565,7 +7488,7 @@ char calculateChienSearch_direction
 
     for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
     {
-        /*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
+        /* calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc... */
         if(direction)    tmp_location = (*(galoisFields->element+i));
         else             tmp_location = invertExponentialElementInGaloisField(galoisFields, *(galoisFields->element+i));
         #ifndef RELEASE
@@ -7581,7 +7504,7 @@ char calculateChienSearch_direction
 
 
                 #ifndef RELEASE
-                /*to confirm code start*/
+                /* to confirm code start */
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)
                 {
                     printf("a^%d\t", i-1);
@@ -7597,7 +7520,7 @@ char calculateChienSearch_direction
                     }
                     printf("\n");
                 }
-                /*to confirm code end*/
+                /* to confirm code end */
                 #endif
 
                 #ifndef RELEASE
@@ -7638,9 +7561,7 @@ char calculateChienSearch_direction
                 }
                 #endif
 
-        /*
-            ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...
-        */
+        /* ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ... */
         for(j=1; j<(errLocPolynomial->length); j++)
         {
             summationResult=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, summationResult, multiElementsInGF_returnAddr(galoisFields, *(errLocPolynomial->element+j), *(variableSet+j-1)));
@@ -7734,7 +7655,7 @@ char chienSearch_offset_direction
         return -1;
     }
     #endif
-    
+
     #ifndef RELEASE
     if(calculateChienSearch_direction(galoisFields, errLocPolynomial, errorLocationPolynomial, metricCheck, direction))
     {
@@ -7810,7 +7731,7 @@ char calculateChienSearch_static_backWard
 
     for(i=1; i<errorCorectableCodeWord->usedLength+1; i++)
     {
-        /*calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc...*/
+        /* calculateChienSearchVariableSet is x , x^2, x^3, x^4 , etc... */
         #ifndef RELEASE
         if(calculateChienSearchVariableSet(galoisFields, variableSet, invertExponentialElementInGaloisField(galoisFields, *(galoisFields->element+i)), (errLocPolynomial->length-1)))
         {
@@ -7824,7 +7745,7 @@ char calculateChienSearch_static_backWard
 
 
                 #ifndef RELEASE
-                /*to confirm code start*/
+                /* to confirm code start */
                 if(global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)
                 {
                     printf("a^%d\t", i-1);
@@ -7840,7 +7761,7 @@ char calculateChienSearch_static_backWard
                     }
                     printf("\n");
                 }
-                /*to confirm code end*/
+                /* to confirm code end */
                 #endif
 
                 #ifndef RELEASE
@@ -7881,9 +7802,7 @@ char calculateChienSearch_static_backWard
                 }
                 #endif
 
-        /*
-            ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ...
-        */
+        /* ErrorLocPolynomials(errLocPolynomial) = 1 + ramda_0*errLocPolynomial^1 + ramda_0*errLocPolynomial^2 + ramda_0*errLocPolynomial^3 + ramda_0*errLocPolynomial^4 + ramda_0*errLocPolynomial^5 + ramda_0*errLocPolynomial^6 + ... */
         for(j=1; j<(errLocPolynomial->length); j++)
         {
             summationResult=sumElementInGF_usingSumMatrixReturnAddr(galoisFields, summationResult, multiElementsInGF_returnAddr(galoisFields, *(errLocPolynomial->element+j), *(variableSet+j-1)));
@@ -8116,8 +8035,8 @@ struct struct_HD_BM_algorithmComponent{
 
     struct_galoisFieldElements *errLocPoly;//it is same with struct_galoisFieldElements *alpha;
 
-    // struct_powerFormPolynomials *errorCorectableCodeWord;
-    // struct_powerFormPolynomials *correctedCodeWord;
+    //struct_powerFormPolynomials *errorCorectableCodeWord;
+    //struct_powerFormPolynomials *correctedCodeWord;
 
 
     unsigned int numberOfCorrection;//correction number t;
@@ -8141,7 +8060,7 @@ struct struct_HD_BM_algorithmComponent{
 
     unsigned int lengthOfStage;
 
-    /*to test ,soft decision*/
+    /* to test ,soft decision */
     struct_galoisFieldElements *errLocSyndrome;
     struct_galoisFieldElements *sumReceiveAndErrLocSyndrome;
 
@@ -8192,7 +8111,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
             }
             #endif
 
-    p->vMAX = cal_numsOfDegreeOfSynd(t);/*use for, when variable is 6, it is break.*/
+    p->vMAX = cal_numsOfDegreeOfSynd(t);/* use for, when variable is 6, it is break. */
             #ifndef RELEASE
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
             {
@@ -8214,12 +8133,12 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
         //galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
         //galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
-        // while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
-        // {
-            // stringLength++;
-            // galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
-            // galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
-        // }
+        //while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
+        //{
+        //    stringLength++;
+        //    galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
+        //    galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
+        //}
 
     /* create syndrome of received vector */
     p->syndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
@@ -8234,7 +8153,7 @@ struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldEl
 
 
     /* BM algorithm initial condition setting. */
-    /*//p->value_r = 0;*/
+    //p->value_r = 0;
 
     /* Initializing degree of Error Location Poly */
     p->degreeOfErrLocPoly=-1;
@@ -8325,7 +8244,7 @@ char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
             warningMes;
             printf("in closeBmAlgorithmComponent, closeGaloisFieldExceptElements(&((*p)->syndrome)) is fail.\n");
         }
-        
+
         if(closeGaloisFieldExceptElements(&((*p)->errLocSyndrome)))
         {
             warningMes;
@@ -8545,10 +8464,10 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
                 if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                 {
                     warningMes; printf("Case, lengthOfStage is '%d' equal or larger than length of beforeStageAlpha is '%d', and value_r is '%d', MAX(value_r-i) is '%d'\r\n", lengthOfStage, beforeStageAlpha->length, value_r, value_r-lengthOfStage);
-                    // warningMesShort; printf("occur. press input any string.\n", lengthOfStage);
-                    // systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
+                    //warningMesShort; printf("occur. press input any string.\n", lengthOfStage);
+                    //systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
 
-                    // systemHoldMes; printf("insert any char : "); scanf("%s", global_buf_KeyBoardInput);
+                    //systemHoldMes; printf("insert any char : "); scanf("%s", global_buf_KeyBoardInput);
                 }
             }
             #endif
@@ -8608,10 +8527,10 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
                 }
                 #endif
         /*
-            note about " if(beforeStageAlpha->length-1 < i). "
-            If lengthOfStage is larger or equal than length of beforeStageAlpha,
-            there is no process elements, so calculate 0
-        */
+         *  note about " if(beforeStageAlpha->length-1 < i). "
+         *  If lengthOfStage is larger or equal than length of beforeStageAlpha,
+         *  there is no process elements, so calculate 0
+         */
         if(beforeStageAlpha->length-1 < i)
         {
             buffer2=multiElementsInGF_returnAddr(galoisFields, *(galoisFields->element+(0)), *(syndrome->element+(value_r-i)));
@@ -8788,7 +8707,7 @@ char calculateBetaInBmAlgorithm
     }
     #endif
 
-    /*calculationSelect is '1'.*/
+    /* calculationSelect is '1'.i */
     if(calculationSelector)
     {
         for(i=0; i<beta->length; i++)
@@ -8796,7 +8715,7 @@ char calculateBetaInBmAlgorithm
             *(beta->element+i)=multiElementsInGF_returnAddr(galoisFields, *(beforeAlpha->element+i), invertExponentialElementInGaloisField(galoisFields, delta));
         }
     }
-    /*calculationSelect is '0'. Formula beta is shifted.*/
+    /* calculationSelect is '0'. Formula beta is shifted. */
     else
     {
         for(i=1; i<beta->length; i++)
@@ -8911,7 +8830,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
                 }
                 #endif
 
-        /*calculate calculationSelector*/
+        /* calculate calculationSelector */
                                     #ifndef RELEASE
                                     if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
                                     {
@@ -9040,13 +8959,13 @@ struct struct_HD_mSBS_t3_algorithmComponent{
     /* A * alpha^1 + B * alpha^2 + C * alpha^3 + R = 0 */
     /* this polynomial is same with struct_galoisFieldElements *errLocPoly; */
     /*
-        refference coefficient is coefficient_of_alpha_three.
-        
-        If this value is 0, degree of err location polynomials is two.
-        That is mean error locations are two.
-        
-        Else this value is non 0,  degree of err location polynomials is three or more.
-    */
+     * refference coefficient is coefficient_of_alpha_three.
+     *
+     * If this value is 0, degree of err location polynomials is two.
+     * That is mean error locations are two.
+     *
+     * Else this value is non 0,  degree of err location polynomials is three or more.
+     */
     struct_galoisFieldPolyForm *coefficient_of_alpha_three;//(that is C)
     struct_galoisFieldPolyForm *coefficient_of_alpha_two;//(that is B)
     struct_galoisFieldPolyForm *coefficient_of_alpha_one;//(that is A)
@@ -9055,23 +8974,22 @@ struct struct_HD_mSBS_t3_algorithmComponent{
 }typedef struct_HD_mSBS_t3_algorithmComponent;
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    ignore t, that is mean correctable bits are already constants.
-    maximum correctables are 3.
-*/
+ * ignore t, that is mean correctable bits are already constants.
+ * maximum correctables are 3.
+ */
 struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength)
 {
     struct_HD_mSBS_t3_algorithmComponent *p;
 
-        // double galoisFieldElementLengthBuffer;
-        // unsigned int galoisFieldElementLength;
+        //double galoisFieldElementLengthBuffer;
+        //unsigned int galoisFieldElementLength;
 
     #ifndef RELEASE
-
-        // if(!t)
-        // {
-            // errorMes;
-            // printf("correctable number(t) is %d\n", t);
-        // }
+        //if(!t)
+        //{
+        //    errorMes;
+        //    printf("correctable number(t) is %d\n", t);
+        //}
 
     if(!string)
     {
@@ -9108,13 +9026,13 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
             }
             #endif
 
-        p->vMAX = cal_numsOfDegreeOfSynd(t);/*use for, when variable is 6, it is break.*/
-                // #ifndef RELEASE
-                // if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
-                // {
-                    // logMes; printf("vMAX is \'%d\'\n", p->vMAX);
-                // }
-                // #endif
+        p->vMAX = cal_numsOfDegreeOfSynd(t);/* use for, when variable is 6, it is break. */
+                //#ifndef RELEASE
+                //if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+                //{
+                //    logMes; printf("vMAX is \'%d\'\n", p->vMAX);
+                //}
+                //#endif
 
     p->codeWord = createPowerFormPolynomialUsingString(string, stringLength);
     p->errorLocationVector = createPowerFormPolynomial(stringLength);
@@ -9127,30 +9045,30 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
             }
             #endif
 
-        // galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
-        // galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
+        //galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
+        //galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
 
-        // while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
-        // {
-            // stringLength++;
-            // galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
-            // galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
-        // }
+        //while((galoisFieldElementLengthBuffer-((double)galoisFieldElementLength))!=0)
+        //{
+        //    stringLength++;
+        //    galoisFieldElementLengthBuffer=log((double)stringLength)/log(2.0);
+        //    galoisFieldElementLength=(unsigned int)galoisFieldElementLengthBuffer;
+        //}
 
     /* create syndrome of received vector */
     p->syndrome = createGaloisFieldExceptElements(p->vMAX);
     /* calculate syndrome */
     syndromeArrayCalculatorUsingString(galoisFields, p->syndrome, p->vMAX, string);
 
-        // /* create syndrome of error location */
-        // p->errLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
-        // /* create syndrome about sum syndromes of received and error location vector */
-        // p->sumReceiveAndErrLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
+        ///* create syndrome of error location */
+        //p->errLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
+        ///* create syndrome about sum syndromes of received and error location vector */
+        //p->sumReceiveAndErrLocSyndrome = createGaloisFieldExceptElements(p->vMAX+global_bch_Soft_OverSyndLen);
 
 
 
         /* BM algorithm initial condition setting. */
-        /*//p->value_r = 0;*/
+        //p->value_r = 0;
 
     /* Initializing degree of Error Location Poly */
     p->degreeOfErrLocPoly=-1;
@@ -9159,39 +9077,39 @@ struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galo
     p->metricCheck=0;
 
         /* create alpha and beta formula and set initial condition when value_r is -1. */
-        // p->alpha = createGaloisFieldExceptElements(t+1);
-        // p->beta = createGaloisFieldExceptElements(t+1);
-            // p->errLocPoly = p->alpha;
+        //p->alpha = createGaloisFieldExceptElements(t+1);
+        //p->beta = createGaloisFieldExceptElements(t+1);
+        //    p->errLocPoly = p->alpha;
     p->errLocPoly = createGaloisFieldExceptElements(t+1);
-        // initEquation(galoisFields, p->alpha);
-        // initEquation(galoisFields, p->beta);
+        //initEquation(galoisFields, p->alpha);
+        //initEquation(galoisFields, p->beta);
     initEquation(galoisFields, p->errLocPoly);
 
             #ifndef RELEASE
             if(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
             {
-                // infoMes;
-                // printf(">> alpha");
-                // printGaloisField2(galoisFields, p->alpha, PRINT_FIELD_EQUATION_TITLE, 0);
-                // infoMes;
-                // printf(">> beta");
-                // printGaloisField2(galoisFields, p->beta, PRINT_FIELD_EQUATION_TITLE, 0);
+                //infoMes;
+                //printf(">> alpha");
+                //printGaloisField2(galoisFields, p->alpha, PRINT_FIELD_EQUATION_TITLE, 0);
+                //infoMes;
+                //printf(">> beta");
+                //printGaloisField2(galoisFields, p->beta, PRINT_FIELD_EQUATION_TITLE, 0);
                     infoMes;
                     printf(">> errLocPoly");
                     printGaloisField2(galoisFields, p->errLocPoly, PRINT_FIELD_EQUATION_TITLE, 0);
             }
             #endif
 
-        // /* create output of register */
-        // p->beforeAlpha = createGaloisFieldExceptElements(t+1);
-        // p->beforeBeta = createGaloisFieldExceptElements(t+1);
-        // /* synchronize register and wire, pulse input liked */
-        // copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
-        // copyListOfGaloisField(p->beforeBeta->element, p->beta->element, p->alpha->length);
+        /* create output of register */
+        //p->beforeAlpha = createGaloisFieldExceptElements(t+1);
+        //p->beforeBeta = createGaloisFieldExceptElements(t+1);
+        /* synchronize register and wire, pulse input liked */
+        //copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
+        //copyListOfGaloisField(p->beforeBeta->element, p->beta->element, p->alpha->length);
 
 
-        // /* initial condition of length of Stage is 0. */
-        // p->lengthOfStage=0;
+        /* initial condition of length of Stage is 0. */
+        //p->lengthOfStage=0;
 
     /* indexing kind of bch decoding algorithm */
     p->KIND_OF_BCH_ALGORITHM = KIND_OF_BCH_DECODING_mSBS;
@@ -9365,23 +9283,23 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
     #endif
 
     /*
-        if correctables is set up to larger than 3, it is no make any sense.
-        And then, to block changing any received, So make error location polynomial 0 = 1 + 0 * a^1 + 0 * a^2 + 0 * a^3 ...
-        So the err loc poly can not change any bits.
-    */
-    // if(p->numberOfCorrection == 3)
-    // {
-        // #ifndef RELEASE
-        // warningMesShort; printf("in calculate_mSBS_algorithm, if(!(p->numberOfCorrection < p->syndrome->length)).\n");
-        // #endif
-
-        // *(p->errLocPoly->element+3) = (*(galoisFields->element+0));
-        // *(p->errLocPoly->element+2) = (*(galoisFields->element+0));
-        // *(p->errLocPoly->element+1) = (*(galoisFields->element+0));
-        // *(p->errLocPoly->element+0) = (*(galoisFields->element+1));
-
-        // return -2;
-    // }
+     * if correctables is set up to larger than 3, it is no make any sense.
+     * And then, to block changing any received, So make error location polynomial 0 = 1 + 0 * a^1 + 0 * a^2 + 0 * a^3 ...
+     * So the err loc poly can not change any bits.
+     */
+    //if(p->numberOfCorrection == 3)
+    //{
+    //    #ifndef RELEASE
+    //    warningMesShort; printf("in calculate_mSBS_algorithm, if(!(p->numberOfCorrection < p->syndrome->length)).\n");
+    //    #endif
+    //
+    //    *(p->errLocPoly->element+3) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+2) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+1) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+0) = (*(galoisFields->element+1));
+    //
+    //    return -2;
+    //}
 
             #ifndef RELEASE
             if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
@@ -9397,22 +9315,22 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
     //struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
     //struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
     /*
-        case t >= 3
-        C_t3 = S_1^3 + S_3
-        B_t3 = S_1^4 + ( S_1 * S_3 )
-        A_t3 = S_5 + ( S_1^2 * S_3 )
-        R_t3 = S_1^6 + S_3^2 + ( S_1^3 * S_3 ) + ( S_1 * S_5 )
-
-        case t <= 2
-        C_t2 = 0
-        B_t2 = S_1
-        A_t2 = S_1^2
-        R_t2 = S_1^3 + S_3
-
-        S_1 is *(syndrome->element+0)
-        S_3 is *(syndrome->element+2)
-        S_5 is *(syndrome->element+4)
-    */
+     * case t >= 3
+     * C_t3 = S_1^3 + S_3
+     * B_t3 = S_1^4 + ( S_1 * S_3 )
+     * A_t3 = S_5 + ( S_1^2 * S_3 )
+     * R_t3 = S_1^6 + S_3^2 + ( S_1^3 * S_3 ) + ( S_1 * S_5 )
+     *
+     * case t <= 2
+     * C_t2 = 0
+     * B_t2 = S_1
+     * A_t2 = S_1^2
+     * R_t2 = S_1^3 + S_3
+     *
+     * S_1 is *(syndrome->element+0)
+     * S_3 is *(syndrome->element+2)
+     * S_5 is *(syndrome->element+4)
+     */
             #ifndef RELEASE
             if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
             {
@@ -9492,12 +9410,12 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
                     logMes;    printf("[tmp_A_t3 is done]\r\n");
                 }
                 #endif
-/*
-        tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields,
-                    sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_6, multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_3, *(p->syndrome->element+2))),
-                    sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_3_pow_2, multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+4)))
-                    );
-*/
+        /*
+        //tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields,
+        //            sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_6, multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_3, *(p->syndrome->element+2))),
+        //            sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_3_pow_2, multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+4)))
+        //            );
+        */
         tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields,
                     multiElementsInGF_returnAddr(galoisFields, tmp_C_t3, tmp_C_t3),
                     multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), tmp_A_t3)
@@ -9546,7 +9464,7 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
             *(p->errLocPoly->element+1) = tmp_A_t3;
             *(p->errLocPoly->element+0) = tmp_R_t3;
 
-            // p->degreeOfErrLocPoly=3;
+            //p->degreeOfErrLocPoly=3;
 
         }
         else
@@ -9592,14 +9510,14 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
             *(p->errLocPoly->element+1) = tmp_S_1_pow_2;
             *(p->errLocPoly->element+0) = tmp_C_t3;
 
-            // if( tmp_C_t3 != (*(galoisFields->element+0)) )
-            // {
-                // p->degreeOfErrLocPoly=2;
-            // }
-            // else
-            // {
-                // p->degreeOfErrLocPoly=1;
-            // }
+            //if( tmp_C_t3 != (*(galoisFields->element+0)) )
+            //{
+            //    p->degreeOfErrLocPoly=2;
+            //}
+            //else
+            //{
+            //    p->degreeOfErrLocPoly=1;
+            //}
 
         }
     }
@@ -9630,8 +9548,6 @@ struct_generalForm_algorithmComponent* recreateAlgoriehmComponent(struct_general
                                 debugFuncNameMes; printf("[%s] in recreateAlgoriehmComponent, enter\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_ALGORITHM]);
                             }
                             #endif
-            //struct_HD_BM_algorithmComponent *recreateBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p, struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength)
-            // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)p));
             return (struct_generalForm_algorithmComponent*)recreateBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)p), galoisFields,  t,  string,  stringLength);
         break;
         case KIND_OF_BCH_DECODING_iBM:
@@ -9650,8 +9566,6 @@ struct_generalForm_algorithmComponent* recreateAlgoriehmComponent(struct_general
                                 debugFuncNameMes; printf("[%s] in recreateAlgoriehmComponent, enter.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_ALGORITHM]);
                             }
                             #endif
-            //struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p, struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength)
-            // close_mSBS_algorithmComponent(((struct_HD_mSBS_t3_algorithmComponent**)p));
             return (struct_generalForm_algorithmComponent*)recreate_mSBS_algorithmComponent(((struct_HD_mSBS_t3_algorithmComponent**)p), galoisFields,  t,  string,  stringLength);
         break;
         case KIND_OF_BCH_DECODING_PETERSON:
@@ -9665,8 +9579,6 @@ struct_generalForm_algorithmComponent* recreateAlgoriehmComponent(struct_general
     return NULL;
 }
 //////////////////////////////////////////////////////////////////////////////////
-//char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM_algorithmComponent *p)
-//char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p)
 char calculateBCH_decodingAlgorithm(struct_galoisFieldElements *galoisFields, struct_generalForm_algorithmComponent *p)
 {
     switch(p->KIND_OF_BCH_ALGORITHM)
@@ -9698,13 +9610,14 @@ char calculateBCH_decodingAlgorithm(struct_galoisFieldElements *galoisFields, st
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-// closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
 char closeAlgoriehmComponent(struct_generalForm_algorithmComponent **p, enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM)
 {
     switch(KIND_OF_BCH_ALGORITHM)
     {
         case KIND_OF_BCH_DECODING_BM:
-            //char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p)
+            /* Example code in main function
+            //closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
+            */
             return closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)p);
         break;
         case KIND_OF_BCH_DECODING_iBM:
@@ -9717,7 +9630,6 @@ char closeAlgoriehmComponent(struct_generalForm_algorithmComponent **p, enum KIN
             printf("in closeAlgoriehmComponent, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_ALGORITHM]);
         break;
         case KIND_OF_BCH_DECODING_mSBS:
-            // char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p)
             return close_mSBS_algorithmComponent((struct_HD_mSBS_t3_algorithmComponent**)p);
         break;
         case KIND_OF_BCH_DECODING_PETERSON:
@@ -9736,9 +9648,9 @@ char closeAlgoriehmComponent(struct_generalForm_algorithmComponent **p, enum KIN
 struct struct_encodingComponentInGF
 {
     struct_powerFormPolynomials *codeWord;
-    // struct_powerFormPolynomials *encodedCodeWord;
-    // struct_powerFormPolynomials *receivedCodeWord;
-    // struct_powerFormPolynomials *errorCodeWord;
+    //struct_powerFormPolynomials *encodedCodeWord;
+    //struct_powerFormPolynomials *receivedCodeWord;
+    //struct_powerFormPolynomials *errorCodeWord;
     //struct_powerFormPolynomials *erroredCodeWord;
 
     unsigned int minimumDistance;
@@ -9902,8 +9814,8 @@ char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *enco
     }
     #endif
 
-    // char_POWER_FORM *remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
-    // memcpy(remainder, encodedCodeWord->equation, sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
+    //char_POWER_FORM *remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
+    //memcpy(remainder, encodedCodeWord->equation, sizeof(char_POWER_FORM)*(encodedCodeWord->length+1));
     remainder=(char_POWER_FORM*)malloc(sizeof(char_POWER_FORM)*(encodedCodeWord->usedLength+1));
     #ifndef USING_OPEN_MP
     memcpy(remainder, encodedCodeWord->equation, sizeof(char_POWER_FORM)*(encodedCodeWord->usedLength));
@@ -10043,10 +9955,6 @@ char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *enc
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-// void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length)
-// char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *encodedCodeWord, unsigned int numberOfParityBits, char_POWER_FORM *generationPolynomial)
-
-// char convertInformationBitsToBCH(struct_encodingComponentInGF *p)
 //////////////////////////////////////////////////////////////////////////////////
 struct struct_errorComponent
 {
@@ -10165,7 +10073,7 @@ void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsig
         printf("in errorOccurationWhichAreRandomPosition, struct_powerFormPolynomials *p is NULL.\n");
     }
     #endif
-    /*initial all zero condition*/
+    /* initial all zero condition */
     memset(p->equation, '0', sizeof(char_POWER_FORM)*(p->usedLength));
     *(p->equation+(p->usedLength))=0;
     while(numberOfError)
@@ -10256,7 +10164,7 @@ void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, stru
     #endif
     for(i=0; i<codeWord->usedLength; i++)
     {
-        
+
         if(*(error->equation+i)=='1')
         {
             if(*(codeWord->equation+i)=='0')
@@ -10291,7 +10199,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
     if(!p)
     {
         p=(char*)malloc(sizeof(char)*(infoBitsLength+parityBitsLength+1));
-        
+
         warningMes;
         printf("in randdomInfoBitStreamChanger, memory allocation. size is '%d'+1='%d'\n", infoBitsLength+parityBitsLength,infoBitsLength+parityBitsLength+1);
     }
@@ -10319,8 +10227,8 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
             {
                 probability=(double)((double)rand() / ((double)RAND_MAX + 1));
                 numberOfSameBits=((double)rand() / ((double)RAND_MAX + 1) * 5)+1;
-                // probability=(double)((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1));
-                // numberOfSameBits=((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1) * 5)+1;
+                //probability=(double)((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1));
+                //numberOfSameBits=((double)rand_r(&tmp_seed) / ((double)RAND_MAX + 1) * 5)+1;
 
                 j=(unsigned int)numberOfSameBits;
             }
@@ -10448,9 +10356,9 @@ char *randdomInfoBitGenerator(unsigned int infoBitsLength, unsigned int parityBi
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-typedef signed int    s_int_QUANTIZ_DIGIT;
-typedef unsigned int u_int_QUANTIZ_MAGNITUDE_DIGIT;
-typedef double double_RATIONAL_NUMBER;
+typedef signed int      s_int_QUANTIZ_DIGIT;
+typedef unsigned int    u_int_QUANTIZ_MAGNITUDE_DIGIT;
+typedef double          double_RATIONAL_NUMBER;
 struct struct_quantizationInfo
 {
     double_RATIONAL_NUMBER offset;
@@ -10461,7 +10369,7 @@ struct struct_quantizationInfo
     unsigned char numsOfBits;
 
     s_int_QUANTIZ_DIGIT numberOfSteps;
-    
+
     double_RATIONAL_NUMBER rangeMin;
     double_RATIONAL_NUMBER rangeMax;
 
@@ -10478,8 +10386,8 @@ struct struct_quantizationInfo
 //////////////////////////////////////////////////////////////////////////////////
 struct_quantizationInfo global_QuantizationInfo;
 //////////////////////////////////////////////////////////////////////////////////
-#define QUANTIZ_MODE_STATIC    0
-#define QUANTIZ_MODE_ADAPT    1
+#define QUANTIZ_MODE_STATIC 0
+#define QUANTIZ_MODE_ADAPT  1
 void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
 {
     SIGNED_INT k;
@@ -10491,7 +10399,7 @@ void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], c
     {
         if(LLR[i] < global_QuantizationInfo.rangeMin+global_QuantizationInfo.offset)//LLR is negative
         {
-            // LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
+            //LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+1);
             LLR_quantization[i]=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1));
             if(Codeword_MSG) Codeword_MSG[i] = '1';
         }
@@ -10506,7 +10414,6 @@ void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], c
             {
                 for(k=0; k<(((signed int)(global_QuantizationInfo.numberOfSteps/2))); k++)
                 {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
                     if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
                     {
                         LLR_quantization[i]=k;
@@ -10519,7 +10426,6 @@ void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], c
             {
                 for(k=(((signed int)(global_QuantizationInfo.numberOfSteps/2))*(-1)+0); k<0; k++)
                 {
-                    // if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
                     if((((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.offset<=LLR[i])&&(LLR[i]<(((double_RATIONAL_NUMBER)k)+global_QuantizationInfo.step)+global_QuantizationInfo.offset))
                     {
                         LLR_quantization[i]=k;
@@ -10554,7 +10460,7 @@ void quantizationWithGlobalAdaptive(
             /*
              * LLR is larger than criterion
              * Quantized value is positive
-            */
+             */
             for(tmp_q = global_QuantizationInfo.quantizedIntMax; tmp_q > 0; tmp_q--)
             {
                 if( (( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset)) * tmp_step <= \
@@ -10572,7 +10478,7 @@ void quantizationWithGlobalAdaptive(
             /*
              * LLR is smaller than criterion
              * Quantized value is negative
-            */
+             */
             for(tmp_q = global_QuantizationInfo.quantizedIntMin; tmp_q < -1; tmp_q++)
             {
                 if( ( ((double_RATIONAL_NUMBER)tmp_q) + tmp_offset + 1.0 + tmp_zeroSymmetry ) * \
@@ -10602,11 +10508,11 @@ void quantizationWithGlobalAdaptive(
 }
 //////////////////////////////////////////////////////////////////////////////////
 /*
-default value
-    global_QuantizationInfo.offset=-0.5;
-    global_QuantizationInfo.step=1.0;
-    global_QuantizationInfo.numsOfBits=4;
-*/
+ * default value
+ *     global_QuantizationInfo.offset=global_LLR_quantizFilter_offset;//-0.5
+ *     global_QuantizationInfo.step=global_LLR_quantizFilter_step;//1.0
+ *     global_QuantizationInfo.numsOfBits=global_LLR_quantizFilter_bitWidth;//4
+ */
 void initGlobalQuantizInfo
 (
     double offset,
@@ -10649,17 +10555,17 @@ void initGlobalQuantizInfo
         case ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT:
         {
             /*
-            if(global_QuantizationInfo.offset != 0.0f)
-            {
-                warningMesShort;
-                printf("Numberic system set to 1's complement.\r\n");
-                warningMesShort;
-                printf("Qauntizing offset is '%f', but will be set 0.0\r\n");
-            }
-            global_QuantizationInfo.offset = 0.0f;
+            //if(global_QuantizationInfo.offset != 0.0f)
+            //{
+            //    warningMesShort;
+            //    printf("Numberic system set to 1's complement.\r\n");
+            //    warningMesShort;
+            //    printf("Qauntizing offset is '%f', but will be set 0.0\r\n");
+            //}
+            //global_QuantizationInfo.offset = 0.0f;
             */
         }
-        
+
 
         /* zero symmetry */
         if(global_flag_case_llr_mag_ones_complement_zero_handling == \
@@ -10706,7 +10612,7 @@ void initGlobalQuantizInfo
         /* overaping */
         global_QuantizationInfo.numberOfSteps -= 1;
     }
-    
+
 
     global_QuantizationInfo.rangeMax = \
         ((double_RATIONAL_NUMBER)(global_QuantizationInfo.numberOfSteps/2)) * \
@@ -10854,9 +10760,9 @@ enum treeTypes
 struct struct_treeStructure
 {
     /*
-    Tree that is triple pointer indicate magnitudeShort.
-    And it is using when find minimum magnitudeShort.
-    */
+     * Tree that is triple pointer indicate magnitudeShort.
+     * And it is using when find minimum magnitudeShort.
+     */
     enum treeTypes treeType;
     u_int_QUANTIZ_MAGNITUDE_DIGIT*** tree_mag;
     char*** tree_hd;
@@ -10943,7 +10849,7 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
                 memset(*(p->direction+i), 0, sizeof(unsigned char)*tmp_treeLength);
                 *(p->treeIndex+i) = (unsigned int*)malloc(sizeof(unsigned int)*tmp_treeLength);
                 memset(*(p->treeIndex+i), -1, sizeof(unsigned int)*tmp_treeLength);
-                
+
                 *(p->treeLength+i) = tmp_treeLength;//store treeLength
             }
             break;
@@ -11253,8 +11159,8 @@ struct struct_logLikeHoodRatio
     double_RATIONAL_NUMBER squreRootAvrLLR;
 
     s_int_QUANTIZ_DIGIT *quantizedLLR;
-        s_int_QUANTIZ_DIGIT quantizedLLRMask;
-    // s_int_QUANTIZ_DIGIT magnitudeMask;
+    s_int_QUANTIZ_DIGIT quantizedLLRMask;
+    //s_int_QUANTIZ_DIGIT magnitudeMask;
     s_int_QUANTIZ_DIGIT *magnitude;//intently to use -1, defined signed value
     unsigned int length;
     unsigned int usedLength;
@@ -11296,8 +11202,8 @@ struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
     p->length=length;
     p->usedLength=0;
 
-    // p->magnitudeShort=(s_int_QUANTIZ_DIGIT*)malloc(sizeof(s_int_QUANTIZ_DIGIT)*length);
-    // memset(p->magnitudeShort, 0, sizeof(sizeof(s_int_QUANTIZ_DIGIT)*length));
+    //p->magnitudeShort=(s_int_QUANTIZ_DIGIT*)malloc(sizeof(s_int_QUANTIZ_DIGIT)*length);
+    //memset(p->magnitudeShort, 0, sizeof(sizeof(s_int_QUANTIZ_DIGIT)*length));
     p->magnitudeShort=NULL;
     p->hardDecisionShort=NULL;
     p->locator=NULL;
@@ -11486,19 +11392,19 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
 //////////////////////////////////////////////////////////////////////////////////
 /******************************************************************/
 /*
-    findMinimumMagnitudeFindLocPushAway function is a convert quantized LLR to magnitudeShort and also compare each magnitudeShort so sort minimum magnitudeShort.
-    For example, let's assume that quantization bit length is 4(include sign bit), LLR values are {-1, 0, 2, 7, 8, -5, 1, 3}.
-    So LLR values are                {1111,    0000,    0010,    0111,    0111,    1011,    0001,    0011}.
-    magnitudeShort values are            {0001,    0000,    0010,    0111,    0111,    0101,    0001,    0011}.
-    Location indexes are            {0,        1,        2,        3,        4,        5,        6,        7}.
-
-    Sorted minimum magnitudes are    {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
-    Sorted magnitudeShort locations are    {1,        0,        6,        2,        7,        5,        3,        4}.
-
-    Results of this function are(caution that, result length belong to length of locator)
-    Sorted minimum magnitudeShort are    {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
-    Sorted magnitudeShort location are    {1,        0,        6,        2,        7,        5,        3,        4}.
-*/
+ * findMinimumMagnitudeFindLocPushAway function is a convert quantized LLR to magnitudeShort and also compare each magnitudeShort so sort minimum magnitudeShort.
+ * For example, let's assume that quantization bit length is 4(include sign bit), LLR values are {-1, 0, 2, 7, 8, -5, 1, 3}.
+ * So LLR values are                    {1111,    0000,    0010,    0111,    0111,    1011,    0001,    0011}.
+ * magnitudeShort values are            {0001,    0000,    0010,    0111,    0111,    0101,    0001,    0011}.
+ * Location indexes are                 {0,       1,       2,       3,       4,       5,       6,       7   }.
+ *
+ * Sorted minimum magnitudes are        {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
+ * Sorted magnitudeShort locations are  {1,       0,       6,       2,       7,       5,       3,       4   }.
+ *
+ * Results of this function are(caution that, result length belong to length of locator)
+ * Sorted minimum magnitudeShort are    {0000,    0001,    0001,    0010,    0011,    0101,    0111,    0111}.
+ * Sorted magnitudeShort location are   {1,       0,       6,       2,       7,       5,       3,       4   }.
+ */
 
 /******************************************************************/
 char findMinimumMagnitudeFindLocPushAway
@@ -11513,9 +11419,8 @@ char findMinimumMagnitudeFindLocPushAway
     u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_comapared_mag = 0;
 
     u_int_QUANTIZ_MAGNITUDE_DIGIT tmp_criteria_mag = -1;
-    unsigned int    tmp_criteria_loc = -1;
-
-    char            tmp_criteria_HD;
+    unsigned int tmp_criteria_loc = -1;
+    char tmp_criteria_HD;
 
     /* Array */
     unsigned int i,j,k;
@@ -11659,7 +11564,7 @@ char findMinimumMagnitudeFindLocPushAway
                                         /*
                                          * if find location to insert new value,
                                          * put away previous value.
-                                         * */
+                                         */
                                         if((p->locatorLength)>1)
                                         {
                                             for(k=p->locatorLength; k!=j; k--)
@@ -11704,7 +11609,7 @@ char findMinimumMagnitudeFindLocPushAway
                                         /*
                                          * if find location to insert new value,
                                          * put away previous value.
-                                         * */
+                                         */
                                         if((p->locatorLength)>1)
                                         {
                                             for(k=p->locatorLength; k!=j; k--)
@@ -11746,7 +11651,7 @@ char findMinimumMagnitudeFindLocPushAway
                     /*
                      * if find location to insert new value,
                      * put away previous value.
-                     * */
+                     */
                     if((p->locatorLength)>1)
                     {
                         for(k=p->locatorLength; k!=j; k--)
@@ -11965,7 +11870,7 @@ char findMinimumMagnitudeGroupingPushAway
             }
         }
         /* in no symmetry adc step, 0->1 error not have mag 0 */
-        //  previous min llr is larger or same than compared_mag => proccessing
+        /* previous min llr is larger or same than compared_mag => proccessing */
         if(tmp_criteria_mag > tmp_comapared_mag)
         {
         }
@@ -11986,14 +11891,16 @@ char findMinimumMagnitudeGroupingPushAway
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0:
                 case FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1:
                 {
-                        //tmp_criteria_HD is not '1' that is tmp_criteria_HD has '0'.
+                        /* tmp_criteria_HD is not '1' that is tmp_criteria_HD has '0'. */
                         if(tmp_criteria_HD == tmp_priorHD)
-                        //criteria has prior HD.
+                        /* criteria has prior HD. */
                         {
-                            //needs to compare with the others location value
-                            //find non prior HD
-                            //or
-                            //lower llr mag
+                            /*
+                             * needs to compare with the others location value
+                             * find non prior HD
+                             * or
+                             * lower llr mag
+                             */
                             if((*(hd_codeword->equation+i)) != tmp_priorHD)
                             {
                                 /* find insert loc */
@@ -12562,10 +12469,10 @@ char fprintMagnitudeOfQuantizedLLR_fullDescription_toHex(FILE *fp, struct_logLik
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /*
-    To find minumum value of magnitude, initializing values associate with tree in struct struct_logLikeHoodRatio.
-    Tree, can use, is define that is in enum treeTypes.
-    If you needs this list, find a enum treeTypes.
-*/
+ * To find minumum value of magnitude, initializing values associate with tree in struct struct_logLikeHoodRatio.
+ * Tree, can use, is define that is in enum treeTypes.
+ * If you needs this list, find a enum treeTypes.
+ */
 #define DIRECTION_LEFT    0
 #define DIRECTION_RIGHT    1
 char initializingVariablesAssociateWithTree(struct_logLikeHoodRatio *p, enum treeTypes treeType)
@@ -12719,54 +12626,53 @@ char findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(
             tmp_row_loc+=tmp_row_loc+DIRECTION_LEFT;
         }
         tmp_depth--;
-        // if(!tmp_depth) printf("if(!tmp_depth) i[%d]\n", i);
+        //if(!tmp_depth) printf("if(!tmp_depth) i[%d]\n", i);
     }
 
-    // for(i=0; i<p->locatorLength; i++)
-    // {
-            // printf("V[%d]L[%d] ", *(p->magnitude+i), *(p->locator+i));
-    // }
-    // printf("\n");
-    // printf("test) value[%d],loc[%d]", **(*(p->treeStruct->tree_mag+(p->treeStruct->treeDepth-1))+0), *((*(p->treeStruct->treeIndex+(p->treeStruct->treeDepth-1)))+0));
+    //for(i=0; i<p->locatorLength; i++)
+    //{
+    //    printf("V[%d]L[%d] ", *(p->magnitude+i), *(p->locator+i));
+    //}
+    //printf("\n");
+    //printf("test) value[%d],loc[%d]", **(*(p->treeStruct->tree_mag+(p->treeStruct->treeDepth-1))+0), *((*(p->treeStruct->treeIndex+(p->treeStruct->treeDepth-1)))+0));
 
     return 0;
 }
 /*
-
-char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(struct_logLikeHoodRatio *p)
-
-m_(0)   \
-        comp -> t(0,0), val:m_(0), direct:left, index:0
-m_(1)   /       |
-             comp -> t(1,0), val:t(0,0), direct:left, index:0   \
-m_(2)   \       |                                               |
-        comp -> t(0,1), val:m_(3), direct:right, index:3        |
-m_(3)   /                                                       |
-                                                            comp -> t(2,0), val:t(1,1), direct:right, index:6
-m_(4)   \                                                       |
-        comp -> t(0,2), val:m_(5), direct:right, index:5        |
-m_(5)   /       |                                               |
-            comp -> t(1,1), val:t(0,3), direct right. index:6   /
-m_(6)   \       |
-        comp -> t(0,3), val:m_(6), direct:left, index:6
-m_(7)   /
-
-.
-
-.
-                                                                \
-.                                                               |
-                                                                |
-.                                                               |
-                                                            comp -> t( ), val:t(2,(n-1)/2), direct:right, index:n-2
-m_(n-4) \                                                       |
-        comp -> t(0,(n-1/2)-1), m_(n-4), left, index:(n-4)      |
-m_(n-3) /       |                                               |
-            comp -> t(2,(n-1)/2), right, index:(n-2)            /
-m_(n-2) \       |
-        comp -> t(0,(n-1)/2), m_(n-2), left, index:(n-2)
-m_(n-1) /
-*/
+ * char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(struct_logLikeHoodRatio *p)
+ *
+ * m_(0)   \
+ *         comp -> t(0,0), val:m_(0), direct:left, index:0
+ * m_(1)   /       |
+ *              comp -> t(1,0), val:t(0,0), direct:left, index:0   \
+ * m_(2)   \       |                                               |
+ *         comp -> t(0,1), val:m_(3), direct:right, index:3        |
+ * m_(3)   /                                                       |
+ *                                                             comp -> t(2,0), val:t(1,1), direct:right, index:6
+ * m_(4)   \                                                       |
+ *         comp -> t(0,2), val:m_(5), direct:right, index:5        |
+ * m_(5)   /       |                                               |
+ *             comp -> t(1,1), val:t(0,3), direct right. index:6   /
+ * m_(6)   \       |
+ *         comp -> t(0,3), val:m_(6), direct:left, index:6
+ * m_(7)   /
+ *
+ * .
+ *
+ * .
+ *                                                                 \
+ * .                                                               |
+ *                                                                 |
+ * .                                                               |
+ *                                                             comp -> t( ), val:t(2,(n-1)/2), direct:right, index:n-2
+ * m_(n-4) \                                                       |
+ *         comp -> t(0,(n-1/2)-1), m_(n-4), left, index:(n-4)      |
+ * m_(n-3) /       |                                               |
+ *             comp -> t(2,(n-1)/2), right, index:(n-2)            /
+ * m_(n-2) \       |
+ *         comp -> t(0,(n-1)/2), m_(n-2), left, index:(n-2)
+ * m_(n-1) /
+ */
 char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials *hd_codeword,
@@ -12859,7 +12765,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
     }
 
     /* 0-th stage of tree */
-            // debugMes; printf(">>> 0-th stage, tot length(%d)\n", p->usedLength);
+            //debugMes; printf(">>> 0-th stage, tot length(%d)\n", p->usedLength);
     for(i = 0; i < p->usedLength; i += 2)
     {
         /* tree element is one? */
@@ -12989,8 +12895,8 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_RIGHT;
                 *(*(p->treeStruct->treeIndex + 0) + i / 2) = i + DIRECTION_RIGHT;
             }
-                    // printf("depth(0),length(%d), %d(%d) <= %d(%d) --->>> ", i,  *(p->magnitude+i), i, *(p->magnitude+i+1), i+1);
-                    // printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));
+                    //printf("depth(0),length(%d), %d(%d) <= %d(%d) --->>> ", i,  *(p->magnitude+i), i, *(p->magnitude+i+1), i+1);
+                    //printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));
         }
         else
         {
@@ -13003,22 +12909,22 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 (hd_codeword->equation + i + DIRECTION_LEFT);
             *(*(p->treeStruct->direction + 0) + i / 2) = DIRECTION_LEFT;
             *(*(p->treeStruct->treeIndex + 0) + i / 2) = i - 1;
-                    // printf("EXTRA)) depth(0),length(%d), %d(%d) --->>> ", i, *(p->magnitude+i-1), i-1);
-                    // printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));
+                    //printf("EXTRA)) depth(0),length(%d), %d(%d) --->>> ", i, *(p->magnitude+i-1), i-1);
+                    //printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+0)+i/2), *(*(p->treeStruct->treeIndex+0)+i/2));
         }
     }
 
     /* 1st and 2nd, 3rd .... stage(depth) tree */
     for(depth = 1; depth < p->treeStruct->treeDepth; depth++)
     {
-                // debugMes; printf(">>> %d-th stage, tot Length(%d)\n", depth, *(p->treeStruct->treeLength+depth-1));
+                //debugMes; printf(">>> %d-th stage, tot Length(%d)\n", depth, *(p->treeStruct->treeLength+depth-1));
         /* check element of stage(depth) */
         for(i = 0; i < *(p->treeStruct->treeLength + depth - 1); i += 2)
         {
             /* if can comparing */
             if(*(p->treeStruct->treeLength+depth - 1) - i != 1)
             {
-                        // printf("depth(%d), length(%d), %d(%d) <= %d(%d) --->>> ", depth, i, **(*(p->treeStruct->tree_mag+depth-1)+i), *(*(p->treeStruct->treeIndex+depth-1)+i), **(*(p->treeStruct->tree_mag+depth-1)+i+1), *(*(p->treeStruct->treeIndex+depth-1)+i+1));
+                        //printf("depth(%d), length(%d), %d(%d) <= %d(%d) --->>> ", depth, i, **(*(p->treeStruct->tree_mag+depth-1)+i), *(*(p->treeStruct->treeIndex+depth-1)+i), **(*(p->treeStruct->tree_mag+depth-1)+i+1), *(*(p->treeStruct->treeIndex+depth-1)+i+1));
                 /* left(lower index) smaller or same than right(higher index) */
                 if(
                         **(*(p->treeStruct->tree_mag + depth - 1) + i + DIRECTION_LEFT)
@@ -13155,7 +13061,7 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                     *(*(p->treeStruct->treeIndex+depth) + i / 2) = \
                         *(*(p->treeStruct->treeIndex + depth - 1) + i + DIRECTION_RIGHT);
                 }
-                        // printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+depth)+i/2), *(*(p->treeStruct->treeIndex+depth)+i/2));
+                        //printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+depth)+i/2), *(*(p->treeStruct->treeIndex+depth)+i/2));
             }
             /* if can not comparing, just update to next stage */
             else
@@ -13168,24 +13074,17 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
                 *(*(p->treeStruct->direction + depth) + i / 2) = DIRECTION_LEFT;
                 *(*(p->treeStruct->treeIndex + depth) + i / 2) = \
                     *(*(p->treeStruct->treeIndex + depth - 1) + i - 1);
-                        // printf("EXTRA)) %d(%d) --->>> ", **(*(p->treeStruct->tree_mag+depth-1)+i-1), *(*(p->treeStruct->treeIndex+depth-1)+i-1));
-                        // printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+depth)+i/2), *(*(p->treeStruct->treeIndex+depth)+i/2));
+                        //printf("EXTRA)) %d(%d) --->>> ", **(*(p->treeStruct->tree_mag+depth-1)+i-1), *(*(p->treeStruct->treeIndex+depth-1)+i-1));
+                        //printf("%d(%d)\n", **(*(p->treeStruct->tree_mag+depth)+i/2), *(*(p->treeStruct->treeIndex+depth)+i/2));
             }
         }
 
     }
-    // testPrintTreeStructValue(p->treeStruct);
-    // findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(p);
+    //testPrintTreeStructValue(p->treeStruct);
+    //findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(p);
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
-/*
-checkMinimumMagnitudeLogLikeHoodRatio(
-    main_com_bpskComponents->bpskReceivedLLR,
-    main_encodingComponentInGF->codeWord,
-    main_com_errComponents->erroredCodeWord
-)
-*/
 char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials *operandA,
@@ -13224,7 +13123,7 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
         else
         {
             errorMes;
-            printf("in checkMinimumMagnitudeLogLikeHoodRatio, (*(p->locator+%d)='%d' exceed (operandA->usedLength)='%d' or (operandB->usedLength)='%d'\n",
+            printf("in checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio, (*(p->locator+%d)='%d' exceed (operandA->usedLength)='%d' or (operandB->usedLength)='%d'\n",
                 i, (*(p->locator+i)), (operandA->usedLength), (operandB->usedLength) );
             return -2;
         }
@@ -13335,12 +13234,12 @@ void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
         printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->usedLength is zero.\n");
         return;
     }
-    // if(!(p->quantizedLLRMask))
-    // {
-        // warningMes;
-        // printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
-        // return;
-    // }
+    //if(!(p->quantizedLLRMask))
+    //{
+    //    warningMes;
+    //    printf("in printLLRWithSpaceAndEnter, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
+    //    return;
+    //}
     printf("[LLR] : ");
     for(i=0; i<p->usedLength; i++)
     {
@@ -13663,9 +13562,9 @@ void testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
     printf("[LLR and Qantized LLR]\n");
     for(i=0; i<p->usedLength; i++)
     {
-        if(*(p->llr+i)>=0)            printf("+%g\t", *(p->llr+i));
-        else                        printf("%g\t", *(p->llr+i));
-        if(*(p->quantizedLLR+i)>=0)    printf("+%d\n", *(p->quantizedLLR+i));
+        if(*(p->llr+i)>=0)  printf("+%g\t", *(p->llr+i));
+        else                printf("%g\t", *(p->llr+i));
+        if(*(p->quantizedLLR+i)>=0) printf("+%d\n", *(p->quantizedLLR+i));
         else                        printf("%d\n", *(p->quantizedLLR+i));
     }
     printf("[Used Length : %d]\n", p->usedLength);
@@ -13744,26 +13643,26 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned in
     }
 
 
-    // if(!(p->llr))
-    // {
-        // if(!(p->length))
-        // {
-            // p->quantizedLLRMask=0;
-            // for(i=0; i<numberOfMask; i++)
-            // {
-                // p->quantizedLLRMask|=(1<<i);
-            // }
-            // p->magnitudeMask=p->quantizedLLRMask&(~(1<<(i-1)));
-                    // printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
-        // }
-        // else
-        // {
-            // p->quantizedLLRMask=0;
-            // warningMes;
-            // printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
-            // return -1;
-        // }
-    // }
+    //if(!(p->llr))
+    //{
+    //    if(!(p->length))
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        for(i=0; i<numberOfMask; i++)
+    //        {
+    //            p->quantizedLLRMask|=(1<<i);
+    //        }
+    //        p->magnitudeMask=p->quantizedLLRMask&(~(1<<(i-1)));
+    //                printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
+    //    }
+    //    else
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        warningMes;
+    //        printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
+    //        return -1;
+    //    }
+    //}
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -13788,31 +13687,31 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
     }
     #endif
 
-    // if(!(p->llr))
-    // {
-        // if(!(p->length))
-        // {
+    //if(!(p->llr))
+    //{
+    //    if(!(p->length))
+    //    {
             p->quantizedLLRMask=quantizedLLRMask;
-            //for(i=0; (i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&((1<<i)&quantizedLLRMask); i++);
-            // p->magnitudeMask=(p->quantizedLLRMask&(~(1<<(i-1))));
-                    // printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
-        // }
-        // else
-        // {
-            // p->quantizedLLRMask=0;
-            // warningMes;
-            // printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
-            // return -1;
-        // }
-    // }
+    //        //for(i=0; (i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&((1<<i)&quantizedLLRMask); i++);
+    //        p->magnitudeMask=(p->quantizedLLRMask&(~(1<<(i-1))));
+    //                printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
+    //    }
+    //    else
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        warningMes;
+    //        printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
+    //        return -1;
+    //    }
+    //}
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-#define BPSK_TRANCEIVE_FLAG_DATA_INIT    0
-#define BPSK_TRANCEIVE_FLAG_DATA_LOAD    (1<<0)
-#define BPSK_TRANCEIVE_FLAG_DATA_TRANS    (1<<1)
-#define BPSK_TRANCEIVE_FLAG_DATA_RECEIV    (1<<2)
+#define BPSK_TRANCEIVE_FLAG_DATA_INIT   0
+#define BPSK_TRANCEIVE_FLAG_DATA_LOAD   (1<<0)
+#define BPSK_TRANCEIVE_FLAG_DATA_TRANS  (1<<1)
+#define BPSK_TRANCEIVE_FLAG_DATA_RECEIV (1<<2)
 
 typedef double double_BPSK_DATA;
 
@@ -13824,7 +13723,7 @@ struct struct_bpskComponents
     double_BPSK_DATA *bpskReceivedDataAddedAwgn;
     double_BPSK_DATA squreRootBpskReceivedDataAddedAwgn;
 
-    // double_BPSK_DATA *bpskReceivedDataLLR;
+    //double_BPSK_DATA *bpskReceivedDataLLR;
     struct_logLikeHoodRatio *bpskReceivedLLR;
     unsigned char statusFlag;
 }typedef struct_bpskComponents;
@@ -13842,8 +13741,8 @@ struct_bpskComponents *createBpskComponents(unsigned int length)
     p->bpskReceivedDataAddedAwgn=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
     memset(p->bpskReceivedDataAddedAwgn, 0, sizeof(double_BPSK_DATA)*length);
 
-    // p->bpskReceivedDataLLR=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
-    // memset(p->bpskReceivedDataLLR, 0, sizeof(double_BPSK_DATA)*length);
+    //p->bpskReceivedDataLLR=(double_BPSK_DATA*)malloc(sizeof(double_BPSK_DATA)*length);
+    //memset(p->bpskReceivedDataLLR, 0, sizeof(double_BPSK_DATA)*length);
 
     p->bpskReceivedLLR=createLogLikeHoodRatio(length);
             #ifndef RELEASE
@@ -13943,14 +13842,14 @@ void BPSK_Mod(double_BPSK_DATA *Transmitted_MSG, char *Codeword_MSG, unsigned in
         }
         #endif
 
-    // for(i=0; i<WordLength; i++)
-    // {
-        // printf("%c ", Codeword_MSG[i]);
-    // }
-    // for(i=0; i<WordLength; i++)
-    // {
-        // printf("%f ", Transmitted_MSG[i]);
-    // }
+    //for(i=0; i<WordLength; i++)
+    //{
+    //    printf("%c ", Codeword_MSG[i]);
+    //}
+    //for(i=0; i<WordLength; i++)
+    //{
+    //    printf("%f ", Transmitted_MSG[i]);
+    //}
 
     #ifdef USING_OPEN_MP
     #pragma omp parallel for schedule(guided) private(i) shared(WordLength, Codeword_MSG, Transmitted_MSG)
@@ -14017,30 +13916,30 @@ double gaussian(double mean, double var)
         const double PI = 3.14159265358979323846;
         double temp1, temp2, x1, x2;
 
-        x1 = (rand() + 1);                //x1에 0이 발생하지 않도록
-        x2 = rand();                    //0이 발생해도 관계 없습니다.
-        // x1 = (rand_r(&tmp_seed) + 1);                //x1에 0이 발생하지 않도록
-        // x2 = rand_r(&tmp_seed);                    //0이 발생해도 관계 없습니다.
-                // infoMes;
-                // printf("x1: %g,\tx2: %g,\t",x1,x2);
+        x1 = (rand() + 1);//x1에 0이 발생하지 않도록
+        x2 = rand();//0이 발생해도 관계 없습니다.
+        //x1 = (rand_r(&tmp_seed) + 1);//x1에 0이 발생하지 않도록
+        //x2 = rand_r(&tmp_seed);//0이 발생해도 관계 없습니다.
+        //        infoMes;
+        //        printf("x1: %g,\tx2: %g,\t",x1,x2);
 
         x1 = x1 / (((double)RAND_MAX) + 1.0);
-        // x1 = x1 / (RAND_MAX);
+        //x1 = x1 / (RAND_MAX);
         x2 = x2 / ((double)RAND_MAX);
-                // printf("x1: %g,\tx2: %g\n",x1,x2);
+                //printf("x1: %g,\tx2: %g\n",x1,x2);
         temp1 = log(x1);
         temp1 = temp1 * (-2);
-        temp1 = sqrt(temp1);            //강의노트의 식. sqrt(-2*log(x1))
+        temp1 = sqrt(temp1);//강의노트의 식. sqrt(-2*log(x1))
 
         temp2 = 2 * PI;
         temp2 = temp2 * x2;
-        temp2 = cos(temp2);                //강의노트의 식. cos(x2*2*PI)
+        temp2 = cos(temp2);//강의노트의 식. cos(x2*2*PI)
 
-        temp1 = temp1 * temp2;            //위 두 식을 곱하여 N[0,1] 생성
+        temp1 = temp1 * temp2;//위 두 식을 곱하여 N[0,1] 생성
 
-        temp1 = (sqrt(var) * temp1);    //adjust variance
+        temp1 = (sqrt(var) * temp1);//adjust variance
 
-        return temp1 + mean;            //adjust mean
+        return temp1 + mean;//adjust mean
 }
 //////////////////////////////////////////////////////////////////////////////////
 void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double bitrate, unsigned int number_of_loop, double main_com_EbN0) //need to add bitrate
@@ -14111,14 +14010,14 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
     {
         received_msg[i] = transmitted_msg[i] + (channel_noise[i] * attn);
         received_LLR[i] = (-2 * received_msg[i]) / (attn*attn);
-                    /* printf("test : [+1.5] => %g\n", (-2 * +1.5 / (attn*attn)));
-                    printf("test : [+1.0] => %g\n", (-2 * +1.0 / (attn*attn)));
-                    printf("test : [+0.5] => %g\n", (-2 * +0.5 / (attn*attn)));
-                    printf("test : [+0.0] => %g\n", (-2 * +0.0 / (attn*attn)));
-                    printf("test : [-0.5] => %g\n", (-2 * -0.5 / (attn*attn)));
-                    printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
-                    printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
-                    printf("\n\n"); */
+                    //printf("test : [+1.5] => %g\n", (-2 * +1.5 / (attn*attn)));
+                    //printf("test : [+1.0] => %g\n", (-2 * +1.0 / (attn*attn)));
+                    //printf("test : [+0.5] => %g\n", (-2 * +0.5 / (attn*attn)));
+                    //printf("test : [+0.0] => %g\n", (-2 * +0.0 / (attn*attn)));
+                    //printf("test : [-0.5] => %g\n", (-2 * -0.5 / (attn*attn)));
+                    //printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
+                    //printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
+                    //printf("\n\n");
         if(LLR_MAX<received_LLR[i]) LLR_MAX=received_LLR[i];
         if(LLR_MIN>received_LLR[i]) LLR_MIN=received_LLR[i];
     }
@@ -14377,13 +14276,13 @@ char set_selTP_before_decording_skipDecOnly
         /*************** BER is theoretically best case START ***************/
         /********************************************************************/
         /*
-        note. Theoretical error count.
-        Theoretic is mean, simulator known that channel enviroments,
-        that is mean simulator recognize error number corrrectly and already.
-        So in below code and theoretical BER mode,
-        Simulator identify best test-pattern and,
-        choose best test pattern has minimum error number.
-        */
+         * note. Theoretical error count.
+         * Theoretic is mean, simulator known that channel enviroments,
+         * that is mean simulator recognize error number corrrectly and already.
+         * So in below code and theoretical BER mode,
+         * Simulator identify best test-pattern and,
+         * choose best test pattern has minimum error number.
+         */
 
         case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
         {
@@ -14393,21 +14292,21 @@ char set_selTP_before_decording_skipDecOnly
             tmp_sel_TP = INFO_testPatternNum;//debug mode, to accur core dump
             /********** selecting which error count number of test patterns **********/
             /*
-                note. belong to which chosen, BER result is effected.
-            */
+             * note. belong to which chosen, BER result is effected.
+             */
             switch(global_flag_case_choosingCodeWordMethod_inTheo)
             {
                 default:
                     warningMes; printf("Method of gettig BER is not selected, So selecting method is pixed to normal(default).\r\n");
 
                 /*
-                    note. if no errors in all test patterns, select this.
-                    if not, select hard-decision error number.
-                    !!! WARNING !!!
-                    not support FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR.
+                 * note. if no errors in all test patterns, select this.
+                 * if not, select hard-decision error number.
+                 * !!! WARNING !!!
+                 * not support FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR.
                 */
                 case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:
-                    // printf("[Z]");
+                    //printf("[Z]");
                     for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
                     {
                         if(!INFO_list_errCntOfTP_beforeDec_theo[tmp_i])//when INFO_list_errCntOfTP_beforeDec_theo[tmp_i] is zero.
@@ -14426,8 +14325,8 @@ char set_selTP_before_decording_skipDecOnly
                         }
                     }
                     /*
-                        note. if no error bit count, error count to fix hard-decision.
-                    */
+                     * note. if no error bit count, error count to fix hard-decision.
+                     */
                     if(tmp_sel_TP == INFO_testPatternNum)
                     {
                         tmp_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
@@ -14436,10 +14335,10 @@ char set_selTP_before_decording_skipDecOnly
                 break;
 
                 /*
-                    note. selecting error bits belong to correctable test pattern's error number.
-                    if can't correct, select hard-decision error number.
-                    in normal(this) case, designer have to think about how to select correctable codeword.
-                */
+                 * note. selecting error bits belong to correctable test pattern's error number.
+                 * if can't correct, select hard-decision error number.
+                 * in normal(this) case, designer have to think about how to select correctable codeword.
+                 */
                 case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL:
                 {
                     for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
@@ -14465,11 +14364,11 @@ char set_selTP_before_decording_skipDecOnly
                 break;
 
                 /*
-                    note. selecting minimum error bits comparing each error bits number, patterns have.
-                        In best(this) case, not guarantee decording.
-                */
+                 * note. selecting minimum error bits comparing each error bits number, patterns have.
+                 * In best(this) case, not guarantee decording.
+                 */
                 case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR:
-                    // printf("[B]");
+                    //printf("[B]");
                     for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
                     {
                         if(INFO_list_errCntOfTP_beforeDec_theo[tmp_i] <= INFO_hd_correctability)
@@ -14496,15 +14395,15 @@ char set_selTP_before_decording_skipDecOnly
                 break;
 
                 /*
-                    note. selecting maximum error bits comparing each error bits number, patterns have.
-                        In worst(this) case, not guarantee decording.
-                */
+                 * note. selecting maximum error bits comparing each error bits number, patterns have.
+                 * In worst(this) case, not guarantee decording.
+                 */
                 case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR:
-                    // for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-                    // {
-                        // tmp_sel_TP = 0;//debug mode, to accur core dump
-                    // }
-                    // printf("[W]");
+                    //for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                    //{
+                    //    tmp_sel_TP = 0;//debug mode, to accur core dump
+                    //}
+                    //printf("[W]");
                     /* note. to fine maximum error count, tmp_selTP_errCnt is clrear to zero. */
                     for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
                     {
@@ -14535,9 +14434,9 @@ char set_selTP_before_decording_skipDecOnly
             *W_selTP_errCnt = tmp_selTP_errCnt;
             /********** selecting target codeword, main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM] **********/
             /*
-                note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM] have a memory address of decorded codewoard, which type is struct_powerFormPolynomials*.
-                    In soft-dedision case, it has same function.
-            */
+             * note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM] have a memory address of decorded codewoard, which type is struct_powerFormPolynomials*.
+             * In soft-dedision case, it has same function.
+             */
             *W_sel_TP_CW_pwrFormPoly = INFO_list_TP_CW_pwrFormPoly[tmp_sel_TP];
 
                     #ifndef RELEASE
@@ -14609,12 +14508,12 @@ char set_selTP_before_decording_skipDecOnly
         /************** case start                            ***************/
         /********************************************************************/
         /*
-        note. Actual error count.
-        Actual is mean, simulator does not known that channel enviroments,
-        that is mean simulator can not recognize error number corrrectly.
-        So in below code and actual BER mode,
-        simulator can not choose best test pattern has minimum error number.
-        */
+         * note. Actual error count.
+         * Actual is mean, simulator does not known that channel enviroments,
+         * that is mean simulator can not recognize error number corrrectly.
+         * So in below code and actual BER mode,
+         * simulator can not choose best test pattern has minimum error number.
+         */
         case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
         {
             //DO NOTHING
@@ -14625,7 +14524,7 @@ char set_selTP_before_decording_skipDecOnly
         /********************************************************************/
         /************** get BER mode is actual mode, that is  ***************/
         /************** BER can be different with theoretical ***************/
-        /************** case end                            ***************/
+        /************** case end                              ***************/
         /********************************************************************/
 
 
@@ -14846,17 +14745,17 @@ char set_flag_act_fail_list_TP
     }
 
 
-    // for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
-    // {
-        // printf("test)) W_list_flag_decodingFail[%d] = %s, R_list_flag_beforeDec_synd_zero[%d] = %s, selected TP = '%d', ADDR : 0x%x\r\n",
-            // tmp_i,
-            // W_list_flag_decodingFail[tmp_i]?"[ON]":"[OFF]",
-            // tmp_i,
-            // R_list_flag_beforeDec_synd_zero[tmp_i]?"[ON]":"[OFF]",
-            // *W_setlectedTP,
-            // W_setlectedTP
-        // );
-    // }
+    //for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
+    //{
+    //    printf("test)) W_list_flag_decodingFail[%d] = %s, R_list_flag_beforeDec_synd_zero[%d] = %s, selected TP = '%d', ADDR : 0x%x\r\n",
+    //        tmp_i,
+    //        W_list_flag_decodingFail[tmp_i]?"[ON]":"[OFF]",
+    //        tmp_i,
+    //        R_list_flag_beforeDec_synd_zero[tmp_i]?"[ON]":"[OFF]",
+    //        *W_setlectedTP,
+    //        W_setlectedTP
+    //    );
+    //}
 
     for(tmp_i = 0; tmp_i < INFO_TP_Nums; tmp_i++)
     {
@@ -14896,22 +14795,18 @@ char set_flag_act_fail_list_TP
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/*initializing*/
-
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-    // while((loadStream.countedDataNumber<loadStream.totalDataNumber))
-    // {
-        // printf("[%0000006d] : ", loadStream.countedCodeWordNumber);
-        // loadToCodeWordStartAtHighSide(main_encodingComponentInGF->codeWord, &loadStream);
-        // unloadFromCodeWordStartAtHighSide(&unloadStream, main_encodingComponentInGF->codeWord);
-        // printPowerFormWithEnterPolynomialWithTapUsingAddress(main_encodingComponentInGF->codeWord);
-        // printf("[S:%d, U:%d, M:%d]\n",strlen(main_encodingComponentInGF->codeWord->equation), main_encodingComponentInGF->codeWord->usedLength, main_encodingComponentInGF->codeWord->length);
-    // }
-    // printBmpFileToHexCode2();
-    // saveBmpFile2(0);
+    /* Example codes in main functions
+    //while((loadStream.countedDataNumber<loadStream.totalDataNumber))
+    //{
+    //    printf("[%0000006d] : ", loadStream.countedCodeWordNumber);
+    //    loadToCodeWordStartAtHighSide(main_encodingComponentInGF->codeWord, &loadStream);
+    //    unloadFromCodeWordStartAtHighSide(&unloadStream, main_encodingComponentInGF->codeWord);
+    //    printPowerFormWithEnterPolynomialWithTapUsingAddress(main_encodingComponentInGF->codeWord);
+    //    printf("[S:%d, U:%d, M:%d]\n",strlen(main_encodingComponentInGF->codeWord->equation), main_encodingComponentInGF->codeWord->usedLength, main_encodingComponentInGF->codeWord->length);
+    //}
+    //printBmpFileToHexCode2();
+    //saveBmpFile2(0);
+    */
 char passingThroughAwgnData
     (
         double filePass_EbN0,
@@ -15008,68 +14903,6 @@ char passingThroughAwgnData
 //////////////////////////////////////////////////////////////////////////////////
 const char cmdOtionKeyWords[] = "-{},:=";
 
-
-/*
-switch(temp->instType)
-{
-    case OPT_NOTHING:
-        printf("instType: OPT_NOTHING[%d]\n", temp->instType);
-        break;
-    case OPT_FLAG:
-        printf("instType: OPT_FLAG[%d]\n", temp->instType);
-        break;
-
-    case OPT_DEBUG:
-        printf("instType: OPT_DEBUG[%d]\n", temp->instType);
-        break;
-
-    case OPT_DISPLAY:
-        printf("instType: OPT_DISPLAY[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_RESULT:
-        printf("instType: OPT_DISPLAY_RESULT[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_PROGRESS:
-        printf("instType: OPT_DISPLAY_PROGRESS[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_FUNCNAME:
-        printf("instType: OPT_DISPLAY_FUNCNAME[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_VALUE:
-        printf("instType: OPT_SET_VALUE[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_VALUES:
-        printf("instType: OPT_SET_VALUES[%d]\n", temp->instType);
-        break;
-    case OPT_SET_VALUES_SERIES: //example) {-settingCategory=[value0],[value1],[value2],[value3]}
-        printf("instType: OPT_SET_VALUES_SERIES[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_LANGE: //set lange, example) {-settingCategory=[start]:[step]:[end]}
-        printf("instType: OPT_SET_LANGE[%d]\n", temp->instType);
-        break;
-    case OPT_SET_LANGE_SERIES:
-        printf("instType: OPT_SET_LANGE_SERIES[%d]\n", temp->instType);
-        break;
-
-    case OPT_STRING:
-        printf("instType: OPT_STRING[%d]\n", temp->instType);
-        break;
-    case OPT_COMPONENT: //move to sub category
-        printf("instType: OPT_COMPONENT[%d]\n", temp->instType);
-        break;
-
-    case STRUCT_END:
-        printf("instType: STRUCT_END[%d]\n", temp->instType);
-        break;
-
-    default:
-        printf("instType: UNKNOWN[?]\n");
-}
-*/
-
 enum cmdLineOptionInstructionType
 {
     OPT_NOTHING,
@@ -15152,70 +14985,9 @@ struct struct_scheduling_FIFO
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*BCH Command Tree start*/
+/* BCH Command Tree start */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-switch(temp->instType)
-{
-    case OPT_NOTHING:
-        printf("instType: OPT_NOTHING[%d]\n", temp->instType);
-        break;
-    case OPT_FLAG:
-        printf("instType: OPT_FLAG[%d]\n", temp->instType);
-        break;
-
-    case OPT_DEBUG:
-        printf("instType: OPT_DEBUG[%d]\n", temp->instType);
-        break;
-
-    case OPT_DISPLAY:
-        printf("instType: OPT_DISPLAY[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_RESULT:
-        printf("instType: OPT_DISPLAY_RESULT[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_PROGRESS:
-        printf("instType: OPT_DISPLAY_PROGRESS[%d]\n", temp->instType);
-        break;
-    case OPT_DISPLAY_FUNCNAME:
-        printf("instType: OPT_DISPLAY_FUNCNAME[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_VALUE:
-        printf("instType: OPT_SET_VALUE[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_VALUES:
-        printf("instType: OPT_SET_VALUES[%d]\n", temp->instType);
-        break;
-    case OPT_SET_VALUES_SERIES: //example) {-settingCategory=[value0],[value1],[value2],[value3]}
-        printf("instType: OPT_SET_VALUES_SERIES[%d]\n", temp->instType);
-        break;
-
-    case OPT_SET_LANGE: //set lange, example) {-settingCategory=[start]:[step]:[end]}
-        printf("instType: OPT_SET_LANGE[%d]\n", temp->instType);
-        break;
-    case OPT_SET_LANGE_SERIES:
-        printf("instType: OPT_SET_LANGE_SERIES[%d]\n", temp->instType);
-        break;
-
-    case OPT_STRING:
-        printf("instType: OPT_STRING[%d]\n", temp->instType);
-        break;
-    case OPT_COMPONENT: //move to sub category
-        printf("instType: OPT_COMPONENT[%d]\n", temp->instType);
-        break;
-
-    case STRUCT_END:
-        printf("instType: STRUCT_END[%d]\n", temp->instType);
-        break;
-
-    default:
-        printf("instType: UNKNOWN[?]\n");
-}
- */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 4 t h - S t a r t ************************************/
@@ -15224,9 +14996,9 @@ switch(temp->instType)
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_BM_algorithm_HD_display_option[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimHD_display,    FLAG_MASK_DISPLAY_RESULT,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimHD_display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimHD_display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result",  0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimHD_display, FLAG_MASK_DISPLAY_RESULT,  VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimHD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimHD_display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
@@ -15234,9 +15006,9 @@ switch(temp->instType)
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_BM_algorithm_SD_display_option[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimSD_display,    FLAG_MASK_DISPLAY_RESULT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimSD_display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_BM_SimSD_display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result",  0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimSD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimSD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimSD_display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
@@ -15250,7 +15022,7 @@ switch(temp->instType)
 /***** static struct struct_cmdLineOption bch_BM_algorithm_option[] start *****/
 static struct struct_cmdLineOption    bch_BM_algorithm_test_option[] =
 {
-    {"used",    0,    OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[FLAG_MASK_BCH_DECORDING_ALGORITHM_BM],            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_flag_bchBM_simulationMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
+    {"used", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[FLAG_MASK_BCH_DECORDING_ALGORITHM_BM], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_flag_bchBM_simulationMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15259,7 +15031,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_test_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption    bch_BM_algorithm_decoding_option[] =
 {
-    {"skip",    0,        OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],        FLAG_MASK_CODE_BCH_DEC_AL_SKIP,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"skip", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM], FLAG_MASK_CODE_BCH_DEC_AL_SKIP, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15267,7 +15039,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_decoding_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] =
 {
-    {"delta",    0,        OPT_FLAG,        0,    0,    &global_flag_debug_bmSim,        FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA,            VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"delta", 0, OPT_FLAG, 0, 0, &global_flag_debug_bmSim, FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15275,8 +15047,8 @@ static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] 
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_BM_algorithm_debug_option[] =
     {
-        {"sequence",    0,    OPT_FLAG,        0,    0,    &global_flag_debug_bmSim,    FLAG_MASK_DEBUG_BCH_BM_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"cal",            0,    OPT_COMPONENT,    0,    0,    NULL,                        0,                                    VALUE_TYPE_NONE,            bch_BM_algorithm_debug_calculate_option},
+        {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_bmSim, FLAG_MASK_DEBUG_BCH_BM_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"cal", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_debug_calculate_option},
 
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
@@ -15293,23 +15065,23 @@ static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] 
 /***** static struct struct_cmdLineOption bch_algorithm[] start *****/
 static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 {
-    {"used",            0,    OPT_FLAG,        0,    0,    &global_flag_bchDecAlgo_Enable,                                        FLAG_MASK_BCH_DECORDING_ALGORITHM_BM,            VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"used", 0, OPT_FLAG, 0, 0, &global_flag_bchDecAlgo_Enable, FLAG_MASK_BCH_DECORDING_ALGORITHM_BM, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"algorithm",        0,    OPT_COMPONENT,    0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],        FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    bch_BM_algorithm_test_option},
-    #ifndef RELEASE
-    {"display_HD",            0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_BM_algorithm_HD_display_option},
-    {"display_SD",            0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_BM_algorithm_SD_display_option},
-    #endif
+    {"algorithm", 0, OPT_COMPONENT, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, bch_BM_algorithm_test_option},
+        #ifndef RELEASE
+        {"display_HD", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_HD_display_option},
+        {"display_SD", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_SD_display_option},
+        #endif
 
-    {"hard_decision",    0,    OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],        FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,        VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
-    {"soft_decision",    0,    OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM],        FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,        VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
+    {"hard_decision", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM], FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
+    {"soft_decision", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM], FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 
 
-    {"decoding",        0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_BM_algorithm_decoding_option},
+    {"decoding", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_decoding_option},
 
-    #ifndef RELEASE
-    {"debug",            0,    OPT_DEBUG,        0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_BM_algorithm_debug_option},
-    #endif
+        #ifndef RELEASE
+        {"debug", 0, OPT_DEBUG, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_debug_option},
+        #endif
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15318,23 +15090,14 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 /************************************ bch_algorithm 2 n d - E n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_mSBS_algorithm_HD_display_option[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimHD_display,    FLAG_MASK_DISPLAY_RESULT,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimHD_display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimHD_display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimHD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimHD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimHD_display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
@@ -15342,16 +15105,16 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_mSBS_algorithm_SD_display_option[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimSD_display,    FLAG_MASK_DISPLAY_RESULT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimSD_display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_bch_mSBS_SimSD_display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimSD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimSD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimSD_display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption    bch_mSBS_algorithm_test_option[] =
 {
-    {"used",    0,    OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
+    {"used", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15359,7 +15122,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_test_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption    bch_mSBS_algorithm_decoding_option[] =
 {
-    {"skip",    0,        OPT_FLAG,        0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],        FLAG_MASK_CODE_BCH_DEC_AL_SKIP,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"skip", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_SKIP, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15367,7 +15130,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_decoding_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[] =
 {
-    {"delta",    0,        OPT_FLAG,        0,    0,    &global_flag_debug_mSBS_Sim,        FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA,            VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"delta", 0, OPT_FLAG, 0, 0, &global_flag_debug_mSBS_Sim, FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15375,8 +15138,8 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[
     #ifndef RELEASE
     static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_option[] =
     {
-        {"sequence",    0,    OPT_FLAG,        0,    0,    &global_flag_debug_mSBS_Sim,    FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"cal",            0,    OPT_COMPONENT,    0,    0,    NULL,                        0,                                    VALUE_TYPE_NONE,            bch_mSBS_algorithm_debug_calculate_option},
+        {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_mSBS_Sim, FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"cal", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_debug_calculate_option},
 
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
@@ -15386,38 +15149,27 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 {
-    {"used",        0,    OPT_FLAG,        0,    0,    &global_flag_bchDecAlgo_Enable,                                        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"used", 0, OPT_FLAG, 0, 0, &global_flag_bchDecAlgo_Enable, FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"algorithm",    0,    OPT_COMPONENT,    0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],    FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    bch_mSBS_algorithm_test_option},
-    #ifndef RELEASE
-    {"display_HD",        0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_mSBS_algorithm_HD_display_option},
-    {"display_SD",        0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_mSBS_algorithm_SD_display_option},
-    #endif
+    {"algorithm", 0, OPT_COMPONENT, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, bch_mSBS_algorithm_test_option},
+        #ifndef RELEASE
+        {"display_HD", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_HD_display_option},
+        {"display_SD", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_SD_display_option},
+        #endif
 
-    {"hard_decision",    0,    OPT_FLAG,    0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],    FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,        VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
-    {"soft_decision",    0,    OPT_FLAG,    0,    0,    &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS],    FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,        VALUE_TYPE_UNSIGNED_INT,    NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
+    {"hard_decision", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
+    {"soft_decision", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 
-    {"decoding",    0,    OPT_COMPONENT,    0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_mSBS_algorithm_decoding_option},
+    {"decoding", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_decoding_option},
 
-    #ifndef RELEASE
-    {"debug",        0,    OPT_DEBUG,        0,    0,    NULL,                                                                0,                                                VALUE_TYPE_NONE,            bch_mSBS_algorithm_debug_option},
-    #endif
+        #ifndef RELEASE
+        {"debug", 0, OPT_DEBUG, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_debug_option},
+        #endif
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-/******************************* bch_mSBS_algorithm_option *******************************/
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 1 s t - s t a r t ************************************/
@@ -15425,19 +15177,19 @@ static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 /***** static struct struct_cmdLineOption struct_cmdLineOption[] start *****/
 static struct struct_cmdLineOption bch_common[] =
 {
-    {"oversynd",        0,    OPT_SET_VALUE,    0,    0,    &global_bch_Soft_OverSyndLen,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"addlcm",            0,    OPT_SET_VALUE,    0,    0,    &global_addedRootToLCM_string,            0,    VALUE_TYPE_STRING,            NULL},
+    {"oversynd", 0, OPT_SET_VALUE, 0, 0, &global_bch_Soft_OverSyndLen, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"addlcm", 0, OPT_SET_VALUE, 0, 0, &global_addedRootToLCM_string, 0, VALUE_TYPE_STRING, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption bch_algorithm[] =
 {
-    {"used",        0,    OPT_FLAG,                0,    0,    &global_flag_simulationCode,    FLAG_MASK_CODE_BCH,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"common",    0,        OPT_COMPONENT,            0,    0,    NULL,                            0,                        VALUE_TYPE_NONE,            bch_common},
+    {"used", 0, OPT_FLAG, 0, 0, &global_flag_simulationCode, FLAG_MASK_CODE_BCH, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"common", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_common},
 
-    {"bm",            0,    OPT_COMPONENT,            0,    0,    NULL,                            0,                        VALUE_TYPE_NONE,            bch_BM_algorithm_option},
-    {"msbs_t3",            0,    OPT_COMPONENT,        0,    0,    NULL,                            0,                        VALUE_TYPE_NONE,            bch_mSBS_algorithm_option},
+    {"bm", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_option},
+    {"msbs_t3", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_option},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 /***** static struct struct_cmdLineOption struct_cmdLineOption[] end *****/
@@ -15446,26 +15198,26 @@ static struct struct_cmdLineOption bch_algorithm[] =
     #ifndef RELEASE
     static struct struct_cmdLineOption    usable_code_GaloisField_display_option[] =
     {
-        {"primepoly",        0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"field",            0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_FIELD,            VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"conjugacies",        0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"genpoly",            0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"sum_matrix",        0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"primepoly", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"field", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_FIELD, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"conjugacies", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"genpoly", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"sum_matrix", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_SUM_MATRIX, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-        {"fileio",            0,    OPT_FLAG,    0,    0,    &global_flag_gfCommon_display,    FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"fileio", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
 
 static struct struct_cmdLineOption usable_code_GaloisField[] =
 {
-    {"exp",                0,    OPT_SET_VALUE,    0,    0,    &global_GaloisFieldExponential,        0,                                VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"codelength",        0,    OPT_SET_VALUE,    0,    0,    &global_CodeLength,                    0,                                VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"limitcodelength",    0,    OPT_SET_VALUE,    0,    0,    &global_LimitCodeLength,            0,                                VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"exp", 0, OPT_SET_VALUE, 0, 0, &global_GaloisFieldExponential, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"codelength", 0, OPT_SET_VALUE, 0, 0, &global_CodeLength, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"limitcodelength", 0, OPT_SET_VALUE, 0, 0, &global_LimitCodeLength, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"makeall",        0,    OPT_FLAG,        0,    0,    &global_flag_gfCommon,                        FLAG_MASK_GF_COMMON_MAKE_GF_ALL,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"makeall", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon, FLAG_MASK_GF_COMMON_MAKE_GF_ALL, VALUE_TYPE_UNSIGNED_INT, NULL},
         #ifndef RELEASE
-    {"display",        0,    OPT_COMPONENT,    0,    0,    NULL,                                0,                                VALUE_TYPE_NONE,            usable_code_GaloisField_display_option},
+        {"display", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, usable_code_GaloisField_display_option},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15474,81 +15226,81 @@ static struct struct_cmdLineOption usable_code_GaloisField[] =
 
 static struct struct_cmdLineOption usaable_code_com_algorithm_option[] =
 {
-    {"errnum",    0,    OPT_SET_VALUE,    0,    0,    &global_ErrorNum,    0,                    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"errnum", 0, OPT_SET_VALUE, 0, 0, &global_ErrorNum, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption    usaable_code_com_HD_option[] =
 {
-    {"correctable",    0,    OPT_SET_VALUE,    0,    0,    &global_bch_hardCorrectable,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"correctable", 0, OPT_SET_VALUE, 0, 0, &global_bch_hardCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
         #ifndef RELEASE
-        {"display",        0,    OPT_COMPONENT,    0,    0,    NULL,                        0,    VALUE_TYPE_NONE,            bch_BM_algorithm_HD_display_option},
+        {"display", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_HD_display_option},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption usaable_code_com_HD_SD_option [] =
 {
-    {"hard",    0,    OPT_SET_VALUES_SERIES,    0,    0,    &global_bch_hardCorrectable,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"soft",    0,    OPT_SET_VALUES_SERIES,    0,    0,    &global_bch_SoftCorrectable,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"hard", 0, OPT_SET_VALUES_SERIES, 0, 0, &global_bch_hardCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"soft", 0, OPT_SET_VALUES_SERIES, 0, 0, &global_bch_SoftCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 
 static struct struct_cmdLineOption    usaable_code_com_SD_option[] =
 {
-    {"correctable",        0,    OPT_SET_VALUE,    0,    0,    &global_bch_SoftCorrectable,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"correctables",    0,    OPT_SET_VALUES,    0,    0,    NULL,                            0,    VALUE_TYPE_NONE,            usaable_code_com_HD_SD_option},
+    {"correctable", 0, OPT_SET_VALUE, 0, 0, &global_bch_SoftCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"correctables", 0, OPT_SET_VALUES, 0, 0, NULL, 0, VALUE_TYPE_NONE, usaable_code_com_HD_SD_option},
 
         #ifndef RELEASE
-        {"display",            0,    OPT_COMPONENT,    0,    0,    NULL,                        0,    VALUE_TYPE_NONE,            bch_BM_algorithm_SD_display_option},
+        {"display", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_SD_display_option},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption usable_code_common[] =
 {
-    {"gf",        0,    OPT_COMPONENT,        0,    0,    NULL,                            0,                                                VALUE_TYPE_NONE,            usable_code_GaloisField},
+    {"gf", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, usable_code_GaloisField},
 
     //added correctables
-    {"algorithm",    0,    OPT_COMPONENT,    0,    0,    &global_flag_sim_decodingMode,    FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM,    VALUE_TYPE_UNSIGNED_INT,    usaable_code_com_algorithm_option},
+    {"algorithm", 0, OPT_COMPONENT, 0, 0, &global_flag_sim_decodingMode, FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, usaable_code_com_algorithm_option},
 
-    {"hard",        0,    OPT_COMPONENT,    0,    0,    &global_flag_sim_decodingMode,    FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION,        VALUE_TYPE_UNSIGNED_INT,    usaable_code_com_HD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
-    {"soft",        0,    OPT_COMPONENT,    0,    0,    &global_flag_sim_decodingMode,    FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION,        VALUE_TYPE_UNSIGNED_INT,    usaable_code_com_SD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
+    {"hard", 0, OPT_COMPONENT, 0, 0, &global_flag_sim_decodingMode, FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION, VALUE_TYPE_UNSIGNED_INT, usaable_code_com_HD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)
+    {"soft", 0, OPT_COMPONENT, 0, 0, &global_flag_sim_decodingMode, FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION, VALUE_TYPE_UNSIGNED_INT, usaable_code_com_SD_option},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption cmdOpt_usable_code[] =
 {
-    {"bch",        0,        OPT_COMPONENT,    0,    0,    &global_flag_simulationCode,    FLAG_MASK_CODE_BCH,        VALUE_TYPE_UNSIGNED_INT,    bch_algorithm},
+    {"bch", 0, OPT_COMPONENT, 0, 0, &global_flag_simulationCode, FLAG_MASK_CODE_BCH, VALUE_TYPE_UNSIGNED_INT, bch_algorithm},
 
-    {"common",    0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                        VALUE_TYPE_NONE,            usable_code_common},
+    {"common", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, usable_code_common},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-/*BCH Command Tree end*/
+/* BCH Command Tree end */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
 {
-    {"start",    0,    OPT_SET_LANGE_SERIES,    0,    0,    &global_EbN0_Start_Value,    0,    VALUE_TYPE_DOUBLE,    NULL},
-    {"end",        0,    OPT_SET_LANGE_SERIES,    0,    0,    &global_EbN0_End_Value,        0,    VALUE_TYPE_DOUBLE,    NULL},
-    {"step",    0,    OPT_SET_LANGE_SERIES,    0,    0,    &global_EbN0_Step,            0,    VALUE_TYPE_DOUBLE,    NULL},
-    {"(not complete analysys argument of range, in partial processing)",    0,    OPT_NOTHING,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    NULL},
+    {"start", 0, OPT_SET_LANGE_SERIES, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"end", 0, OPT_SET_LANGE_SERIES, 0, 0, &global_EbN0_End_Value, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"step", 0, OPT_SET_LANGE_SERIES, 0, 0, &global_EbN0_Step, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"(not complete analysys argument of range, in partial processing)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
 {
-    {"range",    0,    OPT_SET_LANGE,    0,    0,    NULL,                        0,    VALUE_TYPE_NONE,    comm_channel_awgn_ebn0_range},
+    {"range", 0, OPT_SET_LANGE, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_ebn0_range},
 
-    {"start",    0,    OPT_SET_VALUE,    0,    0,    &global_EbN0_Start_Value,    0,    VALUE_TYPE_DOUBLE,    NULL},
-    {"end",        0,    OPT_SET_VALUE,    0,    0,    &global_EbN0_End_Value,        0,    VALUE_TYPE_DOUBLE,    NULL},
-    {"step",    0,    OPT_SET_VALUE,    0,    0,    &global_EbN0_Step,            0,    VALUE_TYPE_DOUBLE,    NULL},
+    {"start", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"end", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_End_Value, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"step", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Step, 0, VALUE_TYPE_DOUBLE, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15556,59 +15308,59 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
     #ifndef RELEASE
     static struct struct_cmdLineOption comm_channel_awgn_llr_debug[] =
     {
-        {"sequence",    0,        OPT_FLAG,        0,    0,    &global_flag_debug_awgnLLR,            FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"locator",        0,        OPT_FLAG,        0,    0,    &global_flag_debug_awgnLLR,            FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgnLLR, FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"locator", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgnLLR, FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
 {
-    {"none",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_same_llr_handling,    FLAG_CASE_SAME_LLR_HANDLING_NONE,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"not_sel", 0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_same_llr_handling,    FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"prior_0",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_same_llr_handling,    FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"prior_1",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_same_llr_handling,    FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"not_sel", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"prior_0", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"prior_1", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"(not sel option is not work on tree)",    0,    OPT_NOTHING,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    NULL},
+    {"(not sel option is not work on tree)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
 {
-    {"none",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_init_llr_mag_method,    FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,                VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"not_sel_max_llr", 0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_init_llr_mag_method,    FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,  VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_init_llr_mag_method, FLAG_CASE_INIT_LLR_MAG_METHOD_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"not_sel_max_llr", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_init_llr_mag_method, FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"(not sel max option is not work on tree)",    0,    OPT_NOTHING,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    NULL},
+    {"(not sel max option is not work on tree)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_grouping[] =
 {
-    {"enable",        0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"group_num",   0,    OPT_SET_VALUE,    0,    0,    &global_grouping_stream_nums,        0,                                            VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"enable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"group_num", 0, OPT_SET_VALUE, 0, 0, &global_grouping_stream_nums, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_tree[] =
 {
-    {"follow_min_path",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"probabilistic_choosen",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    //{"prior_HD_zero",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"(not complete a option of probabilistic_choosen)",    0,    OPT_NOTHING,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    NULL},
+    {"follow_min_path", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"probabilistic_choosen", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN, VALUE_TYPE_UNSIGNED_INT, NULL},
+    //{"prior_HD_zero", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"(not complete a option of probabilistic_choosen)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 {
-    {"pass_hd_1_dis",        0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_pass_hd_1,        FLAG_CASE_PASS_MAG0_HD_1_DISABLE,                VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"pass_hd_1_en",        0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_pass_hd_1,        FLAG_CASE_PASS_MAG0_HD_1_ENABLE,                 VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"pass_hd_1_dis", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_pass_hd_1, FLAG_CASE_PASS_MAG0_HD_1_DISABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"pass_hd_1_en", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_pass_hd_1, FLAG_CASE_PASS_MAG0_HD_1_ENABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"pri_same_LLR_mag",    0,    OPT_COMPONENT,    0,    0,    NULL,                                0,                                            VALUE_TYPE_NONE,            comm_ch_awgn_same_llr_mag_handling},
-    {"init_LLR_loc_val",    0,    OPT_COMPONENT,    0,    0,    NULL,                                0,                                            VALUE_TYPE_NONE,            comm_ch_awgn_init_llr_mag_method},
+    {"pri_same_LLR_mag", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_ch_awgn_same_llr_mag_handling},
+    {"init_LLR_loc_val", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_ch_awgn_init_llr_mag_method},
 
-    {"minimum",                0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"group_min_push_away",    0,    OPT_COMPONENT,    0,    0,    &global_flag_case_find_LLR_method,    FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,    VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_grouping},
-    {"tree",                0,    OPT_COMPONENT,    0,    0,    NULL,                                0,                                          VALUE_TYPE_NONE,            comm_ch_awgn_llr_mag_find_meth_tree},
+    {"minimum", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"group_min_push_away", 0, OPT_COMPONENT, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING, VALUE_TYPE_NONE, comm_ch_awgn_llr_mag_find_meth_grouping},
+    {"tree", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_ch_awgn_llr_mag_find_meth_tree},
 
     {"notice)pass_hd_1_is_not_tested_in_tree_structure",0,OPT_NOTHING,0,0,NULL,0,VALUE_TYPE_NONE,NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
@@ -15616,64 +15368,64 @@ static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_filter_set[] =
 {
-    {"print_filtering_range",    0,    OPT_FLAG,        0,    0,    &global_flag_llr_display,                FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"print_filtering_range", 0, OPT_FLAG, 0, 0, &global_flag_llr_display, FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"offset",                    0,    OPT_SET_VALUE,    0,    0,    &global_LLR_quantizFilter_offset,        0,    VALUE_TYPE_DOUBLE,            NULL},
-    {"step",                    0,    OPT_SET_VALUE,    0,    0,    &global_LLR_quantizFilter_step,            0,    VALUE_TYPE_DOUBLE,            NULL},
-    {"bitwidth",                0,    OPT_SET_VALUE,    0,    0,    &global_LLR_quantizFilter_bitWidth,        0,    VALUE_TYPE_UNSIGNED_CHAR,    NULL},
+    {"offset", 0, OPT_SET_VALUE, 0, 0, &global_LLR_quantizFilter_offset, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"step", 0, OPT_SET_VALUE, 0, 0, &global_LLR_quantizFilter_step, 0, VALUE_TYPE_DOUBLE, NULL},
+    {"bitwidth", 0, OPT_SET_VALUE, 0, 0, &global_LLR_quantizFilter_bitWidth, 0, VALUE_TYPE_UNSIGNED_CHAR, NULL},
         #ifndef RELEASE
-        {"debug",                0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_awgn_llr_debug},
+        {"debug", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_llr_debug},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_numberic_system[] =
 {
-    {"twos_complement",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_numberic_system,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"ones_complement",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_numberic_system,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"twos_complement", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_numberic_system, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"ones_complement", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_numberic_system, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_symmetry[] =
 {
-//    {"disable", 0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_mag_ones_complement_zero_handling,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE,         VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"enbale",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_mag_ones_complement_zero_handling,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    //{"disable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"enbale", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_duplicated[] =
 {
-//    {"disable", 0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_mag_ones_complement_zero_handling,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE,         VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"enbale",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_llr_mag_ones_complement_zero_handling,    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    //{"disable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"enbale", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_llr_quantization[] =
 {
-    {"filter_set",                0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_llr_quantiz_filter_set},
+    {"filter_set", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantiz_filter_set},
 
-    {"numberic_system",            0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_llr_quantiz_numberic_system},
-    {"zero_symmetry",            0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_llr_quantiz_zero_symmetry},
-    {"zero_duplicated",            0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_llr_quantiz_zero_duplicated},
+    {"numberic_system", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantiz_numberic_system},
+    {"zero_symmetry", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantiz_zero_symmetry},
+    {"zero_duplicated", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantiz_zero_duplicated},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn_llr[] =
 {
-    {"quantization",            0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_llr_quantization},
+    {"quantization", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantization},
 
-    {"min_val_finding_meth",    0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    comm_channel_awgn_llr_mag_finding_meth},
+    {"min_val_finding_meth", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_llr_mag_finding_meth},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
     static struct struct_cmdLineOption comm_channel_awgn_debug[] =
     {
-        {"sequence",    0,        OPT_FLAG,        0,    0,    &global_flag_debug_awgn,            FLAG_MASK_DEBUG_AWGN_SEQUENCE,                VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgn, FLAG_MASK_DEBUG_AWGN_SEQUENCE, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
@@ -15681,16 +15433,16 @@ static struct struct_cmdLineOption comm_channel_awgn_llr[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption comm_channel_awgn[] =
 {
-    {"used",                0,    OPT_FLAG,        0,    0,    &global_Channel_Mode,            FLAG_MASK_CHANNEL_MODE_AWGN,                        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"used", 0, OPT_FLAG, 0, 0, &global_Channel_Mode, FLAG_MASK_CHANNEL_MODE_AWGN, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"random_seed_disable",    0,    OPT_FLAG,        0,    0,    &global_flag_Channel_Mode_Func,    FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"bitrate_disable",        0,    OPT_FLAG,        0,    0,    &global_flag_Channel_Mode_Func,    FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"random_seed_disable", 0, OPT_FLAG, 0, 0, &global_flag_Channel_Mode_Func, FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"bitrate_disable", 0, OPT_FLAG, 0, 0, &global_flag_Channel_Mode_Func, FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"ebn0",                0,    OPT_COMPONENT,    0,    0,    NULL,                            0,                                                    VALUE_TYPE_NONE,            comm_channel_awgn_ebn0},
-    {"llr",                    0,    OPT_COMPONENT,    0,    0,    NULL,                            0,                                                    VALUE_TYPE_NONE,            comm_channel_awgn_llr},
+    {"ebn0", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_ebn0},
+    {"llr", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_llr},
 
         #ifndef RELEASE
-        {"debug",            0,    OPT_COMPONENT,    0,    0,    NULL,                            0,                                                    0,                            comm_channel_awgn_debug},
+        {"debug", 0, OPT_COMPONENT, 0, 0, NULL, 0, 0, comm_channel_awgn_debug},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15700,7 +15452,7 @@ static struct struct_cmdLineOption comm_channel_awgn[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_comm_channel[] =
 {
-    {"awgn",    0,    OPT_COMPONENT,    0,    0,    &global_Channel_Mode,    FLAG_MASK_CHANNEL_MODE_AWGN,    VALUE_TYPE_UNSIGNED_INT,    comm_channel_awgn},
+    {"awgn", 0, OPT_COMPONENT, 0, 0, &global_Channel_Mode, FLAG_MASK_CHANNEL_MODE_AWGN, VALUE_TYPE_UNSIGNED_INT, comm_channel_awgn},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15709,9 +15461,9 @@ static struct struct_cmdLineOption cmdOpt_comm_channel[] =
     #ifndef RELEASE
     static struct struct_cmdLineOption bpsk_modulation_display[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_Modulation_Mode_BPSK_Display,    FLAG_MASK_DISPLAY_RESULT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_Modulation_Mode_BPSK_Display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_Modulation_Mode_BPSK_Display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode_BPSK_Display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode_BPSK_Display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode_BPSK_Display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
 
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
@@ -15719,27 +15471,27 @@ static struct struct_cmdLineOption cmdOpt_comm_channel[] =
 
 static struct struct_cmdLineOption bpsk_modulation[] =
 {
-    {"used",    0,    OPT_FLAG,        0,    0,    &global_flag_Modulation_Mode,    DEFAULT_MODULATION_MODE,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"used", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode, DEFAULT_MODULATION_MODE, VALUE_TYPE_UNSIGNED_INT, NULL},
 
         #ifndef RELEASE
-        {"display",    0,    OPT_COMPONENT,    0,    0,    NULL,                            0,                            VALUE_TYPE_NONE,            bpsk_modulation_display},
+        {"display", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bpsk_modulation_display},
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 static struct struct_cmdLineOption cmdOpt_comm_modulation[] =
 {
-    {"bpsk",    0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    bpsk_modulation},
+    {"bpsk", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bpsk_modulation},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_sim_loop[] =
 {
-    // {"start",    0,    OPT_SET_VALUE,    0,    0,    &global_EbN0_Start_Value,    0,    VALUE_TYPE_DOUBLE,    NULL},
+    //{"start", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
 
-    {"min",        0,    OPT_SET_VALUE,    0,    0,    &global_minimum_loop,    0,    VALUE_TYPE_UNSIGNED_LONG,    NULL},
-    {"base",    0,    OPT_SET_VALUE,    0,    0,    &global_base_of_loop,    0,    VALUE_TYPE_UNSIGNED_LONG,    NULL},
-    {"rate",    0,    OPT_SET_VALUE,    0,    0,    &global_rate_of_loop,    0,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"min", 0, OPT_SET_VALUE, 0, 0, &global_minimum_loop, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
+    {"base", 0, OPT_SET_VALUE, 0, 0, &global_base_of_loop, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
+    {"rate", 0, OPT_SET_VALUE, 0, 0, &global_rate_of_loop, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15747,9 +15499,9 @@ static struct struct_cmdLineOption cmdOpt_sim_loop[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_simulation[] =
 {
-    // {"start",    0,    OPT_SET_VALUE,    0,    0,    &global_EbN0_Start_Value,    0,    VALUE_TYPE_DOUBLE,    NULL},
+    //{"start", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
 
-    {"loop",    0,    OPT_COMPONENT,    0,    0,    NULL,    0,    VALUE_TYPE_NONE,    cmdOpt_sim_loop},
+    {"loop", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_sim_loop},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15757,9 +15509,9 @@ static struct struct_cmdLineOption cmdOpt_simulation[] =
     #ifndef RELEASE
     static struct struct_cmdLineOption ber_actual_display[] =
     {
-        {"result",        0,    OPT_FLAG,    0,    0,    &global_flag_case_getBER_method_Display,    FLAG_MASK_DISPLAY_RESULT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"progress",    0,    OPT_FLAG,    0,    0,    &global_flag_case_getBER_method_Display,    FLAG_MASK_DISPLAY_PROGRESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"funcname",    0,    OPT_FLAG,    0,    0,    &global_flag_case_getBER_method_Display,    FLAG_MASK_DISPLAY_FUNCNAME,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"result", 0, OPT_FLAG, 0, 0, &global_flag_case_getBER_method_Display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"progress", 0, OPT_FLAG, 0, 0, &global_flag_case_getBER_method_Display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"funcname", 0, OPT_FLAG, 0, 0, &global_flag_case_getBER_method_Display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
 
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
@@ -15767,11 +15519,11 @@ static struct struct_cmdLineOption cmdOpt_simulation[] =
 
 static struct struct_cmdLineOption ber_theo_decision[] =
 {
-    // {"(not-support)",    0,    OPT_NOTHING,    0,    0,    NULL,                        0,                        VALUE_TYPE_NONE,            NULL},
-    {"allzero",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_choosingCodeWordMethod_inTheo,    FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"normal",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_choosingCodeWordMethod_inTheo,    FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"best",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_choosingCodeWordMethod_inTheo,    FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"worst",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_choosingCodeWordMethod_inTheo,    FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
+    {"allzero", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_choosingCodeWordMethod_inTheo, FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"normal", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_choosingCodeWordMethod_inTheo, FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"best", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_choosingCodeWordMethod_inTheo, FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"worst", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_choosingCodeWordMethod_inTheo, FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15780,22 +15532,22 @@ static struct struct_cmdLineOption ber_theo_decision[] =
 
 static struct struct_cmdLineOption ber_dec_decision_handing[] =
 {
-    {"none",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_dec_fail_handling,    FLAG_CASE_DEC_FAIL_HANDLING_NONE,                        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"retrans_no_err",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_dec_fail_handling,    FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"retrans",            0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_dec_fail_handling,    FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_dec_fail_handling, FLAG_CASE_DEC_FAIL_HANDLING_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"retrans_no_err", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_dec_fail_handling, FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"retrans", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_dec_fail_handling, FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
 static struct struct_cmdLineOption ber_dec_decision[] =
 {
-    // {"(not-support)",    0,    OPT_NOTHING,    0,    0,    NULL,                        0,                        VALUE_TYPE_NONE,            NULL},
-    {"used",                0,    OPT_FLAG_CASE,        0,    0,    &global_flag_case_selTP_before_dec,    FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
+    {"used", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_selTP_before_dec, FLAG_CASE_SEL_TP_BEFORE_DEC_ACT, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"handling",            0,    OPT_COMPONENT,        0,    0,    &global_flag_case_selTP_before_dec,    FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,    VALUE_TYPE_UNSIGNED_INT,    ber_dec_decision_handing},
+    {"handling", 0, OPT_COMPONENT, 0, 0, &global_flag_case_selTP_before_dec, FLAG_CASE_SEL_TP_BEFORE_DEC_ACT, VALUE_TYPE_UNSIGNED_INT, ber_dec_decision_handing},
 
         #ifndef RELEASE
-        {"display",    0,    OPT_COMPONENT,    0,    0,    NULL,                            0,                            VALUE_TYPE_NONE,            ber_actual_display},
+        {"display", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, ber_actual_display},
         #endif
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
@@ -15803,70 +15555,70 @@ static struct struct_cmdLineOption ber_dec_decision[] =
 
 static struct struct_cmdLineOption ber_options[] =
 {
-    // {"(not-support)",    0,    OPT_NOTHING,    0,    0,    NULL,                        0,                        VALUE_TYPE_NONE,            NULL},
-    {"theoretical_decision",        0,    OPT_COMPONENT,    0,    0,    NULL,                                0,                                    VALUE_TYPE_NONE,            ber_theo_decision},
+    //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
+    {"theoretical_decision", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, ber_theo_decision},
 
-    {"decoder_decision",        0,    OPT_COMPONENT,        0,    0,    &global_flag_case_selTP_before_dec,    FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,    VALUE_TYPE_UNSIGNED_INT,    ber_dec_decision},
+    {"decoder_decision", 0, OPT_COMPONENT, 0, 0, &global_flag_case_selTP_before_dec, FLAG_CASE_SEL_TP_BEFORE_DEC_ACT, VALUE_TYPE_UNSIGNED_INT, ber_dec_decision},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 static struct struct_cmdLineOption cmdOpt_get_thing[] =
 {
-    // {"(not-support)",    0,    OPT_NOTHING,    0,    0,    NULL,                        0,                        VALUE_TYPE_NONE,            NULL},
+    //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
 
-    // {"ber",                0,    OPT_FLAG,        0,    0,    &global_flag_berOptions,    FLAG_MASK_TEST_GET_BER,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"ber",                0,    OPT_COMPONENT,        0,    0,    &global_flag_berOptions,    FLAG_MASK_TEST_GET_BER,    VALUE_TYPE_UNSIGNED_INT,    ber_options},
+    //{"ber", 0, OPT_FLAG, 0, 0, &global_flag_berOptions, FLAG_MASK_TEST_GET_BER, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"ber", 0, OPT_COMPONENT, 0, 0, &global_flag_berOptions, FLAG_MASK_TEST_GET_BER, VALUE_TYPE_UNSIGNED_INT, ber_options},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption pattern_io[] =
 {
-    {"infomation",              0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_MES,               VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"encoding",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output,    FLAG_MASK_FILE_IO_HD_ENCODING_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"received",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output,    FLAG_MASK_FILE_IO_HD_RECEIVED_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"corrected",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output,    FLAG_MASK_FILE_IO_HD_CORRECTED_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"received", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_RECEIVED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"corrected", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_CORRECTED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"quantized_LLR",           0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR,      VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"quantized_LLR_magnitude", 0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag,  VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"quantized_LLR", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"quantized_LLR_magnitude", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"all",                     0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output,    -1,                                     VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"all", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output, -1, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption pattern_io_log[] =
 {
-    {"infomation",              0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_MES,               VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"encoding",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_log,    FLAG_MASK_FILE_IO_HD_ENCODING_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"received",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_log,    FLAG_MASK_FILE_IO_HD_RECEIVED_MES,      VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"corrected",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_log,    FLAG_MASK_FILE_IO_HD_CORRECTED_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"received", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_RECEIVED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"corrected", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_CORRECTED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"quantized_LLR",           0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_log,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR,      VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"quantized_LLR_magnitude", 0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_log,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag,  VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"quantized_LLR", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_log, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"quantized_LLR_magnitude", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_log, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"all",                     0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_log,    -1,                                     VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"all", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_log, -1, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption pattern_io_verilog[] =
 {
-    {"infomation",              0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_MES,               VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"encoding",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_ENCODING_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"received",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_RECEIVED_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"corrected",                0,        OPT_FLAG,    0,    0,    &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_CORRECTED_MES,        VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"received", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_RECEIVED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"corrected", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_CORRECTED_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"quantized_LLR",           0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_verilog,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR,      VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"quantized_LLR_magnitude", 0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_verilog,    FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag,  VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"quantized_LLR", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_verilog, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"quantized_LLR_magnitude", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_verilog, FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"all",                     0,        OPT_FLAG,    0,    0,    &global_flag_file_io_sd_pattern_output_verilog,    -1,                                     VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"all", 0, OPT_FLAG, 0, 0, &global_flag_file_io_sd_pattern_output_verilog, -1, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_fileIO[] =
 {
-    {"testFlag",        0,        OPT_FLAG,        0,    0,    &global_flag_fileInputOutput,    FLAG_MASK_FILE_IO,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"pattern",         0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                  VALUE_TYPE_NONE,            pattern_io},
-    {"pattern_log",     0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                  VALUE_TYPE_NONE,            pattern_io_log},
-    {"pattern_verilog", 0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                  VALUE_TYPE_NONE,            pattern_io_verilog},
+    {"testFlag", 0, OPT_FLAG, 0, 0, &global_flag_fileInputOutput, FLAG_MASK_FILE_IO, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"pattern", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, pattern_io},
+    {"pattern_log", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, pattern_io_log},
+    {"pattern_verilog", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, pattern_io_verilog},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15874,54 +15626,53 @@ static struct struct_cmdLineOption cmdOpt_fileIO[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_static_msg[] =
 {
-    {"zero_stream_ratio",        0,    OPT_SET_VALUE,    0,    0,    &tmp_testMode_loops_zero_bit_ratio,    0,    VALUE_TYPE_DOUBLE_RATIO_LIMIT,    NULL},
+    {"zero_stream_ratio", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_loops_zero_bit_ratio, 0, VALUE_TYPE_DOUBLE_RATIO_LIMIT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_msg_gen_meth[] =
 {
-    {"static",  0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_testMode_msg_gen_method,   ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC,    VALUE_TYPE_UNSIGNED_INT,    cmdOpt_testMode_err_distri_llr_static_msg},
-    {"rand",    0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_testMode_msg_gen_method,   ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND,      VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"static", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_msg_gen_method, ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode_err_distri_llr_static_msg},
+    {"rand", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_msg_gen_method, ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode_err_distri_decoding_meth[] =
 {
-    {"hard",  0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_testMode_decoding_method,   ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_HD,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"soft",  0,    OPT_FLAG_CASE,    0,    0,    &global_flag_case_testMode_decoding_method,   ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD,    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"hard", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_decoding_method, ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_HD, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"soft", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_decoding_method, ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode_err_distribution[] =
 {
 
-    {"msg_gen_method",  0,    OPT_COMPONENT,    0,    0,    NULL,                   0,  VALUE_TYPE_NONE,            cmdOpt_testMode_err_distri_llr_msg_gen_meth},
-    {"decoding_method", 0,    OPT_COMPONENT,    0,    0,    NULL,                   0,  VALUE_TYPE_NONE,            cmdOpt_testMode_err_distri_decoding_meth},
-    {"tot_loops",        0,    OPT_SET_VALUE,    0,    0,    &tmp_testMode_loops,    0,    VALUE_TYPE_UNSIGNED_LONG,    NULL},
+    {"msg_gen_method", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_testMode_err_distri_llr_msg_gen_meth},
+    {"decoding_method", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_testMode_err_distri_decoding_meth},
+    {"tot_loops", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_loops, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode_prob_distribution[] =
 {
 
-    {"group_num",        0,    OPT_SET_VALUE,    0,    0,    &tmp_testMode_prob_distribution_group_nums, 0,    VALUE_TYPE_UNSIGNED_LONG,    NULL},
+    {"group_num", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_prob_distribution_group_nums, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
 
-    {"politics_same_val", 0,    OPT_FLAG_CASE,    0,    0,    &tmp_testMode_prob_min_choosen_politics,   ENUM_CASE_TEST_MODE_PROB_MIN_CHOOSE_SAME_VAL,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-    {"politics_low_val", 0,        OPT_FLAG_CASE,    0,    0,    &tmp_testMode_prob_min_choosen_politics,   ENUM_CASE_TEST_MODE_PROB_MIN_CHOOSE_LOW_VAL,     VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"politics_same_val", 0, OPT_FLAG_CASE, 0, 0, &tmp_testMode_prob_min_choosen_politics, ENUM_CASE_TEST_MODE_PROB_MIN_CHOOSE_SAME_VAL, VALUE_TYPE_UNSIGNED_INT, NULL},
+    {"politics_low_val", 0, OPT_FLAG_CASE, 0, 0, &tmp_testMode_prob_min_choosen_politics, ENUM_CASE_TEST_MODE_PROB_MIN_CHOOSE_LOW_VAL, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"tot_loops",        0,    OPT_SET_VALUE,    0,    0,    &tmp_testMode_loops,    0,    VALUE_TYPE_UNSIGNED_LONG,    NULL},
+    {"tot_loops", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_loops, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static struct struct_cmdLineOption cmdOpt_testMode[] =
 {
+    {"errDistribution_EbN0", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_sim_testOpt, FLAG_CASE_SIM_TEST_MODE_GET_LLR_MAG_AVR_BELONG_EBN0, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode_err_distribution},
 
-    {"errDistribution_EbN0", 0,        OPT_FLAG_CASE,    0,    0,    &global_flag_case_sim_testOpt,   FLAG_CASE_SIM_TEST_MODE_GET_LLR_MAG_AVR_BELONG_EBN0,       VALUE_TYPE_UNSIGNED_INT,    cmdOpt_testMode_err_distribution},
+    {"prob_distribution", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_sim_testOpt, FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode_prob_distribution},
 
-    {"prob_distribution",   0,        OPT_FLAG_CASE,    0,    0,    &global_flag_case_sim_testOpt,   FLAG_CASE_SIM_TEST_MODE_GET_PROBABILITY_OF_MINIMUM_VAL,    VALUE_TYPE_UNSIGNED_INT,    cmdOpt_testMode_prob_distribution},
-
-    {"show_loop_cnt",       0,        OPT_FLAG_CASE,    0,    0,    &global_flag_case_sim_testOpt,   FLAG_CASE_SIM_TEST_MODE_SHOW_LOOP_CNT,                     VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"show_loop_cnt", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_sim_testOpt, FLAG_CASE_SIM_TEST_MODE_SHOW_LOOP_CNT, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -15934,33 +15685,33 @@ static struct struct_cmdLineOption struct_cmdLineOption[] =
 {
     //General cmd options
         #ifndef RELEASE
-        {"log",            'l',    OPT_FLAG,    0,    0,    &global_flag_cmdOption,            FLAG_MASK_PRINTF_LOG,                    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"calc",        'c',    OPT_FLAG,    0,    0,    &global_flag_cmdOption,            FLAG_MASK_PRINTF_CALCULATE_PROCESS,        VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"memchk",        'm',    OPT_FLAG,    0,    0,    &global_flag_cmdOption,            FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS,    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"warning",        'w',    OPT_FLAG,    0,    0,    &global_flag_cmdOption,            FLAG_MASK_PRINTF_WARNING_MES,            VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"log", 'l', OPT_FLAG, 0, 0, &global_flag_cmdOption, FLAG_MASK_PRINTF_LOG, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"calc", 'c', OPT_FLAG, 0, 0, &global_flag_cmdOption, FLAG_MASK_PRINTF_CALCULATE_PROCESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"memchk", 'm', OPT_FLAG, 0, 0, &global_flag_cmdOption, FLAG_MASK_PRINTF_MEMORY_CHECK_PROCESS, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"warning", 'w', OPT_FLAG, 0, 0, &global_flag_cmdOption, FLAG_MASK_PRINTF_WARNING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
         #endif
 
         #ifndef RELEASE
-        {"debug",        'd',    OPT_FLAG,    0,    0,    &global_flag_debug_display,        FLAG_MASK_DEBUG_DEBUG,                    VALUE_TYPE_UNSIGNED_INT,    NULL},
-        {"debug_d_func",    0,    OPT_FLAG,    0,    0,    &global_flag_debug_display,        FLAG_MASK_DISPLAY_FUNCNAME,                VALUE_TYPE_UNSIGNED_INT,    NULL},
+        {"debug", 'd', OPT_FLAG, 0, 0, &global_flag_debug_display, FLAG_MASK_DEBUG_DEBUG, VALUE_TYPE_UNSIGNED_INT, NULL},
+        {"debug_d_func", 0, OPT_FLAG, 0, 0, &global_flag_debug_display, FLAG_MASK_DISPLAY_FUNCNAME, VALUE_TYPE_UNSIGNED_INT, NULL},
         #endif
 
-    {"help",        'h',    OPT_FLAG,        0,    0,    &global_flag_cmdSystemHold,        FLAG_MASK_HOLD_HELP,                    VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"help", 'h', OPT_FLAG, 0, 0, &global_flag_cmdSystemHold, FLAG_MASK_HOLD_HELP, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"force",        'f',    OPT_FLAG,        0,    0,    &global_flag_cmdSystemUnhold,    FLAG_MASK_SYSTEM_UNHOLD_FORCED,            VALUE_TYPE_UNSIGNED_INT,    NULL},
+    {"force", 'f', OPT_FLAG, 0, 0, &global_flag_cmdSystemUnhold, FLAG_MASK_SYSTEM_UNHOLD_FORCED, VALUE_TYPE_UNSIGNED_INT, NULL},
 
-    {"code",        0,        OPT_COMPONENT,    0,    0,    &global_flag_sim_workingMode,    FLAG_MASK_SIM_DECOING,                    VALUE_TYPE_UNSIGNED_INT,    cmdOpt_usable_code},
+    {"code", 0, OPT_COMPONENT, 0, 0, &global_flag_sim_workingMode, FLAG_MASK_SIM_DECOING, VALUE_TYPE_UNSIGNED_INT, cmdOpt_usable_code},
 
-    {"modulation",    0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                                        VALUE_TYPE_NONE,            cmdOpt_comm_modulation},
-    {"channel",        0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                                        VALUE_TYPE_NONE,            cmdOpt_comm_channel},
-    {"simulation",    0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                                        VALUE_TYPE_NONE,            cmdOpt_simulation},
+    {"modulation", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_comm_modulation},
+    {"channel", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_comm_channel},
+    {"simulation", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_simulation},
 
 
-    {"get",            0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                                        VALUE_TYPE_NONE,            cmdOpt_get_thing},
+    {"get", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_get_thing},
 
-    {"file",        0,        OPT_COMPONENT,    0,    0,    NULL,                            0,                                        VALUE_TYPE_NONE,            cmdOpt_fileIO},
+    {"file", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_fileIO},
 
-    {"test_mode",    0,        OPT_COMPONENT,    0,    0,    &global_flag_sim_workingMode,    FLAG_MASK_SIM_TEST,                        VALUE_TYPE_UNSIGNED_INT,    cmdOpt_testMode},
+    {"test_mode", 0, OPT_COMPONENT, 0, 0, &global_flag_sim_workingMode, FLAG_MASK_SIM_TEST, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
@@ -16135,36 +15886,32 @@ int instSetFlag(struct struct_cmdLineOption *p)
     return -1;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// void *instructionCreateBufferValue(enum enum_list_valueType valueType)
-// {
-    // switch(valueType)
-    // {
-        // case VALUE_TYPE_CHAR:
-            // return malloc(sizeof(char));
-        // case VALUE_TYPE_UNSIGNED_CHAR:
-            // return malloc(sizeof(unsigned char));
-
-        // case VALUE_TYPE_INT:
-            // return malloc(sizeof(int));
-        // case VALUE_TYPE_UNSIGNED_INT:
-            // return malloc(sizeof(unsigned int));
-
-        // case VALUE_TYPE_LONG:
-            // return malloc(sizeof(long));
-        // case VALUE_TYPE_UNSIGNED_LONG:
-            // return malloc(sizeof(unsigned long));
-
-        // case VALUE_TYPE_FLOAT:
-            // return malloc(sizeof(float));
-        // case VALUE_TYPE_DOUBLE:
-            // return malloc(sizeof(double));
-    // }
-// }
+//void *instructionCreateBufferValue(enum enum_list_valueType valueType)
+//{
+//    switch(valueType)
+//    {
+//        case VALUE_TYPE_CHAR:
+//            return malloc(sizeof(char));
+//        case VALUE_TYPE_UNSIGNED_CHAR:
+//            return malloc(sizeof(unsigned char));
+//
+//        case VALUE_TYPE_INT:
+//            return malloc(sizeof(int));
+//        case VALUE_TYPE_UNSIGNED_INT:
+//            return malloc(sizeof(unsigned int));
+//
+//        case VALUE_TYPE_LONG:
+//            return malloc(sizeof(long));
+//        case VALUE_TYPE_UNSIGNED_LONG:
+//            return malloc(sizeof(unsigned long));
+//
+//        case VALUE_TYPE_FLOAT:
+//            return malloc(sizeof(float));
+//        case VALUE_TYPE_DOUBLE:
+//            return malloc(sizeof(double));
+//    }
+//}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-double convertStringToDouble(char *string)
-unsigned int convertStringToUnsignedInt(char *string)
-*/
 char instSetValue(struct struct_cmdLineOption *p, char *valueString)
 {
     unsigned int tmp;
@@ -16191,9 +15938,9 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
                 break;
 
             case VALUE_TYPE_UNSIGNED_CHAR:
-                // warningMes;
-                // printf("VALUE_TYPE_UNSIGNED_CHAR not support yet.\n");
-                // (*((unsigned char*)p->value))=0;
+                //warningMes;
+                //printf("VALUE_TYPE_UNSIGNED_CHAR not support yet.\n");
+                //(*((unsigned char*)p->value))=0;
                 (*((unsigned char*)p->value))=convertStringToUnsignedChar(valueString);
                 break;
 
@@ -16215,7 +15962,7 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
 
             case VALUE_TYPE_UNSIGNED_LONG:
                 warningMes;
-                // printf("VALUE_TYPE_UNSIGNED_LONG not support yet.\n");
+                //printf("VALUE_TYPE_UNSIGNED_LONG not support yet.\n");
                 (*((unsigned long*)p->value))=convertStringToUnsignedLong(valueString);
                 break;
 
@@ -16339,7 +16086,7 @@ char *instSetValues(struct struct_cmdLineOption *p, char *str)
             (*(argBuf+argBufLength)) = 0;
 
             /* set value */
-                                    // printf("\t\t\tinstSetValues) long name is \"%s\" argBuf = %s\n", (temp->longName?temp->longName:"[unknown long name]"), argBuf);
+                                    //printf("\t\t\tinstSetValues) long name is \"%s\" argBuf = %s\n", (temp->longName?temp->longName:"[unknown long name]"), argBuf);
             if(instSetValue(temp, argBuf))
             {
                 return str;
@@ -16393,7 +16140,7 @@ struct struct_cmdLineOption *temp = p;
     switch(temp->instType)
     {
         case OPT_NOTHING:
-                                                // printf("instType: OPT_NOTHING[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_NOTHING[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
         case OPT_FLAG:
         case OPT_FLAG_CASE:
@@ -16403,33 +16150,33 @@ struct struct_cmdLineOption *temp = p;
                 printf("\"%s\" instruction set wrong.\n", temp->longName?temp->longName:"[empty long name]");
                 return -1;
             }
-                                                // printf("instType: OPT_FLAG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_FLAG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case OPT_DEBUG:
-                                                // printf("instType: OPT_DEBUG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_DEBUG[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case OPT_SET_VALUE:
-                                                // printf("instType: OPT_SET_VALUE[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_SET_VALUE[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case OPT_SET_VALUES:
-                                                // printf("instType: OPT_SET_VALUES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_SET_VALUES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
         case OPT_SET_VALUES_SERIES: //example) {-settingCategory=[value0],[value1],[value2],[value3]}
-                                                // printf("instType: OPT_SET_VALUES_SERIES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_SET_VALUES_SERIES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case OPT_SET_LANGE: //set lange, example) {-settingCategory=[start]:[step]:[end]}
-                                                // printf("instType: OPT_SET_LANGE[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_SET_LANGE[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
         case OPT_SET_LANGE_SERIES:
-                                                // printf("instType: OPT_SET_LANGE_SERIES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_SET_LANGE_SERIES[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case OPT_STRING:
-                                                // printf("instType: OPT_STRING[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_STRING[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
         case OPT_COMPONENT:
             if(instSetFlag(temp))
@@ -16438,11 +16185,11 @@ struct struct_cmdLineOption *temp = p;
                 printf("\"%s\" instruction set wrong.\n", temp->longName?temp->longName:"[empty long name]");
                 return -1;
             }
-                                                // printf("instType: OPT_COMPONENT[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: OPT_COMPONENT[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         case STRUCT_END:
-                                                // printf("instType: STRUCT_END[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
+                                                //printf("instType: STRUCT_END[%d], name: \"%s\"\n", temp->instType, temp->longName?temp->longName:"[unknown]");
             break;
 
         default:
@@ -16463,7 +16210,7 @@ struct struct_cmdLineOption *instFindSameLongNameInInstSet(struct struct_cmdLine
         {
             if(!strcmp(temp->longName, targetString))
             {
-                                            // printf("A option \"%s\" apply.\n", temp->longName);
+                                            //printf("A option \"%s\" apply.\n", temp->longName);
                 return temp;
             }
         }
@@ -16501,15 +16248,15 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
             case '-'://find same option in struct_cmdLineOption Set
             {
                 arg++;
-                                                            // debugMes;    printf("\t\tbefore arg : \"%s\".",arg);
+                                                            //debugMes;    printf("\t\tbefore arg : \"%s\".",arg);
 
                 strncpy(argBuf, arg, (argBufLength=strcspn(arg, cmdOtionKeyWords)));
                 arg+=argBufLength;
 
                 (*(argBuf+argBufLength)) = 0;
 
-                                                            // printf("\t\targBuf : \"%s\"", argBuf);
-                                                            // printf("\t\tafter arg : \"%s\".\n",arg);
+                                                            //printf("\t\targBuf : \"%s\"", argBuf);
+                                                            //printf("\t\tafter arg : \"%s\".\n",arg);
 
                 if(!(temp = instFindSameLongNameInInstSet(p, argBuf))) return str;
                 /* Find same long name, do something start*/
@@ -16518,8 +16265,8 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
                 switch(*arg)//enter sub struct_cmdLineOption Set
                 {
-//                    case '{':
-//                        arg++;
+                    //case '{':
+                    //    arg++;
                     case '-':
                         if(temp->cmdAddedOption)
                         {
@@ -16553,9 +16300,9 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
             case ','://arg ++ and then find others cmd options in present struct_cmdLineOption Set
             {
-                                                            // printf("find combination word.\n");
+                                                            //printf("find combination word.\n");
                 arg++;
-                                                            // printf("\t\targ : \"%s\"\n", arg);
+                                                            //printf("\t\targ : \"%s\"\n", arg);
                 break;
             }
 
@@ -16586,8 +16333,8 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
                             arg+=argBufLength;
 
                             (*(argBuf+argBufLength)) = 0;
-                                                                        // printf("argBuf : '%s'\n", argBuf);
-                                                                        // printf("arg : %s\r\n", arg);
+                                                                        //printf("argBuf : '%s'\n", argBuf);
+                                                                        //printf("arg : %s\r\n", arg);
 
                             /* set value */
                             if(instSetValue(temp, argBuf))
@@ -16623,7 +16370,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
                             arg+=argBufLength;
 
                             (*(argBuf+argBufLength)) = 0;
-                                                                    // printf("\t\t\targBuf : '%s'\n", argBuf);
+                                                                    //printf("\t\t\targBuf : '%s'\n", argBuf);
                             /* set value */
                             if(instSetValue(temp, argBuf))
                             {
@@ -16638,7 +16385,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
                     default:
                         return str;
                 }
-                                // printf("set value parts.\n");
+                                //printf("set value parts.\n");
                 break;
             }
 
@@ -16689,14 +16436,14 @@ int instMainProcessing(struct struct_cmdLineOption *p, char *str)
     else//string
     {
         arg++;
-                                        // printf("\tinitial arg : \"%s\"\n", arg);
+                                        //printf("\tinitial arg : \"%s\"\n", arg);
         if(arg != (argBuffer=instProcessLongNameCmdOption(p, arg, 0)))
         {
             infoMes;
             printf("\"%s\" apply.\n", str);
             return 0;
         }
-                        // printf("arg : 0x%000000008x , argBuffer : 0x%000000008x\n", arg, argBuffer);
+                        //printf("arg : 0x%000000008x , argBuffer : 0x%000000008x\n", arg, argBuffer);
     }
 
     errorMes;
@@ -16902,9 +16649,9 @@ void GLOBAL_flag_proc()
     printf("\r\n");
 
     /*
-            global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM;
-            global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
-            global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
+    //        global_flag_sim_decodingMode |= FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM;
+    //        global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION;
+    //        global_flag_sim_decodingMode &= ~FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION;
     */
     printf("/*****************************************************************/\r\n");
 
@@ -17029,7 +16776,7 @@ int main(int argc, char **argv)
 
 
     double main_com_EbN0 = 0.0f;
-    // double main_indi_BER = 0.0f;
+    //double main_indi_BER = 0.0f;
     double *main_indi_HD_BER = NULL;
     double *main_indi_BER = NULL;
     double main_com_channel_BER = 0.0f;
@@ -17038,8 +16785,8 @@ int main(int argc, char **argv)
 
     struct_encodingComponentInGF *main_encodingComponentInGF=NULL;
 
-    // struct_HD_BM_algorithmComponent *main_indi_HD_decordComponents=NULL;
-    // struct_HD_BM_algorithmComponent ***main_indi_SD_list_of_decordingComponents=NULL;
+    //struct_HD_BM_algorithmComponent *main_indi_HD_decordComponents=NULL;
+    //struct_HD_BM_algorithmComponent ***main_indi_SD_list_of_decordingComponents=NULL;
     /* decoding components list creating */
     struct_generalForm_algorithmComponent **main_indi_HD_decordComponents=NULL;
     struct_generalForm_algorithmComponent ****main_indi_SD_list_of_decordingComponents=NULL;
@@ -17049,11 +16796,11 @@ int main(int argc, char **argv)
 
     char *main_com_randInfoBitsStream=NULL;
 
-    // unsigned int main_count=0;
+    //unsigned int main_count=0;
     unsigned int main_com_errNums_inDecodingAlgorithmTest=0;
     unsigned long main_com_loopCount=0;
     unsigned long main_com_totalSamlingLoop=0;
-    // unsigned int main_shiftedError=0;
+    //unsigned int main_shiftedError=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////// Temporary file input output variables ///////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -17081,7 +16828,7 @@ int main(int argc, char **argv)
 
     FILE*   fileio_simEnv;
 
-    char *dirio_Name_home_path = NULL;  // Get User home path
+    char *dirio_Name_home_path = NULL;// Get User home path
     char dirio_Name_simEnv_dir[] = "bch-sim_env";
     char dirio_Name_common_dir[] = "common";
 
@@ -17092,7 +16839,7 @@ int main(int argc, char **argv)
     char fileio_Name_GaloisField_common[] = "GaloisField";
     char fileio_Name_Conjugate_common[] = "Conjugate";
     char fileio_Name_SumMaxrix_common[] = "SumMatrix";
-    // char fileio_Name_GF_confugate[] = "conju";
+    //char fileio_Name_GF_confugate[] = "conju";
     char fileio_Name_GF_infoBuf[256]={0};
     char fileio_Path_common[512]={0};
     char fileio_Path_Target[768]={0};
@@ -17195,11 +16942,13 @@ int main(int argc, char **argv)
     fileio_indi_algorithm_coding_err_bit_cnt = (FILE**)malloc(sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
     memset(fileio_indi_algorithm_coding_err_bit_cnt, 0, sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
 //////////////////////////////////////////////////////////////////////////////////
-    /*To convert dataStream to powerFormPolynomial, define variable structure start*/
-/*     struct_variableSetConvertBitStreamToPowerForm loadStream;
-    struct_variableSetConvertBitStreamToPowerForm noisedStream;
-    struct_variableSetConvertBitStreamToPowerForm unloadStream; */
-    /*To convert dataStream to powerFormPolynomial, define variable structure end*/
+    /* To convert dataStream to powerFormPolynomial, define variable structure start */
+    /*
+    //struct_variableSetConvertBitStreamToPowerForm loadStream;
+    //struct_variableSetConvertBitStreamToPowerForm noisedStream;
+    //struct_variableSetConvertBitStreamToPowerForm unloadStream;
+    */
+    /* To convert dataStream to powerFormPolynomial, define variable structure end */
 #ifndef RELEASE
     infoMes; printf("COMPILING DEBUG MODE\n");
 #else
@@ -17250,7 +16999,7 @@ int main(int argc, char **argv)
         date_simulation_date->tm_sec
     );
 
-/* make directory(sim result info save only) start */
+    /* make directory(sim result info save only) start */
     tmp_dirio_var = opendir(fileio_Name_Output_RootPath);
     if(!tmp_dirio_var)
     {
@@ -17258,8 +17007,8 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_Output_RootPath);
     }
     closedir(tmp_dirio_var);
-/* make directory(sim result info save only) end */
-/* make REPORT directory start */
+    /* make directory(sim result info save only) end */
+    /* make REPORT directory start */
     sprintf(fileio_Name_Report_Path, "%s/REPORT", fileio_Name_Output_RootPath);
     tmp_dirio_var = opendir(fileio_Name_Report_Path);
     if(!tmp_dirio_var)
@@ -17268,8 +17017,8 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_Report_Path);
     }
     closedir(tmp_dirio_var);
-/* make REPORT directory end */
-/* make PATTERN directory start */
+    /* make REPORT directory end */
+    /* make PATTERN directory start */
     sprintf(fileio_Name_Pattern_Path, "%s/PATTERN", fileio_Name_Output_RootPath);
     tmp_dirio_var = opendir(fileio_Name_Pattern_Path);
     if(!tmp_dirio_var)
@@ -17287,11 +17036,9 @@ int main(int argc, char **argv)
         tmp_dirio_var = opendir(fileio_Name_PatternLog_Path);
     }
     closedir(tmp_dirio_var);
+    /* make PATTERN directory end */
 
-
-/* make PATTERN directory end */
-
-/* make directory common used start */
+    /* make directory common used start */
     /* get home directory */
     dirio_Name_home_path = getenv("HOME");
     /* dirio_Name_simEnv_root_path and dirio_Name_simEnv_dir */
@@ -17340,9 +17087,8 @@ int main(int argc, char **argv)
     }
     closedir(tmp_dirio_var);
 
-
-/* make directory common used end */
-/* make directory(galois fields info save only) start */
+    /* make directory common used end */
+    /* make directory(galois fields info save only) start */
     strncpy(fileio_Path_TargetTmp, fileio_Path_Target, strlen(fileio_Path_Target));
     sprintf(fileio_Path_Target, "%s/%s", fileio_Path_TargetTmp, dirio_Name_GF_info);
     tmp_dirio_var = opendir((char*)fileio_Path_Target);
@@ -17358,17 +17104,17 @@ int main(int argc, char **argv)
         }
     }
     closedir(tmp_dirio_var);
-/* make directory(galois fields info save only) end */
-/******************************************************************/
-/******************************************************************/
-/******************************************************************/
+    /* make directory(galois fields info save only) end */
+    /******************************************************************/
+    /******************************************************************/
+    /******************************************************************/
 
 
-/********************************************************************/
-/********** setting variables about global variables start **********/
-/********************************************************************/
-    /*Exception process*/
-    /*code length is can't exceed GF length.*/
+    /********************************************************************/
+    /********** setting variables about global variables start **********/
+    /********************************************************************/
+    /* Exception process */
+    /* code length is can't exceed GF length. */
     if(!( ( global_MaximumCodeLength = ((unsigned int)pow(2.0,(double)global_GaloisFieldExponential)) ) > global_CodeLength))
     {
         global_MaximumCodeLength -=1;
@@ -17404,11 +17150,11 @@ int main(int argc, char **argv)
     }
 
     /* setting decoding enable flag end */
-    /*BCH ALGORITHM TEST*/
+    /* BCH ALGORITHM TEST */
     /*
-        chk any flag of algorithm test.
-        if any flag is set, simulation will process decoding algorithm test sequence.
-    */
+     * chk any flag of algorithm test.
+     * if any flag is set, simulation will process decoding algorithm test sequence.
+     */
 
     /*******************************************************/
     /*************** modulation mode setting ***************/
@@ -17428,15 +17174,15 @@ int main(int argc, char **argv)
         infoMes; printf("Before Decoding, selecting test pattern Method is not selected, So set to default(Theoretical).\r\n");
         infoMes; printf("Default mode is Theoretical mode.\r\n");
     }
-    // else if(global_flag_case_selTP_before_dec == FLAG_CASE_SEL_TP_BEFORE_DEC_ACT)
-    // {
-        // if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
-        // {
-            // global_flag_case_selTP_before_dec = FLAG_CASE_SEL_TP_BEFORE_DEC_THEO;
-            // warningMesShort; printf("ACTUAL MODE support only soft decision.\r\n");
-            // warningMesShort; printf("Getting BER mode forcely change to Theoretical mode.\r\n");
-        // }
-    // }
+    //else if(global_flag_case_selTP_before_dec == FLAG_CASE_SEL_TP_BEFORE_DEC_ACT)
+    //{
+    //    if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
+    //    {
+    //        global_flag_case_selTP_before_dec = FLAG_CASE_SEL_TP_BEFORE_DEC_THEO;
+    //        warningMesShort; printf("ACTUAL MODE support only soft decision.\r\n");
+    //        warningMesShort; printf("Getting BER mode forcely change to Theoretical mode.\r\n");
+    //    }
+    //}
     /***********************************************************/
     /* Getting BER method set to default(exception processing) */
     /***********************************************************/
@@ -17469,13 +17215,13 @@ int main(int argc, char **argv)
         memset(global_addedRootToLCM_string, 0, sizeof(char)*2);
         global_addedRootToLCM_string[0]='1';
     }
-/********************************************************************/
-/*********** setting variables about global variables end ***********/
-/********************************************************************/
+    /********************************************************************/
+    /*********** setting variables about global variables end ***********/
+    /********************************************************************/
 
-/********************************************************************/
-/**** printf setted global variables about global variables start ****/
-/********************************************************************/
+    /********************************************************************/
+    /**** printf setted global variables about global variables start ****/
+    /********************************************************************/
     printf("/*****************************************************************/\n");
     printf("/*********************** Enabled Code List ***********************/\n");
     printf("/*****************************************************************/\n");
@@ -17603,22 +17349,20 @@ int main(int argc, char **argv)
         warningMes; printf("#%d Method of gettig BER is not selected, So set to default.\n", global_flag_case_choosingCodeWordMethod_inTheo);
         global_flag_case_choosingCodeWordMethod_inTheo = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT;
     }
+    /********************************************************************/
+    /***** printf setted global variables about global variables end *****/
+    /********************************************************************/
 
-
-/********************************************************************/
-/***** printf setted global variables about global variables end *****/
-/********************************************************************/
-
-/********************************************************************/
-/************** initializing domestic variables start ***************/
-/********************************************************************/
+    /********************************************************************/
+    /************** initializing domestic variables start ***************/
+    /********************************************************************/
     /****************************************************/
     /********** Channel variable setting start **********/
     /****************************************************/
 
-    /*soft Decision variable start*/
-    //Default value of main_tmp_degErrLocPoly is 2.;
-    // if(!(global_flag_bchDecAlgo_Enable&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
+    /* soft Decision variable start */
+    /* Default value of main_tmp_degErrLocPoly is 2. */
+    //if(!(global_flag_bchDecAlgo_Enable&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
     cmd_tmp_cnt=0;
     for(cmd_tmp_i=0; cmd_tmp_i<KIND_OF_BCH_DECODING_END; cmd_tmp_i++)
     {
@@ -17636,10 +17380,10 @@ int main(int argc, char **argv)
         }
     }
     main_com_numsTP = (unsigned int)pow(2.0,(double)main_tmp_degErrLocPoly);
-    /*soft Decision variable end*/
+    /* soft Decision variable end */
 
 
-    //*soft Decision Channel Counting variable start*/
+    /* soft Decision Channel Counting variable start */
     main_indi_list_errCntOf_TP_beforeDec = (unsigned int*)malloc(sizeof(unsigned int)*main_com_numsTP);
     memset(main_indi_list_errCntOf_TP_beforeDec, 0, sizeof(unsigned int)*main_com_numsTP);
 
@@ -17658,10 +17402,10 @@ int main(int argc, char **argv)
     main_indi_hd_correctability=(unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_hd_correctability, 0, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
 
-    // main_list_err_cnt_after_dec_whole_TP_best=-1;
+    //main_list_err_cnt_after_dec_whole_TP_best=-1;
 
-    // main_indi_sel_TP_errCnt=-1;
-    /*Belong to dec algorithm HD kernel individually have main_indi_sel_TP_i */
+    //main_indi_sel_TP_errCnt=-1;
+    /* Belong to dec algorithm HD kernel individually have main_indi_sel_TP_i */
     main_indi_sel_TP_i = (unsigned int*)malloc(sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_sel_TP_i, 0, sizeof(unsigned int)*KIND_OF_BCH_DECODING_END);
     //*soft Decision Channel Counting variable end*/
@@ -17672,9 +17416,8 @@ int main(int argc, char **argv)
     {
         main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i] = (unsigned char*)malloc(sizeof(unsigned char)*main_com_numsTP);
         memset(main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i], 0, sizeof(unsigned char)*main_com_numsTP);
-                // printf("main_indi_list_flag_theo_ly_can_be_correctable[%d] 0x%x\n", main_tmp_sel_decAlgo_i, main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i]);
+                //printf("main_indi_list_flag_theo_ly_can_be_correctable[%d] 0x%x\n", main_tmp_sel_decAlgo_i, main_indi_list_flag_theo_ly_can_be_correctable[main_tmp_sel_decAlgo_i]);
     }
-
     /* soft Decision correctable test pattern list end */
 
     /* soft Decision in actual mode, after dec synd zero flag start */
@@ -17745,7 +17488,6 @@ int main(int argc, char **argv)
 
     main_indi_err_detect_and_correct_fail_cnt = (unsigned long*)malloc(sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_err_detect_and_correct_fail_cnt, 0, sizeof(unsigned long)*KIND_OF_BCH_DECODING_END);
-
     /* variables associated with error bits are over correctables set end */
 
 
@@ -17762,7 +17504,6 @@ int main(int argc, char **argv)
     main_indi_HD_decordComponents = (struct_generalForm_algorithmComponent**)malloc(sizeof(struct_generalForm_algorithmComponent*)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_HD_decordComponents, 0, sizeof(struct_generalForm_algorithmComponent*)*KIND_OF_BCH_DECODING_END);
 
-    //    struct_generalForm_algorithmComponent ****main_indi_SD_list_of_decordingComponents=NULL;
     main_indi_SD_list_of_decordingComponents = (struct_generalForm_algorithmComponent****)malloc(sizeof(struct_generalForm_algorithmComponent***)*KIND_OF_BCH_DECODING_END);
     memset(main_indi_SD_list_of_decordingComponents, 0, sizeof(struct_generalForm_algorithmComponent***)*KIND_OF_BCH_DECODING_END);
     /* decoding components list creating1 end */
@@ -17800,11 +17541,10 @@ int main(int argc, char **argv)
         infoMes;
         printf("setted default end value of main_com_EbN0 is '%f'.\n", global_EbN0_End_Value);
     }
-    /*Channel variable end*/
+    /* Channel variable end */
 
 
-    /*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
-    // unsigned int main_com_numsTP=main_com_numsTP;
+    /* Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1. */
                                     #ifndef RELEASE
                                     if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                     {
@@ -17873,9 +17613,9 @@ int main(int argc, char **argv)
             *(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+i)=(struct_generalForm_algorithmComponent**)malloc(sizeof(struct_generalForm_algorithmComponent*));
             **(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+i)=NULL;
         }
-        // *(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+1)=(&decordingTestPeternComponents1);
-        // *(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+2)=(&decordingTestPeternComponents2);
-        // *(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+3)=(&decordingTestPeternComponents3);
+        //*(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+1)=(&decordingTestPeternComponents1);
+        //*(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+2)=(&decordingTestPeternComponents2);
+        //*(main_indi_SD_list_of_decordingComponents[main_tmp_sel_decAlgo_i]+3)=(&decordingTestPeternComponents3);
     }
     /* decoding components list creating2 end */
 
@@ -17885,20 +17625,22 @@ int main(int argc, char **argv)
     /******************************************************************/
     /******************** memory initializing start *******************/
     /******************************************************************/
-/*     memset(&loadStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm));
-    memset(&noisedStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm));
-    memset(&unloadStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm)); */
+    /*
+    //memset(&loadStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm));
+    //memset(&noisedStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm));
+    //memset(&unloadStream, 0, sizeof(struct_variableSetConvertBitStreamToPowerForm));
+    */
     /******************************************************************/
     /********************* memory initializing end ********************/
     /******************************************************************/
-/**************************************************************************/
-/****************** initializing domestic variables end *******************/
-/**************************************************************************/
+    /**************************************************************************/
+    /****************** initializing domestic variables end *******************/
+    /**************************************************************************/
 
 
-/********************************************************************/
-/********* setting variables about domestic variables start *********/
-/********************************************************************/
+    /********************************************************************/
+    /********* setting variables about domestic variables start *********/
+    /********************************************************************/
     printf("/*****************************************************************/\r\n");
     printf("/***************** Assiciate with galois fields ******************/\r\n");
     printf("/*****************************************************************/\r\n");
@@ -17926,221 +17668,220 @@ int main(int argc, char **argv)
         }
     }
 
-        /* printf initializing result */
-        /*
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX);
-        printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX);
-        */
+            /* printf initializing result */
+            /*
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_4_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_128_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_512_INVERSE_INDEX);
+            //printPowerFormWithEnter((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX);
+            */
     /* To generate galois fields, initializing primitive polynomials end */
 
     /* Initializing essential conditions end */
 
 
     /* create galois field using primitive polynomial start */
-        /* check file that is saved galois fields infomations start */
-        /* check file that is saved galois fields infomations end */
-        main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
-        main_com_listOf_GF[0]=NULL;
+    /* check file that is saved galois fields infomations start */
+    /* check file that is saved galois fields infomations end */
+    main_com_listOf_GF=(struct_galoisField_info **)malloc(sizeof(struct_galoisField_info*)*PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER);
+    main_com_listOf_GF[0]=NULL;
 
-        if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+    {
+        tmp_i_start=1;
+        tmp_i_end=PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER;
+    }
+    else
+    {
+        tmp_i_start=global_GaloisFieldExponential;
+        tmp_i_end=global_GaloisFieldExponential+1;
+    }
+
+    infoMes;
+    sprintf(fileio_Path_Target, "%s/%s", fileio_Path_common, dirio_Name_GF_info);
+    printf("GF info path -> %s\r\n", fileio_Path_Target);
+    for(i=tmp_i_start; i<tmp_i_end; i++)
+    {
+        /* Galois Fields infomation */
+        /* check file that is saved galois fields infomations start */
+        if(!(tmp_dirio_var = opendir((char*)fileio_Path_Target)))
         {
-            tmp_i_start=1;
-            tmp_i_end=PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL_NUMBER;
+            errorMes; printf("Can't open path -> %s\r\n", fileio_Path_Target);
+            errorMes; printf("Simulator is closed.\r\n");
+            return -1;
+        }
+
+
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_GaloisField_common
+        );
+            //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  //디렉토리 안에 있는 모든 파일과 디렉토리 출력
+        {
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
+
+        initMes; printf("Selected primitive poly is %s\r\n", (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i]);
+        main_com_listOf_GF[i]=
+            //createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
+            createGaloisField_info_emptySpace(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
+            //printf("%s\r\n", fileio_Path_common);
+
+                gettimeofday(&time_proc_start, NULL);
+        if(!tmp_dir_entry)
+        {
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            calculateGaloisField(main_com_listOf_GF[i]->primitivePolynomial, main_com_listOf_GF[i]->nonSorted);
+            save_struct_galoisFieldElements(
+                fileio_Path_Target,
+                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+                main_com_listOf_GF[i]->nonSorted
+            );
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving galois field time]");    printExcutingTime(&time_proc_start);
         }
         else
         {
-            tmp_i_start=global_GaloisFieldExponential;
-            tmp_i_end=global_GaloisFieldExponential+1;
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_galoisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted);
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading galois field time]");    printExcutingTime(&time_proc_start);
         }
 
-        infoMes;
-        sprintf(fileio_Path_Target, "%s/%s", fileio_Path_common, dirio_Name_GF_info);
-        printf("GF info path -> %s\r\n", fileio_Path_Target);
-        for(i=tmp_i_start; i<tmp_i_end; i++)
+
+        /* Sumation Matrix infomation */
+        /* check file that is saved galois fields infomations start */
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_SumMaxrix_common
+        );
+            //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
         {
-            /* Galois Fields infomation */
-            /* check file that is saved galois fields infomations start */
-            if(!(tmp_dirio_var = opendir((char*)fileio_Path_Target)))
-            {
-                errorMes; printf("Can't open path -> %s\r\n", fileio_Path_Target);
-                errorMes; printf("Simulator is closed.\r\n");
-                return -1;
-            }
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
 
-
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
-                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_GaloisField_common
-            );
-                // printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
-
-            initMes; printf("Selected primitive poly is %s\r\n", (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i]);
-            main_com_listOf_GF[i]=
-                // createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
-                createGaloisField_info_emptySpace(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], 0));
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                // printf("%s\r\n", fileio_Path_common);
-
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
                     gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                calculateGaloisField(main_com_listOf_GF[i]->primitivePolynomial, main_com_listOf_GF[i]->nonSorted);
-                save_struct_galoisFieldElements(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->nonSorted
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving galois field time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_galoisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted);
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading galois field time]");    printExcutingTime(&time_proc_start);
-            }
-
-
-            /* Sumation Matrix infomation */
-            /* check file that is saved galois fields infomations start */
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
-                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_SumMaxrix_common
-            );
-                // printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
-
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                        gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                // char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
-                calculateSummationMatrix(main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
-                save_struct_summationMatrix(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->nonSorted->summationReferMatrix
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving summation matrix time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_summationMatrix(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading summation matrix time]");    printExcutingTime(&time_proc_start);
-            }
-
-
-            /* check file that is saved galois fields infomations start */
-            sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
-                fileio_Name_GF_infoCommon,
-                i,
-                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                fileio_Name_Conjugate_common
-            );
-                // printf("%s\r\n", fileio_Name_GF_infoBuf);
-            rewinddir(tmp_dirio_var);
-            while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
-            {
-                if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
-            }
-            /* check file that is saved galois fields infomations end */
-            sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
-                // printf("%s\r\n", fileio_Path_common);
-
-                    gettimeofday(&time_proc_start, NULL);
-            if(!tmp_dir_entry)
-            {
-                infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
-                init_ConjugacyClasses(main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies), global_LimitCodeLength);
-
-                save_struct_setOfGaloisFieldElements(
-                    fileio_Path_Target,
-                    (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
-                    main_com_listOf_GF[i]->conjugacies
-                );
-                infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[calculateing and saving conjugacies time]");    printExcutingTime(&time_proc_start);
-            }
-            else
-            {
-                infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
-                load_struct_setOfGaloisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies));
-                infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
-                        printf("[loading conjugacies time]");    printExcutingTime(&time_proc_start);
-            }
-
-            closedir(tmp_dirio_var);
-
-
-            initMes; printf("Initializing galois field(2^%d) is done.\r\n", i);
-        }
-
-
-        main_com_used_GF=main_com_listOf_GF[global_GaloisFieldExponential];
-        main_com_codeLength = main_com_used_GF->nonSorted->length-1;//codeLength can be shorter than number of element in GF
-        initMes; printf("Mainly used value, galois field is set to gf(2^%d).\r\n", global_GaloisFieldExponential);
-
-        if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+        if(!tmp_dir_entry)
         {
-            infoMes; printf("/********** Used galois Field elements **********/\n");
-            printGaloisField(main_com_used_GF->nonSorted);
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            //char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
+            calculateSummationMatrix(main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
+            save_struct_summationMatrix(
+                fileio_Path_Target,
+                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+                main_com_listOf_GF[i]->nonSorted->summationReferMatrix
+            );
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving summation matrix time]");    printExcutingTime(&time_proc_start);
         }
-        if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+        else
         {
-            infoMes; printf("/********** Used galois Field conjugacies **********/\n");
-            printConjugacyClasses(main_com_used_GF->nonSorted, main_com_used_GF->conjugacies);
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_summationMatrix(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, main_com_listOf_GF[i]->nonSorted->summationReferMatrix);
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading summation matrix time]");    printExcutingTime(&time_proc_start);
         }
 
-        // main_com_used_GF=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET.PRIMITIVE_POLYNOMIAL[global_GaloisFieldExponential],0));
 
-        /*
-        struct_galoisField_info *galoisField8=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX,0));
-        struct_galoisField_info *galoisField16=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX,0));
-        struct_galoisField_info *galoisField32=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX,0));
-        struct_galoisField_info *galoisField64=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX,0));
-        struct_galoisField_info *galoisField256=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX,0));
-        struct_galoisField_info *galoisField1024=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX,0));*/
+        /* check file that is saved galois fields infomations start */
+        sprintf(fileio_Name_GF_infoBuf, "%s_%d_px_%s_%s.txt",
+            fileio_Name_GF_infoCommon,
+            i,
+            (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+            fileio_Name_Conjugate_common
+        );
+                //printf("%s\r\n", fileio_Name_GF_infoBuf);
+        rewinddir(tmp_dirio_var);
+        while(tmp_dir_entry = readdir(tmp_dirio_var))  // 디렉토리 안에 있는 모든 파일과 디렉토리 출력
+        {
+            if(!strcmp(fileio_Name_GF_infoBuf, tmp_dir_entry->d_name)) break;
+        }
+        /* check file that is saved galois fields infomations end */
+        sprintf(fileio_Path_Target, "%s/%s/%s", fileio_Path_common, dirio_Name_GF_info, fileio_Name_GF_infoBuf);
+                //printf("%s\r\n", fileio_Path_common);
 
-        /*
-        printGaloisFieldToCsv(galoisField8->nonSorted);
-        printGaloisFieldToCsv(galoisField16->nonSorted);
-        printGaloisFieldToCsv(galoisField32->nonSorted);
-        printGaloisFieldToCsv(galoisField64->nonSorted);
-        printGaloisFieldToCsv(galoisField256->nonSorted);
-        printGaloisFieldToCsv(galoisField1024->nonSorted);
-         */
+                gettimeofday(&time_proc_start, NULL);
+        if(!tmp_dir_entry)
+        {
+            infoMes; printf("Saved Path -> %s\r\n", fileio_Path_Target);
+            init_ConjugacyClasses(main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies), global_LimitCodeLength);
+
+            save_struct_setOfGaloisFieldElements(
+                fileio_Path_Target,
+                (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i],
+                main_com_listOf_GF[i]->conjugacies
+            );
+            infoMes; printf("'%s' is saved.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[calculateing and saving conjugacies time]");    printExcutingTime(&time_proc_start);
+        }
+        else
+        {
+            infoMes; printf("File path -> %s is detected.\r\n", fileio_Path_Target);
+            load_struct_setOfGaloisFieldElements(fileio_Path_Target, (char*)PRIMITIVE_POLYNOMIAL_SET_INVERSED.PRIMITIVE_POLYNOMIAL[i], main_com_listOf_GF[i]->nonSorted, &(main_com_listOf_GF[i]->conjugacies));
+            infoMes; printf("'%s' is loaded.\r\n", fileio_Name_GF_infoBuf);
+                    printf("[loading conjugacies time]");    printExcutingTime(&time_proc_start);
+        }
+
+        closedir(tmp_dirio_var);
+
+
+        initMes; printf("Initializing galois field(2^%d) is done.\r\n", i);
+    }
+
+
+    main_com_used_GF=main_com_listOf_GF[global_GaloisFieldExponential];
+    main_com_codeLength = main_com_used_GF->nonSorted->length-1;//codeLength can be shorter than number of element in GF
+    initMes; printf("Mainly used value, galois field is set to gf(2^%d).\r\n", global_GaloisFieldExponential);
+
+    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FIELD)
+    {
+        infoMes; printf("/********** Used galois Field elements **********/\n");
+        printGaloisField(main_com_used_GF->nonSorted);
+    }
+    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
+    {
+        infoMes; printf("/********** Used galois Field conjugacies **********/\n");
+        printConjugacyClasses(main_com_used_GF->nonSorted, main_com_used_GF->conjugacies);
+    }
+
+    //main_com_used_GF=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_SET.PRIMITIVE_POLYNOMIAL[global_GaloisFieldExponential],0));
+
+    /*
+    //struct_galoisField_info *galoisField8=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_8_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField16=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_16_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField32=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_32_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField64=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_64_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField256=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_256_INVERSE_INDEX,0));
+    //struct_galoisField_info *galoisField1024=createGaloisFieldAndSumMatrix(createPowerFormPolynomialUsingString((char_POWER_FORM*)PRIMITIVE_POLYNOMIAL_1024_INVERSE_INDEX,0));
+    //
+    //printGaloisFieldToCsv(galoisField8->nonSorted);
+    //printGaloisFieldToCsv(galoisField16->nonSorted);
+    //printGaloisFieldToCsv(galoisField32->nonSorted);
+    //printGaloisFieldToCsv(galoisField64->nonSorted);
+    //printGaloisFieldToCsv(galoisField256->nonSorted);
+    //printGaloisFieldToCsv(galoisField1024->nonSorted);
+    */
     /* create galois field using primitive polynomial end */
 
 
-    /*Using conjugacy in galois Field, make generation polynomial start*/
+    /* Using conjugacy in galois Field, make generation polynomial start */
     printf("\n\n");
 
     printf("/*****************************************************************/\r\n");
@@ -18201,9 +17942,9 @@ int main(int argc, char **argv)
         }
         infoMes; printf("Mainly used value, to check algorithm, error number = '%d'\r\n", main_com_errNums_inDecodingAlgorithmTest);
     }
-        /*To test BCH Algorithm, setting number of errors end*/
+        /* To test BCH Algorithm, setting number of errors end */
 
-    //calculate total order of LCM.
+    /* calculate total order of LCM. */
     if((main_com_used_GF->conjugacies->length<main_com_hd_correctability))
     {
         //errorMes;
@@ -18217,14 +17958,14 @@ int main(int argc, char **argv)
     {
         main_com_totalOrderOfLCM+=(*(main_com_used_GF->conjugacies->conjugateSet+i))->length;
     }
-    //calculate total order of LCM.
+    /* calculate total order of LCM. */
     infoMes; printf("Total Order(Condjugacies only) Of LCM is \'%d\'\n", main_com_totalOrderOfLCM);
 
-    ////create////
+    /* create */
     recreateGaloisFieldExceptElements(&main_com_expandEqOfLcmFromRoot, main_com_totalOrderOfLCM+1);
     initEquation(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot);
 
-    ////abstract////
+    /* abstract */
     main_com_expandEqOfLcmFromRoot=expandRootOfLCM_usingEleOfGF(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, main_com_used_GF->conjugacies, main_com_hd_correctability);
 
     /* added LCM expantion */
@@ -18239,7 +17980,7 @@ int main(int argc, char **argv)
         main_com_addedLCM);
 
     initMes; printf("Initializing expand LCM is done.\r\n");
-        // printGaloisField2(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+            //printGaloisField2(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
     if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
     {
         printGaloisField2(main_com_used_GF->nonSorted, main_com_expandEqOfLcmFromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
@@ -18250,14 +17991,14 @@ int main(int argc, char **argv)
     initMes; printf("Converting galois field element to string is done.\r\n");
     infoMes; printf("Expanded Least Common Multiple(generation polynomial) is \"%s\"\n", main_com_genPoly);
 
-        ////create////
+        /* reate */
         recreateGaloisFieldExceptElements(&main_com_limitExpandEqOfLCM_fromRoot, main_com_totalOrderOfLCM+1);
         initEquation(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot);
 
-        ////abstract////
+        /* abstract */
         main_com_limitExpandEqOfLCM_fromRoot=test_expandLimitedLeastCommonMultipleUsingElementOfGaloisFieldToRoot(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, main_com_used_GF->conjugacies, main_com_hd_correctability);
         initMes; printf("Initializing expand LCM is done.\r\n");
-                // printGaloisField2(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+                //printGaloisField2(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
         if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY)
         {
             printGaloisField2(main_com_used_GF->nonSorted, main_com_limitExpandEqOfLCM_fromRoot, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
@@ -18273,19 +18014,19 @@ int main(int argc, char **argv)
     infoMes; printf("Code length : \'%d\', Infomation bits length : \'%d\', Parity bits length : \'%d\'\n", main_com_codeLength, main_com_infoBitLength, main_com_parityBitsLength);
     main_com_codeRate=((double)main_com_infoBitLength)/((double)main_com_codeLength);
     infoMes; printf("Code rate : '%f' \n", main_com_codeRate);
-    /*Using conjugacy in galois Field, make generation polynomial end*/
+    /* Using conjugacy in galois Field, make generation polynomial end */
 
 
-    /*Create encoding component using converted g(x) to power form(string) start*/
+    /* Create encoding component using converted g(x) to power form(string) start */
     infoMes; printf("Test generation of LCM, GF(%d), set t=%d, select \'%d\' number of set of conjugacy\n", main_com_used_GF->nonSorted->length, main_com_hd_correctability, main_com_hd_correctability);
     //struct_encodingComponentInGF *main_encodingComponentInGF=createEncodingComponent(main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
     recreateEncodingComponent(&main_encodingComponentInGF, main_com_codeLength, main_com_hd_correctability, (char_POWER_FORM*)main_com_genPoly);
     initMes; printf("Creating encoding componenet is done.\r\n");
-    /*Create encoding component using converted g(x) to power form(string) end*/
+    /* Create encoding component using converted g(x) to power form(string) end */
 
 
-    /*Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1.*/
-    /*Soft Decision Test Pattern Decording Coponents. end*/
+    /* Soft Decision Test Pattern Decording Coponents. If soft decision correctable bits is p,  number of test petern is (2^p) - 1. */
+    /* Soft Decision Test Pattern Decording Coponents. end */
     printf("/*****************************************************************/\r\n");
     printf("/********** Setting value associated with Soft Decision **********/\r\n");
     printf("/*****************************************************************/\r\n");
@@ -18303,8 +18044,8 @@ int main(int argc, char **argv)
     printf("/*****************************************************************/\r\n");
     printf("/************* Initialzing a component of Modulation *************/\r\n");
     printf("/*****************************************************************/\r\n");
-    /*creation BPSK communication compoenets start*/
-    /*initial global quantization info*/
+    /* creation BPSK communication compoenets start */
+    /* initial global quantization info */
     initMes; printf("Setted global value of quantization filter.\r\n");
     infoMes; printf("(global) llr quantization offset : %f\r\n", global_LLR_quantizFilter_offset);
     infoMes; printf("(global) llr quantization step : %f\r\n", global_LLR_quantizFilter_step);
@@ -18343,10 +18084,10 @@ int main(int argc, char **argv)
             printf("/***********************************************************/\r\n");
             main_com_bpskComponents=createBpskComponents(main_com_codeLength);
             initMes; printf("Create bpsk components.\r\n");
-            /*initial LLR components start*/
+            /* initial LLR components start */
             setUsedLengthOfLogLikeHoodRatio(main_com_bpskComponents->bpskReceivedLLR, main_com_codeLength);
             initMes; printf("Setting up log like hood ratio in bpsk componenets.\r\n");
-            /*initial LLR magnitudeShort locator start*/
+            /* initial LLR magnitudeShort locator start */
             initLogLikeHoodRatioLocator(main_com_bpskComponents->bpskReceivedLLR, main_tmp_degErrLocPoly);
             initMes; printf("Initializing log like hood ratio components in bpsk componenets.\r\n");
 
@@ -18402,23 +18143,23 @@ int main(int argc, char **argv)
             infoMes; printf("Same-LLR MAG prior mode : %s.\r\n",
                 NAME_FLAG_CASE_SAME_LLR_HANDLING[global_flag_case_same_llr_handling]);
 
-                                                                        #ifndef RELEASE
-                                                                        /*************** struct_treeStructure address start ***************/
-                                                                        // debugMes; printf("TREE_NONE = %d\n", TREE_NONE);
-                                                                        // debugMes; printf("TREE_CHASE = %d\n", TREE_CHASE);
-                                                                        // testTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
-                                                                        // testPrintTreeStructIndicateAddr(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
-                                                                        /**************** struct_treeStructure address end ****************/
-                                                                        /***** struct_treeStructure create and close memory test start *****/
-                                                                        // struct_treeStructure *testStructure = NULL;
-                                                                        // for(i=0; i<10000000; i++)
-                                                                        // {
-                                                                            // if(!(testStructure = createTreeStruct(127, TREE_CHASE)))  debugMes; printf("%d : testStructure = createTreeStruct(127, TREE_CHASE)\n", i);
-                                                                            // if(closeTreeStruct(&testStructure)) debugMes; printf("%d : closeTreeStruct(&testStructure)\n", i);
-                                                                        // }
-                                                                        /****** struct_treeStructure create and close memory test end ******/
-            //        printf("test : mask value is '%d'\n", main_com_bpskComponents->bpskReceivedLLR->quantizedLLRMask);
-                                                                        #endif
+                    #ifndef RELEASE
+                    /*************** struct_treeStructure address start ***************/
+                    // debugMes; printf("TREE_NONE = %d\n", TREE_NONE);
+                    // debugMes; printf("TREE_CHASE = %d\n", TREE_CHASE);
+                    // testTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
+                    // testPrintTreeStructIndicateAddr(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
+                    /**************** struct_treeStructure address end ****************/
+                    /***** struct_treeStructure create and close memory test start *****/
+                    // struct_treeStructure *testStructure = NULL;
+                    // for(i=0; i<10000000; i++)
+                    // {
+                    //    if(!(testStructure = createTreeStruct(127, TREE_CHASE)))  debugMes; printf("%d : testStructure = createTreeStruct(127, TREE_CHASE)\n", i);
+                    //    if(closeTreeStruct(&testStructure)) debugMes; printf("%d : closeTreeStruct(&testStructure)\n", i);
+                    // }
+                    /****** struct_treeStructure create and close memory test end ******/
+                    //printf("test : mask value is '%d'\n", main_com_bpskComponents->bpskReceivedLLR->quantizedLLRMask);
+                    #endif
             /*initial LLR magnitudeShort locator end*/
             /*initial LLR components end*/
             /*creation BPSK communication compoenets end*/
@@ -18429,11 +18170,11 @@ int main(int argc, char **argv)
     printf("/*****************************************************************/\r\n");
     printf("/************* Initialzing a simulation enviroments **************/\r\n");
     printf("/*****************************************************************/\r\n");
-    // if(!global_minimum_loop)
-    // {
-        // global_minimum_loop=DEFAULT_MINIMUM_LOOP;
-        // infoMes; printf("Minumum loop is not assigned, set to default, is %ld\r\n", global_minimum_loop);
-    // }
+    //if(!global_minimum_loop)
+    //{
+    //    global_minimum_loop=DEFAULT_MINIMUM_LOOP;
+    //    infoMes; printf("Minumum loop is not assigned, set to default, is %ld\r\n", global_minimum_loop);
+    //}
     infoMes; printf("Minumum loop is %ld\r\n", global_minimum_loop);
     infoMes; printf("Base of loop is %ld\r\n", global_base_of_loop);
     infoMes; printf("Rate of loop is %d\r\n", global_rate_of_loop);
@@ -18489,11 +18230,11 @@ int main(int argc, char **argv)
                 }
             }
         }
-        // else
-        // {
-            // infoMes; printf("[%s] %s algorithm test is disabled.\r\n",
-                // KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i], KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i]);
-        // }
+        //else
+        //{
+        //    infoMes; printf("[%s] %s algorithm test is disabled.\r\n",
+        //        KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i], KIND_OF_BCH_DECODING_ALGORITHM_NAME[cmd_tmp_i]);
+        //}
 
     }
     /* Algorithm except conditions */
@@ -18645,120 +18386,120 @@ int main(int argc, char **argv)
     printf("/******************** Simulation Report Files ********************/\r\n");
     printf("/*****************************************************************/\r\n");
 
-    //loadStream, unloadStream
-    // infoMes; printf(">>BMP file io initial variable set<<\r\n");
-    // warningMes;
-    // printf("File IO function is not completed.\r\n");
-    // infoMes;
-    // printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
-    // infoMes;
-    // printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
-    // infoMes;
-    // printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
-    // infoMes;
-    // printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
-    // printf("\r\n");
-    // if(global_flag_fileInputOutput)
-    // {
-        // /*file io is not completed*/
-        // warningMes;
-        // printf("/*************** file io function is not completed ***************/\r\n");
-        // printf("Please press ctrl + c or ctrl + z\r\n");
+    ////loadStream, unloadStream
+    //infoMes; printf(">>BMP file io initial variable set<<\r\n");
+    //warningMes;
+    //printf("File IO function is not completed.\r\n");
+    //infoMes;
+    //printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
+    //infoMes;
+    //printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
+    //infoMes;
+    //printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
+    //infoMes;
+    //printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
+    //printf("\r\n");
+    //if(global_flag_fileInputOutput)
+    //{
+    //    /* file io is not completed */
+    //    warningMes;
+    //    printf("/*************** file io function is not completed ***************/\r\n");
+    //    printf("Please press ctrl + c or ctrl + z\r\n");
 
 
-        // if(loadBmpFile("image/1.bmp"))
-        // {
-            // printf("fail open image/1.bmp \r\n");
-        // }
-        // else
-        // {
-            // printf("open image/1.bmp\r\n");
-        // }
+    //    if(loadBmpFile("image/1.bmp"))
+    //    {
+    //        printf("fail open image/1.bmp \r\n");
+    //    }
+    //    else
+    //    {
+    //        printf("open image/1.bmp\r\n");
+    //    }
 
-        // setVariableSetConvertBitStreamToPowerForm(&loadStream, getBmpData(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // setVariableSetConvertBitStreamToPowerForm(&unloadStream, getBmpData2(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // setVariableSetConvertBitStreamToPowerForm(&noisedStream, getBmpData3(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // printf("\r\n>>BMP file io initial variable set<<\r\n");
-        // warningMes;
-        // printf("File IO function is not completed.\r\n");
-        // infoMes;
-        // printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
-        // infoMes;
-        // printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
-        // infoMes;
-        // printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
-        // infoMes;
-        // printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
-        // printf("\r\n\r\n");
+    //    setVariableSetConvertBitStreamToPowerForm(&loadStream, getBmpData(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    setVariableSetConvertBitStreamToPowerForm(&unloadStream, getBmpData2(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    setVariableSetConvertBitStreamToPowerForm(&noisedStream, getBmpData3(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    printf("\r\n>>BMP file io initial variable set<<\r\n");
+    //    warningMes;
+    //    printf("File IO function is not completed.\r\n");
+    //    infoMes;
+    //    printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
+    //    infoMes;
+    //    printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
+    //    infoMes;
+    //    printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
+    //    infoMes;
+    //    printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
+    //    printf("\r\n\r\n");
 
-        // passingThroughAwgnData
-        // (
-            // global_EbN0_Start_Value,
-            // main_com_parityBitsLength,
-            // main_com_genPoly,
-            // main_com_hd_correctability,
-            // main_com_codeLength,
-            // main_com_used_GF,
-            // &loadStream,
-            // &unloadStream,
-            // &noisedStream
-        // );
-        // saveBmpFile2(0);
-        // saveBmpFile3(0);
-        // saveBmpFile4(0);
+    //    passingThroughAwgnData
+    //    (
+    //        global_EbN0_Start_Value,
+    //        main_com_parityBitsLength,
+    //        main_com_genPoly,
+    //        main_com_hd_correctability,
+    //        main_com_codeLength,
+    //        main_com_used_GF,
+    //        &loadStream,
+    //        &unloadStream,
+    //        &noisedStream
+    //    );
+    //    saveBmpFile2(0);
+    //    saveBmpFile3(0);
+    //    saveBmpFile4(0);
 
-        // setVariableSetConvertBitStreamToPowerForm(&loadStream, getBmpData(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // setVariableSetConvertBitStreamToPowerForm(&unloadStream, getBmpData2(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // setVariableSetConvertBitStreamToPowerForm(&noisedStream, getBmpData3(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
-        // printf("\r\n>>BMP file io initial variable set<<\r\n");
-        // warningMes;
-        // printf("File IO function is not completed.\r\n");
-        // infoMes;
-        // printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
-        // infoMes;
-        // printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
-        // infoMes;
-        // printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
-        // infoMes;
-        // printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
-        // printf("\r\n\r\n");
+    //    setVariableSetConvertBitStreamToPowerForm(&loadStream, getBmpData(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    setVariableSetConvertBitStreamToPowerForm(&unloadStream, getBmpData2(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    setVariableSetConvertBitStreamToPowerForm(&noisedStream, getBmpData3(), main_com_infoBitLength, sizeof(uint8_t), BMP_FILE_IO_DEFAULT_BITMAP_DATA_SIZE);
+    //    printf("\r\n>>BMP file io initial variable set<<\r\n");
+    //    warningMes;
+    //    printf("File IO function is not completed.\r\n");
+    //    infoMes;
+    //    printf("dataBitLength is \'%u\'.\r\n", loadStream.dataBitLength);
+    //    infoMes;
+    //    printf("codeWordPerDataNumber is \'%u\'.\r\n", loadStream.codeWordPerDataNumber);
+    //    infoMes;
+    //    printf("totalCodeWordNumber is \'%u\'.\r\n", loadStream.totalCodeWordNumber);
+    //    infoMes;
+    //    printf("totalDataNumber is \'%u\'.\r\n", loadStream.totalDataNumber);
+    //    printf("\r\n\r\n");
 
-        // passingThroughAwgnData
-        // (
-            // global_EbN0_Start_Value,
-            // main_com_parityBitsLength,
-            // main_com_genPoly,
-            // main_com_hd_correctability,
-            // main_com_codeLength,
-            // main_com_used_GF,
-            // &loadStream,
-            // &unloadStream,
-            // &noisedStream
-        // );
-        // saveBmpFile2("OUTPUT_CORRECT.bmp");
-        // saveBmpFile3("OUTPUT_ADDITIVE.bmp");
-        // saveBmpFile4("OUTPUT_NOISE_ONLY.bmp");
+    //    passingThroughAwgnData
+    //    (
+    //        global_EbN0_Start_Value,
+    //        main_com_parityBitsLength,
+    //        main_com_genPoly,
+    //        main_com_hd_correctability,
+    //        main_com_codeLength,
+    //        main_com_used_GF,
+    //        &loadStream,
+    //        &unloadStream,
+    //        &noisedStream
+    //    );
+    //    saveBmpFile2("OUTPUT_CORRECT.bmp");
+    //    saveBmpFile3("OUTPUT_ADDITIVE.bmp");
+    //    saveBmpFile4("OUTPUT_NOISE_ONLY.bmp");
 
-        // /* not complete part of decoding start */
-        // test_fileIO_errorCorrectingCount++;
-        // if(test_fileIO_errorCorrectingCount!=0)
-        // {
-            // if(loadStream.totalCodeWordNumber)
-            // {
-                // if(!(test_fileIO_errorCorrectingCount%loadStream.totalCodeWordNumber))
-                // {
-                    // infoMes;
-                    // printf("one stream sending is done. test_fileIO_errorCorrectingCount is \'%u\'\r\n", test_fileIO_errorCorrectingCount);
-                // }
-            // }
-        // }
-        // /* not complete part of decoding start */
-    // }
+    //    /* not complete part of decoding start */
+    //    test_fileIO_errorCorrectingCount++;
+    //    if(test_fileIO_errorCorrectingCount!=0)
+    //    {
+    //        if(loadStream.totalCodeWordNumber)
+    //        {
+    //            if(!(test_fileIO_errorCorrectingCount%loadStream.totalCodeWordNumber))
+    //            {
+    //                infoMes;
+    //                printf("one stream sending is done. test_fileIO_errorCorrectingCount is \'%u\'\r\n", test_fileIO_errorCorrectingCount);
+    //            }
+    //        }
+    //    }
+    //    /* not complete part of decoding start */
+    //}
 
 
     /* REPORT Channel BER */
-    // FILE *fileio_channelBER;
-    // char fileio_Name_channel_BER[256]={0};
+    //FILE *fileio_channelBER;
+    //char fileio_Name_channel_BER[256]={0};
     sprintf(fileio_Name_channel_BER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER_CH.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -18785,8 +18526,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_channel_BER);
 
     /* REPORT algorithm BER is included all algorithm */
-    // FILE *fileio_codingBER;
-    // char fileio_Name_coding_BER[256]={0};
+    //FILE *fileio_codingBER;
+    //char fileio_Name_coding_BER[256]={0};
     sprintf(fileio_Name_coding_BER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER_ALGO.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -18813,8 +18554,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_coding_BER);
 
     /* REPORT all passed bit count */
-    // FILE    *fileio_total_bit_cnt;
-    // char fileio_Name_total_bit_cnt[256]={0};
+    //FILE *fileio_total_bit_cnt;
+    //char fileio_Name_total_bit_cnt[256]={0};
     sprintf(fileio_Name_total_bit_cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -18841,8 +18582,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_total_bit_cnt);
 
     /* REPORT counted error bit in chennel */
-    // FILE    *fileio_channel_err_bit_cnt;
-    // char fileio_Name_channel_err_bit_cnt[256]={0};
+    //FILE *fileio_channel_err_bit_cnt;
+    //char fileio_Name_channel_err_bit_cnt[256]={0};
     sprintf(fileio_Name_channel_err_bit_cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_CH_err.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -18872,7 +18613,7 @@ int main(int argc, char **argv)
     for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
     {
         /* Hard Decision BER */
-        // (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))
+        //(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))
         sprintf(fileio_Name_indi_algorithm_coding_HD_BER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
             "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_BER(Static-HD)(%s).txt",
             fileio_Name_Report_Path,
@@ -18929,8 +18670,8 @@ int main(int argc, char **argv)
         infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_indi_algorithm_coding_BER[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
 
         /* Hard decision error count */
-        //    FILE    **fileio_indi_algorithm_coding_HD_err_bit_cnt;
-        // char fileio_Name_indi_algorithm_coding_HD_err_bit_cnt[KIND_OF_BCH_DECODING_END][256]={0};
+        //FILE **fileio_indi_algorithm_coding_HD_err_bit_cnt;
+        //char fileio_Name_indi_algorithm_coding_HD_err_bit_cnt[KIND_OF_BCH_DECODING_END][256]={0};
         sprintf(fileio_Name_indi_algorithm_coding_HD_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
             "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_(Static-HD)%s.txt",
             fileio_Name_Report_Path,
@@ -18959,8 +18700,8 @@ int main(int argc, char **argv)
         infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_indi_algorithm_coding_HD_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
 
         /* Soft decision error count */
-        // FILE    **fileio_indi_algorithm_coding_err_bit_cnt;
-        // char fileio_Name_indi_algorithm_coding_err_bit_cnt[KIND_OF_BCH_DECODING_END][256]={0};
+        //FILE **fileio_indi_algorithm_coding_err_bit_cnt;
+        //char fileio_Name_indi_algorithm_coding_err_bit_cnt[KIND_OF_BCH_DECODING_END][256]={0};
         sprintf(fileio_Name_indi_algorithm_coding_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))],
             "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_%s_err.txt",
             fileio_Name_Report_Path,
@@ -18991,8 +18732,8 @@ int main(int argc, char **argv)
     }
 
     /* REPORT channel frame error rate (not surpport yet) */
-    // FILE *fileio_channelFER;
-    // char fileio_Name_channel_FER[256]={0};
+    //FILE *fileio_channelFER;
+    //char fileio_Name_channel_FER[256]={0};
     sprintf(fileio_Name_channel_FER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_CH_FER.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -19019,8 +18760,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_channel_FER);
 
     /* REPORT frame error rate, recorded all algorithm(not support yet) */
-    // FILE *fileio_codingFER;
-    // char fileio_Name_coding_FER[256]={0};
+    //FILE *fileio_codingFER;
+    //char fileio_Name_coding_FER[256]={0};
     sprintf(fileio_Name_coding_FER, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_FER.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -19047,8 +18788,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_coding_FER);
 
     /* REPORT channel EbN0 */
-    // FILE *fildio_EbN0;
-    // char fileio_Name_EbN0[256]={0};
+    //FILE *fildio_EbN0;
+    //char fileio_Name_EbN0[256]={0};
     sprintf(fileio_Name_EbN0, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_EbN0.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -19075,8 +18816,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_EbN0);
 
     /* REPORT Loop count actually it mean codeword passing channel */
-    // FILE *fildio_loop_Cnt;
-    // char fileio_Name_loop_Cnt[256]={0};
+    //FILE *fildio_loop_Cnt;
+    //char fileio_Name_loop_Cnt[256]={0};
     sprintf(fileio_Name_loop_Cnt, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_LoopCnt.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -19103,8 +18844,8 @@ int main(int argc, char **argv)
     infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_loop_Cnt);
 
     /* REPORT simulation environment(setted values record) */
-    // FILE *fileio_simEnv;
-    // char fileio_Name_simEnv[256]={0};
+    //FILE *fileio_simEnv;
+    //char fileio_Name_simEnv[256]={0};
     sprintf(fileio_Name_simEnv, "%s/REPORT_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_SimEnv.txt",
         fileio_Name_Report_Path,
         global_GaloisFieldExponential,
@@ -19140,30 +18881,30 @@ int main(int argc, char **argv)
     /******************************************************/
     /* sample code */
     /*
-    sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt",
-        fileio_Name_Pattern_Path,
-        global_GaloisFieldExponential,
+    //sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt",
+    //    fileio_Name_Pattern_Path,
+    //    global_GaloisFieldExponential,
 
-        main_com_codeLength,
-        main_com_infoBitLength,
-        main_tmp_degErrLocPoly,
-        main_com_hd_correctability,
+    //    main_com_codeLength,
+    //    main_com_infoBitLength,
+    //    main_tmp_degErrLocPoly,
+    //    main_com_hd_correctability,
 
-            ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
-            (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
-            (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
+    //        ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
+    //        (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
+    //        (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
 
-        NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
-        NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
-        ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
-        );
-    if(!(fileio_total_bit_cnt=fopen(fileio_Name_total_bit_cnt, "w")))
-    {
-        errorMes;
-        printf("Can not open \"%s\"\r\n", fileio_Name_total_bit_cnt);
-        return -1;
-    }
-    infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_total_bit_cnt);
+    //    NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
+    //    NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
+    //    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
+    //    );
+    //if(!(fileio_total_bit_cnt=fopen(fileio_Name_total_bit_cnt, "w")))
+    //{
+    //    errorMes;
+    //    printf("Can not open \"%s\"\r\n", fileio_Name_total_bit_cnt);
+    //    return -1;
+    //}
+    //infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_total_bit_cnt);
     */
 
     /* PATTERN infomation(origin data) bit stream */
@@ -19338,30 +19079,30 @@ int main(int argc, char **argv)
     /******************************************************/
     /* sample code */
     /*
-    sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt",
-        fileio_Name_Pattern_Path,
-        global_GaloisFieldExponential,
+    //sprintf(fileio_Name_total_bit_cnt, "%s/PATTERB_GF(2^%d)_bch(%d,%d)_p%d_t%d_%s_%s_%s_%s_bit_cnt_total.txt",
+    //    fileio_Name_Pattern_Path,
+    //    global_GaloisFieldExponential,
 
-        main_com_codeLength,
-        main_com_infoBitLength,
-        main_tmp_degErrLocPoly,
-        main_com_hd_correctability,
+    //    main_com_codeLength,
+    //    main_com_infoBitLength,
+    //    main_tmp_degErrLocPoly,
+    //    main_com_hd_correctability,
 
-            ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
-            (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
-            (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
+    //        ((global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)?"algo":
+    //        (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)?"soft":
+    //        (global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION)?"hard":"unkn"),
 
-            NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
-            NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
-        ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
-        );
-    if(!(fileio_total_bit_cnt=fopen(fileio_Name_total_bit_cnt, "w")))
-    {
-        errorMes;
-        printf("Can not open \"%s\"\r\n", fileio_Name_total_bit_cnt);
-        return -1;
-    }
-    infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_total_bit_cnt);
+    //        NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED[global_flag_case_selTP_before_dec],
+    //        NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[global_flag_case_find_LLR_method],
+    //    ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?"":"bitRate")
+    //    );
+    //if(!(fileio_total_bit_cnt=fopen(fileio_Name_total_bit_cnt, "w")))
+    //{
+    //    errorMes;
+    //    printf("Can not open \"%s\"\r\n", fileio_Name_total_bit_cnt);
+    //    return -1;
+    //}
+    //infoMes; printf("Enable file I/O \"%s\"\r\n", fileio_Name_total_bit_cnt);
     */
 
     /* PATTERN infomation(origin data) bit stream */
@@ -19840,16 +19581,17 @@ int main(int argc, char **argv)
 
     switch(global_flag_case_selTP_before_dec)
     {
-        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_ACT        1
+        case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
             fprintf(fileio_simEnv, "Get BER Mode is Practical.\r\n");
         break;
 
-        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO: //#define FLAG_CASE_SEL_TP_BEFORE_DEC_THEO    2
+        case FLAG_CASE_SEL_TP_BEFORE_DEC_THEO:
             fprintf(fileio_simEnv, "Get BER Mode is Theoretical.\r\n");
 
             switch(global_flag_case_choosingCodeWordMethod_inTheo)
             {
-                case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:        /* not-support */
+                case FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR:
+                    /* not-support */
                     fprintf(fileio_simEnv, "(Option, all ZERO,[NOT SUPPORT])\r\n");
                 break;
 
@@ -19970,9 +19712,10 @@ int main(int argc, char **argv)
     /*******************************************************************/
     /*******************************************************************/
 
-/********************************************************************/
-/********* setting variables about domestic variables end *********/
-/********************************************************************/
+    /********************************************************************/
+    /********* setting variables about domestic variables end *********/
+    /********************************************************************/
+
 
     /*******************************************************************/
     /*******************************************************************/
@@ -20071,17 +19814,16 @@ int main(int argc, char **argv)
             {
 
                 /*
-                switch(global_flag_case_testMode_msg_gen_method)
-                {
-                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
+                //switch(global_flag_case_testMode_msg_gen_method)
+                //{
+                //    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
 
-                    break;
+                //    break;
 
-                    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
+                //    case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC:
 
-                    break;
-                }
-
+                //    break;
+                //}
                 */
 
                 switch(global_flag_case_testMode_msg_gen_method)
@@ -20125,7 +19867,7 @@ int main(int argc, char **argv)
                     ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate),
                     main_com_codeLength,
                     main_com_EbN0
-                ); //need to add bitrate
+                );//need to add bitrate
 
                 switch(global_flag_case_testMode_decoding_method)
                 {
@@ -20165,38 +19907,38 @@ int main(int argc, char **argv)
                 }
                 for(i=0; i<main_com_codeLength; i++)
                 {
-                            /* ones complement verify code start */
-                            /*
-                            if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
-                            {
-                                printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
-                                        main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
-                                );
-                            }
-                            else
-                            {
-                                printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
+                        /* ones complement verify code start */
+                        /*
+                        //if(main_com_bpskComponents->bpskReceivedLLR->llr[i] > 0.0f)
+                        //{
+                        //    printf("llr:+%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d mag+0:0d+%d\r\n",
+                        //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]
+                        //    );
+                        //}
+                        //else
+                        //{
+                        //    printf("llr:%5.8f, Q llr:0x%08x, Q llr 0d%d, mag:0x%08x, mag:%d,  mag+1:0d%d\r\n",
 
-                                        main_com_bpskComponents->bpskReceivedLLR->llr[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
-                                        main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
-                                );
-                            }
-                            */
-                            /* ones complement verify code end */
+                        //            main_com_bpskComponents->bpskReceivedLLR->llr[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->quantizedLLR[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i],
+                        //            main_com_bpskComponents->bpskReceivedLLR->magnitude[i]+1
+                        //    );
+                        //}
+                        */
+                        /* ones complement verify code end */
                     /* if received bit is error */
                     if(main_encodingComponentInGF->codeWord->equation[i] != main_com_errComponents->erroredCodeWord->equation[i])
                     {
                         //tmp_testMode_llr_mag_sum_w+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                        //==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w;
+                        /* note. ==> tmp_testMode_llr_mag_sum_w += tmp_testMode_llr_mag_sum_inR_w; */
                         tmp_testMode_llr_mag_w[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
                         tmp_testMode_count_bit_w++;
                         if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_w) tmp_testMode_llr_mag_max_w = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
@@ -20231,7 +19973,7 @@ int main(int argc, char **argv)
                     else
                     {
                         //tmp_testMode_llr_mag_sum_c+=(unsigned long)main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
-                        //==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c;
+                        /* note. ==> tmp_testMode_llr_mag_sum_c += tmp_testMode_llr_mag_sum_inR_c; */
                         tmp_testMode_llr_mag_c[main_com_bpskComponents->bpskReceivedLLR->magnitude[i]]++;
                         tmp_testMode_count_bit_c++;
                         if(main_com_bpskComponents->bpskReceivedLLR->magnitude[i] > tmp_testMode_llr_mag_max_c) tmp_testMode_llr_mag_max_c = main_com_bpskComponents->bpskReceivedLLR->magnitude[i];
@@ -20337,9 +20079,7 @@ int main(int argc, char **argv)
                     ( tmp_testMode_one_is_inR_w + tmp_testMode_one_is_inR_c );
 
 
-
-
-                /*encoding parts*/
+                /* encoding parts */
                 tmp_testMode_zero_bit_nums_inC = 0;
                 tmp_testMode_one_bit_nums_inC = 0;
 
@@ -20662,21 +20402,21 @@ int main(int argc, char **argv)
             for(tmp_testMode_loops_cnt=0UL; tmp_testMode_loops_cnt<tmp_testMode_loops; tmp_testMode_loops_cnt++)
             {
             //case ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND:
-                /*Stream Generation*/
+                /* Stream Generation */
                 main_com_randInfoBitsStream =
                     randdomInfoBitGenerator(main_com_infoBitLength, main_com_parityBitsLength, &main_com_randInfoBitsStream);
 
-                /*Copy stream to codeword components*/
+                /* Copy stream to codeword components */
                 copyPowerFormPolynomialFromString(main_encodingComponentInGF->codeWord, main_com_randInfoBitsStream);
 
-                /*To calculate parity, shifting stream parity length*/
+                /* To calculate parity, shifting stream parity length */
                 shiftHighSidePowerFormPolynomial(main_encodingComponentInGF->codeWord, main_com_parityBitsLength);
 
-                /*Calculating Parity*/
+                /* Calculating Parity */
                 calculateParityInGaloisFieldAttachLowSide(main_encodingComponentInGF->codeWord, main_com_parityBitsLength, main_encodingComponentInGF->generationPolynomial);
             //break;
 
-                /*Create error components*/
+                /* Create error components */
                 main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
 
                 BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
@@ -20690,7 +20430,7 @@ int main(int argc, char **argv)
                     main_com_EbN0
                 ); //need to add bitrate
 
-                /*Decoding*/
+                /* Decoding */
             //case ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD:
             //{
                 quantizationWithGlobalAdaptive(
@@ -20821,10 +20561,10 @@ int main(int argc, char **argv)
             for(main_com_loopCount=0; main_com_loopCount<main_com_totalSamlingLoop; main_com_loopCount++)
             {
                 /*
-                    Making a random infomation bits and encoding codeword is
-                    common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode
-                    start
-                */
+                 * Making a random infomation bits and encoding codeword is
+                 * common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode
+                 * start
+                 */
                 gettimeofday(&time_encoding_start, NULL);
                                         #ifndef RELEASE
                                         if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
@@ -20912,7 +20652,7 @@ int main(int argc, char **argv)
                         {
                                 debugSequenceMes;
                                 printf("Encoded Vector is below...\r\n");
-                                // printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
+                                //printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
                                 printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_encodingComponentInGF->codeWord);
                         }
                         if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_ENCODING_MES)
@@ -20932,10 +20672,10 @@ int main(int argc, char **argv)
                         }
 
                 /*
-                    Making a random infomation bits and encoding codeword is
-                    common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode
-                    end
-                */
+                 * Making a random infomation bits and encoding codeword is
+                 * common block in blockAlgorithm Test, Hard - Decision and Soft - Decision Mode
+                 * end
+                 */
 
 
                 /********************************************************/
@@ -20949,10 +20689,6 @@ int main(int argc, char **argv)
                     printf("/********************* Algorithm Test Start **********************/\r\n");
                     printf("/*****************************************************************/\r\n");
 
-                    /*
-                        #define FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION    (1<<3)
-                        #define infoMes    printf("test SOFT ) ");
-                    */
                     if(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION)
                     {
                         warningMes;
@@ -20968,7 +20704,7 @@ int main(int argc, char **argv)
                             }
                             #endif
                     main_com_errComponents=recreateErrorComponent(&main_com_errComponents, main_com_codeLength);
-                    // main_com_errComponents=ifNotExistCreateErrorComponent(&main_com_errComponents, main_com_codeLength);
+                    //main_com_errComponents=ifNotExistCreateErrorComponent(&main_com_errComponents, main_com_codeLength);
 
                             #ifndef RELEASE
                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
@@ -21013,7 +20749,7 @@ int main(int argc, char **argv)
                                     debugFuncNameMes;
                                     printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent start]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM],
+                                        //KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM],
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21036,7 +20772,7 @@ int main(int argc, char **argv)
                                     debugFuncNameMes;
                                     printf("[%s][%d] #%d [HD] [recreateAlgoriehmComponent end]\r\n",
                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM],
+                                        //KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM],
                                         (*(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))->KIND_OF_BCH_ALGORITHM,
                                         (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                                     );
@@ -21157,7 +20893,7 @@ int main(int argc, char **argv)
                             main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck,
                             checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)
                         );
-                        // printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+                        //printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
                         printf(">> [ %s ]<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
                         printGaloisField2(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
 
@@ -21168,18 +20904,18 @@ int main(int argc, char **argv)
                     {
                         if(main_com_errNums_inDecodingAlgorithmTest > main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
                         {
-                            // if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly)))
-                            // {
-                                // main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[KIND_OF_BCH_DECODING_BM]++;
+                            //if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errLocPoly)))
+                            //{
+                            //    main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[KIND_OF_BCH_DECODING_BM]++;
 
-                                // warningMes; printf("Error number ('%d') larget than hard-decision correctability ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-                                // warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
-                                // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                // {
-                                    // systemHoldMes;    printf("input any charactor : ");
-                                    // scanf("%s", global_buf_KeyBoardInput);
-                                // }
-                            // }
+                            //    warningMes; printf("Error number ('%d') larget than hard-decision correctability ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                            //    warningMesShort; printf("Degree of error locaion polynomial is '%d'\r\n", main_tmp_degErrLocPoly);
+                            //    if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                            //    {
+                            //        systemHoldMes;    printf("input any charactor : ");
+                            //        scanf("%s", global_buf_KeyBoardInput);
+                            //    }
+                            //}
                             if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)))
                             {
                                 main_indi_errNumExceed_but_degErrLocPoly_not_max_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]++;
@@ -21212,12 +20948,12 @@ int main(int argc, char **argv)
                             #endif
                     for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                     {
-                        // chienSearch_static(
-                            // main_com_used_GF->nonSorted,
-                            // main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly,
-                            // main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector,
-                            // &(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck)
-                        // );
+                        //chienSearch_static(
+                        //    main_com_used_GF->nonSorted,
+                        //    main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly,
+                        //    main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errorLocationVector,
+                        //    &(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->metricCheck)
+                        //);
                         chienSearch(
                             main_com_used_GF->nonSorted,
                             main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->errLocPoly,
@@ -21244,115 +20980,115 @@ int main(int argc, char **argv)
                                 main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->degreeOfErrLocPoly,
                                 main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->metricCheck
                             );
-                            // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                            // {
+                            //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                            //{
                                 systemHoldMes;    printf("input any charactor : ");
                                 scanf("%s", global_buf_KeyBoardInput);
-                            // }
+                            //}
                         }
                     }
                     /* verification of metric chk and deg of err loc poly end */
 
                     /* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
-                    // if(global_flag_bchDecAlgo_Enable&uint32_bitMask[KIND_OF_BCH_DECODING_BM])
-                    // {
-                        // if(global_bch_Soft_OverSyndLen)
-                        // {
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[syndromeArrayCalculatorUsingString start]\r\n");
-                                    // }
-                                    // #endif
-                            // syndromeArrayCalculatorUsingString
-                            // (
-                                // main_com_used_GF->nonSorted,
-                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome,
-                                // main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->vMAX+global_bch_Soft_OverSyndLen,
-                                // (char*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errorLocationVector->equation
-                            // );
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[syndromeArrayCalculatorUsingString end]\r\n");
-                                    // }
-                                    // #endif
+                    //if(global_flag_bchDecAlgo_Enable&uint32_bitMask[KIND_OF_BCH_DECODING_BM])
+                    //{
+                    //    if(global_bch_Soft_OverSyndLen)
+                    //    {
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[syndromeArrayCalculatorUsingString start]\r\n");
+                    //                }
+                    //                #endif
+                    //        syndromeArrayCalculatorUsingString
+                    //        (
+                    //            main_com_used_GF->nonSorted,
+                    //            ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome,
+                    //            main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->vMAX+global_bch_Soft_OverSyndLen,
+                    //            (char*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->errorLocationVector->equation
+                    //        );
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[syndromeArrayCalculatorUsingString end]\r\n");
+                    //                }
+                    //                #endif
 
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[allSyndromeIsZero start]\r\n");
-                                    // }
-                                    // #endif
-                            // if
-                            // (0 < allSyndromeIsZero
-                                    // (
-                                        // main_com_used_GF->nonSorted,
-                                        // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
-                                    // )
-                            // )
-                            // {
-                                // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=1;
-                            // }
-                            // else
-                            // {
-                                // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=0;
-                            // }
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[allSyndromeIsZero end]\r\n");
-                                    // }
-                                    // #endif
-                            // /*
-                            // if(main_com_errNums_inDecodingAlgorithmTest>main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)))
-                            // {
-                                // if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->syndrome))
-                                // {
-                                    // main_indi_errExceed_but_synd_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[allSyndromeIsZero start]\r\n");
+                    //                }
+                    //                #endif
+                    //        if
+                    //        (0 < allSyndromeIsZero
+                    //                (
+                    //                    main_com_used_GF->nonSorted,
+                    //                    ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
+                    //                )
+                    //        )
+                    //        {
+                    //            main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=1;
+                    //        }
+                    //        else
+                    //        {
+                    //            main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][0]=0;
+                    //        }
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[allSyndromeIsZero end]\r\n");
+                    //                }
+                    //                #endif
+                    //        /*
+                    //        //if(main_com_errNums_inDecodingAlgorithmTest>main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)))
+                    //        //{
+                    //        //    if(0<allSyndromeIsZero(main_com_used_GF->nonSorted, ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->syndrome))
+                    //        //    {
+                    //        //        main_indi_errExceed_but_synd_zero_cnt[KIND_OF_BCH_DECODING_BM]++;
 
-                                    // warningMes;
-                                    // printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
-                                    // warningMesShort; printf("Syndrome value is zero is detected.\r\n");
-                                    // warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
-                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                    // {
-                                        // systemHoldMes;    printf("input any charactor : ");
-                                        // scanf("%s", global_buf_KeyBoardInput);
-                                    // }
-                                    // systemHoldMes;    printf("input : ");
-                                    // scanf("%s", global_buf_KeyBoardInput);
-                                // }
-                            // }
-                            // */
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[summationSyndromeArray start]\r\n");
-                                    // }
-                                    // #endif
-                            // summationSyndromeArray
-                            // (
-                                // main_com_used_GF->nonSorted,
-                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome,
-                                // main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->syndrome,
-                                // ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
-                            // );
-                                    // #ifndef RELEASE
-                                    // if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                    // {
-                                        // debugFuncNameMes;
-                                        // printf("[summationSyndromeArray end]\r\n");
-                                    // }
-                                    // #endif
-                        // }
+                    //        //        warningMes;
+                    //        //        printf(" main_com_errNums_inDecodingAlgorithmTest = ('%d') > FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT = ('%d')\r\n", main_com_errNums_inDecodingAlgorithmTest, main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
+                    //        //        warningMesShort; printf("Syndrome value is zero is detected.\r\n");
+                    //        //        warningMesShort; printf("This case will be serious problem in BM decoding algorithm.\r\n");
+                    //        //        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                    //        //        {
+                    //        //            systemHoldMes;    printf("input any charactor : ");
+                    //        //            scanf("%s", global_buf_KeyBoardInput);
+                    //        //        }
+                    //        //        systemHoldMes;    printf("input : ");
+                    //        //        scanf("%s", global_buf_KeyBoardInput);
+                    //        //    }
+                    //        //}
+                    //        */
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[summationSyndromeArray start]\r\n");
+                    //                }
+                    //                #endif
+                    //        summationSyndromeArray
+                    //        (
+                    //            main_com_used_GF->nonSorted,
+                    //            ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->sumReceiveAndErrLocSyndrome,
+                    //            main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM]->syndrome,
+                    //            ((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[KIND_OF_BCH_DECODING_BM])->errLocSyndrome
+                    //        );
+                    //                #ifndef RELEASE
+                    //                if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                    //                {
+                    //                    debugFuncNameMes;
+                    //                    printf("[summationSyndromeArray end]\r\n");
+                    //                }
+                    //                #endif
+                    //    }
 
-                    // }
+                    //}
 
 
 
@@ -21362,14 +21098,14 @@ int main(int argc, char **argv)
                         printSyndromeArray(main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]->syndrome, main_com_used_GF->nonSorted);
 
                         /* !!! Only use BM algorithm errLocSyndrome and sumReceiveAndErrLocSyndrome !!! calculate syndrome of error location */
-                        // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-                        // {
-                            // infoMes; printf(">>> [ %s : %d ] Syndrome of ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
-                            // printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->errLocSyndrome, main_com_used_GF->nonSorted);
+                        //if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                        //{
+                        //    infoMes; printf(">>> [ %s : %d ] Syndrome of ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
+                        //    printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->errLocSyndrome, main_com_used_GF->nonSorted);
 
-                            // infoMes; printf(">>> [ %s : %d ]sum Syndromes of Received and ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
-                            // printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
-                        // }
+                        //    infoMes; printf(">>> [ %s : %d ]sum Syndromes of Received and ErrorLocation vector <<<\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], (*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i)));
+                        //    printSyndromeArray(((struct_HD_BM_algorithmComponent*)main_indi_HD_decordComponents[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))])->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                        //}
 
                         infoMes; printf("[ %s ] Generated Error Vector is below...\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))]);
                         printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_errComponents->errorLocationVector);
@@ -21501,8 +21237,8 @@ int main(int argc, char **argv)
                                             systemHoldMes;    printf("input any charactor : ");
                                             scanf("%s", global_buf_KeyBoardInput);
                                         }
-                                        // systemHoldMes;    printf("input : ");
-                                        // scanf("%s", global_buf_KeyBoardInput);
+                                        //systemHoldMes;    printf("input : ");
+                                        //scanf("%s", global_buf_KeyBoardInput);
                                     }
                                 }
                             }
@@ -21526,7 +21262,7 @@ int main(int argc, char **argv)
                                     printf("\t[%s] errorCorrection [start]\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]);
                                 }
                                 #endif
-                        // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
+                        //closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+KIND_OF_BCH_DECODING_BM)));
                         closeAlgoriehmComponent((main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
                                 #ifndef RELEASE
                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
@@ -21610,12 +21346,12 @@ int main(int argc, char **argv)
                 else
                 {
                     /*
-                        Hard and Soft Decision is commonly use modulation of bpsk,
-                        passing through AWGN and demodulation of bpsk.
-                        If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
-                        And if simulation is Soft decision mode, demodulating use quantization of bpsk.
-                        [start]
-                    */
+                     * Hard and Soft Decision is commonly use modulation of bpsk,
+                     * passing through AWGN and demodulation of bpsk.
+                     * If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
+                     * And if simulation is Soft decision mode, demodulating use quantization of bpsk.
+                     * [start]
+                     */
                     gettimeofday(&time_decoding_start, NULL);
                             #ifndef RELEASE
                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
@@ -21634,9 +21370,9 @@ int main(int argc, char **argv)
                             #endif
                     BPSK_Mod(main_com_bpskComponents->bpskTransData, main_encodingComponentInGF->codeWord->equation, main_encodingComponentInGF->codeWord->usedLength);
 
-                    /*HARD DECISION*/
+                    /* HARD DECISION */
                     /* ADD_AWGN(main_com_bpskComponents->bpskTransData, main_com_bpskComponents->bpskReceivedDataAddedAwgn, 1, main_com_codeLength, main_com_EbN0); */ //need to add bitrate
-                    /*SOFT DECISION*/
+                    /* SOFT DECISION */
                             #ifndef RELEASE
                             if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                             {
@@ -21652,9 +21388,9 @@ int main(int argc, char **argv)
                         ((global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)?1.0:main_com_codeRate),
                         main_com_codeLength,
                         main_com_EbN0
-                    ); //need to add bitrate
-                    // getSqureRootAvrBpskReceivedDataAddedAwgn(main_com_bpskComponents);
-                    // getSqureRootAvrLLR(main_com_bpskComponents->bpskReceivedLLR);
+                    );//need to add bitrate
+                    //getSqureRootAvrBpskReceivedDataAddedAwgn(main_com_bpskComponents);
+                    //getSqureRootAvrLLR(main_com_bpskComponents->bpskReceivedLLR);
                             #ifndef RELEASE
                             if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_debug_awgn&FLAG_MASK_DEBUG_AWGN_SEQUENCE))
                             {
@@ -21676,7 +21412,7 @@ int main(int argc, char **argv)
                             #endif
 
                     gettimeofday(&time_decoding_start, NULL);
-                    /*HARD DECISION*/
+                    /* HARD DECISION */
                     if(!(global_flag_sim_decodingMode&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
                     {
                                 #ifndef RELEASE
@@ -21688,7 +21424,7 @@ int main(int argc, char **argv)
                                 #endif
                         BPSK_Demod(main_com_errComponents->erroredCodeWord->equation, main_com_bpskComponents->bpskReceivedDataAddedAwgn, main_com_codeLength);
                     }
-                    /*SOFT DECISION*/
+                    /* SOFT DECISION */
                     else
                     {
                                 #ifndef RELEASE
@@ -21762,11 +21498,13 @@ int main(int argc, char **argv)
                                                 printf("findMinimumMagnitudeFindLocPushAway\r\n");
                                             }
                                             #endif
-                                    /* convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
-                                            printMagnitudeOfLLR_andLocationWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
-
-                                    sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(main_com_bpskComponents->bpskReceivedLLR);
-                                            testPrintValueOfTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct); */
+                                    /*
+                                    //convertQuantizedLLRToMagnitude(main_com_bpskComponents->bpskReceivedLLR);
+                                    //        printMagnitudeOfLLR_andLocationWithSpaceAndEnter(main_com_bpskComponents->bpskReceivedLLR);
+                                    //
+                                    //sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(main_com_bpskComponents->bpskReceivedLLR);
+                                    //        testPrintValueOfTreeStruct(main_com_bpskComponents->bpskReceivedLLR->treeStruct);
+                                    */
 
                         /*********************************************************************/
                         /* finding log likehood ratio based low reliable bits position start */
@@ -21784,10 +21522,10 @@ int main(int argc, char **argv)
                                 );
 
                                 /*
-                                testPrintLLRWithSpaceAndEnter(
-                                    main_com_bpskComponents->bpskReceivedLLR);
-                                testPrintShortMinimumQuantizedLLRAndLocator(
-                                    main_com_bpskComponents->bpskReceivedLLR);
+                                //testPrintLLRWithSpaceAndEnter(
+                                //    main_com_bpskComponents->bpskReceivedLLR);
+                                //testPrintShortMinimumQuantizedLLRAndLocator(
+                                //    main_com_bpskComponents->bpskReceivedLLR);
                                 */
 
                                 checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
@@ -21855,7 +21593,7 @@ int main(int argc, char **argv)
                                         main_encodingComponentInGF->codeWord,
                                         main_com_errComponents->erroredCodeWord
                                     );
-                                // findMinimumMagnitudeFindLocPushAway(main_com_bpskComponents->bpskReceivedLLR);
+                                //findMinimumMagnitudeFindLocPushAway(main_com_bpskComponents->bpskReceivedLLR);
                             break;
                         }
                         /*******************************************************************/
@@ -21881,12 +21619,12 @@ int main(int argc, char **argv)
                                 #endif
                     }
                     /*
-                        Hard and Soft Decision is commonly use modulation of bpsk,
-                        passing through AWGN and demodulation of bpsk.
-                        If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
-                        And if simulation is Soft decision mode, demodulating use quantization of bpsk.
-                        [start]
-                    */
+                     * Hard and Soft Decision is commonly use modulation of bpsk,
+                     * passing through AWGN and demodulation of bpsk.
+                     * If simulation is Hard decision mode, demodulating use just demodulation of bpsk.
+                     * And if simulation is Soft decision mode, demodulating use quantization of bpsk.
+                     * [start]
+                     */
 
 
                     /************************************************************/
@@ -21941,7 +21679,7 @@ int main(int argc, char **argv)
                                 )
                                 {
                                     printf("[Hard-Decision %d]\r\n", main_tmp_soft_i);
-                                    // printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
+                                    //printf("%s\r\n", *(main_com_strBuf_TP_saved+0));
                                     printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[0]);
 
 
@@ -21949,7 +21687,7 @@ int main(int argc, char **argv)
                                     for(main_tmp_soft_i=1; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
                                     {
                                         printf("[TestPattern %d]\r\n", main_tmp_soft_i);
-                                        // printf("%s\r\n", *(main_com_strBuf_TP_saved+main_tmp_soft_i));
+                                        //printf("%s\r\n", *(main_com_strBuf_TP_saved+main_tmp_soft_i));
                                         printPowerFormWithEnterPolynomialWithEnterUsingAddress(main_com_list_TP_pwrFormPoly[main_tmp_soft_i]);
 
                                         printf("[LLR Locator %d]\r\n", main_tmp_soft_i);
@@ -22042,9 +21780,9 @@ int main(int argc, char **argv)
                     /************** selecting Codeword to decoding start ****************/
                     /********************************************************************/
                     /*
-                        note. counting different number encoded and passing through soft-decision codeword, all test pattern.
-                            Result of calculateHammingWeightFromDiffentPowerFormPolynomial is considered hard and soft decision correctability.
-                    */
+                     * note. counting different number encoded and passing through soft-decision codeword, all test pattern.
+                     * Result of calculateHammingWeightFromDiffentPowerFormPolynomial is considered hard and soft decision correctability.
+                     */
 
 
                     switch(global_flag_case_selTP_before_dec)
@@ -22054,8 +21792,8 @@ int main(int argc, char **argv)
                             for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                             {
                                 /*
-                                    sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
-                                */
+                                 * sel correctable TP(main_indi_sel_TP_i) and to calculate BER, update err cnt(main_indi_sel_TP_errCnt)
+                                 */
                                 set_selTP_before_decording_skipDecOnly
                                 (
 
@@ -22115,9 +21853,9 @@ int main(int argc, char **argv)
                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                 );
                             }
-                            // errorMes; printf("Decoding processing skip mode in decoder error fail detection mode is not support yet.\r\n");
-                            // errorMes; printf("simulation is closed.\r\n");
-                            // return -1;
+                            //errorMes; printf("Decoding processing skip mode in decoder error fail detection mode is not support yet.\r\n");
+                            //errorMes; printf("simulation is closed.\r\n");
+                            //return -1;
                         }
                         break;
 
@@ -22145,17 +21883,17 @@ int main(int argc, char **argv)
                             /***** Decide decording, and if can, compute decoding algorithm *****/
                             /********************************************************************/
                             /*
-                                note. belong to main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM], decoding result(BER) can be changed.
-                                    If main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] is exceed to correctable(hard decision) bits,
-                                    error bits are increased, reduced or no changed.
-                                    Decording result is not predictable.
-
-                                    Decoding target codeword is save at main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM], variable type is struct_powerFormPolynomials*.
-
-                                    Look decoding result, carefully.
-
-                                    main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]
-                            */
+                             * note. belong to main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM], decoding result(BER) can be changed.
+                             * If main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM] is exceed to correctable(hard decision) bits,
+                             * error bits are increased, reduced or no changed.
+                             * Decording result is not predictable.
+                             *
+                             * Decoding target codeword is save at main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM], variable type is struct_powerFormPolynomials*.
+                             *
+                             * Look decoding result, carefully.
+                             *
+                             * main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]
+                             */
 
                             //(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))
                             for(main_tmp_sel_decAlgo_i=0; main_tmp_sel_decAlgo_i<processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
@@ -22168,7 +21906,7 @@ int main(int argc, char **argv)
                                         [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                         [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                 )
-                                // if(main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] <= main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])//try correcting
+                                //if(main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] <= main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])//try correcting
                                 {
                                     /* decrease to main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] */
 
@@ -22210,16 +21948,16 @@ int main(int argc, char **argv)
                                         /***** create BCH decording components start *****/
                                         /*************************************************/
                                         /*
-                                            notes. create new BCH decoding components are not needs.
-                                                Removing this block needs to verify.
-                                        */
+                                         * notes. create new BCH decoding components are not needs.
+                                         * Removing this block needs to verify.
+                                         */
                                         /*
-                                            note. To varifing unsigned int t, which is argument of recreateBmAlgorithmComponent,
-                                            can change length of stage of BM algorithm.
-
-                                            Error count(hamming weight of error vector) exceed it's correctability,
-                                            simulator can be broken, because accessing invalid or wrong memory adress.
-                                        */
+                                         * note. To varifing unsigned int t, which is argument of recreateBmAlgorithmComponent,
+                                         * can change length of stage of BM algorithm.
+                                         *
+                                         * Error count(hamming weight of error vector) exceed it's correctability,
+                                         * simulator can be broken, because accessing invalid or wrong memory adress.
+                                         */
                                                 #ifndef RELEASE
                                                 if(global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
                                                 {
@@ -22231,21 +21969,21 @@ int main(int argc, char **argv)
                                                 #endif
 
                                         /*
-                                            notes. main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] is a aaray, length is main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))].
-                                            To decoding all test pattern, coded like below.
-
-                                            for([var_cnt]=0; [var_cnt]<[max_TP_length]; [var_cnt]++)
-                                            {
-                                                *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][[var_cnt]] = recreateBmAlgorithmComponent
-                                                                        (
-                                                                            *(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]),
-                                                                            main_com_used_GF->nonSorted, main_com_hd_correctability,
-                                                                            (char*)main_com_list_TP_pwrFormPoly[[var_cnt]]->equation,
-                                                                            main_com_codeLength
-                                                                        );
-                                            }
-                                        */
-                                        // **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) = recreateBmAlgorithmComponent
+                                         * notes. main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] is a aaray, length is main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))].
+                                         * To decoding all test pattern, coded like below.
+                                         *
+                                         * for([var_cnt]=0; [var_cnt]<[max_TP_length]; [var_cnt]++)
+                                         * {
+                                         *     *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][[var_cnt]] = recreateBmAlgorithmComponent
+                                         *                             (
+                                         *                                 *(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]),
+                                         *                                 main_com_used_GF->nonSorted, main_com_hd_correctability,
+                                         *                                 (char*)main_com_list_TP_pwrFormPoly[[var_cnt]]->equation,
+                                         *                                 main_com_codeLength
+                                         *                             );
+                                         * }
+                                         */
+                                        //**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]) = recreateBmAlgorithmComponent
                                         //((struct_HD_BM_algorithmComponent**)(main_indi_HD_decordComponents+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))))
                                         *main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] =
                                             recreateAlgoriehmComponent(
@@ -22299,10 +22037,10 @@ int main(int argc, char **argv)
                                                     printf("calculateBmAlgorithm(main_com_used_GF->nonSorted, **(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]));\r\n");
                                                 }
                                                 #endif
-                                        // calculateBmAlgorithm(
-                                            // main_com_used_GF->nonSorted,
-                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))
-                                        // );
+                                        //calculateBmAlgorithm(
+                                        //    main_com_used_GF->nonSorted,
+                                        //    ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))
+                                        //);
                                         calculateBCH_decodingAlgorithm(
                                             main_com_used_GF->nonSorted,
                                             (**(main_indi_SD_list_of_decordingComponents
@@ -22339,12 +22077,12 @@ int main(int argc, char **argv)
                                                     printf("chienSearch_static(main_com_used_GF->nonSorted, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly, (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector, &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck) );\r\n");
                                                 }
                                                 #endif
-                                        // chienSearch_static(
-                                            // main_com_used_GF->nonSorted,
-                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly,
-                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector,
-                                            // &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck)
-                                        // );
+                                        //chienSearch_static(
+                                        //    main_com_used_GF->nonSorted,
+                                        //    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly,
+                                        //    (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errorLocationVector,
+                                        //    &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->metricCheck)
+                                        //);
                                         chienSearch(
                                             main_com_used_GF->nonSorted,
                                             (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->errLocPoly,
@@ -22454,14 +22192,14 @@ int main(int argc, char **argv)
                                         /****************** verification corrected codeword start ********************/
                                         /*****************************************************************************/
                                         /* If use multiDecording Mode, needs to initial this start */
-                                        // for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
-                                        // {
-                                            // main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
-                                        // }
+                                        //for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
+                                        //{
+                                        //    main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i] = 0;
+                                        //}
                                         /* If use multiDecording Mode, needs to initial this end */
                                         /*
-                                             note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
-                                        */
+                                         * note. main_indi_sel_decoding_CW_pwrFormPoly[KIND_OF_BCH_DECODING_BM]
+                                         */
                                         main_indi_list_errCntOf_TP_afterDec
                                         [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                         [main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]] =
@@ -22495,11 +22233,11 @@ int main(int argc, char **argv)
                                         /****** close BCH decording components start ******/
                                         /**************************************************/
                                         /*
-                                            notes. Not onlly create block, close new BCH decoding components are not needs.
-                                                Removing this block needs to verify.
-                                        */
-                                        // if(!(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
-                                        // closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
+                                         * notes. Not onlly create block, close new BCH decoding components are not needs.
+                                         * Removing this block needs to verify.
+                                         */
+                                        //if(!(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM]&FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION))
+                                        //closeBmAlgorithmComponent((struct_HD_BM_algorithmComponent**)(*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
                                         closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
 
                                         /**************************************************/
@@ -22526,15 +22264,15 @@ int main(int argc, char **argv)
                         /************** case start                            ***************/
                         /********************************************************************/
                         /*
-                        note. Actual error count.
-                        Actual is mean, simulator does not known that channel enviroments,
-                        that is mean simulator can not recognize error number corrrectly.
-                        So in below code and actual BER mode,
-                        simulator can not choose best test pattern has minimum error number.
-
-                        Simulator have to identify best test pattern using decoding infomation.
-                        And choose best case.
-                        */
+                         * note. Actual error count.
+                         * Actual is mean, simulator does not known that channel enviroments,
+                         * that is mean simulator can not recognize error number corrrectly.
+                         * So in below code and actual BER mode,
+                         * simulator can not choose best test pattern has minimum error number.
+                         *
+                         * Simulator have to identify best test pattern using decoding infomation.
+                         * And choose best case.
+                         */
                         case FLAG_CASE_SEL_TP_BEFORE_DEC_ACT:
                         {
                                 #ifndef RELEASE
@@ -22647,10 +22385,10 @@ int main(int argc, char **argv)
                                                 );
                                             }
                                             #endif
-                                    // calculateBmAlgorithm(
-                                        // main_com_used_GF->nonSorted,
-                                        // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))
-                                    // );
+                                    //calculateBmAlgorithm(
+                                    //    main_com_used_GF->nonSorted,
+                                    //    ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))
+                                    //);
                                     calculateBCH_decodingAlgorithm(
                                         main_com_used_GF->nonSorted,
                                         (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))
@@ -22709,13 +22447,13 @@ int main(int argc, char **argv)
 
 
 
-                                    // chienSearch_static
-                                        // (
-                                            // main_com_used_GF->nonSorted,
-                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly,
-                                            // (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector,
-                                            // &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck)
-                                        // );
+                                    //chienSearch_static
+                                    //    (
+                                    //        main_com_used_GF->nonSorted,
+                                    //        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly,
+                                    //        (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errorLocationVector,
+                                    //        &((**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck)
+                                    //    );
                                     chienSearch(
                                         main_com_used_GF->nonSorted,
                                         (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->errLocPoly,
@@ -22765,59 +22503,59 @@ int main(int argc, char **argv)
                                             #endif
 
                                     /* calculate syndrome of error location (BM algorithme only) start */
-                                    // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-                                    // {
-                                        // syndromeArrayCalculatorUsingString
-                                        // (
-                                            // main_com_used_GF->nonSorted,
-                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome,
-                                            // (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->vMAX+global_bch_Soft_OverSyndLen,
-                                            // (char*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->errorLocationVector->equation
-                                        // );
-                                        // summationSyndromeArray
-                                        // (
-                                            // main_com_used_GF->nonSorted,
-                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome,
-                                            // (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome,
-                                            // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome
-                                        // );
-                                        // if
-                                        // (0 < allSyndromeIsZero
-                                                // (
-                                                    // main_com_used_GF->nonSorted,
-                                                    // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome
-                                                // )
-                                        // )
-                                        // {
-                                            // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=1;
-                                        // }
-                                        // else
-                                        // {
-                                            // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=0;
-                                        // }
-                                                // #ifndef RELEASE
-                                                // if
-                                                // (
-                                                    // (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                                    // (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                                    // (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                                    // (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
-                                                // )
-                                                // {
-                                                    // infoMes; printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n",
-                                                        // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-                                                        // (main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]?" ON":"OFF"),
-                                                        // main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]
-                                                    // );
-                                                    // infoMes; printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
-                                                    // printSyndromeArray((**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, main_com_used_GF->nonSorted);
-                                                    // infoMes; printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
-                                                    // printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, main_com_used_GF->nonSorted);
-                                                    // infoMes; printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
-                                                    // printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
-                                                // }
-                                                // #endif
-                                    // }
+                                    //if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                                    //{
+                                    //    syndromeArrayCalculatorUsingString
+                                    //    (
+                                    //        main_com_used_GF->nonSorted,
+                                    //        ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome,
+                                    //        (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->vMAX+global_bch_Soft_OverSyndLen,
+                                    //        (char*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->errorLocationVector->equation
+                                    //    );
+                                    //    summationSyndromeArray
+                                    //    (
+                                    //        main_com_used_GF->nonSorted,
+                                    //        ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome,
+                                    //        (**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome,
+                                    //        ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome
+                                    //    );
+                                    //    if
+                                    //    (0 < allSyndromeIsZero
+                                    //            (
+                                    //                main_com_used_GF->nonSorted,
+                                    //                ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome
+                                    //            )
+                                    //    )
+                                    //    {
+                                    //        main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=1;
+                                    //    }
+                                    //    else
+                                    //    {
+                                    //        main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]=0;
+                                    //    }
+                                    //            #ifndef RELEASE
+                                    //            if
+                                    //            (
+                                    //                (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    //                (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    //                (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                    //                (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)
+                                    //            )
+                                    //            {
+                                    //                infoMes; printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n",
+                                    //                    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                    //                    (main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]?" ON":"OFF"),
+                                    //                    main_indi_list_flag_after_dec_synd_zero[KIND_OF_BCH_DECODING_BM][main_tmp_soft_i]
+                                    //                );
+                                    //                infoMes; printf("[ACT] >>> Syndrome of Received vector <<<\r\n");
+                                    //                printSyndromeArray((**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i))->syndrome, main_com_used_GF->nonSorted);
+                                    //                infoMes; printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
+                                    //                printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->errLocSyndrome, main_com_used_GF->nonSorted);
+                                    //                infoMes; printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
+                                    //                printSyndromeArray(((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_tmp_soft_i)))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                                    //            }
+                                    //            #endif
+                                    //}
                                     /* calculate syndrome of error location (BM algorithm only) end */
 
                                     if(!main_indi_list_flag_beforeDec_syndZero[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
@@ -22889,15 +22627,13 @@ int main(int argc, char **argv)
 
                                 }
                                 /*
-                                    Correctable CodeWord Selection
-                                    1. main_indi_list_flag_beforeDec_syndZero is true?
-                                        -> received codeword has no err.
-                                    2. main_indi_list_flag_deccFail is false?
-                                        -> that is mean, metric chk is same with degree of errPoly.
+                                 * Correctable CodeWord Selection
+                                 * 1. main_indi_list_flag_beforeDec_syndZero is true?
+                                 *     -> received codeword has no err.
+                                 * 2. main_indi_list_flag_deccFail is false?
+                                 *     -> that is mean, metric chk is same with degree of errPoly.
                                 */
                             }
-
-
 
 
 
@@ -22905,23 +22641,10 @@ int main(int argc, char **argv)
                             /************************************************************/
                             /****** check get BER actual mode fail condition start ******/
                             /************************************************************/
-                            /*
-                            main_indi_list_flag_beforeDec_syndZero
-
-                            main_indi_list_flag_degOfErrLocPolyNotMax
-
-                            main_indi_list_flag_metricChk_degErrLocPolySame
-
-
-
-                            main_indi_sel_TP_i
-
-                            main_indi_list_errCntOf_TP_afterDec
-                            */
-                            // for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
-                            // {
-                                // main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;
-                            // }
+                            //for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
+                            //{
+                            //    main_indi_sel_TP_i[main_tmp_sel_decAlgo_i] = main_com_numsTP;
+                            //}
                             for(main_tmp_sel_decAlgo_i = 0; main_tmp_sel_decAlgo_i < processingUseThisAlgorithm->length; main_tmp_sel_decAlgo_i++)
                             {
                                 set_flag_act_fail_list_TP
@@ -22937,44 +22660,44 @@ int main(int argc, char **argv)
                                     main_com_numsTP,
                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                 );
-                                // printf("test )))))AL[%s]:%d, selected TestPattern : %d =? %d, ADDR : 0x%x =? 0x%x\r\n",
-                                    // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-                                    // (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
-                                    // *(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-                                    // main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                //printf("test )))))AL[%s]:%d, selected TestPattern : %d =? %d, ADDR : 0x%x =? 0x%x\r\n",
+                                //    KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                //    (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)),
+                                //    *(main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                //    main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
 
-                                    // (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
-                                    // &main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
-                                    // );
+                                //    (main_indi_sel_TP_i+(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))),
+                                //    &main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
+                                //    );
                             }
 
-                                        #ifndef RELEASE
-                                        if(
-                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                        )
-                                        {
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                            printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                        }
-                                        #endif
+                                    #ifndef RELEASE
+                                    if(
+                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    )
+                                    {
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                        printf(">>>>> ******************* Summary of correctables ******************* <<<<<\r\n");
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                    }
+                                    #endif
 
-                                        #ifndef RELEASE
-                                        if(
-                                            (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
-                                            (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
-                                            (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
-                                        )
-                                        {
-                                            printf(">>>>> *************************************************************** <<<<<\r\n");
-                                        }
-                                        #endif
+                                    #ifndef RELEASE
+                                    if(
+                                        (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_bch_BM_SimSD_display&FLAG_MASK_DISPLAY_PROGRESS)||
+                                        (global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||
+                                        (global_flag_debug_display&FLAG_MASK_DISPLAY_FUNCNAME)
+                                    )
+                                    {
+                                        printf(">>>>> *************************************************************** <<<<<\r\n");
+                                    }
+                                    #endif
                             /************************************************************/
                             /******* check get BER actual mode fail condition end *******/
                             /************************************************************/
@@ -23072,25 +22795,25 @@ int main(int argc, char **argv)
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))],
                                                         main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+cmd_tmp_i))]
                                                     );
-                                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                                    // {
+                                                    //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                    //{
                                                         systemHoldMes;    printf("input : ");
                                                         scanf("%s", global_buf_KeyBoardInput);
-                                                    // }
+                                                    //}
                                                 }
                                             }
 
                                         }
-                                                                        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                                                        {
-                                                                            systemHoldMes;    printf("input : ");
-                                                                            scanf("%s", global_buf_KeyBoardInput);
-                                                                        }
+                                                if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                {
+                                                    systemHoldMes;    printf("input : ");
+                                                    scanf("%s", global_buf_KeyBoardInput);
+                                                }
 
                                         infoMes; printf("[ACT] Minumum LLR location and Values\r\n");
                                         testPrintShortMinimumQuantizedLLRAndLocator(main_com_bpskComponents->bpskReceivedLLR);
-                                        // printf("squreRootBpskReceivedDataAddedAwgn = '%g'\r\n", main_com_bpskComponents->squreRootBpskReceivedDataAddedAwgn);
-                                        // printf("squreRootAvrLLR = '%g'\r\n", main_com_bpskComponents->bpskReceivedLLR->squreRootAvrLLR);
+                                        printf("squreRootBpskReceivedDataAddedAwgn = '%g'\r\n", main_com_bpskComponents->squreRootBpskReceivedDataAddedAwgn);
+                                        printf("squreRootAvrLLR = '%g'\r\n", main_com_bpskComponents->bpskReceivedLLR->squreRootAvrLLR);
 
                                         printf("[ACT] >>>>> *************************************************************** <<<<<\r\n");
                                         infoMes; printf("[ACT] >>>>>/***** selection selected test pattern infomation. *****/<<<<<\r\n");
@@ -23182,26 +22905,26 @@ int main(int argc, char **argv)
                                             );
 
                                             /* errLocSyndrome is only valud in BM algorithm start */
-                                            // infoMes;    printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
-                                            // printSyndromeArray(
-                                                // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))->errLocSyndrome,
-                                                // main_com_used_GF->nonSorted
-                                            // );
+                                            //infoMes;    printf("[ACT] >>> Syndrome of ErrorLocation vector <<<\r\n");
+                                            //printSyndromeArray(
+                                            //    ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])))->errLocSyndrome,
+                                            //    main_com_used_GF->nonSorted
+                                            //);
                                             /* errLocSyndrome is only valud in BM algorithm end */
 
                                             /* sum syndromes of receive and err loc is only valid in BM algorithm start */
-                                            // if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
-                                            // {
-                                                // infoMes;    printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
-                                                // printSyndromeArray(
-                                                // ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_indi_sel_TP_i[KIND_OF_BCH_DECODING_BM])))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
+                                            //if((*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)) == KIND_OF_BCH_DECODING_BM)
+                                            //{
+                                            //    infoMes;    printf("[ACT] >>> sum Syndromes of Received and ErrorLocation vector <<<\r\n");
+                                            //    printSyndromeArray(
+                                            //    ((struct_HD_BM_algorithmComponent*)(**(main_indi_SD_list_of_decordingComponents[KIND_OF_BCH_DECODING_BM]+main_indi_sel_TP_i[KIND_OF_BCH_DECODING_BM])))->sumReceiveAndErrLocSyndrome, main_com_used_GF->nonSorted);
 
-                                                // infoMes;    printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n",
-                                                    // KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
-                                                    // (main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"),
-                                                    // main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
-                                                // );
-                                            // }
+                                            //    infoMes;    printf("[ACT] [%s] AFTER) syndromes are zero? flag is %s, V='%d'\r\n",
+                                            //        KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
+                                            //        (main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]?" ON":"OFF"),
+                                            //        main_indi_list_flag_after_dec_synd_zero[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
+                                            //    );
+                                            //}
                                             /* sum syndromes of receive and err loc is only valid in BM algorithm end */
                                         }
                                         printf("\r\n");
@@ -23246,23 +22969,23 @@ int main(int argc, char **argv)
                                     if(!main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
                                     {//actually check can try correction? -> YES
                                         /*
-                                        Corrected bits number is maximum(t=e+-p), choosing algorithm that correctable test-pattern can have some discrepancy.
-                                        So check this, degreeOfErrLocPoly and main_com_hd_correctability are same.
-                                        */
+                                         * Corrected bits number is maximum(t=e+-p), choosing algorithm that correctable test-pattern can have some discrepancy.
+                                         * So check this, degreeOfErrLocPoly and main_com_hd_correctability are same.
+                                         */
                                         if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly == main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] )
                                         {//check to discrepancy of select condition of correctable test pattern.
                                             /*
-                                            chk from test pattern 0 to 2^p - 1 and start to 0.
-                                            Because priority is higher than low numbered test pattern.
-                                            */
+                                             * chk from test pattern 0 to 2^p - 1 and start to 0.
+                                             * Because priority is higher than low numbered test pattern.
+                                             */
                                             for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
                                             {
                                                 if(main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] == main_tmp_soft_i) continue;//except selected test pattern.
                                                 if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i])
                                                 {//check candidate testpattern is theoretically correctable? -> YES
                                                     /*
-                                                    check that non selected test pattern is correctable?
-                                                    */
+                                                     * check that non selected test pattern is correctable?
+                                                     */
                                                     if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->metricCheck )
                                                     {//check that non selected test pattern is correctable? -> YES
                                                         if( (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i))->degreeOfErrLocPoly == (**(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]))->degreeOfErrLocPoly )
@@ -23292,21 +23015,15 @@ int main(int argc, char **argv)
                                                         {//Same condition with selected test-pattern? -> NO
                                                             //can be passing
                                                             //DO NOTHING...
-                                                            //DO NOTHING...
-                                                            //DO NOTHING...
                                                         }
                                                     }
                                                     else
                                                     {//check that non selected test pattern is correctable? -> NO
                                                         //DO NOTHING...
-                                                        //DO NOTHING...
-                                                        //DO NOTHING...
                                                     }
                                                 }
                                                 else
                                                 {//check candidate testpattern is theoretically correctable? -> NO
-                                                    //DO NOTHING...
-                                                    //DO NOTHING...
                                                     //DO NOTHING...
                                                 }
                                             }
@@ -23334,11 +23051,11 @@ int main(int argc, char **argv)
                                                                 KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                             );
 
-                                                                    // if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
-                                                                    // {
-                                                                        // systemHoldMes;    printf("input : ");
-                                                                        // scanf("%s", global_buf_KeyBoardInput);
-                                                                    // }
+                                                                    //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
+                                                                    //{
+                                                                    //    systemHoldMes;    printf("input : ");
+                                                                    //    scanf("%s", global_buf_KeyBoardInput);
+                                                                    //}
                                                         }
                                                         #endif
                                             }
@@ -23433,15 +23150,15 @@ int main(int argc, char **argv)
                                     if(main_indi_list_flag_deccFail[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]])
                                     {//actually check can try correction? -> NO
                                         /*
-                                        if exist correctable test pattern?
-                                        from test pattern 0 to 2^p-1.
-                                        */
+                                         * if exist correctable test pattern?
+                                         * from test pattern 0 to 2^p-1.
+                                         */
                                         for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
                                         {
                                         /*
-                                        theoretically correctable testpattern checker. if being correctable testpattern exist, break out for statements.
-                                        if not exist it, main_tmp_soft_i is set to main_com_numsTP.
-                                        */
+                                         * theoretically correctable testpattern checker. if being correctable testpattern exist, break out for statements.
+                                         * if not exist it, main_tmp_soft_i is set to main_com_numsTP.
+                                         */
                                             if(main_indi_list_flag_theo_ly_can_be_correctable[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_tmp_soft_i]) break;
                                         }
 
@@ -23477,8 +23194,8 @@ int main(int argc, char **argv)
                                         else
                                         {
                                         /*
-                                        theoretical and actual correctable test-patterns are exist.
-                                        */
+                                         * theoretical and actual correctable test-patterns are exist.
+                                         */
                                                     #ifndef RELEASE
                                                     if(
                                                         (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS)||
@@ -23608,7 +23325,7 @@ int main(int argc, char **argv)
                                     {
                                         default:
                                         case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
-                                            // main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                            //main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
                                             main_indi_HD_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
                                         break;
 
@@ -23625,9 +23342,9 @@ int main(int argc, char **argv)
                                 /* actual HD err cnt end */
 
                                 /*
-                                actual selected CW err cnt.
-                                one or more test pattern can try correction.
-                                */
+                                 * actual selected CW err cnt.
+                                 * one or more test pattern can try correction.
+                                 */
                                 if(!main_indi_list_flag_fail_allDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])
                                 {
                                     /* Selected Test Pattern is not decoding fail, update sel test patterb error ent  */
@@ -23636,10 +23353,10 @@ int main(int argc, char **argv)
                                 }
 
                                 /*
-                                all test pattern can not try correction.
-                                selecting index change to test pattern 0.
-                                if all patterns are decoding fail, get error count error bits before error correction.
-                                */
+                                 * all test pattern can not try correction.
+                                 * selecting index change to test pattern 0.
+                                 * if all patterns are decoding fail, get error count error bits before error correction.
+                                 */
                                 else
                                 {
                                     /* Selected Test Pattern is decoding fail */
@@ -23651,7 +23368,7 @@ int main(int argc, char **argv)
                                         case FLAG_CASE_DEC_FAIL_HANDLING_NONE:
                                             main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = 0;
 
-                                            // main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
+                                            //main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
                                             main_indi_sel_TP_errCnt[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = main_indi_list_errCntOf_TP_beforeDec[0];
                                         break;
 
@@ -23677,7 +23394,7 @@ int main(int argc, char **argv)
 
                                 for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
                                 {
-                                    // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)));
+                                    //closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_tmp_soft_i)));
                                     closeAlgoriehmComponent((*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])), (*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i)));
                                 }
 
@@ -23777,9 +23494,9 @@ int main(int argc, char **argv)
                                                 }
                                             }
 
-                    // printf(",M_ToT_CW_ER[%ld], ONE_CW_ER[%d]", main_indi_total_err_cnt_CW[KIND_OF_BCH_DECODING_BM], main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
-                    // printf("M_ToT_CH_ER[%ld], ONE_CH_ER%d", main_com_total_err_cnt_CH, main_com_channel_errCnt);
-                    // printf("M_ToT_BITs[%ld]\n", main_com_total_bit);
+                    //printf(",M_ToT_CW_ER[%ld], ONE_CW_ER[%d]", main_indi_total_err_cnt_CW[KIND_OF_BCH_DECODING_BM], main_indi_sel_TP_errCnt[KIND_OF_BCH_DECODING_BM]);
+                    //printf("M_ToT_CH_ER[%ld], ONE_CH_ER%d", main_com_total_err_cnt_CH, main_com_channel_errCnt);
+                    //printf("M_ToT_BITs[%ld]\n", main_com_total_bit);
 
                     /***********************************************************************************************/
                     /*************** Total channel and coding error bits, transfer bits, calculation ***************/
@@ -23879,14 +23596,14 @@ int main(int argc, char **argv)
                 );
 
 
-                // main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                //main_indi_HD_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
                 fprintf(fileio_indi_algorithm_coding_HD_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s(HD)] ERR Cnt : %ld\r\n",
                     main_com_EbN0,
                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
                     main_indi_total_err_cnt_HD[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                 );
 
-                // main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
+                //main_indi_BER[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] = (double)main_indi_total_err_cnt_CW[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]/(double)main_com_total_bit;
                 fprintf(fileio_indi_algorithm_coding_err_bit_cnt[(*(((uint8_t*)processingUseThisAlgorithm->list)+main_tmp_sel_decAlgo_i))], "@%g, [%s] Err Cnt : %ld\r\n",
                     main_com_EbN0,
                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
@@ -23899,14 +23616,14 @@ int main(int argc, char **argv)
 
         break;
     }
-/*******************************************************************/
-/*******************************************************************/
-/******************** simulation EbN0 loop end *********************/
-/*******************************************************************/
-/*******************************************************************/
-/*******************************************************/
-/****************** REPORT FILE CLOSE ******************/
-/*******************************************************/
+    /*******************************************************************/
+    /*******************************************************************/
+    /******************** simulation EbN0 loop end *********************/
+    /*******************************************************************/
+    /*******************************************************************/
+    /*******************************************************/
+    /****************** REPORT FILE CLOSE ******************/
+    /*******************************************************/
     fclose(fileio_channelBER);
     fclose(fileio_codingBER);
 
@@ -23937,13 +23654,13 @@ int main(int argc, char **argv)
 
     fclose(fildio_EbN0);
     fclose(fildio_loop_Cnt);
-/*******************************************************/
-/****************** REPORT FILE CLOSE ******************/
-/*******************************************************/
+    /*******************************************************/
+    /****************** REPORT FILE CLOSE ******************/
+    /*******************************************************/
 
-/*******************************************************/
-/***************** PATTEWRN FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /***************** PATTEWRN FILE CLOSE *****************/
+    /*******************************************************/
     /* pattern file io */
     if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
     {
@@ -23974,13 +23691,13 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/***************** PATTEWRN FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /***************** PATTEWRN FILE CLOSE *****************/
+    /*******************************************************/
 
-/*******************************************************/
-/***************** PATTERN VERILOG FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /************* PATTERN VERILOG FILE CLOSE **************/
+    /*******************************************************/
     /* pattern file io */
     if(global_flag_file_io_hd_pattern_output&FLAG_MASK_FILE_IO_HD_MES)
     {
@@ -24011,13 +23728,13 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/***************** PATTERN VERILOG FILE CLOSE *****************/
-/*******************************************************/
+    /*******************************************************/
+    /************* PATTERN VERILOG FILE CLOSE **************/
+    /*******************************************************/
 
-/*******************************************************/
-/*************** PATTEWRN LOG FILE CLOSE ***************/
-/*******************************************************/
+    /*******************************************************/
+    /*************** PATTEWRN LOG FILE CLOSE ***************/
+    /*******************************************************/
     if(global_flag_file_io_hd_pattern_output_log&FLAG_MASK_FILE_IO_HD_MES)
     {
         fclose(fileio_HD_mes_log);
@@ -24045,9 +23762,9 @@ int main(int argc, char **argv)
             );
         }
     }
-/*******************************************************/
-/*************** PATTEWRN LOG FILE CLOSE ***************/
-/*******************************************************/
+    /*******************************************************/
+    /*************** PATTEWRN LOG FILE CLOSE ***************/
+    /*******************************************************/
     /* Test Mode Log File IO Close */
     if(global_flag_case_sim_testOpt)
     {
@@ -24081,7 +23798,7 @@ int main(int argc, char **argv)
     {
         for(main_tmp_soft_i=0; main_tmp_soft_i<main_com_numsTP; main_tmp_soft_i++)
         {
-            // closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
+            //closeBmAlgorithmComponent(((struct_HD_BM_algorithmComponent**)*(main_indi_SD_list_of_decordingComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]+main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))])));
             closeAlgoriehmComponent(\
                     (*(main_indi_SD_list_of_decordingComponents\
                         [(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]\
