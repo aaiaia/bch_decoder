@@ -1201,59 +1201,6 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-
-/*to generate elements of galois field 2, primitive polynomials*/
-const unsigned int primmeNumber[]={07, 013, 023, 045, 0103, 0211, 0435, 01021, 02011};
-
-char primitivePringBuffer[33] = {0};
-//////////////////////////////////////////////////////////////////////////////////
-char *convertPrimeNumberToString(char *string, unsigned int exponential, const unsigned int *primeNumberArray)
-{
-    int i;
-
-    #ifndef RELEASE
-    if(!string)
-    {
-        return NULL;
-    }
-    if(!string)
-    {
-        return NULL;
-    }
-    if(exponential<2)
-    {
-        return NULL;
-    }
-    #endif
-
-    for(i=31; 0<=i; i--)
-    {
-        if(((*(primeNumberArray+exponential-2))>>i)&1)
-        {
-            *(string+i+1)=0;
-            break;
-        }
-    }
-    for(; 0<=i; i--)
-    {
-        if(((*(primeNumberArray+exponential-2))>>i)&1)
-        {
-            printf("%d", ((*(primeNumberArray+exponential-2))>>i)&1);
-            *(string+i)='1';
-        }
-        else
-        {
-            printf("%d", ((*(primeNumberArray+exponential-2))>>i)&1);
-            *(string+i)='0';
-        }
-    }
-    printf("\n");
-    return string;
-}
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
 #define MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER    17
 /*
 //const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX     ="1";
