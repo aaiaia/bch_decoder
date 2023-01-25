@@ -479,3 +479,65 @@ void shiftLowSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned in
 {
     return;
 }
+
+unsigned int calculateHammingWeightPowerFormPolynomial(struct_powerFormPolynomials *p)
+{
+    unsigned int i;
+    unsigned int result=0;
+    if(!p) return 0;
+    if(!p->equation) return 0;
+    if(!p->usedLength) return 0;
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(p) reduction(+:result)
+    #endif
+    for(i=0; i<(p->usedLength); i++)
+    {
+        if(*(p->equation+i)=='1') result++;
+    }
+    return result;
+}
+
+unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2)
+{
+    unsigned int i;
+    unsigned int result=0;
+
+    #ifndef RELEASE
+    if(!p1)
+    {
+        errorMes;
+        printf("in calculateHammingWeightFromDiffentPowerFormPolynomial, struct_powerFormPolynomials p1.\n");
+        return -1;
+    }
+    if(!p2)
+    {
+        errorMes;
+        printf("in calculateHammingWeightFromDiffentPowerFormPolynomial, struct_powerFormPolynomials p2.\n");
+        return -1;
+    }
+    if(p1->usedLength!=p2->usedLength)
+    {
+        errorMes;
+        printf("in calculateHammingWeightFromDiffentPowerFormPolynomial, p1->usedLength!=p2->usedLength, can't comparing.\n");
+        return -1;
+    }
+    #endif
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(p1, p2) reduction(+:result)
+    #endif
+    for(i=0; i<p1->usedLength; i++)
+    {
+        //if(((*(p1->equation+i))=='0'))
+        //{
+        //    if(((*(p2->equation+i))!='0')) result++;
+        //}
+        //else if(((*(p1->equation+i))=='1'))
+        //{
+        //    if(((*(p2->equation+i))!='1')) result++;
+        //}
+        if((*(p1->equation+i))!=(*(p2->equation+i))) result++;
+    }
+    return result;
+}

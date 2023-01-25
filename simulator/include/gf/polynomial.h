@@ -18,3 +18,5 @@ char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *str
 struct_powerFormPolynomials *recreatePowerFormPolynomialUsingString(struct_powerFormPolynomials **p, char *string, unsigned int strLength);
 void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length);
 void shiftLowSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length);
+unsigned int calculateHammingWeightPowerFormPolynomial(struct_powerFormPolynomials *p);
+unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2);
