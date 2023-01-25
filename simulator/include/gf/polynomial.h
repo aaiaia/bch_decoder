@@ -16,7 +16,20 @@ char setPowerFormPolynomialUsingStringAddr_clearStringPointer(struct_powerFormPo
 char copyPowerFormPolynomialFromString(struct_powerFormPolynomials *p, char *string);
 //struct_powerFormPolynomials *createPowerFormPolynomialAndInputValue(char *string);
 struct_powerFormPolynomials *recreatePowerFormPolynomialUsingString(struct_powerFormPolynomials **p, char *string, unsigned int strLength);
+
+/* About polynomial operation */
 void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length);
 void shiftLowSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length);
 unsigned int calculateHammingWeightPowerFormPolynomial(struct_powerFormPolynomials *p);
 unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2);
+
+/* For Display(Debugging) */
+void printPowerFormWithEnterPolynomialAndInfoUsingAddress(struct_powerFormPolynomials *p);
+void printPowerFormWithEnterPolynomialWithEnterUsingAddress(struct_powerFormPolynomials *p);
+void printPowerFormWithEnterPolynomialWithTapUsingAddress(struct_powerFormPolynomials *p);
+void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2);
+
+/* file IO */
+void fprintPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail);
+void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail);
+void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolynomials *p, char *str_tail);
