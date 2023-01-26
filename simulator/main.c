@@ -1414,43 +1414,6 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string)
-{
-    unsigned int i;
-
-    #ifndef RELEASE
-    if(!p)
-    {
-        errorMes;
-        printf("in inputValueToPolyForm, struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
-    }
-    if(p->length!=strlen(string))
-    {
-        errorMes;
-        printf("in inputValueToPolyForm, %s(%ld) and struct_galoisFieldPolyForm->length(%d) are not same.\n", string, strlen(string), p->length);
-    }
-    #endif
-
-    #ifndef RELEASE
-    for(i=0; i<p->length; i++)
-    {
-        if((*(string+i)=='0')&&(*(string+i)=='1'))
-        {
-            errorMes;
-            printf("%s(%ld) is composed with wrong character.\n", string, strlen(string));
-            return;
-        }
-    }
-    #endif
-
-    #ifdef USING_OPEN_MP
-    #pragma omp parallel for schedule(guided) private(i) shared(p, string)
-    #endif
-    for(i=0; i<p->length; i++)
-    {
-        *(p->value+i)=*(string+i);
-    }
-}
 //////////////////////////////////////////////////////////////////////////////////
 char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {

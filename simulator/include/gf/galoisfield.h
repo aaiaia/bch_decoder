@@ -15,6 +15,9 @@ struct_galoisFieldPolyForm *createPolyForm(unsigned int length);
 char closePolyForm(struct_galoisFieldPolyForm **p);
 struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length);
 
+/* Setter, Getter */
+void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string);
+
 /* Convert */
 unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p);
 
