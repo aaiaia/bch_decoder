@@ -59,6 +59,7 @@ char closeSummationMatrix(struct_summationMatrix **p)
     return 0;
 }
 
+/* Functions making 'struct_summationMatrix' for list of elements that are 'struct_galoisFieldPolyForm' type */
 /*
  *  !!! WARNING !!!
  *  Avoid to use functions are related with struct_galoisFieldPolyForm directly.
