@@ -13,3 +13,4 @@ struct struct_galoisFieldPolyForm
 
 struct_galoisFieldPolyForm *createPolyForm(unsigned int length);
 char closePolyForm(struct_galoisFieldPolyForm **p);
+struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length);

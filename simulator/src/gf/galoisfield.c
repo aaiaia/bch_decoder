@@ -51,3 +51,20 @@ char closePolyForm(struct_galoisFieldPolyForm **p)
     return 0;
 }
 
+struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length)
+{
+    if(*p)
+    {
+        #ifndef RELEASE
+        if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+        {
+            printf("in recreatePolyForm, struct_galoisFieldPolyForm *p is already have data.\n");
+            printf("*p will be closePolyForm(p).\n");
+        }
+        #endif
+
+        closePolyForm(p);
+    }
+    *p=createPolyForm(length);
+    return *p;
+}

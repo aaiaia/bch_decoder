@@ -1411,23 +1411,6 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, unsigned int length)
-{
-    if(*p)
-    {
-        #ifndef RELEASE
-        if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
-        {
-            printf("in recreatePolyForm, struct_galoisFieldPolyForm *p is already have data.\n");
-            printf("*p will be closePolyForm(p).\n");
-        }
-        #endif
-
-        closePolyForm(p);
-    }
-    *p=createPolyForm(length);
-    return *p;
-}
 //////////////////////////////////////////////////////////////////////////////////
 unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p)
 {
