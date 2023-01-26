@@ -1,3 +1,4 @@
+/* handling galois field except elements */
 struct_galoisFieldElements *createGaloisFieldExceptElements(unsigned int numberOfElement)
 {
     struct_galoisFieldElements *p;
@@ -30,7 +31,6 @@ struct_galoisFieldElements *createGaloisFieldExceptElements_VariableLength()
     return p;
 }
 
-/* handling galois field except elements */
 char addLengthOfGaloisFieldExceptElements_VariableLength(struct_galoisFieldElements *p, unsigned int addedLength)
 {
     #ifndef RELEASE
