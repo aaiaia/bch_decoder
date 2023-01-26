@@ -21,6 +21,12 @@ void inputValueToPolyForm(struct_galoisFieldPolyForm *p, char *string);
 /* Convert */
 unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p);
 
+/* Comparing, Same -> True(1), Diff -> False(0) */
+char checkValueFromPolyFormUsingGaloisFieldValue(struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB);
+char checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB);
+char checkAllValueUsingCharacterFromPolyForm(struct_galoisFieldPolyForm *p, char c);
+char checkValueUsingStringFromPolyForm(struct_galoisFieldPolyForm *p, char *string);
+
 /* For Display(Debugging) */
 void printPolyFormWithEnter(struct_galoisFieldPolyForm *p);
 void printPolyFormPure(struct_galoisFieldPolyForm *p);
