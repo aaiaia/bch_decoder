@@ -317,3 +317,67 @@ char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned 
     createGaloisFieldElementsAtList(p, lengthOfList, lengthOfPolyForm);
     return 0;
 }
+
+struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int lengthOfList, unsigned int polyLength)
+{
+    //struct_galoisFieldPolyForm **p=(struct_galoisFieldPolyForm**)malloc(sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
+    //memset(p, 0, sizeof(struct_galoisFieldPolyForm*)*lengthOfList);
+    struct_galoisFieldPolyForm **p=NULL;
+    if(!(p=createListOfGaloisField(lengthOfList)))
+    {
+                #ifndef RELEASE
+                errorMes; printf("in createListOfGaloisFieldAndComponents, fail that createListOfGaloisField(lengthOfList).\n");
+                errorMes; printf("return value struct_galoisFieldPolyForm **p = 0x%lx\n", (unsigned long)p);
+                #endif
+        return NULL;
+    }
+    if(createGaloisFieldElementsAtList(p, lengthOfList, polyLength))
+    {
+        closeGaloisFieldElementsAtList(&p, lengthOfList);
+        closeListOfGaloisField(&p);
+                #ifndef RELEASE
+                errorMes;    printf("in createListOfGaloisFieldAndComponents, fail that createGaloisFieldElementsAtList(p, lengthOfList, polyLength).\n");
+                #endif
+        return NULL;
+    }
+
+    return p;
+}
+
+char closeListOfGaloisFieldAndElements(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList)
+{
+    if(closeGaloisFieldElementsAtList(p, lengthOfList))
+    {
+        #ifndef RELEASE
+        errorMes; printf("in closeListOfGaloisFieldAndElements, fail close closeGaloisFieldElementsAtList(p, lengthOfList)\n");
+        #endif
+        return -1;
+    }
+    if(closeListOfGaloisField(p))
+    {
+                #ifndef RELEASE
+                errorMes; printf("in closeListOfGaloisFieldAndElements, fail close closeListOfGaloisField(p)\n");
+                #endif
+        return -1;
+    }
+    *p=NULL;
+    return 0;
+}
+
+/*
+//struct_galoisFieldPolyForm **recreateListOfGaloisFieldAndComponents(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList, unsigned int polyLength)
+//{
+//    if(*p)
+//    {
+//        if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG))
+//        {
+//            infoMes;
+//            printf("in createListOfGaloisFieldAndComponents, struct_galoisFieldPolyForm *p have data already.\n");
+//            printf("it will be recreated.\n");
+//        }
+//        closeListOfGaloisFieldAndComponents((*p)->length);
+//    }
+//    *p=createListOfGaloisFieldAndComponents(lengthOfList, polyLength);
+//    return *p;
+//}
+*/
