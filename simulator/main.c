@@ -1412,23 +1412,6 @@ char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPower
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p)
-{
-    unsigned int i;
-    unsigned int result=0;
-
-    #ifdef USING_OPEN_MP
-    #pragma omp parallel for schedule(guided) private(i) shared(p) reduction(|:result)
-    #endif
-    for(i=0; i<p->length; i++)
-    {
-        if(*(p->value+i)=='1')
-        {
-            result|=(1<<i);
-        }
-    }
-    return result;
-}
 //////////////////////////////////////////////////////////////////////////////////
 void printPolyFormWithEnter(struct_galoisFieldPolyForm *p)
 {

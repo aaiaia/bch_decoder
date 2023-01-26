@@ -68,3 +68,22 @@ struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, uns
     *p=createPolyForm(length);
     return *p;
 }
+
+/* Convert */
+unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+    unsigned int result=0;
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(p) reduction(|:result)
+    #endif
+    for(i=0; i<p->length; i++)
+    {
+        if(*(p->value+i)=='1')
+        {
+            result|=(1<<i);
+        }
+    }
+    return result;
+}
