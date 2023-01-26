@@ -195,3 +195,125 @@ struct_galoisFieldPolyForm **recreateListOfGaloisField(struct_galoisFieldPolyFor
     return *p;
 }
 
+char copyListOfGaloisField(struct_galoisFieldPolyForm **to, struct_galoisFieldPolyForm **from, unsigned int size)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!to)
+    {
+        errorMes;
+        printf("in copyListOfGaloisField, struct_galoisFieldPolyForm **to is NULL.\n");
+        return -1;
+    }
+    if(!from)
+    {
+        errorMes;
+        printf("in copyListOfGaloisField, struct_galoisFieldPolyForm **from is NULL.\n");
+        return -1;
+    }
+    if(!size)
+    {
+        errorMes;
+        printf("in copyListOfGaloisField, unsigned int size is 0.\n");
+        return -1;
+    }
+
+    if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
+    {
+        logMes;
+        printf("in copyListOfGaloisField, addr(to)=0x%lx, addr(from)=0x%lx\n", (unsigned long)to, (unsigned long)from);
+    }
+    #endif
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(size, to, from)
+    #endif
+    for(i=0; i<size; i++)
+    {
+        *(to+i)=*(from+i);
+    }
+
+    return 0;
+}
+
+char createGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned int lengthOfList, unsigned int lengthOfPolyForm)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in createGaloisFieldElementsAtList, struct_galoisFieldPolyForm **p is NULL.\n");
+        return -1;
+    }
+    if(!lengthOfList)
+    {
+        errorMes;
+        printf("in createGaloisFieldElementsAtList,  unsigned int lengthOfList is 0.\n");
+        return -1;
+    }
+    if(!lengthOfPolyForm)
+    {
+        errorMes;
+        printf("in createGaloisFieldElementsAtList, unsigned int lengthOfPolyForm is 0.\n");
+        return -1;
+    }
+    #endif
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(lengthOfList, p, lengthOfPolyForm)
+    #endif
+    for(i=0; i<lengthOfList; i++)
+    {
+        *(p+i)=createPolyForm(lengthOfPolyForm);
+    }
+    return 0;
+}
+
+char closeGaloisFieldElementsAtList(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in closeGaloisFieldElementsAtList, struct_galoisFieldPolyForm ***p is NULL.\n");
+        return -1;
+    }
+    if(!(*p))
+    {
+        warningMes;
+        printf("in closeGaloisFieldElementsAtList, struct_galoisFieldPolyForm **p is NULL.\n");
+        return -1;
+    }
+    if(!lengthOfList)
+    {
+        errorMes;
+        printf("in closeGaloisFieldElementsAtList, unsigned int lengthOfList is 0.\n");
+        return -1;
+    }
+    #endif
+
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(lengthOfList, p)
+    #endif
+    for(i=0; i<lengthOfList; i++)
+    {
+        closePolyForm(&(*((*p)+i)));
+    }
+    return 0;
+}
+
+char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned int lengthOfList, unsigned int lengthOfPolyForm)
+{
+    if(closeGaloisFieldElementsAtList(&p, (*p)->length))
+    {
+        warningMes;
+        printf("in recreateGaloisFieldElementsAtList, closeGaloisFieldElementsAtList(&p, (*p)->length) is failed.\n");
+    }
+    createGaloisFieldElementsAtList(p, lengthOfList, lengthOfPolyForm);
+    return 0;
+}
