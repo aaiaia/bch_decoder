@@ -17,3 +17,10 @@ struct_galoisFieldPolyForm *recreatePolyForm(struct_galoisFieldPolyForm **p, uns
 
 /* Convert */
 unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p);
+
+/* For Display(Debugging) */
+void printPolyFormWithEnter(struct_galoisFieldPolyForm *p);
+void printPolyFormPure(struct_galoisFieldPolyForm *p);
+void printPolyForm(struct_galoisFieldPolyForm *p);
+void printPolyFormWithTapAndEnter(struct_galoisFieldPolyForm *p);
+void printPolyFormWithTap(struct_galoisFieldPolyForm *p);

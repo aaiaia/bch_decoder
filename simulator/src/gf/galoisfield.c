@@ -87,3 +87,90 @@ unsigned int convertGaloisFieldPolyFormUnsignedInt(struct_galoisFieldPolyForm *p
     }
     return result;
 }
+
+/* For Display(Debugging) */
+void printPolyFormWithEnter(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+
+    if(!p)
+    {
+        errorMes;
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
+    }
+
+    printf("\"");
+    for(i=0; i<p->length; i++)
+    {
+        printf("%c", *(p->value+i));
+    }
+    printf("\"");
+    printf("\n");
+}
+
+void printPolyFormPure(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+
+    if(!p)
+    {
+        errorMes;
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
+    }
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("%c", *(p->value+i));
+    }
+}
+
+void printPolyForm(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+
+    if(!p)
+    {
+        errorMes;
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
+    }
+
+    printf("\"");
+    for(i=0; i<p->length; i++)
+    {
+        printf("%c", *(p->value+i));
+    }
+    printf("\"");
+}
+
+void printPolyFormWithTapAndEnter(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+
+    if(!p)
+    {
+        errorMes;
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
+    }
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("%c\t", *(p->value+i));
+    }
+    printf("\n");
+}
+
+void printPolyFormWithTap(struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+
+    if(!p)
+    {
+        errorMes;
+        printf("struct_galoisFieldPolyForm addr is wrong(addr:0x%lx).\n", (unsigned long)p);
+    }
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("%c\t", *(p->value+i));
+    }
+}
