@@ -1,3 +1,64 @@
+/* Constructor and Destructor */
+struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsigned int column)
+{
+    unsigned int i;
+    struct_summationMatrix *p;
+
+    #ifndef RELEASE
+    if(!row)
+    {
+        return NULL;
+    }
+    if(!column)
+    {
+        return NULL;
+    }
+    if(row!=column)
+    {
+        return NULL;
+    }
+    #endif
+
+
+    p=(struct_summationMatrix*)malloc(sizeof(struct_summationMatrix));
+
+    p->element=(struct_galoisFieldPolyForm ***)malloc(sizeof(struct_galoisFieldPolyForm **)*row);
+    for(i=0; i<row; i++)
+    {
+        (*(p->element+i))=(struct_galoisFieldPolyForm **)malloc(sizeof(struct_galoisFieldPolyForm *)*column);
+    }
+
+    p->row=row;
+    p->column=column;
+    return p;
+}
+
+char closeSummationMatrix(struct_summationMatrix **p)
+{
+    unsigned int i;
+    if(!p)
+    {
+        return -1;
+    }
+    if(!(*p))
+    {
+        return -1;
+    }
+    #ifdef USING_OPEN_MP
+    #pragma omp parallel for schedule(guided) private(i) shared(p)
+    #endif
+    for(i=0; i<(*p)->row; i++)
+    {
+        free(*((*p)->element+i));
+    }
+    free((*p)->element);
+
+    free(*p);
+
+    *p=NULL;
+    return 0;
+}
+
 /*
  *  !!! WARNING !!!
  *  Avoid to use functions are related with struct_galoisFieldPolyForm directly.

@@ -5,6 +5,10 @@ struct struct_summationMatrix
     struct_galoisFieldPolyForm ***element;
 }typedef struct_summationMatrix;
 
+/* Constructor and Destructor */
+struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsigned int column)
+char closeSummationMatrix(struct_summationMatrix **p)
+
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList);
 char addLengthOfListOfGaloisField_VariableLength(struct_galoisFieldPolyForm *(**p), unsigned int lengthOfList, unsigned int addedLengthOfList);
 char closeListOfGaloisField(struct_galoisFieldPolyForm ***p);
