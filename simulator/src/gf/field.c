@@ -537,8 +537,10 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
     return 0;
 }
 
+/* Converting */
 /*
- * Converting struct_galoisFieldElements type polynomial to binary(string)
+ * About. convertGaloisFielsAndElementsToStringOnlyZeroOrOne(...)
+ * struct_galoisFieldElements type polynomial to binary(string)
  * The polynomial has only two coefficients, are a^0 or a^1, like f(x)=a^1*x^2+a^0*x^1+a^1*x^0
  * f(x)=a^1*x^2+a^1*x^1+a^0*x^0 => [MSB]110[LSB]
  */
