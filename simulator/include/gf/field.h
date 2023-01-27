@@ -20,3 +20,6 @@ struct_galoisFieldElements *recreateGaloisFieldAndElements(struct_galoisFieldEle
 struct_galoisFieldElements *createGaloisField(struct_powerFormPolynomials *primitivePolynomial, unsigned int numberOfElement, unsigned int polyLength);
 char closeGaloisField(struct_galoisFieldElements **p);
 char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, struct_galoisFieldElements *p);
+
+/* For displying(debugging) */
+void printGaloisFieldSavedForm(struct_galoisFieldElements *p);

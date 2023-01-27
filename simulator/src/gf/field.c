@@ -355,3 +355,22 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 
     return 0;
 }
+
+/* For displying(debugging) */
+void printGaloisFieldSavedForm(struct_galoisFieldElements *p)
+{
+    unsigned int tmp_i=0;
+
+    #ifndef RELEASE
+    if(!p) return;
+    #endif
+
+    printf(">> Galois Field File I/O Form <<\n");
+
+    printf("pow(index), string, int value\r\n");
+    printf("%c(%d), %s, %d\r\n", '-', (*(p->element+0))->index, (*(p->element+0))->value, (*(p->element+0))->intValue);
+    for(tmp_i=1; tmp_i<p->length; tmp_i++)
+    {
+        printf("%d(%d), %s, %d\r\n", ((*(p->element+tmp_i))->index - 1), (*(p->element+tmp_i))->index, (*(p->element+tmp_i))->value, (*(p->element+tmp_i))->intValue);
+    }
+}
