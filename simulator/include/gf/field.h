@@ -40,6 +40,9 @@ unsigned int abstractIndexOfPowerFormInElementsOfGaloisField_finding(struct_galo
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
 unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIntValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
 struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operand);
+/* Use character, but it is slow, so this function is alternated. */
+struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB);
+struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldInt_finding(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB);
 
 /* Find Same elements */
 struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
