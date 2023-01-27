@@ -1234,50 +1234,6 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
-{
-    #ifndef RELEASE
-    if(!field)
-    {
-        errorMes;
-        printf("in sumElementInGF_usingSumMatrixReturnAddr, struct_galoisFieldElements *field is NULL.\n");
-        return NULL;
-    }
-    if(!operandA)
-    {
-        errorMes;
-        printf("in sumElementInGF_usingSumMatrixReturnAddr, struct_galoisFieldPolyForm *operandA is NULL.\n");
-        return NULL;
-    }
-    if(!operandB)
-    {
-        errorMes;
-        printf("in sumElementInGF_usingSumMatrixReturnAddr, struct_galoisFieldPolyForm *operandB is NULL.\n");
-        return NULL;
-    }
-    if(!field->summationReferMatrix)
-    {
-        errorMes;
-        printf("in sumElementInGF_usingSumMatrixReturnAddr, if(!field->summationReferMatrix)\n");
-        return NULL;
-    }
-    if(field->summationReferMatrix->element[0][0]->length!=operandA->length)
-    {
-        errorMes;
-        printf("in *sumElementInGF_usingSumMatrixReturnAddr, field poly length: %d, operandA field poly length: %d\n", field->summationReferMatrix->element[0][0]->length, operandA->length);
-        return NULL;
-    }
-    if(operandB->length!=operandA->length)
-    {
-        errorMes;
-        printf("in *sumElementInGF_usingSumMatrixReturnAddr, operandA poly length: %d, operandA poly length: %d\n", operandA->length, operandB->length);
-        return NULL;
-    }
-    #endif
-
-    return field->summationReferMatrix->element[operandA->index][operandB->index];
-    //return (*((*(matrix->element+(operandA->index)))+(operandB->index)));
-}
 //////////////////////////////////////////////////////////////////////////////////
 /*
 //unsigned int multiplicationWithExponential(struct_galoisFieldElements *field, unsigned int exponentialA, unsigned int exponentialB)
