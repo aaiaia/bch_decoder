@@ -751,7 +751,10 @@ struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisF
     return *(field->element+exponential+1);
 }
 
-/* Use character, but it is slow, so this function is alternated. */
+/*
+ * About. summationElementsInGaloisFieldUsingGaloisFieldValue(...)
+ * Use character, but it is slow, so this function is alternated.
+ */
 struct_galoisFieldPolyForm *summationElementsInGaloisFieldUsingGaloisFieldValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
 {
     unsigned int i;
