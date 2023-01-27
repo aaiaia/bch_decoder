@@ -27,3 +27,6 @@ char closeListOfGaloisFieldAndElements(struct_galoisFieldPolyForm ***p, unsigned
 char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
 //struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int row, unsigned int column);
 struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column);
+
+/* For displaying(debugging) */
+void printSummationMatrixSavedForm(struct_summationMatrix *p);

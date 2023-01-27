@@ -1232,47 +1232,6 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-void printSummationMatrixSavedForm(struct_summationMatrix *p)
-{
-    unsigned int tmp_i,tmp_j;
-
-    #ifndef RELEASE
-    if(!p)
-    {
-        errorMes;
-        printf("in printSummationMatrixSavedForm, struct_summationMatrix *p is NULL\r\n");
-        return;
-    }
-    #endif
-
-    printf(">> Summation Matrix File I/O Form <<\n");
-
-    for(tmp_i=0; tmp_i<p->row; tmp_i++)
-    {
-        for(tmp_j=0; tmp_j<p->column; tmp_j++)
-        {
-            if((*((*(p->element+tmp_i))+tmp_j))->index)
-            {
-                printf("%d(%d)%s",
-                    ((*((*(p->element+tmp_i))+tmp_j))->index - 1),
-                    (*((*(p->element+tmp_i))+tmp_j))->index,
-                    ((tmp_j<(p->column-1))?", ":"")
-                );
-            }
-            else
-            {
-                printf("%c(%d)%s",
-                    '-',
-                    (*((*(p->element+tmp_i))+tmp_j))->index,
-                    ((tmp_j<(p->column-1))?", ":"")
-                );
-
-            }
-
-        }
-        printf("\r\n");
-    }
-}
 //////////////////////////////////////////////////////////////////////////////////
 char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p)
 {
