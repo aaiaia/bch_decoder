@@ -537,6 +537,57 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
     return 0;
 }
 
+/*
+ * Converting struct_galoisFieldElements type polynomial to binary(string)
+ * The polynomial has only two coefficients, are a^0 or a^1, like f(x)=a^1*x^2+a^0*x^1+a^1*x^0
+ * f(x)=a^1*x^2+a^1*x^1+a^0*x^0 => [MSB]110[LSB]
+ */
+char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldElements *field, struct_galoisFieldElements *convertedPolynomial)
+{
+    unsigned int i;
+
+    char *p;
+
+    #ifndef RELEASE
+    if(!field)
+    {
+        errorMes;
+        printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, struct_galoisFieldElements *field is NULL.\n");
+        return NULL;
+    }
+    if(!convertedPolynomial)
+    {
+        errorMes;
+        printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, struct_galoisFieldElements *p is NULL.\n");
+        return NULL;
+    }
+    #endif
+
+    p=(char*)malloc(sizeof(char)*(convertedPolynomial->length+1));
+    *(p+convertedPolynomial->length)=0;
+
+    for(i=0; i<convertedPolynomial->length; i++)
+    {
+        if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_((*(convertedPolynomial->element+i)), (*(field->element+0))))
+        {
+            *(p+i)='0';
+        }
+        else if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_((*(convertedPolynomial->element+i)), (*(field->element+1))))
+        {
+            *(p+i)='1';
+        }
+        else
+        {
+                    #ifndef RELEASE
+                    errorMes; printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, (*(convertedPolynomial->element+i)) have a ilegal valie.\n");
+                    #endif
+            free(p);
+            return NULL;
+        }
+    }
+    return p;
+}
+
 /* For displying(debugging) */
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p)
 {

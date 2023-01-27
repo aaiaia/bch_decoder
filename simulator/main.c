@@ -1225,52 +1225,6 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldElements *field, struct_galoisFieldElements *convertedPolynomial)
-{
-    unsigned int i;
-
-    char *p;
-
-    #ifndef RELEASE
-    if(!field)
-    {
-        errorMes;
-        printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, struct_galoisFieldElements *field is NULL.\n");
-        return NULL;
-    }
-    if(!convertedPolynomial)
-    {
-        errorMes;
-        printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, struct_galoisFieldElements *p is NULL.\n");
-        return NULL;
-    }
-    #endif
-
-    p=(char*)malloc(sizeof(char)*(convertedPolynomial->length+1));
-    *(p+convertedPolynomial->length)=0;
-
-    for(i=0; i<convertedPolynomial->length; i++)
-    {
-        if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_((*(convertedPolynomial->element+i)), (*(field->element+0))))
-        {
-            *(p+i)='0';
-        }
-        else if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_((*(convertedPolynomial->element+i)), (*(field->element+1))))
-        {
-            *(p+i)='1';
-        }
-        else
-        {
-                    #ifndef RELEASE
-                    errorMes; printf("in convertGaloisFielsAndElementsToStringOnlyZeroOrOne, (*(convertedPolynomial->element+i)) have a ilegal valie.\n");
-                    #endif
-            free(p);
-            return NULL;
-        }
-    }
-    return p;
-}
-
 //////////////////////////////////////////////////////////////////////////////////
 struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
 {
