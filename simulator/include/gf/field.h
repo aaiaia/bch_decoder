@@ -21,5 +21,9 @@ struct_galoisFieldElements *createGaloisField(struct_powerFormPolynomials *primi
 char closeGaloisField(struct_galoisFieldElements **p);
 char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, struct_galoisFieldElements *p);
 
+/* File IO */
+char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *p);
+char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *p);
+
 /* For displying(debugging) */
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p);
