@@ -30,3 +30,7 @@ struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galois
 
 /* For displaying(debugging) */
 void printSummationMatrixSavedForm(struct_summationMatrix *p);
+
+/* FILE IO */
+char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p);
+char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
