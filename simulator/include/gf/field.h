@@ -34,6 +34,13 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
  */
 char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldElements *field, struct_galoisFieldElements *convertedPolynomial);
 
+/* Operations */
+struct_galoisFieldPolyForm *invertValueElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);//minus
+unsigned int abstractIndexOfPowerFormInElementsOfGaloisField_finding(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
+unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
+unsigned int abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIntValue(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
+struct_galoisFieldPolyForm *invertExponentialElementInGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operand);
+
 /* Find Same elements */
 struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
 struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoisFieldElements *field, char *string);
