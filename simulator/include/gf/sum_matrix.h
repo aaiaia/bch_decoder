@@ -23,3 +23,7 @@ char recreateGaloisFieldElementsAtList(struct_galoisFieldPolyForm **p, unsigned 
 struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int lengthOfList, unsigned int polyLength);
 char closeListOfGaloisFieldAndElements(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList);
 //struct_galoisFieldPolyForm **recreateListOfGaloisFieldAndComponents(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList, unsigned int polyLength);
+
+char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
+//struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int row, unsigned int column);
+struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column);
