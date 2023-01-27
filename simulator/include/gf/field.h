@@ -32,5 +32,9 @@ char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_gal
  */
 char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldElements *field, struct_galoisFieldElements *convertedPolynomial);
 
+/* Find Same elements */
+struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p);
+struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoisFieldElements *field, char *string);
+
 /* For displying(debugging) */
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p);

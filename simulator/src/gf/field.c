@@ -588,6 +588,51 @@ char *convertGaloisFielsAndElementsToStringOnlyZeroOrOne(struct_galoisFieldEleme
     return p;
 }
 
+/* Find Same elements */
+struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *p)
+{
+    unsigned int i;
+    struct_galoisFieldPolyForm *result=NULL;
+    #ifndef RELEASE
+    if((*(field->element))->length!=p->length)
+    {
+        errorMes;
+        printf("in *findSameElementOfGaloisField, field poly length: %d, target field poly length: %d\n", (*(field->element))->length, p->length);
+    }
+    #endif
+
+    for(i=0; i<field->length; i++)
+    {
+        if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*(field->element+i), p))
+        {
+            result=(*(field->element+i));
+        }
+    }
+    return result;
+}
+
+struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoisFieldElements *field, char *string)
+{
+    unsigned int strLength = strlen(string);
+
+    unsigned int i;
+
+    #ifndef RELEASE
+    if((*(field->element))->length!=strLength)
+    {
+        errorMes;
+        printf("in *findSameElementOfGaloisFieldUsingString, field poly length: %d, string length: %d\n", (*(field->element))->length, strLength);
+        printf("string : \"%s\"\n", string);
+    }
+    #endif
+
+    for(i=0; i<field->length; i++)
+    {
+        if(checkValueUsingStringFromPolyForm(*(field->element+i), string)) return (*(field->element+i));
+    }
+    return NULL;
+}
+
 /* For displying(debugging) */
 void printGaloisFieldSavedForm(struct_galoisFieldElements *p)
 {
