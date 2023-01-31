@@ -18,3 +18,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned i
 struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength();
 char closeConjugacyClasses(struct_setOfGaloisFieldElements **p);
 struct_setOfGaloisFieldElements *recreateConjugacyClasses(struct_setOfGaloisFieldElements **p, struct_galoisFieldElements *galoisFields);
+
+/* Configure */
+char setLengthOfLimittedLengthOfConjugacyClasse(struct_setOfGaloisFieldElements *p, unsigned int limitedExponential);
+char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength);
