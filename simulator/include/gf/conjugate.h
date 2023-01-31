@@ -22,3 +22,8 @@ struct_setOfGaloisFieldElements *recreateConjugacyClasses(struct_setOfGaloisFiel
 /* Configure */
 char setLengthOfLimittedLengthOfConjugacyClasse(struct_setOfGaloisFieldElements *p, unsigned int limitedExponential);
 char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength);
+
+/* file IO */
+void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p);
+char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_setOfGaloisFieldElements *p);
+char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements **p);
