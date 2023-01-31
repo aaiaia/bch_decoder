@@ -1249,6 +1249,49 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
+char abstractOrderOfEquation(struct_galoisFieldElements *equation)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!equation)
+    {
+        errorMes;
+        printf("in checkBlankLengthOfEquation, struct_galoisFieldElements *equation is NULL.\n");
+        return 0;
+    }
+    if(!(equation->length))
+    {
+        errorMes;
+        printf("in checkBlankLengthOfEquation, (equation->length) is ZERO.\n");
+        return 0;
+    }
+    #endif
+
+    for(i=equation->length-1; i!=0; i--)//can't check when i==0.
+    {
+        if(!checkAllValueUsingCharacterFromPolyForm(*(equation->element+i), '0'))
+        {
+            break;
+        }
+    }
+    if(!i)//check when i==0;
+    {
+        return i;
+    }
+    else
+    {
+        if(!checkAllValueUsingCharacterFromPolyForm(*(equation->element+i), '0'))
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////////
 //f(x)=(x+a)(x+b)(x+c)(x+d)(x+e) = x^5 + A*x^4 + B*x^3 + C*x^2 + D*x^2 + E*x^1 + F
 struct_galoisFieldElements *expandRootOfLCM_usingEleOfGF
