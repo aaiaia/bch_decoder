@@ -284,6 +284,240 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
     return 0;
 }
 
+/* Operation */
+char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p)
+{
+    char *elementFlagger;
+
+    unsigned int i, j;
+    unsigned int elementFlaggerSecelcted;//k;
+
+    unsigned int exponential;
+
+    struct_galoisFieldPolyForm *calculationBuffer;
+
+    #ifndef RELEASE
+    if(!galoisFields)
+    {
+        errorMes;
+        printf("in calculateConjugacyClasses, struct_galoisFieldElements *galoisFields is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in calculateConjugacyClasses, struct_setOfGaloisFieldElements *p is NULL.\n");
+        return -1;
+    }
+    #endif
+
+    //*(elementFlagger+0) is mean that a^1 is selected already.
+    elementFlagger=(char*)malloc(sizeof(char)*((galoisFields->length)-2+1));//index 0 is mean that a^1, and latest index(except NULL) is total number of element in GF -(minus) 2.
+    memset(elementFlagger, '0', sizeof(char)*((galoisFields->length)-2));
+    *(elementFlagger+((galoisFields->length)-2))=0;//last string have to set NULL.
+
+    elementFlaggerSecelcted=1;//elementFlaggerSecelcted is indicate elementsFlagger location.
+
+    for(i=0; i<p->length; i++)
+    {
+        *((*(p->conjugateSet+i))->element+0)=*(galoisFields->element+2+(elementFlaggerSecelcted-1));
+        elementFlagger[(elementFlaggerSecelcted-1)]='1';
+
+        for(j=1; j<(*(p->conjugateSet+i))->length; j++)
+        {
+            calculationBuffer=multiElementsInGF_returnAddr(galoisFields, *((*(p->conjugateSet+i))->element-1+j), *((*(p->conjugateSet+i))->element-1+j));
+            if(checkValueFromPolyFormUsingGaloisFieldValueUsingIntValue_(*((*(p->conjugateSet+i))->element+0), calculationBuffer))//check, it is same to first value?
+            {
+                if(j!=(*(p->conjugateSet+i))->length)//length is number and j-1 is offset. So, j-1+1 is number.
+                {
+                            #ifndef RELEASE
+                            warningMes; printf("in calculateConjugacyClasses, j(=\'%d\')!=(*(p->conjugateSet+i))->length(=\'%d\').\n", j, (*(p->conjugateSet+i))->length);
+                            #endif
+                    (*(p->conjugateSet+i))->length=j;
+
+                    #ifndef RELEASE
+                    for(; j<(*(p->conjugateSet+i))->length; j++)
+                    {
+                        if(*((*(p->conjugateSet+i))->element+j))
+                        {
+                            warningMes; printf("in calculateConjugacyClasses, *((*(p->conjugateSet+i))->element+j)(Addr = \'0x%lx\') is not NULL.\n", (unsigned long)(*((*(p->conjugateSet+i))->element+j)));
+                            warningMesShort; printf("this link information(it is pointer) will be lost.\n");
+                        }
+                    }
+                    #endif
+                }
+                break;
+            }
+            else
+            {
+                exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer);
+
+                if((exponential==-1)||(exponential==0)||(exponential==1))
+                {
+                            #ifndef RELEASE
+                            errorMes; printf("in calculateConjugacyClasses, exponential can not be \'%d\'.\n", exponential);
+                            #endif
+                    return -1;
+                }
+
+                elementFlagger[(exponential-2)]='1';
+                *((*(p->conjugateSet+i))->element+j)=calculationBuffer;
+            }
+        }
+
+        //find non selected elements using elementFlagger.
+        for(elementFlaggerSecelcted=1; elementFlaggerSecelcted<((galoisFields->length)-2+1); elementFlaggerSecelcted++)
+        {
+            if((elementFlagger[elementFlaggerSecelcted-1]=='0'))
+            {
+                break;
+            }
+        }
+        if(elementFlaggerSecelcted==((galoisFields->length)-2+1))
+        {
+            break;
+        }
+    }
+    free(elementFlagger);
+    return 0;
+}
+
+char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p)
+{
+    char *elementFlagger;
+
+    unsigned int i;
+    unsigned int selectedConjugacySet;
+    unsigned int selectedElementOfConjugacy;
+
+
+
+    struct_galoisFieldPolyForm *firstElementOfConjugacySet;
+    struct_galoisFieldPolyForm *calculationBuffer;
+
+    #ifndef RELEASE
+    if(!galoisFields)
+    {
+        errorMes;
+        printf("in calculateConjugacyClasses, struct_galoisFieldElements *galoisFields is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in calculateConjugacyClasses, struct_setOfGaloisFieldElements *p is NULL.\n");
+        return -1;
+    }
+    #endif
+
+    /* flagger start a^0, but a^0 one of conjugacy any conjugacy set. */
+    elementFlagger=(char*)malloc(sizeof(char)*((galoisFields->length)+1));
+    memset(elementFlagger, '0', sizeof(char)*((galoisFields->length)-1));
+
+    elementFlagger[(galoisFields->length)]=0;//last string have to set NULL.
+    elementFlagger[0]='1';//a^- already select, because it is not change when doubled itself.
+    elementFlagger[1]='1';//a^0 already select, because it is not change when doubled itself.
+
+    selectedConjugacySet=0;//start 0-th conjugacy set
+
+    for(i=0; i<galoisFields->length; i++)
+    {
+        /* pass selected location of element*/
+        if(elementFlagger[i]=='1')
+        {
+            continue;
+        }
+
+        /* if not enough space of conjugacy set to charge conjugacy, added space */
+        if(!((selectedConjugacySet)<(p->length)))
+        {
+            if(addLengthOfConjugacySet_VariableLength(galoisFields, p, 1))
+            {
+                        #ifndef RELEASE
+                        errorMes; printf("in calculateConjugacyClasses_VariableLength, addLengthOfConjugacySet_VariableLength(galoisFields, p, 1) return to not zero.");
+                        printf("it is mean that add conjugacy set is fail. conjugacy set will be closed and simulator can not work normally.\n");
+                        #endif
+                closeConjugacyClasses(&p);
+                return -1;
+            }
+
+        }
+
+        /* To fill up conjugacy set, initialize conditions */
+        firstElementOfConjugacySet=galoisFields->element[i];
+        calculationBuffer=firstElementOfConjugacySet;
+
+        if(!(p->conjugateSet[selectedConjugacySet]->length))
+        {
+            if(p->conjugateSet[selectedConjugacySet]->element)
+            {
+                p->conjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->conjugateSet[selectedConjugacySet]), 1);
+            }
+
+        }
+        /*
+        //if(!(p->limitedConjugateSet[selectedConjugacySet]->length))
+        //{
+        //    if(p->limitedConjugateSet[selectedConjugacySet]->element)
+        //    {
+        //        p->limitedConjugateSet[selectedConjugacySet]=recreateGaloisFieldExceptElements(&(p->limitedConjugateSet[selectedConjugacySet]), 1);
+        //    }
+        //}
+        */
+
+        selectedElementOfConjugacy=0;
+        do
+        {
+            if(!((selectedElementOfConjugacy)<(p->conjugateSet[selectedConjugacySet]->length)))
+            {
+                addLengthOfGaloisFieldExceptElements_VariableLength(p->conjugateSet[selectedConjugacySet], 1);
+            }
+            ((p->conjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
+
+            /*
+            //This code is wrong.... 1
+            //if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
+            //{
+            //    addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
+            //    if( !( (abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)-1) > p->limitedExponential ) )
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
+            //    }
+            //    else
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
+            //    }
+            //}
+            */
+            /*
+            //This code is wrong.... 2
+            //if(!((selectedElementOfConjugacy)<(p->limitedConjugateSet[selectedConjugacySet]->length)))
+            //{
+            //    addLengthOfGaloisFieldExceptElements_VariableLength(p->limitedConjugateSet[selectedConjugacySet], 1);
+            //    if( !(selectedElementOfConjugacy%2) )
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=calculationBuffer;
+            //    }
+            //    else
+            //    {
+            //        ((p->limitedConjugateSet[selectedConjugacySet])->element[selectedElementOfConjugacy])=galoisFields->element[0];
+            //    }
+            //}
+            */
+
+            elementFlagger[abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, calculationBuffer)]='1';//set selected location
+            selectedElementOfConjugacy++;
+            calculationBuffer=multiElementsInGF_returnAddr(galoisFields, calculationBuffer, calculationBuffer);
+        }
+        while(firstElementOfConjugacySet!=calculationBuffer);
+        /* increase 1, selectedConjugacySet */
+        selectedConjugacySet++;
+    }
+
+    free(elementFlagger);
+    return 0;
+}
+
 /* file IO */
 void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
 {
