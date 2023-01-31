@@ -34,3 +34,7 @@ struct_encodingComponentInGF *recreateEncodingComponentAndInputValue(
         char_POWER_FORM *generationPolynomial,
         char *value
 );
+
+/* Operation */
+char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *encodedCodeWord, unsigned int numberOfParityBits, char_POWER_FORM *generationPolynomial);
+char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *encodedCodeWord, unsigned int numberOfParityBits, char_POWER_FORM *generationPolynomial);
