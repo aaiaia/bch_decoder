@@ -31,3 +31,6 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_setOfGaloisFieldElements *p);
 char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements **p);
 void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p);
+
+/* for Debugging(displaying) */
+void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p);
