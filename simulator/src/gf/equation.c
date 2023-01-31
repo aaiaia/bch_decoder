@@ -11,6 +11,8 @@
 //
 //    copyListOfGaloisField(p->beforeAlpha->element, p->alpha->element, p->alpha->length);
 */
+
+/* Constructor and Destructor */
 char initEquation(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *p)
 {
     unsigned int i;
@@ -153,6 +155,7 @@ char initBinEquationUsingStr(struct_galoisFieldElements *galoisFields, struct_ga
     return 0;
 }
 
+/* Operation */
 struct_galoisFieldElements* multipleTwoEqReturnAddr(
     struct_galoisFieldElements *galoisFields,
     struct_galoisFieldElements **result,
@@ -221,6 +224,7 @@ struct_galoisFieldElements* multipleTwoEqReturnAddr(
     return *result;
 }
 
+/* etc */
 char abstractOrderOfEquation(struct_galoisFieldElements *equation)
 {
     unsigned int i;
