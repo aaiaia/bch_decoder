@@ -24,6 +24,7 @@ char calculateGaloisField(struct_powerFormPolynomials *primitivePolynomial, stru
 /* File IO */
 char save_struct_galoisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *p);
 char load_struct_galoisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *p);
+void printGaloisFieldSavedForm(struct_galoisFieldElements *p);
 
 /* Converting */
 /*
@@ -55,4 +56,3 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldEleme
 struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoisFieldElements *field, char *string);
 
 /* For displying(debugging) */
-void printGaloisFieldSavedForm(struct_galoisFieldElements *p);
