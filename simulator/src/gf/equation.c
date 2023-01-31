@@ -267,3 +267,32 @@ char abstractOrderOfEquation(struct_galoisFieldElements *equation)
         }
     }
 }
+
+unsigned int checkDegreePolynomials(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *targetPolynomial)
+{
+    unsigned int i,j;
+        //#ifndef RELEASE
+        //    unsigned int bebuggingTemp;
+        //    unsigned int bebuggingTemp2;
+        //#endif
+    if(!targetPolynomial) return -1;
+    if(!galoisFields) return -1;
+
+    for(i=targetPolynomial->length; i!=0; i--)
+    {
+        //#ifndef RELEASE
+        //    bebuggingTemp = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(galoisFields->element+(0)));
+        //    bebuggingTemp2 = abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(targetPolynomial->element+(i-1)));
+        //    debugMes; printf("index %d == index %d ??\r\n", bebuggingTemp, bebuggingTemp2);
+        //#endif
+
+        if(*(targetPolynomial->element+(i-1)) != *(galoisFields->element+(0))) break;
+    }
+    for(j=0; j<targetPolynomial->length; j++)
+    {
+        if(*(targetPolynomial->element+(j)) != *(galoisFields->element+(0)))    return i-1;
+        else i--;
+    }
+
+    return 0;
+}

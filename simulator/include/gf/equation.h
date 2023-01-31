@@ -15,3 +15,4 @@ struct_galoisFieldElements* multipleTwoEqReturnAddr(
 
 /* etc */
 char abstractOrderOfEquation(struct_galoisFieldElements *equation);
+unsigned int checkDegreePolynomials(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *targetPolynomial)
