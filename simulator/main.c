@@ -1241,48 +1241,6 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/*
-//struct_galoisFieldElements *createConjugacyClass(unsigned int numberOfElementOfgaloisField)
-//{
-//    if(!numberOfElementOfgaloisField)
-//    {
-//        errorMes;
-//        printf("in createConjugacyClass, unsigned int numberOfElementOfgaloisField is zero.\n");
-//        return NULL;
-//    }
-//
-//
-//    struct_galoisFieldElements *p;
-//    if(!(p = (struct_galoisFieldElements*)createGaloisFieldExceptElements(numberOfElementOfgaloisField)))
-//    {
-//        errorMes;
-//        printf("in createConjugacyClass, (p = createGaloisFieldExceptElements(numberOfElementOfgaloisField)) return NULL.\n");
-//        return p;
-//    }
-//
-//    return p;
-//}
-*/
-//////////////////////////////////////////////////////////////////////////////////
-/*
-//char closeConjugacyClass(struct_galoisFieldElements *p)
-//{
-//    if(!p)
-//    {
-//        errorMes;
-//        printf("in closeConjugacyClass, struct_galoisFieldElements *p is NULL.\n");
-//        return -1;
-//    }
-//
-//    if(closeGaloisFieldExceptElements(struct_galoisFieldElements *p))
-//    {
-//        errorMes;
-//        printf("in closeConjugacyClass, closeGaloisFieldExceptElements(struct_galoisFieldElements *p) return error.\n");
-//        return -1;
-//    }
-//    return 0;
-//}
-*/
 //////////////////////////////////////////////////////////////////////////////////
 /*
  * note about struct_setOfGaloisFieldElements.
