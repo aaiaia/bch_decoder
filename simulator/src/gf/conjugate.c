@@ -1,3 +1,4 @@
+/* Constructor and Destructor */
 struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElements *galoisFields)
 {
     struct_setOfGaloisFieldElements *p;
@@ -65,7 +66,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElemen
 
     return p;
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned int setLength, unsigned int *setElementLength)
 {
     struct_setOfGaloisFieldElements *p;
@@ -93,7 +94,7 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned i
 
     return p;
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
 {
     struct_setOfGaloisFieldElements *p;
@@ -173,7 +174,7 @@ char closeConjugacyClasses(struct_setOfGaloisFieldElements **p)
     *p=NULL;
     return 0;
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 struct_setOfGaloisFieldElements *recreateConjugacyClasses(struct_setOfGaloisFieldElements **p, struct_galoisFieldElements *galoisFields)
 {
     if(*p)

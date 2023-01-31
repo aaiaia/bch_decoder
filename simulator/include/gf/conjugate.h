@@ -12,3 +12,9 @@ struct struct_setOfGaloisFieldElements
     struct_galoisFieldElements **limitedConjugateSet;
 }typedef struct_setOfGaloisFieldElements;
 
+/* Constructor and Destructor */
+struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElements *galoisFields);
+struct_setOfGaloisFieldElements *createConjugacyClasses_staticSetNums(unsigned int setLength, unsigned int *setElementLength);
+struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength();
+char closeConjugacyClasses(struct_setOfGaloisFieldElements **p);
+struct_setOfGaloisFieldElements *recreateConjugacyClasses(struct_setOfGaloisFieldElements **p, struct_galoisFieldElements *galoisFields);
