@@ -1245,49 +1245,6 @@ unsigned int global_degAddedRootToLCM=0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements **p, unsigned int limitedExponential)
-{
-    #ifndef RELEASE
-    if(!galoisFields)
-    {
-        errorMes;
-        printf("in init_ConjugacyClasses, struct_galoisFieldElements *galoisFields is NULL.\n");
-        return -1;
-    }
-    if(!p)
-    {
-        errorMes;
-        printf("in init_ConjugacyClasses, struct_setOfGaloisFieldElements **p.\n");
-        return -1;
-    }
-    #endif
-
-    /* create conjugacy Class (static) */
-    //p->conjugacies=createConjugacyClasses(p->nonSorted);
-    //calculateConjugacyClasses(p->nonSorted, p->conjugacies);
-
-    /* create conjugacy Class (variable) */
-    *p=createConjugacyClasses_VariableLength();
-    setLengthOfLimittedLengthOfConjugacyClasse(*p, limitedExponential);
-
-    infoMes; printf("[START][Generating conjugacy set]\n");
-    calculateConjugacyClasses_VariableLength(galoisFields, *p);
-    infoMes; printf("[END][Generating conjugacy set]\n");
-
-
-            // initMes; printConjugacyClasses(galoisFields, *p);
-
-
-    #ifndef RELEASE
-    if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_CONJUGACIES)
-    {
-        initMes;
-        printConjugacyClasses(galoisFields, *p);
-    }
-    #endif
-
-    return 0;
-}
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

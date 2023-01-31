@@ -27,6 +27,9 @@ char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFi
 char calculateConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p);
 char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p);
 
+/* Initalizer */
+char init_ConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements **p, unsigned int limitedExponential);
+
 /* file IO */
 char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_setOfGaloisFieldElements *p);
 char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements **p);
