@@ -30,3 +30,6 @@ struct_generalForm_algorithmComponent* recreateAlgoriehmComponent(
         enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM
 );
 char closeAlgoriehmComponent(struct_generalForm_algorithmComponent **p, enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM);
+
+/* Operation */
+char calculateBCH_decodingAlgorithm(struct_galoisFieldElements *galoisFields, struct_generalForm_algorithmComponent *p);

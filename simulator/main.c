@@ -4073,35 +4073,6 @@ char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_H
 ////////////////////////* mSBS algorithm components end */////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char calculateBCH_decodingAlgorithm(struct_galoisFieldElements *galoisFields, struct_generalForm_algorithmComponent *p)
-{
-    switch(p->KIND_OF_BCH_ALGORITHM)
-    {
-        case KIND_OF_BCH_DECODING_BM:
-            return calculateBmAlgorithm(galoisFields, (struct_HD_BM_algorithmComponent*)p);
-        break;
-        case KIND_OF_BCH_DECODING_iBM:
-            printf("in calculateBCH_decodingAlgorithm, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(p)->KIND_OF_BCH_ALGORITHM]);
-        break;
-        case KIND_OF_BCH_DECODING_RiBM:
-            printf("in calculateBCH_decodingAlgorithm, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(p)->KIND_OF_BCH_ALGORITHM]);
-        break;
-        case KIND_OF_BCH_DECODING_SiBM:
-            printf("in calculateBCH_decodingAlgorithm, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(p)->KIND_OF_BCH_ALGORITHM]);
-        break;
-        case KIND_OF_BCH_DECODING_mSBS:
-            return calculate_mSBS_algorithm(galoisFields, (struct_HD_mSBS_t3_algorithmComponent*)p);
-        break;
-        case KIND_OF_BCH_DECODING_PETERSON:
-            printf("in calculateBCH_decodingAlgorithm, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(p)->KIND_OF_BCH_ALGORITHM]);
-        break;
-        case KIND_OF_BCH_DECODING_EUCLIDIAN:
-            printf("in calculateBCH_decodingAlgorithm, %s is not support yet.\r\n", KIND_OF_BCH_DECODING_ALGORITHM_NAME[(p)->KIND_OF_BCH_ALGORITHM]);
-        default:
-        break;
-    }
-    return -15;
-}
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
