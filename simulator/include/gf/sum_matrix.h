@@ -29,8 +29,8 @@ char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_s
 struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column);
 
 /* For displaying(debugging) */
-void printSummationMatrixSavedForm(struct_summationMatrix *p);
 
 /* FILE IO */
 char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p);
 char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
+void printSummationMatrixSavedForm(struct_summationMatrix *p);
