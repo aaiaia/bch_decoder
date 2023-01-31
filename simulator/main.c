@@ -1381,64 +1381,6 @@ struct_setOfGaloisFieldElements *createConjugacyClasses_VariableLength()
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
-//char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
-//{
-//    unsigned int i;
-//    struct_galoisFieldElements **newConjugateSet=NULL;
-//
-//    #ifndef RELEASE
-//    if(!p)
-//    {
-//        errorMes;
-//        printf("in addConjugacyClassesVariableLength, struct_setOfGaloisFieldElements *p is NULL.\n");
-//        return -1;
-//    }
-//    if(!addedLength)
-//    {
-//        warningMes;
-//        printf("in addConjugacyClassesVariableLength, unsigned int addedLength is 0.\n");
-//        return 0;
-//    }
-//    #endif
-//
-//    *making conjugacy set array and initializing*/
-//    if(!(p->length))
-//    {
-//        p->conjugateSet=(struct_galoisFieldElements**)malloc(sizeof(struct_galoisFieldElements*)*addedLength);//making conjugacy set array
-//
-//        #ifdef USING_OPEN_MP
-//        #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
-//        #endif
-//        for(i=0; i<addedLength; i++)
-//        {
-//            *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-//        }
-//        p->length=addedLength;
-//    }
-//    else
-//    {
-//        /* Sometime realloc has memory leakage. So to increase memory size, using this func is invalid. */
-//        //p->conjugateSet=(struct_galoisFieldElements**)realloc(p->conjugateSet, sizeof(struct_galoisFieldElements*)*addedLength);//increasing conjugacy set array
-//
-//        newConjugateSet=(struct_galoisFieldElements**)malloc((sizeof(struct_galoisFieldElements*)*((p->length)+addedLength)));
-//        memset(newConjugateSet , 0, (sizeof(struct_galoisFieldElements*)*(p->length+addedLength)));
-//        memcpy(newConjugateSet, p->conjugateSet, (sizeof(struct_galoisFieldElements*)*(p->length)));
-//        free(p->conjugateSet);
-//        p->conjugateSet=newConjugateSet;
-//
-//        /* clear added conjugacy set */
-//        #ifdef USING_OPEN_MP
-//        #pragma omp parallel for schedule(guided) private(i) shared(addedLength, p)
-//        #endif
-//        for(i=p->length; i<((p->length)+addedLength); i++)
-//        {
-//            *(p->conjugateSet+i)=createGaloisFieldExceptElements_VariableLength();
-//        }
-//        p->length+=addedLength;
-//    }
-//
-//    return 0;
-//}
 char addLengthOfConjugacySet_VariableLength(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p, unsigned int addedLength)
 {
     unsigned int i;
