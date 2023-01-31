@@ -1257,13 +1257,13 @@ char abstractOrderOfEquation(struct_galoisFieldElements *equation)
     if(!equation)
     {
         errorMes;
-        printf("in checkBlankLengthOfEquation, struct_galoisFieldElements *equation is NULL.\n");
+        printf("in abstractOrderOfEquation, struct_galoisFieldElements *equation is NULL.\n");
         return 0;
     }
     if(!(equation->length))
     {
         errorMes;
-        printf("in checkBlankLengthOfEquation, (equation->length) is ZERO.\n");
+        printf("in abstractOrderOfEquation, (equation->length) is ZERO.\n");
         return 0;
     }
     #endif
