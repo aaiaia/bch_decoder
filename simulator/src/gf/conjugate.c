@@ -519,48 +519,6 @@ char calculateConjugacyClasses_VariableLength(struct_galoisFieldElements *galois
 }
 
 /* file IO */
-void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
-{
-    unsigned int tmp_i;
-    unsigned int tmp_j;
-
-    #ifndef RELEASE
-    if(!p)
-    {
-        errorMes;
-        printf("in print_setOfGaloisFieldElementsSavedForm, struct_setOfGaloisFieldElements *p is NULL\r\n");
-        return;
-    }
-    #endif
-
-    printf(">> Set Of Galois Field File I/O Form <<\n");
-
-    for(tmp_i=0; tmp_i<(p->length); tmp_i++)
-    {
-        for(tmp_j=0; tmp_j<(*(p->conjugateSet+tmp_i))->length; tmp_j++)
-        {
-            if((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index)
-            {
-                printf("%d(%d)%s",
-                    ((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index - 1),
-                    (*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index,
-                    (tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-                );
-            }
-            else
-            {
-                printf("%c(%d)%s",
-                    '-',
-                    (*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index,
-                    (tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
-                );
-
-            }
-        }
-        printf("\r\n");
-    }
-}
-
 char save_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struct_setOfGaloisFieldElements *p)
 {
     //*((*(p->conjugateSet+i))->element+j)=calculationBuffer;
@@ -776,4 +734,46 @@ char load_struct_setOfGaloisFieldElements(char *path, char *primitivePoly, struc
             printf("[load_struct_setOfGaloisFieldElements END]\r\n");
 
     return 0;
+}
+
+void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
+{
+    unsigned int tmp_i;
+    unsigned int tmp_j;
+
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in print_setOfGaloisFieldElementsSavedForm, struct_setOfGaloisFieldElements *p is NULL\r\n");
+        return;
+    }
+    #endif
+
+    printf(">> Set Of Galois Field File I/O Form <<\n");
+
+    for(tmp_i=0; tmp_i<(p->length); tmp_i++)
+    {
+        for(tmp_j=0; tmp_j<(*(p->conjugateSet+tmp_i))->length; tmp_j++)
+        {
+            if((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index)
+            {
+                printf("%d(%d)%s",
+                    ((*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index - 1),
+                    (*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index,
+                    (tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
+                );
+            }
+            else
+            {
+                printf("%c(%d)%s",
+                    '-',
+                    (*((*(p->conjugateSet+tmp_i))->element+tmp_j))->index,
+                    (tmp_j<((*(p->conjugateSet+tmp_i))->length-1))?", ":""
+                );
+
+            }
+        }
+        printf("\r\n");
+    }
 }
