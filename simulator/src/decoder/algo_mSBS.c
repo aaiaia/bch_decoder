@@ -267,3 +267,290 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 
     return create_mSBS_algorithmComponent(galoisFields,t, string, stringLength);;
 }
+
+/* Operation */
+char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p)
+{
+    struct_galoisFieldPolyForm *tmp_S_1_pow_2;
+    struct_galoisFieldPolyForm *tmp_S_1_pow_3;
+    struct_galoisFieldPolyForm *tmp_S_1_pow_4;
+    struct_galoisFieldPolyForm *tmp_S_1_pow_6;
+
+    struct_galoisFieldPolyForm *tmp_S_3_pow_2;
+
+    struct_galoisFieldPolyForm *tmp_ref_coefficient;//it is same with S_1^3 + S_3 is tmp_C_t3.
+
+    struct_galoisFieldPolyForm *tmp_C_t3;
+    struct_galoisFieldPolyForm *tmp_B_t3;
+    struct_galoisFieldPolyForm *tmp_A_t3;
+    struct_galoisFieldPolyForm *tmp_R_t3;
+
+
+            #ifndef RELEASE
+            if(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_ALGORITHM)
+            {
+                debugBmAlgorithmMes;
+                printf("calculate_mSBS_algorithm\n");
+            }
+            #endif
+
+    #ifndef RELEASE
+    if(!galoisFields)
+    {
+        errorMes;
+        printf("in calculate_mSBS_algorithm, struct_galoisFieldElements *galoisFields is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in calculate_mSBS_algorithm, struct_HD_BM_algorithmComponent *p is NULL.\n");
+        return -1;
+    }
+    #endif
+
+    /*
+     * if correctables is set up to larger than 3, it is no make any sense.
+     * And then, to block changing any received, So make error location polynomial 0 = 1 + 0 * a^1 + 0 * a^2 + 0 * a^3 ...
+     * So the err loc poly can not change any bits.
+     */
+    //if(p->numberOfCorrection == 3)
+    //{
+    //    #ifndef RELEASE
+    //    warningMesShort; printf("in calculate_mSBS_algorithm, if(!(p->numberOfCorrection < p->syndrome->length)).\n");
+    //    #endif
+    //
+    //    *(p->errLocPoly->element+3) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+2) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+1) = (*(galoisFields->element+0));
+    //    *(p->errLocPoly->element+0) = (*(galoisFields->element+1));
+    //
+    //    return -2;
+    //}
+
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;
+                printf("Error correction formula(mSBS t=3) calculation is started.\n");
+                printf("initial condition is...\n");
+                printf(">> errLocPoly");
+                printGaloisField2(galoisFields, p->errLocPoly, PRINT_FIELD_EQUATION_TITLE, PRINT_FIELD_PRINT_OPTION_NUMBERING);
+            }
+            #endif
+
+    //struct_galoisFieldPolyForm *sumElementInGF_usingSumMatrixReturnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
+    //struct_galoisFieldPolyForm *multiElementsInGF_returnAddr(struct_galoisFieldElements *field, struct_galoisFieldPolyForm *operandA, struct_galoisFieldPolyForm *operandB)
+    /*
+     * case t >= 3
+     * C_t3 = S_1^3 + S_3
+     * B_t3 = S_1^4 + ( S_1 * S_3 )
+     * A_t3 = S_5 + ( S_1^2 * S_3 )
+     * R_t3 = S_1^6 + S_3^2 + ( S_1^3 * S_3 ) + ( S_1 * S_5 )
+     *
+     * case t <= 2
+     * C_t2 = 0
+     * B_t2 = S_1
+     * A_t2 = S_1^2
+     * R_t2 = S_1^3 + S_3
+     *
+     * S_1 is *(syndrome->element+0)
+     * S_3 is *(syndrome->element+2)
+     * S_5 is *(syndrome->element+4)
+     */
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;    printf("[calculate syndrome factors start]\r\n");
+            }
+            #endif
+    tmp_S_1_pow_2 = multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+0));
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;    printf("[tmp_S_1_pow_2 is done]\r\n");
+            }
+            #endif
+
+    tmp_S_1_pow_3 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_2, *(p->syndrome->element+0));
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;    printf("[tmp_S_1_pow_3 is done]\r\n");
+            }
+            #endif
+
+    tmp_S_1_pow_4 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_2, tmp_S_1_pow_2);
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;    printf("[tmp_S_1_pow_4 is done]\r\n");
+            }
+            #endif
+
+    tmp_S_1_pow_6 = multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_3, tmp_S_1_pow_3);
+            #ifndef RELEASE
+            if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+            {
+                logMes;    printf("[tmp_S_1_pow_6 is done]\r\n");
+            }
+            #endif
+
+    if(p->numberOfCorrection > 1)
+    {
+        tmp_S_3_pow_2 = multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+2), *(p->syndrome->element+2));
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[tmp_S_3_pow_2 is done]\r\n");
+                }
+                #endif
+    }
+
+
+    if(p->numberOfCorrection > 1)
+    {
+        tmp_C_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_3, *(p->syndrome->element+2));
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[tmp_C_t3 is done]\r\n");
+                }
+                #endif
+
+        tmp_B_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_4, multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+2)));
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[tmp_B_t3 is done]\r\n");
+                }
+                #endif
+    }
+
+
+    if(p->numberOfCorrection > 2)
+    {
+        tmp_A_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields, *(p->syndrome->element+4), multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_2, *(p->syndrome->element+2)));
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[tmp_A_t3 is done]\r\n");
+                }
+                #endif
+        /*
+        //tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields,
+        //            sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_1_pow_6, multiElementsInGF_returnAddr(galoisFields, tmp_S_1_pow_3, *(p->syndrome->element+2))),
+        //            sumElementInGF_usingSumMatrixReturnAddr(galoisFields, tmp_S_3_pow_2, multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), *(p->syndrome->element+4)))
+        //            );
+        */
+        tmp_R_t3 = sumElementInGF_usingSumMatrixReturnAddr(galoisFields,
+                    multiElementsInGF_returnAddr(galoisFields, tmp_C_t3, tmp_C_t3),
+                    multiElementsInGF_returnAddr(galoisFields, *(p->syndrome->element+0), tmp_A_t3)
+                    );
+
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[tmp_R_t3 is done]\r\n");
+                }
+                #endif
+    }
+
+
+
+
+
+
+    if(p->numberOfCorrection > 2)
+    {
+        tmp_ref_coefficient = tmp_C_t3;
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[calculate syndrome factors end]\r\n");
+                }
+                #endif
+
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[saving errLocPoly start]\r\n");
+                }
+                #endif
+        if( tmp_ref_coefficient != (*(galoisFields->element+0)) )//check refference coefficient is zero?
+        //NO -> degree of errLoc poly is 3.
+        {
+                    #ifndef RELEASE
+                    if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                    {
+                        logMes;    printf("degree of errLoc poly is 3\r\n");
+                    }
+                    #endif
+            *(p->errLocPoly->element+3) = tmp_C_t3;
+            *(p->errLocPoly->element+2) = tmp_B_t3;
+            *(p->errLocPoly->element+1) = tmp_A_t3;
+            *(p->errLocPoly->element+0) = tmp_R_t3;
+
+            //p->degreeOfErrLocPoly=3;
+
+        }
+        else
+        //YES -> degree of errLoc poly is 2.
+        {
+                    #ifndef RELEASE
+                    if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                    {
+                        logMes;    printf("degree of errLoc poly is 2\r\n");
+                    }
+                    #endif
+            *(p->errLocPoly->element+3) = (*(galoisFields->element+0));
+            *(p->errLocPoly->element+2) = *(p->syndrome->element+0);
+            *(p->errLocPoly->element+1) = tmp_S_1_pow_2;
+            *(p->errLocPoly->element+0) = tmp_C_t3;
+
+            // p->degreeOfErrLocPoly=2;
+
+        }
+
+                #ifndef RELEASE
+                if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                {
+                    logMes;    printf("[saving errLocPoly end]\r\n");
+                }
+                #endif
+        p->coefficient_of_alpha_three = *(p->errLocPoly->element+3);
+        p->coefficient_of_alpha_two = *(p->errLocPoly->element+2);
+        p->coefficient_of_alpha_one = *(p->errLocPoly->element+1);
+        p->coefficient_of_alpha_zero = *(p->errLocPoly->element+0);
+
+    }
+    else if(p->numberOfCorrection > 1)
+    {
+        {
+                    #ifndef RELEASE
+                    if(((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                    {
+                        logMes;    printf("degree of errLoc poly is 3\r\n");
+                    }
+                    #endif
+            *(p->errLocPoly->element+2) = *(p->syndrome->element+0);
+            *(p->errLocPoly->element+1) = tmp_S_1_pow_2;
+            *(p->errLocPoly->element+0) = tmp_C_t3;
+
+            //if( tmp_C_t3 != (*(galoisFields->element+0)) )
+            //{
+            //    p->degreeOfErrLocPoly=2;
+            //}
+            //else
+            //{
+            //    p->degreeOfErrLocPoly=1;
+            //}
+
+        }
+    }
+
+
+    p->degreeOfErrLocPoly = checkDegreePolynomials(galoisFields, p->errLocPoly);
+
+    return 0;
+}

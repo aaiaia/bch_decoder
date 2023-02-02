@@ -37,3 +37,6 @@ struct struct_HD_mSBS_t3_algorithmComponent{
 struct_HD_mSBS_t3_algorithmComponent *create_mSBS_algorithmComponent(struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength);
 char close_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p);
 struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD_mSBS_t3_algorithmComponent **p, struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength);
+
+/* Operation */
+char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p);
