@@ -126,3 +126,90 @@ char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFi
     }
     return 1;
 }
+
+/* For Dubugging(Displaying) */
+void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
+{
+    unsigned int i;
+
+    unsigned int exponential;
+
+    if(!p)
+    {
+        printf("in printSyndromeArray, struct_galoisFieldElements *p is NULL.\r\n");
+        return;
+    }
+
+
+    printf("------------------ Syndrome Array ------------------\n");
+
+    printf("syndrome length is \'%d\'\n", p->length);
+
+    printf("index\tSn\tpow\t");
+    for(i=0; i<(*(p->element))->length; i++)
+    {
+        printf("a^%d\t", i);
+    }
+    printf("\n");
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("%d :\tS_%d : ", i, i+1);
+        exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(p->element+i));
+        if(exponential==0)
+        {
+            printf("a^-\t");
+        }
+        else
+        {
+            printf("a^%d\t", exponential-1);
+        }
+        printPolyFormWithTapAndEnter(*(p->element+i));
+    }
+    printf("----------------------- END -----------------------\n");
+}
+
+void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
+{
+    unsigned int i;
+
+    unsigned int exponential;
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("S_%d : ", i);
+        exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(p->element+i));
+        printf("a^");
+        if(exponential==0)
+        {
+            printf("-\t");
+        }
+        else
+        {
+            printf("%d\t", exponential-1);
+        }
+    }
+}
+
+void printSyndromeSeriesWithTapAndEnter(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields)
+{
+    unsigned int i;
+
+    unsigned int exponential;
+
+    for(i=0; i<p->length; i++)
+    {
+        printf("S_%d : ", i);
+        exponential=abstractIndexOfPowerFormInElementsOfGaloisFieldUsingIndex(galoisFields, *(p->element+i));
+        printf("a^");
+        if(exponential==0)
+        {
+            printf("-\t");
+        }
+        else
+        {
+            printf("%d\t", exponential-1);
+        }
+    }
+    printf("\n");
+}
