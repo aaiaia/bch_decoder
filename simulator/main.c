@@ -1927,28 +1927,28 @@ void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, stru
     if(!result)
     {
         errorMes;
-        printf("in summationError, struct_powerFormPolynomials *result is NULL.\n");
+        printf("in addErrorCodeWordToUnErrorCodeWord, struct_powerFormPolynomials *result is NULL.\n");
     }
     if(!codeWord)
     {
         errorMes;
-        printf("in summationError, struct_powerFormPolynomials *codeWord is NULL.\n");
+        printf("in addErrorCodeWordToUnErrorCodeWord, struct_powerFormPolynomials *codeWord is NULL.\n");
     }
     if(!error)
     {
         errorMes;
-        printf("in summationError, struct_powerFormPolynomials *error is NULL.\n");
+        printf("in addErrorCodeWordToUnErrorCodeWord, struct_powerFormPolynomials *error is NULL.\n");
     }
 
     if(result->usedLength!=codeWord->usedLength)
     {
         errorMes;
-        printf("in summationError, result->usedLength!=codeWord->usedLength.\n");
+        printf("in addErrorCodeWordToUnErrorCodeWord, result->usedLength!=codeWord->usedLength.\n");
     }
     if(codeWord->usedLength!=error->usedLength)
     {
         errorMes;
-        printf("in summationError, codeWord->usedLength!=error->usedLength.\n");
+        printf("in addErrorCodeWordToUnErrorCodeWord, codeWord->usedLength!=error->usedLength.\n");
     }
     #endif
 
