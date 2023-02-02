@@ -43,3 +43,26 @@ struct struct_HD_BM_algorithmComponent{
 struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength);
 char closeBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p);
 struct_HD_BM_algorithmComponent *recreateBmAlgorithmComponent(struct_HD_BM_algorithmComponent **p, struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength);
+
+/* Operation */
+unsigned char calculateCalculationSelector(struct_galoisFieldPolyForm *delta, unsigned int value_r, unsigned int beforeLengthOfStage);
+struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
+(
+    struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *syndrome,
+    struct_galoisFieldElements *beforeStageAlpha, unsigned int lengthOfStage,
+    unsigned int value_r
+);
+char calculateAlphaInBmAlgorithm
+(
+    struct_galoisFieldElements *beforeAlpha, struct_galoisFieldElements *beforeBeta,
+    struct_galoisFieldPolyForm *delta, struct_galoisFieldElements *galoisFields,
+    struct_galoisFieldElements *alpha
+);
+char calculateBetaInBmAlgorithm
+(
+    struct_galoisFieldElements *beforeAlpha, struct_galoisFieldElements *beforeBeta,
+    struct_galoisFieldPolyForm *delta, struct_galoisFieldElements *galoisFields,
+    unsigned char calculationSelector, struct_galoisFieldElements *beta
+);
+unsigned int calculateBmAlgorithmLengthOfStage(unsigned int value_r, unsigned int lengthOfStage, unsigned char calculationSelector);
+char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM_algorithmComponent *p);
