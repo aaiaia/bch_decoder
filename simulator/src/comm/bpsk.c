@@ -218,6 +218,7 @@ void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg,
     return;
 }
 
+/* ADD_AWGN_CAL_LLR inscluds demodulation to LLR */
 void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double_BPSK_DATA *received_LLR, double bitrate, unsigned int number_of_loop, double main_com_EbN0) //need to add bitrate
 {
     unsigned int i;
