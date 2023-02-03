@@ -11,6 +11,3 @@ struct_errorComponent *recreateErrorComponent(struct_errorComponent **p, unsigne
 
 /* Operation */
 struct_errorComponent *ifNotExistCreateErrorComponent(struct_errorComponent **p, unsigned int length);
-void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsigned int numberOfError);
-void summationError(struct_powerFormPolynomials *codeWord, struct_powerFormPolynomials *error);
-void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, struct_powerFormPolynomials *codeWord, struct_powerFormPolynomials *error);

@@ -22,6 +22,11 @@ void shiftHighSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned i
 void shiftLowSidePowerFormPolynomial(struct_powerFormPolynomials *p, unsigned int length);
 unsigned int calculateHammingWeightPowerFormPolynomial(struct_powerFormPolynomials *p);
 unsigned int calculateHammingWeightFromDiffentPowerFormPolynomial(struct_powerFormPolynomials *p1, struct_powerFormPolynomials *p2);
+/* for make error */
+void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsigned int numberOfError);
+/* summation */
+void summationError(struct_powerFormPolynomials *codeWord, struct_powerFormPolynomials *error);
+void addErrorCodeWordToUnErrorCodeWord(struct_powerFormPolynomials *result, struct_powerFormPolynomials *codeWord, struct_powerFormPolynomials *error);
 
 /* For Display(Debugging) */
 void printPowerFormWithEnterPolynomialAndInfoUsingAddress(struct_powerFormPolynomials *p);
