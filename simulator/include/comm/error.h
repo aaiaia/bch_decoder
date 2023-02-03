@@ -11,3 +11,7 @@ struct_errorComponent *recreateErrorComponent(struct_errorComponent **p, unsigne
 
 /* Operation */
 struct_errorComponent *ifNotExistCreateErrorComponent(struct_errorComponent **p, unsigned int length);
+char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int parityBitsLength, char *p);
+char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBitsLength, char *p);
+char *allSameInfoBitGenerator(char initChar, unsigned int infoBitsLength, unsigned int parityBitsLength, char **p);
+char *randdomInfoBitGenerator(unsigned int infoBitsLength, unsigned int parityBitsLength, char **p);
