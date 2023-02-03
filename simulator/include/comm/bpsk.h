@@ -33,3 +33,8 @@ void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg,
 double_BPSK_DATA LLR_MAX=0;
 double_BPSK_DATA LLR_MIN=0;
 void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double_BPSK_DATA *received_LLR, double bitrate, unsigned int number_of_loop, double main_com_EbN0); //need to add bitrate
+
+/* For Debugging(Displaying */
+void printBpskModulation(unsigned int printLength, double_BPSK_DATA *p);
+void printBpskAWGN(unsigned int printLength, double_BPSK_DATA *operandA, double_BPSK_DATA *operandB);
+void printLLR(unsigned int printLength, double_BPSK_DATA *p);
