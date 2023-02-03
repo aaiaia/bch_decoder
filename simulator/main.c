@@ -1757,7 +1757,7 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int parityBitsLength, char *p)
 {
-    unsigned int holeLength=infoBitsLength+parityBitsLength;
+    unsigned int bitLength=infoBitsLength+parityBitsLength;
     unsigned int i, j;
     double numberOfSameBits;
     double probability;
@@ -1775,7 +1775,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
             {
                 infoMes;
-                printf("in randdomInfoBitStreamChanger, code length is \'%d\', info length is \'%d\', parity length is \'%d\'\n", holeLength, infoBitsLength, parityBitsLength);
+                printf("in randdomInfoBitStreamChanger, code length is \'%d\', info length is \'%d\', parity length is \'%d\'\n", bitLength, infoBitsLength, parityBitsLength);
             }
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)==FLAG_MASK_PRINTF_CALCULATE_PROCESS)
             {
@@ -1785,7 +1785,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
             #endif
 
     j=0;
-    for(i=0; i<holeLength; i++)
+    for(i=0; i<bitLength; i++)
     {
         if(i<infoBitsLength)
         {
@@ -1843,7 +1843,7 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 //////////////////////////////////////////////////////////////////////////////////
 char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBitsLength, char *p)
 {
-    unsigned int holeLength=infoBitsLength+parityBitsLength;
+    unsigned int bitLength=infoBitsLength+parityBitsLength;
     unsigned int i;
 
     if(!p)
@@ -1859,7 +1859,7 @@ char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBits
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)==FLAG_MASK_PRINTF_LOG)
             {
                 infoMes;
-                printf("in randdomInfoBitChanger, code length is \'%d\', info length is \'%d\', parity length is \'%d\'\n", holeLength, infoBitsLength, parityBitsLength);
+                printf("in randdomInfoBitChanger, code length is \'%d\', info length is \'%d\', parity length is \'%d\'\n", bitLength, infoBitsLength, parityBitsLength);
             }
             if((global_flag_cmdOption&FLAG_MASK_PRINTF_CALCULATE_PROCESS)==FLAG_MASK_PRINTF_CALCULATE_PROCESS)
             {
@@ -1868,7 +1868,7 @@ char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBits
             }
             #endif
 
-    for(i=0; i<holeLength; i++)
+    for(i=0; i<bitLength; i++)
     {
         if(rand()%2)
         {
