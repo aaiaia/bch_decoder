@@ -69,3 +69,57 @@ struct_errorComponent *recreateErrorComponent(struct_errorComponent **p, unsigne
     *p=createErrorComponent(length);
     return *p;
 }
+
+/* Operation */
+struct_errorComponent *ifNotExistCreateErrorComponent(struct_errorComponent **p, unsigned int length)
+{
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in recreateErrorComponent, struct_errorComponent **p is NULL.\n");
+        return NULL;
+    }
+    #endif
+    if(*p)
+    {
+        #ifndef RELEASE
+        if(closeErrorComponent(p))
+        {
+            warningMes;
+            printf("in recreateErrorComponent, closeErrorComponent(p) is fail.\n");
+        }
+        #else
+        closeErrorComponent(p);
+        #endif
+    }
+    else
+    {
+        *p=createErrorComponent(length);
+    }
+    return *p;
+}
+
+void errorOccurationWhichAreRandomPosition(struct_powerFormPolynomials *p, unsigned int numberOfError)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in errorOccurationWhichAreRandomPosition, struct_powerFormPolynomials *p is NULL.\n");
+    }
+    #endif
+    /* initial all zero condition */
+    memset(p->equation, '0', sizeof(char_POWER_FORM)*(p->usedLength));
+    *(p->equation+(p->usedLength))=0;
+    while(numberOfError)
+    {
+        if(*(p->equation+(i=(rand()%p->usedLength)))=='0')
+        {
+            *(p->equation+i)='1';
+            numberOfError--;
+        }
+    }
+}
