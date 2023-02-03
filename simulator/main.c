@@ -5116,54 +5116,6 @@ struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length,
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-double_BPSK_DATA LLR_MAX=0;
-double_BPSK_DATA LLR_MIN=0;
-void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double_BPSK_DATA *received_LLR, double bitrate, unsigned int number_of_loop, double main_com_EbN0) //need to add bitrate
-{
-    unsigned int i;
-
-    double Sum_Pow = 0.0f;
-    double spow, npow, attn;
-
-    double *channel_noise = (double*)malloc(sizeof(double)*number_of_loop);
-    memset(channel_noise, 0, sizeof(double)*number_of_loop);
-
-
-
-    for(i=0;i<number_of_loop;i++)
-    {
-        channel_noise[i] = gaussian(0, 1);
-    }
-    #ifdef USING_OPEN_MP
-    #pragma omp parallel for schedule(guided) private(i) shared(number_of_loop, transmitted_msg) reduction(+:Sum_Pow)
-    #endif
-    for(i=0;i<number_of_loop;i++)
-    {
-        Sum_Pow += pow(transmitted_msg[i], 2);
-    }
-
-    spow = Sum_Pow / number_of_loop;
-    npow = spow / bitrate / pow(10, (main_com_EbN0/10));
-    attn = sqrt((0.5 * npow));
-
-    for(i=0;i<number_of_loop;i++)
-    {
-        received_msg[i] = transmitted_msg[i] + (channel_noise[i] * attn);
-        received_LLR[i] = (-2 * received_msg[i]) / (attn*attn);
-                    //printf("test : [+1.5] => %g\n", (-2 * +1.5 / (attn*attn)));
-                    //printf("test : [+1.0] => %g\n", (-2 * +1.0 / (attn*attn)));
-                    //printf("test : [+0.5] => %g\n", (-2 * +0.5 / (attn*attn)));
-                    //printf("test : [+0.0] => %g\n", (-2 * +0.0 / (attn*attn)));
-                    //printf("test : [-0.5] => %g\n", (-2 * -0.5 / (attn*attn)));
-                    //printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
-                    //printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
-                    //printf("\n\n");
-        if(LLR_MAX<received_LLR[i]) LLR_MAX=received_LLR[i];
-        if(LLR_MIN>received_LLR[i]) LLR_MIN=received_LLR[i];
-    }
-    free(channel_noise);
-    return;
-}
 //////////////////////////////////////////////////////////////////////////////////
 void printBpskModulation(unsigned int printLength, double_BPSK_DATA *p)
 {
