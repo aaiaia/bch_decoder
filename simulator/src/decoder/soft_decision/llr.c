@@ -147,6 +147,53 @@ char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locato
     return 0;
 }
 
+/*
+ * To find minumum value of magnitude, initializing values associate with tree in struct struct_logLikeHoodRatio.
+ * Tree, can use, is define that is in enum treeTypes.
+ * If you needs this list, find a enum treeTypes.
+ */
+char initializingVariablesAssociateWithTree(struct_logLikeHoodRatio *p, enum treeTypes treeType)
+{
+    #ifndef RELEASE
+    if(!p)
+    {
+        warningMes;
+        printf("in initializingVariablesAssociateWithTree, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->usedLength))
+    {
+        warningMes;
+        printf("in initializingVariablesAssociateWithTree, struct_logLikeHoodRatio p->usedLength is zero.\n");
+        warningMes;
+        printf("To initializing tree, this value must be setted, first.\n");
+        return -1;
+    }
+    #endif
+
+    if((p->treeStruct))
+    {
+                #ifndef RELEASE
+                warningMes;    printf("in initializingVariablesAssociateWithTree, p->treeStruct is not NULL.\n");
+                warningMesShort;    printf("p->treeStruct will be removed.\n");
+                #endif
+
+        closeTreeStruct(&(p->treeStruct));
+    }
+
+    (p->treeStruct)=createTreeStruct(p->usedLength, treeType);
+            #ifndef RELEASE
+            if(!(p->treeStruct))//create tree
+            {
+                warningMes;
+                printf("in initializingVariablesAssociateWithTree, can't createTreeStruct.\n");
+                return -1;
+            }
+            #endif
+
+    return 0;
+}
+
 /* Configure */
 char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int usedLength)
 {

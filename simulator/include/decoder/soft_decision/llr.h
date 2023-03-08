@@ -25,6 +25,12 @@ char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p);
 
 /* Initializer */
 char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locatorLength);
+/*
+ * To find minumum value of magnitude, initializing values associate with tree in struct struct_logLikeHoodRatio.
+ * Tree, can use, is define that is in enum treeTypes.
+ * If you needs this list, find a enum treeTypes.
+ */
+char initializingVariablesAssociateWithTree(struct_logLikeHoodRatio *p, enum treeTypes treeType);
 
 /* Configure */
 char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int usedLength);
