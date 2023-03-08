@@ -569,6 +569,293 @@ char printMagnitudeOfLLR_andLocationWithSpaceAndEnter(struct_logLikeHoodRatio *p
 }
 
 /* File IO */
+char fprintQuatizLLR_toHEX(FILE* fp, struct_logLikeHoodRatio* p, char* str_tail)
+{
+    unsigned int i;
+    unsigned int j;
+    unsigned int bitLength;
+    unsigned int hexLength;
+    unsigned int hexRedundantBitLength;
+    unsigned int hexRedundantBitMask;
+    unsigned int uint_tmp;
+    const int HEX_BIT_LENGTH = 4;
+
+    #ifndef RELEASE
+    if(!fp)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_toHEX, FILE* fp is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLR))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
+        return -1;
+    }
+    if(!(p->usedLength))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLRMask))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
+        return -1;
+    }
+    #endif
+    /* Check up LLR bit mask */
+    bitLength = 0;
+    uint_tmp = 0;
+    uint_tmp |= p->quantizedLLRMask;
+    for(i=0; uint_tmp&1; i++)
+    {
+        bitLength++;
+        uint_tmp = (uint_tmp >> 1);
+    }
+    hexLength = (bitLength) / HEX_BIT_LENGTH;
+    hexRedundantBitLength = (bitLength) % HEX_BIT_LENGTH;
+
+    hexRedundantBitMask = 0;
+    if(hexRedundantBitLength)
+    {
+        hexLength++;
+        for(i = 0; i < hexRedundantBitLength; i++)
+        {
+            hexRedundantBitMask |= (1<<i);
+        }
+    }
+
+    for(i=0; i<p->usedLength; i++)
+    {
+        for(j = hexLength; j != 0; j--)
+        {
+            if(j == hexLength)
+            {
+                if(hexRedundantBitLength)
+                {
+                    fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & hexRedundantBitMask));
+                }
+                else
+                {
+                    fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+                }
+            }
+            else
+            {
+                fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+            }
+        }
+    }
+
+    if(str_tail) fprintf(fp, str_tail);
+
+    return 0;
+}
+
+char fprintVerilogQuatizLLR_toHEX(FILE* fp, struct_logLikeHoodRatio* p, char* str_tail)
+{
+    unsigned int i;
+    unsigned int j;
+    unsigned int bitLength;
+    unsigned int hexLength;
+    unsigned int hexRedundantBitLength;
+    unsigned int hexRedundantBitMask;
+    unsigned int uint_tmp;
+    const int HEX_BIT_LENGTH = 4;
+
+    #ifndef RELEASE
+    if(!fp)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_toHEX, FILE* fp is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLR))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
+        return -1;
+    }
+    if(!(p->usedLength))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLRMask))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_toHEX, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
+        return -1;
+    }
+    #endif
+    /* Check up LLR bit mask */
+    bitLength = 0;
+    uint_tmp = 0;
+    uint_tmp |= p->quantizedLLRMask;
+    for(i=0; uint_tmp&1; i++)
+    {
+        bitLength++;
+        uint_tmp = (uint_tmp >> 1);
+    }
+    hexLength = (bitLength) / HEX_BIT_LENGTH;
+    hexRedundantBitLength = (bitLength) % HEX_BIT_LENGTH;
+
+    hexRedundantBitMask = 0;
+    if(hexRedundantBitLength)
+    {
+        hexLength++;
+        for(i = 0; i < hexRedundantBitLength; i++)
+        {
+            hexRedundantBitMask |= (1<<i);
+        }
+    }
+
+    for(i=0; i<p->usedLength; i++)
+    {
+        for(j = hexLength; j != 0; j--)
+        {
+            if(j == hexLength)
+            {
+                if(hexRedundantBitLength)
+                {
+                    fprintf(fp, "%01x\r\n", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & hexRedundantBitMask));
+                }
+                else
+                {
+                    fprintf(fp, "%01x\r\n", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+                }
+            }
+            else
+            {
+                fprintf(fp, "%01x\r\n", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+            }
+        }
+    }
+
+    if(str_tail) fprintf(fp, str_tail);
+
+    return 0;
+}
+
+char fprintQuatizLLR_fullDescriptionToHEX(FILE* fp, struct_logLikeHoodRatio* p, char* str_tail)
+{
+    unsigned int i;
+    unsigned int j;
+    unsigned int bitLength;
+    unsigned int hexLength;
+    unsigned int hexRedundantBitLength;
+    unsigned int hexRedundantBitMask;
+    unsigned int uint_tmp;
+    const int HEX_BIT_LENGTH = 4;
+
+    #ifndef RELEASE
+    if(!fp)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_fullDescriptionToHEX, FILE* fp is NULL.\n");
+        return -1;
+    }
+    if(!p)
+    {
+        errorMes;
+        printf("in fprintQuatizLLR_fullDescriptionToHEX, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLR))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_fullDescriptionToHEX, struct_logLikeHoodRatio p->quantizedLLR is NULL.\n");
+        return -1;
+    }
+    if(!(p->usedLength))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_fullDescriptionToHEX, struct_logLikeHoodRatio p->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLRMask))
+    {
+        warningMes;
+        printf("in fprintQuatizLLR_fullDescriptionToHEX, struct_logLikeHoodRatio p->quantizedLLRMask is zero.\n");
+        return -1;
+    }
+    #endif
+    /* Check up LLR bit mask */
+    bitLength = 0;
+    uint_tmp = 0;
+    uint_tmp |= p->quantizedLLRMask;
+    for(i=0; uint_tmp&1; i++)
+    {
+        bitLength++;
+        uint_tmp = (uint_tmp >> 1);
+    }
+    hexLength = (bitLength) / HEX_BIT_LENGTH;
+    hexRedundantBitLength = (bitLength) % HEX_BIT_LENGTH;
+
+    hexRedundantBitMask = 0;
+    if(hexRedundantBitLength)
+    {
+        hexLength++;
+        for(i = 0; i < hexRedundantBitLength; i++)
+        {
+            hexRedundantBitMask |= (1<<i);
+        }
+    }
+
+    for(i=0; i<p->usedLength; i++)
+    {
+        if(*(p->quantizedLLR+i)>=0)
+        {
+            fprintf(fp, "+%d(", *(p->quantizedLLR+i));
+        }
+        else
+        {
+            fprintf(fp, "%d(", *(p->quantizedLLR+i));
+        }
+
+        for(j = hexLength; j!= 0; j--)
+        {
+            if(j == hexLength)
+            {
+                if(hexRedundantBitLength)
+                {
+                    fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & hexRedundantBitMask));
+                }
+                else
+                {
+                    fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+                }
+            }
+            else
+            {
+                fprintf(fp, "%01x", (((*(p->quantizedLLR+i)) >> ((j-1)*4)) & 0xF));
+            }
+        }
+        fprintf(fp, ") ");
+
+    }
+    fprintf(fp, "[Used Length : %d]", p->usedLength);
+    if(str_tail) fprintf(fp, str_tail);
+
+    return 0;
+}
+
 char fprintMagnitudeOfQuantizedLLR_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail)
 {
     unsigned int i;
