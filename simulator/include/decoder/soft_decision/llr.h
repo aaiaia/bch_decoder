@@ -49,6 +49,10 @@ char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
     struct_powerFormPolynomials *operandB)
 
 /* For displying(debugging) */
+void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+void printTestMagitudeQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+
 char printMagnitudeOfLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 char printMagnitudeOfLLR_andLocationWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 
