@@ -35,3 +35,12 @@ double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);
 
 /* Converter */
 char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p);
+
+/* For displying(debugging) */
+char printMagnitudeOfLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+char printMagnitudeOfLLR_andLocationWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+
+/* File IO */
+char fprintMagnitudeOfQuantizedLLR_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
+char fprintVerilogMagnitudeOfQuantizedLLR_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
+char fprintMagnitudeOfQuantizedLLR_fullDescription_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
