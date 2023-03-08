@@ -21,9 +21,11 @@ struct struct_treeStructure
 
 }typedef struct_treeStructure;
 
+/* Constructor and Destructor */
 struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType);
 char closeTreeStruct(struct_treeStructure **p);
 
+/* For Display(Debugging) */
 void testTreeStruct(struct_treeStructure *p);
 void testPrintTreeStructIndicateAddr(struct_treeStructure *p);
 void testPrintTreeStructValue(struct_treeStructure *p);
