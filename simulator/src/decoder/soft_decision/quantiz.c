@@ -1,3 +1,4 @@
+/* Converting */
 void convertTwosComplementMagitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length, unsigned int max_val)
 {
     unsigned int i;
@@ -35,6 +36,7 @@ void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT
     }
 };
 
+/* Operation */
 void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length)
 {
     SIGNED_INT k;
