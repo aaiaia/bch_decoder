@@ -42,6 +42,12 @@ double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);
 /* Converter */
 char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p);
 
+/* Verificator */
+char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
+    struct_logLikeHoodRatio *p,
+    struct_powerFormPolynomials *operandA,
+    struct_powerFormPolynomials *operandB)
+
 /* For displying(debugging) */
 char printMagnitudeOfLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 char printMagnitudeOfLLR_andLocationWithSpaceAndEnter(struct_logLikeHoodRatio *p);

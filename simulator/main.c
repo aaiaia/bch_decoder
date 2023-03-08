@@ -1782,51 +1782,6 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
-    struct_logLikeHoodRatio *p,
-    struct_powerFormPolynomials *operandA,
-    struct_powerFormPolynomials *operandB)
-{
-    unsigned int i;
-    #ifndef RELEASE
-    if(!p)    return -1;
-    if(!(p->locatorLength)) return -1;
-    if(!(p->locatorValidity)) return -1;
-
-    if(!operandA) return -1;
-    if(!(operandA->length)) return -1;
-    if(!(operandA->usedLength)) return -1;
-    if(!(operandA->equation)) return -1;
-
-    if(!operandB) return -1;
-    if(!(operandB->length)) return -1;
-    if(!(operandB->usedLength)) return -1;
-    if(!(operandB->equation)) return -1;
-    #endif
-
-    for(i=0; i<p->locatorLength; i++)
-    {
-        /* locator is always smaller than codeword Length */
-        if(((*(p->locator+i)) < (operandA->usedLength)) && ((*(p->locator+i)) < (operandB->usedLength)))
-        {
-            if((*(operandA->equation+(*(p->locator+i)))) != (*(operandB->equation+(*(p->locator+i)))))    *(p->locatorValidity+i) = 1;
-            else                                                                                        *(p->locatorValidity+i) = 0;
-        }
-        /* not indication any location */
-        else if((*(p->locator+i)) == -1)
-        {
-            *(p->locatorValidity+i) = 1;
-        }
-        else
-        {
-            errorMes;
-            printf("in checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio, (*(p->locator+%d)='%d' exceed (operandA->usedLength)='%d' or (operandB->usedLength)='%d'\n",
-                i, (*(p->locator+i)), (operandA->usedLength), (operandB->usedLength) );
-            return -2;
-        }
-    }
-    return 0;
-}
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p)
