@@ -33,6 +33,9 @@ struct_quantizationInfo global_QuantizationInfo;
 //#define QUANTIZ_MODE_ADAPT  1
 */
 
+void convertTwosComplementMagitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length, unsigned int max_val);
+void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length);
+
 void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length);
 void quantizationWithGlobalAdaptive(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length);
 void initGlobalQuantizInfo(double offset, double step, unsigned char quantizBitNum, unsigned int numbericSystem, unsigned char overping);

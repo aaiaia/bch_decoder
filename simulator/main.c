@@ -1775,42 +1775,6 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-void convertTwosComplementMagitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length, unsigned int max_val)
-{
-    unsigned int i;
-
-     for(i = 0; i < length; i++)
-     {
-        if((*(from + i)) >= 0)//quantized LLR is positive, Hard decision is 0.
-        {
-            *(to + i) = (*(from + i));
-        }
-        else                        //quantized LLR is negative, Hard decision is 1.
-        {
-            *(to + i) = ((-1) * (*(from + i)));
-            if(*(to + i) > max_val) *(to + i) = max_val;
-        }
-        //printf("Q:%d M:%d i:%d\r\n", (*(p->quantizedLLR + i)), *(p->magnitude + i), i);
-     }
-};
-//////////////////////////////////////////////////////////////////////////////////
-void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length)
-{
-    unsigned int i;
-
-    for(i = 0; i < length; i++)
-    {
-        if((*(from + i)) >= 0)//quantized LLR is positive, Hard decision is 0.
-        {
-            *(to + i) = (*(from + i));
-        }
-        else                        //quantized LLR is negative, Hard decision is 1.
-        {
-            *(to + i) = (~(*(from + i)));
-        }
-        //printf("Q:%d M:%d i:%d\r\n", (*(p->quantizedLLR + i)), *(p->magnitude + i), i);
-    }
-};
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p)
