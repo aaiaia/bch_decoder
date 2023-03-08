@@ -32,3 +32,6 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
 
 /* Operation */
 double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);
+
+/* Converter */
+char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p);
