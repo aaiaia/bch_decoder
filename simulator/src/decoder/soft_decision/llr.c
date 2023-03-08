@@ -92,6 +92,95 @@ char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
     return 0;
 }
 
+struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned int length, unsigned int numberOfMask)
+{
+    //unsigned int i;
+    struct_logLikeHoodRatio *p=NULL;
+
+    p=createLogLikeHoodRatio(length);
+            #ifndef RELEASE
+            if(!(p))
+            {
+                warningMes;
+                printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
+                return NULL;
+            }
+            #endif
+
+    if(setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask))
+    {
+        closeLogLikeHoodRatio(&p);
+                #ifndef RELEASE
+                errorMes; printf("in createLogLikeHoodRatioUsingNumberOfMaskBits, setQuantizedLLRMaskOfLogLikeHoodRatio(p, numberOfMask) return Non-zero.\n");
+                #endif
+        return NULL;
+    }
+
+
+    //if(!(p->llr))
+    //{
+    //    if(!(p->length))
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        for(i=0; i<numberOfMask; i++)
+    //        {
+    //            p->quantizedLLRMask|=(1<<i);
+    //        }
+    //        p->magnitudeMask=p->quantizedLLRMask&(~(1<<(i-1)));
+    //                printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
+    //    }
+    //    else
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        warningMes;
+    //        printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
+    //        return -1;
+    //    }
+    //}
+    return p;
+}
+
+struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length, SIGNED_INT quantizedLLRMask)
+{
+    //unsigned int i;
+    struct_logLikeHoodRatio *p=NULL;
+
+    #ifndef RELEASE
+    if(!quantizedLLRMask)
+    {
+        warningMes;
+        printf("in createLogLikeHoodRatioUsingLlrMask, quantizedLLRMask is '%d'.\n", quantizedLLRMask);
+        return NULL;
+    }
+
+    if(!(p=createLogLikeHoodRatio(length)))
+    {
+        warningMes;
+        printf("in createLogLikeHoodRatioUsingLlrMask, p=createLogLikeHoodRatio(%d) return NULL.\n", length);
+        return NULL;
+    }
+    #endif
+
+    //if(!(p->llr))
+    //{
+    //    if(!(p->length))
+    //    {
+            p->quantizedLLRMask=quantizedLLRMask;
+    //        //for(i=0; (i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&((1<<i)&quantizedLLRMask); i++);
+    //        p->magnitudeMask=(p->quantizedLLRMask&(~(1<<(i-1))));
+    //                printf("Mask test quantizat mask %d\nMask test magnitudeShort mask %d\n",p->quantizedLLRMask, p->magnitudeMask);
+    //    }
+    //    else
+    //    {
+    //        p->quantizedLLRMask=0;
+    //        warningMes;
+    //        printf("in initialLlrValueUsingMask, (*p)->length is zero.\n");
+    //        return -1;
+    //    }
+    //}
+    return p;
+}
+
 /* Initializer */
 char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locatorLength)
 {

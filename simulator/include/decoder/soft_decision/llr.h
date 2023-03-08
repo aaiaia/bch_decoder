@@ -23,6 +23,9 @@ struct struct_logLikeHoodRatio
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length);
 char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p);
 
+struct_logLikeHoodRatio* createLogLikeHoodRatioUsingNumberOfMaskBits(unsigned int length, unsigned int numberOfMask);
+struct_logLikeHoodRatio* createLogLikeHoodRatioUsingLlrMask(unsigned int length, SIGNED_INT quantizedLLRMask);
+
 /* Initializer */
 char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locatorLength);
 /*
