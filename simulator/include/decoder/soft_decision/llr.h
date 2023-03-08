@@ -28,5 +28,7 @@ char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locato
 
 /* Configure */
 char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int usedLength);
-double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);
 char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int numberOfMask);
+
+/* Operation */
+double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);

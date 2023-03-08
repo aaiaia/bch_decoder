@@ -175,21 +175,6 @@ char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int us
     return 0;
 }
 
-double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p)
-{
-    unsigned int i;
-    double_RATIONAL_NUMBER tmpAvr=0.0;
-
-    for(i=0; i<p->usedLength; i++)
-    {
-        tmpAvr+=((*(p->llr+i))*(*(p->llr+i)));
-    }
-    tmpAvr/=((double_RATIONAL_NUMBER)p->usedLength);
-    sqrt(tmpAvr);
-    p->squreRootAvrLLR=tmpAvr;
-    return tmpAvr;
-}
-
 char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int numberOfMask)
 {
     unsigned int i;
@@ -216,4 +201,20 @@ char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned 
         p->quantizedLLRMask|=(1<<i);
     }
     return 0;
+}
+
+/* Operation */
+double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p)
+{
+    unsigned int i;
+    double_RATIONAL_NUMBER tmpAvr=0.0;
+
+    for(i=0; i<p->usedLength; i++)
+    {
+        tmpAvr+=((*(p->llr+i))*(*(p->llr+i)));
+    }
+    tmpAvr/=((double_RATIONAL_NUMBER)p->usedLength);
+    sqrt(tmpAvr);
+    p->squreRootAvrLLR=tmpAvr;
+    return tmpAvr;
 }
