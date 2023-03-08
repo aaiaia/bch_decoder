@@ -22,3 +22,11 @@ struct struct_logLikeHoodRatio
 /* Constructor and Destructor */
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length);
 char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p);
+
+/* Initializer */
+char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locatorLength);
+
+/* Configure */
+char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int usedLength);
+double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p);
+char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int numberOfMask);

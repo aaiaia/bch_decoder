@@ -91,3 +91,129 @@ char closeLogLikeHoodRatio(struct_logLikeHoodRatio **p)
     *p=NULL;
     return 0;
 }
+
+/* Initializer */
+char initLogLikeHoodRatioLocator(struct_logLikeHoodRatio *p, unsigned int locatorLength)
+{
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in initLogLikeHoodRatioLocator, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!locatorLength)
+    {
+        warningMes;
+        printf("in initLogLikeHoodRatioLocator, unsigned int locatorLength is zero.\n");
+        return -1;
+    }
+    if((p->locator))
+    {
+        warningMes;
+        printf("in initLogLikeHoodRatioLocator, p->locator has any values.\n");
+        printf("length of p->locator is '%d'\n", p->locatorLength);
+        return 1;
+    }
+    if((p->magnitudeShort))
+    {
+        warningMes;
+        printf("in initLogLikeHoodRatioLocator, p->magnitudeShort has any values.\n");
+        printf("length of p->magnitudeShort is '%d'\n", p->locatorLength);
+        return 1;
+    }
+    if((p->hardDecisionShort))
+    {
+        warningMes;
+        printf("in initLogLikeHoodRatioLocator, p->hardDecisionShort has any values.\n");
+        printf("length of p->hardDecisionShort is '%d'\n", p->locatorLength);
+        return 1;
+    }
+    #endif
+
+    p->magnitudeShort=(u_int_QUANTIZ_MAGNITUDE_DIGIT*)malloc(sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*locatorLength);
+    memset(p->magnitudeShort, -1, sizeof(u_int_QUANTIZ_MAGNITUDE_DIGIT)*locatorLength);
+
+    p->hardDecisionShort=(char*)malloc(sizeof(char)*locatorLength);
+    memset(p->hardDecisionShort, -1, sizeof(char)*locatorLength);
+
+    p->locatorValidity=(unsigned char*)malloc(sizeof(unsigned int)*locatorLength);
+    memset(p->locatorValidity, 0, sizeof(unsigned char)*locatorLength);
+
+    p->locator=(unsigned int*)malloc(sizeof(unsigned int)*locatorLength);
+    memset(p->locator, -1, sizeof(unsigned int)*locatorLength);
+
+    p->locatorLength=locatorLength;
+    return 0;
+}
+
+/* Configure */
+char setUsedLengthOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int usedLength)
+{
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in setUsedLengthOfLogLikeHoodRatio, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLR))
+    {
+        errorMes;
+        printf("in setUsedLengthOfLogLikeHoodRatio, p->quantizedLLR is NULL.\n");
+        return -1;
+    }
+    if(p->length<usedLength)
+    {
+        errorMes;
+        printf("in setUsedLengthOfLogLikeHoodRatio, satisfing p->length(=%d)<usedLength(=%d).\n", p->length, usedLength);
+        return -1;
+    }
+    #endif
+
+    p->usedLength=usedLength;
+    return 0;
+}
+
+double_RATIONAL_NUMBER getSqureRootAvrLLR(struct_logLikeHoodRatio *p)
+{
+    unsigned int i;
+    double_RATIONAL_NUMBER tmpAvr=0.0;
+
+    for(i=0; i<p->usedLength; i++)
+    {
+        tmpAvr+=((*(p->llr+i))*(*(p->llr+i)));
+    }
+    tmpAvr/=((double_RATIONAL_NUMBER)p->usedLength);
+    sqrt(tmpAvr);
+    p->squreRootAvrLLR=tmpAvr;
+    return tmpAvr;
+}
+
+char setQuantizedLLRMaskOfLogLikeHoodRatio(struct_logLikeHoodRatio *p, unsigned int numberOfMask)
+{
+    unsigned int i;
+
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in setQuantizedLLRMaskOfLogLikeHoodRatio, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!numberOfMask)
+    {
+        warningMes;
+        printf("in setQuantizedLLRMaskOfLogLikeHoodRatio, numberOfMask is '%d'.\n", numberOfMask);
+        return -1;
+    }
+    #endif
+
+
+    p->quantizedLLRMask=0;
+    for(i=0; ((i<(sizeof(s_int_QUANTIZ_DIGIT)*8))&&(i<numberOfMask)); i++)
+    {
+        p->quantizedLLRMask|=(1<<i);
+    }
+    return 0;
+}
