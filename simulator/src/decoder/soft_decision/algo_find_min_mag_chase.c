@@ -1,122 +1,3 @@
-char findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(struct_logLikeHoodRatio *p)
-{
-    unsigned int i;
-    int tmp_depth;
-    unsigned int tmp_row_loc;
-    unsigned char tmp_direction;
-    #ifndef RELEASE
-    if(!p)
-    {
-        errorMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, struct_logLikeHoodRatio p is NULL.\n");
-        return -1;
-    }
-    if(!(p->quantizedLLR))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->quantizedLLR is NULL.\n");
-        return -1;
-    }
-    if(!(p->usedLength))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->usedLength is zero.\n");
-        return -1;
-    }
-    if(!(p->locator))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->locator is NULL.\n");
-        return -1;
-    }
-    if(!(p->magnitude))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->magnitude is NULL.\n");
-        return -1;
-    }
-    if(!(p->magnitudeShort))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->magnitudeShort is NULL.\n");
-        return -1;
-    }
-    if(!(p->hardDecisionShort))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->hardDecisionShort is NULL.\n");
-        return -1;
-    }
-    if(!(p->locatorLength))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->locatorLength is zero.\n");
-        return -1;
-    }
-    if(!(p->treeStruct))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->treeStruct is NULL.\n");
-        return -1;
-    }
-    if(!(p->treeStruct->tree_mag))
-    {
-        warningMes;
-        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->treeStruct->tree_mag is NULL.\n");
-        return -1;
-    }
-    #endif
-
-    tmp_depth=p->treeStruct->treeDepth;
-    tmp_row_loc=0;
-    tmp_direction=0;
-
-    /* Initializing minimum LLR value start */
-    /* Find 2nd, 3rd minimum LLR using 1st smallest LLR */
-    *(p->locator+0) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc);
-    *(p->magnitude+0) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc);
-    tmp_direction = *(*(p->treeStruct->direction+tmp_depth-1)+tmp_row_loc);
-    tmp_row_loc += tmp_direction;
-    tmp_depth--;
-    /* Initializing minimum LLR value end */
-
-    /* 1st locator is set above codes */
-    /* row location, also, is set */
-    /* until follow 1st minimum value, which is located on top, finds min values. */
-    for(i=1; i<p->locatorLength; i++)
-    {
-        if(tmp_direction)//right
-        {
-            *(p->locator+i) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc-1);
-            *(p->magnitude+i) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc-1);
-        }
-        else//left
-        {
-            *(p->locator+i) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc+1);
-            *(p->magnitude+i) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc+1);
-        }
-        tmp_direction = *(*(p->treeStruct->direction+tmp_depth-1)+tmp_row_loc);
-        if(tmp_direction)//right
-        {
-            tmp_row_loc+=tmp_row_loc+DIRECTION_RIGHT;
-        }
-        else//left
-        {
-            tmp_row_loc+=tmp_row_loc+DIRECTION_LEFT;
-        }
-        tmp_depth--;
-        //if(!tmp_depth) printf("if(!tmp_depth) i[%d]\n", i);
-    }
-
-    //for(i=0; i<p->locatorLength; i++)
-    //{
-    //    printf("V[%d]L[%d] ", *(p->magnitude+i), *(p->locator+i));
-    //}
-    //printf("\n");
-    //printf("test) value[%d],loc[%d]", **(*(p->treeStruct->tree_mag+(p->treeStruct->treeDepth-1))+0), *((*(p->treeStruct->treeIndex+(p->treeStruct->treeDepth-1)))+0));
-
-    return 0;
-}
 /*
  * char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(struct_logLikeHoodRatio *p)
  *
@@ -561,5 +442,125 @@ char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(
     }
     //testPrintTreeStructValue(p->treeStruct);
     //findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(p);
+    return 0;
+}
+
+char findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath(struct_logLikeHoodRatio *p)
+{
+    unsigned int i;
+    int tmp_depth;
+    unsigned int tmp_row_loc;
+    unsigned char tmp_direction;
+    #ifndef RELEASE
+    if(!p)
+    {
+        errorMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, struct_logLikeHoodRatio p is NULL.\n");
+        return -1;
+    }
+    if(!(p->quantizedLLR))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->quantizedLLR is NULL.\n");
+        return -1;
+    }
+    if(!(p->usedLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->usedLength is zero.\n");
+        return -1;
+    }
+    if(!(p->locator))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->locator is NULL.\n");
+        return -1;
+    }
+    if(!(p->magnitude))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->magnitude is NULL.\n");
+        return -1;
+    }
+    if(!(p->magnitudeShort))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->magnitudeShort is NULL.\n");
+        return -1;
+    }
+    if(!(p->hardDecisionShort))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->hardDecisionShort is NULL.\n");
+        return -1;
+    }
+    if(!(p->locatorLength))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->locatorLength is zero.\n");
+        return -1;
+    }
+    if(!(p->treeStruct))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->treeStruct is NULL.\n");
+        return -1;
+    }
+    if(!(p->treeStruct->tree_mag))
+    {
+        warningMes;
+        printf("in findMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm_followMinPath, p->treeStruct->tree_mag is NULL.\n");
+        return -1;
+    }
+    #endif
+
+    tmp_depth=p->treeStruct->treeDepth;
+    tmp_row_loc=0;
+    tmp_direction=0;
+
+    /* Initializing minimum LLR value start */
+    /* Find 2nd, 3rd minimum LLR using 1st smallest LLR */
+    *(p->locator+0) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc);
+    *(p->magnitude+0) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc);
+    tmp_direction = *(*(p->treeStruct->direction+tmp_depth-1)+tmp_row_loc);
+    tmp_row_loc += tmp_direction;
+    tmp_depth--;
+    /* Initializing minimum LLR value end */
+
+    /* 1st locator is set above codes */
+    /* row location, also, is set */
+    /* until follow 1st minimum value, which is located on top, finds min values. */
+    for(i=1; i<p->locatorLength; i++)
+    {
+        if(tmp_direction)//right
+        {
+            *(p->locator+i) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc-1);
+            *(p->magnitude+i) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc-1);
+        }
+        else//left
+        {
+            *(p->locator+i) = *((*(p->treeStruct->treeIndex+(tmp_depth-1)))+tmp_row_loc+1);
+            *(p->magnitude+i) = **(*(p->treeStruct->tree_mag+(tmp_depth-1))+tmp_row_loc+1);
+        }
+        tmp_direction = *(*(p->treeStruct->direction+tmp_depth-1)+tmp_row_loc);
+        if(tmp_direction)//right
+        {
+            tmp_row_loc+=tmp_row_loc+DIRECTION_RIGHT;
+        }
+        else//left
+        {
+            tmp_row_loc+=tmp_row_loc+DIRECTION_LEFT;
+        }
+        tmp_depth--;
+        //if(!tmp_depth) printf("if(!tmp_depth) i[%d]\n", i);
+    }
+
+    //for(i=0; i<p->locatorLength; i++)
+    //{
+    //    printf("V[%d]L[%d] ", *(p->magnitude+i), *(p->locator+i));
+    //}
+    //printf("\n");
+    //printf("test) value[%d],loc[%d]", **(*(p->treeStruct->tree_mag+(p->treeStruct->treeDepth-1))+0), *((*(p->treeStruct->treeIndex+(p->treeStruct->treeDepth-1)))+0));
+
     return 0;
 }
