@@ -56,6 +56,10 @@ void printLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 char printMagnitudeOfLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 char printMagnitudeOfLLR_andLocationWithSpaceAndEnter(struct_logLikeHoodRatio *p);
 
+void testPrintLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
+
+void testPrintShortMinimumQuantizedLLRAndLocator(struct_logLikeHoodRatio *p);
+
 /* File IO */
 char fprintQuatizLLR_toHEX(FILE* fp, struct_logLikeHoodRatio* p, char* str_tail);
 char fprintVerilogQuatizLLR_toHEX(FILE* fp, struct_logLikeHoodRatio* p, char* str_tail);
