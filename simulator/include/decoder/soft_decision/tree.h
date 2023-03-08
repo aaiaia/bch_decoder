@@ -20,3 +20,6 @@ struct struct_treeStructure
     unsigned int treeDepth;
 
 }typedef struct_treeStructure;
+
+struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType);
+char closeTreeStruct(struct_treeStructure **p);
