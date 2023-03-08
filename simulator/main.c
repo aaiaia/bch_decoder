@@ -1798,81 +1798,6 @@ void printMultiplicationMatrix(struct_galoisFieldElements *p)
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-char set_unSelTp_bofore_decoding
-(
-    unsigned int *W_selectedTP,
-    unsigned int *W_selTP_errCnt,
-
-    unsigned int *W_list_errCntOfTP_afterDec_theo,
-
-    struct_powerFormPolynomials **W_sel_TP_CW_pwrFormPoly,
-
-    unsigned int INFO_testPatternNum,
-
-    struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly,
-
-    unsigned int *INFO_list_errCntOfTP_beforeDec_theo,
-    const char *INFO_ALGORITHM_NAME
-)
-{
-    unsigned int tmp_i;
-
-    #ifndef RELEASE
-    if(!W_selectedTP)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_sel_TP is NULL.\r\n");
-        return -1;
-    }
-
-    if(!W_selTP_errCnt)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_selTP_errCnt is NULL.\r\n");
-        return -2;
-    }
-
-    if(!W_list_errCntOfTP_afterDec_theo)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *W_list_errCntOfTP_afterDec_theo is NULL.\r\n");
-        return -2;
-    }
-
-    if(!W_sel_TP_CW_pwrFormPoly)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *W_sel_TP_CW_pwrFormPoly is NULL.\r\n");
-        return -3;
-    }
-
-    if(!INFO_list_TP_CW_pwrFormPoly)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly is NULL.\r\n");
-        return -6;
-    }
-
-    if(!INFO_list_TP_CW_pwrFormPoly[0])
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", 0);
-        return -7;
-    }
-
-    if(!INFO_list_errCntOfTP_beforeDec_theo)
-    {
-        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *INFO_list_errCntOfTP_beforeDec_theoy is NULL.\r\n");
-        return -6;
-    }
-    #endif
-
-    for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
-    {
-        W_list_errCntOfTP_afterDec_theo[tmp_i]=0;
-    }
-
-    *W_selectedTP = INFO_testPatternNum;
-    *W_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
-    *W_sel_TP_CW_pwrFormPoly = INFO_list_TP_CW_pwrFormPoly[0];
-
-    return 0;
-}
-//////////////////////////////////////////////////////////////////////////////////
 char set_selTP_before_decording_skipDecOnly
 (
     unsigned int *W_HD_errCnt,
@@ -2235,6 +2160,81 @@ char set_selTP_before_decording_skipDecOnly
     /************** This sequence only valid in Theoret- ****************/
     /************** ically Fail conclusion Method.       ****************/
     /********************************************************************/
+    return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////
+char set_unSelTp_bofore_decoding
+(
+    unsigned int *W_selectedTP,
+    unsigned int *W_selTP_errCnt,
+
+    unsigned int *W_list_errCntOfTP_afterDec_theo,
+
+    struct_powerFormPolynomials **W_sel_TP_CW_pwrFormPoly,
+
+    unsigned int INFO_testPatternNum,
+
+    struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly,
+
+    unsigned int *INFO_list_errCntOfTP_beforeDec_theo,
+    const char *INFO_ALGORITHM_NAME
+)
+{
+    unsigned int tmp_i;
+
+    #ifndef RELEASE
+    if(!W_selectedTP)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_sel_TP is NULL.\r\n");
+        return -1;
+    }
+
+    if(!W_selTP_errCnt)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int tmp_selTP_errCnt is NULL.\r\n");
+        return -2;
+    }
+
+    if(!W_list_errCntOfTP_afterDec_theo)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *W_list_errCntOfTP_afterDec_theo is NULL.\r\n");
+        return -2;
+    }
+
+    if(!W_sel_TP_CW_pwrFormPoly)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *W_sel_TP_CW_pwrFormPoly is NULL.\r\n");
+        return -3;
+    }
+
+    if(!INFO_list_TP_CW_pwrFormPoly)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials **INFO_list_TP_CW_pwrFormPoly is NULL.\r\n");
+        return -6;
+    }
+
+    if(!INFO_list_TP_CW_pwrFormPoly[0])
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, struct_powerFormPolynomials *(INFO_list_TP_CW_pwrFormPoly+%d) is NULL.\r\n", 0);
+        return -7;
+    }
+
+    if(!INFO_list_errCntOfTP_beforeDec_theo)
+    {
+        errorMes; printf("in set_unSelTp_bofore_decoding, unsigned int *INFO_list_errCntOfTP_beforeDec_theoy is NULL.\r\n");
+        return -6;
+    }
+    #endif
+
+    for(tmp_i=0; tmp_i<INFO_testPatternNum; tmp_i++)
+    {
+        W_list_errCntOfTP_afterDec_theo[tmp_i]=0;
+    }
+
+    *W_selectedTP = INFO_testPatternNum;
+    *W_selTP_errCnt = INFO_list_errCntOfTP_beforeDec_theo[0];
+    *W_sel_TP_CW_pwrFormPoly = INFO_list_TP_CW_pwrFormPoly[0];
+
     return 0;
 }
 //////////////////////////////////////////////////////////////////////////////////
