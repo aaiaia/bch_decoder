@@ -67,3 +67,6 @@ struct struct_cmdLineOption
 
     struct struct_cmdLineOption *cmdAddedOption;
 };
+
+/* Displaying */
+void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng);
