@@ -2637,13 +2637,11 @@ char instSetValue(struct struct_cmdLineOption *p, char *valueString)
                 errorMes;
                 printf("To input value, value type, which set to none , is wrong.\n");
                 return -1;
-                break;
 
             case VALUE_TYPE_VOID:
                 errorMes;
                 printf("To input value, value type, which set to void , is wrong.\n");
                 return -1;
-                break;
 
             case VALUE_TYPE_CHAR:
                 warningMes;
