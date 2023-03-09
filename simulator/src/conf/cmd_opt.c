@@ -407,7 +407,7 @@ char *instSetValues(struct struct_cmdLineOption *p, char *str)
     return arg;
 }
 
-char instrocessInstElementWhenDetected(struct struct_cmdLineOption *p)
+char instProcessInstElementWhenDetected(struct struct_cmdLineOption *p)
 {
 struct struct_cmdLineOption *temp = p;
 
@@ -534,7 +534,7 @@ char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, ch
 
                 if(!(temp = instFindSameLongNameInInstSet(p, argBuf))) return str;
                 /* Find same long name, do something start*/
-                if(instrocessInstElementWhenDetected(temp)) return str;
+                if(instProcessInstElementWhenDetected(temp)) return str;
                 /* Find same long name, do something end*/
 
                 switch(*arg)//enter sub struct_cmdLineOption Set

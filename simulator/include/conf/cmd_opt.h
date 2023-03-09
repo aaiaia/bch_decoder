@@ -83,7 +83,7 @@ int instSetFlag(struct struct_cmdLineOption *p);
 //void *instructionCreateBufferValue(enum enum_list_valueType valueType);
 char instSetValue(struct struct_cmdLineOption *p, char *valueString);
 char *instSetValues(struct struct_cmdLineOption *p, char *str);
-char instrocessInstElementWhenDetected(struct struct_cmdLineOption *p);
+char instProcessInstElementWhenDetected(struct struct_cmdLineOption *p);
 struct struct_cmdLineOption *instFindSameLongNameInInstSet(struct struct_cmdLineOption *p, char *targetString);
 /*
     If cmd options are wrong, return to input str address.
