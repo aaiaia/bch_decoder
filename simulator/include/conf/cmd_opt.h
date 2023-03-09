@@ -51,6 +51,13 @@ enum enum_list_valueType
     VALUE_TYPE_STRING,
 }typedef enum_list_valueType;
 
+enum INST_SET_FLAG_NONE_STATE
+{
+    NONE,
+    OVER_WRITED
+};
+#define INST_SET_FLAG_NONE    0;
+
 struct struct_cmdLineOption
 {
     const char *longName;
@@ -70,3 +77,17 @@ struct struct_cmdLineOption
 
 /* Displaying */
 void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng);
+
+/* Operation */
+int instSetFlag(struct struct_cmdLineOption *p);
+//void *instructionCreateBufferValue(enum enum_list_valueType valueType);
+char instSetValue(struct struct_cmdLineOption *p, char *valueString);
+char *instSetValues(struct struct_cmdLineOption *p, char *str);
+char instrocessInstElementWhenDetected(struct struct_cmdLineOption *p);
+struct struct_cmdLineOption *instFindSameLongNameInInstSet(struct struct_cmdLineOption *p, char *targetString);
+/*
+    If cmd options are wrong, return to input str address.
+    Else cmd options process normally, return moved str address, which is same to char *arg.
+*/
+char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, char keyword);
+int instMainProcessing(struct struct_cmdLineOption *p, char *str);
