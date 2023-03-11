@@ -10,7 +10,7 @@ SOURCE_FILE_EXT = c
 CFLAGS = -Wall
 
 # 링커 옵션
-LDFLAGS = -lm 
+LDFLAGS = -lm
 
 # 헤더파일 경로
 #INCLUDE = -Iinclude/
