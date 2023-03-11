@@ -114,21 +114,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-/*Global debug option start*/
-unsigned int global_flag_deBugOption=0;
-#define DEBUG_DEBUG_WORD        "debug"//FLAG_MASK_DISPLAY_PROGRESS
-#define FLAG_MASK_DEBUG_DEBUG   (1<<0)
-#define debugMes                printf("debug ) ");
-
-    unsigned int global_flag_debug_display=0;
-    /*
-    //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-    //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-    //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
-    */
-    #define debugFuncNameMes    printf("debug-funcname ) ");
-    #define debugSequenceMes    printf("debug-progress ) ");
-/*Global debug option end*/
 
 
 

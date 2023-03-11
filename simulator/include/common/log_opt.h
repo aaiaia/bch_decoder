@@ -38,3 +38,22 @@ unsigned int global_flag_cmdSystemUnhold=0;
 #define SYSTEM_UNHOLD_FORCED_WORD       "f" //not used
 #define FLAG_MASK_SYSTEM_UNHOLD_FORCED  (1<<0)
 #define systemUnholdMes                 printf("UNHOLD ) ")
+
+/*Global debug option start*/
+unsigned int global_flag_deBugOption=0;
+#define DEBUG_DEBUG_WORD        "debug"//FLAG_MASK_DISPLAY_PROGRESS
+#define FLAG_MASK_DEBUG_DEBUG   (1<<0)
+#define debugMes                printf("debug ) ");
+
+    unsigned int global_flag_debug_display=0;
+    /*
+    enum DEBUG_DISPLAY_MODE
+    {
+        FLAG_MASK_DISPLAY_RESULT    = (1<<0),
+        FLAG_MASK_DISPLAY_PROGRESS  = (1<<1),
+        FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
+    };
+    */
+    #define debugFuncNameMes    printf("debug-funcname ) ");
+    #define debugSequenceMes    printf("debug-progress ) ");
+/*Global debug option end*/
