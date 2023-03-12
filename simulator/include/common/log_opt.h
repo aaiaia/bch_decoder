@@ -41,19 +41,33 @@ unsigned int global_flag_cmdSystemUnhold=0;
 
 /*Global debug option start*/
 unsigned int global_flag_deBugOption=0;
-#define DEBUG_DEBUG_WORD        "debug"//FLAG_MASK_DISPLAY_PROGRESS
+#define DEBUG_DEBUG_WORD        "debug"
 #define FLAG_MASK_DEBUG_DEBUG   (1<<0)
 #define debugMes                printf("debug ) ");
 
-    unsigned int global_flag_debug_display=0;
-    /*
+    /*Display RESULT or Progress or Function name*/
     enum DEBUG_DISPLAY_MODE
     {
         FLAG_MASK_DISPLAY_RESULT    = (1<<0),
         FLAG_MASK_DISPLAY_PROGRESS  = (1<<1),
         FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
     };
-    */
+
+    unsigned int global_flag_debug_display=0;
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
+
+    unsigned int global_flag_bch_BM_SimHD_display=0;
+    #define infoMes printf("test BCH BM HARD ) ")
+
+    unsigned int global_flag_bch_BM_SimSD_display=0;
+    #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
+
+    unsigned int global_flag_bch_mSBS_SimHD_display=0;
+    #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
+
+    unsigned int global_flag_bch_mSBS_SimSD_display=0;
+    #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
+    #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 /*Global debug option end*/
+

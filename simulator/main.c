@@ -104,13 +104,6 @@ char global_buf_KeyBoardInput[255]={0};
 
     #define ALGORITHM_CHANNEL       (1<<1)
 
-    /*Display RESULT or Progress or Function name*/
-    enum DEBUG_DISPLAY_MODE
-    {
-        FLAG_MASK_DISPLAY_RESULT    = (1<<0),
-        FLAG_MASK_DISPLAY_PROGRESS  = (1<<1),
-        FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
-    };
 
 
 
@@ -297,64 +290,6 @@ unsigned int global_flag_simulationCode=0;
 
             FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
         };
-        /*
-        //unsigned int global_flag_bchBM_simulationMode=0;
-        //enum BCH_BM_SIMULATION_MODE
-        //{
-        //    FLAG_MASK_TEST_BM_ALGORITHM         = (1<<0),
-        //    FLAG_MASK_CODE_BCH_BM_HARD_DECISION = (1<<1),
-        //    FLAG_MASK_CODE_BCH_BM_SOFT_DECISION = (1<<2),
-        //
-        //    FLAG_MASK_CODE_BCH_BM_DECODING_SKIP = (1<<15),
-        //};
-        */
-
-        /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
-        /*
-        //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-        //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-        //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
-        */
-            /*
-            //#define infoMes printf("test BCH BM HARD ) ")
-            */
-            unsigned int global_flag_bch_BM_SimHD_display=0;
-        /*LLR Quantization value Set*/
-            /*
-            //#define infoMes printf("test BCH BM SOFT ) ")
-            */
-            unsigned int global_flag_bch_BM_SimSD_display=0;//make common thing.
-            #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
-
-
-        /*******************************************************************/
-        /********** global flag associate wieh bch - mSBS algorithm **********/
-        /*******************************************************************/
-        /*
-        //unsigned int global_flag_bch_mSBS_simulationMode = 0;
-        //enum BCH_M_SBS_SIMULATION_MODE
-        //{
-        //    FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
-        //    FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
-        //    FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
-        //
-        //    FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
-        //};
-        */
-
-        /*Correctable bits length, set global_flag_bchBM_simulationMode|=FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION*/
-        /*
-        //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-        //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-        //#define DISPLAY_FUNCNAME_WORD       "funcname"
-        //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
-        */
-        #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
-            unsigned int global_flag_bch_mSBS_SimHD_display=0;
-        /*LLR Quantization value Set*/
-        #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
-            unsigned int global_flag_bch_mSBS_SimSD_display=0;
-            #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
 
 //////////////////////////////////////////////////////////////////////////////////
