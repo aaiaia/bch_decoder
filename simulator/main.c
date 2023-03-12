@@ -113,12 +113,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-unsigned int global_flag_berOptions = 0;
-/*
-#define TEST_GET_BER_WORD       "get-ber"//SETVALUE
-*/
-#define FLAG_MASK_TEST_GET_BER  (1<<0)
-#define testGetBerMes           printf("test GET-BER ) ");
     /****************************************************/
     /********** global flag associate wieh ber **********/
     /****************************************************/

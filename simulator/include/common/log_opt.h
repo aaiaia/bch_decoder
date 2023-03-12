@@ -98,6 +98,9 @@ unsigned int global_flag_deBugOption = 0; //not used
     unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
 
 /* ber option start */
+unsigned int global_flag_berOptions = 0;
+#define FLAG_MASK_TEST_GET_BER  (1<<0)
+#define testGetBerMes           printf("test GET-BER ) ");
 /* ber option end */
 
 /* Log LikeHood Ratio debug option start */
