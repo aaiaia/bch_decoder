@@ -509,9 +509,10 @@ unsigned int global_ErrorNum = 0;
 
 
 
-
-    unsigned int global_flag_gfCommon = 0;
-    #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+/* Make Galois Field options start */
+unsigned int global_flag_gfCommon = 0;
+#define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
+/* Make Galois Field options end */
 
 
 /* Code Specification start */
