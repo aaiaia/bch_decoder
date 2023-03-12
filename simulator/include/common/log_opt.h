@@ -63,9 +63,9 @@ unsigned int global_flag_cmdSystemUnhold=0;
     /*mSBS Algorithm debug option end*/
 
 /*Global debug option start*/
-unsigned int global_flag_deBugOption=0;
-#define DEBUG_DEBUG_WORD        "debug"
-#define FLAG_MASK_DEBUG_DEBUG   (1<<0)
+unsigned int global_flag_deBugOption=0; //not used
+#define DEBUG_DEBUG_WORD        "debug" //not used
+#define FLAG_MASK_DEBUG_DEBUG   (1<<0)  //used with global_flag_debug_display
 #define debugMes                printf("debug ) ");
 
     /*Display RESULT or Progress or Function name*/
