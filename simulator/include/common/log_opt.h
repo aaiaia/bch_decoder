@@ -94,5 +94,15 @@ unsigned int global_flag_deBugOption=0; //not used
     unsigned int global_flag_bch_mSBS_SimSD_display=0;
     #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
+
+    /*Log LikeHood Ratio debug option start*/
+    unsigned int global_flag_debug_awgnLLR=0;
+    #define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
+    #define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
+
+    #define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR    (1<<1)
+    #define debugAwgnLlrLocatorMes              printf("debug-LLR-Locator ) ");
+    /*Log LikeHood Ratio debug option end*/
+
 /*Global debug option end*/
 

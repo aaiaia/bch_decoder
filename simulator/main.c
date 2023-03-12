@@ -437,15 +437,6 @@ const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END]
 unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHOD_NONE;
 //////////////////////////////////////////
 
-/*Log LikeHood Ratio debug option start*/
-unsigned int global_flag_debug_awgnLLR=0;
-#define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
-#define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
-
-#define FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR    (1<<1)
-#define debugAwgnLlrLocatorMes              printf("debug-LLR-Locator ) ");
-/*Log LikeHood Ratio debug option end*/
-
 /* LLR QUANTIZATION FILTER options start */
 enum ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM
 {
