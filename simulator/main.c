@@ -110,28 +110,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-    /*BM Algorithm debug option start*/
-    unsigned int global_flag_debug_bmSim=0;
-    #define DEBUG_BCH_BM_ALGORITHM_WORD         "debug-bm"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_BM_ALGORITHM    (1<<0)
-    #define debugBmAlgorithmMes                 printf("debug-BM ) ");
-
-    #define DEBUG_BCH_BM_CAL_DELTA_WORD         "debug-bm-cal-delta"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA    (1<<1)
-    #define debugBmAlgorithmCalDeltaMes         printf("debug-BM-cal-delta ) ");
-    /*BM Algorithm debug option end*/
-
-    /*mSBS Algorithm debug option start*/
-    /* below variables could be unnecessary */
-    unsigned int global_flag_debug_mSBS_Sim=0;
-    #define DEBUG_BCH_mSBS_ALGORITHM_WORD       "debug-mSBS"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM  (1<<0)
-    #define debug_mSBS_AlgorithmMes             printf("debug-mSBS ) ");
-
-    #define DEBUG_BCH_M_SBS_CAL_DELTA_WORD      "debug-mSBS-cal-delta"//OPT_DISPLAY_PROGRESS
-    #define FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA (1<<1)
-    #define debug_mSBS_AlgorithmCalDeltaMes     printf("debug-mSBS-cal-delta ) ");
-    /*mSBS Algorithm debug option end*/
 
 
 
