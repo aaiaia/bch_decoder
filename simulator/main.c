@@ -571,14 +571,6 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
 unsigned int global_flag_Modulation_Mode = 0;
 #define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
 #define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
-    unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
-    /*
-    //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-    //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-    //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
-    //#define DISPLAY_DEBUG_WORD          "debug"
-    //#define DISPLAY_DEBUG               (1<<3)
-    */
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

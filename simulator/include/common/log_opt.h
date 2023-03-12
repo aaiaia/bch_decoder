@@ -95,6 +95,8 @@ unsigned int global_flag_deBugOption = 0; //not used
     #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
+    unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
+
 /*Log LikeHood Ratio debug option start*/
 unsigned int global_flag_debug_awgnLLR = 0;
 #define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
