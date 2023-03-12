@@ -113,7 +113,7 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-unsigned int global_flag_berOptions=0;
+unsigned int global_flag_berOptions = 0;
 /*
 #define TEST_GET_BER_WORD       "get-ber"//SETVALUE
 */
@@ -146,7 +146,7 @@ unsigned int global_flag_berOptions=0;
         /****************************************************/
         /********** global flag associate wieh ber **********/
         /****************************************************/
-        unsigned int global_flag_case_choosingCodeWordMethod_inTheo=0;
+        unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
         enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
         {
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NONE,
@@ -161,7 +161,7 @@ unsigned int global_flag_berOptions=0;
         }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
 
 
-            unsigned int global_flag_case_getBER_method_Display=0;
+            unsigned int global_flag_case_getBER_method_Display = 0;
             //if( (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS) )
             /*
             //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
@@ -186,7 +186,7 @@ unsigned int global_flag_berOptions=0;
 
 
 
-unsigned int global_flag_simulationCode=0;
+unsigned int global_flag_simulationCode = 0;
 /*Channel Setting, LLR quantization bit setting*/
 #define FLAG_MASK_CODE_BCH  (1<<0)
 #define mes_bchCode         printf("BCH code) ");
@@ -229,7 +229,7 @@ unsigned int global_flag_simulationCode=0;
     /****************************************************/
     /********** global flag associate wieh bch **********/
     /****************************************************/
-    unsigned int global_flag_bchDecAlgo_Enable=0;
+    unsigned int global_flag_bchDecAlgo_Enable = 0;
     /*CODE LENGTH(GALOIS FIELD), symbols(BCH not needs)*/
 
     enum BCH_DECODING_ALGORITHM
@@ -303,10 +303,10 @@ unsigned int global_flag_fileInputOutput = 0;
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-                unsigned int testOption=0;
+                unsigned int testOption = 0;
                 #define FLAG_MASK_TEST_RESULT   (1<<5)
 
-                unsigned int enviromentsOption=0;
+                unsigned int enviromentsOption = 0;
 
 
 /*****************************************/
@@ -328,7 +328,7 @@ double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
 double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
 
 
-unsigned int global_flag_debug_awgn=0;
+unsigned int global_flag_debug_awgn = 0;
 #define FLAG_MASK_DEBUG_AWGN_SEQUENCE   (1<<0)
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 
@@ -337,7 +337,7 @@ unsigned int global_flag_debug_awgn=0;
 /********************************************************/
 /********** Associate with Log Like Hood Ratio **********/
 /********************************************************/
-unsigned int global_flag_llr_display=0;
+unsigned int global_flag_llr_display = 0;
 enum FLAG_LLR_DISPLAY
 {
     FLAG_LLR_DISPLAY_NONE                   = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
