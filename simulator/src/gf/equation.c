@@ -1,3 +1,5 @@
+#include "field.h"
+
 ///* Example of making equation *///
 /*
 //    struct_galoisFieldElements *alpha;

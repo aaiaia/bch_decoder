@@ -1,3 +1,4 @@
+#include "field.h"
 /* handling galois field except elements */
 struct_galoisFieldElements *createGaloisFieldExceptElements(unsigned int numberOfElement)
 {

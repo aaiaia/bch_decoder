@@ -1,3 +1,5 @@
+#include "sum_matrix.h"
+
 /* Constructor and Destructor */
 struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsigned int column)
 {

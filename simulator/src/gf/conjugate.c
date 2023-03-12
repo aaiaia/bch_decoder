@@ -1,3 +1,5 @@
+#include "conjugate.h"
+
 /* Constructor and Destructor */
 struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElements *galoisFields)
 {

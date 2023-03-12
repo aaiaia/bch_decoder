@@ -1,3 +1,5 @@
+#include "field_set.h"
+
 /* Constructor and Desctructor */
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)
 {

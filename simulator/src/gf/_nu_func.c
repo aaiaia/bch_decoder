@@ -1,3 +1,4 @@
+#include "field.h"
 char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *to, struct_galoisFieldElements *from)
 {
     unsigned int i;

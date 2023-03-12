@@ -1,3 +1,5 @@
+#include "field.h"
+
 /* Operation */
 unsigned int cal_numsOfDegreeOfSynd(unsigned int t)
 {

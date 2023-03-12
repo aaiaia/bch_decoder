@@ -1,3 +1,5 @@
+#include "element.h"
+
 struct_galoisFieldPolyForm *createPolyForm(unsigned int length)
 {
     struct_galoisFieldPolyForm *p;
