@@ -9,7 +9,7 @@
 #define resultMes       printf("Result ) ")
 
 /* Flags for log*/
-unsigned int global_flag_cmdOption=0;
+unsigned int global_flag_cmdOption = 0;
 #define PRINTF_LOG_WORD                         "l" //not used
 #define FLAG_MASK_PRINTF_LOG                    (1<<0)
 #define logMes                                  printf("LOG ) ")
@@ -25,23 +25,23 @@ unsigned int global_flag_cmdOption=0;
 #define IGNORE_WARNING_MES_WORD                 "w" //not used
 #define FLAG_MASK_PRINTF_WARNING_MES            (1<<3)
     /* variables to check memory lineary */
-    unsigned int global_tmp_i_memoryCheck=0;
+    unsigned int global_tmp_i_memoryCheck = 0;
 
 /* Sysgem Hold command */
-unsigned int global_flag_cmdSystemHold=0;
+unsigned int global_flag_cmdSystemHold = 0;
 #define PRINTF_HELP_WORD    "h" //not used
 #define FLAG_MASK_HOLD_HELP (1<<0)
 #define systemHoldMes       printf("HOLD ) ")
 
 /* forced Sysgem unhold command */
-unsigned int global_flag_cmdSystemUnhold=0;
+unsigned int global_flag_cmdSystemUnhold = 0;
 #define SYSTEM_UNHOLD_FORCED_WORD       "f" //not used
 #define FLAG_MASK_SYSTEM_UNHOLD_FORCED  (1<<0)
 #define systemUnholdMes                 printf("UNHOLD ) ")
 
     /* Algorithm debugging options start */
     /* BM Algorithm debug option start */
-    unsigned int global_flag_debug_bmSim=0;
+    unsigned int global_flag_debug_bmSim = 0;
     #define DEBUG_BCH_BM_ALGORITHM_WORD         "debug-bm"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_BM_ALGORITHM    (1<<0)
     #define debugBmAlgorithmMes                 printf("debug-BM ) ");
@@ -53,7 +53,7 @@ unsigned int global_flag_cmdSystemUnhold=0;
 
     /*mSBS Algorithm debug option start*/
     /* below variables could be unnecessary */
-    unsigned int global_flag_debug_mSBS_Sim=0;
+    unsigned int global_flag_debug_mSBS_Sim = 0;
     #define DEBUG_BCH_mSBS_ALGORITHM_WORD       "debug-mSBS"//OPT_DISPLAY_PROGRESS
     #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM  (1<<0)
     #define debug_mSBS_AlgorithmMes             printf("debug-mSBS ) ");
@@ -65,7 +65,7 @@ unsigned int global_flag_cmdSystemUnhold=0;
     /* Algorithm debugging options end */
 
 /*Global debug option start*/
-unsigned int global_flag_deBugOption=0; //not used
+unsigned int global_flag_deBugOption = 0; //not used
 #define DEBUG_DEBUG_WORD        "debug" //not used
 #define FLAG_MASK_DEBUG_DEBUG   (1<<0)  //used with global_flag_debug_display
 #define debugMes                printf("debug ) ");
@@ -78,25 +78,25 @@ unsigned int global_flag_deBugOption=0; //not used
         FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
     };
 
-    unsigned int global_flag_debug_display=0;
+    unsigned int global_flag_debug_display = 0;
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
 
-    unsigned int global_flag_bch_BM_SimHD_display=0;
+    unsigned int global_flag_bch_BM_SimHD_display = 0;
     #define infoMes printf("test BCH BM HARD ) ")
 
-    unsigned int global_flag_bch_BM_SimSD_display=0;
+    unsigned int global_flag_bch_BM_SimSD_display = 0;
     #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
 
-    unsigned int global_flag_bch_mSBS_SimHD_display=0;
+    unsigned int global_flag_bch_mSBS_SimHD_display = 0;
     #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
 
-    unsigned int global_flag_bch_mSBS_SimSD_display=0;
+    unsigned int global_flag_bch_mSBS_SimSD_display = 0;
     #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
     /*Log LikeHood Ratio debug option start*/
-    unsigned int global_flag_debug_awgnLLR=0;
+    unsigned int global_flag_debug_awgnLLR = 0;
     #define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
     #define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
 
