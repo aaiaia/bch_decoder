@@ -456,7 +456,7 @@ double global_LLR_quantizFilter_step = 1.0;
 unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
-/* Flags to output test pattern end */
+/* Flags about Log Like Hood Ratio processong end */
 
 /* non-categorized flags start */
 /* non-categorized flags end */
