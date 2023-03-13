@@ -56,3 +56,7 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisField(struct_galoisFieldEleme
 struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoisFieldElements *field, char *string);
 
 /* For displying(debugging) */
+
+/* Test Only Functions */
+void printSummationMatrixGFabstraction(struct_galoisFieldElements *p);
+void printMultiplicationMatrix(struct_galoisFieldElements *p);
