@@ -166,11 +166,10 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-#define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)
+#define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)   //not used
 
-#define DEFAULT_CHANNEL_MODE    FLAG_MASK_CHANNEL_MODE_AWGN
-
-unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;
+#define DEFAULT_CHANNEL_MODE    FLAG_MASK_CHANNEL_MODE_AWGN //not used
+unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
 
     enum ENUM_GLO_CH_MODE_FUNC
     {
