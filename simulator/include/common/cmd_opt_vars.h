@@ -507,6 +507,10 @@ unsigned int global_GaloisFieldExponential = DEFAULT_VALUE_GF_EXP;
 unsigned int global_MaximumCodeLength = 0;
 unsigned int global_CodeLength = DEFAULT_VALUE_CODE_LENGTH;
 unsigned int global_LimitCodeLength = 0;
+
+/* added LCM expantion */
+char *global_addedRootToLCM_string=NULL;// to adding low common multiple(LCM)
+unsigned int global_degAddedRootToLCM=0;
 /* Code Specification end */
 
 /* Error correction specification start */
