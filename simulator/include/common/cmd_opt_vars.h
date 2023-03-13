@@ -79,6 +79,7 @@ unsigned int global_flag_deBugOption = 0; //not used
         FLAG_MASK_DISPLAY_FUNCNAME  = (1<<2),
     };
 
+    /* flags using enum DEBUG_DISPLAY_MODE start */
     unsigned int global_flag_debug_display = 0;
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
@@ -97,6 +98,7 @@ unsigned int global_flag_deBugOption = 0; //not used
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
     unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
+    /* flags using enum DEBUG_DISPLAY_MODE end */
 
 /* ber option start */
 unsigned int global_flag_berOptions = 0;
