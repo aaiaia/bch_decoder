@@ -500,8 +500,10 @@ unsigned int global_bch_SoftCorrectable = DEFAULT_VALUE_BCH_SOFT_CORRECTABLE;
 #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND    0
 unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
 /* flags for generating galois field(GF) end */
+
 /* non-categorized flags start */
 char *global_AddedRoot = NULL;  //notused
 /* non-categorized flags end */
+
 /* Operation */
 void GLOBAL_flag_proc();
