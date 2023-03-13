@@ -137,13 +137,11 @@ char global_buf_KeyBoardInput[255]={0};
     #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
 
-        /****************************************************/
         /*
          * global flag to selecting test pettern.
          * It is working only in
          * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
          */
-        /****************************************************/
         unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
         enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
         {
@@ -158,14 +156,6 @@ char global_buf_KeyBoardInput[255]={0};
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
         }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
 
-
-            unsigned int global_flag_case_getBER_method_Display = 0;
-            //if( (global_flag_case_getBER_method_Display&FLAG_MASK_DISPLAY_PROGRESS) )
-            /*
-            //#define FLAG_MASK_DISPLAY_RESULT    (1<<0)
-            //#define FLAG_MASK_DISPLAY_PROGRESS  (1<<1)
-            //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
-            */
 
     /*
      * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),

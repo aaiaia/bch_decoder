@@ -98,6 +98,8 @@ unsigned int global_flag_deBugOption = 0; //not used
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
     unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
+
+    unsigned int global_flag_case_getBER_method_Display = 0;
     /* flags using enum DEBUG_DISPLAY_MODE end */
 
 /* ber option start */
