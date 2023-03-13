@@ -191,9 +191,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
         FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION,//not support yet
     }typedef enum_FLAG_CASE_DEC_FAIL_HANDLING;
     /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT end */
-    /****************************************************/
     /****** global flag associate with decoding end *****/
-    /****************************************************/
 /* Flags for simulation mode end */
 
 /* Operation */
