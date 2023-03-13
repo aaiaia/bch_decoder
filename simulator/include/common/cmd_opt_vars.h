@@ -320,6 +320,155 @@ unsigned int global_flag_debug_awgn = 0;
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 /* Flags about AWGN(channel noise) end */
 
+/********************************************************/
+/********** Associate with Log Like Hood Ratio **********/
+/********************************************************/
+unsigned int global_flag_llr_display = 0;
+enum FLAG_LLR_DISPLAY
+{
+    FLAG_LLR_DISPLAY_NONE                   = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
+    FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING = (1<<0),
+}typedef enum_FLAG_LLR_DISPLAY;
+
+/*
+//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE                       0
+//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM                    1
+//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH   2
+//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN  3//NOT SUPPORT YET
+//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO         4//NOT SUPPORT YET
+*/
+enum FLAG_CASE_FINDING_MIN_METHOD
+{
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE,
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM,
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING,
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH,
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN, //NOT SUPPORT YET
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO,        //NOT SUPPORT YET
+    FLAG_CASE_FINDING_MIN_LLR_METHOD_END,
+};
+const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51] =
+{
+    "NONE",
+    "MINIMUM",
+    "GROUPING_MINIMUM",
+    "TREE-FALLOWING_MIN1_PATH",
+    "TREE-PROBABILISTIC_CHOOSEN(Not support yet)",
+    "TREE-PRIOR_HD_ZERO(Not support yet)",
+};
+
+const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51] =
+{
+    "NONE",
+    "MIN",
+    "GROUP_MIN",
+    "TREE-FAL_MIN1_PH",
+    "TREE-PROB_CHOOSEN",
+    "TREE-PRIOR_HD_ZERO",
+};
+
+
+#define FLAG_CASE_FINDING_MIN_LLR_METHOD_DEFAULT    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH
+unsigned int global_flag_case_find_LLR_method = 0;
+
+    unsigned int global_grouping_stream_nums = 1;
+    unsigned int global_group_bit_num = 0;
+    unsigned int global_group_last_bit_num = 0;
+
+//////////////////////////////////////////
+/* pass HD 1 when llr mag is zero start */
+enum FLAG_CASE_PASS_MAG0_HD_1_MEAN_NOT_CHOOSEN_LOW_LLR
+{
+    FLAG_CASE_PASS_MAG0_HD_1_DISABLE,
+    FLAG_CASE_PASS_MAG0_HD_1_ENABLE,
+    FLAG_CASE_PASS_MAG0_HD_1_END,
+};
+const char NAME_FLAG_CASE_PASS_MAG0_HD_1[FLAG_CASE_PASS_MAG0_HD_1_END][71] =
+{
+    "No passing llr magnitude when HD 1(finding min value only)",
+    "Passing llr magnitude when HD 1(finding min value only)",
+};
+
+unsigned int global_flag_case_pass_hd_1 = FLAG_CASE_PASS_MAG0_HD_1_DISABLE;
+/*  pass HD 1 when llr mag is zero end  */
+
+enum FLAG_CASE_SAME_LLR_HANDLING
+{
+    FLAG_CASE_SAME_LLR_HANDLING_NONE,
+    FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL,
+    FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_0,
+    FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,
+    FLAG_CASE_SAME_LLR_HANDLING_END,
+};
+const char NAME_FLAG_CASE_SAME_LLR_HANDLING[FLAG_CASE_SAME_LLR_HANDLING_END][31] =
+{
+    "same llr mag is none",
+    "same llr mag is not selected",
+    "same llr mag is prior 0",
+    "same llr mag is prior 1",
+};
+unsigned int global_flag_case_same_llr_handling = FLAG_CASE_SAME_LLR_HANDLING_NONE;
+//////////////////////////////////////////
+enum FLAG_CASE_INIT_LLR_MAG_METHOD
+{
+    FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,
+    FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,
+    FLAG_CASE_INIT_LLR_MAG_METHOD_END,
+};
+const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END][51] =
+{
+    "first loc is selected, has no condition",
+    "if no minimum llr val than max llr, not select",
+};
+unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHOD_NONE;
+//////////////////////////////////////////
+
+/* LLR QUANTIZATION FILTER options start */
+enum ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM
+{
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_NONE,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_END,
+};
+const char NAME_QUANTIZ_NUMBERIC_SYSTEM[ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_END][51]=
+{
+    "numberic system is not identified",
+    "2's compliment",
+    "1's compliment",
+};
+
+unsigned int global_flag_case_llr_numberic_system = \
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT;
+
+
+
+enum ENUM_FLAG_CASE_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING
+{
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED,
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_END,
+
+};
+
+const char NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING \
+    [ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_END][21] = \
+{
+    "none",
+    "overlaping",
+    "duplicated",
+};
+
+unsigned int global_flag_case_llr_mag_ones_complement_zero_handling = \
+    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE;
+
+/* LLR QUANTIZATION FILTER VARIABLES start */
+double global_LLR_quantizFilter_offset = -0.5;
+double global_LLR_quantizFilter_step = 1.0;
+unsigned char global_LLR_quantizFilter_bitWidth = 4;
+/* LLR QUANTIZATION FILTER VARIABLES end */
+/* LLR QUANTIZATION FILTER options end */
 /* non-categorized flags start */
 /* non-categorized flags end */
 /* Operation */
