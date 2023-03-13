@@ -15,3 +15,19 @@ char *randdomInfoBitStreamChanger(unsigned int infoBitsLength, unsigned int pari
 char *randdomInfoBitChanger(unsigned int infoBitsLength, unsigned int parityBitsLength, char *p);
 char *allSameInfoBitGenerator(char initChar, unsigned int infoBitsLength, unsigned int parityBitsLength, char **p);
 char *randdomInfoBitGenerator(unsigned int infoBitsLength, unsigned int parityBitsLength, char **p);
+
+/* Generate test pattern using LLR locator */
+/*
+ * Using string type of codeword(binary) and error locator,
+ * generate a test pattern(is binary and string)
+ */
+char *temporaryFunc_generateTestPatternToString(char *string, unsigned int stringLength, unsigned int *locatorArray, unsigned int locatorArrayLength)
+char temporaryFunc_generateTestPatterns_using_LLR_Locator
+    (
+        char *refferString,
+        unsigned int refferStringLength,
+        unsigned int *locatorArray,
+        unsigned int locatorArrayLength,
+        char **testPattern,
+        unsigned int numsOfTestPattern
+    );
