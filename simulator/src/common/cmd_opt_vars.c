@@ -1,3 +1,5 @@
+#include "cmd_opt_vars.h"
+
 /* Operation */
 void GLOBAL_flag_proc()
 {
