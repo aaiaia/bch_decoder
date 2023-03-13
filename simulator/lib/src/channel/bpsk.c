@@ -227,6 +227,9 @@ void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg,
 }
 
 /* ADD_AWGN_CAL_LLR inscluds demodulation to LLR */
+/* global variables */
+double_BPSK_DATA global_LLR_MAX = 0.0f;
+double_BPSK_DATA global_LLR_MIN = 0.0f;
 void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double_BPSK_DATA *received_LLR, double bitrate, unsigned int number_of_loop, double main_com_EbN0) //need to add bitrate
 {
     unsigned int i;
@@ -267,8 +270,8 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
                     //printf("test : [-1.0] => %g\n", (-2 * -1.0 / (attn*attn)));
                     //printf("test : [-1.5] => %g\n", (-2 * -1.5 / (attn*attn)));
                     //printf("\n\n");
-        if(LLR_MAX<received_LLR[i]) LLR_MAX=received_LLR[i];
-        if(LLR_MIN>received_LLR[i]) LLR_MIN=received_LLR[i];
+        if(global_LLR_MAX<received_LLR[i]) global_LLR_MAX=received_LLR[i];
+        if(global_LLR_MIN>received_LLR[i]) global_LLR_MIN=received_LLR[i];
     }
     free(channel_noise);
     return;
@@ -350,5 +353,5 @@ void printLLR(unsigned int printLength, double_BPSK_DATA *p)
     {
         printf("%.2f ", *(p+i));
     }
-    printf("used L:%d, MAX:\'%.2f\', MIN:\'%.2f\'\n", i, LLR_MAX, LLR_MIN);
+    printf("used L:%d, MAX:\'%.2f\', MIN:\'%.2f\'\n", i, global_LLR_MAX, global_LLR_MIN);
 }

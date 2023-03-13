@@ -36,8 +36,9 @@ void BPSK_Mod(double_BPSK_DATA *Transmitted_MSG, char *Codeword_MSG, unsigned in
 void BPSK_Demod(char *Codeword_MSG, double_BPSK_DATA *Received_MSG, unsigned WordLength);
 void ADD_AWGN(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double bitrate, unsigned int number_of_loop, double main_com_EbN0);
 /* ADD_AWGN_CAL_LLR inscluds demodulation to LLR */
-double_BPSK_DATA LLR_MAX=0;
-double_BPSK_DATA LLR_MIN=0;
+/* global variables */
+extern double_BPSK_DATA global_LLR_MAX;
+extern double_BPSK_DATA global_LLR_MIN;
 void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *received_msg, double_BPSK_DATA *received_LLR, double bitrate, unsigned int number_of_loop, double main_com_EbN0); //need to add bitrate
 
 /* For Debugging(Displaying */

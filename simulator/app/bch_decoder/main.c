@@ -7678,7 +7678,7 @@ int main(int argc, char **argv)
                     );
             }
 
-            // printf("LLR MAX : \'%.2f\'\tLLR MIN : \'%.2f\'\r\n", LLR_MAX, LLR_MIN);
+            // printf("LLR MAX : \'%.2f\'\tLLR MIN : \'%.2f\'\r\n", global_LLR_MAX, global_LLR_MIN);
 
             resultMes; printf("in loop %ld, test_fileIO_errorCorrectingCount is %d\r\n", main_com_totalSamlingLoop, test_fileIO_errorCorrectingCount);
             printExcutingTime(&time_EbN0_start);
