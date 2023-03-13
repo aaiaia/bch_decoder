@@ -166,6 +166,7 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
+/* flags to LLR calculation start */
 #define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)   //not used
 
 #define DEFAULT_CHANNEL_MODE    FLAG_MASK_CHANNEL_MODE_AWGN //not used
@@ -179,6 +180,7 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
     }typedef ENUM_GLO_CH_MODE_FUNC;
 
     unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
+/* flags to LLR calculation end */
 
 
 
