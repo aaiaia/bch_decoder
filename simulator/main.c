@@ -114,7 +114,7 @@ char global_buf_KeyBoardInput[255]={0};
 
 
     /****************************************************/
-    /********** global flag associate wieh ber **********/
+    /******** global flag associate with decoding *******/
     /****************************************************/
     enum FLAG_CASE_SEL_TP_BEFORE_DEC_METHOD
     {
@@ -138,7 +138,11 @@ char global_buf_KeyBoardInput[255]={0};
 
 
         /****************************************************/
-        /********** global flag associate wieh ber **********/
+        /*
+         * global flag to selecting test pettern.
+         * It is working only in
+         * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
+         */
         /****************************************************/
         unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
         enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
