@@ -180,6 +180,10 @@ char global_buf_KeyBoardInput[255]={0};
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
+/*
+ * Using string type of codeword(binary) and error locator,
+ * generate a test pattern(is binary and string)
+ */
 char *temporaryFunc_generateTestPatternToString(char *string, unsigned int stringLength, unsigned int *locatorArray, unsigned int locatorArrayLength)
 {
     unsigned int tmpStringLength=strlen(string);
@@ -288,6 +292,10 @@ char *temporaryFunc_generateTestPatternToString(char *string, unsigned int strin
     return p;
 }
 //////////////////////////////////////////////////////////////////////////////////
+/*
+ * Using string type of codeword(binary) and error locator,
+ * generate a test patterns, are binary and string
+ */
 //char *temporaryFunc_generateTestPatternToString(char *string, unsigned int stringLength, unsigned int *locatorArray, unsigned int locatorArrayLength)
 char temporaryFunc_generateTestPatterns_using_LLR_Locator
     (
