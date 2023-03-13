@@ -1,3 +1,6 @@
+/* local variables */
+char local_buf_KeyBoardInput[255]={0};
+
 /* Constructor and Destructor */
 struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength)
 {
@@ -401,7 +404,7 @@ struct_galoisFieldPolyForm *calculcateDeltaInBmAlgorithm
                     //warningMesShort; printf("occur. press input any string.\n", lengthOfStage);
                     //systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
 
-                    //systemHoldMes; printf("insert any char : "); scanf("%s", global_buf_KeyBoardInput);
+                    //systemHoldMes; printf("insert any char : "); scanf("%s", local_buf_KeyBoardInput);
                 }
             }
             #endif
@@ -860,7 +863,7 @@ char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM
                                     {
                                         debugBmAlgorithmMes; printf("Degree of Polynomials : %d\r\n",p->degreeOfErrLocPoly);
                                         systemHoldMes;    printf("input any charactor : ");
-                                        scanf("%s", global_buf_KeyBoardInput);
+                                        scanf("%s", local_buf_KeyBoardInput);
                                     }
                                     #endif
 
