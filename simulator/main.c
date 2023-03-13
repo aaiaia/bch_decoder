@@ -140,28 +140,6 @@ char global_buf_KeyBoardInput[255]={0};
 //////////////////////////////////////////////////////////////////////////////////
 
 
-/*****************************************/
-/********** Associate with AWGN **********/
-/*****************************************/
-#define VALUE_EBN0_WORD         "ebn0"//SET_VALUE
-/*
-//double main_com_EbN0 = 1.0;
-*/
-#define DEFAULT_VALUE_EBN0      1.0f
-double global_EbN0_Start_Value = DEFAULT_VALUE_EBN0;
-
-#define VALUE_EBN0_END_WORD     "ebn0-end"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_END  8.0f
-double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
-
-#define VALUE_EBN0_STEP_WORD    "ebn0-step"//SET_VALUE
-#define DEFAULT_VALUE_EBN0_STEP 0.25f
-double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
-
-
-unsigned int global_flag_debug_awgn = 0;
-#define FLAG_MASK_DEBUG_AWGN_SEQUENCE   (1<<0)
-#define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 
 
 
