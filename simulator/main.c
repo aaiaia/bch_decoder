@@ -27,7 +27,8 @@
 // #include "./bmp_file_io.h"
 
 
-unsigned int global_seed;
+/* local variables */
+unsigned int local_rand_seed;
 
 
 struct tm *date_simulation_date;
@@ -1154,8 +1155,8 @@ int main(int argc, char **argv)
 //////////////////////////////////////////////////////////////////////////////////
     if(!(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE))
     {
-        global_seed = (unsigned int)time(NULL)+(unsigned int)getpid();
-        srand(global_seed);
+        local_rand_seed = (unsigned int)time(NULL)+(unsigned int)getpid();
+        srand(local_rand_seed);
     }
 //////////////////////////////////////////////////////////////////////////////////
     fileio_indi_algorithm_coding_HD_BER = (FILE**)malloc(sizeof(FILE*)*KIND_OF_BCH_DECODING_END);
