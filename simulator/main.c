@@ -136,26 +136,26 @@ char global_buf_KeyBoardInput[255]={0};
 
     #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
-        /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO start */
-        /*
-         * global flag to selecting test pettern.
-         * It is working only in
-         * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
-         */
-        unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
-        enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
-        {
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NONE,
-            /* not-support */
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR,
-            /* support */
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,
+    /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO start */
+    /*
+     * global flag to selecting test pettern.
+     * It is working only in
+     * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
+     */
+    unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
+    enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
+    {
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NONE,
+        /* not-support */
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR,
+        /* support */
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,
 
-            FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
-        }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
-        /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO end */
+        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
+    }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
+    /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO end */
 
     /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT start */
     /*
