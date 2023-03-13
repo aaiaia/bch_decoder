@@ -192,6 +192,44 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
     }typedef enum_FLAG_CASE_DEC_FAIL_HANDLING;
     /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT end */
     /****** global flag associate with decoding end *****/
+
+/* global flags error correction codes start */
+/* selection Code mode start */
+unsigned int global_flag_simulationCode = 0;
+/*Channel Setting, LLR quantization bit setting*/
+#define FLAG_MASK_CODE_BCH  (1<<0)
+#define mes_bchCode         printf("BCH code) ");
+/* selection Code mode start */
+
+    /* sub-flags in FLAG_MASK_CODE_BCH start */
+    enum KIND_OF_BCH_DECODING_ALGORITHM
+    {
+        KIND_OF_BCH_DECODING_BM,
+        //KIND_OF_BCH_DECODING_mSBS,
+        KIND_OF_BCH_DECODING_iBM,
+        KIND_OF_BCH_DECODING_RiBM,
+        KIND_OF_BCH_DECODING_SiBM,
+        KIND_OF_BCH_DECODING_mSBS,
+        //KIND_OF_BCH_DECODING_BM,
+        KIND_OF_BCH_DECODING_PETERSON,
+        KIND_OF_BCH_DECODING_EUCLIDIAN,
+        KIND_OF_BCH_DECODING_END,
+    };
+
+    const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
+    {
+        "BM",
+        //"mSBS",
+        "iBM",
+        "RiBM",
+        "SiBM",
+        "mSBS",
+        //"BM",
+        "PETERSON",
+        "EUCLIDIAN",
+    };
+    /* sub-flags in FLAG_MASK_CODE_BCH end */
+/* global flags error correction codes end */
 /* Flags for simulation mode end */
 
 /* Operation */

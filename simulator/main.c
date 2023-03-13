@@ -121,43 +121,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-unsigned int global_flag_simulationCode = 0;
-/*Channel Setting, LLR quantization bit setting*/
-#define FLAG_MASK_CODE_BCH  (1<<0)
-#define mes_bchCode         printf("BCH code) ");
-
-    //////////////////////////////////////////////////////////////////////////////////
-    //////////////////////* Common BCH Codes Calculations start */////////////////////
-    //////////////////////////////////////////////////////////////////////////////////
-    enum KIND_OF_BCH_DECODING_ALGORITHM
-    {
-        KIND_OF_BCH_DECODING_BM,
-        //KIND_OF_BCH_DECODING_mSBS,
-        KIND_OF_BCH_DECODING_iBM,
-        KIND_OF_BCH_DECODING_RiBM,
-        KIND_OF_BCH_DECODING_SiBM,
-        KIND_OF_BCH_DECODING_mSBS,
-        //KIND_OF_BCH_DECODING_BM,
-        KIND_OF_BCH_DECODING_PETERSON,
-        KIND_OF_BCH_DECODING_EUCLIDIAN,
-        KIND_OF_BCH_DECODING_END,
-    };
-
-    const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
-    {
-        "BM",
-        //"mSBS",
-        "iBM",
-        "RiBM",
-        "SiBM",
-        "mSBS",
-        //"BM",
-        "PETERSON",
-        "EUCLIDIAN",
-    };
-    //////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////* Common BCH Codes Calculations end *//////////////////////
-    //////////////////////////////////////////////////////////////////////////////////
 
 
 
