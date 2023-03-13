@@ -320,23 +320,14 @@ unsigned int global_flag_debug_awgn = 0;
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 /* Flags about AWGN(channel noise) end */
 
-/********************************************************/
-/********** Associate with Log Like Hood Ratio **********/
-/********************************************************/
+/* Flags about Log Like Hood Ratio processong start */
 unsigned int global_flag_llr_display = 0;
 enum FLAG_LLR_DISPLAY
 {
-    FLAG_LLR_DISPLAY_NONE                   = 0,//if(global_flag_llr_display&FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING)
+    FLAG_LLR_DISPLAY_NONE                   = 0,
     FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING = (1<<0),
 }typedef enum_FLAG_LLR_DISPLAY;
 
-/*
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE                       0
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_MINIMUM                    1
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH   2
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN  3//NOT SUPPORT YET
-//#define FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO         4//NOT SUPPORT YET
-*/
 enum FLAG_CASE_FINDING_MIN_METHOD
 {
     FLAG_CASE_FINDING_MIN_LLR_METHOD_NONE,
@@ -375,7 +366,6 @@ unsigned int global_flag_case_find_LLR_method = 0;
     unsigned int global_group_bit_num = 0;
     unsigned int global_group_last_bit_num = 0;
 
-//////////////////////////////////////////
 /* pass HD 1 when llr mag is zero start */
 enum FLAG_CASE_PASS_MAG0_HD_1_MEAN_NOT_CHOOSEN_LOW_LLR
 {
@@ -408,7 +398,7 @@ const char NAME_FLAG_CASE_SAME_LLR_HANDLING[FLAG_CASE_SAME_LLR_HANDLING_END][31]
     "same llr mag is prior 1",
 };
 unsigned int global_flag_case_same_llr_handling = FLAG_CASE_SAME_LLR_HANDLING_NONE;
-//////////////////////////////////////////
+
 enum FLAG_CASE_INIT_LLR_MAG_METHOD
 {
     FLAG_CASE_INIT_LLR_MAG_METHOD_NONE,
@@ -421,7 +411,6 @@ const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END]
     "if no minimum llr val than max llr, not select",
 };
 unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHOD_NONE;
-//////////////////////////////////////////
 
 /* LLR QUANTIZATION FILTER options start */
 enum ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM
@@ -440,8 +429,6 @@ const char NAME_QUANTIZ_NUMBERIC_SYSTEM[ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_E
 
 unsigned int global_flag_case_llr_numberic_system = \
     ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT;
-
-
 
 enum ENUM_FLAG_CASE_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING
 {
@@ -469,6 +456,8 @@ double global_LLR_quantizFilter_step = 1.0;
 unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
+/* Flags to output test pattern end */
+
 /* non-categorized flags start */
 /* non-categorized flags end */
 /* Operation */
