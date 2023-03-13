@@ -1,5 +1,4 @@
 /* Simulation funtion Test(verification) Mode start */
-    /****************************************************************/
     /* Test Mode */
     enum ENUM_FLAG_CASE_SIM_TEST_OPTIONS
     {
@@ -18,7 +17,7 @@
 
     unsigned long tmp_testMode_loops = TMP_TEST_MODE_LOOPS;
 
-    /****************************************************************/
+
     /* Error Distribution */
     FILE *fp_testMode_log = NULL;
     FILE *fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv= NULL;
@@ -126,7 +125,6 @@
     unsigned long** tmp_sum_zero_and_one_bit_cnt_arranged_by_err_nums = NULL;
 
 
-
     double tmp_testMode_loops_zero_bit_ratio = 0.5f;
     unsigned long tmp_testMode_loops_bit_inversion_val = 0UL;
 
@@ -175,21 +173,7 @@
     unsigned int tmp_testMode_prob_min_choosen_politics =
                     ENUM_CASE_TEST_MODE_PROB_MIN_CHOOSE_SAME_VAL;
 
-    unsigned int* initTestMode_prob_min_counting
-            (unsigned int **p, unsigned int *len, unsigned int max_val)
-    {
-        if(!p)          return NULL;
-        if(!max_val)    return NULL;
-
-        (*len) = max_val + 1;
-        (*p) = (unsigned int*)malloc(sizeof(unsigned int) * ((*len) + 1));
-        memset(*p, 0, sizeof(unsigned int) * ((*len) + 1));
-        return (*p);
-    }
-    char clearTestMode_prob_min_counting(unsigned int *p, unsigned int len, unsigned int max_val)
-    {
-        if(!p)  return -1;
-        memset(p, 0, sizeof(unsigned int) * len);
-        return 0;
-    }
+/* Functions */
+unsigned int* initTestMode_prob_min_counting(unsigned int **p, unsigned int *len, unsigned int max_val);
+char clearTestMode_prob_min_counting(unsigned int *p, unsigned int len, unsigned int max_val);
 /* Simulation funtion Test(verification) Mode end */
