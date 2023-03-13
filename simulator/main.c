@@ -173,7 +173,7 @@ char global_buf_KeyBoardInput[255]={0};
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-/********** Simulation Test Mode **********/
+/* Simulation funtion Test(verification) Mode start */
 
     /****************************************************************/
     /* Test Mode */
@@ -371,6 +371,7 @@ char global_buf_KeyBoardInput[255]={0};
         memset(p, 0, sizeof(unsigned int) * len);
         return 0;
     }
+/* Simulation funtion Test(verification) Mode end */
 
 
 
