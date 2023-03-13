@@ -163,43 +163,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-/* Make Galois Field options start */
-unsigned int global_flag_gfCommon = 0;
-#define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
-/* Make Galois Field options end */
-
-
-/* Code Specification start */
-                #define VALUE_GF_EXP_WORD       "gf-exp"//SET_VALUE
-                #define DEFAULT_VALUE_GF_EXP    10
-                unsigned int global_GaloisFieldExponential = DEFAULT_VALUE_GF_EXP;
-
-#define VALUE_CODE_LENGTH_WORD      "codelength"//SET_VALUE
-#define DEFAULT_VALUE_CODE_LENGTH   1023
-unsigned int global_MaximumCodeLength = 0;
-unsigned int global_CodeLength = DEFAULT_VALUE_CODE_LENGTH;
-unsigned int global_LimitCodeLength = 0;
-/* Code Specification end */
-
-                /* Error correction specification start */
-                /*
-                //#define VALUE_INFO_LENGTH_WORD              "infolength"
-                //#define DEFAULT_VALUE_INFO_LENGTH           1024
-                //unsigned int global_InfoLength = DEFAULT_VALUE_INFO_LENGTH;
-                */
-                #define VALUE_HARD_CORRECTABLE_WORD         "hard-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE  4
-                unsigned int global_bch_hardCorrectable = DEFAULT_VALUE_BCH_HARD_CORRECTABLE;
-
-                #define VALUE_SOFT_CORRECTABLE_WORD         "soft-correctable"//SET_VALUE
-                #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE  2
-                unsigned int global_bch_SoftCorrectable = DEFAULT_VALUE_BCH_SOFT_CORRECTABLE;
-                /* Error correction specification end */
-
-                #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND    0
-                unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
-
-                //unsigned int global_correctables[2] = {&global_bch_hardCorrectable, &global_bch_SoftCorrectable};
 
 char *global_AddedRoot = NULL;
 
