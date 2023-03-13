@@ -113,65 +113,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-    /****************************************************/
-    /******** global flag associate with decoding *******/
-    /****************************************************/
-    enum FLAG_CASE_SEL_TP_BEFORE_DEC_METHOD
-    {
-        FLAG_CASE_SEL_TP_BEFORE_DEC_NONE,
-        FLAG_CASE_SEL_TP_BEFORE_DEC_THEO,
-        FLAG_CASE_SEL_TP_BEFORE_DEC_ACT,
-        FLAG_CASE_SEL_TP_BEFORE_DEC_END,
-    }typedef enum_FLAG_CASE_SEL_TP_BEFORE_DEC_METHOD;
-
-    const char NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED
-                    [FLAG_CASE_SEL_TP_BEFORE_DEC_END][51] =
-    {
-        "NONE",
-        "THEO",
-        "ACT"
-    };
-
-    unsigned int global_flag_case_selTP_before_dec = 0;
-
-    #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
-
-    /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO start */
-    /*
-     * global flag to selecting test pettern.
-     * It is working only in
-     * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
-     */
-    unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
-    enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
-    {
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NONE,
-        /* not-support */
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR,
-        /* support */
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MIN_ERR,
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_MAX_ERR,
-
-        FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
-    }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
-    /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO end */
-
-    /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT start */
-    /*
-     * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),
-     * select handling method
-     */
-    unsigned int global_flag_case_dec_fail_handling = 0;
-
-    /* Method that re transfer is not supported yet */
-    enum FLAG_CASE_DEC_FAIL_HANDLING
-    {
-        FLAG_CASE_DEC_FAIL_HANDLING_NONE,
-        FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE,
-        FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION,//not support yet
-    }typedef enum_FLAG_CASE_DEC_FAIL_HANDLING;
-    /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT end */
 
 
 
