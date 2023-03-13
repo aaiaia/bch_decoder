@@ -320,6 +320,22 @@ unsigned int global_flag_debug_awgn = 0;
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 /* Flags about AWGN(channel noise) end */
 
+/* Flags to LLR calculation start */
+#define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)   //not used
+
+#define DEFAULT_CHANNEL_MODE    FLAG_MASK_CHANNEL_MODE_AWGN //not used
+unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
+
+    enum ENUM_GLO_CH_MODE_FUNC
+    {
+        FLAG_MASK_CHANNEL_MODE_FUNC_NONE                = 0,
+        FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE     = (1<<0),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_BITRATE_DISABLE)
+        FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
+    }typedef ENUM_GLO_CH_MODE_FUNC;
+
+    unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
+/* Flags to LLR calculation end */
+
 /* Flags about Log Like Hood Ratio processong start */
 unsigned int global_flag_llr_display = 0;
 enum FLAG_LLR_DISPLAY
