@@ -64,7 +64,7 @@ unsigned int global_flag_cmdSystemUnhold = 0;
     /*mSBS Algorithm debug option end*/
     /* Algorithm debugging options end */
 
-/*Global debug option start*/
+/* Global debug option start */
 unsigned int global_flag_deBugOption = 0; //not used
 #define DEBUG_DEBUG_WORD        "debug" //not used
 #define FLAG_MASK_DEBUG_DEBUG   (1<<0)  //used with global_flag_debug_display
@@ -124,5 +124,4 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
     FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO     = (1<<5),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_FILE_IO)
 };
 /* Display Galois Field(GF) end */
-/*Global debug option end*/
-
+/* Global debug option end */
