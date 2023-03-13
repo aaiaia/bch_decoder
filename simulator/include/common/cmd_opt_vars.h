@@ -128,5 +128,8 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
 /* Global debug option end */
 /* Flags for Debugging(Displaying) end */
 
+/* Flags for simulation mode start */
+/* Flags for simulation mode end */
+
 /* Operation */
 void GLOBAL_flag_proc();
