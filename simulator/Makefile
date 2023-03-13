@@ -100,7 +100,7 @@ $(info SHARED_LIB_NAME_VER = ${SHARED_LIB_NAME_VER})
 $(info ###########################)
 $(info ##### App Srcs & Objs #####)
 $(info ###########################)
-APP_SRC_DIR_NAME = ./
+APP_SRC_DIR_NAME = app
 $(info APP_SRC_DIR_NAME = ${APP_SRC_DIR_NAME})
 
 APP_SRCS := $(subst ./,,$(shell find -L ./$(APP_SRC_DIR_NAME) -type f \( -iname "*.c" -o -iname "*.s" \) ))
@@ -188,7 +188,7 @@ ifeq ($(suffix $@),.test)
 	@echo "ifeq ((suffix @),.testExt) is true"
 endif
 
-all : app	#all : lib app	# for make library
+all : lib app
 
 depend : $(DEPEND_FILE_LIB) $(depend_file_app)
 
