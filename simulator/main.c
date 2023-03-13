@@ -30,7 +30,7 @@
 /* local variables */
 unsigned int local_rand_seed;
 
-
+/* local variables */
 struct tm *date_simulation_date;
 //date_simulation_date=localtime(&time_program_init.tv_sec);
 //date_simulation_date->tm_year+1900
@@ -50,7 +50,6 @@ struct timeval time_decoding_start;
 
 struct timeval time_bm_algorithm_start;
 struct timeval time_chien_search_start;
-
 
 struct timeval time_proc_start;
 
