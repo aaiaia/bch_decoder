@@ -15,7 +15,7 @@
 #define resultMes       printf("Result ) ")
 
 /* Flags for log*/
-unsigned int global_flag_cmdOption = 0;
+extern unsigned int global_flag_cmdOption;
 #define PRINTF_LOG_WORD                         "l" //not used
 #define FLAG_MASK_PRINTF_LOG                    (1<<0)
 #define logMes                                  printf("LOG ) ")
@@ -31,23 +31,23 @@ unsigned int global_flag_cmdOption = 0;
 #define IGNORE_WARNING_MES_WORD                 "w" //not used
 #define FLAG_MASK_PRINTF_WARNING_MES            (1<<3)
     /* variables to check memory lineary */
-    unsigned int global_tmp_i_memoryCheck = 0;
+    extern unsigned int global_tmp_i_memoryCheck;
 
 /* Sysgem Hold command */
-unsigned int global_flag_cmdSystemHold = 0;
+extern unsigned int global_flag_cmdSystemHold;
 #define PRINTF_HELP_WORD    "h" //not used
 #define FLAG_MASK_HOLD_HELP (1<<0)
 #define systemHoldMes       printf("HOLD ) ")
 
 /* forced Sysgem unhold command */
-unsigned int global_flag_cmdSystemUnhold = 0;
+extern unsigned int global_flag_cmdSystemUnhold;
 #define SYSTEM_UNHOLD_FORCED_WORD       "f" //not used
 #define FLAG_MASK_SYSTEM_UNHOLD_FORCED  (1<<0)
 #define systemUnholdMes                 printf("UNHOLD ) ")
 
     /* Algorithm debugging options start */
     /* BM Algorithm debug option start */
-    unsigned int global_flag_debug_bmSim = 0;
+    extern unsigned int global_flag_debug_bmSim;
     #define DEBUG_BCH_BM_ALGORITHM_WORD         "debug-bm"  //not used
     #define FLAG_MASK_DEBUG_BCH_BM_ALGORITHM    (1<<0)
     #define debugBmAlgorithmMes                 printf("debug-BM ) ");
@@ -59,7 +59,7 @@ unsigned int global_flag_cmdSystemUnhold = 0;
 
     /*mSBS Algorithm debug option start*/
     /* below variables could be unnecessary */
-    unsigned int global_flag_debug_mSBS_Sim = 0;
+    extern unsigned int global_flag_debug_mSBS_Sim;
     #define DEBUG_BCH_mSBS_ALGORITHM_WORD       "debug-mSBS"    //not used
     #define FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM  (1<<0)
     #define debug_mSBS_AlgorithmMes             printf("debug-mSBS ) ");
@@ -71,7 +71,7 @@ unsigned int global_flag_cmdSystemUnhold = 0;
     /* Algorithm debugging options end */
 
 /* Global debug option start */
-unsigned int global_flag_deBugOption = 0; //not used
+extern unsigned int global_flag_deBugOption; //not used
 #define DEBUG_DEBUG_WORD        "debug" //not used
 #define FLAG_MASK_DEBUG_DEBUG   (1<<0)  //used with global_flag_debug_display
 #define debugMes                printf("debug ) ");
@@ -85,36 +85,36 @@ unsigned int global_flag_deBugOption = 0; //not used
     };
 
     /* flags using enum DEBUG_DISPLAY_MODE start */
-    unsigned int global_flag_debug_display = 0;
+    extern unsigned int global_flag_debug_display;
     #define debugFuncNameMes    printf("debug-funcname ) ");
     #define debugSequenceMes    printf("debug-progress ) ");
 
-    unsigned int global_flag_bch_BM_SimHD_display = 0;
+    extern unsigned int global_flag_bch_BM_SimHD_display;
     #define test_BM_HardDisplayMes  printf("test BCH BM HARD DISPLAY ) ")
 
-    unsigned int global_flag_bch_BM_SimSD_display = 0;
+    extern unsigned int global_flag_bch_BM_SimSD_display;
     #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
 
-    unsigned int global_flag_bch_mSBS_SimHD_display = 0;
+    extern unsigned int global_flag_bch_mSBS_SimHD_display;
     #define test_mSBS_HardMes   printf("test BCH mSBS HARD ) ");
 
-    unsigned int global_flag_bch_mSBS_SimSD_display = 0;
+    extern unsigned int global_flag_bch_mSBS_SimSD_display;
     #define test_mSBS_SoftMes   printf("test BCH mSBS SOFT ) ");
     #define test_mSBS_SoftDisplayMes    printf("test BCH mSBS  SOFT DISPLAY ) ");
 
-    unsigned int global_flag_Modulation_Mode_BPSK_Display = 0;
+    extern unsigned int global_flag_Modulation_Mode_BPSK_Display;
 
-    unsigned int global_flag_case_getBER_method_Display = 0;
+    extern unsigned int global_flag_case_getBER_method_Display;
     /* flags using enum DEBUG_DISPLAY_MODE end */
 
 /* ber option start */
-unsigned int global_flag_berOptions = 0;
+extern unsigned int global_flag_berOptions;
 #define FLAG_MASK_TEST_GET_BER  (1<<0)
 #define testGetBerMes           printf("test GET-BER ) ");
 /* ber option end */
 
 /* Log LikeHood Ratio debug option start */
-unsigned int global_flag_debug_awgnLLR = 0;
+extern unsigned int global_flag_debug_awgnLLR;
 #define FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE   (1<<0)
 #define debugAwgnLlrSequenceMes             printf("SEQUENCE LLR ) ");
 
@@ -123,7 +123,7 @@ unsigned int global_flag_debug_awgnLLR = 0;
 /* Log LikeHood Ratio debug option end */
 
 /* Display Galois Field(GF) start */
-unsigned int global_flag_gfCommon_display = 0;
+extern unsigned int global_flag_gfCommon_display;
 enum FLAG_MASK_DISPLAY_GF_COMMON
 {
     FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY     = (1<<0),//if(global_flag_gfCommon_display&FLAG_MASK_DISPLAY_GF_COMMON_GENPOLY)
@@ -147,16 +147,11 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
         FLAG_CASE_SEL_TP_BEFORE_DEC_END,
     }typedef enum_FLAG_CASE_SEL_TP_BEFORE_DEC_METHOD;
 
-    const char NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED
-                    [FLAG_CASE_SEL_TP_BEFORE_DEC_END][51] =
-    {
-        "NONE",
-        "THEO",
-        "ACT"
-    };
+    extern const char NAME_FLAG_CASE_SEL_TP_BEFORE_DEC_MTEHOD_FILE_ADDED
+                    [FLAG_CASE_SEL_TP_BEFORE_DEC_END][51];
     /* global flag associate with selecting test pattern end */
 
-    unsigned int global_flag_case_selTP_before_dec = 0;
+    extern unsigned int global_flag_case_selTP_before_dec;
 
     #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
@@ -166,7 +161,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
      * It is working only in
      * FLAG_CASE_SEL_TP_BEFORE_DEC_THEO mode.
      */
-    unsigned int global_flag_case_choosingCodeWordMethod_inTheo = 0;
+    extern unsigned int global_flag_case_choosingCodeWordMethod_inTheo;
     enum FLAG_CASE_CHOOSEN_CODWORD_METHOD
     {
         FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NONE,
@@ -186,7 +181,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
      * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),
      * select handling method
      */
-    unsigned int global_flag_case_dec_fail_handling = 0;
+    extern unsigned int global_flag_case_dec_fail_handling;
 
     /* Method that re transfer is not supported yet */
     enum FLAG_CASE_DEC_FAIL_HANDLING
@@ -200,7 +195,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
 
 /* global flags error correction codes start */
 /* selection Code mode start */
-unsigned int global_flag_simulationCode = 0;
+extern unsigned int global_flag_simulationCode;
 /*Channel Setting, LLR quantization bit setting*/
 #define FLAG_MASK_CODE_BCH  (1<<0)
 #define mes_bchCode         printf("BCH code) ");
@@ -221,21 +216,10 @@ unsigned int global_flag_simulationCode = 0;
         KIND_OF_BCH_DECODING_END,
     };
 
-    const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21] = \
-    {
-        "BM",
-        //"mSBS",
-        "iBM",
-        "RiBM",
-        "SiBM",
-        "mSBS",
-        //"BM",
-        "PETERSON",
-        "EUCLIDIAN",
-    };
+    extern const char KIND_OF_BCH_DECODING_ALGORITHM_NAME[KIND_OF_BCH_DECODING_END][21];
 
     /* bch enable algorithm list */
-    unsigned int global_flag_bchDecAlgo_Enable = 0;
+    extern unsigned int global_flag_bchDecAlgo_Enable;
     /*CODE LENGTH(GALOIS FIELD), symbols(BCH not needs)*/
 
     enum BCH_DECODING_ALGORITHM
@@ -250,7 +234,7 @@ unsigned int global_flag_simulationCode = 0;
     };
 
     /* Simulation Working Mode */
-    unsigned int global_flag_sim_workingMode = 0;   //not used
+    extern unsigned int global_flag_sim_workingMode;   //not used
     enum SIMULATION_WORKING_MODE    //not used
     {
         FLAG_MASK_SIM_DECOING       = (1<<0),
@@ -259,8 +243,8 @@ unsigned int global_flag_simulationCode = 0;
     };
 
     /* global_list_flag_bch_sim_decodingMode */
-    unsigned int global_flag_sim_decodingMode = 0;
-    unsigned int global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_END] = {0};
+    extern unsigned int global_flag_sim_decodingMode;
+    extern unsigned int global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_END];
         /*******************************************************************/
         /********** global flag associate wieh bch - BM algorithm **********/
         /*******************************************************************/
@@ -280,11 +264,11 @@ unsigned int global_flag_simulationCode = 0;
 
 /* Flags to output test pattern start */
 #define FLAG_MASK_FILE_IO    (1<<0)
-unsigned int global_flag_fileInputOutput = 0;
+extern unsigned int global_flag_fileInputOutput;
 
-    unsigned int global_flag_file_io_hd_pattern_output = 0;
-    unsigned int global_flag_file_io_hd_pattern_output_log = 0;
-    unsigned int global_flag_file_io_hd_pattern_output_verilog = 0;
+    extern unsigned int global_flag_file_io_hd_pattern_output;
+    extern unsigned int global_flag_file_io_hd_pattern_output_log;
+    extern unsigned int global_flag_file_io_hd_pattern_output_verilog;
     enum HD_PATTERN_OUTPUT
     {
         FLAG_MASK_FILE_IO_HD_MES            = (1<<0),
@@ -293,9 +277,9 @@ unsigned int global_flag_fileInputOutput = 0;
         FLAG_MASK_FILE_IO_HD_CORRECTED_MES  = (1<<3),
     };
 
-    unsigned int global_flag_file_io_sd_pattern_output = 0;
-    unsigned int global_flag_file_io_sd_pattern_output_log = 0;
-    unsigned int global_flag_file_io_sd_pattern_output_verilog = 0;
+    extern unsigned int global_flag_file_io_sd_pattern_output;
+    extern unsigned int global_flag_file_io_sd_pattern_output_log;
+    extern unsigned int global_flag_file_io_sd_pattern_output_verilog;
     enum SD_PATTERN_OUTPUT
     {
         FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       = (1<<0),
@@ -304,7 +288,7 @@ unsigned int global_flag_fileInputOutput = 0;
 /* Flags to output test pattern end */
 
 /* Flags about Modulation mode(bpsk, qpsk, qam etc...) start */
-unsigned int global_flag_Modulation_Mode = 0;
+extern unsigned int global_flag_Modulation_Mode;
 #define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
 #define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
 /* Flags about Modulation mode(bpsk, qpsk, qam etc...) end */
@@ -312,21 +296,21 @@ unsigned int global_flag_Modulation_Mode = 0;
 /* Flags about AWGN(channel noise) start */
 #define VALUE_EBN0_WORD         "ebn0"//SET_VALUE
 /*
-//double main_com_EbN0 = 1.0;
+//extern double main_com_EbN0;
 */
 #define DEFAULT_VALUE_EBN0      1.0f
-double global_EbN0_Start_Value = DEFAULT_VALUE_EBN0;
+extern double global_EbN0_Start_Value;
 
 #define VALUE_EBN0_END_WORD     "ebn0-end"//SET_VALUE
 #define DEFAULT_VALUE_EBN0_END  8.0f
-double global_EbN0_End_Value = DEFAULT_VALUE_EBN0_END;
+extern double global_EbN0_End_Value;
 
 #define VALUE_EBN0_STEP_WORD    "ebn0-step"//SET_VALUE
 #define DEFAULT_VALUE_EBN0_STEP 0.25f
-double global_EbN0_Step = DEFAULT_VALUE_EBN0_STEP;
+extern double global_EbN0_Step;
 
 
-unsigned int global_flag_debug_awgn = 0;
+extern unsigned int global_flag_debug_awgn;
 #define FLAG_MASK_DEBUG_AWGN_SEQUENCE   (1<<0)
 #define debugAwgnSequenceMes            printf("SEQUENCE AWGN ) ");
 /* Flags about AWGN(channel noise) end */
@@ -335,7 +319,7 @@ unsigned int global_flag_debug_awgn = 0;
 #define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)   //not used
 
 #define DEFAULT_CHANNEL_MODE    FLAG_MASK_CHANNEL_MODE_AWGN //not used
-unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
+extern unsigned int global_Channel_Mode;    //not used
 
     enum ENUM_GLO_CH_MODE_FUNC
     {
@@ -344,11 +328,11 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
         FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE = (1<<1),//if(global_flag_Channel_Mode_Func&FLAG_MASK_CHANNEL_MODE_FUNC_RANDOM_SEED_DISABLE)
     }typedef ENUM_GLO_CH_MODE_FUNC;
 
-    unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
+    extern unsigned int global_flag_Channel_Mode_Func;
 /* Flags to LLR calculation end */
 
 /* Flags about Log Likehood Ratio(LLR) processong start */
-unsigned int global_flag_llr_display = 0;
+extern unsigned int global_flag_llr_display;
 enum FLAG_LLR_DISPLAY
 {
     FLAG_LLR_DISPLAY_NONE                   = 0,
@@ -365,33 +349,16 @@ enum FLAG_CASE_FINDING_MIN_METHOD
     FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PRIOR_HD_ZERO,        //NOT SUPPORT YET
     FLAG_CASE_FINDING_MIN_LLR_METHOD_END,
 };
-const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51] =
-{
-    "NONE",
-    "MINIMUM",
-    "GROUPING_MINIMUM",
-    "TREE-FALLOWING_MIN1_PATH",
-    "TREE-PROBABILISTIC_CHOOSEN(Not support yet)",
-    "TREE-PRIOR_HD_ZERO(Not support yet)",
-};
-
-const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51] =
-{
-    "NONE",
-    "MIN",
-    "GROUP_MIN",
-    "TREE-FAL_MIN1_PH",
-    "TREE-PROB_CHOOSEN",
-    "TREE-PRIOR_HD_ZERO",
-};
+extern const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51];
+extern const char NAME_FLAG_CASE_FINDING_MIN_MTEHOD_FILE_ADDED[FLAG_CASE_FINDING_MIN_LLR_METHOD_END][51];
 
 
 #define FLAG_CASE_FINDING_MIN_LLR_METHOD_DEFAULT    FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH
-unsigned int global_flag_case_find_LLR_method = 0;
+extern unsigned int global_flag_case_find_LLR_method;
 
-    unsigned int global_grouping_stream_nums = 1;
-    unsigned int global_group_bit_num = 0;
-    unsigned int global_group_last_bit_num = 0;
+    extern unsigned int global_grouping_stream_nums;
+    extern unsigned int global_group_bit_num;
+    extern unsigned int global_group_last_bit_num;
 
 /* pass HD 1 when llr mag is zero start */
 enum FLAG_CASE_PASS_MAG0_HD_1_MEAN_NOT_CHOOSEN_LOW_LLR
@@ -400,13 +367,9 @@ enum FLAG_CASE_PASS_MAG0_HD_1_MEAN_NOT_CHOOSEN_LOW_LLR
     FLAG_CASE_PASS_MAG0_HD_1_ENABLE,
     FLAG_CASE_PASS_MAG0_HD_1_END,
 };
-const char NAME_FLAG_CASE_PASS_MAG0_HD_1[FLAG_CASE_PASS_MAG0_HD_1_END][71] =
-{
-    "No passing llr magnitude when HD 1(finding min value only)",
-    "Passing llr magnitude when HD 1(finding min value only)",
-};
+extern const char NAME_FLAG_CASE_PASS_MAG0_HD_1[FLAG_CASE_PASS_MAG0_HD_1_END][71];
 
-unsigned int global_flag_case_pass_hd_1 = FLAG_CASE_PASS_MAG0_HD_1_DISABLE;
+extern unsigned int global_flag_case_pass_hd_1;
 /*  pass HD 1 when llr mag is zero end  */
 
 enum FLAG_CASE_SAME_LLR_HANDLING
@@ -417,14 +380,8 @@ enum FLAG_CASE_SAME_LLR_HANDLING
     FLAG_CASE_SAME_LLR_HANDLING_PRIOR_HD_1,
     FLAG_CASE_SAME_LLR_HANDLING_END,
 };
-const char NAME_FLAG_CASE_SAME_LLR_HANDLING[FLAG_CASE_SAME_LLR_HANDLING_END][31] =
-{
-    "same llr mag is none",
-    "same llr mag is not selected",
-    "same llr mag is prior 0",
-    "same llr mag is prior 1",
-};
-unsigned int global_flag_case_same_llr_handling = FLAG_CASE_SAME_LLR_HANDLING_NONE;
+extern const char NAME_FLAG_CASE_SAME_LLR_HANDLING[FLAG_CASE_SAME_LLR_HANDLING_END][31];
+extern unsigned int global_flag_case_same_llr_handling;
 
 enum FLAG_CASE_INIT_LLR_MAG_METHOD
 {
@@ -432,12 +389,8 @@ enum FLAG_CASE_INIT_LLR_MAG_METHOD
     FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR,
     FLAG_CASE_INIT_LLR_MAG_METHOD_END,
 };
-const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END][51] =
-{
-    "first loc is selected, has no condition",
-    "if no minimum llr val than max llr, not select",
-};
-unsigned int global_flag_case_init_llr_mag_method = FLAG_CASE_INIT_LLR_MAG_METHOD_NONE;
+extern const char NAME_FLAG_CASE_INIT_LLR_MAG_METHOD[FLAG_CASE_INIT_LLR_MAG_METHOD_END][51];
+extern unsigned int global_flag_case_init_llr_mag_method;
 
 /* LLR QUANTIZATION FILTER options start */
 enum ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM
@@ -447,15 +400,9 @@ enum ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM
     ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT,
     ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_END,
 };
-const char NAME_QUANTIZ_NUMBERIC_SYSTEM[ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_END][51]=
-{
-    "numberic system is not identified",
-    "2's compliment",
-    "1's compliment",
-};
+extern const char NAME_QUANTIZ_NUMBERIC_SYSTEM[ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_END][51];
 
-unsigned int global_flag_case_llr_numberic_system = \
-    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT;
+extern unsigned int global_flag_case_llr_numberic_system;
 
 enum ENUM_FLAG_CASE_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING
 {
@@ -466,38 +413,32 @@ enum ENUM_FLAG_CASE_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING
 
 };
 
-const char NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING \
-    [ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_END][21] = \
-{
-    "none",
-    "overlaping",
-    "duplicated",
-};
+extern const char NAME_QUANTIZ_ONE_S_COMPLEMENT_ZERO_HANDLING \
+    [ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_END][21];
 
-unsigned int global_flag_case_llr_mag_ones_complement_zero_handling = \
-    ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE;
+extern unsigned int global_flag_case_llr_mag_ones_complement_zero_handling;
 
 /* LLR QUANTIZATION FILTER VARIABLES start */
-double global_LLR_quantizFilter_offset = -0.5;
-double global_LLR_quantizFilter_step = 1.0;
-unsigned char global_LLR_quantizFilter_bitWidth = 4;
+extern double global_LLR_quantizFilter_offset;
+extern double global_LLR_quantizFilter_step;
+extern unsigned char global_LLR_quantizFilter_bitWidth;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
 /* Flags about Log Likehood Ratio(LLR) processong end */
 
 /* flags for simulation main config start */
 #define DEFAULT_MINIMUM_LOOP    10000
-unsigned long global_minimum_loop = 0;
-unsigned long global_base_of_loop = 0;
-unsigned int global_rate_of_loop = 0;
+extern unsigned long global_minimum_loop;
+extern unsigned long global_base_of_loop;
+extern unsigned int global_rate_of_loop;
 
 #define VALUE_ERROR_NUM_WORD    "error-number"//SET_VALUE
-unsigned int global_ErrorNum = 0;
+extern unsigned int global_ErrorNum;
 /* flags for simulation main config end */
 
 /* flags for generating galois field(GF) start */
 /* Make Galois Field options start */
-unsigned int global_flag_gfCommon = 0;
+extern unsigned int global_flag_gfCommon;
 #define FLAG_MASK_GF_COMMON_MAKE_GF_ALL (1<<0)//if(global_flag_gfCommon&FLAG_MASK_GF_COMMON_MAKE_GF_ALL)
 /* Make Galois Field options end */
 
@@ -505,35 +446,35 @@ unsigned int global_flag_gfCommon = 0;
 /* Code Specification start */
 #define VALUE_GF_EXP_WORD       "gf-exp"//SET_VALUE
 #define DEFAULT_VALUE_GF_EXP    10
-unsigned int global_GaloisFieldExponential = DEFAULT_VALUE_GF_EXP;
+extern unsigned int global_GaloisFieldExponential;
 
 #define VALUE_CODE_LENGTH_WORD      "codelength"//SET_VALUE
 #define DEFAULT_VALUE_CODE_LENGTH   1023
-unsigned int global_MaximumCodeLength = 0;
-unsigned int global_CodeLength = DEFAULT_VALUE_CODE_LENGTH;
-unsigned int global_LimitCodeLength = 0;
+extern unsigned int global_MaximumCodeLength;
+extern unsigned int global_CodeLength;
+extern unsigned int global_LimitCodeLength;
 
 /* added LCM expantion */
-char *global_addedRootToLCM_string=NULL;// to adding low common multiple(LCM)
-unsigned int global_degAddedRootToLCM=0;
+extern char *global_addedRootToLCM_string;// to adding low common multiple(LCM)
+extern unsigned int global_degAddedRootToLCM;
 /* Code Specification end */
 
 /* Error correction specification start */
 #define VALUE_HARD_CORRECTABLE_WORD         "hard-correctable"//SET_VALUE
 #define DEFAULT_VALUE_BCH_HARD_CORRECTABLE  4
-unsigned int global_bch_hardCorrectable = DEFAULT_VALUE_BCH_HARD_CORRECTABLE;
+extern unsigned int global_bch_hardCorrectable;
 
 #define VALUE_SOFT_CORRECTABLE_WORD         "soft-correctable"//SET_VALUE
 #define DEFAULT_VALUE_BCH_SOFT_CORRECTABLE  2
-unsigned int global_bch_SoftCorrectable = DEFAULT_VALUE_BCH_SOFT_CORRECTABLE;
+extern unsigned int global_bch_SoftCorrectable;
 /* Error correction specification end */
 
 #define DEFAULT_VALUE_BCH_SOFT_OVER_SYND    0
-unsigned int global_bch_Soft_OverSyndLen = DEFAULT_VALUE_BCH_SOFT_OVER_SYND;
+extern unsigned int global_bch_Soft_OverSyndLen;
 /* flags for generating galois field(GF) end */
 
 /* non-categorized flags start */
-char *global_AddedRoot = NULL;  //notused
+extern char *global_AddedRoot;  //notused
 /* non-categorized flags end */
 
 /* Operation */
