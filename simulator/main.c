@@ -169,7 +169,7 @@ char global_buf_KeyBoardInput[255]={0};
 
     /*
      * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),
-     * select handling method.
+     * select handling method
      */
     unsigned int global_flag_case_dec_fail_handling = 0;
 
