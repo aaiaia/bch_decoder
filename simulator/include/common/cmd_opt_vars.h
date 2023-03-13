@@ -273,5 +273,8 @@ unsigned int global_flag_simulationCode = 0;
 /* global flags error correction codes end */
 /* Flags for simulation mode end */
 
+/* Flags to output test pattern start */
+/* Flags to output test pattern end */
+
 /* Operation */
 void GLOBAL_flag_proc();
