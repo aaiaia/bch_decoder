@@ -2,6 +2,7 @@
 #define _POLY_PRIMITIVE_H_
 
 #include "poly/type.h"
+
 #define MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER    17
 /*
 //const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX     ="1";
