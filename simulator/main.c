@@ -138,10 +138,6 @@ char global_buf_KeyBoardInput[255]={0};
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-                unsigned int testOption = 0;
-                #define FLAG_MASK_TEST_RESULT   (1<<5)
-
-                unsigned int enviromentsOption = 0;
 
 
 /*****************************************/
@@ -7574,7 +7570,7 @@ int main(int argc, char **argv)
                                             main_indi_sel_decoding_CW_pwrFormPoly[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                         );
                                                 #ifndef RELEASE
-                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(testOption&FLAG_MASK_TEST_RESULT)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
+                                                if((global_flag_debug_display&FLAG_MASK_DISPLAY_PROGRESS)||(global_flag_cmdOption&FLAG_MASK_PRINTF_LOG)||(global_flag_debug_bmSim&FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA))
                                                 {
                                                     infoMes; printf("[Theo][%s] sel TP = [%d], TP[%d] has '%d'(e = %d) errs\t",
                                                         KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))],
