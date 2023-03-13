@@ -31,7 +31,12 @@ struct struct_quantizationInfo
     unsigned char val_ones_zero_handling;
 }typedef struct_quantizationInfo;
 
-struct_quantizationInfo global_QuantizationInfo;
+/* glocal variables */
+/*
+ * struct_quantizationInfo global_QuantizationInfo is
+ * initialized by initGlobalQuantizInfo()
+ */
+extern struct_quantizationInfo global_QuantizationInfo;
 
 /*
 //#define QUANTIZ_MODE_STATIC 0
