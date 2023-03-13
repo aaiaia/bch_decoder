@@ -336,7 +336,7 @@ unsigned int global_Channel_Mode = DEFAULT_CHANNEL_MODE;    //not used
     unsigned int global_flag_Channel_Mode_Func = FLAG_MASK_CHANNEL_MODE_FUNC_NONE;
 /* Flags to LLR calculation end */
 
-/* Flags about Log Like Hood Ratio processong start */
+/* Flags about Log Likehood Ratio(LLR) processong start */
 unsigned int global_flag_llr_display = 0;
 enum FLAG_LLR_DISPLAY
 {
@@ -472,7 +472,7 @@ double global_LLR_quantizFilter_step = 1.0;
 unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER VARIABLES end */
 /* LLR QUANTIZATION FILTER options end */
-/* Flags about Log Like Hood Ratio processong end */
+/* Flags about Log Likehood Ratio(LLR) processong end */
 
 /* flags for simulation main config start */
 #define DEFAULT_MINIMUM_LOOP    10000
