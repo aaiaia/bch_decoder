@@ -164,7 +164,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-char *global_AddedRoot = NULL;
 
 
 #define FLAG_MASK_CHANNEL_MODE_AWGN    (1<<0)
