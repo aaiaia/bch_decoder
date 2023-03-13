@@ -156,14 +156,8 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-#define DEFAULT_MINIMUM_LOOP    10000
-unsigned long global_minimum_loop = 0;
-unsigned long global_base_of_loop = 0;
-unsigned int global_rate_of_loop = 0;
 
 
-#define VALUE_ERROR_NUM_WORD    "error-number"//SET_VALUE
-unsigned int global_ErrorNum = 0;
 
 
 

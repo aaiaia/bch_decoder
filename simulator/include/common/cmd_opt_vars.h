@@ -458,6 +458,16 @@ unsigned char global_LLR_quantizFilter_bitWidth = 4;
 /* LLR QUANTIZATION FILTER options end */
 /* Flags about Log Like Hood Ratio processong end */
 
+/* flags for simulation main config start */
+#define DEFAULT_MINIMUM_LOOP    10000
+unsigned long global_minimum_loop = 0;
+unsigned long global_base_of_loop = 0;
+unsigned int global_rate_of_loop = 0;
+
+#define VALUE_ERROR_NUM_WORD    "error-number"//SET_VALUE
+unsigned int global_ErrorNum = 0;
+/* flags for simulation main config end */
+
 /* non-categorized flags start */
 /* non-categorized flags end */
 /* Operation */
