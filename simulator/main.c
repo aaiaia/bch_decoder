@@ -82,7 +82,8 @@ void printExcutingTime(struct timeval *start)
 
 
 
-char global_buf_KeyBoardInput[255]={0};
+/* local variables */
+char local_buf_KeyBoardInput[255]={0};
 
 
 
@@ -5140,7 +5141,7 @@ int main(int argc, char **argv)
                             //    if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                             //    {
                             //        systemHoldMes;    printf("input any charactor : ");
-                            //        scanf("%s", global_buf_KeyBoardInput);
+                            //        scanf("%s", local_buf_KeyBoardInput);
                             //    }
                             //}
                             if(main_indi_hd_correctability[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))] > (main_tmp_degErrLocPoly = checkDegreePolynomials(main_com_used_GF->nonSorted, main_indi_HD_decordComponents[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]->errLocPoly)))
@@ -5156,7 +5157,7 @@ int main(int argc, char **argv)
                                 if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                 {
                                     systemHoldMes;    printf("input any charactor : ");
-                                    scanf("%s", global_buf_KeyBoardInput);
+                                    scanf("%s", local_buf_KeyBoardInput);
                                 }
                             }
                         }
@@ -5210,7 +5211,7 @@ int main(int argc, char **argv)
                             //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                             //{
                                 systemHoldMes;    printf("input any charactor : ");
-                                scanf("%s", global_buf_KeyBoardInput);
+                                scanf("%s", local_buf_KeyBoardInput);
                             //}
                         }
                     }
@@ -5285,10 +5286,10 @@ int main(int argc, char **argv)
                     //        //        if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                     //        //        {
                     //        //            systemHoldMes;    printf("input any charactor : ");
-                    //        //            scanf("%s", global_buf_KeyBoardInput);
+                    //        //            scanf("%s", local_buf_KeyBoardInput);
                     //        //        }
                     //        //        systemHoldMes;    printf("input : ");
-                    //        //        scanf("%s", global_buf_KeyBoardInput);
+                    //        //        scanf("%s", local_buf_KeyBoardInput);
                     //        //    }
                     //        //}
                     //        */
@@ -5438,7 +5439,7 @@ int main(int argc, char **argv)
                                 systemHoldMes; printf("you can ignore this exception, adding command option '-f' or \"--force\"\r\n");
 
                                 systemHoldMes;    printf("input : ");
-                                scanf("%s", global_buf_KeyBoardInput);
+                                scanf("%s", local_buf_KeyBoardInput);
                             }
                             else
                             {
@@ -5462,10 +5463,10 @@ int main(int argc, char **argv)
                                         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                         {
                                             systemHoldMes;    printf("input any charactor : ");
-                                            scanf("%s", global_buf_KeyBoardInput);
+                                            scanf("%s", local_buf_KeyBoardInput);
                                         }
                                         //systemHoldMes;    printf("input : ");
-                                        //scanf("%s", global_buf_KeyBoardInput);
+                                        //scanf("%s", local_buf_KeyBoardInput);
                                     }
                                 }
                             }
@@ -7025,7 +7026,7 @@ int main(int argc, char **argv)
                                                     //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                                     //{
                                                         systemHoldMes;    printf("input : ");
-                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                        scanf("%s", local_buf_KeyBoardInput);
                                                     //}
                                                 }
                                             }
@@ -7034,7 +7035,7 @@ int main(int argc, char **argv)
                                                 if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                                 {
                                                     systemHoldMes;    printf("input : ");
-                                                    scanf("%s", global_buf_KeyBoardInput);
+                                                    scanf("%s", local_buf_KeyBoardInput);
                                                 }
 
                                         infoMes; printf("[ACT] Minumum LLR location and Values\r\n");
@@ -7233,7 +7234,7 @@ int main(int argc, char **argv)
                                                                         if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                                                         {
                                                                             systemHoldMes;    printf("input : ");
-                                                                            scanf("%s", global_buf_KeyBoardInput);
+                                                                            scanf("%s", local_buf_KeyBoardInput);
                                                                         }
                                                                     }
                                                                     #endif
@@ -7281,7 +7282,7 @@ int main(int argc, char **argv)
                                                                     //if(!(global_flag_cmdSystemUnhold&FLAG_MASK_SYSTEM_UNHOLD_FORCED))
                                                                     //{
                                                                     //    systemHoldMes;    printf("input : ");
-                                                                    //    scanf("%s", global_buf_KeyBoardInput);
+                                                                    //    scanf("%s", local_buf_KeyBoardInput);
                                                                     //}
                                                         }
                                                         #endif
@@ -7312,7 +7313,7 @@ int main(int argc, char **argv)
                                                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                                 );
                                                                 systemHoldMes;    printf("input : ");
-                                                                scanf("%s", global_buf_KeyBoardInput);
+                                                                scanf("%s", local_buf_KeyBoardInput);
                                                             }
                                                         }
                                                         #endif
@@ -7366,7 +7367,7 @@ int main(int argc, char **argv)
                                                             KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                         );
                                                         systemHoldMes;    printf("input : ");
-                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                        scanf("%s", local_buf_KeyBoardInput);
                                                     }
                                                 }
                                                 #endif
@@ -7451,7 +7452,7 @@ int main(int argc, char **argv)
                                                                 KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                             );
                                                             systemHoldMes;    printf("input : ");
-                                                            scanf("%s", global_buf_KeyBoardInput);
+                                                            scanf("%s", local_buf_KeyBoardInput);
                                                         }
                                                     }
                                                     #endif
@@ -7485,7 +7486,7 @@ int main(int argc, char **argv)
                                                                     KIND_OF_BCH_DECODING_ALGORITHM_NAME[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]
                                                                 );
                                                                 systemHoldMes;    printf("input : ");
-                                                                scanf("%s", global_buf_KeyBoardInput);
+                                                                scanf("%s", local_buf_KeyBoardInput);
                                                             }
                                                 }
                                                 #endif
@@ -7674,7 +7675,7 @@ int main(int argc, char **argv)
                                                             main_indi_list_errCntOf_TP_afterDec[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))][main_indi_sel_TP_i[(*(((uint8_t*)(processingUseThisAlgorithm->list))+main_tmp_sel_decAlgo_i))]]
                                                         );
                                                         systemHoldMes;    printf("input : ");
-                                                        scanf("%s", global_buf_KeyBoardInput);
+                                                        scanf("%s", local_buf_KeyBoardInput);
                                                     }
                                                 }
                                             }
