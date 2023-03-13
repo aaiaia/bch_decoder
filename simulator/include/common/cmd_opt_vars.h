@@ -298,5 +298,7 @@ unsigned int global_flag_fileInputOutput = 0;
     };
 /* Flags to output test pattern end */
 
+/* non-categorized flags start */
+/* non-categorized flags end */
 /* Operation */
 void GLOBAL_flag_proc();
