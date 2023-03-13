@@ -133,9 +133,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
 /* Flags for Debugging(Displaying) end */
 
 /* Flags for simulation mode start */
-    /****************************************************/
-    /***** global flag associate with decoding start ****/
-    /****************************************************/
+    /* global flag associate with selecting test pattern start */
     enum FLAG_CASE_SEL_TP_BEFORE_DEC_METHOD
     {
         FLAG_CASE_SEL_TP_BEFORE_DEC_NONE,
@@ -151,6 +149,7 @@ enum FLAG_MASK_DISPLAY_GF_COMMON
         "THEO",
         "ACT"
     };
+    /* global flag associate with selecting test pattern end */
 
     unsigned int global_flag_case_selTP_before_dec = 0;
 
