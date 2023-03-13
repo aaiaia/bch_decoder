@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "func_verify.h"
+#include "common/func_verify.h"
 
 unsigned int* initTestMode_prob_min_counting(unsigned int **p, unsigned int *len, unsigned int max_val)
 {

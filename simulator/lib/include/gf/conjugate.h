@@ -1,3 +1,8 @@
+#ifndef _GF_CONJUGATE_H_
+#define _GF_CONJUGATE_H_
+
+#include "gf/field.h"
+
 /*
  * note about struct_setOfGaloisFieldElements.
  * test. 2016/02/22/14:28, limitedExponential is mean that, when getting conjugacies class, limit exponential of galois fields.
@@ -37,3 +42,5 @@ void print_setOfGaloisFieldElementsSavedForm(struct_setOfGaloisFieldElements *p)
 
 /* for Debugging(displaying) */
 void printConjugacyClasses(struct_galoisFieldElements *galoisFields, struct_setOfGaloisFieldElements *p);
+
+#endif

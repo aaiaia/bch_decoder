@@ -1,3 +1,6 @@
+#ifndef _GF_SYNDROME_H_
+#define _GF_SYNDROME_H_
+
 /* Operation */
 unsigned int cal_numsOfDegreeOfSynd(unsigned int t);
 char syndromeArrayCalculatorUsingString(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *syndrome, unsigned int lengthOfSyndromeArray, char *string);
@@ -14,3 +17,5 @@ char allSyndromeIsZero(struct_galoisFieldElements *galoisFields, struct_galoisFi
 void printSyndromeArray(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields);
 void printSyndromeSeriesWithTap(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields);
 void printSyndromeSeriesWithTapAndEnter(struct_galoisFieldElements *p, struct_galoisFieldElements *galoisFields);
+
+#endif

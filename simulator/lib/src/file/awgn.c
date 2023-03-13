@@ -1,5 +1,11 @@
-#include "field_set.h"
-#include "raw2cw.h"
+#include "gf/field_set.h"
+#include "channel/bpsk.h"
+#include "channel/error.h"
+#include "encoder/encode.h"
+#include "decoder/hard_decision/algo_bm.h"
+#include "decoder/hard_decision/chien_search.h"
+#include "correction/error_correction.h"
+#include "file/raw2cw.h"
 
 /* Example codes in main functions
 //while((loadStream.countedDataNumber<loadStream.totalDataNumber))

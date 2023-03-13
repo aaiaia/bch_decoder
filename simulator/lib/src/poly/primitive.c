@@ -1,4 +1,9 @@
-#include "primitive.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "poly/primitive.h"
 
 void initPrimitivePolynomial(struct_primitivePolynomialSet *p)
 {

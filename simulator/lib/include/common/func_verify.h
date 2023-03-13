@@ -1,3 +1,8 @@
+#ifndef _COMMON_FUNC_VERIFY_H_
+#define _COMMON_FUNC_VERIFY_H_
+
+#include <stdio.h>
+
 /* Simulation funtion Test(verification) Mode start */
 /* Test Mode */
 enum ENUM_FLAG_CASE_SIM_TEST_OPTIONS
@@ -177,3 +182,5 @@ unsigned int tmp_testMode_prob_min_choosen_politics =
 unsigned int* initTestMode_prob_min_counting(unsigned int **p, unsigned int *len, unsigned int max_val);
 char clearTestMode_prob_min_counting(unsigned int *p, unsigned int len, unsigned int max_val);
 /* Simulation funtion Test(verification) Mode end */
+
+#endif

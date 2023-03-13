@@ -1,4 +1,10 @@
-#include "bpsk.h"
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#include "common/cmd_opt_vars.h"
+#include "channel/noise.h"
+#include "channel/bpsk.h"
 
 /* Constructor and Destructor */
 struct_bpskComponents *createBpskComponents(unsigned int length)

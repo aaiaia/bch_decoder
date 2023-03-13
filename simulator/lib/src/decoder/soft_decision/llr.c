@@ -1,8 +1,11 @@
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
-#include "llr.h"
+#include "common/cmd_opt_vars.h"
+#include "decoder/soft_decision/llr.h"
 
 /* Constructor and Destructor */
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)

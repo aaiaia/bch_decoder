@@ -1,4 +1,10 @@
-#include "field.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+#include "gf/field_set.h"
+#include "decoder/hard_decision/chien_search.h"
 
 char calculateChienSearchVariableSet
 (

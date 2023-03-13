@@ -1,3 +1,13 @@
+#ifndef _ENCODER_ENCODE_H_
+#define _ENCODER_ENCODE_H_
+
+#include <stdlib.h>
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "poly/type.h"
+#include "poly/polynomial.h"
+
 struct struct_encodingComponentInGF
 {
     struct_powerFormPolynomials *codeWord;
@@ -38,3 +48,5 @@ struct_encodingComponentInGF *recreateEncodingComponentAndInputValue(
 /* Operation */
 char calculateParityInGaloisFieldAttachLowSide(struct_powerFormPolynomials *encodedCodeWord, unsigned int numberOfParityBits, char_POWER_FORM *generationPolynomial);
 char calculateParityInGaloisFieldAttachHighSide(struct_powerFormPolynomials *encodedCodeWord, unsigned int numberOfParityBits, char_POWER_FORM *generationPolynomial);
+
+#endif

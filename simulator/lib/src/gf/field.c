@@ -1,4 +1,11 @@
-#include "field.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include "file_label.h"
+#include "file_type.h"
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+
 /* handling galois field except elements */
 struct_galoisFieldElements *createGaloisFieldExceptElements(unsigned int numberOfElement)
 {

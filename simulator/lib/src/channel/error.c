@@ -3,9 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "error.h"
-
-#include "cmd_opt_vars.h"
+#include "common/cmd_opt_vars.h"
+#include "channel/error.h"
 
 /* local variables */
 char local_buf_KeyBoardInput[255]={0};

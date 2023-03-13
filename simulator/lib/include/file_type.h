@@ -1,3 +1,6 @@
+#ifndef _FILE_TYPE_H_
+#define _FILE_TYPE_H_
+
 enum enum_FILE_IO_KIND_OF_DATA
 {
     FILE_IO_KIND_OF_DATA_UNKWON,
@@ -21,3 +24,4 @@ enum enum_FILE_IO_DATA_TYPE
     FILE_IO_DATA_TYPE_ADDRESS_OFFSET,
 }typedef enum_FILE_IO_DATA_TYPE;
 
+#endif

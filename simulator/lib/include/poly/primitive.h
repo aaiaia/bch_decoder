@@ -1,3 +1,7 @@
+#ifndef _POLY_PRIMITIVE_H_
+#define _POLY_PRIMITIVE_H_
+
+#include "poly/type.h"
 #define MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER    17
 /*
 //const char_POWER_FORM *PRIMITIVE_POLYNOMIAL_1_INVERSE_INDEX     ="1";
@@ -53,3 +57,5 @@ struct_primitivePolynomialSet PRIMITIVE_POLYNOMIAL_SET;
 
 void initPrimitivePolynomial(struct_primitivePolynomialSet *p);
 void initPrimitivePolynomial_inversed(struct_primitivePolynomialSet *inversed, struct_primitivePolynomialSet *non_inversed);
+
+#endif

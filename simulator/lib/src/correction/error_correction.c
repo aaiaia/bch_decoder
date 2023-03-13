@@ -1,4 +1,5 @@
-#include "polynomial.h"
+#include "common/cmd_opt_vars.h"
+#include "poly/polynomial.h"
 
 char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial)
 {

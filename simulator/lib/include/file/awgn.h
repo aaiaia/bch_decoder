@@ -1,3 +1,6 @@
+#ifndef _FILE_AWGN_H_
+#define _FILE_AWGN_H_
+
 /* Example codes in main functions
 //while((loadStream.countedDataNumber<loadStream.totalDataNumber))
 //{
@@ -21,3 +24,5 @@ char passingThroughAwgnData(
     struct_variableSetConvertBitStreamToPowerForm *unloadStream,
     struct_variableSetConvertBitStreamToPowerForm *noisedStream
 );
+
+#endif

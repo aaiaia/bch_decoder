@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "cmd_opt_vars.h"
+#include "common/cmd_opt_vars.h"
 
 double convertStringToDouble(char *string)
 {

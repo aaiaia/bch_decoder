@@ -1,3 +1,6 @@
+#ifndef _UTIL_BIT_MASK_H_
+#define _UTIL_BIT_MASK_H_
+
 #include <stdint.h>
 
 const uint8_t uint8_bitMask[8] = {(1<<0),(1<<1),(1<<2),(1<<3),(1<<4),(1<<5),(1<<6),(1<<7)};
@@ -24,3 +27,5 @@ const uint64_t uint64_bitMask[64] =
     (1UL<<48),(1UL<<49),(1UL<<50),(1UL<<51),(1UL<<52),(1UL<<53),(1UL<<54),(1UL<<55),\
     (1UL<<56),(1UL<<57),(1UL<<58),(1UL<<59),(1UL<<60),(1UL<<61),(1UL<<62),(1UL<<63)\
 };
+
+#endif

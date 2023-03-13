@@ -1,4 +1,10 @@
-#include "field_set.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "gf/util.h"
+#include "gf/sum_matrix_cal.h"
+#include "gf/field_set.h"
 
 /* Constructor and Desctructor */
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)

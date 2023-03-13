@@ -1,3 +1,7 @@
+#ifndef _GF_ELEMENT_H_
+#define _GF_ELEMENT_H_
+
+#include "gf/type.h"
 /*
  * Elements of galois field have finite values are represented like 0110.
  * And if polynomial represented by power form have 15 bits length, length of elements of galois field is represented (15+1)/2.
@@ -33,3 +37,5 @@ void printPolyFormPure(struct_galoisFieldPolyForm *p);
 void printPolyForm(struct_galoisFieldPolyForm *p);
 void printPolyFormWithTapAndEnter(struct_galoisFieldPolyForm *p);
 void printPolyFormWithTap(struct_galoisFieldPolyForm *p);
+
+#endif

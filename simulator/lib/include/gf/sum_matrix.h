@@ -1,3 +1,8 @@
+#ifndef _GF_SUM_MATRIX_H_
+#define _GF_SUM_MATRIX_H_
+
+#include "gf/element.h"
+
 struct struct_summationMatrix
 {
     unsigned int row;
@@ -6,8 +11,8 @@ struct struct_summationMatrix
 }typedef struct_summationMatrix;
 
 /* Constructor and Destructor */
-struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsigned int column)
-char closeSummationMatrix(struct_summationMatrix **p)
+struct_summationMatrix *createSummationMatrix_emptySpace(unsigned int row, unsigned int column);
+char closeSummationMatrix(struct_summationMatrix **p);
 
 /* Functions making 'struct_summationMatrix' for list of elements that are 'struct_galoisFieldPolyForm' type */
 struct_galoisFieldPolyForm **createListOfGaloisField(unsigned int lengthOfList);
@@ -24,13 +29,6 @@ struct_galoisFieldPolyForm **createListOfGaloisFieldAndComponents(unsigned int l
 char closeListOfGaloisFieldAndElements(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList);
 //struct_galoisFieldPolyForm **recreateListOfGaloisFieldAndComponents(struct_galoisFieldPolyForm ***p, unsigned int lengthOfList, unsigned int polyLength);
 
-char calculateSummationMatrix(struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
-//struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int row, unsigned int column);
-struct_summationMatrix *createSummationMatrix(struct_galoisFieldElements *galoisFields, unsigned int in_row, unsigned int in_column);
-
 /* For displaying(debugging) */
 
-/* FILE IO */
-char save_struct_summationMatrix(char *path, char *primitivePoly, struct_summationMatrix *p);
-char load_struct_summationMatrix(char *path, char *primitivePoly, struct_galoisFieldElements *galoisFields, struct_summationMatrix *p);
-void printSummationMatrixSavedForm(struct_summationMatrix *p);
+#endif

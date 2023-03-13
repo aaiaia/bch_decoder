@@ -1,3 +1,8 @@
+#ifndef _CHANNEL_BPSK_H_
+#define _CHANNEL_BPSK_H_
+
+#include "decoder/soft_decision/llr.h"
+
 #define BPSK_TRANCEIVE_FLAG_DATA_INIT   0
 #define BPSK_TRANCEIVE_FLAG_DATA_LOAD   (1<<0)
 #define BPSK_TRANCEIVE_FLAG_DATA_TRANS  (1<<1)
@@ -39,3 +44,5 @@ void ADD_AWGN_CAL_LLR(double_BPSK_DATA *transmitted_msg, double_BPSK_DATA *recei
 void printBpskModulation(unsigned int printLength, double_BPSK_DATA *p);
 void printBpskAWGN(unsigned int printLength, double_BPSK_DATA *operandA, double_BPSK_DATA *operandB);
 void printLLR(unsigned int printLength, double_BPSK_DATA *p);
+
+#endif

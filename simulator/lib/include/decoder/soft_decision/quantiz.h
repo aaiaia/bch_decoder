@@ -1,3 +1,8 @@
+#ifndef _DECODER_SOFT_DECISION_QUANTIZ_H_
+#define _DECODER_SOFT_DECISION_QUANTIZ_H_
+
+#include "data/type.h"
+
 typedef signed int      s_int_QUANTIZ_DIGIT;
 typedef unsigned int    u_int_QUANTIZ_MAGNITUDE_DIGIT;
 typedef double          double_RATIONAL_NUMBER;
@@ -41,3 +46,5 @@ void convertOnesComplementMagnitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT
 void quantizationWithGlobalStatic(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length);
 void quantizationWithGlobalAdaptive(double LLR[], SIGNED_INT LLR_quantization[], char *Codeword_MSG, unsigned int length);
 void initGlobalQuantizInfo(double offset, double step, unsigned char quantizBitNum, unsigned int numbericSystem, unsigned char overping);
+
+#endif

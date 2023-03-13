@@ -1,3 +1,11 @@
+#ifndef _FILE_RAW2CW_H_
+#define _FILE_RAW2CW_H_
+
+#include <stdlib.h>
+#include <string.h>
+
+#include "poly/polynomial.h"
+
 /* It is load bitstream(raw data like bmp, wave etc) to codeword */
 struct struct_variableSetConvertBitStreamToPowerForm
 {
@@ -20,3 +28,5 @@ struct_variableSetConvertBitStreamToPowerForm *createVariableSetConvertBitStream
 char closeVariableSetConvertBitStreamToPowerForm(struct_variableSetConvertBitStreamToPowerForm **p);
 char loadToCodeWordStartAtHighSide(struct_powerFormPolynomials *p, struct_variableSetConvertBitStreamToPowerForm *variables);
 char unloadFromCodeWordStartAtHighSide(struct_variableSetConvertBitStreamToPowerForm *variables, struct_powerFormPolynomials *p);
+
+#endif

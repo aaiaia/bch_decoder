@@ -1,4 +1,7 @@
-#include "cmd_opt_vars.h"
+#include <stdio.h>
+
+#include "util/bit_mask.h"
+#include "common/cmd_opt_vars.h"
 
 /* Operation */
 void GLOBAL_flag_proc()

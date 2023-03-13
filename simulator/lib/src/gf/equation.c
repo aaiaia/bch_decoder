@@ -1,4 +1,6 @@
-#include "field.h"
+#include "common/cmd_opt_vars.h"
+#include "gf/conjugate.h"
+#include "gf/field.h"
 
 ///* Example of making equation *///
 /*

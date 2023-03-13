@@ -1,3 +1,10 @@
+#ifndef _DECODER_HARD_DECISION_ALGO_BM_H_
+#define _DECODER_HARD_DECISION_ALGO_BM_H_
+
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+#include "poly/polynomial.h"
+
 struct struct_HD_BM_algorithmComponent{
     enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM;
 
@@ -66,3 +73,5 @@ char calculateBetaInBmAlgorithm
 );
 unsigned int calculateBmAlgorithmLengthOfStage(unsigned int value_r, unsigned int lengthOfStage, unsigned char calculationSelector);
 char calculateBmAlgorithm(struct_galoisFieldElements *galoisFields, struct_HD_BM_algorithmComponent *p);
+
+#endif

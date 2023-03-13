@@ -1,3 +1,6 @@
+#ifndef _DECODER_SOFT_DECISION_ALGO_FIND_MIN_MAG_GROUP_H_
+#define _DECODER_SOFT_DECISION_ALGO_FIND_MIN_MAG_GROUP_H_
+
 char findMinimumMagnitudeGroupingPushAway
 (
     struct_logLikeHoodRatio *p,
@@ -10,3 +13,5 @@ char findMinimumMagnitudeGroupingPushAway
     unsigned int group_bit_nums,
     unsigned int last_group_bit_nums
 );
+
+#endif

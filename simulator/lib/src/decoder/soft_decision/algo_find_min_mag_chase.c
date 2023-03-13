@@ -1,5 +1,7 @@
-#include "polynomial.h"
-#include "llr.h"
+#include "common/cmd_opt_vars.h"
+#include "poly/polynomial.h"
+#include "decoder/soft_decision/llr.h"
+#include "decoder/soft_decision/algo_find_min_mag_chase.h"
 
 /*
  * char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(struct_logLikeHoodRatio *p)

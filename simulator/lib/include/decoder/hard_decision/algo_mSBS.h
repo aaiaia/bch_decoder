@@ -1,3 +1,10 @@
+#ifndef _DECODER_HARD_DECISION_ALGO_MSBS_H_
+#define _DECODER_HARD_DECISION_ALGO_MSBS_H_
+
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+#include "poly/polynomial.h"
+
 struct struct_HD_mSBS_t3_algorithmComponent{
     enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM;
 
@@ -40,3 +47,5 @@ struct_HD_mSBS_t3_algorithmComponent *recreate_mSBS_algorithmComponent(struct_HD
 
 /* Operation */
 char calculate_mSBS_algorithm(struct_galoisFieldElements *galoisFields, struct_HD_mSBS_t3_algorithmComponent *p);
+
+#endif

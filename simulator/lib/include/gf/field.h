@@ -1,3 +1,9 @@
+#ifndef _GF_FIELD_H_
+#define _GF_FIELD_H_
+
+#include "poly/polynomial.h"
+#include "gf/sum_matrix.h"
+
 struct struct_galoisFieldElements
 {
     unsigned int length;
@@ -60,3 +66,5 @@ struct_galoisFieldPolyForm *findSameElementOfGaloisFieldUsingString(struct_galoi
 /* Test Only Functions */
 void printSummationMatrixGFabstraction(struct_galoisFieldElements *p);
 void printMultiplicationMatrix(struct_galoisFieldElements *p);
+
+#endif

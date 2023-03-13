@@ -1,3 +1,6 @@
+#ifndef _COMMON_CMD_OPT_H_
+#define _COMMON_CMD_OPT_H_
+
 const char cmdOtionKeyWords[] = "-{},:=";
 
 enum cmdLineOptionInstructionType
@@ -91,3 +94,5 @@ struct struct_cmdLineOption *instFindSameLongNameInInstSet(struct struct_cmdLine
 */
 char *instProcessLongNameCmdOption(struct struct_cmdLineOption *p, char *str, char keyword);
 int instMainProcessing(struct struct_cmdLineOption *p, char *str);
+
+#endif

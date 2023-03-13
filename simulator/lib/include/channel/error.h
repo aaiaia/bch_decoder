@@ -1,3 +1,8 @@
+#ifndef _CHANNEL_ERROR_H_
+#define _CHANNEL_ERROR_H_
+
+#include "poly/polynomial.h"
+
 struct struct_errorComponent
 {
     struct_powerFormPolynomials *erroredCodeWord;
@@ -21,7 +26,7 @@ char *randdomInfoBitGenerator(unsigned int infoBitsLength, unsigned int parityBi
  * Using string type of codeword(binary) and error locator,
  * generate a test pattern(is binary and string)
  */
-char *temporaryFunc_generateTestPatternToString(char *string, unsigned int stringLength, unsigned int *locatorArray, unsigned int locatorArrayLength)
+char *temporaryFunc_generateTestPatternToString(char *string, unsigned int stringLength, unsigned int *locatorArray, unsigned int locatorArrayLength);
 char temporaryFunc_generateTestPatterns_using_LLR_Locator
     (
         char *refferString,
@@ -31,3 +36,5 @@ char temporaryFunc_generateTestPatterns_using_LLR_Locator
         char **testPattern,
         unsigned int numsOfTestPattern
     );
+
+#endif

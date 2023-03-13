@@ -1,3 +1,8 @@
+#ifndef _GF_EQUATION_H_
+#define _GF_EQUATION_H_
+
+#include "gf/conjugate.h"
+
 /* Reserved declare equation type */
 
 /* Constructor and Destructor */
@@ -37,3 +42,5 @@ struct_galoisFieldElements *test_expandLimitedLeastCommonMultipleUsingElementOfG
     struct_setOfGaloisFieldElements *multipledRootSet,
     unsigned int numberOfSelectedSet//numberOfSelectedSet is same that number of correctable bit
 );
+
+#endif

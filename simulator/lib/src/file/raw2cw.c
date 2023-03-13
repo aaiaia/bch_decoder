@@ -1,4 +1,4 @@
-#include "raw2cw.h"
+#include "file/raw2cw.h"
 
 char setVariableSetConvertBitStreamToPowerForm(struct_variableSetConvertBitStreamToPowerForm *p, unsigned char *data, unsigned int infoBitLength, unsigned char dataBytes, unsigned long arrayIndex)
 {

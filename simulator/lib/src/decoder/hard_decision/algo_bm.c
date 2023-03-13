@@ -1,5 +1,11 @@
-#include "field.h"
-#include "algo_bm.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include "gf/field.h"
+#include "gf/field_set.h"
+#include "gf/syndrome.h"
+#include "gf/equation.h"
+#include "decoder/hard_decision/algo_bm.h"
 
 /* local variables */
 char local_buf_KeyBoardInput[255]={0};

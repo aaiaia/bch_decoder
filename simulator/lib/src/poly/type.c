@@ -1,4 +1,8 @@
-#include "type.h"
+#include <string.h>
+#include <stdio.h>
+
+#include "common/cmd_opt_vars.h"
+#include "poly/type.h"
 
 void printPowerFormWithEnter(char_POWER_FORM *p)
 {

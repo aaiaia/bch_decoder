@@ -4,7 +4,8 @@
 #include <string.h>
 #include <math.h>
 
-#include "tree.h"
+#include "common/cmd_opt_vars.h"
+#include "decoder/soft_decision/tree.h"
 
 /* Constructor and Destructor */
 struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType)

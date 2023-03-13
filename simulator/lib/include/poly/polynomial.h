@@ -1,3 +1,10 @@
+#ifndef _POLY_POLYNOMIAL_H_
+#define _POLY_POLYNOMIAL_H_
+
+#include <stdio.h>
+
+#include "poly/type.h"
+
 /* power form poly is mean that bit stream like 0100011000100. */
 struct struct_powerFormPolynomials
 {
@@ -38,3 +45,5 @@ void printPowerFormExclusivedUsingAddress(struct_powerFormPolynomials *p1, struc
 void fprintPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail);
 void fprintVerilogPowerFormUsingAddress(FILE *fp, struct_powerFormPolynomials *p, char* str_tail);
 void fprintPowerFormFullDescriptionUsingAddresss(FILE *fp, struct_powerFormPolynomials *p, char *str_tail);
+
+#endif

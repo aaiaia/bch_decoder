@@ -1,4 +1,11 @@
-#include "cmd_opt.h"
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "util/conv.h"
+#include "common/cmd_opt_vars.h"
+#include "common/cmd_opt.h"
 
 /* Displaying */
 void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng)

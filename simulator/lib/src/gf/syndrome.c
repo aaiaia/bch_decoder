@@ -1,4 +1,8 @@
-#include "field.h"
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+#include "gf/field_set.h"
 
 /* Operation */
 unsigned int cal_numsOfDegreeOfSynd(unsigned int t)

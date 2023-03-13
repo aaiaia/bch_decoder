@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "quantiz.h"
+#include "common/cmd_opt_vars.h"
+#include "decoder/soft_decision/quantiz.h"
 
 /* Converting */
 void convertTwosComplementMagitude(s_int_QUANTIZ_DIGIT* to, s_int_QUANTIZ_DIGIT* from, unsigned int length, unsigned int max_val)

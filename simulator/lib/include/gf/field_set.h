@@ -1,3 +1,10 @@
+#ifndef _GF_FIELD_SET_H_
+#define _GF_FIELD_SET_H_
+
+#include "gf/conjugate.h"
+#include "gf/field.h"
+#include "poly/polynomial.h"
+
 struct struct_galoisField_info
 {
     //unsigned int *gfBits;
@@ -26,3 +33,5 @@ struct_galoisField_info *createGaloisFieldAndSumMatrix(struct_powerFormPolynomia
 void printGaloisField(struct_galoisFieldElements *p);
 void printGaloisFieldToCsv(struct_galoisFieldElements *p);
 void printGaloisField2(struct_galoisFieldElements *baseGaloisField, struct_galoisFieldElements *printedField, unsigned int title, unsigned int options);
+
+#endif

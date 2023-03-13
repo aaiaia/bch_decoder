@@ -1,4 +1,10 @@
-#include "element.h"
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "gf/element.h"
 
 struct_galoisFieldPolyForm *createPolyForm(unsigned int length)
 {

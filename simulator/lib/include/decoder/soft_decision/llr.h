@@ -1,3 +1,10 @@
+#ifndef _DECODER_SOFT_DECISION_LLR_H_
+#define _DECODER_SOFT_DECISION_LLR_H_
+
+#include "poly/polynomial.h"
+#include "decoder/soft_decision/tree.h"
+#include "decoder/soft_decision/quantiz.h"
+
 struct struct_logLikeHoodRatio
 {
     double_RATIONAL_NUMBER *llr;
@@ -49,7 +56,7 @@ char convertQuantizedLLRToMagnitude(struct_logLikeHoodRatio *p);
 char checkMinimumMagnitudeLocatorValidityLogLikeHoodRatio(
     struct_logLikeHoodRatio *p,
     struct_powerFormPolynomials *operandA,
-    struct_powerFormPolynomials *operandB)
+    struct_powerFormPolynomials *operandB);
 
 /* For displying(debugging) */
 void printQuatizLLRWithSpaceAndEnter(struct_logLikeHoodRatio *p);
@@ -71,3 +78,5 @@ char fprintQuatizLLR_fullDescriptionToHEX(FILE* fp, struct_logLikeHoodRatio* p, 
 char fprintMagnitudeOfQuantizedLLR_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
 char fprintVerilogMagnitudeOfQuantizedLLR_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
 char fprintMagnitudeOfQuantizedLLR_fullDescription_toHex(FILE *fp, struct_logLikeHoodRatio *p, char *str_tail);
+
+#endif

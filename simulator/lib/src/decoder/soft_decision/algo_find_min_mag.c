@@ -1,5 +1,8 @@
-#include "polynomial.h"
-#include "llr.h"
+#include <string.h>
+
+#include "common/cmd_opt_vars.h"
+#include "poly/polynomial.h"
+#include "decoder/soft_decision/llr.h"
 
 /******************************************************************/
 /*

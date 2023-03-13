@@ -1,4 +1,6 @@
-#include "field.h"
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+
 char copyListOfGaloisFieldIngaloisFieldElements(struct_galoisFieldElements *galoisFields, struct_galoisFieldElements *to, struct_galoisFieldElements *from)
 {
     unsigned int i;

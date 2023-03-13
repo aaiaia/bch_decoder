@@ -1,3 +1,8 @@
+#ifndef _COMMON_CMD_OPT_VARS_H_
+#define _COMMON_CMD_OPT_VARS_H_
+
+#include <stddef.h>
+
 /* Flags for Debugging(Displaying) start */
 /* Log definition */
 #define errorMes        printf("ERROR ) ")
@@ -85,7 +90,7 @@ unsigned int global_flag_deBugOption = 0; //not used
     #define debugSequenceMes    printf("debug-progress ) ");
 
     unsigned int global_flag_bch_BM_SimHD_display = 0;
-    #define infoMes printf("test BCH BM HARD ) ")
+    #define test_BM_HardDisplayMes  printf("test BCH BM HARD DISPLAY ) ")
 
     unsigned int global_flag_bch_BM_SimSD_display = 0;
     #define test_BM_SoftDisplayMes  printf("test SBCH BM SOFT DISPLAY ) ");
@@ -533,3 +538,5 @@ char *global_AddedRoot = NULL;  //notused
 
 /* Operation */
 void GLOBAL_flag_proc();
+
+#endif

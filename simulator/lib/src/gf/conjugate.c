@@ -1,4 +1,10 @@
-#include "conjugate.h"
+#include <stdlib.h>
+#include <string.h>
+
+#include "file_label.h"
+#include "file_type.h"
+#include "common/cmd_opt_vars.h"
+#include "gf/conjugate.h"
 
 /* Constructor and Destructor */
 struct_setOfGaloisFieldElements *createConjugacyClasses(struct_galoisFieldElements *galoisFields)

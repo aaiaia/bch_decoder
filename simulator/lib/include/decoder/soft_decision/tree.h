@@ -1,3 +1,8 @@
+#ifndef _DECODER_SOFT_DECISION_TREE_H_
+#define _DECODER_SOFT_DECISION_TREE_H_
+
+#include "decoder/soft_decision/quantiz.h"
+
 enum treeTypes
 {
     TREE_NONE,
@@ -30,3 +35,5 @@ void testTreeStruct(struct_treeStructure *p);
 void testPrintTreeStructIndicateAddr(struct_treeStructure *p);
 void testPrintTreeStructValue(struct_treeStructure *p);
 void testPrintValueOfTreeStruct(struct_treeStructure *p);
+
+#endif

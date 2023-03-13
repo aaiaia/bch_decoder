@@ -1,3 +1,10 @@
+#ifndef _DECODER_HARD_DECISION_DECODE_H_
+#define _DECODER_HARD_DECISION_DECODE_H_
+
+#include "common/cmd_opt_vars.h"
+#include "gf/field.h"
+#include "poly/polynomial.h"
+
 struct struct_generalForm_algorithmComponent{
     enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM;
 
@@ -33,3 +40,5 @@ char closeAlgoriehmComponent(struct_generalForm_algorithmComponent **p, enum KIN
 
 /* Operation */
 char calculateBCH_decodingAlgorithm(struct_galoisFieldElements *galoisFields, struct_generalForm_algorithmComponent *p);
+
+#endif

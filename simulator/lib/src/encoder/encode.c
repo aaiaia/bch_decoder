@@ -1,4 +1,4 @@
-#include "encode.h"
+#include "encoder/encode.h"
 
 /* Constructor and Destructor */
 struct_encodingComponentInGF *createEncodingComponent(unsigned int length, unsigned int numberOfCorrectableBit, char_POWER_FORM *generationPolynomial)
