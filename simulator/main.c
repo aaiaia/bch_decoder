@@ -124,48 +124,7 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 
-    /****************************************************/
-    /********** global flag associate wieh bch **********/
-    /****************************************************/
-    unsigned int global_flag_bchDecAlgo_Enable = 0;
-    /*CODE LENGTH(GALOIS FIELD), symbols(BCH not needs)*/
 
-    enum BCH_DECODING_ALGORITHM
-    {
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_BM        = (1<<KIND_OF_BCH_DECODING_BM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_iBM       = (1<<KIND_OF_BCH_DECODING_iBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_RiBM      = (1<<KIND_OF_BCH_DECODING_RiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_SiBM      = (1<<KIND_OF_BCH_DECODING_SiBM),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS     = (1<<KIND_OF_BCH_DECODING_mSBS),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_PETERSON  = (1<<KIND_OF_BCH_DECODING_PETERSON),
-        FLAG_MASK_BCH_DECORDING_ALGORITHM_EUCLIDIAN = (1<<KIND_OF_BCH_DECODING_EUCLIDIAN),
-    };
-
-    /* Simulation Working Mode */
-    unsigned int global_flag_sim_workingMode = 0;
-    enum SIMULATION_WORKING_MODE
-    {
-        FLAG_MASK_SIM_DECOING       = (1<<0),
-        FLAG_MASK_SIM_ABSTRACT_DATA = (1<<1),//reserved Working mode
-        FLAG_MASK_SIM_TEST          = (1<<2),
-    };
-
-    /* global_list_flag_bch_sim_decodingMode */
-    unsigned int global_flag_sim_decodingMode = 0;
-    unsigned int global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_END] = {0};
-        /*******************************************************************/
-        /********** global flag associate wieh bch - BM algorithm **********/
-        /*******************************************************************/
-        enum BCH_ALGORITHM_COMMON_DECODING_OPTIONS
-        {
-            FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM   = (1<<0),
-            FLAG_MASK_CODE_BCH_DEC_AL_HARD_DECISION         = (1<<1),
-            FLAG_MASK_CODE_BCH_DEC_AL_SOFT_DECISION         = (1<<2),
-
-            FLAG_MASK_LRB_LLR_TEST                          = (1<<3),
-
-            FLAG_MASK_CODE_BCH_DEC_AL_SKIP                  = (1<<15),
-        };
 
 
 //////////////////////////////////////////////////////////////////////////////////
