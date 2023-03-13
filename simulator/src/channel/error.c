@@ -1,3 +1,6 @@
+/* local variables */
+char local_buf_KeyBoardInput[255]={0};
+
 /* Constructor and Destructor */
 struct_errorComponent *createErrorComponent(unsigned int length)
 {
@@ -319,7 +322,7 @@ char *temporaryFunc_generateTestPatternToString(char *string, unsigned int strin
                                 {
                                     printf("operation that is if((*(locatorArray+i)) == -1) is true.\n");
                                     printf("If you want continue simulation, input any string : ");
-                                    scanf("%s",global_buf_KeyBoardInput);
+                                    scanf("%s",local_buf_KeyBoardInput);
                                 }
                             }
                         }
