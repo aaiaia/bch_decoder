@@ -170,9 +170,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 
 /***************************************************************/
-unsigned int global_flag_Modulation_Mode = 0;
-#define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
-#define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

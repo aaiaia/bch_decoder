@@ -298,6 +298,12 @@ unsigned int global_flag_fileInputOutput = 0;
     };
 /* Flags to output test pattern end */
 
+/* Flags about Modulation mode(bpsk, qpsk, qam etc...) start */
+unsigned int global_flag_Modulation_Mode = 0;
+#define FLAG_MASK_MODULATION_MODE_BPSK  (1<<0)                        //if(global_flag_Modulation_Mode&FLAG_MASK_MODULATION_MODE_BPSK)
+#define DEFAULT_MODULATION_MODE         FLAG_MASK_MODULATION_MODE_BPSK
+/* Flags about Modulation mode(bpsk, qpsk, qam etc...) end */
+
 /* Flags about AWGN(channel noise) start */
 #define VALUE_EBN0_WORD         "ebn0"//SET_VALUE
 /*
