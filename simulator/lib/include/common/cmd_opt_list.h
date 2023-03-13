@@ -8,9 +8,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 4 t h - S t a r t ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/***** static struct struct_cmdLineOption    bch_BM_algorithm_HD_option[] start *****/
+/***** extern const struct struct_cmdLineOption    bch_BM_algorithm_HD_option[] start *****/
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_BM_algorithm_HD_display_option[] =
+    extern const struct struct_cmdLineOption    bch_BM_algorithm_HD_display_option[] =
     {
         {"result",  0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimHD_display, FLAG_MASK_DISPLAY_RESULT,  VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimHD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -20,7 +20,7 @@
     #endif
 
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_BM_algorithm_SD_display_option[] =
+    extern const struct struct_cmdLineOption    bch_BM_algorithm_SD_display_option[] =
     {
         {"result",  0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimSD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_BM_SimSD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -28,15 +28,15 @@
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
-/***** static struct struct_cmdLineOption    bch_BM_algorithm_HD_option[] end *****/
+/***** extern const struct struct_cmdLineOption    bch_BM_algorithm_HD_option[] end *****/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 4 t h - E n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 3 r d - S t a r t ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/***** static struct struct_cmdLineOption bch_BM_algorithm_option[] start *****/
-static struct struct_cmdLineOption    bch_BM_algorithm_test_option[] =
+/***** extern const struct struct_cmdLineOption bch_BM_algorithm_option[] start *****/
+extern const struct struct_cmdLineOption    bch_BM_algorithm_test_option[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[FLAG_MASK_BCH_DECORDING_ALGORITHM_BM], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_flag_bchBM_simulationMode&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 
@@ -45,7 +45,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_test_option[] =
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption    bch_BM_algorithm_decoding_option[] =
+extern const struct struct_cmdLineOption    bch_BM_algorithm_decoding_option[] =
 {
     {"skip", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_BM], FLAG_MASK_CODE_BCH_DEC_AL_SKIP, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -53,7 +53,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_decoding_option[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] =
+extern const struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] =
 {
     {"delta", 0, OPT_FLAG, 0, 0, &global_flag_debug_bmSim, FLAG_MASK_DEBUG_BCH_BM_CAL_DELTA, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -61,7 +61,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] 
 };
 
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_BM_algorithm_debug_option[] =
+    extern const struct struct_cmdLineOption    bch_BM_algorithm_debug_option[] =
     {
         {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_bmSim, FLAG_MASK_DEBUG_BCH_BM_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"cal", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_BM_algorithm_debug_calculate_option},
@@ -69,7 +69,7 @@ static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] 
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
     };
     #endif
-/***** static struct struct_cmdLineOption bch_BM_algorithm_option[] end *****/
+/***** extern const struct struct_cmdLineOption bch_BM_algorithm_option[] end *****/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 3 r d - E n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,8 +78,8 @@ static struct struct_cmdLineOption    bch_BM_algorithm_debug_calculate_option[] 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 2 n d - S t a r t ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/***** static struct struct_cmdLineOption bch_algorithm[] start *****/
-static struct struct_cmdLineOption bch_BM_algorithm_option[] =
+/***** extern const struct struct_cmdLineOption bch_algorithm[] start *****/
+extern const struct struct_cmdLineOption bch_BM_algorithm_option[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_flag_bchDecAlgo_Enable, FLAG_MASK_BCH_DECORDING_ALGORITHM_BM, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -101,7 +101,7 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
-/***** static struct struct_cmdLineOption bch_algorithm[] end *****/
+/***** extern const struct struct_cmdLineOption bch_algorithm[] end *****/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 2 n d - E n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,7 +109,7 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_mSBS_algorithm_HD_display_option[] =
+    extern const struct struct_cmdLineOption    bch_mSBS_algorithm_HD_display_option[] =
     {
         {"result", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimHD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimHD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -119,7 +119,7 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
     #endif
 
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_mSBS_algorithm_SD_display_option[] =
+    extern const struct struct_cmdLineOption    bch_mSBS_algorithm_SD_display_option[] =
     {
         {"result", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimSD_display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_bch_mSBS_SimSD_display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -128,7 +128,7 @@ static struct struct_cmdLineOption bch_BM_algorithm_option[] =
     };
     #endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption    bch_mSBS_algorithm_test_option[] =
+extern const struct struct_cmdLineOption    bch_mSBS_algorithm_test_option[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},//if(global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS]&FLAG_MASK_CODE_BCH_DEC_AL_TEST_THIS_ALGORITHM)
 
@@ -136,7 +136,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_test_option[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption    bch_mSBS_algorithm_decoding_option[] =
+extern const struct struct_cmdLineOption    bch_mSBS_algorithm_decoding_option[] =
 {
     {"skip", 0, OPT_FLAG, 0, 0, &global_list_flag_bch_sim_decodingMode[KIND_OF_BCH_DECODING_mSBS], FLAG_MASK_CODE_BCH_DEC_AL_SKIP, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -144,7 +144,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_decoding_option[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[] =
+extern const struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[] =
 {
     {"delta", 0, OPT_FLAG, 0, 0, &global_flag_debug_mSBS_Sim, FLAG_MASK_DEBUG_BCH_M_SBS_CAL_DELTA, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -152,7 +152,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[
 };
 
     #ifndef RELEASE
-    static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_option[] =
+    extern const struct struct_cmdLineOption    bch_mSBS_algorithm_debug_option[] =
     {
         {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_mSBS_Sim, FLAG_MASK_DEBUG_BCH_mSBS_ALGORITHM, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"cal", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_debug_calculate_option},
@@ -163,7 +163,7 @@ static struct struct_cmdLineOption    bch_mSBS_algorithm_debug_calculate_option[
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
+extern const struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_flag_bchDecAlgo_Enable, FLAG_MASK_BCH_DECORDING_ALGORITHM_M_SBS, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -190,8 +190,8 @@ static struct struct_cmdLineOption bch_mSBS_algorithm_option[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ bch_algorithm 1 s t - s t a r t ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/***** static struct struct_cmdLineOption struct_cmdLineOption[] start *****/
-static struct struct_cmdLineOption bch_common[] =
+/***** extern const struct struct_cmdLineOption struct_cmdLineOption[] start *****/
+extern const struct struct_cmdLineOption bch_common[] =
 {
     {"oversynd", 0, OPT_SET_VALUE, 0, 0, &global_bch_Soft_OverSyndLen, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"addlcm", 0, OPT_SET_VALUE, 0, 0, &global_addedRootToLCM_string, 0, VALUE_TYPE_STRING, NULL},
@@ -199,7 +199,7 @@ static struct struct_cmdLineOption bch_common[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption bch_algorithm[] =
+extern const struct struct_cmdLineOption bch_algorithm[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_flag_simulationCode, FLAG_MASK_CODE_BCH, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"common", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_common},
@@ -208,11 +208,11 @@ static struct struct_cmdLineOption bch_algorithm[] =
     {"msbs_t3", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bch_mSBS_algorithm_option},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
-/***** static struct struct_cmdLineOption struct_cmdLineOption[] end *****/
+/***** extern const struct struct_cmdLineOption struct_cmdLineOption[] end *****/
 /************************************ bch_algorithm 1 s t - e n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption    usable_code_GaloisField_display_option[] =
+    extern const struct struct_cmdLineOption    usable_code_GaloisField_display_option[] =
     {
     {"primepoly", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_PRIMEPOLY, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"field", 0, OPT_FLAG, 0, 0, &global_flag_gfCommon_display, FLAG_MASK_DISPLAY_GF_COMMON_FIELD, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -225,7 +225,7 @@ static struct struct_cmdLineOption bch_algorithm[] =
     };
     #endif
 
-static struct struct_cmdLineOption usable_code_GaloisField[] =
+extern const struct struct_cmdLineOption usable_code_GaloisField[] =
 {
     {"exp", 0, OPT_SET_VALUE, 0, 0, &global_GaloisFieldExponential, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"codelength", 0, OPT_SET_VALUE, 0, 0, &global_CodeLength, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -240,14 +240,14 @@ static struct struct_cmdLineOption usable_code_GaloisField[] =
 
 
 
-static struct struct_cmdLineOption usaable_code_com_algorithm_option[] =
+extern const struct struct_cmdLineOption usaable_code_com_algorithm_option[] =
 {
     {"errnum", 0, OPT_SET_VALUE, 0, 0, &global_ErrorNum, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption    usaable_code_com_HD_option[] =
+extern const struct struct_cmdLineOption    usaable_code_com_HD_option[] =
 {
     {"correctable", 0, OPT_SET_VALUE, 0, 0, &global_bch_hardCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
         #ifndef RELEASE
@@ -256,7 +256,7 @@ static struct struct_cmdLineOption    usaable_code_com_HD_option[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption usaable_code_com_HD_SD_option [] =
+extern const struct struct_cmdLineOption usaable_code_com_HD_SD_option [] =
 {
     {"hard", 0, OPT_SET_VALUES_SERIES, 0, 0, &global_bch_hardCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"soft", 0, OPT_SET_VALUES_SERIES, 0, 0, &global_bch_SoftCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -264,7 +264,7 @@ static struct struct_cmdLineOption usaable_code_com_HD_SD_option [] =
 };
 
 
-static struct struct_cmdLineOption    usaable_code_com_SD_option[] =
+extern const struct struct_cmdLineOption    usaable_code_com_SD_option[] =
 {
     {"correctable", 0, OPT_SET_VALUE, 0, 0, &global_bch_SoftCorrectable, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"correctables", 0, OPT_SET_VALUES, 0, 0, NULL, 0, VALUE_TYPE_NONE, usaable_code_com_HD_SD_option},
@@ -275,7 +275,7 @@ static struct struct_cmdLineOption    usaable_code_com_SD_option[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption usable_code_common[] =
+extern const struct struct_cmdLineOption usable_code_common[] =
 {
     {"gf", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, usable_code_GaloisField},
 
@@ -288,7 +288,7 @@ static struct struct_cmdLineOption usable_code_common[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption cmdOpt_usable_code[] =
+extern const struct struct_cmdLineOption cmdOpt_usable_code[] =
 {
     {"bch", 0, OPT_COMPONENT, 0, 0, &global_flag_simulationCode, FLAG_MASK_CODE_BCH, VALUE_TYPE_UNSIGNED_INT, bch_algorithm},
 
@@ -300,7 +300,7 @@ static struct struct_cmdLineOption cmdOpt_usable_code[] =
 /* BCH Command Tree end */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
+extern const struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
 {
     {"start", 0, OPT_SET_LANGE_SERIES, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
     {"end", 0, OPT_SET_LANGE_SERIES, 0, 0, &global_EbN0_End_Value, 0, VALUE_TYPE_DOUBLE, NULL},
@@ -310,7 +310,7 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0_range[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
+extern const struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
 {
     {"range", 0, OPT_SET_LANGE, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_awgn_ebn0_range},
 
@@ -322,7 +322,7 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption comm_channel_awgn_llr_debug[] =
+    extern const struct struct_cmdLineOption comm_channel_awgn_llr_debug[] =
     {
         {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgnLLR, FLAG_MASK_DEBUG_AWGN_LLR_SEQUENCE, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"locator", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgnLLR, FLAG_MASK_DEBUG_AWGN_LLR_LOCATOR, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -330,7 +330,7 @@ static struct struct_cmdLineOption comm_channel_awgn_ebn0[] =
     };
     #endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
+extern const struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
 {
     {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"not_sel", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_same_llr_handling, FLAG_CASE_SAME_LLR_HANDLING_NOT_SEL, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -341,7 +341,7 @@ static struct struct_cmdLineOption comm_ch_awgn_same_llr_mag_handling[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
+extern const struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
 {
     {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_init_llr_mag_method, FLAG_CASE_INIT_LLR_MAG_METHOD_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"not_sel_max_llr", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_init_llr_mag_method, FLAG_CASE_INIT_LLR_MAG_METHOD_NOT_SEL_MAX_LLR, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -350,14 +350,14 @@ static struct struct_cmdLineOption comm_ch_awgn_init_llr_mag_method[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_grouping[] =
+extern const struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_grouping[] =
 {
     {"enable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_GROUPING, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"group_num", 0, OPT_SET_VALUE, 0, 0, &global_grouping_stream_nums, 0, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_tree[] =
+extern const struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_tree[] =
 {
     {"follow_min_path", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_FOLLOWING_MIN1_PATH, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"probabilistic_choosen", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_find_LLR_method, FLAG_CASE_FINDING_MIN_LLR_METHOD_TREE_PROBABILISIC_CHOOSEN, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -366,7 +366,7 @@ static struct struct_cmdLineOption comm_ch_awgn_llr_mag_find_meth_tree[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
+extern const struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
 {
     {"pass_hd_1_dis", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_pass_hd_1, FLAG_CASE_PASS_MAG0_HD_1_DISABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"pass_hd_1_en", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_pass_hd_1, FLAG_CASE_PASS_MAG0_HD_1_ENABLE, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -382,7 +382,7 @@ static struct struct_cmdLineOption comm_channel_awgn_llr_mag_finding_meth[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_llr_quantiz_filter_set[] =
+extern const struct struct_cmdLineOption comm_channel_llr_quantiz_filter_set[] =
 {
     {"print_filtering_range", 0, OPT_FLAG, 0, 0, &global_flag_llr_display, FLAG_LLR_DISPLAY_QUANTIZATION_FILTERING, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -395,7 +395,7 @@ static struct struct_cmdLineOption comm_channel_llr_quantiz_filter_set[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_llr_quantiz_numberic_system[] =
+extern const struct struct_cmdLineOption comm_channel_llr_quantiz_numberic_system[] =
 {
     {"twos_complement", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_numberic_system, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_TWO_S_COMPLEMENT, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"ones_complement", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_numberic_system, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYSTEM_ONE_S_COMPLEMENT, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -403,7 +403,7 @@ static struct struct_cmdLineOption comm_channel_llr_quantiz_numberic_system[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_symmetry[] =
+extern const struct struct_cmdLineOption comm_channel_llr_quantiz_zero_symmetry[] =
 {
     //{"disable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"enbale", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_SYMMETRY, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -411,7 +411,7 @@ static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_symmetry[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_duplicated[] =
+extern const struct struct_cmdLineOption comm_channel_llr_quantiz_zero_duplicated[] =
 {
     //{"disable", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"enbale", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_llr_mag_ones_complement_zero_handling, ENUM_FLAG_CASE_QUANTIZ_NUMBERIC_SYS_ONE_S_COM_ZERO_DUPLICATED, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -419,7 +419,7 @@ static struct struct_cmdLineOption comm_channel_llr_quantiz_zero_duplicated[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_llr_quantization[] =
+extern const struct struct_cmdLineOption comm_channel_llr_quantization[] =
 {
     {"filter_set", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantiz_filter_set},
 
@@ -430,7 +430,7 @@ static struct struct_cmdLineOption comm_channel_llr_quantization[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_awgn_llr[] =
+extern const struct struct_cmdLineOption comm_channel_awgn_llr[] =
 {
     {"quantization", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, comm_channel_llr_quantization},
 
@@ -439,7 +439,7 @@ static struct struct_cmdLineOption comm_channel_awgn_llr[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption comm_channel_awgn_debug[] =
+    extern const struct struct_cmdLineOption comm_channel_awgn_debug[] =
     {
         {"sequence", 0, OPT_FLAG, 0, 0, &global_flag_debug_awgn, FLAG_MASK_DEBUG_AWGN_SEQUENCE, VALUE_TYPE_UNSIGNED_INT, NULL},
         {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
@@ -447,7 +447,7 @@ static struct struct_cmdLineOption comm_channel_awgn_llr[] =
     #endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption comm_channel_awgn[] =
+extern const struct struct_cmdLineOption comm_channel_awgn[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_Channel_Mode, FLAG_MASK_CHANNEL_MODE_AWGN, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -466,7 +466,7 @@ static struct struct_cmdLineOption comm_channel_awgn[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /************************************ cmdOpt_comm_channel 1 s t - s t a r t ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_comm_channel[] =
+extern const struct struct_cmdLineOption cmdOpt_comm_channel[] =
 {
     {"awgn", 0, OPT_COMPONENT, 0, 0, &global_Channel_Mode, FLAG_MASK_CHANNEL_MODE_AWGN, VALUE_TYPE_UNSIGNED_INT, comm_channel_awgn},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
@@ -475,7 +475,7 @@ static struct struct_cmdLineOption cmdOpt_comm_channel[] =
 /************************************ cmdOpt_comm_channel 1 s t - e n d ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption bpsk_modulation_display[] =
+    extern const struct struct_cmdLineOption bpsk_modulation_display[] =
     {
         {"result", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode_BPSK_Display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode_BPSK_Display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -485,7 +485,7 @@ static struct struct_cmdLineOption cmdOpt_comm_channel[] =
     };
     #endif
 
-static struct struct_cmdLineOption bpsk_modulation[] =
+extern const struct struct_cmdLineOption bpsk_modulation[] =
 {
     {"used", 0, OPT_FLAG, 0, 0, &global_flag_Modulation_Mode, DEFAULT_MODULATION_MODE, VALUE_TYPE_UNSIGNED_INT, NULL},
 
@@ -494,14 +494,14 @@ static struct struct_cmdLineOption bpsk_modulation[] =
         #endif
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
-static struct struct_cmdLineOption cmdOpt_comm_modulation[] =
+extern const struct struct_cmdLineOption cmdOpt_comm_modulation[] =
 {
     {"bpsk", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, bpsk_modulation},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_sim_loop[] =
+extern const struct struct_cmdLineOption cmdOpt_sim_loop[] =
 {
     //{"start", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
 
@@ -513,7 +513,7 @@ static struct struct_cmdLineOption cmdOpt_sim_loop[] =
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_simulation[] =
+extern const struct struct_cmdLineOption cmdOpt_simulation[] =
 {
     //{"start", 0, OPT_SET_VALUE, 0, 0, &global_EbN0_Start_Value, 0, VALUE_TYPE_DOUBLE, NULL},
 
@@ -523,7 +523,7 @@ static struct struct_cmdLineOption cmdOpt_simulation[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #ifndef RELEASE
-    static struct struct_cmdLineOption ber_actual_display[] =
+    extern const struct struct_cmdLineOption ber_actual_display[] =
     {
         {"result", 0, OPT_FLAG, 0, 0, &global_flag_case_getBER_method_Display, FLAG_MASK_DISPLAY_RESULT, VALUE_TYPE_UNSIGNED_INT, NULL},
         {"progress", 0, OPT_FLAG, 0, 0, &global_flag_case_getBER_method_Display, FLAG_MASK_DISPLAY_PROGRESS, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -533,7 +533,7 @@ static struct struct_cmdLineOption cmdOpt_simulation[] =
     };
     #endif
 
-static struct struct_cmdLineOption ber_theo_decision[] =
+extern const struct struct_cmdLineOption ber_theo_decision[] =
 {
     //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {"allzero", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_choosingCodeWordMethod_inTheo, FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NO_ERR, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -546,7 +546,7 @@ static struct struct_cmdLineOption ber_theo_decision[] =
 
 
 
-static struct struct_cmdLineOption ber_dec_decision_handing[] =
+extern const struct struct_cmdLineOption ber_dec_decision_handing[] =
 {
     {"none", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_dec_fail_handling, FLAG_CASE_DEC_FAIL_HANDLING_NONE, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"retrans_no_err", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_dec_fail_handling, FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -555,7 +555,7 @@ static struct struct_cmdLineOption ber_dec_decision_handing[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption ber_dec_decision[] =
+extern const struct struct_cmdLineOption ber_dec_decision[] =
 {
     //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {"used", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_selTP_before_dec, FLAG_CASE_SEL_TP_BEFORE_DEC_ACT, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -569,7 +569,7 @@ static struct struct_cmdLineOption ber_dec_decision[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 
-static struct struct_cmdLineOption ber_options[] =
+extern const struct struct_cmdLineOption ber_options[] =
 {
     //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
     {"theoretical_decision", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, ber_theo_decision},
@@ -577,7 +577,7 @@ static struct struct_cmdLineOption ber_options[] =
     {"decoder_decision", 0, OPT_COMPONENT, 0, 0, &global_flag_case_selTP_before_dec, FLAG_CASE_SEL_TP_BEFORE_DEC_ACT, VALUE_TYPE_UNSIGNED_INT, ber_dec_decision},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
-static struct struct_cmdLineOption cmdOpt_get_thing[] =
+extern const struct struct_cmdLineOption cmdOpt_get_thing[] =
 {
     //{"(not-support)", 0, OPT_NOTHING, 0, 0, NULL, 0, VALUE_TYPE_NONE, NULL},
 
@@ -587,7 +587,7 @@ static struct struct_cmdLineOption cmdOpt_get_thing[] =
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption pattern_io[] =
+extern const struct struct_cmdLineOption pattern_io[] =
 {
     {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -601,7 +601,7 @@ static struct struct_cmdLineOption pattern_io[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption pattern_io_log[] =
+extern const struct struct_cmdLineOption pattern_io_log[] =
 {
     {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_log, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -615,7 +615,7 @@ static struct struct_cmdLineOption pattern_io_log[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption pattern_io_verilog[] =
+extern const struct struct_cmdLineOption pattern_io_verilog[] =
 {
     {"infomation", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"encoding", 0, OPT_FLAG, 0, 0, &global_flag_file_io_hd_pattern_output_verilog, FLAG_MASK_FILE_IO_HD_ENCODING_MES, VALUE_TYPE_UNSIGNED_INT, NULL},
@@ -629,7 +629,7 @@ static struct struct_cmdLineOption pattern_io_verilog[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_fileIO[] =
+extern const struct struct_cmdLineOption cmdOpt_fileIO[] =
 {
     {"testFlag", 0, OPT_FLAG, 0, 0, &global_flag_fileInputOutput, FLAG_MASK_FILE_IO, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"pattern", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, pattern_io},
@@ -640,28 +640,28 @@ static struct struct_cmdLineOption cmdOpt_fileIO[] =
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_static_msg[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_static_msg[] =
 {
     {"zero_stream_ratio", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_loops_zero_bit_ratio, 0, VALUE_TYPE_DOUBLE_RATIO_LIMIT, NULL},
 
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_msg_gen_meth[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode_err_distri_llr_msg_gen_meth[] =
 {
     {"static", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_msg_gen_method, ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_STATIC, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode_err_distri_llr_static_msg},
     {"rand", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_msg_gen_method, ENUM_CASE_TESTMODE_ERR_RATE_MSG_GEN_METH_RAND, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode_err_distri_decoding_meth[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode_err_distri_decoding_meth[] =
 {
     {"hard", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_decoding_method, ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_HD, VALUE_TYPE_UNSIGNED_INT, NULL},
     {"soft", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_testMode_decoding_method, ENUM_CASE_TEST_MODE_ERR_RATE_DECODING_METH_SD, VALUE_TYPE_UNSIGNED_INT, NULL},
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode_err_distribution[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode_err_distribution[] =
 {
 
     {"msg_gen_method", 0, OPT_COMPONENT, 0, 0, NULL, 0, VALUE_TYPE_NONE, cmdOpt_testMode_err_distri_llr_msg_gen_meth},
@@ -670,7 +670,7 @@ static struct struct_cmdLineOption cmdOpt_testMode_err_distribution[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode_prob_distribution[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode_prob_distribution[] =
 {
 
     {"group_num", 0, OPT_SET_VALUE, 0, 0, &tmp_testMode_prob_distribution_group_nums, 0, VALUE_TYPE_UNSIGNED_LONG, NULL},
@@ -682,7 +682,7 @@ static struct struct_cmdLineOption cmdOpt_testMode_prob_distribution[] =
     {NULL,0,STRUCT_END,0,0,NULL,0,VALUE_TYPE_NONE,NULL}
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption cmdOpt_testMode[] =
+extern const struct struct_cmdLineOption cmdOpt_testMode[] =
 {
     {"errDistribution_EbN0", 0, OPT_FLAG_CASE, 0, 0, &global_flag_case_sim_testOpt, FLAG_CASE_SIM_TEST_MODE_GET_LLR_MAG_AVR_BELONG_EBN0, VALUE_TYPE_UNSIGNED_INT, cmdOpt_testMode_err_distribution},
 
@@ -697,7 +697,7 @@ static struct struct_cmdLineOption cmdOpt_testMode[] =
 /************************************ R o o t s ************************************/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static struct struct_cmdLineOption struct_cmdLineOption[] =
+extern const struct struct_cmdLineOption struct_cmdLineOption[] =
 {
     //General cmd options
         #ifndef RELEASE
