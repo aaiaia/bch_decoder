@@ -129,28 +129,6 @@ char global_buf_KeyBoardInput[255]={0};
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-#define FLAG_MASK_FILE_IO    (1<<0)
-unsigned int global_flag_fileInputOutput = 0;
-
-    unsigned int global_flag_file_io_hd_pattern_output = 0;
-    unsigned int global_flag_file_io_hd_pattern_output_log = 0;
-    unsigned int global_flag_file_io_hd_pattern_output_verilog = 0;
-    enum HD_PATTERN_OUTPUT
-    {
-        FLAG_MASK_FILE_IO_HD_MES            = (1<<0),
-        FLAG_MASK_FILE_IO_HD_ENCODING_MES   = (1<<1),
-        FLAG_MASK_FILE_IO_HD_RECEIVED_MES   = (1<<2),
-        FLAG_MASK_FILE_IO_HD_CORRECTED_MES  = (1<<3),
-    };
-
-    unsigned int global_flag_file_io_sd_pattern_output = 0;
-    unsigned int global_flag_file_io_sd_pattern_output_log = 0;
-    unsigned int global_flag_file_io_sd_pattern_output_verilog = 0;
-    enum SD_PATTERN_OUTPUT
-    {
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR       = (1<<0),
-        FLAG_MASK_FILE_IO_SD_RECEIVED_LLR_mag   = (1<<1),
-    };
 
 
 
