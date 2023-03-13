@@ -31,7 +31,9 @@
 unsigned int local_rand_seed;
 
 /* local variables */
+/* struct tm is used to getting system time */
 struct tm *date_simulation_date;
+/* examples codes about struct tm start */
 //date_simulation_date=localtime(&time_program_init.tv_sec);
 //date_simulation_date->tm_year+1900
 //date_simulation_date->tm_mon+1
@@ -41,6 +43,9 @@ struct tm *date_simulation_date;
 //date_simulation_date->tm_sec
 //gettimeofday(&time_proc_start, NULL);
 //printExcutingTime(&time_proc_start);
+/* examples codes about struct tm start */
+
+/* struct timeval is used to getting runtime */
 #define timeMes printf("[TIME] ) ")
 struct timeval time_program_init;
 
@@ -53,12 +58,6 @@ struct timeval time_chien_search_start;
 
 struct timeval time_proc_start;
 
-
-
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
 void printExcutingTime(struct timeval *start)
 {
     struct timeval end;
