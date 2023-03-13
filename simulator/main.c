@@ -167,6 +167,10 @@ char global_buf_KeyBoardInput[255]={0};
             //#define FLAG_MASK_DISPLAY_FUNCNAME  (1<<2)
             */
 
+    /*
+     * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),
+     * select handling method.
+     */
     unsigned int global_flag_case_dec_fail_handling = 0;
 
     /* Method that re transfer is not supported yet */
