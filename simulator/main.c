@@ -136,7 +136,7 @@ char global_buf_KeyBoardInput[255]={0};
 
     #define FLAG_CASE_DECODING_FAIL_METHOD_DEFAULT  FLAG_CASE_SEL_TP_BEFORE_DEC_THEO
 
-
+        /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO start */
         /*
          * global flag to selecting test pettern.
          * It is working only in
@@ -155,8 +155,9 @@ char global_buf_KeyBoardInput[255]={0};
 
             FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_DEFAULT = FLAG_CASE_CODEWORD_CHOOSEN_METHOD_IN_THEO_NORMAL,
         }typedef FLAG_CASE_CHOOSEN_CODWORD_METHOD;
+        /* subflags in FLAG_CASE_SEL_TP_BEFORE_DEC_THEO end */
 
-
+    /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT start */
     /*
      * In FLAG_CASE_SEL_TP_BEFORE_DEC_ACT mode(which is non-correctable case),
      * select handling method
@@ -170,6 +171,7 @@ char global_buf_KeyBoardInput[255]={0};
         FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_FAIL_NO_MORE,
         FLAG_CASE_DEC_FAIL_HANDLING_RE_TRANFER_INTERATION,//not support yet
     }typedef enum_FLAG_CASE_DEC_FAIL_HANDLING;
+    /* sub-flags in FLAG_CASE_SEL_TP_BEFORE_DEC_ACT end */
 
 
 
