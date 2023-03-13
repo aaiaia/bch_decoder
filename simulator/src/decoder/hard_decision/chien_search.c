@@ -1,3 +1,5 @@
+#include "field.h"
+
 char calculateChienSearchVariableSet
 (
     struct_galoisFieldElements *galoisFields,

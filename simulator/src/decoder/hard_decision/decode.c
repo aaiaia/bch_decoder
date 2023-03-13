@@ -1,3 +1,5 @@
+#include "decode.h"
+
 /* Constructor and Destructor */
 struct_generalForm_algorithmComponent* recreateAlgoriehmComponent(struct_generalForm_algorithmComponent **p, struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength, enum KIND_OF_BCH_DECODING_ALGORITHM KIND_OF_BCH_ALGORITHM)
 {

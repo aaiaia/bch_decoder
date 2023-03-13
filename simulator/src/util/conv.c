@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+#include "cmd_opt_vars.h"
+
 double convertStringToDouble(char *string)
 {
     double tmp=0.0;

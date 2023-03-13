@@ -1,3 +1,9 @@
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "polynomial.h"
+
 /* bits is mean that length of bits */
 struct_powerFormPolynomials *createPowerFormPolynomial(unsigned int length)
 {

@@ -1,3 +1,5 @@
+#include "algo_mSBS.h"
+
 /* Constructor and Desctructor */
 /*
  * ignore t, that is mean correctable bits are already constants.

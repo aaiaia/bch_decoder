@@ -1,3 +1,6 @@
+#include "field.h"
+#include "algo_bm.h"
+
 /* local variables */
 char local_buf_KeyBoardInput[255]={0};
 

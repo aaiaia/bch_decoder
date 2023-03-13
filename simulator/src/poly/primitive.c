@@ -1,3 +1,5 @@
+#include "primitive.h"
+
 void initPrimitivePolynomial(struct_primitivePolynomialSet *p)
 {
     p->PRIMITIVE_POLYNOMIAL_NUMBER=MAXUMUM_PRIMITIVE_POLYNOMIAL_NUMBER;

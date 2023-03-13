@@ -1,3 +1,6 @@
+#include "polynomial.h"
+#include "llr.h"
+
 char findMinimumMagnitudeGroupingPushAway
 (
     struct_logLikeHoodRatio *p,

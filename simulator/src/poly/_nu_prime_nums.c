@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <stdio.h>
+
 char *convertPrimeNumberToString(char *string, unsigned int exponential, const unsigned int *primeNumberArray)
 {
     int i;

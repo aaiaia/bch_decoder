@@ -1,3 +1,5 @@
+#include "bpsk.h"
+
 /* Constructor and Destructor */
 struct_bpskComponents *createBpskComponents(unsigned int length)
 {

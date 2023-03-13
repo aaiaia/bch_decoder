@@ -1,3 +1,11 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+#include "tree.h"
+
 /* Constructor and Destructor */
 struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType)
 {

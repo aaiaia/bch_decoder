@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <math.h>
+
 double gaussian(double mean, double var)
 {
         const double PI = 3.14159265358979323846;

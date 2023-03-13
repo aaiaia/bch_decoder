@@ -1,3 +1,6 @@
+#include "polynomial.h"
+#include "llr.h"
+
 /*
  * char sortMinimumMagnitudeLogLikeHoodRatio_chaseAlgorithm(struct_logLikeHoodRatio *p)
  *

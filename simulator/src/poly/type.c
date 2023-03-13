@@ -1,3 +1,5 @@
+#include "type.h"
+
 void printPowerFormWithEnter(char_POWER_FORM *p)
 {
     unsigned int length = strlen(p);

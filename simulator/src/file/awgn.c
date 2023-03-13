@@ -1,3 +1,6 @@
+#include "field_set.h"
+#include "raw2cw.h"
+
 /* Example codes in main functions
 //while((loadStream.countedDataNumber<loadStream.totalDataNumber))
 //{

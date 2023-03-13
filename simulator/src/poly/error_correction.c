@@ -1,3 +1,5 @@
+#include "polynomial.h"
+
 char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial)
 {
     unsigned int i;

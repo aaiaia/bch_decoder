@@ -1,3 +1,6 @@
+#include "polynomial.h"
+#include "llr.h"
+
 /******************************************************************/
 /*
  * findMinimumMagnitudeFindLocPushAway function is a convert quantized LLR to magnitudeShort and also compare each magnitudeShort so sort minimum magnitudeShort.

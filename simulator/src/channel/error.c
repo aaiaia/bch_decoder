@@ -1,3 +1,12 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "error.h"
+
+#include "cmd_opt_vars.h"
+
 /* local variables */
 char local_buf_KeyBoardInput[255]={0};
 

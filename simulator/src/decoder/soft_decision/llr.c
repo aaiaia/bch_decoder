@@ -1,3 +1,9 @@
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "llr.h"
+
 /* Constructor and Destructor */
 struct_logLikeHoodRatio* createLogLikeHoodRatio(unsigned int length)
 {
