@@ -8,7 +8,7 @@
 #include "decoder/hard_decision/algo_bm.h"
 
 /* local variables */
-char local_buf_KeyBoardInput[255]={0};
+static char local_buf_KeyBoardInput[255] = {0};
 
 /* Constructor and Destructor */
 struct_HD_BM_algorithmComponent *createBmAlgorithmComponent(struct_galoisFieldElements *galoisFields, unsigned int t, char *string, unsigned int stringLength)
