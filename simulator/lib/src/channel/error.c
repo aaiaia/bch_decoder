@@ -7,7 +7,7 @@
 #include "channel/error.h"
 
 /* local variables */
-char local_buf_KeyBoardInput[255]={0};
+static char local_buf_KeyBoardInput[255] = {0};
 
 /* Constructor and Destructor */
 struct_errorComponent *createErrorComponent(unsigned int length)

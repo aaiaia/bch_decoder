@@ -119,7 +119,7 @@ void printExcutingTime(struct timeval *start)
     }
 }
 /* Keyboard buffer */
-char local_buf_KeyBoardInput[255]={0};
+static char local_buf_KeyBoardInput[255] = {0};
 
 /* local Functions */
 char set_selTP_before_decording_skipDecOnly
