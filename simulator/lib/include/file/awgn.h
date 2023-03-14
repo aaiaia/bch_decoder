@@ -1,6 +1,8 @@
 #ifndef _FILE_AWGN_H_
 #define _FILE_AWGN_H_
 
+#include "file/raw2cw.h"
+
 /* Example codes in main functions
 //while((loadStream.countedDataNumber<loadStream.totalDataNumber))
 //{
