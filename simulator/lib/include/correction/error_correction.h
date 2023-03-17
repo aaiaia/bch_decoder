@@ -1,0 +1,6 @@
+#ifndef _CORRECTION_ERROR_CORRECTION_H_
+#define _CORRECTION_ERROR_CORRECTION_H_
+
+char errorCorrection(struct_powerFormPolynomials *targetCodeWord, struct_powerFormPolynomials *errorLocationPowerFormPolynomial);
+
+#endif
