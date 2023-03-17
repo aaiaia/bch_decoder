@@ -15,7 +15,7 @@ unsigned long tmp_testMode_loops = TMP_TEST_MODE_LOOPS;
 
 /* Error Distribution */
 FILE *fp_testMode_log = NULL;
-FILE *fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv= NULL;
+FILE *fp_testMode_sum_bit_cnt_arranged_by_bitRetio_csv = NULL;
 FILE *fp_testMode_sum_bit_cnt_classified_arranged_by_bitRatio_csv = NULL;
 FILE *fp_testMode_sum_llr_mag_arranged_by_bitRatio_csv = NULL;
 FILE *fp_testMode_sum_err_bit_cnt_chg_classified_arranged_by_bitRatio_csv = NULL;
@@ -56,8 +56,8 @@ unsigned int tmp_testMode_one_is_inR_w = 0;//received bits cnt, which are zero o
 unsigned int tmp_testMode_zero_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
 unsigned int tmp_testMode_one_is_inR_c = 0;//received bits cnt, which are zero or one and is correct
 
-unsigned long tmp_testMode_llr_mag_sum_inR_w =0UL;//llr sum in received codeword wrong case
-unsigned long tmp_testMode_llr_mag_sum_inR_c =0UL;//llr sum in received codeword good case
+unsigned long tmp_testMode_llr_mag_sum_inR_w = 0UL;//llr sum in received codeword wrong case
+unsigned long tmp_testMode_llr_mag_sum_inR_c = 0UL;//llr sum in received codeword good case
 
 
 /*
@@ -90,7 +90,7 @@ unsigned long** tmp_bit_chg_cnt_inR_OZ_ratio = NULL;
  * index 1 -> summation of llr magnitude at corrected bit.
  * index 2 -> summation of llr magnitude at error bit.
  */
-unsigned long** tmp_llr_mag_sum_inR_OZ_ratio=NULL;
+unsigned long** tmp_llr_mag_sum_inR_OZ_ratio = NULL;
 
 double** tmp_llr_mag_inR = NULL;
 
