@@ -78,7 +78,7 @@ $(info DEPEND_FILE_LIB = ${DEPEND_FILE_LIB})
 $(info ###########################)
 $(info ##### Library Config ######)
 $(info ###########################)
-LIB_NAME = basic
+LIB_NAME = bch_sim
 $(info LIB_NAME = ${LIB_NAME})
 LIB_DIR_NAME = lib
 $(info LIB_DIR_NAME = ${LIB_DIR_NAME})
