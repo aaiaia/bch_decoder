@@ -1,7 +1,7 @@
 #ifndef _COMMON_CMD_OPT_H_
 #define _COMMON_CMD_OPT_H_
 
-const char cmdOtionKeyWords[] = "-{},:=";
+extern const char cmdOtionKeyWords[];
 
 enum cmdLineOptionInstructionType
 {

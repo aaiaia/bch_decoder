@@ -7,6 +7,9 @@
 #include "common/cmd_opt_vars.h"
 #include "common/cmd_opt.h"
 
+/* Variables */
+const char cmdOtionKeyWords[] = "-{},:=";
+
 /* Displaying */
 void printInstList(struct struct_cmdLineOption *p, unsigned int recursive, char *passedStrng)
 {
