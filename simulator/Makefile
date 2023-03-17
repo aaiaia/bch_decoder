@@ -1,3 +1,7 @@
+# ============================================================
+# makefile v1
+# url: https://github.com/aaiaia/make_c/tree/main/v1
+# ============================================================
 # default C language make environment
 CC = gcc
 CFLAGS = -fPIC	# gcc compile flags, when use compile and linking
