@@ -1,12 +1,12 @@
 # default C language make environment
 CC = gcc
-CFLAGS = 		# gcc compile flags, when use compile and linking
+CFLAGS = -fPIC	# gcc compile flags, when use compile and linking
 # default C++ language make environment
 CXX = g++
 CXXFLAGS =		# g++ compile flags
 CPPFLAGS =		# c++ compile flags
 # default shared library environments
-LDFLAGS =		# linker flags
+LDFLAGS = -lm	# linker flags
 # default other make environment
 AR = ar         # Static Library Archiving tools. The GNU ar program creates, modifies, and extracts from archives.
 # define Shell command to make variable
@@ -17,24 +17,24 @@ MKDIR = mkdir
 MAKE = make
 LN = ln
 
-ifeq ($(IS_SHARED),1)
+#ifeq ($(IS_SHARED),1)
 # Some gcc based compiler to needs this option to fast executint program when use shared library.
 $(info ###########################)
 $(info ###### Compile Flags ######)
 $(info ###########################)
-CFLAGS += -fPIC
+#CFLAGS += -fPIC
 $(info CFLAGS = ${CFLAGS})
-else
-endif
+#else
+#endif
 
-ifeq ($(MATH_LIB),1)
-LDFLAGS += -lm
+#ifeq ($(IS_SHARED),1)
 $(info ###########################)
 $(info ###### Linker Flags #*#####)
 $(info ###########################)
+#LDFLAGS += -lm
 $(info LDFLAGS = ${LDFLAGS})
-else
-endif
+#else
+#endif
 
 $(info ###########################)
 $(info ###### Configuration ######)
