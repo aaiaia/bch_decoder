@@ -1,4 +1,4 @@
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 #include "channel/bpsk.h"
 #include "channel/error.h"
 #include "encoder/encode.h"

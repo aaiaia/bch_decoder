@@ -21,7 +21,7 @@
 #include "gf/type.h"
 #include "gf/field.h"
 #include "gf/sum_matrix.h"
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 #include "gf/util.h"
 #include "gf/_nu_func.h"
 #include "gf/equation.h"

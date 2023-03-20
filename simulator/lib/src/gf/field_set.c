@@ -4,7 +4,7 @@
 #include "common/cmd_opt_vars.h"
 #include "gf/util.h"
 #include "gf/sum_matrix_cal.h"
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 
 /* Constructor and Desctructor */
 struct_galoisField_info *createGaloisField_info_emptySpace(struct_powerFormPolynomials *primitivePolynomial)

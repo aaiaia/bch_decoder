@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 #include "gf/syndrome.h"
 #include "gf/equation.h"
 #include "decoder/hard_decision/algo_mSBS.h"
