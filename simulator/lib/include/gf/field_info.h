@@ -1,5 +1,5 @@
-#ifndef _GF_FIELD_SET_H_
-#define _GF_FIELD_SET_H_
+#ifndef _GF_FIELD_INFO_H_
+#define _GF_FIELD_INFO_H_
 
 #include "gf/conjugate.h"
 #include "gf/field.h"
