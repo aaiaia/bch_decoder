@@ -8,7 +8,7 @@
 #include "decoder/soft_decision/tree.h"
 
 /* Constructor and Destructor */
-struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType)
+struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum_treeTypes treeType)
 {
     double tmp_log;
     unsigned int tmp_treeDepth;
@@ -27,7 +27,7 @@ struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTy
     if(treeType == TREE_NONE)
     {
         warningMes;
-        printf("in createTreeStruct, enum treeTypes treeType is TREE_NONE.\n");
+        printf("in createTreeStruct, enum_treeTypes treeType is TREE_NONE.\n");
         warningMes;
         printf("can't create structure of tree.\n");
         return NULL;
