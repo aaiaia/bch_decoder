@@ -7,7 +7,7 @@ enum treeTypes
 {
     TREE_NONE,
     TREE_CHASE
-};
+}typedef enum_treeTypes;
 
 struct struct_treeStructure
 {
@@ -15,7 +15,7 @@ struct struct_treeStructure
      * Tree that is triple pointer indicate magnitudeShort.
      * And it is using when find minimum magnitudeShort.
      */
-    enum treeTypes treeType;
+    enum_treeTypes treeType;
     u_int_QUANTIZ_MAGNITUDE_DIGIT*** tree_mag;
     char*** tree_hd;
     unsigned char** direction;
@@ -27,7 +27,7 @@ struct struct_treeStructure
 }typedef struct_treeStructure;
 
 /* Constructor and Destructor */
-struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum treeTypes treeType);
+struct_treeStructure* createTreeStruct(unsigned int zeroStageLength, enum_treeTypes treeType);
 char closeTreeStruct(struct_treeStructure **p);
 
 /* For Display(Debugging) */

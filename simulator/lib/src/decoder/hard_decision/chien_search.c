@@ -3,7 +3,7 @@
 
 #include "common/cmd_opt_vars.h"
 #include "gf/field.h"
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 #include "decoder/hard_decision/chien_search.h"
 
 char calculateChienSearchVariableSet

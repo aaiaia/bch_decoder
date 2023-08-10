@@ -2,7 +2,7 @@
 
 #include "common/cmd_opt_vars.h"
 #include "gf/field.h"
-#include "gf/field_set.h"
+#include "gf/field_info.h"
 
 /* Operation */
 unsigned int cal_numsOfDegreeOfSynd(unsigned int t)
